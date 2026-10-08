@@ -36,13 +36,14 @@ def clean_arabic_hardware_text(text):
         return ""
     t = str(text).strip()
 
-    # 1. Clean OCR / translation artifacts
+    # 1. Clean OCR / translation artifacts and terminology
     t = t.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
+    t = t.replace('المفاصل', 'المفصلات')
 
     # 2. Normalize and translate common English terms to Arabic
     t = re.sub(r'(?i)\bsoft\s*close\b', 'سوفت كلوز', t)
     t = re.sub(r'(?i)\bhydraulic\b', 'هيدروليك', t)
-    t = re.sub(r'(?i)\bhinge\b', 'مفصلة', t)
+    t = re.sub(r'(?i)\bhinges?\b', 'مفصلة', t)
     t = re.sub(r'(?i)\bhandle\b', 'مقبض', t)
     t = re.sub(r'(?i)\b(?:slide|runner)\b', 'سكة مجرى', t)
     t = re.sub(r'(?i)\bturkish\b', 'تركي', t)
@@ -186,8 +187,8 @@ class ProfessionalA4CatalogGenerator:
 
     def resolve_image(self, prod):
         img = prod.get('image', '')
-        if not img:
-            return "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=300&auto=format&fit=crop&q=80"
+        if not img or img.startswith('http') or not os.path.exists(img):
+            return "Branding/logo-100.png"
         return img
 
     def get_print_css(self):
@@ -1232,6 +1233,7 @@ class ProfessionalA4CatalogGenerator:
         <div class="top-toolbar-actions" style="display:flex; gap:10px;">
             <a href="index.html">🏠 {'الرئيسية' if is_ar else 'Home'}</a>
             <a href="Categories/categories_index_{lang}.html">🏷️ {'الفئات' if is_ar else 'Categories'}</a>
+            <a href="printed_catalogs.html">📚 {'إصدارات الطباعة' if is_ar else 'Print Editions'}</a>
             <a href="{other_file}" style="background:var(--orange); border-color:var(--orange);">{other_label}</a>
             <button onclick="window.print()">🖨️ {'طباعة وتصدير PDF' if is_ar else 'Print / Save as PDF'}</button>
         </div>

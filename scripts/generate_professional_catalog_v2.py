@@ -30,13 +30,14 @@ def clean_arabic_hardware_text(text):
         return ""
     t = str(text).strip()
 
-    # 1. Clean OCR / translation artifacts
+    # 1. Clean OCR / translation artifacts and terminology
     t = t.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
+    t = t.replace('المفاصل', 'المفصلات')
 
     # 2. Normalize and translate common English terms to Arabic
     t = re.sub(r'(?i)\bsoft\s*close\b', 'سوفت كلوز', t)
     t = re.sub(r'(?i)\bhydraulic\b', 'هيدروليك', t)
-    t = re.sub(r'(?i)\bhinge\b', 'مفصلة', t)
+    t = re.sub(r'(?i)\bhinges?\b', 'مفصلة', t)
     t = re.sub(r'(?i)\bhandle\b', 'مقبض', t)
     t = re.sub(r'(?i)\b(?:slide|runner)\b', 'سكة مجرى', t)
     t = re.sub(r'(?i)\bturkish\b', 'تركي', t)
@@ -779,14 +780,13 @@ class ImpeccableCatalogGenerator:
         """
 
     def resolve_image_path(self, prod, depth="../"):
-        """Get relative image path for HTML rendering"""
+        """Get relative image path for HTML rendering, defaulting to logo if missing"""
         img = prod.get('image', '')
-        if not img:
-            return f"https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=300&auto=format&fit=crop&q=80"
-        if img.startswith('http'):
-            return img
-        # Relative file
-        return depth + img
+        if not img or img.startswith('http'):
+            return depth + "Branding/logo-100.png"
+        if os.path.exists(img):
+            return depth + img
+        return depth + "Branding/logo-100.png"
 
     def generate_category_index_ar(self):
         html = '<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head>\n'
@@ -808,7 +808,7 @@ class ImpeccableCatalogGenerator:
         html += '        </a>\n'
         html += '        <nav class="nav-links">\n'
         html += '            <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>\n'
-        html += '            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل (A4)</a>\n'
+        html += '            <a href="../printed_catalogs.html" class="btn-nav">📖 الكتالوجات المطبوعة</a>\n'
         html += '            <a href="categories_index_en.html" class="btn-nav accent">🌐 English</a>\n'
         html += '            <button onclick="window.print()" class="btn-nav">🖨️ طباعة</button>\n'
         html += '        </nav>\n'
@@ -1001,7 +1001,7 @@ class ImpeccableCatalogGenerator:
         html += '        <nav class="nav-links">\n'
         html += f'            <a href="categories_index_{lang}.html" class="btn-nav">← {"الفئات" if is_ar else "Categories"}</a>\n'
         html += f'            <a href="../index.html" class="btn-nav">🏠 {"الرئيسية" if is_ar else "Home"}</a>\n'
-        html += f'            <a href="../catalog_{lang}.html" class="btn-nav">📖 {"الكتالوج الشامل" if is_ar else "Full Catalog"}</a>\n'
+        html += f'            <a href="../printed_catalogs.html" class="btn-nav">📖 {"إصدارات الطباعة" if is_ar else "Print Editions"}</a>\n'
         html += f'            <a href="category_{category["id"]:02d}_{other_lang}.html" class="btn-nav accent">{other_label}</a>\n'
         html += f'            <button onclick="window.print()" class="btn-nav">🖨️ {"طباعة الكتالوج" if is_ar else "Print Catalog"}</button>\n'
         html += '        </nav>\n'
