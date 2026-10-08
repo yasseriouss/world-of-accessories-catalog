@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_03_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -632,7 +657,7 @@
                     <div class="card-info">
                         <span class="card-code">#0001</span>
                         <h3 class="card-name" title="Hinge Summit Straight Soft Close 3d">Hinge Summit Straight Soft Close 3d</h3>
-                        <div class="card-price-badge"><span>62</span> <span>EGP</span></div>
+                        <div class="card-price-badge">62 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge summit half overlay soft close3d">
@@ -642,7 +667,7 @@
                     <div class="card-info">
                         <span class="card-code">#0002</span>
                         <h3 class="card-name" title="Hinge Summit Half Overlay Soft Close3D">Hinge Summit Half Overlay Soft Close3D</h3>
-                        <div class="card-price-badge"><span>62</span> <span>EGP</span></div>
+                        <div class="card-price-badge">62 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge palma straight soft close 3d">
@@ -652,7 +677,7 @@
                     <div class="card-info">
                         <span class="card-code">#0004</span>
                         <h3 class="card-name" title="Hinge Palma Straight Soft Close 3D">Hinge Palma Straight Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>36</span> <span>EGP</span></div>
+                        <div class="card-price-badge">36 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge palma half overlay soft close 3d">
@@ -662,7 +687,7 @@
                     <div class="card-info">
                         <span class="card-code">#0005</span>
                         <h3 class="card-name" title="Hinge Palma Half Overlay Soft Close 3D">Hinge Palma Half Overlay Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>37</span> <span>EGP</span></div>
+                        <div class="card-price-badge">37 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge scorpion 165soft close  3d palma">
@@ -672,7 +697,7 @@
                     <div class="card-info">
                         <span class="card-code">#0008</span>
                         <h3 class="card-name" title="Hinge Scorpion 165Soft Close  3D Palma">Hinge Scorpion 165Soft Close  3D Palma</h3>
-                        <div class="card-price-badge"><span>71</span> <span>EGP</span></div>
+                        <div class="card-price-badge">71 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge palma ركبة soft close 3d">
@@ -682,7 +707,7 @@
                     <div class="card-info">
                         <span class="card-code">#0009</span>
                         <h3 class="card-name" title="Hinge Palma ركبة Soft Close 3D">Hinge Palma ركبة Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>37</span> <span>EGP</span></div>
+                        <div class="card-price-badge">37 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 90 degree بلند كورنر soft close3d">
@@ -692,17 +717,17 @@
                     <div class="card-info">
                         <span class="card-code">#0010</span>
                         <h3 class="card-name" title="Hinge 90 Degree بلند كورنر Soft Close3D">Hinge 90 Degree بلند كورنر Soft Close3D</h3>
-                        <div class="card-price-badge"><span>58</span> <span>EGP</span></div>
+                        <div class="card-price-badge">58 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge مكمل عقرب 135 degree 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Hinge مكمل عقرب 135 Degree 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_corner.jpg" alt="Hinge مكمل عقرب 135 Degree 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0011</span>
                         <h3 class="card-name" title="Hinge مكمل عقرب 135 Degree 3D">Hinge مكمل عقرب 135 Degree 3D</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي مودرن soft close 15 cm">
@@ -712,7 +737,7 @@
                     <div class="card-info">
                         <span class="card-code">#0025</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 15 cm">ترولي مودرن Soft Close 15 cm</h3>
-                        <div class="card-price-badge"><span>1420</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1420 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي مودرن soft close 40 cm">
@@ -722,7 +747,7 @@
                     <div class="card-info">
                         <span class="card-code">#0026</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 40 cm">ترولي مودرن Soft Close 40 cm</h3>
-                        <div class="card-price-badge"><span>1720</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1720 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="خلع drawer sink white 6 مم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="خلع Drawer Sink White 6 مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="خلع Drawer Sink White 6 مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0042</span>
                         <h3 class="card-name" title="خلع Drawer Sink White 6 مم">خلع Drawer Sink White 6 مم</h3>
-                        <div class="card-price-badge"><span>48</span> <span>EGP</span></div>
+                        <div class="card-price-badge">48 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="خلع drawer sink رصاصي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="خلع Drawer Sink رصاصي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="خلع Drawer Sink رصاصي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0043</span>
                         <h3 class="card-name" title="خلع Drawer Sink رصاصي">خلع Drawer Sink رصاصي</h3>
-                        <div class="card-price-badge"><span>48</span> <span>EGP</span></div>
+                        <div class="card-price-badge">48 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="خلع drawer sink سيلفر 6 مم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="خلع Drawer Sink سيلفر 6 مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="خلع Drawer Sink سيلفر 6 مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0044</span>
                         <h3 class="card-name" title="خلع Drawer Sink سيلفر 6 مم">خلع Drawer Sink سيلفر 6 مم</h3>
-                        <div class="card-price-badge"><span>48</span> <span>EGP</span></div>
+                        <div class="card-price-badge">48 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي تاتش 30 cm مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي تاتش 30 cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي تاتش 30 cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0045</span>
                         <h3 class="card-name" title="Runner/Slide جانبي تاتش 30 cm مودرن">Runner/Slide جانبي تاتش 30 cm مودرن</h3>
-                        <div class="card-price-badge"><span>160</span> <span>EGP</span></div>
+                        <div class="card-price-badge">160 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي تاتش 35cm مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي تاتش 35cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي تاتش 35cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0046</span>
                         <h3 class="card-name" title="Runner/Slide جانبي تاتش 35cm مودرن">Runner/Slide جانبي تاتش 35cm مودرن</h3>
-                        <div class="card-price-badge"><span>170</span> <span>EGP</span></div>
+                        <div class="card-price-badge">170 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي تاتش 40cm مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي تاتش 40cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي تاتش 40cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0047</span>
                         <h3 class="card-name" title="Runner/Slide جانبي تاتش 40cm مودرن">Runner/Slide جانبي تاتش 40cm مودرن</h3>
-                        <div class="card-price-badge"><span>180</span> <span>EGP</span></div>
+                        <div class="card-price-badge">180 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 30 cm             palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 30 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 30 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0048</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 30 cm             Palma">Runner/Slide سفلي Soft Close 2 مرحلة 30 cm             Palma</h3>
-                        <div class="card-price-badge"><span>280</span> <span>EGP</span></div>
+                        <div class="card-price-badge">280 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 35 cm             palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 35 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 35 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0049</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 35 cm             Palma">Runner/Slide سفلي Soft Close 2 مرحلة 35 cm             Palma</h3>
-                        <div class="card-price-badge"><span>290</span> <span>EGP</span></div>
+                        <div class="card-price-badge">290 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 40 cm           palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 40 cm           Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 40 cm           Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0050</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 40 cm           Palma">Runner/Slide سفلي Soft Close 2 مرحلة 40 cm           Palma</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 45 cm            palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 45 cm            Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 45 cm            Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0051</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 45 cm            Palma">Runner/Slide سفلي Soft Close 2 مرحلة 45 cm            Palma</h3>
-                        <div class="card-price-badge"><span>310</span> <span>EGP</span></div>
+                        <div class="card-price-badge">310 EGP</div>
                     </div>
                 </div>
             </div>
@@ -869,102 +894,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 50 cm             palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 50 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 50 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0052</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 50 cm             Palma">Runner/Slide سفلي Soft Close 2 مرحلة 50 cm             Palma</h3>
-                        <div class="card-price-badge"><span>320</span> <span>EGP</span></div>
+                        <div class="card-price-badge">320 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 30 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 30 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 30 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0053</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 30 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 30 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>155</span> <span>EGP</span></div>
+                        <div class="card-price-badge">155 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 35 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 35 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 35 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0054</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 35 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 35 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>165</span> <span>EGP</span></div>
+                        <div class="card-price-badge">165 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 40 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 40 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 40 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0055</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 40 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 40 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>175</span> <span>EGP</span></div>
+                        <div class="card-price-badge">175 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 45 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 45 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 45 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0056</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 45 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 45 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>185</span> <span>EGP</span></div>
+                        <div class="card-price-badge">185 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 50 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 50 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 50 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0057</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 50 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 50 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>195</span> <span>EGP</span></div>
+                        <div class="card-price-badge">195 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close 35 cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close 35 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close 35 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0058</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close 35 cm نيسكو">Runner/Slide جانبي Soft Close 35 cm نيسكو</h3>
-                        <div class="card-price-badge"><span>225</span> <span>EGP</span></div>
+                        <div class="card-price-badge">225 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close 45 cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close 45 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close 45 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0059</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close 45 cm نيسكو">Runner/Slide جانبي Soft Close 45 cm نيسكو</h3>
-                        <div class="card-price-badge"><span>245</span> <span>EGP</span></div>
+                        <div class="card-price-badge">245 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close 50 cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close 50 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close 50 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0060</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close 50 cm نيسكو">Runner/Slide جانبي Soft Close 50 cm نيسكو</h3>
-                        <div class="card-price-badge"><span>255</span> <span>EGP</span></div>
+                        <div class="card-price-badge">255 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سفليه soft close 50 cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفليه Soft Close 50 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفليه Soft Close 50 cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0061</span>
                         <h3 class="card-name" title="Runner/Slide سفليه Soft Close 50 cm نيسكو">Runner/Slide سفليه Soft Close 50 cm نيسكو</h3>
-                        <div class="card-price-badge"><span>500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">500 EGP</div>
                     </div>
                 </div>
             </div>
@@ -990,102 +1015,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide drawer 45 cm تاندم بوكس ارتفاع 167 مم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع 167 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع 167 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0063</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع 167 مم palma">Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع 167 مم palma</h3>
-                        <div class="card-price-badge"><span>980</span> <span>EGP</span></div>
+                        <div class="card-price-badge">980 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide drawer 45 cm تاندم بوكس ارتفاع  84 مم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع  84 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع  84 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0064</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع  84 مم palma">Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع  84 مم palma</h3>
-                        <div class="card-price-badge"><span>930</span> <span>EGP</span></div>
+                        <div class="card-price-badge">930 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ميكانيزم حامل طاسات copra soft close 5 فرع أبيض">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ميكانيزم حامل طاسات COPRA Soft Close 5 فرع أبيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ميكانيزم حامل طاسات COPRA Soft Close 5 فرع أبيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0067</span>
                         <h3 class="card-name" title="ميكانيزم حامل طاسات COPRA Soft Close 5 فرع أبيض">ميكانيزم حامل طاسات COPRA Soft Close 5 فرع أبيض</h3>
-                        <div class="card-price-badge"><span>800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">800 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="حامل طاسات copra soft close 5 فرع">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="حامل طاسات COPRA Soft Close 5 فرع" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="حامل طاسات COPRA Soft Close 5 فرع" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0068</span>
                         <h3 class="card-name" title="حامل طاسات COPRA Soft Close 5 فرع">حامل طاسات COPRA Soft Close 5 فرع</h3>
-                        <div class="card-price-badge"><span>500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="باسكت قمامة 2عين 50 لتر soft close وحده 40  palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="باسكت قمامة 2عين 50 لتر Soft Close وحده 40  palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_waste_bin.jpg" alt="باسكت قمامة 2عين 50 لتر Soft Close وحده 40  palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0076</span>
                         <h3 class="card-name" title="باسكت قمامة 2عين 50 لتر Soft Close وحده 40  palma">باسكت قمامة 2عين 50 لتر Soft Close وحده 40  palma</h3>
-                        <div class="card-price-badge"><span>2500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة قميص علوية soft close palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعة قميص علوية Soft Close Palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة قميص علوية Soft Close Palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0082</span>
                         <h3 class="card-name" title="شماعة قميص علوية Soft Close Palm">شماعة قميص علوية Soft Close Palm</h3>
-                        <div class="card-price-badge"><span>1450</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1450 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترابيزة مكواة soft close palma كود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ترابيزة مكواة Soft Close Palma كود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="ترابيزة مكواة Soft Close Palma كود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0083</span>
                         <h3 class="card-name" title="ترابيزة مكواة Soft Close Palma كود">ترابيزة مكواة Soft Close Palma كود</h3>
-                        <div class="card-price-badge"><span>2850</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2850 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي زجاجي ع runner/slide سفلي 20 cm palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="ترولي زجاجي ع Runner/Slide سفلي 20 cm Palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="ترولي زجاجي ع Runner/Slide سفلي 20 cm Palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0123</span>
                         <h3 class="card-name" title="ترولي زجاجي ع Runner/Slide سفلي 20 cm Palm">ترولي زجاجي ع Runner/Slide سفلي 20 cm Palm</h3>
-                        <div class="card-price-badge"><span>1850</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1850 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سوفت 35cm mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سوفت 35cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide سوفت 35cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0132</span>
                         <h3 class="card-name" title="Runner/Slide سوفت 35cm mk">Runner/Slide سوفت 35cm mk</h3>
-                        <div class="card-price-badge"><span>160</span> <span>EGP</span></div>
+                        <div class="card-price-badge">160 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سوفت 40cm mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سوفت 40cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide سوفت 40cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0133</span>
                         <h3 class="card-name" title="Runner/Slide سوفت 40cm mk">Runner/Slide سوفت 40cm mk</h3>
-                        <div class="card-price-badge"><span>170</span> <span>EGP</span></div>
+                        <div class="card-price-badge">170 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1111,102 +1136,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide سوفت 45cm mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سوفت 45cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide سوفت 45cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0134</span>
                         <h3 class="card-name" title="Runner/Slide سوفت 45cm mk">Runner/Slide سوفت 45cm mk</h3>
-                        <div class="card-price-badge"><span>180</span> <span>EGP</span></div>
+                        <div class="card-price-badge">180 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide سوفت 50cm mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سوفت 50cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide سوفت 50cm mk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0135</span>
                         <h3 class="card-name" title="Runner/Slide سوفت 50cm mk">Runner/Slide سوفت 50cm mk</h3>
-                        <div class="card-price-badge"><span>190</span> <span>EGP</span></div>
+                        <div class="card-price-badge">190 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو سفلیه سوفت 35cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو سفلیه سوفت 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو سفلیه سوفت 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0136</span>
                         <h3 class="card-name" title="Runner/Slide دنكو سفلیه سوفت 35cm">Runner/Slide دنكو سفلیه سوفت 35cm</h3>
-                        <div class="card-price-badge"><span>270</span> <span>EGP</span></div>
+                        <div class="card-price-badge">270 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو سفلیه سوفت 45cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو سفلیه سوفت 45cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو سفلیه سوفت 45cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0137</span>
                         <h3 class="card-name" title="Runner/Slide دنكو سفلیه سوفت 45cm">Runner/Slide دنكو سفلیه سوفت 45cm</h3>
-                        <div class="card-price-badge"><span>290</span> <span>EGP</span></div>
+                        <div class="card-price-badge">290 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو سفلیه سوفت50cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو سفلیه سوفت50cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو سفلیه سوفت50cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0138</span>
                         <h3 class="card-name" title="Runner/Slide دنكو سفلیه سوفت50cm">Runner/Slide دنكو سفلیه سوفت50cm</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3d soft close straight  (mk)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge 3D Soft Close Straight  (MK)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge 3D Soft Close Straight  (MK)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0139</span>
                         <h3 class="card-name" title="Hinge 3D Soft Close Straight  (MK)">Hinge 3D Soft Close Straight  (MK)</h3>
-                        <div class="card-price-badge"><span>27</span> <span>EGP</span></div>
+                        <div class="card-price-badge">27 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3d soft close half overlay (mk)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge 3D Soft Close Half Overlay (MK)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge 3D Soft Close Half Overlay (MK)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0140</span>
                         <h3 class="card-name" title="Hinge 3D Soft Close Half Overlay (MK)">Hinge 3D Soft Close Half Overlay (MK)</h3>
-                        <div class="card-price-badge"><span>27</span> <span>EGP</span></div>
+                        <div class="card-price-badge">27 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3d ( 90) drawerهmk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Hinge 3D ( 90) Drawerهmk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_corner.jpg" alt="Hinge 3D ( 90) Drawerهmk" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0141</span>
                         <h3 class="card-name" title="Hinge 3D ( 90) Drawerهmk">Hinge 3D ( 90) Drawerهmk</h3>
-                        <div class="card-price-badge"><span>42</span> <span>EGP</span></div>
+                        <div class="card-price-badge">42 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge soft close straight 2d  mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge Soft Close Straight 2D  MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge Soft Close Straight 2D  MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0143</span>
                         <h3 class="card-name" title="Hinge Soft Close Straight 2D  MK">Hinge Soft Close Straight 2D  MK</h3>
-                        <div class="card-price-badge"><span>21</span> <span>EGP</span></div>
+                        <div class="card-price-badge">21 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer تخليعه تحت الsink 90 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Drawer تخليعه تحت الSink 90 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer تخليعه تحت الSink 90 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0152</span>
                         <h3 class="card-name" title="Drawer تخليعه تحت الSink 90 cm">Drawer تخليعه تحت الSink 90 cm</h3>
-                        <div class="card-price-badge"><span>2700</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2700 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1232,102 +1257,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="ترابيزه مكوه سوفت کلوز نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترابيزه مكوه سوفت کلوز نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="ترابيزه مكوه سوفت کلوز نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0160</span>
                         <h3 class="card-name" title="ترابيزه مكوه سوفت کلوز نيسكو">ترابيزه مكوه سوفت کلوز نيسكو</h3>
-                        <div class="card-price-badge"><span>4400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4400 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge بلوم سوفت straight">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge بلوم سوفت Straight" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge بلوم سوفت Straight" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0176</span>
                         <h3 class="card-name" title="Hinge بلوم سوفت Straight">Hinge بلوم سوفت Straight</h3>
-                        <div class="card-price-badge"><span>155</span> <span>EGP</span></div>
+                        <div class="card-price-badge">155 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge بلوم سوفت half overlay">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge بلوم سوفت Half Overlay" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge بلوم سوفت Half Overlay" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0177</span>
                         <h3 class="card-name" title="Hinge بلوم سوفت Half Overlay">Hinge بلوم سوفت Half Overlay</h3>
-                        <div class="card-price-badge"><span>165</span> <span>EGP</span></div>
+                        <div class="card-price-badge">165 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge بلوم سوفت full overlay">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge بلوم سوفت Full Overlay" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge بلوم سوفت Full Overlay" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0178</span>
                         <h3 class="card-name" title="Hinge بلوم سوفت Full Overlay">Hinge بلوم سوفت Full Overlay</h3>
-                        <div class="card-price-badge"><span>195</span> <span>EGP</span></div>
+                        <div class="card-price-badge">195 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 30جانبيه عاديه mmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 30جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 30جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0239</span>
                         <h3 class="card-name" title="Runner/Slide 30جانبيه عاديه mmb">Runner/Slide 30جانبيه عاديه mmb</h3>
-                        <div class="card-price-badge"><span>65</span> <span>EGP</span></div>
+                        <div class="card-price-badge">65 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 40جانبيه عاديه mmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 40جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 40جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0240</span>
                         <h3 class="card-name" title="Runner/Slide 40جانبيه عاديه mmb">Runner/Slide 40جانبيه عاديه mmb</h3>
-                        <div class="card-price-badge"><span>79</span> <span>EGP</span></div>
+                        <div class="card-price-badge">79 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 45جانبيه عاديه mmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 45جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 45جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0241</span>
                         <h3 class="card-name" title="Runner/Slide 45جانبيه عاديه mmb">Runner/Slide 45جانبيه عاديه mmb</h3>
-                        <div class="card-price-badge"><span>88</span> <span>EGP</span></div>
+                        <div class="card-price-badge">88 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 50جانبيه عاديه mmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 50جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 50جانبيه عاديه mmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0242</span>
                         <h3 class="card-name" title="Runner/Slide 50جانبيه عاديه mmb">Runner/Slide 50جانبيه عاديه mmb</h3>
-                        <div class="card-price-badge"><span>96</span> <span>EGP</span></div>
+                        <div class="card-price-badge">96 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 35جانبيه عاديه مودرن هاوس">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 35جانبيه عاديه مودرن هاوس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 35جانبيه عاديه مودرن هاوس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0243</span>
                         <h3 class="card-name" title="Runner/Slide 35جانبيه عاديه مودرن هاوس">Runner/Slide 35جانبيه عاديه مودرن هاوس</h3>
-                        <div class="card-price-badge"><span>80</span> <span>EGP</span></div>
+                        <div class="card-price-badge">80 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي تاتش 50cm مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي تاتش 50cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي تاتش 50cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0246</span>
                         <h3 class="card-name" title="Runner/Slide جانبي تاتش 50cm مودرن">Runner/Slide جانبي تاتش 50cm مودرن</h3>
-                        <div class="card-price-badge"><span>200</span> <span>EGP</span></div>
+                        <div class="card-price-badge">200 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1353,102 +1378,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide سفلي soft close 2 مرحلة 55 cm             palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفلي Soft Close 2 مرحلة 55 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفلي Soft Close 2 مرحلة 55 cm             Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0249</span>
                         <h3 class="card-name" title="Runner/Slide سفلي Soft Close 2 مرحلة 55 cm             Palma">Runner/Slide سفلي Soft Close 2 مرحلة 55 cm             Palma</h3>
-                        <div class="card-price-badge"><span>330</span> <span>EGP</span></div>
+                        <div class="card-price-badge">330 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكاية هرمية movable  gmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="تكاية هرمية Movable  GMB" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكاية هرمية Movable  GMB" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0257</span>
                         <h3 class="card-name" title="تكاية هرمية Movable  GMB">تكاية هرمية Movable  GMB</h3>
-                        <div class="card-price-badge"><span>0.8</span> <span>EGP</span></div>
+                        <div class="card-price-badge">0.8 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي turkish 20 cm سوفت stara- x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="ترولي Turkish 20 cm سوفت STARA- X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي Turkish 20 cm سوفت STARA- X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0258</span>
                         <h3 class="card-name" title="ترولي Turkish 20 cm سوفت STARA- X">ترولي Turkish 20 cm سوفت STARA- X</h3>
-                        <div class="card-price-badge"><span>1400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1400 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي turkish 25 cm سوفت stara-x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترولي Turkish 25 cm سوفت STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي Turkish 25 cm سوفت STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0259</span>
                         <h3 class="card-name" title="ترولي Turkish 25 cm سوفت STARA-X">ترولي Turkish 25 cm سوفت STARA-X</h3>
-                        <div class="card-price-badge"><span>1500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer 80 cm ع runner/slide سفلي ( black) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer 80 cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مطبقيه Drawer 80 cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0260</span>
                         <h3 class="card-name" title="مطبقيه Drawer 80 cm ع Runner/Slide سفلي ( Black) palma">مطبقيه Drawer 80 cm ع Runner/Slide سفلي ( Black) palma</h3>
-                        <div class="card-price-badge"><span>2200</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2200 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer 60 cm ع runner/slide سفلي ( black) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer 60 cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مطبقيه Drawer 60 cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0261</span>
                         <h3 class="card-name" title="مطبقيه Drawer 60 cm ع Runner/Slide سفلي ( Black) palma">مطبقيه Drawer 60 cm ع Runner/Slide سفلي ( Black) palma</h3>
-                        <div class="card-price-badge"><span>2000</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2000 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 90 degree بمشقبية straight عاديه summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Hinge 90 Degree بمشقبية Straight عاديه Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_corner.jpg" alt="Hinge 90 Degree بمشقبية Straight عاديه Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0271</span>
                         <h3 class="card-name" title="Hinge 90 Degree بمشقبية Straight عاديه Summit Turkish">Hinge 90 Degree بمشقبية Straight عاديه Summit Turkish</h3>
-                        <div class="card-price-badge"><span>51</span> <span>EGP</span></div>
+                        <div class="card-price-badge">51 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide عاديه 25cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 25cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 25cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0292</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 25cm كوبرا">Runner/Slide عاديه 25cm كوبرا</h3>
-                        <div class="card-price-badge"><span>75</span> <span>EGP</span></div>
+                        <div class="card-price-badge">75 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide عاديه 30cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 30cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 30cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0293</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 30cm كوبرا">Runner/Slide عاديه 30cm كوبرا</h3>
-                        <div class="card-price-badge"><span>80</span> <span>EGP</span></div>
+                        <div class="card-price-badge">80 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide عاديه 35cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 35cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 35cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0294</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 35cm كوبرا">Runner/Slide عاديه 35cm كوبرا</h3>
-                        <div class="card-price-badge"><span>85</span> <span>EGP</span></div>
+                        <div class="card-price-badge">85 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1474,102 +1499,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide عاديه 40cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 40cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 40cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0295</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 40cm كوبرا">Runner/Slide عاديه 40cm كوبرا</h3>
-                        <div class="card-price-badge"><span>90</span> <span>EGP</span></div>
+                        <div class="card-price-badge">90 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide عاديه 45cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 45cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 45cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0296</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 45cm كوبرا">Runner/Slide عاديه 45cm كوبرا</h3>
-                        <div class="card-price-badge"><span>95</span> <span>EGP</span></div>
+                        <div class="card-price-badge">95 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide عاديه 50cm كوبرا">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide عاديه 50cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide عاديه 50cm كوبرا" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0297</span>
                         <h3 class="card-name" title="Runner/Slide عاديه 50cm كوبرا">Runner/Slide عاديه 50cm كوبرا</h3>
-                        <div class="card-price-badge"><span>100</span> <span>EGP</span></div>
+                        <div class="card-price-badge">100 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="سوفت hinge scorpion بلوم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="سوفت Hinge Scorpion بلوم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="سوفت Hinge Scorpion بلوم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0309</span>
                         <h3 class="card-name" title="سوفت Hinge Scorpion بلوم">سوفت Hinge Scorpion بلوم</h3>
-                        <div class="card-price-badge"><span>135</span> <span>EGP</span></div>
+                        <div class="card-price-badge">135 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 30بلوم مرحلتين سفلي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 30بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 30بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0310</span>
                         <h3 class="card-name" title="Runner/Slide 30بلوم مرحلتين سفلي">Runner/Slide 30بلوم مرحلتين سفلي</h3>
-                        <div class="card-price-badge"><span>1220</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1220 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 35بلوم مرحلتين سفلي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 35بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 35بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0311</span>
                         <h3 class="card-name" title="Runner/Slide 35بلوم مرحلتين سفلي">Runner/Slide 35بلوم مرحلتين سفلي</h3>
-                        <div class="card-price-badge"><span>1230</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1230 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 40بلوم مرحلتين سفلي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 40بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 40بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0312</span>
                         <h3 class="card-name" title="Runner/Slide 40بلوم مرحلتين سفلي">Runner/Slide 40بلوم مرحلتين سفلي</h3>
-                        <div class="card-price-badge"><span>1240</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1240 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 45بلوم مرحلتين سفلي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 45بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 45بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0313</span>
                         <h3 class="card-name" title="Runner/Slide 45بلوم مرحلتين سفلي">Runner/Slide 45بلوم مرحلتين سفلي</h3>
-                        <div class="card-price-badge"><span>1250</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1250 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 50بلوم مرحلتين سفلي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 50بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 50بلوم مرحلتين سفلي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0314</span>
                         <h3 class="card-name" title="Runner/Slide 50بلوم مرحلتين سفلي">Runner/Slide 50بلوم مرحلتين سفلي</h3>
-                        <div class="card-price-badge"><span>1260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1260 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close مودرن 25 cm 4 بليه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close مودرن 25 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close مودرن 25 cm 4 بليه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0331</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close مودرن 25 cm 4 بليه">Runner/Slide جانبي Soft Close مودرن 25 cm 4 بليه</h3>
-                        <div class="card-price-badge"><span>145</span> <span>EGP</span></div>
+                        <div class="card-price-badge">145 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1595,102 +1620,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="ترولي مودرن soft close 20 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ترولي مودرن Soft Close 20 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي مودرن Soft Close 20 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0332</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 20 cm">ترولي مودرن Soft Close 20 cm</h3>
-                        <div class="card-price-badge"><span>1640</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1640 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي مودرن soft close 25 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="ترولي مودرن Soft Close 25 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي مودرن Soft Close 25 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0333</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 25 cm">ترولي مودرن Soft Close 25 cm</h3>
-                        <div class="card-price-badge"><span>1660</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1660 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3dدانكو straight soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge 3Dدانكو Straight Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge 3Dدانكو Straight Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0362</span>
                         <h3 class="card-name" title="Hinge 3Dدانكو Straight Soft Close">Hinge 3Dدانكو Straight Soft Close</h3>
-                        <div class="card-price-badge"><span>27</span> <span>EGP</span></div>
+                        <div class="card-price-badge">27 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3dدانكو half overlay soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge 3Dدانكو Half Overlay Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge 3Dدانكو Half Overlay Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0363</span>
                         <h3 class="card-name" title="Hinge 3Dدانكو Half Overlay Soft Close">Hinge 3Dدانكو Half Overlay Soft Close</h3>
-                        <div class="card-price-badge"><span>27</span> <span>EGP</span></div>
+                        <div class="card-price-badge">27 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3dدانكو full overlay soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge 3Dدانكو Full Overlay Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge 3Dدانكو Full Overlay Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0364</span>
                         <h3 class="card-name" title="Hinge 3Dدانكو Full Overlay Soft Close">Hinge 3Dدانكو Full Overlay Soft Close</h3>
-                        <div class="card-price-badge"><span>27</span> <span>EGP</span></div>
+                        <div class="card-price-badge">27 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو 25cm جانبيه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو 25cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو 25cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0365</span>
                         <h3 class="card-name" title="Runner/Slide دنكو 25cm جانبيه Soft Close">Runner/Slide دنكو 25cm جانبيه Soft Close</h3>
-                        <div class="card-price-badge"><span>145</span> <span>EGP</span></div>
+                        <div class="card-price-badge">145 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو 30cm جانبيه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو 30cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو 30cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0366</span>
                         <h3 class="card-name" title="Runner/Slide دنكو 30cm جانبيه Soft Close">Runner/Slide دنكو 30cm جانبيه Soft Close</h3>
-                        <div class="card-price-badge"><span>155</span> <span>EGP</span></div>
+                        <div class="card-price-badge">155 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو 35cm جانبيه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو 35cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو 35cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0367</span>
                         <h3 class="card-name" title="Runner/Slide دنكو 35cm جانبيه Soft Close">Runner/Slide دنكو 35cm جانبيه Soft Close</h3>
-                        <div class="card-price-badge"><span>165</span> <span>EGP</span></div>
+                        <div class="card-price-badge">165 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو 40cm جانبيه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو 40cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو 40cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0368</span>
                         <h3 class="card-name" title="Runner/Slide دنكو 40cm جانبيه Soft Close">Runner/Slide دنكو 40cm جانبيه Soft Close</h3>
-                        <div class="card-price-badge"><span>175</span> <span>EGP</span></div>
+                        <div class="card-price-badge">175 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو 45cm جانبيه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو 45cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو 45cm جانبيه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0369</span>
                         <h3 class="card-name" title="Runner/Slide دنكو 45cm جانبيه Soft Close">Runner/Slide دنكو 45cm جانبيه Soft Close</h3>
-                        <div class="card-price-badge"><span>185</span> <span>EGP</span></div>
+                        <div class="card-price-badge">185 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1716,102 +1741,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="drawer ملابس 80cm زجاج بrunner/slide سفلي soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Drawer ملابس 80cm زجاج بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Drawer ملابس 80cm زجاج بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0376</span>
                         <h3 class="card-name" title="Drawer ملابس 80cm زجاج بRunner/Slide سفلي Soft Close Palma">Drawer ملابس 80cm زجاج بRunner/Slide سفلي Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3250</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3250 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer ملابس 90cm زجاج بrunner/slide سفلي soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Drawer ملابس 90cm زجاج بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Drawer ملابس 90cm زجاج بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0377</span>
                         <h3 class="card-name" title="Drawer ملابس 90cm زجاج بRunner/Slide سفلي Soft Close Palma">Drawer ملابس 90cm زجاج بRunner/Slide سفلي Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3350</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3350 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي المونيوم ع runner/slide سفلي 30cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="ترولي المونيوم ع Runner/Slide سفلي 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="ترولي المونيوم ع Runner/Slide سفلي 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0392</span>
                         <h3 class="card-name" title="ترولي المونيوم ع Runner/Slide سفلي 30cm">ترولي المونيوم ع Runner/Slide سفلي 30cm</h3>
-                        <div class="card-price-badge"><span>4150</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4150 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي المونيوم ع runner/slide سفلي 35cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="ترولي المونيوم ع Runner/Slide سفلي 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="ترولي المونيوم ع Runner/Slide سفلي 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0393</span>
                         <h3 class="card-name" title="ترولي المونيوم ع Runner/Slide سفلي 35cm">ترولي المونيوم ع Runner/Slide سفلي 35cm</h3>
-                        <div class="card-price-badge"><span>4300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي المونيوم ع runner/slide سفلي 40cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="ترولي المونيوم ع Runner/Slide سفلي 40cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="ترولي المونيوم ع Runner/Slide سفلي 40cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0394</span>
                         <h3 class="card-name" title="ترولي المونيوم ع Runner/Slide سفلي 40cm">ترولي المونيوم ع Runner/Slide سفلي 40cm</h3>
-                        <div class="card-price-badge"><span>4400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4400 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer احذية 70cm soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Drawer احذية 70cm Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer احذية 70cm Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0402</span>
                         <h3 class="card-name" title="Drawer احذية 70cm Soft Close Palma">Drawer احذية 70cm Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3000</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3000 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer احذية 80cm soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Drawer احذية 80cm Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer احذية 80cm Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0403</span>
                         <h3 class="card-name" title="Drawer احذية 80cm Soft Close Palma">Drawer احذية 80cm Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3350</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3350 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="طقم drawer زجاج 80cm (2 drawer مطبخ ) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="طقم Drawer زجاج 80cm (2 Drawer مطبخ ) Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="طقم Drawer زجاج 80cm (2 Drawer مطبخ ) Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0407</span>
                         <h3 class="card-name" title="طقم Drawer زجاج 80cm (2 Drawer مطبخ ) Palma">طقم Drawer زجاج 80cm (2 Drawer مطبخ ) Palma</h3>
-                        <div class="card-price-badge"><span>5460</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5460 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer رمادي مقcm الماني 70cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer رمادي مقcm الماني 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مطبقيه Drawer رمادي مقcm الماني 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0420</span>
                         <h3 class="card-name" title="مطبقيه Drawer رمادي مقcm الماني 70cm">مطبقيه Drawer رمادي مقcm الماني 70cm</h3>
-                        <div class="card-price-badge"><span>5500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer رمادي مقcm الماني 80cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer رمادي مقcm الماني 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مطبقيه Drawer رمادي مقcm الماني 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0421</span>
                         <h3 class="card-name" title="مطبقيه Drawer رمادي مقcm الماني 80cm">مطبقيه Drawer رمادي مقcm الماني 80cm</h3>
-                        <div class="card-price-badge"><span>5800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5800 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1837,102 +1862,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide سفليه soft close 35cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide سفليه Soft Close 35cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide سفليه Soft Close 35cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0422</span>
                         <h3 class="card-name" title="Runner/Slide سفليه Soft Close 35cm نيسكو">Runner/Slide سفليه Soft Close 35cm نيسكو</h3>
-                        <div class="card-price-badge"><span>450</span> <span>EGP</span></div>
+                        <div class="card-price-badge">450 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide summit 50cm جانبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Summit 50cm جانبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide Summit 50cm جانبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0424</span>
                         <h3 class="card-name" title="Runner/Slide Summit 50cm جانبي">Runner/Slide Summit 50cm جانبي</h3>
-                        <div class="card-price-badge"><span>470</span> <span>EGP</span></div>
+                        <div class="card-price-badge">470 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge 3dدانكو  2waystraight soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge 3Dدانكو  2wayStraight Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge 3Dدانكو  2wayStraight Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0433</span>
                         <h3 class="card-name" title="Hinge 3Dدانكو  2wayStraight Soft Close">Hinge 3Dدانكو  2wayStraight Soft Close</h3>
-                        <div class="card-price-badge"><span>36</span> <span>EGP</span></div>
+                        <div class="card-price-badge">36 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="باسكت2عین 40 لتر سوفتmk وحده 35">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="باسكت2عین 40 لتر سوفتmk وحده 35" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_waste_bin.jpg" alt="باسكت2عین 40 لتر سوفتmk وحده 35" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0443</span>
                         <h3 class="card-name" title="باسكت2عین 40 لتر سوفتmk وحده 35">باسكت2عین 40 لتر سوفتmk وحده 35</h3>
-                        <div class="card-price-badge"><span>1950</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1950 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="طقم عجل درسنج 2ضلفه soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="طقم عجل درسنج 2ضلفه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_wheels.jpg" alt="طقم عجل درسنج 2ضلفه Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0450</span>
                         <h3 class="card-name" title="طقم عجل درسنج 2ضلفه Soft Close">طقم عجل درسنج 2ضلفه Soft Close</h3>
-                        <div class="card-price-badge"><span>675</span> <span>EGP</span></div>
+                        <div class="card-price-badge">675 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="عود runner/slide درسنج 3meter  لطقم 2 ضلفه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="عود Runner/Slide درسنج 3meter  لطقم 2 ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="عود Runner/Slide درسنج 3meter  لطقم 2 ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0451</span>
                         <h3 class="card-name" title="عود Runner/Slide درسنج 3meter  لطقم 2 ضلفه">عود Runner/Slide درسنج 3meter  لطقم 2 ضلفه</h3>
-                        <div class="card-price-badge"><span>195</span> <span>EGP</span></div>
+                        <div class="card-price-badge">195 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو سفلیه سوفت 40cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو سفلیه سوفت 40cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو سفلیه سوفت 40cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0453</span>
                         <h3 class="card-name" title="Runner/Slide دنكو سفلیه سوفت 40cm">Runner/Slide دنكو سفلیه سوفت 40cm</h3>
-                        <div class="card-price-badge"><span>280</span> <span>EGP</span></div>
+                        <div class="card-price-badge">280 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide دنكو سفلیه سوفت 30cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide دنكو سفلیه سوفت 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide دنكو سفلیه سوفت 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0454</span>
                         <h3 class="card-name" title="Runner/Slide دنكو سفلیه سوفت 30cm">Runner/Slide دنكو سفلیه سوفت 30cm</h3>
-                        <div class="card-price-badge"><span>260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">260 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer ملابس مميز 80 cm بrunner/slide سفلي soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Drawer ملابس مميز 80 cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Drawer ملابس مميز 80 cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0466</span>
                         <h3 class="card-name" title="Drawer ملابس مميز 80 cm بRunner/Slide سفلي Soft Close Palma">Drawer ملابس مميز 80 cm بRunner/Slide سفلي Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3850</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3850 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer ملابس مميز 90 cm بrunner/slide سفلي soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Drawer ملابس مميز 90 cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Drawer ملابس مميز 90 cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0467</span>
                         <h3 class="card-name" title="Drawer ملابس مميز 90 cm بRunner/Slide سفلي Soft Close Palma">Drawer ملابس مميز 90 cm بRunner/Slide سفلي Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3950</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3950 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1958,102 +1983,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="drawer ملابس مميز 70cm بrunner/slide سفلي soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Drawer ملابس مميز 70cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Drawer ملابس مميز 70cm بRunner/Slide سفلي Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0468</span>
                         <h3 class="card-name" title="Drawer ملابس مميز 70cm بRunner/Slide سفلي Soft Close Palma">Drawer ملابس مميز 70cm بRunner/Slide سفلي Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>3750</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3750 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge scorpion 155soft close  3d palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge Scorpion 155Soft Close  3D Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge Scorpion 155Soft Close  3D Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0490</span>
                         <h3 class="card-name" title="Hinge Scorpion 155Soft Close  3D Palma">Hinge Scorpion 155Soft Close  3D Palma</h3>
-                        <div class="card-price-badge"><span>97</span> <span>EGP</span></div>
+                        <div class="card-price-badge">97 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide drawer 50cm تاندم بوكس ارتفاع  84 مم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  84 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  84 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0491</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  84 مم palma">Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  84 مم palma</h3>
-                        <div class="card-price-badge"><span>1020</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1020 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide drawer 50cm تاندم بوكس ارتفاع 167 مم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع 167 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع 167 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0492</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع 167 مم palma">Runner/Slide Drawer 50cm تاندم بوكس ارتفاع 167 مم palma</h3>
-                        <div class="card-price-badge"><span>1180</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1180 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide drawer 50cm تاندم بوكس ارتفاع  116 مم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  116 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  116 مم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0493</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  116 مم palma">Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  116 مم palma</h3>
-                        <div class="card-price-badge"><span>1100</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1100 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي مودرن soft close 35cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="ترولي مودرن Soft Close 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي مودرن Soft Close 35cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0495</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 35cm">ترولي مودرن Soft Close 35cm</h3>
-                        <div class="card-price-badge"><span>1700</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1700 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف straight soft close 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف Straight Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge كاف Straight Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0497</span>
                         <h3 class="card-name" title="Hinge كاف Straight Soft Close 3D">Hinge كاف Straight Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>44</span> <span>EGP</span></div>
+                        <div class="card-price-badge">44 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف half overlay soft close 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف Half Overlay Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge كاف Half Overlay Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0498</span>
                         <h3 class="card-name" title="Hinge كاف Half Overlay Soft Close 3D">Hinge كاف Half Overlay Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>44</span> <span>EGP</span></div>
+                        <div class="card-price-badge">44 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف ركبة  soft close 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف ركبة  Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge كاف ركبة  Soft Close 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0499</span>
                         <h3 class="card-name" title="Hinge كاف ركبة  Soft Close 3D">Hinge كاف ركبة  Soft Close 3D</h3>
-                        <div class="card-price-badge"><span>44</span> <span>EGP</span></div>
+                        <div class="card-price-badge">44 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف straight soft close 4d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف Straight Soft Close 4D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge كاف Straight Soft Close 4D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0500</span>
                         <h3 class="card-name" title="Hinge كاف Straight Soft Close 4D">Hinge كاف Straight Soft Close 4D</h3>
-                        <div class="card-price-badge"><span>49</span> <span>EGP</span></div>
+                        <div class="card-price-badge">49 EGP</div>
                     </div>
                 </div>
             </div>
@@ -2079,102 +2104,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="hinge كاف straight soft close 2d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف Straight Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge كاف Straight Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0501</span>
                         <h3 class="card-name" title="Hinge كاف Straight Soft Close 2D">Hinge كاف Straight Soft Close 2D</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف half overlay soft close 2d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف Half Overlay Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge كاف Half Overlay Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0502</span>
                         <h3 class="card-name" title="Hinge كاف Half Overlay Soft Close 2D">Hinge كاف Half Overlay Soft Close 2D</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge كاف ركبة soft close 2d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge كاف ركبة Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge كاف ركبة Soft Close 2D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0503</span>
                         <h3 class="card-name" title="Hinge كاف ركبة Soft Close 2D">Hinge كاف ركبة Soft Close 2D</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اوميجا straight فضي 3d soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge اوميجا Straight فضي 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge اوميجا Straight فضي 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0512</span>
                         <h3 class="card-name" title="Hinge اوميجا Straight فضي 3D Soft Close">Hinge اوميجا Straight فضي 3D Soft Close</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اوميجا نص ركبه فضي 3d soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge اوميجا نص ركبه فضي 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge اوميجا نص ركبه فضي 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0513</span>
                         <h3 class="card-name" title="Hinge اوميجا نص ركبه فضي 3D Soft Close">Hinge اوميجا نص ركبه فضي 3D Soft Close</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اوميجا straight black 3d soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge اوميجا Straight Black 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge اوميجا Straight Black 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0514</span>
                         <h3 class="card-name" title="Hinge اوميجا Straight Black 3D Soft Close">Hinge اوميجا Straight Black 3D Soft Close</h3>
-                        <div class="card-price-badge"><span>30</span> <span>EGP</span></div>
+                        <div class="card-price-badge">30 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اوميجا نص ركبه black 3d soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge اوميجا نص ركبه Black 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge اوميجا نص ركبه Black 3D Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0515</span>
                         <h3 class="card-name" title="Hinge اوميجا نص ركبه Black 3D Soft Close">Hinge اوميجا نص ركبه Black 3D Soft Close</h3>
-                        <div class="card-price-badge"><span>30</span> <span>EGP</span></div>
+                        <div class="card-price-badge">30 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer 70cm ع runner/slide سفلي ( black) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer 70cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مطبقيه Drawer 70cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0521</span>
                         <h3 class="card-name" title="مطبقيه Drawer 70cm ع Runner/Slide سفلي ( Black) palma">مطبقيه Drawer 70cm ع Runner/Slide سفلي ( Black) palma</h3>
-                        <div class="card-price-badge"><span>2100</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2100 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه drawer 90cm ع runner/slide سفلي ( black) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه Drawer 90cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مطبقيه Drawer 90cm ع Runner/Slide سفلي ( Black) palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0522</span>
                         <h3 class="card-name" title="مطبقيه Drawer 90cm ع Runner/Slide سفلي ( Black) palma">مطبقيه Drawer 90cm ع Runner/Slide سفلي ( Black) palma</h3>
-                        <div class="card-price-badge"><span>2300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي مودرن soft close 30cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترولي مودرن Soft Close 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي مودرن Soft Close 30cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0526</span>
                         <h3 class="card-name" title="ترولي مودرن Soft Close 30cm">ترولي مودرن Soft Close 30cm</h3>
-                        <div class="card-price-badge"><span>1680</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1680 EGP</div>
                     </div>
                 </div>
             </div>
@@ -2200,102 +2225,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide جانبي soft close palma 30 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close Palma 30 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close Palma 30 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0527</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close Palma 30 cm">Runner/Slide جانبي Soft Close Palma 30 cm</h3>
-                        <div class="card-price-badge"><span>180</span> <span>EGP</span></div>
+                        <div class="card-price-badge">180 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close palma 35 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close Palma 35 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close Palma 35 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0528</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close Palma 35 cm">Runner/Slide جانبي Soft Close Palma 35 cm</h3>
-                        <div class="card-price-badge"><span>190</span> <span>EGP</span></div>
+                        <div class="card-price-badge">190 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close palma 40 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close Palma 40 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close Palma 40 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0529</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close Palma 40 cm">Runner/Slide جانبي Soft Close Palma 40 cm</h3>
-                        <div class="card-price-badge"><span>200</span> <span>EGP</span></div>
+                        <div class="card-price-badge">200 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close palma 45 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close Palma 45 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close Palma 45 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0530</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close Palma 45 cm">Runner/Slide جانبي Soft Close Palma 45 cm</h3>
-                        <div class="card-price-badge"><span>210</span> <span>EGP</span></div>
+                        <div class="card-price-badge">210 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي soft close palma 50 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي Soft Close Palma 50 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي Soft Close Palma 50 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0531</span>
                         <h3 class="card-name" title="Runner/Slide جانبي Soft Close Palma 50 cm">Runner/Slide جانبي Soft Close Palma 50 cm</h3>
-                        <div class="card-price-badge"><span>220</span> <span>EGP</span></div>
+                        <div class="card-price-badge">220 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer مطبخ زجاج soft close 60cm palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Drawer مطبخ زجاج Soft Close 60cm Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer مطبخ زجاج Soft Close 60cm Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0532</span>
                         <h3 class="card-name" title="Drawer مطبخ زجاج Soft Close 60cm Palma">Drawer مطبخ زجاج Soft Close 60cm Palma</h3>
-                        <div class="card-price-badge"><span>2400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2400 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="حامل طاسات black سوفت palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="حامل طاسات Black سوفت Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="حامل طاسات Black سوفت Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0533</span>
                         <h3 class="card-name" title="حامل طاسات Black سوفت Palma">حامل طاسات Black سوفت Palma</h3>
-                        <div class="card-price-badge"><span>1600</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1600 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide جانبي تاتش 45 cm مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide جانبي تاتش 45 cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide جانبي تاتش 45 cm مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0558</span>
                         <h3 class="card-name" title="Runner/Slide جانبي تاتش 45 cm مودرن">Runner/Slide جانبي تاتش 45 cm مودرن</h3>
-                        <div class="card-price-badge"><span>190</span> <span>EGP</span></div>
+                        <div class="card-price-badge">190 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترابيزه مكوه سوفت کلوز  كاف">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترابيزه مكوه سوفت کلوز  كاف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="ترابيزه مكوه سوفت کلوز  كاف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0565</span>
                         <h3 class="card-name" title="ترابيزه مكوه سوفت کلوز  كاف">ترابيزه مكوه سوفت کلوز  كاف</h3>
-                        <div class="card-price-badge"><span>3150</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3150 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة بناطيل علوية مجوز  نبيتي soft close كاف">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل علوية مجوز  نبيتي Soft Close كاف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل علوية مجوز  نبيتي Soft Close كاف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0566</span>
                         <h3 class="card-name" title="شماعة بناطيل علوية مجوز  نبيتي Soft Close كاف">شماعة بناطيل علوية مجوز  نبيتي Soft Close كاف</h3>
-                        <div class="card-price-badge"><span>3400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3400 EGP</div>
                     </div>
                 </div>
             </div>
@@ -2321,22 +2346,22 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide drawer 50cm تاندم بوكس  samet">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide Drawer 50cm تاندم بوكس  samet" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_tandem.jpg" alt="Runner/Slide Drawer 50cm تاندم بوكس  samet" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0567</span>
                         <h3 class="card-name" title="Runner/Slide Drawer 50cm تاندم بوكس  samet">Runner/Slide Drawer 50cm تاندم بوكس  samet</h3>
-                        <div class="card-price-badge"><span>1250</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1250 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer تخليه تحت الsink 80cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Drawer تخليه تحت الSink 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer تخليه تحت الSink 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0590</span>
                         <h3 class="card-name" title="Drawer تخليه تحت الSink 80cm">Drawer تخليه تحت الSink 80cm</h3>
-                        <div class="card-price-badge"><span>2500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2500 EGP</div>
                     </div>
                 </div>
             </div>

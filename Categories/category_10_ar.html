@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_10_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">15 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">١٥ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,110 +644,110 @@
                     <div class="category-badge-icon">👑</div>
                     <div>
                         <h2 class="category-name-heading">متخصص وفاخر</h2>
-                        <p class="category-meta-count">منتجات أجهزة عالية الجودة ومصمم ومتخصصة &bull; 15 منتج</p>
+                        <p class="category-meta-count">منتجات أجهزة عالية الجودة ومصمم ومتخصصة &bull; ١٥ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="ستاند اطباق 31 × 21 كروم">
+                <div class="card-product" data-name="ستاند اطباق ٣١ × ٢١ سم كروم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="ستاند اطباق 31 × 21 كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="ستاند اطباق ٣١ × ٢١ سم كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0274</span>
-                        <h3 class="card-name" title="ستاند اطباق 31 × 21 كروم">ستاند اطباق 31 × 21 كروم</h3>
-                        <div class="card-price-badge"><span>300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٧٤</span>
+                        <h3 class="card-name" title="ستاند اطباق ٣١ × ٢١ سم كروم">ستاند اطباق ٣١ × ٢١ سم كروم</h3>
+                        <div class="card-price-badge">٣٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="وراقة استاند كروم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&auto=format&fit=crop&q=80" alt="وراقة استاند كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="وراقة استاند كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0275</span>
+                        <span class="card-code">#٠٢٧٥</span>
                         <h3 class="card-name" title="وراقة استاند كروم">وراقة استاند كروم</h3>
-                        <div class="card-price-badge"><span>300</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مفصله اندوكس اسباني عدلة سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مفصله اندوكس اسباني عدلة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="مفصله اندوكس اسباني عدلة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0284</span>
-                        <h3 class="card-name" title="مفصله اندوكس اسباني عدلة سوفت 3d">مفصله اندوكس اسباني عدلة سوفت 3d</h3>
-                        <div class="card-price-badge"><span>58</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٨٤</span>
+                        <h3 class="card-name" title="مفصله اندوكس اسباني عدلة سوفت 3d">مفصله اندوكس اسباني عدلة سوفت <bdi class="bidi-isolate" dir="ltr">3d</bdi></h3>
+                        <div class="card-price-badge">٥٨ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مفصله اندوكس اسباني نص ركبة سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مفصله اندوكس اسباني نص ركبة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="مفصله اندوكس اسباني نص ركبة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0285</span>
-                        <h3 class="card-name" title="مفصله اندوكس اسباني نص ركبة سوفت 3d">مفصله اندوكس اسباني نص ركبة سوفت 3d</h3>
-                        <div class="card-price-badge"><span>56</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٨٥</span>
+                        <h3 class="card-name" title="مفصله اندوكس اسباني نص ركبة سوفت 3d">مفصله اندوكس اسباني نص ركبة سوفت <bdi class="bidi-isolate" dir="ltr">3d</bdi></h3>
+                        <div class="card-price-badge">٥٦ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مفصله اندوكس اسباني ركبة كاملة سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مفصله اندوكس اسباني ركبة كاملة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="مفصله اندوكس اسباني ركبة كاملة سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0286</span>
-                        <h3 class="card-name" title="مفصله اندوكس اسباني ركبة كاملة سوفت 3d">مفصله اندوكس اسباني ركبة كاملة سوفت 3d</h3>
-                        <div class="card-price-badge"><span>57</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٨٦</span>
+                        <h3 class="card-name" title="مفصله اندوكس اسباني ركبة كاملة سوفت 3d">مفصله اندوكس اسباني ركبة كاملة سوفت <bdi class="bidi-isolate" dir="ltr">3d</bdi></h3>
+                        <div class="card-price-badge">٥٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه استانلس لاكوست70سم">
+                <div class="card-product" data-name="مطبقيه استانلس لاكوست ٧٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست70سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست ٧٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0298</span>
-                        <h3 class="card-name" title="مطبقيه استانلس لاكوست70سم">مطبقيه استانلس لاكوست70سم</h3>
-                        <div class="card-price-badge"><span>345</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٩٨</span>
+                        <h3 class="card-name" title="مطبقيه استانلس لاكوست ٧٠ سم">مطبقيه استانلس لاكوست ٧٠ سم</h3>
+                        <div class="card-price-badge">٣٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه استانلس لاكوست80سم">
+                <div class="card-product" data-name="مطبقيه استانلس لاكوست ٨٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست80سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست ٨٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0299</span>
-                        <h3 class="card-name" title="مطبقيه استانلس لاكوست80سم">مطبقيه استانلس لاكوست80سم</h3>
-                        <div class="card-price-badge"><span>375</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٩٩</span>
+                        <h3 class="card-name" title="مطبقيه استانلس لاكوست ٨٠ سم">مطبقيه استانلس لاكوست ٨٠ سم</h3>
+                        <div class="card-price-badge">٣٧٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 30جانبي سوفت fgv ايطالي">
+                <div class="card-product" data-name="مجرى ٣٠ جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مجرى 30جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مجرى ٣٠ جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0355</span>
-                        <h3 class="card-name" title="مجرى 30جانبي سوفت FGV ايطالي">مجرى 30جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>240</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٥</span>
+                        <h3 class="card-name" title="مجرى ٣٠ جانبي سوفت FGV ايطالي">مجرى ٣٠ جانبي سوفت <bdi class="bidi-isolate" dir="ltr">FGV</bdi> ايطالي</h3>
+                        <div class="card-price-badge">٢٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 35جانبي سوفت fgv ايطالي">
+                <div class="card-product" data-name="مجرى ٣٥ جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مجرى 35جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مجرى ٣٥ جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0356</span>
-                        <h3 class="card-name" title="مجرى 35جانبي سوفت FGV ايطالي">مجرى 35جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>250</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٦</span>
+                        <h3 class="card-name" title="مجرى ٣٥ جانبي سوفت FGV ايطالي">مجرى ٣٥ جانبي سوفت <bdi class="bidi-isolate" dir="ltr">FGV</bdi> ايطالي</h3>
+                        <div class="card-price-badge">٢٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 40جانبي سوفت fgv ايطالي">
+                <div class="card-product" data-name="مجرى ٤٠ جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مجرى 40جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مجرى ٤٠ جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0357</span>
-                        <h3 class="card-name" title="مجرى 40جانبي سوفت FGV ايطالي">مجرى 40جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>260</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٧</span>
+                        <h3 class="card-name" title="مجرى ٤٠ جانبي سوفت FGV ايطالي">مجرى ٤٠ جانبي سوفت <bdi class="bidi-isolate" dir="ltr">FGV</bdi> ايطالي</h3>
+                        <div class="card-price-badge">٢٦٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 2</span>
+                <span>صفحة ١ من ٢</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,60 +765,60 @@
                     <div class="category-badge-icon">👑</div>
                     <div>
                         <h2 class="category-name-heading">متخصص وفاخر</h2>
-                        <p class="category-meta-count">منتجات أجهزة عالية الجودة ومصمم ومتخصصة &bull; 15 منتج</p>
+                        <p class="category-meta-count">منتجات أجهزة عالية الجودة ومصمم ومتخصصة &bull; ١٥ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مجرى 45جانبي سوفت fgv ايطالي">
+                <div class="card-product" data-name="مجرى ٤٥ جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مجرى 45جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مجرى ٤٥ جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0358</span>
-                        <h3 class="card-name" title="مجرى 45جانبي سوفت FGV ايطالي">مجرى 45جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>270</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٨</span>
+                        <h3 class="card-name" title="مجرى ٤٥ جانبي سوفت FGV ايطالي">مجرى ٤٥ جانبي سوفت <bdi class="bidi-isolate" dir="ltr">FGV</bdi> ايطالي</h3>
+                        <div class="card-price-badge">٢٧٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 50جانبي سوفت fgv ايطالي">
+                <div class="card-product" data-name="مجرى ٥٠ جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مجرى 50جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="مجرى ٥٠ جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0359</span>
-                        <h3 class="card-name" title="مجرى 50جانبي سوفت FGV ايطالي">مجرى 50جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>280</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٩</span>
+                        <h3 class="card-name" title="مجرى ٥٠ جانبي سوفت FGV ايطالي">مجرى ٥٠ جانبي سوفت <bdi class="bidi-isolate" dir="ltr">FGV</bdi> ايطالي</h3>
+                        <div class="card-price-badge">٢٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مفصله اندوكس اسباني عدلة سوفت فرش 4 مسمار">
+                <div class="card-product" data-name="مفصله اندوكس اسباني عدلة سوفت فرش ٤ مسامير">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="مفصله اندوكس اسباني عدلة سوفت فرش 4 مسمار" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="مفصله اندوكس اسباني عدلة سوفت فرش ٤ مسامير" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0361</span>
-                        <h3 class="card-name" title="مفصله اندوكس اسباني عدلة سوفت فرش 4 مسمار">مفصله اندوكس اسباني عدلة سوفت فرش 4 مسمار</h3>
-                        <div class="card-price-badge"><span>48</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٦١</span>
+                        <h3 class="card-name" title="مفصله اندوكس اسباني عدلة سوفت فرش ٤ مسامير">مفصله اندوكس اسباني عدلة سوفت فرش ٤ مسامير</h3>
+                        <div class="card-price-badge">٤٨ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه استانلس لاكوست60سم">
+                <div class="card-product" data-name="مطبقيه استانلس لاكوست ٦٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست60سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست ٦٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0434</span>
-                        <h3 class="card-name" title="مطبقيه استانلس لاكوست60سم">مطبقيه استانلس لاكوست60سم</h3>
-                        <div class="card-price-badge"><span>300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣٤</span>
+                        <h3 class="card-name" title="مطبقيه استانلس لاكوست ٦٠ سم">مطبقيه استانلس لاكوست ٦٠ سم</h3>
+                        <div class="card-price-badge">٣٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه استانلس لاكوست90سم">
+                <div class="card-product" data-name="مطبقيه استانلس لاكوست ٩٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست90سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست ٩٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0438</span>
-                        <h3 class="card-name" title="مطبقيه استانلس لاكوست90سم">مطبقيه استانلس لاكوست90سم</h3>
-                        <div class="card-price-badge"><span>405</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣٨</span>
+                        <h3 class="card-name" title="مطبقيه استانلس لاكوست ٩٠ سم">مطبقيه استانلس لاكوست ٩٠ سم</h3>
+                        <div class="card-price-badge">٤٠٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -802,7 +827,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 2</span>
+                <span>صفحة ٢ من ٢</span>
             </footer>
         </section>
     </main>

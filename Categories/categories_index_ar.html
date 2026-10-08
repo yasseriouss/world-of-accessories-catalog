@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -600,7 +624,7 @@
         </a>
         <nav class="nav-links">
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
-            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الكامل (60 صفحة)</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل (A4)</a>
             <a href="categories_index_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة</button>
         </nav>
@@ -610,7 +634,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="categorySearch" class="search-input" placeholder="ابحث عن الفئة أو نوع الإكسسوار..." onkeyup="filterPortals()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">10 فئات متخصصة</span>
+        <span style="font-weight:700; color:var(--navy);">١٠ فئات متخصصة</span>
     </div>
     <main class="catalog-container">
         <div class="page-sheet">
@@ -619,7 +643,7 @@
                     <div class="category-badge-icon">🗂️</div>
                     <div>
                         <h1 class="category-name-heading">فئات المنتجات المتخصصة</h1>
-                        <p class="category-meta-count">591 منتجاً من أجود إكسسوارات الأثاث والمطابخ والدرابزين</p>
+                        <p class="category-meta-count">٥٩١ منتجاً من أجود إكسسوارات الأثاث والمطابخ والدرابزين</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="شعار" class="sheet-logo">
@@ -630,7 +654,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">المفاصل</h2>
                         <p class="portal-desc">مفاصل الخزائن والأثاث بأنماط تركيب وآليات مختلفة</p>
-                        <span class="portal-badge">200 منتج &bull; 32-245 EGP</span>
+                        <span class="portal-badge">٢٠٠ منتج</span>
                     </div>
                 </a>
                 <a href="category_02_ar.html" class="category-portal-card" data-title="المقابض والمسكات Handles & Knobs مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية">
@@ -638,7 +662,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">المقابض والمسكات</h2>
                         <p class="portal-desc">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية</p>
-                        <span class="portal-badge">78 منتج &bull; 22-165 EGP</span>
+                        <span class="portal-badge">٧٨ منتج</span>
                     </div>
                 </a>
                 <a href="category_03_ar.html" class="category-portal-card" data-title="أنظمة الأدراج Drawer Systems آليات الانزلاق وأجهزة تشغيل الأدراج وأنظمة الحركة">
@@ -646,7 +670,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">أنظمة الأدراج</h2>
                         <p class="portal-desc">آليات الانزلاق وأجهزة تشغيل الأدراج وأنظمة الحركة</p>
-                        <span class="portal-badge">142 منتج &bull; 68-525 EGP</span>
+                        <span class="portal-badge">١٤٢ منتج</span>
                     </div>
                 </a>
                 <a href="category_04_ar.html" class="category-portal-card" data-title="الأذرع الداعمة Support Arms الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية">
@@ -654,7 +678,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">الأذرع الداعمة</h2>
                         <p class="portal-desc">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية</p>
-                        <span class="portal-badge">27 منتج &bull; 45-485 EGP</span>
+                        <span class="portal-badge">٢٧ منتج</span>
                     </div>
                 </a>
                 <a href="category_05_ar.html" class="category-portal-card" data-title="المثبتات والتركيب Fasteners & Installation براغي وصواميل مراسي وعناصر التثبيت">
@@ -662,7 +686,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">المثبتات والتركيب</h2>
                         <p class="portal-desc">براغي وصواميل مراسي وعناصر التثبيت</p>
-                        <span class="portal-badge">10 منتج &bull; 5-85 EGP</span>
+                        <span class="portal-badge">١٠ منتج</span>
                     </div>
                 </a>
                 <a href="category_06_ar.html" class="category-portal-card" data-title="التشطيب الحافة Edge Finishing شريط الحافة والتقليم ومواد الانتهاء السطحية">
@@ -670,7 +694,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">التشطيب الحافة</h2>
                         <p class="portal-desc">شريط الحافة والتقليم ومواد الانتهاء السطحية</p>
-                        <span class="portal-badge">18 منتج &bull; 15-180 EGP</span>
+                        <span class="portal-badge">١٨ منتج</span>
                     </div>
                 </a>
                 <a href="category_07_ar.html" class="category-portal-card" data-title="التخزين والتنظيم Storage & Organization الرفوف والفواصل والمنظمات وحلول التخزين">
@@ -678,7 +702,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">التخزين والتنظيم</h2>
                         <p class="portal-desc">الرفوف والفواصل والمنظمات وحلول التخزين</p>
-                        <span class="portal-badge">59 منتج &bull; 18-285 EGP</span>
+                        <span class="portal-badge">٥٩ منتج</span>
                     </div>
                 </a>
                 <a href="category_08_ar.html" class="category-portal-card" data-title="أقفال الخزائن Cabinet Locks آليات القفل والمزالج المغناطيسية والأجهزة الأمنية">
@@ -686,7 +710,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">أقفال الخزائن</h2>
                         <p class="portal-desc">آليات القفل والمزالج المغناطيسية والأجهزة الأمنية</p>
-                        <span class="portal-badge">11 منتج &bull; 25-340 EGP</span>
+                        <span class="portal-badge">١١ منتج</span>
                     </div>
                 </a>
                 <a href="category_09_ar.html" class="category-portal-card" data-title="الأدوات والأقواس Tools & Brackets أجهزة التركيب والأقواس والزوايا ومساعدات التركيب">
@@ -694,7 +718,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">الأدوات والأقواس</h2>
                         <p class="portal-desc">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب</p>
-                        <span class="portal-badge">31 منتج &bull; 35-425 EGP</span>
+                        <span class="portal-badge">٣١ منتج</span>
                     </div>
                 </a>
                 <a href="category_10_ar.html" class="category-portal-card" data-title="متخصص وفاخر Premium & Specialty منتجات أجهزة عالية الجودة ومصمم ومتخصصة">
@@ -702,7 +726,7 @@
                     <div class="portal-info">
                         <h2 class="portal-title">متخصص وفاخر</h2>
                         <p class="portal-desc">منتجات أجهزة عالية الجودة ومصمم ومتخصصة</p>
-                        <span class="portal-badge">15 منتج &bull; 185-950 EGP</span>
+                        <span class="portal-badge">١٥ منتج</span>
                     </div>
                 </a>
             </div>

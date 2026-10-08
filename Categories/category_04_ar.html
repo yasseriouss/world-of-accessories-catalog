@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_04_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">27 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">٢٧ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,90 +644,90 @@
                     <div class="category-badge-icon">💪</div>
                     <div>
                         <h2 class="category-name-heading">الأذرع الداعمة</h2>
-                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; 27 منتج</p>
+                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; ٢٧ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 80 ابيض بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ٨٠ ابيض بالما">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0012.jpg" alt="دراع باكم سوفت بجراب ضغط 80 ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0012.jpg" alt="دراع باكم سوفت بجراب ضغط ٨٠ ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0012</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 80 ابيض بالما">دراع باكم سوفت بجراب ضغط 80 ابيض بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٢</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ٨٠ ابيض بالما">دراع باكم سوفت بجراب ضغط ٨٠ ابيض بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 120 اسود بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٢٠ اسود بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع باكم سوفت بجراب ضغط 120 اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم سوفت بجراب ضغط ١٢٠ اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0013</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 120 اسود بالما">دراع باكم سوفت بجراب ضغط 120 اسود بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٣</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٢٠ اسود بالما">دراع باكم سوفت بجراب ضغط ١٢٠ اسود بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 100 اسود بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٠٠ اسود بالما">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0014.jpg" alt="دراع باكم سوفت بجراب ضغط 100 اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0014.jpg" alt="دراع باكم سوفت بجراب ضغط ١٠٠ اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0014</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 100 اسود بالما">دراع باكم سوفت بجراب ضغط 100 اسود بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٤</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٠٠ اسود بالما">دراع باكم سوفت بجراب ضغط ١٠٠ اسود بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 100 ابيض بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٠٠ ابيض بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع باكم سوفت بجراب ضغط 100 ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم سوفت بجراب ضغط ١٠٠ ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0015</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 100 ابيض بالما">دراع باكم سوفت بجراب ضغط 100 ابيض بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٥</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٠٠ ابيض بالما">دراع باكم سوفت بجراب ضغط ١٠٠ ابيض بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 120 ابيض بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٢٠ ابيض بالما">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0016.jpg" alt="دراع باكم سوفت بجراب ضغط 120 ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0016.jpg" alt="دراع باكم سوفت بجراب ضغط ١٢٠ ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0016</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 120 ابيض بالما">دراع باكم سوفت بجراب ضغط 120 ابيض بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٦</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٢٠ ابيض بالما">دراع باكم سوفت بجراب ضغط ١٢٠ ابيض بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 150 ابيض بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٥٠ ابيض بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع باكم سوفت بجراب ضغط 150 ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم سوفت بجراب ضغط ١٥٠ ابيض بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0017</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 150 ابيض بالما">دراع باكم سوفت بجراب ضغط 150 ابيض بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٧</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٥٠ ابيض بالما">دراع باكم سوفت بجراب ضغط ١٥٠ ابيض بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 150 اسود بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ١٥٠ اسود بالما">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0018.jpg" alt="دراع باكم سوفت بجراب ضغط 150 اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0018.jpg" alt="دراع باكم سوفت بجراب ضغط ١٥٠ اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0018</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 150 اسود بالما">دراع باكم سوفت بجراب ضغط 150 اسود بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٨</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ١٥٠ اسود بالما">دراع باكم سوفت بجراب ضغط ١٥٠ اسود بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت کلوز رمادی ضغط 100 نيسكو">
+                <div class="card-product" data-name="دراع باكم سوفت کلوز رمادی ضغط ١٠٠ نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع باكم سوفت کلوز رمادی ضغط 100 نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم سوفت کلوز رمادی ضغط ١٠٠ نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0019</span>
-                        <h3 class="card-name" title="دراع باكم سوفت کلوز رمادی ضغط 100 نيسكو">دراع باكم سوفت کلوز رمادی ضغط 100 نيسكو</h3>
-                        <div class="card-price-badge"><span>75</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠١٩</span>
+                        <h3 class="card-name" title="دراع باكم سوفت کلوز رمادی ضغط ١٠٠ نيسكو">دراع باكم سوفت کلوز رمادی ضغط ١٠٠ نيسكو</h3>
+                        <div class="card-price-badge">٧٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة مطبخ رجلاش مع صاج">
@@ -710,19 +735,19 @@
                         <img src="../assets/products/prod_0035.jpg" alt="علاقة مطبخ رجلاش مع صاج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0035</span>
+                        <span class="card-code">#٠٠٣٥</span>
                         <h3 class="card-name" title="علاقة مطبخ رجلاش مع صاج">علاقة مطبخ رجلاش مع صاج</h3>
-                        <div class="card-price-badge"><span>40</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع منطبق افنتوس رجلاش بالما  heavy">
+                <div class="card-product" data-name="دراع منطبق افنتوس رجلاش بالما heavy">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع منطبق افنتوس رجلاش بالما  Heavy" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع منطبق افنتوس رجلاش بالما Heavy" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0077</span>
-                        <h3 class="card-name" title="دراع منطبق افنتوس رجلاش بالما  Heavy">دراع منطبق افنتوس رجلاش بالما  Heavy</h3>
-                        <div class="card-price-badge"><span>2258</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٧٧</span>
+                        <h3 class="card-name" title="دراع منطبق افنتوس رجلاش بالما Heavy">دراع منطبق افنتوس رجلاش بالما <bdi class="bidi-isolate" dir="ltr">Heavy</bdi></h3>
+                        <div class="card-price-badge">٢٢٥٨ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 3</span>
+                <span>صفحة ١ من ٣</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,7 +765,7 @@
                     <div class="category-badge-icon">💪</div>
                     <div>
                         <h2 class="category-name-heading">الأذرع الداعمة</h2>
-                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; 27 منتج</p>
+                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; ٢٧ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="دراع منطبق افنتوس رجلاش بالما medium">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع منطبق افنتوس رجلاش بالما medium" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع منطبق افنتوس رجلاش بالما medium" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0078</span>
-                        <h3 class="card-name" title="دراع منطبق افنتوس رجلاش بالما medium">دراع منطبق افنتوس رجلاش بالما medium</h3>
-                        <div class="card-price-badge"><span>2258</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٧٨</span>
+                        <h3 class="card-name" title="دراع منطبق افنتوس رجلاش بالما medium">دراع منطبق افنتوس رجلاش بالما <bdi class="bidi-isolate" dir="ltr">medium</bdi></h3>
+                        <div class="card-price-badge">٢٢٥٨ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دراع منطبق افنتوس نيسكو معدل">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع منطبق افنتوس نيسكو معدل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع منطبق افنتوس نيسكو معدل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0103</span>
+                        <span class="card-code">#٠١٠٣</span>
                         <h3 class="card-name" title="دراع منطبق افنتوس نيسكو معدل">دراع منطبق افنتوس نيسكو معدل</h3>
-                        <div class="card-price-badge"><span>3500</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣٥٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دراع باكم استلس بولي لاك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع باكم استلس بولي لاك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم استلس بولي لاك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0104</span>
+                        <span class="card-code">#٠١٠٤</span>
                         <h3 class="card-name" title="دراع باكم استلس بولي لاك">دراع باكم استلس بولي لاك</h3>
-                        <div class="card-price-badge"><span>450</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٤٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="رشاقه باكم استانيس 70سم">
+                <div class="card-product" data-name="رشاقه باكم استانيس ٧٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه باكم استانيس 70سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه باكم استانيس ٧٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0156</span>
-                        <h3 class="card-name" title="رشاقه باكم استانيس 70سم">رشاقه باكم استانيس 70سم</h3>
-                        <div class="card-price-badge"><span>5550</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٥٦</span>
+                        <h3 class="card-name" title="رشاقه باكم استانيس ٧٠ سم">رشاقه باكم استانيس ٧٠ سم</h3>
+                        <div class="card-price-badge">٥٥٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="عجل دولاب سوسته 2مسمار رجلاشmmb">
+                <div class="card-product" data-name="عجل دولاب سوسته ٢ مسامير رجلاشmmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="عجل دولاب سوسته 2مسمار رجلاشmmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_wheels.jpg" alt="عجل دولاب سوسته ٢ مسامير رجلاشmmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0164</span>
-                        <h3 class="card-name" title="عجل دولاب سوسته 2مسمار رجلاشmmb">عجل دولاب سوسته 2مسمار رجلاشmmb</h3>
-                        <div class="card-price-badge"><span>110</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٦٤</span>
+                        <h3 class="card-name" title="عجل دولاب سوسته ٢ مسامير رجلاشmmb">عجل دولاب سوسته ٢ مسامير رجلاشmmb</h3>
+                        <div class="card-price-badge">١١٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دراع ساعة مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع ساعة مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع ساعة مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0254</span>
+                        <span class="card-code">#٠٢٥٤</span>
                         <h3 class="card-name" title="دراع ساعة مودرن">دراع ساعة مودرن</h3>
-                        <div class="card-price-badge"><span>65</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٦٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مفصله ساميت تركي عقرب 165باكم عدلة">
+                <div class="card-product" data-name="مفصله ساميت تركي عقرب ١٦٥ باكم عدلة">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="مفصله ساميت تركي عقرب 165باكم عدلة" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_corner.jpg" alt="مفصله ساميت تركي عقرب ١٦٥ باكم عدلة" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0270</span>
-                        <h3 class="card-name" title="مفصله ساميت تركي عقرب 165باكم عدلة">مفصله ساميت تركي عقرب 165باكم عدلة</h3>
-                        <div class="card-price-badge"><span>230</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٧٠</span>
+                        <h3 class="card-name" title="مفصله ساميت تركي عقرب ١٦٥ باكم عدلة">مفصله ساميت تركي عقرب ١٦٥ باكم عدلة</h3>
+                        <div class="card-price-badge">٢٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط 80 اسود بالما">
+                <div class="card-product" data-name="دراع باكم سوفت بجراب ضغط ٨٠ اسود بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع باكم سوفت بجراب ضغط 80 اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم سوفت بجراب ضغط ٨٠ اسود بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0328</span>
-                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط 80 اسود بالما">دراع باكم سوفت بجراب ضغط 80 اسود بالما</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٨</span>
+                        <h3 class="card-name" title="دراع باكم سوفت بجراب ضغط ٨٠ اسود بالما">دراع باكم سوفت بجراب ضغط ٨٠ اسود بالما</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم تاج ضغط 80">
+                <div class="card-product" data-name="دراع باكم تاج ضغط ٨٠">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع باكم تاج ضغط 80" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم تاج ضغط ٨٠" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0354</span>
-                        <h3 class="card-name" title="دراع باكم تاج ضغط 80">دراع باكم تاج ضغط 80</h3>
-                        <div class="card-price-badge"><span>20</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٥٤</span>
+                        <h3 class="card-name" title="دراع باكم تاج ضغط ٨٠">دراع باكم تاج ضغط ٨٠</h3>
+                        <div class="card-price-badge">٢٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع باكم mk 80 سوفت ابيض">
+                <div class="card-product" data-name="دراع باكم mk ٨٠ سوفت ابيض">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="دراع باكم mk 80 سوفت ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم mk ٨٠ سوفت ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0436</span>
-                        <h3 class="card-name" title="دراع باكم mk 80 سوفت ابيض">دراع باكم mk 80 سوفت ابيض</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣٦</span>
+                        <h3 class="card-name" title="دراع باكم mk ٨٠ سوفت ابيض">دراع باكم <bdi class="bidi-isolate" dir="ltr">mk</bdi> ٨٠ سوفت ابيض</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -852,7 +877,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 3</span>
+                <span>صفحة ٢ من ٣</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="3">
@@ -861,80 +886,80 @@
                     <div class="category-badge-icon">💪</div>
                     <div>
                         <h2 class="category-name-heading">الأذرع الداعمة</h2>
-                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; 27 منتج</p>
+                        <p class="category-meta-count">الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية &bull; ٢٧ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="دراع باكم mk 80 سوفت اسود">
+                <div class="card-product" data-name="دراع باكم mk ٨٠ سوفت اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع باكم mk 80 سوفت اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع باكم mk ٨٠ سوفت اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0437</span>
-                        <h3 class="card-name" title="دراع باكم mk 80 سوفت اسود">دراع باكم mk 80 سوفت اسود</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣٧</span>
+                        <h3 class="card-name" title="دراع باكم mk ٨٠ سوفت اسود">دراع باكم <bdi class="bidi-isolate" dir="ltr">mk</bdi> ٨٠ سوفت اسود</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="عجل دولاب سوسته 2مسمار رجلاش mk">
+                <div class="card-product" data-name="عجل دولاب سوسته ٢ مسامير رجلاش mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="عجل دولاب سوسته 2مسمار رجلاش MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_wheels.jpg" alt="عجل دولاب سوسته ٢ مسامير رجلاش MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0442</span>
-                        <h3 class="card-name" title="عجل دولاب سوسته 2مسمار رجلاش MK">عجل دولاب سوسته 2مسمار رجلاش MK</h3>
-                        <div class="card-price-badge"><span>105</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٤٢</span>
+                        <h3 class="card-name" title="عجل دولاب سوسته ٢ مسامير رجلاش MK">عجل دولاب سوسته ٢ مسامير رجلاش <bdi class="bidi-isolate" dir="ltr">MK</bdi></h3>
+                        <div class="card-price-badge">١٠٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="رشاقه باكم نانو 80سم">
+                <div class="card-product" data-name="رشاقه باكم نانو ٨٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه باكم نانو 80سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه باكم نانو ٨٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0470</span>
-                        <h3 class="card-name" title="رشاقه باكم نانو 80سم">رشاقه باكم نانو 80سم</h3>
-                        <div class="card-price-badge"><span>4900</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٠</span>
+                        <h3 class="card-name" title="رشاقه باكم نانو ٨٠ سم">رشاقه باكم نانو ٨٠ سم</h3>
+                        <div class="card-price-badge">٤٩٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="رشاقه باكم نانو 70سم">
+                <div class="card-product" data-name="رشاقه باكم نانو ٧٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه باكم نانو 70سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه باكم نانو ٧٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0504</span>
-                        <h3 class="card-name" title="رشاقه باكم نانو 70سم">رشاقه باكم نانو 70سم</h3>
-                        <div class="card-price-badge"><span>4700</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٠٤</span>
+                        <h3 class="card-name" title="رشاقه باكم نانو ٧٠ سم">رشاقه باكم نانو ٧٠ سم</h3>
+                        <div class="card-price-badge">٤٧٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="رشاقه باكم نانو 90سم">
+                <div class="card-product" data-name="رشاقه باكم نانو ٩٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="رشاقه باكم نانو 90سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه باكم نانو ٩٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0505</span>
-                        <h3 class="card-name" title="رشاقه باكم نانو 90سم">رشاقه باكم نانو 90سم</h3>
-                        <div class="card-price-badge"><span>5400</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٠٥</span>
+                        <h3 class="card-name" title="رشاقه باكم نانو ٩٠ سم">رشاقه باكم نانو ٩٠ سم</h3>
+                        <div class="card-price-badge">٥٤٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دراع منطبق افنتوس دانكو 2 ضلفه">
+                <div class="card-product" data-name="دراع منطبق افنتوس دانكو ٢ ضلفه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="دراع منطبق افنتوس دانكو 2 ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="دراع منطبق افنتوس دانكو ٢ ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0535</span>
-                        <h3 class="card-name" title="دراع منطبق افنتوس دانكو 2 ضلفه">دراع منطبق افنتوس دانكو 2 ضلفه</h3>
-                        <div class="card-price-badge"><span>1520</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٣٥</span>
+                        <h3 class="card-name" title="دراع منطبق افنتوس دانكو ٢ ضلفه">دراع منطبق افنتوس دانكو ٢ ضلفه</h3>
+                        <div class="card-price-badge">١٥٢٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقه مطبخ رجلاش ابيض">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="علاقه مطبخ رجلاش ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_cabinet_legs.jpg" alt="علاقه مطبخ رجلاش ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0583</span>
+                        <span class="card-code">#٠٥٨٣</span>
                         <h3 class="card-name" title="علاقه مطبخ رجلاش ابيض">علاقه مطبخ رجلاش ابيض</h3>
-                        <div class="card-price-badge"><span>24</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٢٤ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -943,7 +968,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 3 من 3</span>
+                <span>صفحة ٣ من ٣</span>
             </footer>
         </section>
     </main>

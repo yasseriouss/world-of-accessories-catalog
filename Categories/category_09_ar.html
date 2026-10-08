@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_09_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">31 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">٣١ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,20 +644,20 @@
                     <div class="category-badge-icon">🛠️</div>
                     <div>
                         <h2 class="category-name-heading">الأدوات والأقواس</h2>
-                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; 31 منتج</p>
+                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; ٣١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="زاويه تجميع دريسنج مصري 2 مم">
+                <div class="card-product" data-name="زاويه تجميع دريسنج مصري ٢ مم">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0030.jpg" alt="زاويه تجميع دريسنج مصري 2 مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0030.jpg" alt="زاويه تجميع دريسنج مصري ٢ مم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0030</span>
-                        <h3 class="card-name" title="زاويه تجميع دريسنج مصري 2 مم">زاويه تجميع دريسنج مصري 2 مم</h3>
-                        <div class="card-price-badge"><span>6</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٣٠</span>
+                        <h3 class="card-name" title="زاويه تجميع دريسنج مصري ٢ مم">زاويه تجميع دريسنج مصري ٢ مم</h3>
+                        <div class="card-price-badge">٦ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="زاويه ربط مقبض دفن lوu">
@@ -640,89 +665,89 @@
                         <img src="../assets/products/prod_0031.jpg" alt="زاويه ربط مقبض دفن LوU" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0031</span>
+                        <span class="card-code">#٠٠٣١</span>
                         <h3 class="card-name" title="زاويه ربط مقبض دفن LوU">زاويه ربط مقبض دفن LوU</h3>
-                        <div class="card-price-badge"><span>3</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 60 سم">
+                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة ٦٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 60 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة ٦٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0084</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 60 سم">مطبقيه ثابتة مودرن سوستة 60 سم</h3>
-                        <div class="card-price-badge"><span>510</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٨٤</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة ٦٠ سم">مطبقيه ثابتة مودرن سوستة ٦٠ سم</h3>
+                        <div class="card-price-badge">٥١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 70 سم">
+                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة ٧٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 70 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة ٧٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0085</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 70 سم">مطبقيه ثابتة مودرن سوستة 70 سم</h3>
-                        <div class="card-price-badge"><span>530</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٨٥</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة ٧٠ سم">مطبقيه ثابتة مودرن سوستة ٧٠ سم</h3>
+                        <div class="card-price-badge">٥٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 80 سم">
+                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة ٨٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 80 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة ٨٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0086</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 80 سم">مطبقيه ثابتة مودرن سوستة 80 سم</h3>
-                        <div class="card-price-badge"><span>560</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٨٦</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة ٨٠ سم">مطبقيه ثابتة مودرن سوستة ٨٠ سم</h3>
+                        <div class="card-price-badge">٥٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 90 سم">
+                <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة ٩٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 90 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة ٩٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0087</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 90 سم">مطبقيه ثابتة مودرن سوستة 90 سم</h3>
-                        <div class="card-price-badge"><span>590</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٨٧</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة ٩٠ سم">مطبقيه ثابتة مودرن سوستة ٩٠ سم</h3>
+                        <div class="card-price-badge">٥٩٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة 60 سم بكلبس palma (اسود)">
+                <div class="card-product" data-name="مطبقيه ثابتة ٦٠ سم بكلبس palma (اسود)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 60 سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٦٠ سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0097</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 60 سم بكلبس Palma (اسود)">مطبقيه ثابتة 60 سم بكلبس Palma (اسود)</h3>
-                        <div class="card-price-badge"><span>890</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٧</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٦٠ سم بكلبس Palma (اسود)">مطبقيه ثابتة ٦٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">Palma</bdi> (اسود)</h3>
+                        <div class="card-price-badge">٨٩٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة 70سم بكلبس palma (اسود)">
+                <div class="card-product" data-name="مطبقيه ثابتة ٧٠ سم بكلبس palma (اسود)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 70سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٧٠ سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0098</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 70سم بكلبس Palma (اسود)">مطبقيه ثابتة 70سم بكلبس Palma (اسود)</h3>
-                        <div class="card-price-badge"><span>950</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٨</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٧٠ سم بكلبس Palma (اسود)">مطبقيه ثابتة ٧٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">Palma</bdi> (اسود)</h3>
+                        <div class="card-price-badge">٩٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة 80سم بكلبس palma (اسود)">
+                <div class="card-product" data-name="مطبقيه ثابتة ٨٠ سم بكلبس palma (اسود)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 80سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٨٠ سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0099</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 80سم بكلبس Palma (اسود)">مطبقيه ثابتة 80سم بكلبس Palma (اسود)</h3>
-                        <div class="card-price-badge"><span>1000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٩</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٨٠ سم بكلبس Palma (اسود)">مطبقيه ثابتة ٨٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">Palma</bdi> (اسود)</h3>
+                        <div class="card-price-badge">١٠٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة 90سم بكلبس palma (اسود)">
+                <div class="card-product" data-name="مطبقيه ثابتة ٩٠ سم بكلبس palma (اسود)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 90سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٩٠ سم بكلبس Palma (اسود)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0100</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 90سم بكلبس Palma (اسود)">مطبقيه ثابتة 90سم بكلبس Palma (اسود)</h3>
-                        <div class="card-price-badge"><span>1050</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٠٠</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٩٠ سم بكلبس Palma (اسود)">مطبقيه ثابتة ٩٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">Palma</bdi> (اسود)</h3>
+                        <div class="card-price-badge">١٠٥٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 4</span>
+                <span>صفحة ١ من ٤</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,110 +765,110 @@
                     <div class="category-badge-icon">🛠️</div>
                     <div>
                         <h2 class="category-name-heading">الأدوات والأقواس</h2>
-                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; 31 منتج</p>
+                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; ٣١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مطبقيه ثابتة 70 سم بكلبس palma (استلس 304 )">
+                <div class="card-product" data-name="مطبقيه ثابتة ٧٠ سم بكلبس palma (استلس ٣٠٤ )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 70 سم بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٧٠ سم بكلبس palma (استلس ٣٠٤ )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0101</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 70 سم بكلبس palma (استلس 304 )">مطبقيه ثابتة 70 سم بكلبس palma (استلس 304 )</h3>
-                        <div class="card-price-badge"><span>1300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٠١</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٧٠ سم بكلبس palma (استلس ٣٠٤ )">مطبقيه ثابتة ٧٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">palma</bdi> (استلس ٣٠٤ )</h3>
+                        <div class="card-price-badge">١٣٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه ثابتة 80 سم بكلبس palma (استلس 304 )">
+                <div class="card-product" data-name="مطبقيه ثابتة ٨٠ سم بكلبس palma (استلس ٣٠٤ )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 80 سم بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة ٨٠ سم بكلبس palma (استلس ٣٠٤ )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0102</span>
-                        <h3 class="card-name" title="مطبقيه ثابتة 80 سم بكلبس palma (استلس 304 )">مطبقيه ثابتة 80 سم بكلبس palma (استلس 304 )</h3>
-                        <div class="card-price-badge"><span>1380</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٠٢</span>
+                        <h3 class="card-name" title="مطبقيه ثابتة ٨٠ سم بكلبس palma (استلس ٣٠٤ )">مطبقيه ثابتة ٨٠ سم بكلبس <bdi class="bidi-isolate" dir="ltr">palma</bdi> (استلس ٣٠٤ )</h3>
+                        <div class="card-price-badge">١٣٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه 3*3 عمق 3 فضي">
+                <div class="card-product" data-name="زاويه ٣ × ٣ سم عمق ٣ فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="زاويه 3*3 عمق 3 فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه ٣ × ٣ سم عمق ٣ فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0171</span>
-                        <h3 class="card-name" title="زاويه 3*3 عمق 3 فضي">زاويه 3*3 عمق 3 فضي</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>ج.م</span></div>
-                    </div>
-                </div>
-                <div class="card-product" data-name="زاويه كرسي صغيره">
-                    <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-code">#0182</span>
-                        <h3 class="card-name" title="زاويه كرسي صغيره">زاويه كرسي صغيره</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٧١</span>
+                        <h3 class="card-name" title="زاويه ٣ × ٣ سم عمق ٣ فضي">زاويه ٣ × ٣ سم عمق ٣ فضي</h3>
+                        <div class="card-price-badge">٣.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="زاويه كرسي صغيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="زاويه كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0183</span>
+                        <span class="card-code">#٠١٨٢</span>
                         <h3 class="card-name" title="زاويه كرسي صغيره">زاويه كرسي صغيره</h3>
-                        <div class="card-price-badge"><span>1</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه كرسي  كبيره 5*5">
+                <div class="card-product" data-name="زاويه كرسي صغيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="زاويه كرسي  كبيره 5*5" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0184</span>
-                        <h3 class="card-name" title="زاويه كرسي  كبيره 5*5">زاويه كرسي  كبيره 5*5</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٨٣</span>
+                        <h3 class="card-name" title="زاويه كرسي صغيره">زاويه كرسي صغيره</h3>
+                        <div class="card-price-badge">١ ج.م</div>
+                    </div>
+                </div>
+                <div class="card-product" data-name="زاويه كرسي كبيره ٥ × ٥ سم">
+                    <div class="card-image-wrap">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه كرسي كبيره ٥ × ٥ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-code">#٠١٨٤</span>
+                        <h3 class="card-name" title="زاويه كرسي كبيره ٥ × ٥ سم">زاويه كرسي كبيره ٥ × ٥ سم</h3>
+                        <div class="card-price-badge">١.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="زاويه ثلاثيه كبيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه ثلاثيه كبيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه ثلاثيه كبيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0185</span>
+                        <span class="card-code">#٠١٨٥</span>
                         <h3 class="card-name" title="زاويه ثلاثيه كبيره">زاويه ثلاثيه كبيره</h3>
-                        <div class="card-price-badge"><span>15</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه تجميع فراشه تقيله 4 بوصه">
+                <div class="card-product" data-name="زاويه تجميع فراشه تقيله ٤ بوصه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه تجميع فراشه تقيله 4 بوصه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه تجميع فراشه تقيله ٤ بوصه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0203</span>
-                        <h3 class="card-name" title="زاويه تجميع فراشه تقيله 4 بوصه">زاويه تجميع فراشه تقيله 4 بوصه</h3>
-                        <div class="card-price-badge"><span>12</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٠٣</span>
+                        <h3 class="card-name" title="زاويه تجميع فراشه تقيله ٤ بوصه">زاويه تجميع فراشه تقيله ٤ بوصه</h3>
+                        <div class="card-price-badge">١٢ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="زاويه تعليق جلو بال تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه تعليق جلو بال تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه تعليق جلو بال تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0221</span>
+                        <span class="card-code">#٠٢٢١</span>
                         <h3 class="card-name" title="زاويه تعليق جلو بال تركي">زاويه تعليق جلو بال تركي</h3>
-                        <div class="card-price-badge"><span>6</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٦ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة مطبخ ثابتة ويل ماكس">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعة مطبخ ثابتة ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة مطبخ ثابتة ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0272</span>
+                        <span class="card-code">#٠٢٧٢</span>
                         <h3 class="card-name" title="شماعة مطبخ ثابتة ويل ماكس">شماعة مطبخ ثابتة ويل ماكس</h3>
-                        <div class="card-price-badge"><span>110</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١١٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -852,7 +877,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 4</span>
+                <span>صفحة ٢ من ٤</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="3">
@@ -861,110 +886,110 @@
                     <div class="category-badge-icon">🛠️</div>
                     <div>
                         <h2 class="category-name-heading">الأدوات والأقواس</h2>
-                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; 31 منتج</p>
+                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; ٣١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="زاويه وزره متحركه 10سم فضي">
+                <div class="card-product" data-name="زاويه وزره متحركه ١٠ سم فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="زاويه وزره متحركه 10سم فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="زاويه وزره متحركه ١٠ سم فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0289</span>
-                        <h3 class="card-name" title="زاويه وزره متحركه 10سم فضي">زاويه وزره متحركه 10سم فضي</h3>
-                        <div class="card-price-badge"><span>16</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٨٩</span>
+                        <h3 class="card-name" title="زاويه وزره متحركه ١٠ سم فضي">زاويه وزره متحركه ١٠ سم فضي</h3>
+                        <div class="card-price-badge">١٦ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه وزره ثابته 10سم فضي">
+                <div class="card-product" data-name="زاويه وزره ثابته ١٠ سم فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه وزره ثابته 10سم فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="زاويه وزره ثابته ١٠ سم فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0290</span>
-                        <h3 class="card-name" title="زاويه وزره ثابته 10سم فضي">زاويه وزره ثابته 10سم فضي</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٩٠</span>
+                        <h3 class="card-name" title="زاويه وزره ثابته ١٠ سم فضي">زاويه وزره ثابته ١٠ سم فضي</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه وزره ثابته 10سم اسود">
+                <div class="card-product" data-name="زاويه وزره ثابته ١٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="زاويه وزره ثابته 10سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="زاويه وزره ثابته ١٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0291</span>
-                        <h3 class="card-name" title="زاويه وزره ثابته 10سم اسود">زاويه وزره ثابته 10سم اسود</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٩١</span>
+                        <h3 class="card-name" title="زاويه وزره ثابته ١٠ سم اسود">زاويه وزره ثابته ١٠ سم اسود</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه 3*3 عمق 3 اسود">
+                <div class="card-product" data-name="زاويه ٣ × ٣ سم عمق ٣ اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه 3*3 عمق 3 اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="زاويه ٣ × ٣ سم عمق ٣ اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0347</span>
-                        <h3 class="card-name" title="زاويه 3*3 عمق 3 اسود">زاويه 3*3 عمق 3 اسود</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٤٧</span>
+                        <h3 class="card-name" title="زاويه ٣ × ٣ سم عمق ٣ اسود">زاويه ٣ × ٣ سم عمق ٣ اسود</h3>
+                        <div class="card-price-badge">٣.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="زاويه وزره متحركه 10سم اسود">
+                <div class="card-product" data-name="زاويه وزره متحركه ١٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="زاويه وزره متحركه 10سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="زاويه وزره متحركه ١٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0371</span>
-                        <h3 class="card-name" title="زاويه وزره متحركه 10سم اسود">زاويه وزره متحركه 10سم اسود</h3>
-                        <div class="card-price-badge"><span>28</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٧١</span>
+                        <h3 class="card-name" title="زاويه وزره متحركه ١٠ سم اسود">زاويه وزره متحركه ١٠ سم اسود</h3>
+                        <div class="card-price-badge">٢٨ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعه 80 سم ملابس ثابته جلد اورنج">
+                <div class="card-product" data-name="شماعه ٨٠ سم ملابس ثابته جلد اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعه 80 سم ملابس ثابته جلد اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعه ٨٠ سم ملابس ثابته جلد اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0457</span>
-                        <h3 class="card-name" title="شماعه 80 سم ملابس ثابته جلد اورنج">شماعه 80 سم ملابس ثابته جلد اورنج</h3>
-                        <div class="card-price-badge"><span>460</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٥٧</span>
+                        <h3 class="card-name" title="شماعه ٨٠ سم ملابس ثابته جلد اورنج">شماعه ٨٠ سم ملابس ثابته جلد اورنج</h3>
+                        <div class="card-price-badge">٤٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعه 80سم ملابس ثابته جلد جراي">
+                <div class="card-product" data-name="شماعه ٨٠ سم ملابس ثابته جلد جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعه 80سم ملابس ثابته جلد جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعه ٨٠ سم ملابس ثابته جلد جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0461</span>
-                        <h3 class="card-name" title="شماعه 80سم ملابس ثابته جلد جراي">شماعه 80سم ملابس ثابته جلد جراي</h3>
-                        <div class="card-price-badge"><span>460</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٦١</span>
+                        <h3 class="card-name" title="شماعه ٨٠ سم ملابس ثابته جلد جراي">شماعه ٨٠ سم ملابس ثابته جلد جراي</h3>
+                        <div class="card-price-badge">٤٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعه 100سم ملابس ثابته جلد اورنج">
+                <div class="card-product" data-name="شماعه ١٠٠ سم ملابس ثابته جلد اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="شماعه 100سم ملابس ثابته جلد اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعه ١٠٠ سم ملابس ثابته جلد اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0462</span>
-                        <h3 class="card-name" title="شماعه 100سم ملابس ثابته جلد اورنج">شماعه 100سم ملابس ثابته جلد اورنج</h3>
-                        <div class="card-price-badge"><span>480</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٦٢</span>
+                        <h3 class="card-name" title="شماعه ١٠٠ سم ملابس ثابته جلد اورنج">شماعه ١٠٠ سم ملابس ثابته جلد اورنج</h3>
+                        <div class="card-price-badge">٤٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعه 100سم ملابس ثابته جلد جراي">
+                <div class="card-product" data-name="شماعه ١٠٠ سم ملابس ثابته جلد جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعه 100سم ملابس ثابته جلد جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعه ١٠٠ سم ملابس ثابته جلد جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0463</span>
-                        <h3 class="card-name" title="شماعه 100سم ملابس ثابته جلد جراي">شماعه 100سم ملابس ثابته جلد جراي</h3>
-                        <div class="card-price-badge"><span>480</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٦٣</span>
+                        <h3 class="card-name" title="شماعه ١٠٠ سم ملابس ثابته جلد جراي">شماعه ١٠٠ سم ملابس ثابته جلد جراي</h3>
+                        <div class="card-price-badge">٤٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="كعب زاويه 90 ابيض">
+                <div class="card-product" data-name="كعب زاويه ٩٠ ابيض">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="كعب زاويه 90 ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب زاويه ٩٠ ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0523</span>
-                        <h3 class="card-name" title="كعب زاويه 90 ابيض">كعب زاويه 90 ابيض</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٢٣</span>
+                        <h3 class="card-name" title="كعب زاويه ٩٠ ابيض">كعب زاويه ٩٠ ابيض</h3>
+                        <div class="card-price-badge">١.٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -973,7 +998,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 3 من 4</span>
+                <span>صفحة ٣ من ٤</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="4">
@@ -982,20 +1007,20 @@
                     <div class="category-badge-icon">🛠️</div>
                     <div>
                         <h2 class="category-name-heading">الأدوات والأقواس</h2>
-                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; 31 منتج</p>
+                        <p class="category-meta-count">أجهزة التركيب والأقواس والزوايا ومساعدات التركيب &bull; ٣١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="كعب زاويه 90 بني">
+                <div class="card-product" data-name="كعب زاويه ٩٠ بني">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="كعب زاويه 90 بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب زاويه ٩٠ بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0524</span>
-                        <h3 class="card-name" title="كعب زاويه 90 بني">كعب زاويه 90 بني</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٢٤</span>
+                        <h3 class="card-name" title="كعب زاويه ٩٠ بني">كعب زاويه ٩٠ بني</h3>
+                        <div class="card-price-badge">١.٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1004,7 +1029,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 4 من 4</span>
+                <span>صفحة ٤ من ٤</span>
             </footer>
         </section>
     </main>

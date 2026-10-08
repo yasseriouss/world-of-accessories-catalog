@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_04_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -632,17 +657,17 @@
                     <div class="card-info">
                         <span class="card-code">#0012</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 80 White Palma">Arm Hydraulic سوفت بجراب ضغط 80 White Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 120 black palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic سوفت بجراب ضغط 120 Black Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic سوفت بجراب ضغط 120 Black Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0013</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 120 Black Palma">Arm Hydraulic سوفت بجراب ضغط 120 Black Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 100 black palma">
@@ -652,17 +677,17 @@
                     <div class="card-info">
                         <span class="card-code">#0014</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 100 Black Palma">Arm Hydraulic سوفت بجراب ضغط 100 Black Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 100 white palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic سوفت بجراب ضغط 100 White Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic سوفت بجراب ضغط 100 White Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0015</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 100 White Palma">Arm Hydraulic سوفت بجراب ضغط 100 White Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 120 white palma">
@@ -672,17 +697,17 @@
                     <div class="card-info">
                         <span class="card-code">#0016</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 120 White Palma">Arm Hydraulic سوفت بجراب ضغط 120 White Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 150 white palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic سوفت بجراب ضغط 150 White Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic سوفت بجراب ضغط 150 White Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0017</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 150 White Palma">Arm Hydraulic سوفت بجراب ضغط 150 White Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 150 black palma">
@@ -692,17 +717,17 @@
                     <div class="card-info">
                         <span class="card-code">#0018</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 150 Black Palma">Arm Hydraulic سوفت بجراب ضغط 150 Black Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت کلوز رمادی ضغط 100 نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic سوفت کلوز رمادی ضغط 100 نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic سوفت کلوز رمادی ضغط 100 نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0019</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت کلوز رمادی ضغط 100 نيسكو">Arm Hydraulic سوفت کلوز رمادی ضغط 100 نيسكو</h3>
-                        <div class="card-price-badge"><span>75</span> <span>EGP</span></div>
+                        <div class="card-price-badge">75 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة مطبخ adjustable مع صاج">
@@ -712,17 +737,17 @@
                     <div class="card-info">
                         <span class="card-code">#0035</span>
                         <h3 class="card-name" title="علاقة مطبخ Adjustable مع صاج">علاقة مطبخ Adjustable مع صاج</h3>
-                        <div class="card-price-badge"><span>40</span> <span>EGP</span></div>
+                        <div class="card-price-badge">40 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm منطبق افنتوس adjustable palma  heavy">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm منطبق افنتوس Adjustable Palma  Heavy" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm منطبق افنتوس Adjustable Palma  Heavy" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0077</span>
                         <h3 class="card-name" title="Arm منطبق افنتوس Adjustable Palma  Heavy">Arm منطبق افنتوس Adjustable Palma  Heavy</h3>
-                        <div class="card-price-badge"><span>2258</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2258 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="arm منطبق افنتوس adjustable palma medium">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm منطبق افنتوس Adjustable Palma medium" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm منطبق افنتوس Adjustable Palma medium" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0078</span>
                         <h3 class="card-name" title="Arm منطبق افنتوس Adjustable Palma medium">Arm منطبق افنتوس Adjustable Palma medium</h3>
-                        <div class="card-price-badge"><span>2258</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2258 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm منطبق افنتوس نيسكو معدل">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm منطبق افنتوس نيسكو معدل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm منطبق افنتوس نيسكو معدل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0103</span>
                         <h3 class="card-name" title="Arm منطبق افنتوس نيسكو معدل">Arm منطبق افنتوس نيسكو معدل</h3>
-                        <div class="card-price-badge"><span>3500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic استلس بولي لاك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic استلس بولي لاك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic استلس بولي لاك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0104</span>
                         <h3 class="card-name" title="Arm Hydraulic استلس بولي لاك">Arm Hydraulic استلس بولي لاك</h3>
-                        <div class="card-price-badge"><span>450</span> <span>EGP</span></div>
+                        <div class="card-price-badge">450 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="رشاقه hydraulic استانيس 70cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه Hydraulic استانيس 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه Hydraulic استانيس 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0156</span>
                         <h3 class="card-name" title="رشاقه Hydraulic استانيس 70cm">رشاقه Hydraulic استانيس 70cm</h3>
-                        <div class="card-price-badge"><span>5550</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5550 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="عجل دولاب سوسته 2مcmار adjustablemmb">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="عجل دولاب سوسته 2مcmار Adjustablemmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_wheels.jpg" alt="عجل دولاب سوسته 2مcmار Adjustablemmb" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0164</span>
                         <h3 class="card-name" title="عجل دولاب سوسته 2مcmار Adjustablemmb">عجل دولاب سوسته 2مcmار Adjustablemmb</h3>
-                        <div class="card-price-badge"><span>110</span> <span>EGP</span></div>
+                        <div class="card-price-badge">110 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm ساعة مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm ساعة مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm ساعة مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0254</span>
                         <h3 class="card-name" title="Arm ساعة مودرن">Arm ساعة مودرن</h3>
-                        <div class="card-price-badge"><span>65</span> <span>EGP</span></div>
+                        <div class="card-price-badge">65 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge summit turkish عقرب 165hydraulic straight">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Hinge Summit Turkish عقرب 165Hydraulic Straight" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_corner.jpg" alt="Hinge Summit Turkish عقرب 165Hydraulic Straight" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0270</span>
                         <h3 class="card-name" title="Hinge Summit Turkish عقرب 165Hydraulic Straight">Hinge Summit Turkish عقرب 165Hydraulic Straight</h3>
-                        <div class="card-price-badge"><span>230</span> <span>EGP</span></div>
+                        <div class="card-price-badge">230 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic سوفت بجراب ضغط 80 black palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic سوفت بجراب ضغط 80 Black Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic سوفت بجراب ضغط 80 Black Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0328</span>
                         <h3 class="card-name" title="Arm Hydraulic سوفت بجراب ضغط 80 Black Palma">Arm Hydraulic سوفت بجراب ضغط 80 Black Palma</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic تاج ضغط 80">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic تاج ضغط 80" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic تاج ضغط 80" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0354</span>
                         <h3 class="card-name" title="Arm Hydraulic تاج ضغط 80">Arm Hydraulic تاج ضغط 80</h3>
-                        <div class="card-price-badge"><span>20</span> <span>EGP</span></div>
+                        <div class="card-price-badge">20 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm hydraulic mk 80 سوفت white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic mk 80 سوفت White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic mk 80 سوفت White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0436</span>
                         <h3 class="card-name" title="Arm Hydraulic mk 80 سوفت White">Arm Hydraulic mk 80 سوفت White</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
             </div>
@@ -869,72 +894,72 @@
             <div class="products-grid">
                 <div class="card-product" data-name="arm hydraulic mk 80 سوفت black">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm Hydraulic mk 80 سوفت Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm Hydraulic mk 80 سوفت Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0437</span>
                         <h3 class="card-name" title="Arm Hydraulic mk 80 سوفت Black">Arm Hydraulic mk 80 سوفت Black</h3>
-                        <div class="card-price-badge"><span>45</span> <span>EGP</span></div>
+                        <div class="card-price-badge">45 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="عجل دولاب سوسته 2مcmار adjustable mk">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="عجل دولاب سوسته 2مcmار Adjustable MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_wheels.jpg" alt="عجل دولاب سوسته 2مcmار Adjustable MK" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0442</span>
                         <h3 class="card-name" title="عجل دولاب سوسته 2مcmار Adjustable MK">عجل دولاب سوسته 2مcmار Adjustable MK</h3>
-                        <div class="card-price-badge"><span>105</span> <span>EGP</span></div>
+                        <div class="card-price-badge">105 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="رشاقه hydraulic نانو 80cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه Hydraulic نانو 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه Hydraulic نانو 80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0470</span>
                         <h3 class="card-name" title="رشاقه Hydraulic نانو 80cm">رشاقه Hydraulic نانو 80cm</h3>
-                        <div class="card-price-badge"><span>4900</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4900 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="رشاقه hydraulic نانو 70cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="رشاقه Hydraulic نانو 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه Hydraulic نانو 70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0504</span>
                         <h3 class="card-name" title="رشاقه Hydraulic نانو 70cm">رشاقه Hydraulic نانو 70cm</h3>
-                        <div class="card-price-badge"><span>4700</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4700 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="رشاقه hydraulic نانو 90cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="رشاقه Hydraulic نانو 90cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="رشاقه Hydraulic نانو 90cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0505</span>
                         <h3 class="card-name" title="رشاقه Hydraulic نانو 90cm">رشاقه Hydraulic نانو 90cm</h3>
-                        <div class="card-price-badge"><span>5400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5400 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="arm منطبق افنتوس دانكو 2 ضلفه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80" alt="Arm منطبق افنتوس دانكو 2 ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_gas_strut.jpg" alt="Arm منطبق افنتوس دانكو 2 ضلفه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0535</span>
                         <h3 class="card-name" title="Arm منطبق افنتوس دانكو 2 ضلفه">Arm منطبق افنتوس دانكو 2 ضلفه</h3>
-                        <div class="card-price-badge"><span>1520</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1520 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقه مطبخ adjustable white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="علاقه مطبخ Adjustable White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_cabinet_legs.jpg" alt="علاقه مطبخ Adjustable White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0583</span>
                         <h3 class="card-name" title="علاقه مطبخ Adjustable White">علاقه مطبخ Adjustable White</h3>
-                        <div class="card-price-badge"><span>24</span> <span>EGP</span></div>
+                        <div class="card-price-badge">24 EGP</div>
                     </div>
                 </div>
             </div>

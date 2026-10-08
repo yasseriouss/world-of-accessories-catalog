@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_07_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">59 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">٥٩ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,7 +644,7 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -630,9 +655,9 @@
                         <img src="../assets/products/prod_0027.jpg" alt="مقبض حرف G لطش اسود مصري انوده" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0027</span>
-                        <h3 class="card-name" title="مقبض حرف G لطش اسود مصري انوده">مقبض حرف G لطش اسود مصري انوده</h3>
-                        <div class="card-price-badge"><span>330</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٢٧</span>
+                        <h3 class="card-name" title="مقبض حرف G لطش اسود مصري انوده">مقبض حرف <bdi class="bidi-isolate" dir="ltr">G</bdi> لطش اسود مصري انوده</h3>
+                        <div class="card-price-badge">٣٣٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مقبض دفن حرف l اسود مصري الكترو">
@@ -640,89 +665,89 @@
                         <img src="../assets/products/prod_0032.jpg" alt="مقبض دفن حرف L اسود مصري الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0032</span>
-                        <h3 class="card-name" title="مقبض دفن حرف L اسود مصري الكترو">مقبض دفن حرف L اسود مصري الكترو</h3>
-                        <div class="card-price-badge"><span>290</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٣٢</span>
+                        <h3 class="card-name" title="مقبض دفن حرف L اسود مصري الكترو">مقبض دفن حرف <bdi class="bidi-isolate" dir="ltr">L</bdi> اسود مصري الكترو</h3>
+                        <div class="card-price-badge">٢٩٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="صابع تاتش بجناح ( معدن ) بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="صابع تاتش بجناح ( معدن ) بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_touch_latch.jpg" alt="صابع تاتش بجناح ( معدن ) بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0037</span>
+                        <span class="card-code">#٠٠٣٧</span>
                         <h3 class="card-name" title="صابع تاتش بجناح ( معدن ) بالما">صابع تاتش بجناح ( معدن ) بالما</h3>
-                        <div class="card-price-badge"><span>24</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٢٤ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="صابع تاتش كبس ( معدن )  بالما">
+                <div class="card-product" data-name="صابع تاتش كبس ( معدن ) بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="صابع تاتش كبس ( معدن )  بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_touch_latch.jpg" alt="صابع تاتش كبس ( معدن ) بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0038</span>
-                        <h3 class="card-name" title="صابع تاتش كبس ( معدن )  بالما">صابع تاتش كبس ( معدن )  بالما</h3>
-                        <div class="card-price-badge"><span>18</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٣٨</span>
+                        <h3 class="card-name" title="صابع تاتش كبس ( معدن ) بالما">صابع تاتش كبس ( معدن ) بالما</h3>
+                        <div class="card-price-badge">١٨ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="حامل رف زجاج شفاط">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="حامل رف زجاج شفاط" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل رف زجاج شفاط" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0106</span>
+                        <span class="card-code">#٠١٠٦</span>
                         <h3 class="card-name" title="حامل رف زجاج شفاط">حامل رف زجاج شفاط</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فراشة تجميع معدن زنك صيني ثقيلة sis كود 01z-c">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0107</span>
-                        <h3 class="card-name" title="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C">فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٠٧</span>
+                        <h3 class="card-name" title="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C">فراشة تجميع معدن زنك صيني ثقيلة <bdi class="bidi-isolate" dir="ltr">SIS</bdi> كود <bdi class="bidi-isolate" dir="ltr">01Z-C</bdi></h3>
+                        <div class="card-price-badge">٧.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 30 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٣٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 30 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٣٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0114</span>
-                        <h3 class="card-name" title="تقسيمة درج 30 سم رمادي تركي   STAR -X">تقسيمة درج 30 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>230</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٤</span>
+                        <h3 class="card-name" title="تقسيمة درج ٣٠ سم رمادي تركي STAR -X">تقسيمة درج ٣٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٢٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 35 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٣٥ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 35 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٣٥ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0115</span>
-                        <h3 class="card-name" title="تقسيمة درج 35 سم رمادي تركي   STAR -X">تقسيمة درج 35 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>245</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٥</span>
+                        <h3 class="card-name" title="تقسيمة درج ٣٥ سم رمادي تركي STAR -X">تقسيمة درج ٣٥ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٢٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 40 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٤٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 40 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٤٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0116</span>
-                        <h3 class="card-name" title="تقسيمة درج 40 سم رمادي تركي   STAR -X">تقسيمة درج 40 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>260</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٦</span>
+                        <h3 class="card-name" title="تقسيمة درج ٤٠ سم رمادي تركي STAR -X">تقسيمة درج ٤٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٢٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 45 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٤٥ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 45 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٤٥ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0117</span>
-                        <h3 class="card-name" title="تقسيمة درج 45 سم رمادي تركي   STAR -X">تقسيمة درج 45 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>270</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٧</span>
+                        <h3 class="card-name" title="تقسيمة درج ٤٥ سم رمادي تركي STAR -X">تقسيمة درج ٤٥ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٢٧٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 6</span>
+                <span>صفحة ١ من ٦</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,110 +765,110 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="تقسيمة درج 50 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٥٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 50 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٥٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0118</span>
-                        <h3 class="card-name" title="تقسيمة درج 50 سم رمادي تركي   STAR -X">تقسيمة درج 50 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٨</span>
+                        <h3 class="card-name" title="تقسيمة درج ٥٠ سم رمادي تركي STAR -X">تقسيمة درج ٥٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٣٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 55 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٥٥ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 55 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٥٥ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0119</span>
-                        <h3 class="card-name" title="تقسيمة درج 55 سم رمادي تركي   STAR -X">تقسيمة درج 55 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>330</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٩</span>
+                        <h3 class="card-name" title="تقسيمة درج ٥٥ سم رمادي تركي STAR -X">تقسيمة درج ٥٥ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٣٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 60 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٦٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 60 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٦٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0120</span>
-                        <h3 class="card-name" title="تقسيمة درج 60 سم رمادي تركي   STAR -X">تقسيمة درج 60 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>340</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٢٠</span>
+                        <h3 class="card-name" title="تقسيمة درج ٦٠ سم رمادي تركي STAR -X">تقسيمة درج ٦٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٣٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 70 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٧٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 70 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٧٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0121</span>
-                        <h3 class="card-name" title="تقسيمة درج 70 سم رمادي تركي   STAR -X">تقسيمة درج 70 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>390</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٢١</span>
+                        <h3 class="card-name" title="تقسيمة درج ٧٠ سم رمادي تركي STAR -X">تقسيمة درج ٧٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٣٩٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 80 سم رمادي تركي   star -x">
+                <div class="card-product" data-name="تقسيمة درج ٨٠ سم رمادي تركي star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 80 سم رمادي تركي   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٨٠ سم رمادي تركي STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0122</span>
-                        <h3 class="card-name" title="تقسيمة درج 80 سم رمادي تركي   STAR -X">تقسيمة درج 80 سم رمادي تركي   STAR -X</h3>
-                        <div class="card-price-badge"><span>405</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٢٢</span>
+                        <h3 class="card-name" title="تقسيمة درج ٨٠ سم رمادي تركي STAR -X">تقسيمة درج ٨٠ سم رمادي تركي <bdi class="bidi-isolate" dir="ltr">STAR</bdi> -<bdi class="bidi-isolate" dir="ltr">X</bdi></h3>
+                        <div class="card-price-badge">٤٠٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0127</span>
+                        <span class="card-code">#٠١٢٧</span>
                         <h3 class="card-name" title="تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض)">تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض)</h3>
-                        <div class="card-price-badge"><span>1.65</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١.٦٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف مسمار ابيض">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="تكايه رف مسمار ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه رف مسمار ابيض" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0169</span>
+                        <span class="card-code">#٠١٦٩</span>
                         <h3 class="card-name" title="تكايه رف مسمار ابيض">تكايه رف مسمار ابيض</h3>
-                        <div class="card-price-badge"><span>0.25</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٠.٢٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف ابيض معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تكايه رف ابيض معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه رف ابيض معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0219</span>
+                        <span class="card-code">#٠٢١٩</span>
                         <h3 class="card-name" title="تكايه رف ابيض معدن">تكايه رف ابيض معدن</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تكايه رف معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه رف معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0220</span>
+                        <span class="card-code">#٠٢٢٠</span>
                         <h3 class="card-name" title="تكايه رف معدن">تكايه رف معدن</h3>
-                        <div class="card-price-badge"><span>1</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">١ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مقبض دفن حرف c اسود مصري الكترو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="مقبض دفن حرف C اسود مصري الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض دفن حرف C اسود مصري الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0245</span>
-                        <h3 class="card-name" title="مقبض دفن حرف C اسود مصري الكترو">مقبض دفن حرف C اسود مصري الكترو</h3>
-                        <div class="card-price-badge"><span>240</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٤٥</span>
+                        <h3 class="card-name" title="مقبض دفن حرف C اسود مصري الكترو">مقبض دفن حرف <bdi class="bidi-isolate" dir="ltr">C</bdi> اسود مصري الكترو</h3>
+                        <div class="card-price-badge">٢٤٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -852,7 +877,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 6</span>
+                <span>صفحة ٢ من ٦</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="3">
@@ -861,110 +886,110 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="باسكت قمامة 15 لتر metali تركي">
+                <div class="card-product" data-name="باسكت قمامة ١٥ لتر metali تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="باسكت قمامة 15 لتر Metali تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_waste_bin.jpg" alt="باسكت قمامة ١٥ لتر Metali تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0247</span>
-                        <h3 class="card-name" title="باسكت قمامة 15 لتر Metali تركي">باسكت قمامة 15 لتر Metali تركي</h3>
-                        <div class="card-price-badge"><span>700</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٤٧</span>
+                        <h3 class="card-name" title="باسكت قمامة ١٥ لتر Metali تركي">باسكت قمامة ١٥ لتر <bdi class="bidi-isolate" dir="ltr">Metali</bdi> تركي</h3>
+                        <div class="card-price-badge">٧٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي 2 رف استانلس ( اسود ) 20 سم palma">
+                <div class="card-product" data-name="ترولي ٢ رف استانلس ( اسود ) ٢٠ سم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="ترولي 2 رف استانلس ( اسود ) 20 سم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي ٢ رف استانلس ( اسود ) ٢٠ سم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0250</span>
-                        <h3 class="card-name" title="ترولي 2 رف استانلس ( اسود ) 20 سم palma">ترولي 2 رف استانلس ( اسود ) 20 سم palma</h3>
-                        <div class="card-price-badge"><span>1680</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٥٠</span>
+                        <h3 class="card-name" title="ترولي ٢ رف استانلس ( اسود ) ٢٠ سم palma">ترولي ٢ رف استانلس ( اسود ) ٢٠ سم <bdi class="bidi-isolate" dir="ltr">palma</bdi></h3>
+                        <div class="card-price-badge">١٦٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي 2 رف استانلس (فضي ) 20 سم palma">
+                <div class="card-product" data-name="ترولي ٢ رف استانلس (فضي ) ٢٠ سم palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="ترولي 2 رف استانلس (فضي ) 20 سم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي ٢ رف استانلس (فضي ) ٢٠ سم palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0251</span>
-                        <h3 class="card-name" title="ترولي 2 رف استانلس (فضي ) 20 سم palma">ترولي 2 رف استانلس (فضي ) 20 سم palma</h3>
-                        <div class="card-price-badge"><span>1620</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٥١</span>
+                        <h3 class="card-name" title="ترولي ٢ رف استانلس (فضي ) ٢٠ سم palma">ترولي ٢ رف استانلس (فضي ) ٢٠ سم <bdi class="bidi-isolate" dir="ltr">palma</bdi></h3>
+                        <div class="card-price-badge">١٦٢٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي زجاجات ارتفاع 52 سم 2 رف كروم 15 سم stara-x">
+                <div class="card-product" data-name="ترولي زجاجات ارتفاع ٥٢ سم ٢ رف كروم ١٥ سم stara-x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="ترولي زجاجات ارتفاع 52 سم 2 رف كروم 15 سم STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي زجاجات ارتفاع ٥٢ سم ٢ رف كروم ١٥ سم STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0253</span>
-                        <h3 class="card-name" title="ترولي زجاجات ارتفاع 52 سم 2 رف كروم 15 سم STARA-X">ترولي زجاجات ارتفاع 52 سم 2 رف كروم 15 سم STARA-X</h3>
-                        <div class="card-price-badge"><span>2600</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٥٣</span>
+                        <h3 class="card-name" title="ترولي زجاجات ارتفاع ٥٢ سم ٢ رف كروم ١٥ سم STARA-X">ترولي زجاجات ارتفاع ٥٢ سم ٢ رف كروم ١٥ سم <bdi class="bidi-isolate" dir="ltr">STARA-X</bdi></h3>
+                        <div class="card-price-badge">٢٦٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فراشة تركي تجميع شفاف metali">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="فراشة تركي تجميع شفاف Metali" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة تركي تجميع شفاف Metali" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0255</span>
-                        <h3 class="card-name" title="فراشة تركي تجميع شفاف Metali">فراشة تركي تجميع شفاف Metali</h3>
-                        <div class="card-price-badge"><span>3.9</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٥٥</span>
+                        <h3 class="card-name" title="فراشة تركي تجميع شفاف Metali">فراشة تركي تجميع شفاف <bdi class="bidi-isolate" dir="ltr">Metali</bdi></h3>
+                        <div class="card-price-badge">٣.٩ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة حرف s مفرد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="علاقة حرف s مفرد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="علاقة حرف s مفرد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0276</span>
-                        <h3 class="card-name" title="علاقة حرف s مفرد">علاقة حرف s مفرد</h3>
-                        <div class="card-price-badge"><span>20</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٧٦</span>
+                        <h3 class="card-name" title="علاقة حرف s مفرد">علاقة حرف <bdi class="bidi-isolate" dir="ltr">s</bdi> مفرد</h3>
+                        <div class="card-price-badge">٢٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة حرف s مجوز">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="علاقة حرف s مجوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="علاقة حرف s مجوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0277</span>
-                        <h3 class="card-name" title="علاقة حرف s مجوز">علاقة حرف s مجوز</h3>
-                        <div class="card-price-badge"><span>35</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٧٧</span>
+                        <h3 class="card-name" title="علاقة حرف s مجوز">علاقة حرف <bdi class="bidi-isolate" dir="ltr">s</bdi> مجوز</h3>
+                        <div class="card-price-badge">٣٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="حامل توابل 2 رف معلق ويل ماكس">
+                <div class="card-product" data-name="حامل توابل ٢ رف معلق ويل ماكس">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="حامل توابل 2 رف معلق ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل توابل ٢ رف معلق ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0278</span>
-                        <h3 class="card-name" title="حامل توابل 2 رف معلق ويل ماكس">حامل توابل 2 رف معلق ويل ماكس</h3>
-                        <div class="card-price-badge"><span>670</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٧٨</span>
+                        <h3 class="card-name" title="حامل توابل ٢ رف معلق ويل ماكس">حامل توابل ٢ رف معلق ويل ماكس</h3>
+                        <div class="card-price-badge">٦٧٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج تقسيم اكسسوارات 80 سم بالما اورنج">
+                <div class="card-product" data-name="درج تقسيم اكسسوارات ٨٠ سم بالما اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="درج تقسيم اكسسوارات 80 سم بالما اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج تقسيم اكسسوارات ٨٠ سم بالما اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0326</span>
-                        <h3 class="card-name" title="درج تقسيم اكسسوارات 80 سم بالما اورنج">درج تقسيم اكسسوارات 80 سم بالما اورنج</h3>
-                        <div class="card-price-badge"><span>3900</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٦</span>
+                        <h3 class="card-name" title="درج تقسيم اكسسوارات ٨٠ سم بالما اورنج">درج تقسيم اكسسوارات ٨٠ سم بالما اورنج</h3>
+                        <div class="card-price-badge">٣٩٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج تقسيم اكسسوارات 80 سم بالما جراي">
+                <div class="card-product" data-name="درج تقسيم اكسسوارات ٨٠ سم بالما جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="درج تقسيم اكسسوارات 80 سم بالما جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج تقسيم اكسسوارات ٨٠ سم بالما جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0329</span>
-                        <h3 class="card-name" title="درج تقسيم اكسسوارات 80 سم بالما جراي">درج تقسيم اكسسوارات 80 سم بالما جراي</h3>
-                        <div class="card-price-badge"><span>3900</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٩</span>
+                        <h3 class="card-name" title="درج تقسيم اكسسوارات ٨٠ سم بالما جراي">درج تقسيم اكسسوارات ٨٠ سم بالما جراي</h3>
+                        <div class="card-price-badge">٣٩٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -973,7 +998,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 3 من 6</span>
+                <span>صفحة ٣ من ٦</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="4">
@@ -982,7 +1007,7 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -990,102 +1015,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="فراشة تجميع معدن بالما تقيله">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="فراشة تجميع معدن بالما تقيله" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة تجميع معدن بالما تقيله" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0338</span>
+                        <span class="card-code">#٠٣٣٨</span>
                         <h3 class="card-name" title="فراشة تجميع معدن بالما تقيله">فراشة تجميع معدن بالما تقيله</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٧.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب امامي 5 رف 40سم نيسكو">
+                <div class="card-product" data-name="دولاب امامي ٥ رف ٤٠ سم نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب امامي 5 رف 40سم نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب امامي ٥ رف ٤٠ سم نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0342</span>
-                        <h3 class="card-name" title="دولاب امامي 5 رف 40سم نيسكو">دولاب امامي 5 رف 40سم نيسكو</h3>
-                        <div class="card-price-badge"><span>6800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٤٢</span>
+                        <h3 class="card-name" title="دولاب امامي ٥ رف ٤٠ سم نيسكو">دولاب امامي ٥ رف ٤٠ سم نيسكو</h3>
+                        <div class="card-price-badge">٦٨٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف زجاج ببنز بلاستك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تكايه رف زجاج ببنز بلاستك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه رف زجاج ببنز بلاستك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0380</span>
+                        <span class="card-code">#٠٣٨٠</span>
                         <h3 class="card-name" title="تكايه رف زجاج ببنز بلاستك">تكايه رف زجاج ببنز بلاستك</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٧.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="جزامة محورية 6 رف بالما">
+                <div class="card-product" data-name="جزامة محورية ٦ رف بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 6 رف بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية ٦ رف بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0405</span>
-                        <h3 class="card-name" title="جزامة محورية 6 رف بالما">جزامة محورية 6 رف بالما</h3>
-                        <div class="card-price-badge"><span>6150</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠٥</span>
+                        <h3 class="card-name" title="جزامة محورية ٦ رف بالما">جزامة محورية ٦ رف بالما</h3>
+                        <div class="card-price-badge">٦١٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="جزامة محورية 8رف بالما">
+                <div class="card-product" data-name="جزامة محورية ٨ رف بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 8رف بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية ٨ رف بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0406</span>
-                        <h3 class="card-name" title="جزامة محورية 8رف بالما">جزامة محورية 8رف بالما</h3>
-                        <div class="card-price-badge"><span>6900</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠٦</span>
+                        <h3 class="card-name" title="جزامة محورية ٨ رف بالما">جزامة محورية ٨ رف بالما</h3>
+                        <div class="card-price-badge">٦٩٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب محوري 2 رف زجاج 60سم بالما سوفت كلوز">
+                <div class="card-product" data-name="دولاب محوري ٢ رف زجاج ٦٠ سم بالما سوفت كلوز">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 2 رف زجاج 60سم بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري ٢ رف زجاج ٦٠ سم بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0411</span>
-                        <h3 class="card-name" title="دولاب محوري 2 رف زجاج 60سم بالما سوفت كلوز">دولاب محوري 2 رف زجاج 60سم بالما سوفت كلوز</h3>
-                        <div class="card-price-badge"><span>2950</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤١١</span>
+                        <h3 class="card-name" title="دولاب محوري ٢ رف زجاج ٦٠ سم بالما سوفت كلوز">دولاب محوري ٢ رف زجاج ٦٠ سم بالما سوفت كلوز</h3>
+                        <div class="card-price-badge">٢٩٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب دريسنج كورنر 3دور ارفف بالما (3كرتونه )">
+                <div class="card-product" data-name="دولاب دريسنج كورنر ٣ دور ارفف بالما (٣ كرتونه )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب دريسنج كورنر 3دور ارفف بالما (3كرتونه )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب دريسنج كورنر ٣ دور ارفف بالما (٣ كرتونه )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0413</span>
-                        <h3 class="card-name" title="دولاب دريسنج كورنر 3دور ارفف بالما (3كرتونه )">دولاب دريسنج كورنر 3دور ارفف بالما (3كرتونه )</h3>
-                        <div class="card-price-badge"><span>7750</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤١٣</span>
+                        <h3 class="card-name" title="دولاب دريسنج كورنر ٣ دور ارفف بالما (٣ كرتونه )">دولاب دريسنج كورنر ٣ دور ارفف بالما (٣ كرتونه )</h3>
+                        <div class="card-price-badge">٧٧٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب محوري 6رف استانلس 45سم اسود بالما سوفت كلوز">
+                <div class="card-product" data-name="دولاب محوري ٦ رف استانلس ٤٥ سم اسود بالما سوفت كلوز">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6رف استانلس 45سم اسود بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري ٦ رف استانلس ٤٥ سم اسود بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0416</span>
-                        <h3 class="card-name" title="دولاب محوري 6رف استانلس 45سم اسود بالما سوفت كلوز">دولاب محوري 6رف استانلس 45سم اسود بالما سوفت كلوز</h3>
-                        <div class="card-price-badge"><span>7300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤١٦</span>
+                        <h3 class="card-name" title="دولاب محوري ٦ رف استانلس ٤٥ سم اسود بالما سوفت كلوز">دولاب محوري ٦ رف استانلس ٤٥ سم اسود بالما سوفت كلوز</h3>
+                        <div class="card-price-badge">٧٣٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="كارجو 6 رف 45سم زجاج سوفت كلوز بالما">
+                <div class="card-product" data-name="كارجو ٦ رف ٤٥ سم زجاج سوفت كلوز بالما">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="كارجو 6 رف 45سم زجاج سوفت كلوز بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كارجو ٦ رف ٤٥ سم زجاج سوفت كلوز بالما" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0419</span>
-                        <h3 class="card-name" title="كارجو 6 رف 45سم زجاج سوفت كلوز بالما">كارجو 6 رف 45سم زجاج سوفت كلوز بالما</h3>
-                        <div class="card-price-badge"><span>8200</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤١٩</span>
+                        <h3 class="card-name" title="كارجو ٦ رف ٤٥ سم زجاج سوفت كلوز بالما">كارجو ٦ رف ٤٥ سم زجاج سوفت كلوز بالما</h3>
+                        <div class="card-price-badge">٨٢٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب 5 رف 45سم سلك فضي مودرن">
+                <div class="card-product" data-name="دولاب ٥ رف ٤٥ سم سلك فضي مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب 5 رف 45سم سلك فضي مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب ٥ رف ٤٥ سم سلك فضي مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0455</span>
-                        <h3 class="card-name" title="دولاب 5 رف 45سم سلك فضي مودرن">دولاب 5 رف 45سم سلك فضي مودرن</h3>
-                        <div class="card-price-badge"><span>4400</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٥٥</span>
+                        <h3 class="card-name" title="دولاب ٥ رف ٤٥ سم سلك فضي مودرن">دولاب ٥ رف ٤٥ سم سلك فضي مودرن</h3>
+                        <div class="card-price-badge">٤٤٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1094,7 +1119,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 4 من 6</span>
+                <span>صفحة ٤ من ٦</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="5">
@@ -1103,7 +1128,7 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1111,102 +1136,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="تكايه رف مسمار بني">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="تكايه رف مسمار بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه رف مسمار بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0458</span>
+                        <span class="card-code">#٠٤٥٨</span>
                         <h3 class="card-name" title="تكايه رف مسمار بني">تكايه رف مسمار بني</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٠.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف مسمار اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="تكايه رف مسمار اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه رف مسمار اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0459</span>
+                        <span class="card-code">#٠٤٥٩</span>
                         <h3 class="card-name" title="تكايه رف مسمار اسود">تكايه رف مسمار اسود</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٠.٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه رف مسمار بيج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="تكايه رف مسمار بيج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه رف مسمار بيج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0460</span>
+                        <span class="card-code">#٠٤٦٠</span>
                         <h3 class="card-name" title="تكايه رف مسمار بيج">تكايه رف مسمار بيج</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٠.٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب محوري 6رف استانلس 45سم فضي بالما سوفت كلوز">
+                <div class="card-product" data-name="دولاب محوري ٦ رف استانلس ٤٥ سم فضي بالما سوفت كلوز">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6رف استانلس 45سم فضي بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري ٦ رف استانلس ٤٥ سم فضي بالما سوفت كلوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0494</span>
-                        <h3 class="card-name" title="دولاب محوري 6رف استانلس 45سم فضي بالما سوفت كلوز">دولاب محوري 6رف استانلس 45سم فضي بالما سوفت كلوز</h3>
-                        <div class="card-price-badge"><span>8100</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٩٤</span>
+                        <h3 class="card-name" title="دولاب محوري ٦ رف استانلس ٤٥ سم فضي بالما سوفت كلوز">دولاب محوري ٦ رف استانلس ٤٥ سم فضي بالما سوفت كلوز</h3>
+                        <div class="card-price-badge">٨١٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="جزامة محورية 8رف نيسكو">
+                <div class="card-product" data-name="جزامة محورية ٨ رف نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 8رف نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية ٨ رف نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0506</span>
-                        <h3 class="card-name" title="جزامة محورية 8رف نيسكو">جزامة محورية 8رف نيسكو</h3>
-                        <div class="card-price-badge"><span>15000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٠٦</span>
+                        <h3 class="card-name" title="جزامة محورية ٨ رف نيسكو">جزامة محورية ٨ رف نيسكو</h3>
+                        <div class="card-price-badge">١٥٠٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="بصمه معدن دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="بصمه معدن دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="بصمه معدن دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0539</span>
+                        <span class="card-code">#٠٥٣٩</span>
                         <h3 class="card-name" title="بصمه معدن دهبي">بصمه معدن دهبي</h3>
-                        <div class="card-price-badge"><span>5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٥ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مسمار تجميع معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="مسمار تجميع معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مسمار تجميع معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0540</span>
+                        <span class="card-code">#٠٥٤٠</span>
                         <h3 class="card-name" title="مسمار تجميع معدن">مسمار تجميع معدن</h3>
-                        <div class="card-price-badge"><span>5</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 35 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٣٥ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 35 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٣٥ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0547</span>
-                        <h3 class="card-name" title="تقسيمة درج 35 سم مصري">تقسيمة درج 35 سم مصري</h3>
-                        <div class="card-price-badge"><span>130</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٤٧</span>
+                        <h3 class="card-name" title="تقسيمة درج ٣٥ سم مصري">تقسيمة درج ٣٥ سم مصري</h3>
+                        <div class="card-price-badge">١٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 40 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٤٠ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 40 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٤٠ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0548</span>
-                        <h3 class="card-name" title="تقسيمة درج 40 سم مصري">تقسيمة درج 40 سم مصري</h3>
-                        <div class="card-price-badge"><span>140</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٤٨</span>
+                        <h3 class="card-name" title="تقسيمة درج ٤٠ سم مصري">تقسيمة درج ٤٠ سم مصري</h3>
+                        <div class="card-price-badge">١٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 45 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٤٥ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 45 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٤٥ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0549</span>
-                        <h3 class="card-name" title="تقسيمة درج 45 سم مصري">تقسيمة درج 45 سم مصري</h3>
-                        <div class="card-price-badge"><span>150</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٤٩</span>
+                        <h3 class="card-name" title="تقسيمة درج ٤٥ سم مصري">تقسيمة درج ٤٥ سم مصري</h3>
+                        <div class="card-price-badge">١٥٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1215,7 +1240,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 5 من 6</span>
+                <span>صفحة ٥ من ٦</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="6">
@@ -1224,100 +1249,100 @@
                     <div class="category-badge-icon">📚</div>
                     <div>
                         <h2 class="category-name-heading">التخزين والتنظيم</h2>
-                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; 59 منتج</p>
+                        <p class="category-meta-count">الرفوف والفواصل والمنظمات وحلول التخزين &bull; ٥٩ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="تقسيمة درج 50 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٥٠ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 50 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٥٠ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0550</span>
-                        <h3 class="card-name" title="تقسيمة درج 50 سم مصري">تقسيمة درج 50 سم مصري</h3>
-                        <div class="card-price-badge"><span>165</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٥٠</span>
+                        <h3 class="card-name" title="تقسيمة درج ٥٠ سم مصري">تقسيمة درج ٥٠ سم مصري</h3>
+                        <div class="card-price-badge">١٦٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 55 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٥٥ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 55 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٥٥ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0551</span>
-                        <h3 class="card-name" title="تقسيمة درج 55 سم مصري">تقسيمة درج 55 سم مصري</h3>
-                        <div class="card-price-badge"><span>175</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٥١</span>
+                        <h3 class="card-name" title="تقسيمة درج ٥٥ سم مصري">تقسيمة درج ٥٥ سم مصري</h3>
+                        <div class="card-price-badge">١٧٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 60 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٦٠ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 60 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٦٠ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0552</span>
-                        <h3 class="card-name" title="تقسيمة درج 60 سم مصري">تقسيمة درج 60 سم مصري</h3>
-                        <div class="card-price-badge"><span>185</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٥٢</span>
+                        <h3 class="card-name" title="تقسيمة درج ٦٠ سم مصري">تقسيمة درج ٦٠ سم مصري</h3>
+                        <div class="card-price-badge">١٨٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="تقسيمة درج 70 سم مصري">
+                <div class="card-product" data-name="تقسيمة درج ٧٠ سم مصري">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تقسيمة درج 70 سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="تقسيمة درج ٧٠ سم مصري" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0553</span>
-                        <h3 class="card-name" title="تقسيمة درج 70 سم مصري">تقسيمة درج 70 سم مصري</h3>
-                        <div class="card-price-badge"><span>210</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٥٣</span>
+                        <h3 class="card-name" title="تقسيمة درج ٧٠ سم مصري">تقسيمة درج ٧٠ سم مصري</h3>
+                        <div class="card-price-badge">٢١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="دولاب محوري 6رف اكلريك 45سم">
+                <div class="card-product" data-name="دولاب محوري ٦ رف اكلريك ٤٥ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6رف اكلريك 45سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري ٦ رف اكلريك ٤٥ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0580</span>
-                        <h3 class="card-name" title="دولاب محوري 6رف اكلريك 45سم">دولاب محوري 6رف اكلريك 45سم</h3>
-                        <div class="card-price-badge"><span>8800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٨٠</span>
+                        <h3 class="card-name" title="دولاب محوري ٦ رف اكلريك ٤٥ سم">دولاب محوري ٦ رف اكلريك ٤٥ سم</h3>
+                        <div class="card-price-badge">٨٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="خزنة دريسنج رقمية 60 سم بدون تقسيم">
+                <div class="card-product" data-name="خزنة دريسنج رقمية ٦٠ سم بدون تقسيم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="خزنة دريسنج رقمية 60 سم بدون تقسيم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_safe_dressing.jpg" alt="خزنة دريسنج رقمية ٦٠ سم بدون تقسيم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0584</span>
-                        <h3 class="card-name" title="خزنة دريسنج رقمية 60 سم بدون تقسيم">خزنة دريسنج رقمية 60 سم بدون تقسيم</h3>
-                        <div class="card-price-badge"><span>6600</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٨٤</span>
+                        <h3 class="card-name" title="خزنة دريسنج رقمية ٦٠ سم بدون تقسيم">خزنة دريسنج رقمية ٦٠ سم بدون تقسيم</h3>
+                        <div class="card-price-badge">٦٦٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج تقسيم اكسسوارات 70 سم بالما اورنج">
+                <div class="card-product" data-name="درج تقسيم اكسسوارات ٧٠ سم بالما اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="درج تقسيم اكسسوارات 70 سم بالما اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج تقسيم اكسسوارات ٧٠ سم بالما اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0587</span>
-                        <h3 class="card-name" title="درج تقسيم اكسسوارات 70 سم بالما اورنج">درج تقسيم اكسسوارات 70 سم بالما اورنج</h3>
-                        <div class="card-price-badge"><span>3800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٨٧</span>
+                        <h3 class="card-name" title="درج تقسيم اكسسوارات ٧٠ سم بالما اورنج">درج تقسيم اكسسوارات ٧٠ سم بالما اورنج</h3>
+                        <div class="card-price-badge">٣٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج تقسيم اكسسوارات 70 سم بالما جراي">
+                <div class="card-product" data-name="درج تقسيم اكسسوارات ٧٠ سم بالما جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="درج تقسيم اكسسوارات 70 سم بالما جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج تقسيم اكسسوارات ٧٠ سم بالما جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0588</span>
-                        <h3 class="card-name" title="درج تقسيم اكسسوارات 70 سم بالما جراي">درج تقسيم اكسسوارات 70 سم بالما جراي</h3>
-                        <div class="card-price-badge"><span>3800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٨٨</span>
+                        <h3 class="card-name" title="درج تقسيم اكسسوارات ٧٠ سم بالما جراي">درج تقسيم اكسسوارات ٧٠ سم بالما جراي</h3>
+                        <div class="card-price-badge">٣٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج تقسيم اكسسوارات 80 سم بالما جراي مع غطاء">
+                <div class="card-product" data-name="درج تقسيم اكسسوارات ٨٠ سم بالما جراي مع غطاء">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="درج تقسيم اكسسوارات 80 سم بالما جراي مع غطاء" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج تقسيم اكسسوارات ٨٠ سم بالما جراي مع غطاء" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0589</span>
-                        <h3 class="card-name" title="درج تقسيم اكسسوارات 80 سم بالما جراي مع غطاء">درج تقسيم اكسسوارات 80 سم بالما جراي مع غطاء</h3>
-                        <div class="card-price-badge"><span>4200</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٨٩</span>
+                        <h3 class="card-name" title="درج تقسيم اكسسوارات ٨٠ سم بالما جراي مع غطاء">درج تقسيم اكسسوارات ٨٠ سم بالما جراي مع غطاء</h3>
+                        <div class="card-price-badge">٤٢٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1326,7 +1351,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 6 من 6</span>
+                <span>صفحة ٦ من ٦</span>
             </footer>
         </section>
     </main>

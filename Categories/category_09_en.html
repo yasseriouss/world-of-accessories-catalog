@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_09_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -632,7 +657,7 @@
                     <div class="card-info">
                         <span class="card-code">#0030</span>
                         <h3 class="card-name" title="Angle تجميع دريسنج Egyptian 2 مم">Angle تجميع دريسنج Egyptian 2 مم</h3>
-                        <div class="card-price-badge"><span>6</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle ربط handle دفن lوu">
@@ -642,87 +667,87 @@
                     <div class="card-info">
                         <span class="card-code">#0031</span>
                         <h3 class="card-name" title="Angle ربط Handle دفن LوU">Angle ربط Handle دفن LوU</h3>
-                        <div class="card-price-badge"><span>3</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 60 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 60 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة 60 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0084</span>
                         <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 60 cm">مطبقيه ثابتة مودرن سوستة 60 cm</h3>
-                        <div class="card-price-badge"><span>510</span> <span>EGP</span></div>
+                        <div class="card-price-badge">510 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 70 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 70 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة 70 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0085</span>
                         <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 70 cm">مطبقيه ثابتة مودرن سوستة 70 cm</h3>
-                        <div class="card-price-badge"><span>530</span> <span>EGP</span></div>
+                        <div class="card-price-badge">530 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 80 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 80 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة 80 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0086</span>
                         <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 80 cm">مطبقيه ثابتة مودرن سوستة 80 cm</h3>
-                        <div class="card-price-badge"><span>560</span> <span>EGP</span></div>
+                        <div class="card-price-badge">560 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة مودرن سوستة 90 cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة مودرن سوستة 90 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة مودرن سوستة 90 cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0087</span>
                         <h3 class="card-name" title="مطبقيه ثابتة مودرن سوستة 90 cm">مطبقيه ثابتة مودرن سوستة 90 cm</h3>
-                        <div class="card-price-badge"><span>590</span> <span>EGP</span></div>
+                        <div class="card-price-badge">590 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة 60 cm بكلبس palma (black)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 60 cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 60 cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0097</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 60 cm بكلبس Palma (Black)">مطبقيه ثابتة 60 cm بكلبس Palma (Black)</h3>
-                        <div class="card-price-badge"><span>890</span> <span>EGP</span></div>
+                        <div class="card-price-badge">890 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة 70cm بكلبس palma (black)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 70cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 70cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0098</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 70cm بكلبس Palma (Black)">مطبقيه ثابتة 70cm بكلبس Palma (Black)</h3>
-                        <div class="card-price-badge"><span>950</span> <span>EGP</span></div>
+                        <div class="card-price-badge">950 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة 80cm بكلبس palma (black)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 80cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 80cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0099</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 80cm بكلبس Palma (Black)">مطبقيه ثابتة 80cm بكلبس Palma (Black)</h3>
-                        <div class="card-price-badge"><span>1000</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1000 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة 90cm بكلبس palma (black)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 90cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 90cm بكلبس Palma (Black)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0100</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 90cm بكلبس Palma (Black)">مطبقيه ثابتة 90cm بكلبس Palma (Black)</h3>
-                        <div class="card-price-badge"><span>1050</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1050 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0101</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 )">مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 )</h3>
-                        <div class="card-price-badge"><span>1300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0102</span>
                         <h3 class="card-name" title="مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 )">مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 )</h3>
-                        <div class="card-price-badge"><span>1380</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1380 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle 3*3 عمق 3 فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Angle 3*3 عمق 3 فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle 3*3 عمق 3 فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0171</span>
                         <h3 class="card-name" title="Angle 3*3 عمق 3 فضي">Angle 3*3 عمق 3 فضي</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle كرسي صغيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0182</span>
                         <h3 class="card-name" title="Angle كرسي صغيره">Angle كرسي صغيره</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle كرسي صغيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Angle كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle كرسي صغيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0183</span>
                         <h3 class="card-name" title="Angle كرسي صغيره">Angle كرسي صغيره</h3>
-                        <div class="card-price-badge"><span>1</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle كرسي  كبيره 5*5">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Angle كرسي  كبيره 5*5" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle كرسي  كبيره 5*5" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0184</span>
                         <h3 class="card-name" title="Angle كرسي  كبيره 5*5">Angle كرسي  كبيره 5*5</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle ثلاثيه كبيره">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle ثلاثيه كبيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle ثلاثيه كبيره" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0185</span>
                         <h3 class="card-name" title="Angle ثلاثيه كبيره">Angle ثلاثيه كبيره</h3>
-                        <div class="card-price-badge"><span>15</span> <span>EGP</span></div>
+                        <div class="card-price-badge">15 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle تجميع فراشه تقيله 4 بوصه">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle تجميع فراشه تقيله 4 بوصه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle تجميع فراشه تقيله 4 بوصه" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0203</span>
                         <h3 class="card-name" title="Angle تجميع فراشه تقيله 4 بوصه">Angle تجميع فراشه تقيله 4 بوصه</h3>
-                        <div class="card-price-badge"><span>12</span> <span>EGP</span></div>
+                        <div class="card-price-badge">12 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle تعليق جلو بال turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle تعليق جلو بال Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle تعليق جلو بال Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0221</span>
                         <h3 class="card-name" title="Angle تعليق جلو بال Turkish">Angle تعليق جلو بال Turkish</h3>
-                        <div class="card-price-badge"><span>6</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة مطبخ ثابتة ويل ماكس">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعة مطبخ ثابتة ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة مطبخ ثابتة ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0272</span>
                         <h3 class="card-name" title="شماعة مطبخ ثابتة ويل ماكس">شماعة مطبخ ثابتة ويل ماكس</h3>
-                        <div class="card-price-badge"><span>110</span> <span>EGP</span></div>
+                        <div class="card-price-badge">110 EGP</div>
                     </div>
                 </div>
             </div>
@@ -869,102 +894,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="angle وزره movableه 10cm فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Angle وزره Movableه 10cm فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="Angle وزره Movableه 10cm فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0289</span>
                         <h3 class="card-name" title="Angle وزره Movableه 10cm فضي">Angle وزره Movableه 10cm فضي</h3>
-                        <div class="card-price-badge"><span>16</span> <span>EGP</span></div>
+                        <div class="card-price-badge">16 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle وزره ثابته 10cm فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle وزره ثابته 10cm فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="Angle وزره ثابته 10cm فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0290</span>
                         <h3 class="card-name" title="Angle وزره ثابته 10cm فضي">Angle وزره ثابته 10cm فضي</h3>
-                        <div class="card-price-badge"><span>17</span> <span>EGP</span></div>
+                        <div class="card-price-badge">17 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle وزره ثابته 10cm black">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Angle وزره ثابته 10cm Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="Angle وزره ثابته 10cm Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0291</span>
                         <h3 class="card-name" title="Angle وزره ثابته 10cm Black">Angle وزره ثابته 10cm Black</h3>
-                        <div class="card-price-badge"><span>17</span> <span>EGP</span></div>
+                        <div class="card-price-badge">17 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle 3*3 عمق 3 black">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle 3*3 عمق 3 Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="Angle 3*3 عمق 3 Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0347</span>
                         <h3 class="card-name" title="Angle 3*3 عمق 3 Black">Angle 3*3 عمق 3 Black</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="angle وزره movableه 10cm black">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Angle وزره Movableه 10cm Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="Angle وزره Movableه 10cm Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0371</span>
                         <h3 class="card-name" title="Angle وزره Movableه 10cm Black">Angle وزره Movableه 10cm Black</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hanger 80 cm ملابس ثابته جلد orange">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hanger 80 cm ملابس ثابته جلد Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="Hanger 80 cm ملابس ثابته جلد Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0457</span>
                         <h3 class="card-name" title="Hanger 80 cm ملابس ثابته جلد Orange">Hanger 80 cm ملابس ثابته جلد Orange</h3>
-                        <div class="card-price-badge"><span>460</span> <span>EGP</span></div>
+                        <div class="card-price-badge">460 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hanger 80cm ملابس ثابته جلد grey">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hanger 80cm ملابس ثابته جلد Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="Hanger 80cm ملابس ثابته جلد Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0461</span>
                         <h3 class="card-name" title="Hanger 80cm ملابس ثابته جلد Grey">Hanger 80cm ملابس ثابته جلد Grey</h3>
-                        <div class="card-price-badge"><span>460</span> <span>EGP</span></div>
+                        <div class="card-price-badge">460 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hanger 100cm ملابس ثابته جلد orange">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hanger 100cm ملابس ثابته جلد Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="Hanger 100cm ملابس ثابته جلد Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0462</span>
                         <h3 class="card-name" title="Hanger 100cm ملابس ثابته جلد Orange">Hanger 100cm ملابس ثابته جلد Orange</h3>
-                        <div class="card-price-badge"><span>480</span> <span>EGP</span></div>
+                        <div class="card-price-badge">480 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hanger 100cm ملابس ثابته جلد grey">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hanger 100cm ملابس ثابته جلد Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="Hanger 100cm ملابس ثابته جلد Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0463</span>
                         <h3 class="card-name" title="Hanger 100cm ملابس ثابته جلد Grey">Hanger 100cm ملابس ثابته جلد Grey</h3>
-                        <div class="card-price-badge"><span>480</span> <span>EGP</span></div>
+                        <div class="card-price-badge">480 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كعب angle 90 white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="كعب Angle 90 White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب Angle 90 White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0523</span>
                         <h3 class="card-name" title="كعب Angle 90 White">كعب Angle 90 White</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.5 EGP</div>
                     </div>
                 </div>
             </div>
@@ -990,12 +1015,12 @@
             <div class="products-grid">
                 <div class="card-product" data-name="كعب angle 90 بني">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="كعب Angle 90 بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب Angle 90 بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0524</span>
                         <h3 class="card-name" title="كعب Angle 90 بني">كعب Angle 90 بني</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.5 EGP</div>
                     </div>
                 </div>
             </div>

@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_06_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -627,102 +652,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="استرتش تغليف">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="استرتش تغليف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="استرتش تغليف" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0110</span>
                         <h3 class="card-name" title="استرتش تغليف">استرتش تغليف</h3>
-                        <div class="card-price-badge"><span>295</span> <span>EGP</span></div>
+                        <div class="card-price-badge">295 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مcmار كعب معدن مقاس 20 mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="مcmار كعب معدن مقاس 20 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مcmار كعب معدن مقاس 20 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0124</span>
                         <h3 class="card-name" title="مcmار كعب معدن مقاس 20 mm">مcmار كعب معدن مقاس 20 mm</h3>
-                        <div class="card-price-badge"><span>3</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جالون غراء اصفر سوبر بوند 9 كيلو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="جالون غراء اصفر سوبر بوند 9 كيلو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جالون غراء اصفر سوبر بوند 9 كيلو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0168</span>
                         <h3 class="card-name" title="جالون غراء اصفر سوبر بوند 9 كيلو">جالون غراء اصفر سوبر بوند 9 كيلو</h3>
-                        <div class="card-price-badge"><span>500</span> <span>EGP</span></div>
+                        <div class="card-price-badge">500 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فيشر 6 mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="فيشر 6 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فيشر 6 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0211</span>
                         <h3 class="card-name" title="فيشر 6 mm">فيشر 6 mm</h3>
-                        <div class="card-price-badge"><span>25</span> <span>EGP</span></div>
+                        <div class="card-price-badge">25 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فيشر 8 mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="فيشر 8 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فيشر 8 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0212</span>
                         <h3 class="card-name" title="فيشر 8 mm">فيشر 8 mm</h3>
-                        <div class="card-price-badge"><span>30</span> <span>EGP</span></div>
+                        <div class="card-price-badge">30 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مcmار l 10mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="مcmار L 10mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مcmار L 10mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0216</span>
                         <h3 class="card-name" title="مcmار L 10mm">مcmار L 10mm</h3>
-                        <div class="card-price-badge"><span>90</span> <span>EGP</span></div>
+                        <div class="card-price-badge">90 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مcmار l 6mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="مcmار L 6mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مcmار L 6mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0217</span>
                         <h3 class="card-name" title="مcmار L 6mm">مcmار L 6mm</h3>
-                        <div class="card-price-badge"><span>65</span> <span>EGP</span></div>
+                        <div class="card-price-badge">65 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جالون غراء بنتا white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="جالون غراء بنتا White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جالون غراء بنتا White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0223</span>
                         <h3 class="card-name" title="جالون غراء بنتا White">جالون غراء بنتا White</h3>
-                        <div class="card-price-badge"><span>255</span> <span>EGP</span></div>
+                        <div class="card-price-badge">255 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="bracket 14mm shelf طاير rbf">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format&fit=crop&q=80" alt="Bracket 14mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_bracket_support.jpg" alt="Bracket 14mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0279</span>
                         <h3 class="card-name" title="Bracket 14mm Shelf طاير rbf">Bracket 14mm Shelf طاير rbf</h3>
-                        <div class="card-price-badge"><span>28</span> <span>EGP</span></div>
+                        <div class="card-price-badge">28 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="bracket 12mm shelf طاير rbf">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=600&auto=format&fit=crop&q=80" alt="Bracket 12mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_bracket_support.jpg" alt="Bracket 12mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0280</span>
                         <h3 class="card-name" title="Bracket 12mm Shelf طاير rbf">Bracket 12mm Shelf طاير rbf</h3>
-                        <div class="card-price-badge"><span>19</span> <span>EGP</span></div>
+                        <div class="card-price-badge">19 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,82 +773,82 @@
             <div class="products-grid">
                 <div class="card-product" data-name="bracket 10mm shelf طاير rbf">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format&fit=crop&q=80" alt="Bracket 10mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_bracket_support.jpg" alt="Bracket 10mm Shelf طاير rbf" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0281</span>
                         <h3 class="card-name" title="Bracket 10mm Shelf طاير rbf">Bracket 10mm Shelf طاير rbf</h3>
-                        <div class="card-price-badge"><span>17</span> <span>EGP</span></div>
+                        <div class="card-price-badge">17 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كعب كرسي20mm white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="كعب كرسي20mm White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب كرسي20mm White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0288</span>
                         <h3 class="card-name" title="كعب كرسي20mm White">كعب كرسي20mm White</h3>
-                        <div class="card-price-badge"><span>1.2</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.2 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كرتون تغليف جديد بل كيلو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="كرتون تغليف جديد بل كيلو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كرتون تغليف جديد بل كيلو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0324</span>
                         <h3 class="card-name" title="كرتون تغليف جديد بل كيلو">كرتون تغليف جديد بل كيلو</h3>
-                        <div class="card-price-badge"><span>19.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">19.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كويله خشب 8 mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="كويله خشب 8 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كويله خشب 8 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0325</span>
                         <h3 class="card-name" title="كويله خشب 8 mm">كويله خشب 8 mm</h3>
-                        <div class="card-price-badge"><span>260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">260 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مزيل صدا turkish 400 mm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مزيل صدا Turkish 400 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="مزيل صدا Turkish 400 mm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0344</span>
                         <h3 class="card-name" title="مزيل صدا Turkish 400 mm">مزيل صدا Turkish 400 mm</h3>
-                        <div class="card-price-badge"><span>90</span> <span>EGP</span></div>
+                        <div class="card-price-badge">90 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جالون غراء بنتا احمر">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="جالون غراء بنتا احمر" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جالون غراء بنتا احمر" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0345</span>
                         <h3 class="card-name" title="جالون غراء بنتا احمر">جالون غراء بنتا احمر</h3>
-                        <div class="card-price-badge"><span>260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">260 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge باب بيانو 177 mm دانكو 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge باب بيانو 177 mm دانكو 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge باب بيانو 177 mm دانكو 3D" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0537</span>
                         <h3 class="card-name" title="Hinge باب بيانو 177 mm دانكو 3D">Hinge باب بيانو 177 mm دانكو 3D</h3>
-                        <div class="card-price-badge"><span>520</span> <span>EGP</span></div>
+                        <div class="card-price-badge">520 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كعب كرسي 20 mm بني">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="كعب كرسي 20 mm بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كعب كرسي 20 mm بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0577</span>
                         <h3 class="card-name" title="كعب كرسي 20 mm بني">كعب كرسي 20 mm بني</h3>
-                        <div class="card-price-badge"><span>1.2</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.2 EGP</div>
                     </div>
                 </div>
             </div>

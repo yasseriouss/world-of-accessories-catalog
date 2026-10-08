@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_10_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -627,102 +652,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="ستاند اطباق 31 × 21 كروم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="ستاند اطباق 31 × 21 كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="ستاند اطباق 31 × 21 كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0274</span>
                         <h3 class="card-name" title="ستاند اطباق 31 × 21 كروم">ستاند اطباق 31 × 21 كروم</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="وراقة استاند كروم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&auto=format&fit=crop&q=80" alt="وراقة استاند كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="وراقة استاند كروم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0275</span>
                         <h3 class="card-name" title="وراقة استاند كروم">وراقة استاند كروم</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اندوكس اسباني straight سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="Hinge اندوكس اسباني Straight سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge اندوكس اسباني Straight سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0284</span>
                         <h3 class="card-name" title="Hinge اندوكس اسباني Straight سوفت 3d">Hinge اندوكس اسباني Straight سوفت 3d</h3>
-                        <div class="card-price-badge"><span>58</span> <span>EGP</span></div>
+                        <div class="card-price-badge">58 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اندوكس اسباني half overlay سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="Hinge اندوكس اسباني Half Overlay سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge اندوكس اسباني Half Overlay سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0285</span>
                         <h3 class="card-name" title="Hinge اندوكس اسباني Half Overlay سوفت 3d">Hinge اندوكس اسباني Half Overlay سوفت 3d</h3>
-                        <div class="card-price-badge"><span>56</span> <span>EGP</span></div>
+                        <div class="card-price-badge">56 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اندوكس اسباني full overlay سوفت 3d">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="Hinge اندوكس اسباني Full Overlay سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_crank.jpg" alt="Hinge اندوكس اسباني Full Overlay سوفت 3d" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0286</span>
                         <h3 class="card-name" title="Hinge اندوكس اسباني Full Overlay سوفت 3d">Hinge اندوكس اسباني Full Overlay سوفت 3d</h3>
-                        <div class="card-price-badge"><span>57</span> <span>EGP</span></div>
+                        <div class="card-price-badge">57 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه استانلس لاكوست70cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست70cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0298</span>
                         <h3 class="card-name" title="مطبقيه استانلس لاكوست70cm">مطبقيه استانلس لاكوست70cm</h3>
-                        <div class="card-price-badge"><span>345</span> <span>EGP</span></div>
+                        <div class="card-price-badge">345 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه استانلس لاكوست80cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست80cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0299</span>
                         <h3 class="card-name" title="مطبقيه استانلس لاكوست80cm">مطبقيه استانلس لاكوست80cm</h3>
-                        <div class="card-price-badge"><span>375</span> <span>EGP</span></div>
+                        <div class="card-price-badge">375 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 30جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 30جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 30جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0355</span>
                         <h3 class="card-name" title="Runner/Slide 30جانبي سوفت FGV ايطالي">Runner/Slide 30جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>240</span> <span>EGP</span></div>
+                        <div class="card-price-badge">240 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 35جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 35جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 35جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0356</span>
                         <h3 class="card-name" title="Runner/Slide 35جانبي سوفت FGV ايطالي">Runner/Slide 35جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>250</span> <span>EGP</span></div>
+                        <div class="card-price-badge">250 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 40جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 40جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 40جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0357</span>
                         <h3 class="card-name" title="Runner/Slide 40جانبي سوفت FGV ايطالي">Runner/Slide 40جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">260 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,52 +773,52 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide 45جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 45جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 45جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0358</span>
                         <h3 class="card-name" title="Runner/Slide 45جانبي سوفت FGV ايطالي">Runner/Slide 45جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>270</span> <span>EGP</span></div>
+                        <div class="card-price-badge">270 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 50جانبي سوفت fgv ايطالي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 50جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Runner/Slide 50جانبي سوفت FGV ايطالي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0359</span>
                         <h3 class="card-name" title="Runner/Slide 50جانبي سوفت FGV ايطالي">Runner/Slide 50جانبي سوفت FGV ايطالي</h3>
-                        <div class="card-price-badge"><span>280</span> <span>EGP</span></div>
+                        <div class="card-price-badge">280 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="hinge اندوكس اسباني straight سوفت فرش 4 مcmار">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="Hinge اندوكس اسباني Straight سوفت فرش 4 مcmار" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_hinge_straight.jpg" alt="Hinge اندوكس اسباني Straight سوفت فرش 4 مcmار" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0361</span>
                         <h3 class="card-name" title="Hinge اندوكس اسباني Straight سوفت فرش 4 مcmار">Hinge اندوكس اسباني Straight سوفت فرش 4 مcmار</h3>
-                        <div class="card-price-badge"><span>48</span> <span>EGP</span></div>
+                        <div class="card-price-badge">48 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه استانلس لاكوست60cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست60cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست60cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0434</span>
                         <h3 class="card-name" title="مطبقيه استانلس لاكوست60cm">مطبقيه استانلس لاكوست60cm</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مطبقيه استانلس لاكوست90cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه استانلس لاكوست90cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه استانلس لاكوست90cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0438</span>
                         <h3 class="card-name" title="مطبقيه استانلس لاكوست90cm">مطبقيه استانلس لاكوست90cm</h3>
-                        <div class="card-price-badge"><span>405</span> <span>EGP</span></div>
+                        <div class="card-price-badge">405 EGP</div>
                     </div>
                 </div>
             </div>

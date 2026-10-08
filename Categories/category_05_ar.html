@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_05_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">10 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">١٠ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,110 +644,110 @@
                     <div class="category-badge-icon">🔩</div>
                     <div>
                         <h2 class="category-name-heading">المثبتات والتركيب</h2>
-                        <p class="category-meta-count">براغي وصواميل مراسي وعناصر التثبيت &bull; 10 منتج</p>
+                        <p class="category-meta-count">براغي وصواميل مراسي وعناصر التثبيت &bull; ١٠ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="لاصق خشب تركي 400 mdf ملم هاي تك">
+                <div class="card-product" data-name="لاصق خشب تركي ٤٠٠ mdf ملم هاي تك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="لاصق خشب تركي 400 MDF ملم هاي تك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="لاصق خشب تركي ٤٠٠ MDF ملم هاي تك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0105</span>
-                        <h3 class="card-name" title="لاصق خشب تركي 400 MDF ملم هاي تك">لاصق خشب تركي 400 MDF ملم هاي تك</h3>
-                        <div class="card-price-badge"><span>110</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٠٥</span>
+                        <h3 class="card-name" title="لاصق خشب تركي ٤٠٠ MDF ملم هاي تك">لاصق خشب تركي ٤٠٠ <bdi class="bidi-isolate" dir="ltr">MDF</bdi> ملم هاي تك</h3>
+                        <div class="card-price-badge">١١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 20 سم اسود بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٢٠ سم اسود بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 20 سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٢٠ سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0113</span>
-                        <h3 class="card-name" title="ترولي جانبي 20 سم اسود بقاعدة خشبية palm">ترولي جانبي 20 سم اسود بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1550</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١١٣</span>
+                        <h3 class="card-name" title="ترولي جانبي ٢٠ سم اسود بقاعدة خشبية palm">ترولي جانبي ٢٠ سم اسود بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٥٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 30 سم فضي بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٣٠ سم فضي بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 30 سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٣٠ سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0387</span>
-                        <h3 class="card-name" title="ترولي جانبي 30 سم فضي بقاعدة خشبية palm">ترولي جانبي 30 سم فضي بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1750</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٨٧</span>
+                        <h3 class="card-name" title="ترولي جانبي ٣٠ سم فضي بقاعدة خشبية palm">ترولي جانبي ٣٠ سم فضي بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٧٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 30 سم اسود بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٣٠ سم اسود بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 30 سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٣٠ سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0388</span>
-                        <h3 class="card-name" title="ترولي جانبي 30 سم اسود بقاعدة خشبية palm">ترولي جانبي 30 سم اسود بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٨٨</span>
+                        <h3 class="card-name" title="ترولي جانبي ٣٠ سم اسود بقاعدة خشبية palm">ترولي جانبي ٣٠ سم اسود بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 35سم فضي بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٣٥ سم فضي بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 35سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٣٥ سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0389</span>
-                        <h3 class="card-name" title="ترولي جانبي 35سم فضي بقاعدة خشبية palm">ترولي جانبي 35سم فضي بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٨٩</span>
+                        <h3 class="card-name" title="ترولي جانبي ٣٥ سم فضي بقاعدة خشبية palm">ترولي جانبي ٣٥ سم فضي بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 35 سم اسود بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٣٥ سم اسود بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 35 سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٣٥ سم اسود بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0390</span>
-                        <h3 class="card-name" title="ترولي جانبي 35 سم اسود بقاعدة خشبية palm">ترولي جانبي 35 سم اسود بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1880</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٩٠</span>
+                        <h3 class="card-name" title="ترولي جانبي ٣٥ سم اسود بقاعدة خشبية palm">ترولي جانبي ٣٥ سم اسود بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٨٨٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 20سم فضي بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٢٠ سم فضي بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 20سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٢٠ سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0409</span>
-                        <h3 class="card-name" title="ترولي جانبي 20سم فضي بقاعدة خشبية palm">ترولي جانبي 20سم فضي بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1500</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠٩</span>
+                        <h3 class="card-name" title="ترولي جانبي ٢٠ سم فضي بقاعدة خشبية palm">ترولي جانبي ٢٠ سم فضي بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٥٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ترولي جانبي 25سم فضي بقاعدة خشبية palm">
+                <div class="card-product" data-name="ترولي جانبي ٢٥ سم فضي بقاعدة خشبية palm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ترولي جانبي 25سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي جانبي ٢٥ سم فضي بقاعدة خشبية palm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0410</span>
-                        <h3 class="card-name" title="ترولي جانبي 25سم فضي بقاعدة خشبية palm">ترولي جانبي 25سم فضي بقاعدة خشبية palm</h3>
-                        <div class="card-price-badge"><span>1600</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤١٠</span>
+                        <h3 class="card-name" title="ترولي جانبي ٢٥ سم فضي بقاعدة خشبية palm">ترولي جانبي ٢٥ سم فضي بقاعدة خشبية <bdi class="bidi-isolate" dir="ltr">palm</bdi></h3>
+                        <div class="card-price-badge">١٦٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0428</span>
+                        <span class="card-code">#٠٤٢٨</span>
                         <h3 class="card-name" title="ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو">ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو</h3>
-                        <div class="card-price-badge"><span>7150</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٧١٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="ماجك سله 4/3 ارضيه خشبيه 70سم نيسكو">
+                <div class="card-product" data-name="ماجك سله ٤/٣ ارضيه خشبيه ٧٠ سم نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="ماجك سله 4/3 ارضيه خشبيه 70سم نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ماجك سله ٤/٣ ارضيه خشبيه ٧٠ سم نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0431</span>
-                        <h3 class="card-name" title="ماجك سله 4/3 ارضيه خشبيه 70سم نيسكو">ماجك سله 4/3 ارضيه خشبيه 70سم نيسكو</h3>
-                        <div class="card-price-badge"><span>7000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣١</span>
+                        <h3 class="card-name" title="ماجك سله ٤/٣ ارضيه خشبيه ٧٠ سم نيسكو">ماجك سله ٤/٣ ارضيه خشبيه ٧٠ سم نيسكو</h3>
+                        <div class="card-price-badge">٧٠٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 1</span>
+                <span>صفحة ١ من ١</span>
             </footer>
         </section>
     </main>

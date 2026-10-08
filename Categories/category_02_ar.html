@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_02_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">78 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">٧٨ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,110 +644,110 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مفصله بالما عدلة 2قوة 3d نيكل">
+                <div class="card-product" data-name="مفصله بالما عدلة ٢ قوة 3d نيكل">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0006.jpg" alt="مفصله بالما عدلة 2قوة 3D نيكل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0006.jpg" alt="مفصله بالما عدلة ٢ قوة 3D نيكل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0006</span>
-                        <h3 class="card-name" title="مفصله بالما عدلة 2قوة 3D نيكل">مفصله بالما عدلة 2قوة 3D نيكل</h3>
-                        <div class="card-price-badge"><span>38</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٠٦</span>
+                        <h3 class="card-name" title="مفصله بالما عدلة ٢ قوة 3D نيكل">مفصله بالما عدلة ٢ قوة <bdi class="bidi-isolate" dir="ltr">3D</bdi> نيكل</h3>
+                        <div class="card-price-badge">٣٨ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مفصله بالما نص ركبة2قوة 3d نيكل">
+                <div class="card-product" data-name="مفصله بالما نص ركبة ٢ قوة 3d نيكل">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0007.jpg" alt="مفصله بالما نص ركبة2قوة 3D نيكل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0007.jpg" alt="مفصله بالما نص ركبة ٢ قوة 3D نيكل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0007</span>
-                        <h3 class="card-name" title="مفصله بالما نص ركبة2قوة 3D نيكل">مفصله بالما نص ركبة2قوة 3D نيكل</h3>
-                        <div class="card-price-badge"><span>40</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٠٧</span>
+                        <h3 class="card-name" title="مفصله بالما نص ركبة ٢ قوة 3D نيكل">مفصله بالما نص ركبة ٢ قوة <bdi class="bidi-isolate" dir="ltr">3D</bdi> نيكل</h3>
+                        <div class="card-price-badge">٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="قطاع زجاج بدون مقبض اسود 3 م الكترو">
+                <div class="card-product" data-name="قطاع زجاج بدون مقبض اسود ٣ م الكترو">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0028.jpg" alt="قطاع زجاج بدون مقبض اسود 3 م الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0028.jpg" alt="قطاع زجاج بدون مقبض اسود ٣ م الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0028</span>
-                        <h3 class="card-name" title="قطاع زجاج بدون مقبض اسود 3 م الكترو">قطاع زجاج بدون مقبض اسود 3 م الكترو</h3>
-                        <div class="card-price-badge"><span>400</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٢٨</span>
+                        <h3 class="card-name" title="قطاع زجاج بدون مقبض اسود ٣ م الكترو">قطاع زجاج بدون مقبض اسود ٣ م الكترو</h3>
+                        <div class="card-price-badge">٤٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="قطاع زجاج مع مقبض اسود 2.7م الكترو">
+                <div class="card-product" data-name="قطاع زجاج مع مقبض اسود ٢.٧ م الكترو">
                     <div class="card-image-wrap">
-                        <img src="../assets/products/prod_0029.jpg" alt="قطاع زجاج مع مقبض اسود 2.7م الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/prod_0029.jpg" alt="قطاع زجاج مع مقبض اسود ٢.٧ م الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0029</span>
-                        <h3 class="card-name" title="قطاع زجاج مع مقبض اسود 2.7م الكترو">قطاع زجاج مع مقبض اسود 2.7م الكترو</h3>
-                        <div class="card-price-badge"><span>400</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٢٩</span>
+                        <h3 class="card-name" title="قطاع زجاج مع مقبض اسود ٢.٧ م الكترو">قطاع زجاج مع مقبض اسود ٢.٧ م الكترو</h3>
+                        <div class="card-price-badge">٤٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه هيدروليك مودرن 60 سم أسود">
+                <div class="card-product" data-name="مطبقيه هيدروليك مودرن ٦٠ سم أسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="مطبقيه هيدروليك مودرن 60 سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه هيدروليك مودرن ٦٠ سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0070</span>
-                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن 60 سم أسود">مطبقيه هيدروليك مودرن 60 سم أسود</h3>
-                        <div class="card-price-badge"><span>3550</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٧٠</span>
+                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن ٦٠ سم أسود">مطبقيه هيدروليك مودرن ٦٠ سم أسود</h3>
+                        <div class="card-price-badge">٣٥٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه هيدروليك مودرن 80 سم أسود">
+                <div class="card-product" data-name="مطبقيه هيدروليك مودرن ٨٠ سم أسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="مطبقيه هيدروليك مودرن 80 سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه هيدروليك مودرن ٨٠ سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0072</span>
-                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن 80 سم أسود">مطبقيه هيدروليك مودرن 80 سم أسود</h3>
-                        <div class="card-price-badge"><span>3700</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٧٢</span>
+                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن ٨٠ سم أسود">مطبقيه هيدروليك مودرن ٨٠ سم أسود</h3>
+                        <div class="card-price-badge">٣٧٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مطبقيه هيدروليك مودرن 90 سم أسود">
+                <div class="card-product" data-name="مطبقيه هيدروليك مودرن ٩٠ سم أسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="مطبقيه هيدروليك مودرن 90 سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="مطبقيه هيدروليك مودرن ٩٠ سم أسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0074</span>
-                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن 90 سم أسود">مطبقيه هيدروليك مودرن 90 سم أسود</h3>
-                        <div class="card-price-badge"><span>3800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٧٤</span>
+                        <h3 class="card-name" title="مطبقيه هيدروليك مودرن ٩٠ سم أسود">مطبقيه هيدروليك مودرن ٩٠ سم أسود</h3>
+                        <div class="card-price-badge">٣٨٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة بناطيل علوية مجوز orange سوفت كلوز palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0093</span>
-                        <h3 class="card-name" title="شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma">شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma</h3>
-                        <div class="card-price-badge"><span>2800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٣</span>
+                        <h3 class="card-name" title="شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma">شماعة بناطيل علوية مجوز <bdi class="bidi-isolate" dir="ltr">ORANGE</bdi> سوفت كلوز <bdi class="bidi-isolate" dir="ltr">palma</bdi></h3>
+                        <div class="card-price-badge">٢٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعة بناطيل علوية مجوز gray سوفت كلوز palma">
+                <div class="card-product" data-name="شماعة بناطيل علوية مجوز رمادي سوفت كلوز palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل علوية مجوز GRAY سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل علوية مجوز رمادي سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0094</span>
-                        <h3 class="card-name" title="شماعة بناطيل علوية مجوز GRAY سوفت كلوز palma">شماعة بناطيل علوية مجوز GRAY سوفت كلوز palma</h3>
-                        <div class="card-price-badge"><span>2800</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٤</span>
+                        <h3 class="card-name" title="شماعة بناطيل علوية مجوز رمادي سوفت كلوز palma">شماعة بناطيل علوية مجوز رمادي سوفت كلوز <bdi class="bidi-isolate" dir="ltr">palma</bdi></h3>
+                        <div class="card-price-badge">٢٨٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعة بناطيل علوية gray سوفت كلوزpalma">
+                <div class="card-product" data-name="شماعة بناطيل علوية رمادي سوفت كلوزpalma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل علوية GRAY سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل علوية رمادي سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0095</span>
-                        <h3 class="card-name" title="شماعة بناطيل علوية GRAY سوفت كلوزpalma">شماعة بناطيل علوية GRAY سوفت كلوزpalma</h3>
-                        <div class="card-price-badge"><span>1850</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٥</span>
+                        <h3 class="card-name" title="شماعة بناطيل علوية رمادي سوفت كلوزpalma">شماعة بناطيل علوية رمادي سوفت كلوزpalma</h3>
+                        <div class="card-price-badge">١٨٥٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 8</span>
+                <span>صفحة ١ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,7 +765,7 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="شماعة بناطيل علوية orange سوفت كلوز palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل علوية ORANGE سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل علوية ORANGE سوفت كلوز palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0096</span>
-                        <h3 class="card-name" title="شماعة بناطيل علوية ORANGE سوفت كلوز palma">شماعة بناطيل علوية ORANGE سوفت كلوز palma</h3>
-                        <div class="card-price-badge"><span>1850</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٠٩٦</span>
+                        <h3 class="card-name" title="شماعة بناطيل علوية ORANGE سوفت كلوز palma">شماعة بناطيل علوية <bdi class="bidi-isolate" dir="ltr">ORANGE</bdi> سوفت كلوز <bdi class="bidi-isolate" dir="ltr">palma</bdi></h3>
+                        <div class="card-price-badge">١٨٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض اسود 10 مستورد">
+                <div class="card-product" data-name="مقبض اسود ١٠ مستورد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض اسود 10 مستورد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض اسود ١٠ مستورد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0170</span>
-                        <h3 class="card-name" title="مقبض اسود 10 مستورد">مقبض اسود 10 مستورد</h3>
-                        <div class="card-price-badge"><span>50</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٧٠</span>
+                        <h3 class="card-name" title="مقبض اسود ١٠ مستورد">مقبض اسود ١٠ مستورد</h3>
+                        <div class="card-price-badge">٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 16 فضي">
+                <div class="card-product" data-name="مقبض ماسورة ١٦ فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 16 فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض ماسورة ١٦ فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0187</span>
-                        <h3 class="card-name" title="مقبض ماسورة 16 فضي">مقبض ماسورة 16 فضي</h3>
-                        <div class="card-price-badge"><span>14</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٨٧</span>
+                        <h3 class="card-name" title="مقبض ماسورة ١٦ فضي">مقبض ماسورة ١٦ فضي</h3>
+                        <div class="card-price-badge">١٤ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 19 فضي">
+                <div class="card-product" data-name="مقبض ماسورة ١٩ فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 19 فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض ماسورة ١٩ فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0188</span>
-                        <h3 class="card-name" title="مقبض ماسورة 19 فضي">مقبض ماسورة 19 فضي</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٨٨</span>
+                        <h3 class="card-name" title="مقبض ماسورة ١٩ فضي">مقبض ماسورة ١٩ فضي</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض مسطره 16 سم اسود">
+                <div class="card-product" data-name="مقبض مسطره ١٦ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض مسطره 16 سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض مسطره ١٦ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0191</span>
-                        <h3 class="card-name" title="مقبض مسطره 16 سم اسود">مقبض مسطره 16 سم اسود</h3>
-                        <div class="card-price-badge"><span>40</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩١</span>
+                        <h3 class="card-name" title="مقبض مسطره ١٦ سم اسود">مقبض مسطره ١٦ سم اسود</h3>
+                        <div class="card-price-badge">٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض مسطره اسود 22 سم">
+                <div class="card-product" data-name="مقبض مسطره اسود ٢٢ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض مسطره اسود 22 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض مسطره اسود ٢٢ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0192</span>
-                        <h3 class="card-name" title="مقبض مسطره اسود 22 سم">مقبض مسطره اسود 22 سم</h3>
-                        <div class="card-price-badge"><span>48</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٢</span>
+                        <h3 class="card-name" title="مقبض مسطره اسود ٢٢ سم">مقبض مسطره اسود ٢٢ سم</h3>
+                        <div class="card-price-badge">٤٨ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض مسطره 80سم اسود">
+                <div class="card-product" data-name="مقبض مسطره ٨٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض مسطره 80سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض مسطره ٨٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0193</span>
-                        <h3 class="card-name" title="مقبض مسطره 80سم اسود">مقبض مسطره 80سم اسود</h3>
-                        <div class="card-price-badge"><span>140</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٣</span>
+                        <h3 class="card-name" title="مقبض مسطره ٨٠ سم اسود">مقبض مسطره ٨٠ سم اسود</h3>
+                        <div class="card-price-badge">١٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان 15 سم g اسود">
+                <div class="card-product" data-name="مقبض بلت ان ١٥ سم g اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان 15 سم G اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان ١٥ سم G اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0194</span>
-                        <h3 class="card-name" title="مقبض بلت ان 15 سم G اسود">مقبض بلت ان 15 سم G اسود</h3>
-                        <div class="card-price-badge"><span>30</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٤</span>
+                        <h3 class="card-name" title="مقبض بلت ان ١٥ سم G اسود">مقبض بلت ان ١٥ سم <bdi class="bidi-isolate" dir="ltr">G</bdi> اسود</h3>
+                        <div class="card-price-badge">٣٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان 35 سم g اسود">
+                <div class="card-product" data-name="مقبض بلت ان ٣٥ سم g اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان 35 سم G اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان ٣٥ سم G اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0195</span>
-                        <h3 class="card-name" title="مقبض بلت ان 35 سم G اسود">مقبض بلت ان 35 سم G اسود</h3>
-                        <div class="card-price-badge"><span>42</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٥</span>
+                        <h3 class="card-name" title="مقبض بلت ان ٣٥ سم G اسود">مقبض بلت ان ٣٥ سم <bdi class="bidi-isolate" dir="ltr">G</bdi> اسود</h3>
+                        <div class="card-price-badge">٤٢ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 15سم مستورد دهبي">
+                <div class="card-product" data-name="مقبض بلت ان هوك ١٥ سم مستورد دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 15سم مستورد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان هوك ١٥ سم مستورد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0196</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 15سم مستورد دهبي">مقبض بلت ان هوك 15سم مستورد دهبي</h3>
-                        <div class="card-price-badge"><span>25</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٦</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ١٥ سم مستورد دهبي">مقبض بلت ان هوك ١٥ سم مستورد دهبي</h3>
+                        <div class="card-price-badge">٢٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -852,7 +877,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 8</span>
+                <span>صفحة ٢ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="3">
@@ -861,110 +886,110 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مقبض دهبي مسطره 40 سم g">
+                <div class="card-product" data-name="مقبض دهبي مسطره ٤٠ سم g">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض دهبي مسطره 40 سم G" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض دهبي مسطره ٤٠ سم G" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0197</span>
-                        <h3 class="card-name" title="مقبض دهبي مسطره 40 سم G">مقبض دهبي مسطره 40 سم G</h3>
-                        <div class="card-price-badge"><span>55</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٧</span>
+                        <h3 class="card-name" title="مقبض دهبي مسطره ٤٠ سم G">مقبض دهبي مسطره ٤٠ سم <bdi class="bidi-isolate" dir="ltr">G</bdi></h3>
+                        <div class="card-price-badge">٥٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 80 سم">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٨٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 80 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان هوك ٨٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0198</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 80 سم">مقبض بلت ان هوك 80 سم</h3>
-                        <div class="card-price-badge"><span>66</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٨</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٨٠ سم">مقبض بلت ان هوك ٨٠ سم</h3>
+                        <div class="card-price-badge">٦٦ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 100 سم">
+                <div class="card-product" data-name="مقبض بلت ان هوك ١٠٠ سم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 100 سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان هوك ١٠٠ سم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0199</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 100 سم">مقبض بلت ان هوك 100 سم</h3>
-                        <div class="card-price-badge"><span>130</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠١٩٩</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ١٠٠ سم">مقبض بلت ان هوك ١٠٠ سم</h3>
+                        <div class="card-price-badge">١٣٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="قطاع دريسنج خفيف بدون مقبض اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="قطاع دريسنج خفيف بدون مقبض اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="قطاع دريسنج خفيف بدون مقبض اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0230</span>
+                        <span class="card-code">#٠٢٣٠</span>
                         <h3 class="card-name" title="قطاع دريسنج خفيف بدون مقبض اسود">قطاع دريسنج خفيف بدون مقبض اسود</h3>
-                        <div class="card-price-badge"><span>210</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٢١٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="قطاع دريسنج ب مقبض خفيف اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="قطاع دريسنج ب مقبض خفيف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="قطاع دريسنج ب مقبض خفيف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0231</span>
+                        <span class="card-code">#٠٢٣١</span>
                         <h3 class="card-name" title="قطاع دريسنج ب مقبض خفيف اسود">قطاع دريسنج ب مقبض خفيف اسود</h3>
-                        <div class="card-price-badge"><span>220</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٢٢٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان اسود 3 متر">
+                <div class="card-product" data-name="مقبض بلت ان اسود ٣ أمتار">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان اسود 3 متر" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان اسود ٣ أمتار" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0232</span>
-                        <h3 class="card-name" title="مقبض بلت ان اسود 3 متر">مقبض بلت ان اسود 3 متر</h3>
-                        <div class="card-price-badge"><span>240</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٣٢</span>
+                        <h3 class="card-name" title="مقبض بلت ان اسود ٣ أمتار">مقبض بلت ان اسود ٣ أمتار</h3>
+                        <div class="card-price-badge">٢٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان فضي 3 متر">
+                <div class="card-product" data-name="مقبض بلت ان فضي ٣ أمتار">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان فضي 3 متر" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان فضي ٣ أمتار" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0233</span>
-                        <h3 class="card-name" title="مقبض بلت ان فضي 3 متر">مقبض بلت ان فضي 3 متر</h3>
-                        <div class="card-price-badge"><span>300</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٣٣</span>
+                        <h3 class="card-name" title="مقبض بلت ان فضي ٣ أمتار">مقبض بلت ان فضي ٣ أمتار</h3>
+                        <div class="card-price-badge">٣٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان اسود 3 متر g دوران">
+                <div class="card-product" data-name="مقبض بلت ان اسود ٣ أمتار g دوران">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان اسود 3 متر G دوران" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان اسود ٣ أمتار G دوران" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0234</span>
-                        <h3 class="card-name" title="مقبض بلت ان اسود 3 متر G دوران">مقبض بلت ان اسود 3 متر G دوران</h3>
-                        <div class="card-price-badge"><span>265</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٣٤</span>
+                        <h3 class="card-name" title="مقبض بلت ان اسود ٣ أمتار G دوران">مقبض بلت ان اسود ٣ أمتار <bdi class="bidi-isolate" dir="ltr">G</bdi> دوران</h3>
+                        <div class="card-price-badge">٢٦٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ابيض 10 مستورد">
+                <div class="card-product" data-name="مقبض ابيض ١٠ مستورد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض ابيض 10 مستورد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض ابيض ١٠ مستورد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0307</span>
-                        <h3 class="card-name" title="مقبض ابيض 10 مستورد">مقبض ابيض 10 مستورد</h3>
-                        <div class="card-price-badge"><span>55</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٠٧</span>
+                        <h3 class="card-name" title="مقبض ابيض ١٠ مستورد">مقبض ابيض ١٠ مستورد</h3>
+                        <div class="card-price-badge">٥٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 20 سم اسود">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٢٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 20 سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ٢٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0315</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 20 سم اسود">مقبض بلت ان هوك 20 سم اسود</h3>
-                        <div class="card-price-badge"><span>27</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣١٥</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٢٠ سم اسود">مقبض بلت ان هوك ٢٠ سم اسود</h3>
+                        <div class="card-price-badge">٢٧ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -973,7 +998,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 3 من 8</span>
+                <span>صفحة ٣ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="4">
@@ -982,110 +1007,110 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مقبض بلت ان هوك 40سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٤٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 40سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ٤٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0316</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 40سم مستورد جديد اسود">مقبض بلت ان هوك 40سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>53</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣١٦</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٤٠ سم مستورد جديد اسود">مقبض بلت ان هوك ٤٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">٥٣ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 16 اسود">
+                <div class="card-product" data-name="مقبض ماسورة ١٦ اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 16 اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ماسورة ١٦ اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0317</span>
-                        <h3 class="card-name" title="مقبض ماسورة 16 اسود">مقبض ماسورة 16 اسود</h3>
-                        <div class="card-price-badge"><span>19</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣١٧</span>
+                        <h3 class="card-name" title="مقبض ماسورة ١٦ اسود">مقبض ماسورة ١٦ اسود</h3>
+                        <div class="card-price-badge">١٩ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان 20 سم g خشابي">
+                <div class="card-product" data-name="مقبض بلت ان ٢٠ سم g خشابي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان 20 سم G خشابي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان ٢٠ سم G خشابي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0318</span>
-                        <h3 class="card-name" title="مقبض بلت ان 20 سم G خشابي">مقبض بلت ان 20 سم G خشابي</h3>
-                        <div class="card-price-badge"><span>44</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣١٨</span>
+                        <h3 class="card-name" title="مقبض بلت ان ٢٠ سم G خشابي">مقبض بلت ان ٢٠ سم <bdi class="bidi-isolate" dir="ltr">G</bdi> خشابي</h3>
+                        <div class="card-price-badge">٤٤ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان 30 سم g خشابي">
+                <div class="card-product" data-name="مقبض بلت ان ٣٠ سم g خشابي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان 30 سم G خشابي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان ٣٠ سم G خشابي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0319</span>
-                        <h3 class="card-name" title="مقبض بلت ان 30 سم G خشابي">مقبض بلت ان 30 سم G خشابي</h3>
-                        <div class="card-price-badge"><span>52</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣١٩</span>
+                        <h3 class="card-name" title="مقبض بلت ان ٣٠ سم G خشابي">مقبض بلت ان ٣٠ سم <bdi class="bidi-isolate" dir="ltr">G</bdi> خشابي</h3>
+                        <div class="card-price-badge">٥٢ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض 12مشطوف اسود">
+                <div class="card-product" data-name="مقبض ١٢ مشطوف اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض 12مشطوف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ١٢ مشطوف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0320</span>
-                        <h3 class="card-name" title="مقبض 12مشطوف اسود">مقبض 12مشطوف اسود</h3>
-                        <div class="card-price-badge"><span>28</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٠</span>
+                        <h3 class="card-name" title="مقبض ١٢ مشطوف اسود">مقبض ١٢ مشطوف اسود</h3>
+                        <div class="card-price-badge">٢٨ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض 19مشطوف اسود">
+                <div class="card-product" data-name="مقبض ١٩ مشطوف اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض 19مشطوف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ١٩ مشطوف اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0321</span>
-                        <h3 class="card-name" title="مقبض 19مشطوف اسود">مقبض 19مشطوف اسود</h3>
-                        <div class="card-price-badge"><span>35</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢١</span>
+                        <h3 class="card-name" title="مقبض ١٩ مشطوف اسود">مقبض ١٩ مشطوف اسود</h3>
+                        <div class="card-price-badge">٣٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض عدل 12 سم اسود جديد">
+                <div class="card-product" data-name="مقبض عدل ١٢ سم اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض عدل 12 سم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض عدل ١٢ سم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0322</span>
-                        <h3 class="card-name" title="مقبض عدل 12 سم اسود جديد">مقبض عدل 12 سم اسود جديد</h3>
-                        <div class="card-price-badge"><span>24</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٢</span>
+                        <h3 class="card-name" title="مقبض عدل ١٢ سم اسود جديد">مقبض عدل ١٢ سم اسود جديد</h3>
+                        <div class="card-price-badge">٢٤ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض عدل 19 سم اسود جديد">
+                <div class="card-product" data-name="مقبض عدل ١٩ سم اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض عدل 19 سم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض عدل ١٩ سم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0323</span>
-                        <h3 class="card-name" title="مقبض عدل 19 سم اسود جديد">مقبض عدل 19 سم اسود جديد</h3>
-                        <div class="card-price-badge"><span>29</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٢٣</span>
+                        <h3 class="card-name" title="مقبض عدل ١٩ سم اسود جديد">مقبض عدل ١٩ سم اسود جديد</h3>
+                        <div class="card-price-badge">٢٩ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعة بناطيل جانبية gray يمين سوفت كلوزpalma">
+                <div class="card-product" data-name="شماعة بناطيل جانبية رمادي يمين سوفت كلوزpalma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل جانبية GRAY يمين سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل جانبية رمادي يمين سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0334</span>
-                        <h3 class="card-name" title="شماعة بناطيل جانبية GRAY يمين سوفت كلوزpalma">شماعة بناطيل جانبية GRAY يمين سوفت كلوزpalma</h3>
-                        <div class="card-price-badge"><span>2000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٣٤</span>
+                        <h3 class="card-name" title="شماعة بناطيل جانبية رمادي يمين سوفت كلوزpalma">شماعة بناطيل جانبية رمادي يمين سوفت كلوزpalma</h3>
+                        <div class="card-price-badge">٢٠٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="شماعة بناطيل جانبية gray شمال سوفت كلوزpalma">
+                <div class="card-product" data-name="شماعة بناطيل جانبية رمادي شمال سوفت كلوزpalma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل جانبية GRAY شمال سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل جانبية رمادي شمال سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0335</span>
-                        <h3 class="card-name" title="شماعة بناطيل جانبية GRAY شمال سوفت كلوزpalma">شماعة بناطيل جانبية GRAY شمال سوفت كلوزpalma</h3>
-                        <div class="card-price-badge"><span>2000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٣٥</span>
+                        <h3 class="card-name" title="شماعة بناطيل جانبية رمادي شمال سوفت كلوزpalma">شماعة بناطيل جانبية رمادي شمال سوفت كلوزpalma</h3>
+                        <div class="card-price-badge">٢٠٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1094,7 +1119,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 4 من 8</span>
+                <span>صفحة ٤ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="5">
@@ -1103,7 +1128,7 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1111,102 +1136,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="شماعة بناطيل جانبية orangeيمين سوفت كلوزpalma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل جانبية ORANGEيمين سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل جانبية ORANGEيمين سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0336</span>
+                        <span class="card-code">#٠٣٣٦</span>
                         <h3 class="card-name" title="شماعة بناطيل جانبية ORANGEيمين سوفت كلوزpalma">شماعة بناطيل جانبية ORANGEيمين سوفت كلوزpalma</h3>
-                        <div class="card-price-badge"><span>2000</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٢٠٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="شماعة بناطيل جانبية orange شمال سوفت كلوزpalma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_wardrobe_accessories.jpg" alt="شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0337</span>
-                        <h3 class="card-name" title="شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma">شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma</h3>
-                        <div class="card-price-badge"><span>2000</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٣٧</span>
+                        <h3 class="card-name" title="شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma">شماعة بناطيل جانبية <bdi class="bidi-isolate" dir="ltr">ORANGE</bdi> شمال سوفت كلوزpalma</h3>
+                        <div class="card-price-badge">٢٠٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="حامل 4*1 سوفت كلوز بالما orange">
+                <div class="card-product" data-name="حامل ٤ × ١ سم سوفت كلوز بالما orange">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="حامل 4*1 سوفت كلوز بالما ORANGE" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل ٤ × ١ سم سوفت كلوز بالما ORANGE" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0339</span>
-                        <h3 class="card-name" title="حامل 4*1 سوفت كلوز بالما ORANGE">حامل 4*1 سوفت كلوز بالما ORANGE</h3>
-                        <div class="card-price-badge"><span>1850</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٣٩</span>
+                        <h3 class="card-name" title="حامل ٤ × ١ سم سوفت كلوز بالما ORANGE">حامل ٤ × ١ سم سوفت كلوز بالما <bdi class="bidi-isolate" dir="ltr">ORANGE</bdi></h3>
+                        <div class="card-price-badge">١٨٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="حامل 4*1 سوفت كلوز بالما gray">
+                <div class="card-product" data-name="حامل ٤ × ١ سم سوفت كلوز بالما رمادي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="حامل 4*1 سوفت كلوز بالما GRAY" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل ٤ × ١ سم سوفت كلوز بالما رمادي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0340</span>
-                        <h3 class="card-name" title="حامل 4*1 سوفت كلوز بالما GRAY">حامل 4*1 سوفت كلوز بالما GRAY</h3>
-                        <div class="card-price-badge"><span>1850</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٤٠</span>
+                        <h3 class="card-name" title="حامل ٤ × ١ سم سوفت كلوز بالما رمادي">حامل ٤ × ١ سم سوفت كلوز بالما رمادي</h3>
+                        <div class="card-price-badge">١٨٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="قطاع زجاج بدون مقبض دهبي3 م">
+                <div class="card-product" data-name="قطاع زجاج بدون مقبض دهبي ٣ م">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="قطاع زجاج بدون مقبض دهبي3 م" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="قطاع زجاج بدون مقبض دهبي ٣ م" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0372</span>
-                        <h3 class="card-name" title="قطاع زجاج بدون مقبض دهبي3 م">قطاع زجاج بدون مقبض دهبي3 م</h3>
-                        <div class="card-price-badge"><span>250</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٧٢</span>
+                        <h3 class="card-name" title="قطاع زجاج بدون مقبض دهبي ٣ م">قطاع زجاج بدون مقبض دهبي ٣ م</h3>
+                        <div class="card-price-badge">٢٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="قطاع زجاج بمقبض دهبي3 م">
+                <div class="card-product" data-name="قطاع زجاج بمقبض دهبي ٣ م">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="قطاع زجاج بمقبض دهبي3 م" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="قطاع زجاج بمقبض دهبي ٣ م" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0373</span>
-                        <h3 class="card-name" title="قطاع زجاج بمقبض دهبي3 م">قطاع زجاج بمقبض دهبي3 م</h3>
-                        <div class="card-price-badge"><span>270</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٧٣</span>
+                        <h3 class="card-name" title="قطاع زجاج بمقبض دهبي ٣ م">قطاع زجاج بمقبض دهبي ٣ م</h3>
+                        <div class="card-price-badge">٢٧٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج حامل بناطيل 70سم اورنج">
+                <div class="card-product" data-name="درج حامل بناطيل ٧٠ سم اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 70سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٧٠ سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0397</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 70سم اورنج">درج حامل بناطيل 70سم اورنج</h3>
-                        <div class="card-price-badge"><span>2500</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٩٧</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٧٠ سم اورنج">درج حامل بناطيل ٧٠ سم اورنج</h3>
+                        <div class="card-price-badge">٢٥٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج حامل بناطيل 80سم جراي">
+                <div class="card-product" data-name="درج حامل بناطيل ٨٠ سم جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 80سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٨٠ سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0398</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 80سم جراي">درج حامل بناطيل 80سم جراي</h3>
-                        <div class="card-price-badge"><span>2600</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٩٨</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٨٠ سم جراي">درج حامل بناطيل ٨٠ سم جراي</h3>
+                        <div class="card-price-badge">٢٦٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج حامل بناطيل 80سم اورنج">
+                <div class="card-product" data-name="درج حامل بناطيل ٨٠ سم اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 80سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٨٠ سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0399</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 80سم اورنج">درج حامل بناطيل 80سم اورنج</h3>
-                        <div class="card-price-badge"><span>2600</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٣٩٩</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٨٠ سم اورنج">درج حامل بناطيل ٨٠ سم اورنج</h3>
+                        <div class="card-price-badge">٢٦٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج حامل بناطيل 90سم اورنج">
+                <div class="card-product" data-name="درج حامل بناطيل ٩٠ سم اورنج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 90سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٩٠ سم اورنج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0400</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 90سم اورنج">درج حامل بناطيل 90سم اورنج</h3>
-                        <div class="card-price-badge"><span>2700</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠٠</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٩٠ سم اورنج">درج حامل بناطيل ٩٠ سم اورنج</h3>
+                        <div class="card-price-badge">٢٧٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1215,7 +1240,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 5 من 8</span>
+                <span>صفحة ٥ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="6">
@@ -1224,110 +1249,110 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="درج حامل بناطيل 90سم جراي">
+                <div class="card-product" data-name="درج حامل بناطيل ٩٠ سم جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 90سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٩٠ سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0401</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 90سم جراي">درج حامل بناطيل 90سم جراي</h3>
-                        <div class="card-price-badge"><span>2700</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠١</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٩٠ سم جراي">درج حامل بناطيل ٩٠ سم جراي</h3>
+                        <div class="card-price-badge">٢٧٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="درج حامل بناطيل 70سم جراي">
+                <div class="card-product" data-name="درج حامل بناطيل ٧٠ سم جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="درج حامل بناطيل 70سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج حامل بناطيل ٧٠ سم جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0404</span>
-                        <h3 class="card-name" title="درج حامل بناطيل 70سم جراي">درج حامل بناطيل 70سم جراي</h3>
-                        <div class="card-price-badge"><span>2500</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٠٤</span>
+                        <h3 class="card-name" title="درج حامل بناطيل ٧٠ سم جراي">درج حامل بناطيل ٧٠ سم جراي</h3>
+                        <div class="card-price-badge">٢٥٠٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 100 سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض بلت ان هوك ١٠٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 100 سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ١٠٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0471</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 100 سم مستورد جديد اسود">مقبض بلت ان هوك 100 سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>150</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧١</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ١٠٠ سم مستورد جديد اسود">مقبض بلت ان هوك ١٠٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">١٥٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض g بلت ان 100 سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض g بلت ان ١٠٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 100 سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض G بلت ان ١٠٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0472</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 100 سم مستورد جديد اسود">مقبض G بلت ان 100 سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>170</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٢</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ١٠٠ سم مستورد جديد اسود">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ١٠٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">١٧٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض g بلت ان 100 سم مستورد جديد دهبي">
+                <div class="card-product" data-name="مقبض g بلت ان ١٠٠ سم مستورد جديد دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 100 سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض G بلت ان ١٠٠ سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0473</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 100 سم مستورد جديد دهبي">مقبض G بلت ان 100 سم مستورد جديد دهبي</h3>
-                        <div class="card-price-badge"><span>170</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٣</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ١٠٠ سم مستورد جديد دهبي">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ١٠٠ سم مستورد جديد دهبي</h3>
+                        <div class="card-price-badge">١٧٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض مسطره 100سم اسود">
+                <div class="card-product" data-name="مقبض مسطره ١٠٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض مسطره 100سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض مسطره ١٠٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0474</span>
-                        <h3 class="card-name" title="مقبض مسطره 100سم اسود">مقبض مسطره 100سم اسود</h3>
-                        <div class="card-price-badge"><span>160</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٤</span>
+                        <h3 class="card-name" title="مقبض مسطره ١٠٠ سم اسود">مقبض مسطره ١٠٠ سم اسود</h3>
+                        <div class="card-price-badge">١٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 160اسود جديد">
+                <div class="card-product" data-name="مقبض ماسورة ١٦٠ اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 160اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ماسورة ١٦٠ اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0476</span>
-                        <h3 class="card-name" title="مقبض ماسورة 160اسود جديد">مقبض ماسورة 160اسود جديد</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٦</span>
+                        <h3 class="card-name" title="مقبض ماسورة ١٦٠ اسود جديد">مقبض ماسورة ١٦٠ اسود جديد</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 128اسود جديد">
+                <div class="card-product" data-name="مقبض ماسورة ١٢٨ اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 128اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ماسورة ١٢٨ اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0477</span>
-                        <h3 class="card-name" title="مقبض ماسورة 128اسود جديد">مقبض ماسورة 128اسود جديد</h3>
-                        <div class="card-price-badge"><span>15</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٧</span>
+                        <h3 class="card-name" title="مقبض ماسورة ١٢٨ اسود جديد">مقبض ماسورة ١٢٨ اسود جديد</h3>
+                        <div class="card-price-badge">١٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض ماسورة 96اسود جديد">
+                <div class="card-product" data-name="مقبض ماسورة ٩٦ اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض ماسورة 96اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض ماسورة ٩٦ اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0478</span>
-                        <h3 class="card-name" title="مقبض ماسورة 96اسود جديد">مقبض ماسورة 96اسود جديد</h3>
-                        <div class="card-price-badge"><span>13</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٨</span>
+                        <h3 class="card-name" title="مقبض ماسورة ٩٦ اسود جديد">مقبض ماسورة ٩٦ اسود جديد</h3>
+                        <div class="card-price-badge">١٣ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض دهبي مسطره 30سم g">
+                <div class="card-product" data-name="مقبض دهبي مسطره ٣٠ سم g">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض دهبي مسطره 30سم G" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض دهبي مسطره ٣٠ سم G" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0479</span>
-                        <h3 class="card-name" title="مقبض دهبي مسطره 30سم G">مقبض دهبي مسطره 30سم G</h3>
-                        <div class="card-price-badge"><span>50</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٧٩</span>
+                        <h3 class="card-name" title="مقبض دهبي مسطره ٣٠ سم G">مقبض دهبي مسطره ٣٠ سم <bdi class="bidi-isolate" dir="ltr">G</bdi></h3>
+                        <div class="card-price-badge">٥٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1336,7 +1361,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 6 من 8</span>
+                <span>صفحة ٦ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="7">
@@ -1345,110 +1370,110 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مقبض g بلت ان 40سم مستورد جديد دهبي">
+                <div class="card-product" data-name="مقبض g بلت ان ٤٠ سم مستورد جديد دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 40سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض G بلت ان ٤٠ سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0483</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 40سم مستورد جديد دهبي">مقبض G بلت ان 40سم مستورد جديد دهبي</h3>
-                        <div class="card-price-badge"><span>55</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٣</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ٤٠ سم مستورد جديد دهبي">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ٤٠ سم مستورد جديد دهبي</h3>
+                        <div class="card-price-badge">٥٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض g بلت ان 25 سم مستورد جديد دهبي">
+                <div class="card-product" data-name="مقبض g بلت ان ٢٥ سم مستورد جديد دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 25 سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض G بلت ان ٢٥ سم مستورد جديد دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0484</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 25 سم مستورد جديد دهبي">مقبض G بلت ان 25 سم مستورد جديد دهبي</h3>
-                        <div class="card-price-badge"><span>45</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٤</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ٢٥ سم مستورد جديد دهبي">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ٢٥ سم مستورد جديد دهبي</h3>
+                        <div class="card-price-badge">٤٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض g بلت ان 40 سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض g بلت ان ٤٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 40 سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض G بلت ان ٤٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0485</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 40 سم مستورد جديد اسود">مقبض G بلت ان 40 سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>55</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٥</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ٤٠ سم مستورد جديد اسود">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ٤٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">٥٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض g بلت ان 20 سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض g بلت ان ٢٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض G بلت ان 20 سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض G بلت ان ٢٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0486</span>
-                        <h3 class="card-name" title="مقبض G بلت ان 20 سم مستورد جديد اسود">مقبض G بلت ان 20 سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>29</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٦</span>
+                        <h3 class="card-name" title="مقبض G بلت ان ٢٠ سم مستورد جديد اسود">مقبض <bdi class="bidi-isolate" dir="ltr">G</bdi> بلت ان ٢٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">٢٩ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض فيونكه اسود *دهبي 96">
+                <div class="card-product" data-name="مقبض فيونكه اسود *دهبي ٩٦">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض فيونكه اسود *دهبي 96" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض فيونكه اسود *دهبي ٩٦" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0487</span>
-                        <h3 class="card-name" title="مقبض فيونكه اسود *دهبي 96">مقبض فيونكه اسود *دهبي 96</h3>
-                        <div class="card-price-badge"><span>16</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٧</span>
+                        <h3 class="card-name" title="مقبض فيونكه اسود *دهبي ٩٦">مقبض فيونكه اسود *دهبي ٩٦</h3>
+                        <div class="card-price-badge">١٦ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض فيونكه اسود *دهبي 128">
+                <div class="card-product" data-name="مقبض فيونكه اسود *دهبي ١٢٨">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض فيونكه اسود *دهبي 128" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض فيونكه اسود *دهبي ١٢٨" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0488</span>
-                        <h3 class="card-name" title="مقبض فيونكه اسود *دهبي 128">مقبض فيونكه اسود *دهبي 128</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٨</span>
+                        <h3 class="card-name" title="مقبض فيونكه اسود *دهبي ١٢٨">مقبض فيونكه اسود *دهبي ١٢٨</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض فيونكه دهبي *دهبي 128">
+                <div class="card-product" data-name="مقبض فيونكه دهبي *دهبي ١٢٨">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض فيونكه دهبي *دهبي 128" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض فيونكه دهبي *دهبي ١٢٨" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0489</span>
-                        <h3 class="card-name" title="مقبض فيونكه دهبي *دهبي 128">مقبض فيونكه دهبي *دهبي 128</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٨٩</span>
+                        <h3 class="card-name" title="مقبض فيونكه دهبي *دهبي ١٢٨">مقبض فيونكه دهبي *دهبي ١٢٨</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 30سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٣٠ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 30سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ٣٠ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0516</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 30سم مستورد جديد اسود">مقبض بلت ان هوك 30سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>43</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥١٦</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٣٠ سم مستورد جديد اسود">مقبض بلت ان هوك ٣٠ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">٤٣ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مسمار ديكور مخفى">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="مسمار ديكور مخفى" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مسمار ديكور مخفى" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0536</span>
+                        <span class="card-code">#٠٥٣٦</span>
                         <h3 class="card-name" title="مسمار ديكور مخفى">مسمار ديكور مخفى</h3>
-                        <div class="card-price-badge"><span>50</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٥٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0554</span>
+                        <span class="card-code">#٠٥٥٤</span>
                         <h3 class="card-name" title="قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم">قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم</h3>
-                        <div class="card-price-badge"><span>600</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٦٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1457,7 +1482,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 7 من 8</span>
+                <span>صفحة ٧ من ٨</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="8">
@@ -1466,90 +1491,90 @@
                     <div class="category-badge-icon">🚪</div>
                     <div>
                         <h2 class="category-name-heading">المقابض والمسكات</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; ٧٨ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مقبض بلت ان هوك 30سم مستورد جديد فضي">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٣٠ سم مستورد جديد فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 30سم مستورد جديد فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان هوك ٣٠ سم مستورد جديد فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0559</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 30سم مستورد جديد فضي">مقبض بلت ان هوك 30سم مستورد جديد فضي</h3>
-                        <div class="card-price-badge"><span>40</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٥٩</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٣٠ سم مستورد جديد فضي">مقبض بلت ان هوك ٣٠ سم مستورد جديد فضي</h3>
+                        <div class="card-price-badge">٤٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 20سم مستورد جديد فضي">
+                <div class="card-product" data-name="مقبض بلت ان هوك ٢٠ سم مستورد جديد فضي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 20سم مستورد جديد فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_silver.jpg" alt="مقبض بلت ان هوك ٢٠ سم مستورد جديد فضي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0560</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 20سم مستورد جديد فضي">مقبض بلت ان هوك 20سم مستورد جديد فضي</h3>
-                        <div class="card-price-badge"><span>32</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٦٠</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ٢٠ سم مستورد جديد فضي">مقبض بلت ان هوك ٢٠ سم مستورد جديد فضي</h3>
+                        <div class="card-price-badge">٣٢ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بصمه بلاستيك 10سم اسود">
+                <div class="card-product" data-name="مقبض بصمه بلاستيك ١٠ سم اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بصمه بلاستيك 10سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بصمه بلاستيك ١٠ سم اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0561</span>
-                        <h3 class="card-name" title="مقبض بصمه بلاستيك 10سم اسود">مقبض بصمه بلاستيك 10سم اسود</h3>
-                        <div class="card-price-badge"><span>6</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٦١</span>
+                        <h3 class="card-name" title="مقبض بصمه بلاستيك ١٠ سم اسود">مقبض بصمه بلاستيك ١٠ سم اسود</h3>
+                        <div class="card-price-badge">٦ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض عدل 13سم اسود بلاستيك">
+                <div class="card-product" data-name="مقبض عدل ١٣ سم اسود بلاستيك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format&fit=crop&q=80" alt="مقبض عدل 13سم اسود بلاستيك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض عدل ١٣ سم اسود بلاستيك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0562</span>
-                        <h3 class="card-name" title="مقبض عدل 13سم اسود بلاستيك">مقبض عدل 13سم اسود بلاستيك</h3>
-                        <div class="card-price-badge"><span>10</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٦٢</span>
+                        <h3 class="card-name" title="مقبض عدل ١٣ سم اسود بلاستيك">مقبض عدل ١٣ سم اسود بلاستيك</h3>
+                        <div class="card-price-badge">١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 128مم اسود جديد">
+                <div class="card-product" data-name="مقبض بلت ان هوك ١٢٨ مم اسود جديد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 128مم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ١٢٨ مم اسود جديد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0573</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 128مم اسود جديد">مقبض بلت ان هوك 128مم اسود جديد</h3>
-                        <div class="card-price-badge"><span>17</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٧٣</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ١٢٨ مم اسود جديد">مقبض بلت ان هوك ١٢٨ مم اسود جديد</h3>
+                        <div class="card-price-badge">١٧ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مقبض بلت ان هوك 16سم مستورد جديد اسود">
+                <div class="card-product" data-name="مقبض بلت ان هوك ١٦ سم مستورد جديد اسود">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="مقبض بلت ان هوك 16سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="مقبض بلت ان هوك ١٦ سم مستورد جديد اسود" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0575</span>
-                        <h3 class="card-name" title="مقبض بلت ان هوك 16سم مستورد جديد اسود">مقبض بلت ان هوك 16سم مستورد جديد اسود</h3>
-                        <div class="card-price-badge"><span>22</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٥٧٥</span>
+                        <h3 class="card-name" title="مقبض بلت ان هوك ١٦ سم مستورد جديد اسود">مقبض بلت ان هوك ١٦ سم مستورد جديد اسود</h3>
+                        <div class="card-price-badge">٢٢ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="درج اكسسوارات متحرك جراي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="درج اكسسوارات متحرك جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج اكسسوارات متحرك جراي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0585</span>
+                        <span class="card-code">#٠٥٨٥</span>
                         <h3 class="card-name" title="درج اكسسوارات متحرك جراي">درج اكسسوارات متحرك جراي</h3>
-                        <div class="card-price-badge"><span>3100</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣١٠٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="درج اكسسوارات متحرك اورانج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="درج اكسسوارات متحرك اورانج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="درج اكسسوارات متحرك اورانج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0586</span>
+                        <span class="card-code">#٠٥٨٦</span>
                         <h3 class="card-name" title="درج اكسسوارات متحرك اورانج">درج اكسسوارات متحرك اورانج</h3>
-                        <div class="card-price-badge"><span>3100</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٣١٠٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -1558,7 +1583,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 8 من 8</span>
+                <span>صفحة ٨ من ٨</span>
             </footer>
         </section>
     </main>

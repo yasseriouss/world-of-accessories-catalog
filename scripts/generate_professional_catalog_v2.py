@@ -10,6 +10,70 @@ import os
 import math
 import sys
 import html as html_lib
+import re
+
+INDIC_DIGITS = {
+    '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤',
+    '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩'
+}
+
+def to_indic(s):
+    """Convert Latin digits to Eastern Arabic (Indic) numerals"""
+    if s is None:
+        return ""
+    return "".join(INDIC_DIGITS.get(c, c) for c in str(s))
+
+
+def clean_arabic_hardware_text(text):
+    """Normalize Arabic hardware terms, convert units (cm, mm) to Arabic, and isolate Latin model codes"""
+    if not text:
+        return ""
+    t = str(text).strip()
+
+    # 1. Clean OCR / translation artifacts
+    t = t.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
+
+    # 2. Normalize and translate common English terms to Arabic
+    t = re.sub(r'(?i)\bsoft\s*close\b', 'سوفت كلوز', t)
+    t = re.sub(r'(?i)\bhydraulic\b', 'هيدروليك', t)
+    t = re.sub(r'(?i)\bhinge\b', 'مفصلة', t)
+    t = re.sub(r'(?i)\bhandle\b', 'مقبض', t)
+    t = re.sub(r'(?i)\b(?:slide|runner)\b', 'سكة مجرى', t)
+    t = re.sub(r'(?i)\bturkish\b', 'تركي', t)
+    t = re.sub(r'(?i)\bitalian\b', 'إيطالي', t)
+    t = re.sub(r'(?i)\begyptian\b', 'مصري', t)
+    t = re.sub(r'(?i)\bblack\b', 'أسود', t)
+    t = re.sub(r'(?i)\bsilver\b', 'فضي', t)
+    t = re.sub(r'(?i)\bgold\b', 'ذهبي', t)
+    t = re.sub(r'(?i)\bwhite\b', 'أبيض', t)
+    t = re.sub(r'(?i)\bgra?y\b', 'رمادي', t)
+
+    # 3. Units: cm, mm, dimensions to Arabic
+    t = re.sub(r'(\d+)\s*[*xX×]\s*(\d+)', r'\1 × \2 سم', t)
+    t = re.sub(r'(?i)\b(?:cm|c\.m)\b', 'سم', t)
+    t = re.sub(r'(?i)\b(?:mm|m\.m)\b', 'مم', t)
+    t = re.sub(r'(?i)\b(?:meter|meters|mtr)\b', 'متر', t)
+
+    # Fix spacing between numbers and Arabic letters
+    t = re.sub(r'(\d+)\s*مسمار', r'\1 مسامير', t)
+    t = re.sub(r'(\d+)\s*متر', r'\1 أمتار', t)
+    t = re.sub(r'(\d+)(سم|مم)', r'\1 \2', t)
+    t = re.sub(r'(\d+)([ء-ي])', r'\1 \2', t)
+    t = re.sub(r'([ء-ي])(\d+)', r'\1 \2', t)
+
+    t = re.sub(r'\s+', ' ', t).strip()
+
+    # 4. Convert standalone numeric dimensions and quantities to Eastern Arabic numerals
+    t = re.sub(r'(?<![A-Za-z0-9\-])\d+(?![A-Za-z0-9\-])', lambda m: to_indic(m.group(0)), t)
+
+    # 5. BiDi Isolation: Wrap any technical terms, models, or English brand words in <bdi dir="ltr"> to isolate bidi context
+    def wrap_bdi(m):
+        tok = m.group(0).strip()
+        return f'<bdi class="bidi-isolate" dir="ltr">{tok}</bdi>'
+
+    t = re.sub(r'\b[A-Za-z0-9\+\-\.]*[A-Za-z][A-Za-z0-9\+\-\.]*\b', wrap_bdi, t)
+    return t
+
 
 # Ensure UTF-8 output on Windows console
 if sys.platform == 'win32':
@@ -73,16 +137,12 @@ class ImpeccableCatalogGenerator:
             ar = p.get('ar', '').strip()
             en = p.get('en', '').strip()
 
-            # Clean Arabic text artifacts
-            ar = ar.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
-            ar = ar.replace('Soft Close', 'سوفت كلوز').replace('Hydraulic', 'هيدروليك')
-            ar = ar.replace('Hinge', 'مفصلة').replace('Handle', 'مقبض').replace('Slide', 'سكة مجرى')
+            p['ar_clean'] = clean_arabic_hardware_text(ar)
             
             # Clean English text artifacts
             en = en.replace('Drawerة', 'Degree').replace('حShelf', 'Profile ').replace('D3', '3D')
             en = en.replace('مصري', 'Egyptian').replace('تركي', 'Turkish').replace('إيطالي', 'Italian')
 
-            p['ar_clean'] = ar
             p['en_clean'] = en
 
     def categorize_products(self):
@@ -374,17 +434,33 @@ class ImpeccableCatalogGenerator:
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -585,9 +661,9 @@ class ImpeccableCatalogGenerator:
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -596,15 +672,20 @@ class ImpeccableCatalogGenerator:
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -657,14 +738,17 @@ class ImpeccableCatalogGenerator:
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -724,7 +808,7 @@ class ImpeccableCatalogGenerator:
         html += '        </a>\n'
         html += '        <nav class="nav-links">\n'
         html += '            <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>\n'
-        html += '            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الكامل (60 صفحة)</a>\n'
+        html += '            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل (A4)</a>\n'
         html += '            <a href="categories_index_en.html" class="btn-nav accent">🌐 English</a>\n'
         html += '            <button onclick="window.print()" class="btn-nav">🖨️ طباعة</button>\n'
         html += '        </nav>\n'
@@ -736,7 +820,7 @@ class ImpeccableCatalogGenerator:
         html += '            <span class="search-icon">🔍</span>\n'
         html += '            <input type="text" id="categorySearch" class="search-input" placeholder="ابحث عن الفئة أو نوع الإكسسوار..." onkeyup="filterPortals()">\n'
         html += '        </div>\n'
-        html += '        <span style="font-weight:700; color:var(--navy);">10 فئات متخصصة</span>\n'
+        html += f'        <span style="font-weight:700; color:var(--navy);">{to_indic(10)} فئات متخصصة</span>\n'
         html += '    </div>\n'
 
         html += '    <main class="catalog-container">\n'
@@ -746,7 +830,7 @@ class ImpeccableCatalogGenerator:
         html += '                    <div class="category-badge-icon">🗂️</div>\n'
         html += '                    <div>\n'
         html += '                        <h1 class="category-name-heading">فئات المنتجات المتخصصة</h1>\n'
-        html += '                        <p class="category-meta-count">591 منتجاً من أجود إكسسوارات الأثاث والمطابخ والدرابزين</p>\n'
+        html += f'                        <p class="category-meta-count">{to_indic(591)} منتجاً من أجود إكسسوارات الأثاث والمطابخ والدرابزين</p>\n'
         html += '                    </div>\n'
         html += '                </div>\n'
         html += '                <img src="../Branding/logo-100.png" alt="شعار" class="sheet-logo">\n'
@@ -761,7 +845,7 @@ class ImpeccableCatalogGenerator:
             html += '                    <div class="portal-info">\n'
             html += f'                        <h2 class="portal-title">{cat["ar"]}</h2>\n'
             html += f'                        <p class="portal-desc">{cat["description_ar"]}</p>\n'
-            html += f'                        <span class="portal-badge">{count} منتج &bull; {cat.get("price_range", "EGP")}</span>\n'
+            html += f'                        <span class="portal-badge">{to_indic(count)} منتج</span>\n'
             html += '                    </div>\n'
             html += '                </a>\n'
 
@@ -917,6 +1001,7 @@ class ImpeccableCatalogGenerator:
         html += '        <nav class="nav-links">\n'
         html += f'            <a href="categories_index_{lang}.html" class="btn-nav">← {"الفئات" if is_ar else "Categories"}</a>\n'
         html += f'            <a href="../index.html" class="btn-nav">🏠 {"الرئيسية" if is_ar else "Home"}</a>\n'
+        html += f'            <a href="../catalog_{lang}.html" class="btn-nav">📖 {"الكتالوج الشامل" if is_ar else "Full Catalog"}</a>\n'
         html += f'            <a href="category_{category["id"]:02d}_{other_lang}.html" class="btn-nav accent">{other_label}</a>\n'
         html += f'            <button onclick="window.print()" class="btn-nav">🖨️ {"طباعة الكتالوج" if is_ar else "Print Catalog"}</button>\n'
         html += '        </nav>\n'
@@ -929,7 +1014,8 @@ class ImpeccableCatalogGenerator:
         placeholder_text = "ابحث بالاسم أو السعر في هذه الفئة..." if is_ar else "Filter by product name or price..."
         html += f'            <input type="text" id="prodSearch" class="search-input" placeholder="{placeholder_text}" onkeyup="filterCategoryProducts()">\n'
         html += '        </div>\n'
-        html += f'        <span style="font-weight:700; color:var(--navy);">{len(products)} {"منتج مسجل" if is_ar else "Products Total"}</span>\n'
+        filter_count_badge = f"{to_indic(len(products))} منتج مسجل" if is_ar else f"{len(products)} Products Total"
+        html += f'        <span style="font-weight:700; color:var(--navy);">{filter_count_badge}</span>\n'
         html += '    </div>\n'
 
         html += '    <main class="catalog-container">\n'
@@ -946,6 +1032,7 @@ class ImpeccableCatalogGenerator:
             for p_idx in range(0, len(products), self.items_per_page):
                 page_prods = products[p_idx:p_idx + self.items_per_page]
                 curr_page = (p_idx // self.items_per_page) + 1
+                cat_meta_count = f"{cat_desc} &bull; {to_indic(len(products))} منتج" if is_ar else f"{cat_desc} &bull; {len(products)} Items"
 
                 html += f'        <section class="page-sheet" data-page="{curr_page}">\n'
                 html += '            <div class="sheet-header">\n'
@@ -953,7 +1040,7 @@ class ImpeccableCatalogGenerator:
                 html += f'                    <div class="category-badge-icon">{category["icon"]}</div>\n'
                 html += '                    <div>\n'
                 html += f'                        <h2 class="category-name-heading">{cat_title}</h2>\n'
-                html += f'                        <p class="category-meta-count">{cat_desc} &bull; {len(products)} {"منتج" if is_ar else "Items"}</p>\n'
+                html += f'                        <p class="category-meta-count">{cat_meta_count}</p>\n'
                 html += '                    </div>\n'
                 html += '                </div>\n'
                 html += '                <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">\n'
@@ -961,33 +1048,41 @@ class ImpeccableCatalogGenerator:
                 html += '            <div class="products-grid">\n'
 
                 for prod in page_prods:
-                    title = prod.get('ar_clean') if is_ar else prod.get('en_clean')
-                    if not title:
-                        title = prod.get('ar') or prod.get('en') or ('منتج' if is_ar else 'Product')
-                    
-                    price = prod.get('price', 'N/A')
-                    currency = 'ج.م' if is_ar else 'EGP'
-                    code = f"#{prod.get('n', 0):04d}"
+                    prod_n = prod.get('n', 0)
+                    prod_n_str = f"{prod_n:04d}"
+                    if is_ar:
+                        title_html = prod.get('ar_clean') or prod.get('ar') or 'منتج'
+                        plain_title = re.sub(r'<[^>]+>', '', title_html)
+                        code = f"#{to_indic(prod_n_str)}"
+                        price_num = to_indic(prod.get('price', 'N/A'))
+                        price_display = f"{price_num} ج.م"
+                    else:
+                        title_html = html_lib.escape(prod.get('en_clean') or prod.get('en') or 'Product')
+                        plain_title = title_html
+                        code = f"#{prod_n_str}"
+                        price_display = f"{prod.get('price', 'N/A')} EGP"
+
                     img_src = self.resolve_image_path(prod, depth="../")
 
-                    html += f'                <div class="card-product" data-name="{html_lib.escape(title.lower())}">\n'
+                    html += f'                <div class="card-product" data-name="{html_lib.escape(plain_title.lower())}">\n'
                     html += f'                    <div class="card-image-wrap">\n'
-                    html += f'                        <img src="{img_src}" alt="{html_lib.escape(title)}" loading="lazy" onerror="this.src=\'../Branding/logo-100.png\'; this.style.padding=\'10px\';">\n'
+                    html += f'                        <img src="{img_src}" alt="{html_lib.escape(plain_title)}" loading="lazy" onerror="this.src=\'../Branding/logo-100.png\'; this.style.padding=\'10px\';">\n'
                     html += f'                    </div>\n'
                     html += f'                    <div class="card-info">\n'
                     html += f'                        <span class="card-code">{code}</span>\n'
-                    html += f'                        <h3 class="card-name" title="{html_lib.escape(title)}">{html_lib.escape(title)}</h3>\n'
-                    html += f'                        <div class="card-price-badge"><span>{price}</span> <span>{currency}</span></div>\n'
+                    html += f'                        <h3 class="card-name" title="{html_lib.escape(plain_title)}">{title_html}</h3>\n'
+                    html += f'                        <div class="card-price-badge">{price_display}</div>\n'
                     html += f'                    </div>\n'
                     html += f'                </div>\n'
 
+                footer_page_info = f"صفحة {to_indic(curr_page)} من {to_indic(total_pages)}" if is_ar else f"Page {curr_page} of {total_pages}"
                 html += '            </div>\n'
                 html += '            <footer class="sheet-footer">\n'
                 html += '                <div class="sheet-footer-brand">\n'
                 html += '                    <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">\n'
                 html += f'                    <span>&copy; 2026 {"عالم الإكسسوارات" if is_ar else "World of Accessories"}</span>\n'
                 html += '                </div>\n'
-                html += f'                <span>{"صفحة" if is_ar else "Page"} {curr_page} {"من" if is_ar else "of"} {total_pages}</span>\n'
+                html += f'                <span>{footer_page_info}</span>\n'
                 html += '            </footer>\n'
                 html += '        </section>\n'
 

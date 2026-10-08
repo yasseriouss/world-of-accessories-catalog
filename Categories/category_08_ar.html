@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
             <a href="../index.html" class="btn-nav">🏠 الرئيسية</a>
+            <a href="../catalog_ar.html" class="btn-nav">📖 الكتالوج الشامل</a>
             <a href="category_08_en.html" class="btn-nav accent">🌐 English</a>
             <button onclick="window.print()" class="btn-nav">🖨️ طباعة الكتالوج</button>
         </nav>
@@ -610,7 +635,7 @@
             <span class="search-icon">🔍</span>
             <input type="text" id="prodSearch" class="search-input" placeholder="ابحث بالاسم أو السعر في هذه الفئة..." onkeyup="filterCategoryProducts()">
         </div>
-        <span style="font-weight:700; color:var(--navy);">11 منتج مسجل</span>
+        <span style="font-weight:700; color:var(--navy);">١١ منتج مسجل</span>
     </div>
     <main class="catalog-container">
         <section class="page-sheet" data-page="1">
@@ -619,110 +644,110 @@
                     <div class="category-badge-icon">🔐</div>
                     <div>
                         <h2 class="category-name-heading">أقفال الخزائن</h2>
-                        <p class="category-meta-count">آليات القفل والمزالج المغناطيسية والأجهزة الأمنية &bull; 11 منتج</p>
+                        <p class="category-meta-count">آليات القفل والمزالج المغناطيسية والأجهزة الأمنية &bull; ١١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
             </div>
             <div class="products-grid">
-                <div class="card-product" data-name="مجرى 30سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">
+                <div class="card-product" data-name="مجرى ٣٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مجرى 30سم سفلي 2 مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٣٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0262</span>
-                        <h3 class="card-name" title="مجرى 30سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">مجرى 30سم سفلي 2 مرحلة + كلبس أمان ساميت تركي</h3>
-                        <div class="card-price-badge"><span>610</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٢</span>
+                        <h3 class="card-name" title="مجرى ٣٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">مجرى ٣٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي</h3>
+                        <div class="card-price-badge">٦١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 35سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">
+                <div class="card-product" data-name="مجرى ٣٥ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مجرى 35سم سفلي 2 مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٣٥ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0263</span>
-                        <h3 class="card-name" title="مجرى 35سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">مجرى 35سم سفلي 2 مرحلة + كلبس أمان ساميت تركي</h3>
-                        <div class="card-price-badge"><span>635</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٣</span>
+                        <h3 class="card-name" title="مجرى ٣٥ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">مجرى ٣٥ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي</h3>
+                        <div class="card-price-badge">٦٣٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 40سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">
+                <div class="card-product" data-name="مجرى ٤٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مجرى 40سم سفلي 2 مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٤٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0264</span>
-                        <h3 class="card-name" title="مجرى 40سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">مجرى 40سم سفلي 2 مرحلة + كلبس أمان ساميت تركي</h3>
-                        <div class="card-price-badge"><span>660</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٤</span>
+                        <h3 class="card-name" title="مجرى ٤٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">مجرى ٤٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي</h3>
+                        <div class="card-price-badge">٦٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 50سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">
+                <div class="card-product" data-name="مجرى ٥٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مجرى 50سم سفلي 2 مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٥٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0265</span>
-                        <h3 class="card-name" title="مجرى 50سم سفلي 2 مرحلة + كلبس أمان ساميت تركي">مجرى 50سم سفلي 2 مرحلة + كلبس أمان ساميت تركي</h3>
-                        <div class="card-price-badge"><span>710</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٥</span>
+                        <h3 class="card-name" title="مجرى ٥٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي">مجرى ٥٠ سم سفلي ٢ مرحلة + كلبس أمان ساميت تركي</h3>
+                        <div class="card-price-badge">٧١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 30سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">
+                <div class="card-product" data-name="مجرى ٣٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مجرى 30سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٣٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0266</span>
-                        <h3 class="card-name" title="مجرى 30سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">مجرى 30سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي</h3>
-                        <div class="card-price-badge"><span>610</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٦</span>
+                        <h3 class="card-name" title="مجرى ٣٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">مجرى ٣٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي</h3>
+                        <div class="card-price-badge">٦١٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 35سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">
+                <div class="card-product" data-name="مجرى ٣٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مجرى 35سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٣٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0267</span>
-                        <h3 class="card-name" title="مجرى 35سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">مجرى 35سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي</h3>
-                        <div class="card-price-badge"><span>635</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٧</span>
+                        <h3 class="card-name" title="مجرى ٣٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">مجرى ٣٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي</h3>
+                        <div class="card-price-badge">٦٣٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 40سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">
+                <div class="card-product" data-name="مجرى ٤٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="مجرى 40سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٤٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0268</span>
-                        <h3 class="card-name" title="مجرى 40سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">مجرى 40سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي</h3>
-                        <div class="card-price-badge"><span>660</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٨</span>
+                        <h3 class="card-name" title="مجرى ٤٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">مجرى ٤٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي</h3>
+                        <div class="card-price-badge">٦٦٠ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 45سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">
+                <div class="card-product" data-name="مجرى ٤٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="مجرى 45سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٤٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0269</span>
-                        <h3 class="card-name" title="مجرى 45سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">مجرى 45سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي</h3>
-                        <div class="card-price-badge"><span>685</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٢٦٩</span>
+                        <h3 class="card-name" title="مجرى ٤٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">مجرى ٤٥ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي</h3>
+                        <div class="card-price-badge">٦٨٥ ج.م</div>
                     </div>
                 </div>
-                <div class="card-product" data-name="مجرى 50سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">
+                <div class="card-product" data-name="مجرى ٥٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="مجرى 50سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="مجرى ٥٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0432</span>
-                        <h3 class="card-name" title="مجرى 50سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي">مجرى 50سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي</h3>
-                        <div class="card-price-badge"><span>710</span> <span>ج.م</span></div>
+                        <span class="card-code">#٠٤٣٢</span>
+                        <h3 class="card-name" title="مجرى ٥٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي">مجرى ٥٠ سم سفلي ٢ مرحلة + أمان ذاتي ساميت تركي</h3>
+                        <div class="card-price-badge">٧١٠ ج.م</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كالون درج مكتب زور طويل">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&auto=format&fit=crop&q=80" alt="كالون درج مكتب زور طويل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="كالون درج مكتب زور طويل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0545</span>
+                        <span class="card-code">#٠٥٤٥</span>
                         <h3 class="card-name" title="كالون درج مكتب زور طويل">كالون درج مكتب زور طويل</h3>
-                        <div class="card-price-badge"><span>85</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٨٥ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -731,7 +756,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 1 من 2</span>
+                <span>صفحة ١ من ٢</span>
             </footer>
         </section>
         <section class="page-sheet" data-page="2">
@@ -740,7 +765,7 @@
                     <div class="category-badge-icon">🔐</div>
                     <div>
                         <h2 class="category-name-heading">أقفال الخزائن</h2>
-                        <p class="category-meta-count">آليات القفل والمزالج المغناطيسية والأجهزة الأمنية &bull; 11 منتج</p>
+                        <p class="category-meta-count">آليات القفل والمزالج المغناطيسية والأجهزة الأمنية &bull; ١١ منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -748,12 +773,12 @@
             <div class="products-grid">
                 <div class="card-product" data-name="كالون درج مكتب زور قصير">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80" alt="كالون درج مكتب زور قصير" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="كالون درج مكتب زور قصير" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
-                        <span class="card-code">#0546</span>
+                        <span class="card-code">#٠٥٤٦</span>
                         <h3 class="card-name" title="كالون درج مكتب زور قصير">كالون درج مكتب زور قصير</h3>
-                        <div class="card-price-badge"><span>80</span> <span>ج.م</span></div>
+                        <div class="card-price-badge">٨٠ ج.م</div>
                     </div>
                 </div>
             </div>
@@ -762,7 +787,7 @@
                     <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
                     <span>&copy; 2026 عالم الإكسسوارات</span>
                 </div>
-                <span>صفحة 2 من 2</span>
+                <span>صفحة ٢ من ٢</span>
             </footer>
         </section>
     </main>

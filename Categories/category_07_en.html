@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_07_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -632,7 +657,7 @@
                     <div class="card-info">
                         <span class="card-code">#0027</span>
                         <h3 class="card-name" title="Handle Profile  G لطش Black Egyptian انوده">Handle Profile  G لطش Black Egyptian انوده</h3>
-                        <div class="card-price-badge"><span>330</span> <span>EGP</span></div>
+                        <div class="card-price-badge">330 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="handle دفن profile  l black egyptian الكترو">
@@ -642,87 +667,87 @@
                     <div class="card-info">
                         <span class="card-code">#0032</span>
                         <h3 class="card-name" title="Handle دفن Profile  L Black Egyptian الكترو">Handle دفن Profile  L Black Egyptian الكترو</h3>
-                        <div class="card-price-badge"><span>290</span> <span>EGP</span></div>
+                        <div class="card-price-badge">290 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="صابع تاتش بجناح ( معدن ) palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="صابع تاتش بجناح ( معدن ) Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_touch_latch.jpg" alt="صابع تاتش بجناح ( معدن ) Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0037</span>
                         <h3 class="card-name" title="صابع تاتش بجناح ( معدن ) Palma">صابع تاتش بجناح ( معدن ) Palma</h3>
-                        <div class="card-price-badge"><span>24</span> <span>EGP</span></div>
+                        <div class="card-price-badge">24 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="صابع تاتش كبس ( معدن )  palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="صابع تاتش كبس ( معدن )  Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_touch_latch.jpg" alt="صابع تاتش كبس ( معدن )  Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0038</span>
                         <h3 class="card-name" title="صابع تاتش كبس ( معدن )  Palma">صابع تاتش كبس ( معدن )  Palma</h3>
-                        <div class="card-price-badge"><span>18</span> <span>EGP</span></div>
+                        <div class="card-price-badge">18 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="حامل shelf زجاج extractor">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="حامل Shelf زجاج Extractor" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل Shelf زجاج Extractor" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0106</span>
                         <h3 class="card-name" title="حامل Shelf زجاج Extractor">حامل Shelf زجاج Extractor</h3>
-                        <div class="card-price-badge"><span>3.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فراشة تجميع معدن زنك صيني ثقيلة sis كود 01z-c">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0107</span>
                         <h3 class="card-name" title="فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C">فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">7.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 30 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 30 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 30 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0114</span>
                         <h3 class="card-name" title="Dividerة Drawer 30 cm رمادي Turkish   STAR -X">Dividerة Drawer 30 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>230</span> <span>EGP</span></div>
+                        <div class="card-price-badge">230 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 35 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 35 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 35 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0115</span>
                         <h3 class="card-name" title="Dividerة Drawer 35 cm رمادي Turkish   STAR -X">Dividerة Drawer 35 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>245</span> <span>EGP</span></div>
+                        <div class="card-price-badge">245 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 40 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 40 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 40 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0116</span>
                         <h3 class="card-name" title="Dividerة Drawer 40 cm رمادي Turkish   STAR -X">Dividerة Drawer 40 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>260</span> <span>EGP</span></div>
+                        <div class="card-price-badge">260 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 45 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 45 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 45 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0117</span>
                         <h3 class="card-name" title="Dividerة Drawer 45 cm رمادي Turkish   STAR -X">Dividerة Drawer 45 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>270</span> <span>EGP</span></div>
+                        <div class="card-price-badge">270 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,102 +773,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="dividerة drawer 50 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 50 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 50 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0118</span>
                         <h3 class="card-name" title="Dividerة Drawer 50 cm رمادي Turkish   STAR -X">Dividerة Drawer 50 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 55 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 55 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 55 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0119</span>
                         <h3 class="card-name" title="Dividerة Drawer 55 cm رمادي Turkish   STAR -X">Dividerة Drawer 55 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>330</span> <span>EGP</span></div>
+                        <div class="card-price-badge">330 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 60 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 60 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 60 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0120</span>
                         <h3 class="card-name" title="Dividerة Drawer 60 cm رمادي Turkish   STAR -X">Dividerة Drawer 60 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>340</span> <span>EGP</span></div>
+                        <div class="card-price-badge">340 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 70 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 70 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 70 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0121</span>
                         <h3 class="card-name" title="Dividerة Drawer 70 cm رمادي Turkish   STAR -X">Dividerة Drawer 70 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>390</span> <span>EGP</span></div>
+                        <div class="card-price-badge">390 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 80 cm رمادي turkish   star -x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 80 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 80 cm رمادي Turkish   STAR -X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0122</span>
                         <h3 class="card-name" title="Dividerة Drawer 80 cm رمادي Turkish   STAR -X">Dividerة Drawer 80 cm رمادي Turkish   STAR -X</h3>
-                        <div class="card-price-badge"><span>405</span> <span>EGP</span></div>
+                        <div class="card-price-badge">405 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكاية حامل shelf معدن بجراب (black) (شفاف) (white)">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تكاية حامل Shelf معدن بجراب (Black) (شفاف) (White)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكاية حامل Shelf معدن بجراب (Black) (شفاف) (White)" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0127</span>
                         <h3 class="card-name" title="تكاية حامل Shelf معدن بجراب (Black) (شفاف) (White)">تكاية حامل Shelf معدن بجراب (Black) (شفاف) (White)</h3>
-                        <div class="card-price-badge"><span>1.65</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.65 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf مcmار white">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf مcmار White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه Shelf مcmار White" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0169</span>
                         <h3 class="card-name" title="تكايه Shelf مcmار White">تكايه Shelf مcmار White</h3>
-                        <div class="card-price-badge"><span>0.25</span> <span>EGP</span></div>
+                        <div class="card-price-badge">0.25 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf white معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf White معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه Shelf White معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0219</span>
                         <h3 class="card-name" title="تكايه Shelf White معدن">تكايه Shelf White معدن</h3>
-                        <div class="card-price-badge"><span>1.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه Shelf معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0220</span>
                         <h3 class="card-name" title="تكايه Shelf معدن">تكايه Shelf معدن</h3>
-                        <div class="card-price-badge"><span>1</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="handle دفن profile  c black egyptian الكترو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Handle دفن Profile  C Black Egyptian الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_handle_bar_black.jpg" alt="Handle دفن Profile  C Black Egyptian الكترو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0245</span>
                         <h3 class="card-name" title="Handle دفن Profile  C Black Egyptian الكترو">Handle دفن Profile  C Black Egyptian الكترو</h3>
-                        <div class="card-price-badge"><span>240</span> <span>EGP</span></div>
+                        <div class="card-price-badge">240 EGP</div>
                     </div>
                 </div>
             </div>
@@ -869,102 +894,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="باسكت قمامة 15 لتر metali turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&auto=format&fit=crop&q=80" alt="باسكت قمامة 15 لتر Metali Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_waste_bin.jpg" alt="باسكت قمامة 15 لتر Metali Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0247</span>
                         <h3 class="card-name" title="باسكت قمامة 15 لتر Metali Turkish">باسكت قمامة 15 لتر Metali Turkish</h3>
-                        <div class="card-price-badge"><span>700</span> <span>EGP</span></div>
+                        <div class="card-price-badge">700 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي 2 shelf استانلس ( black ) 20 cm palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="ترولي 2 Shelf استانلس ( Black ) 20 cm palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي 2 Shelf استانلس ( Black ) 20 cm palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0250</span>
                         <h3 class="card-name" title="ترولي 2 Shelf استانلس ( Black ) 20 cm palma">ترولي 2 Shelf استانلس ( Black ) 20 cm palma</h3>
-                        <div class="card-price-badge"><span>1680</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1680 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي 2 shelf استانلس (فضي ) 20 cm palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="ترولي 2 Shelf استانلس (فضي ) 20 cm palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي 2 Shelf استانلس (فضي ) 20 cm palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0251</span>
                         <h3 class="card-name" title="ترولي 2 Shelf استانلس (فضي ) 20 cm palma">ترولي 2 Shelf استانلس (فضي ) 20 cm palma</h3>
-                        <div class="card-price-badge"><span>1620</span> <span>EGP</span></div>
+                        <div class="card-price-badge">1620 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="ترولي زجاجات ارتفاع 52 cm 2 shelf كروم 15 cm stara-x">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="ترولي زجاجات ارتفاع 52 cm 2 Shelf كروم 15 cm STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_dish_rack_lift.jpg" alt="ترولي زجاجات ارتفاع 52 cm 2 Shelf كروم 15 cm STARA-X" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0253</span>
                         <h3 class="card-name" title="ترولي زجاجات ارتفاع 52 cm 2 Shelf كروم 15 cm STARA-X">ترولي زجاجات ارتفاع 52 cm 2 Shelf كروم 15 cm STARA-X</h3>
-                        <div class="card-price-badge"><span>2600</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2600 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="فراشة turkish تجميع شفاف metali">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&auto=format&fit=crop&q=80" alt="فراشة Turkish تجميع شفاف Metali" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة Turkish تجميع شفاف Metali" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0255</span>
                         <h3 class="card-name" title="فراشة Turkish تجميع شفاف Metali">فراشة Turkish تجميع شفاف Metali</h3>
-                        <div class="card-price-badge"><span>3.9</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3.9 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة profile  s مفرد">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="علاقة Profile  s مفرد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="علاقة Profile  s مفرد" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0276</span>
                         <h3 class="card-name" title="علاقة Profile  s مفرد">علاقة Profile  s مفرد</h3>
-                        <div class="card-price-badge"><span>20</span> <span>EGP</span></div>
+                        <div class="card-price-badge">20 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="علاقة profile  s مجوز">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="علاقة Profile  s مجوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_edge_trim.jpg" alt="علاقة Profile  s مجوز" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0277</span>
                         <h3 class="card-name" title="علاقة Profile  s مجوز">علاقة Profile  s مجوز</h3>
-                        <div class="card-price-badge"><span>35</span> <span>EGP</span></div>
+                        <div class="card-price-badge">35 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="حامل توابل 2 shelf معلق ويل ماكس">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="حامل توابل 2 Shelf معلق ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="حامل توابل 2 Shelf معلق ويل ماكس" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0278</span>
                         <h3 class="card-name" title="حامل توابل 2 Shelf معلق ويل ماكس">حامل توابل 2 Shelf معلق ويل ماكس</h3>
-                        <div class="card-price-badge"><span>670</span> <span>EGP</span></div>
+                        <div class="card-price-badge">670 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer divider accessories 80 cm palma orange">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Drawer Divider Accessories 80 cm Palma Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer Divider Accessories 80 cm Palma Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0326</span>
                         <h3 class="card-name" title="Drawer Divider Accessories 80 cm Palma Orange">Drawer Divider Accessories 80 cm Palma Orange</h3>
-                        <div class="card-price-badge"><span>3900</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3900 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer divider accessories 80 cm palma grey">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Drawer Divider Accessories 80 cm Palma Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer Divider Accessories 80 cm Palma Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0329</span>
                         <h3 class="card-name" title="Drawer Divider Accessories 80 cm Palma Grey">Drawer Divider Accessories 80 cm Palma Grey</h3>
-                        <div class="card-price-badge"><span>3900</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3900 EGP</div>
                     </div>
                 </div>
             </div>
@@ -990,102 +1015,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="فراشة تجميع معدن palma تقيله">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="فراشة تجميع معدن Palma تقيله" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="فراشة تجميع معدن Palma تقيله" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0338</span>
                         <h3 class="card-name" title="فراشة تجميع معدن Palma تقيله">فراشة تجميع معدن Palma تقيله</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">7.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب امامي 5 shelf 40cm نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب امامي 5 Shelf 40cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب امامي 5 Shelf 40cm نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0342</span>
                         <h3 class="card-name" title="دولاب امامي 5 Shelf 40cm نيسكو">دولاب امامي 5 Shelf 40cm نيسكو</h3>
-                        <div class="card-price-badge"><span>6800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6800 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf زجاج ببنز بلاستك">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf زجاج ببنز بلاستك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="تكايه Shelf زجاج ببنز بلاستك" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0380</span>
                         <h3 class="card-name" title="تكايه Shelf زجاج ببنز بلاستك">تكايه Shelf زجاج ببنز بلاستك</h3>
-                        <div class="card-price-badge"><span>7.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">7.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جزامة محورية 6 shelf palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 6 Shelf Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية 6 Shelf Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0405</span>
                         <h3 class="card-name" title="جزامة محورية 6 Shelf Palma">جزامة محورية 6 Shelf Palma</h3>
-                        <div class="card-price-badge"><span>6150</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6150 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جزامة محورية 8shelf palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 8Shelf Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية 8Shelf Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0406</span>
                         <h3 class="card-name" title="جزامة محورية 8Shelf Palma">جزامة محورية 8Shelf Palma</h3>
-                        <div class="card-price-badge"><span>6900</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6900 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب محوري 2 shelf زجاج 60cm palma soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 2 Shelf زجاج 60cm Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري 2 Shelf زجاج 60cm Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0411</span>
                         <h3 class="card-name" title="دولاب محوري 2 Shelf زجاج 60cm Palma Soft Close">دولاب محوري 2 Shelf زجاج 60cm Palma Soft Close</h3>
-                        <div class="card-price-badge"><span>2950</span> <span>EGP</span></div>
+                        <div class="card-price-badge">2950 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب دريسنج كورنر 3دور اshelfف palma (3كرتونه )">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب دريسنج كورنر 3دور اShelfف Palma (3كرتونه )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب دريسنج كورنر 3دور اShelfف Palma (3كرتونه )" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0413</span>
                         <h3 class="card-name" title="دولاب دريسنج كورنر 3دور اShelfف Palma (3كرتونه )">دولاب دريسنج كورنر 3دور اShelfف Palma (3كرتونه )</h3>
-                        <div class="card-price-badge"><span>7750</span> <span>EGP</span></div>
+                        <div class="card-price-badge">7750 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب محوري 6shelf استانلس 45cm black palma soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6Shelf استانلس 45cm Black Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري 6Shelf استانلس 45cm Black Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0416</span>
                         <h3 class="card-name" title="دولاب محوري 6Shelf استانلس 45cm Black Palma Soft Close">دولاب محوري 6Shelf استانلس 45cm Black Palma Soft Close</h3>
-                        <div class="card-price-badge"><span>7300</span> <span>EGP</span></div>
+                        <div class="card-price-badge">7300 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="كارجو 6 shelf 45cm زجاج soft close palma">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="كارجو 6 Shelf 45cm زجاج Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="كارجو 6 Shelf 45cm زجاج Soft Close Palma" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0419</span>
                         <h3 class="card-name" title="كارجو 6 Shelf 45cm زجاج Soft Close Palma">كارجو 6 Shelf 45cm زجاج Soft Close Palma</h3>
-                        <div class="card-price-badge"><span>8200</span> <span>EGP</span></div>
+                        <div class="card-price-badge">8200 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب 5 shelf 45cm wire فضي مودرن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="دولاب 5 Shelf 45cm Wire فضي مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب 5 Shelf 45cm Wire فضي مودرن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0455</span>
                         <h3 class="card-name" title="دولاب 5 Shelf 45cm Wire فضي مودرن">دولاب 5 Shelf 45cm Wire فضي مودرن</h3>
-                        <div class="card-price-badge"><span>4400</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4400 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1111,102 +1136,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="تكايه shelf مcmار بني">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf مcmار بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه Shelf مcmار بني" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0458</span>
                         <h3 class="card-name" title="تكايه Shelf مcmار بني">تكايه Shelf مcmار بني</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">0.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf مcmار black">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf مcmار Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه Shelf مcmار Black" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0459</span>
                         <h3 class="card-name" title="تكايه Shelf مcmار Black">تكايه Shelf مcmار Black</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">0.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="تكايه shelf مcmار بيج">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="تكايه Shelf مcmار بيج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="تكايه Shelf مcmار بيج" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0460</span>
                         <h3 class="card-name" title="تكايه Shelf مcmار بيج">تكايه Shelf مcmار بيج</h3>
-                        <div class="card-price-badge"><span>0.5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">0.5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب محوري 6shelf استانلس 45cm فضي palma soft close">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6Shelf استانلس 45cm فضي Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري 6Shelf استانلس 45cm فضي Palma Soft Close" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0494</span>
                         <h3 class="card-name" title="دولاب محوري 6Shelf استانلس 45cm فضي Palma Soft Close">دولاب محوري 6Shelf استانلس 45cm فضي Palma Soft Close</h3>
-                        <div class="card-price-badge"><span>8100</span> <span>EGP</span></div>
+                        <div class="card-price-badge">8100 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="جزامة محورية 8shelf نيسكو">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="جزامة محورية 8Shelf نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="جزامة محورية 8Shelf نيسكو" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0506</span>
                         <h3 class="card-name" title="جزامة محورية 8Shelf نيسكو">جزامة محورية 8Shelf نيسكو</h3>
-                        <div class="card-price-badge"><span>15000</span> <span>EGP</span></div>
+                        <div class="card-price-badge">15000 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="بصمه معدن دهبي">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&auto=format&fit=crop&q=80" alt="بصمه معدن دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="بصمه معدن دهبي" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0539</span>
                         <h3 class="card-name" title="بصمه معدن دهبي">بصمه معدن دهبي</h3>
-                        <div class="card-price-badge"><span>5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="مcmار تجميع معدن">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&auto=format&fit=crop&q=80" alt="مcmار تجميع معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_fasteners_screws.jpg" alt="مcmار تجميع معدن" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0540</span>
                         <h3 class="card-name" title="مcmار تجميع معدن">مcmار تجميع معدن</h3>
-                        <div class="card-price-badge"><span>5</span> <span>EGP</span></div>
+                        <div class="card-price-badge">5 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 35 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 35 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 35 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0547</span>
                         <h3 class="card-name" title="Dividerة Drawer 35 cm Egyptian">Dividerة Drawer 35 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>130</span> <span>EGP</span></div>
+                        <div class="card-price-badge">130 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 40 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 40 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 40 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0548</span>
                         <h3 class="card-name" title="Dividerة Drawer 40 cm Egyptian">Dividerة Drawer 40 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>140</span> <span>EGP</span></div>
+                        <div class="card-price-badge">140 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 45 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 45 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 45 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0549</span>
                         <h3 class="card-name" title="Dividerة Drawer 45 cm Egyptian">Dividerة Drawer 45 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>150</span> <span>EGP</span></div>
+                        <div class="card-price-badge">150 EGP</div>
                     </div>
                 </div>
             </div>
@@ -1232,92 +1257,92 @@
             <div class="products-grid">
                 <div class="card-product" data-name="dividerة drawer 50 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 50 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 50 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0550</span>
                         <h3 class="card-name" title="Dividerة Drawer 50 cm Egyptian">Dividerة Drawer 50 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>165</span> <span>EGP</span></div>
+                        <div class="card-price-badge">165 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 55 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 55 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 55 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0551</span>
                         <h3 class="card-name" title="Dividerة Drawer 55 cm Egyptian">Dividerة Drawer 55 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>175</span> <span>EGP</span></div>
+                        <div class="card-price-badge">175 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 60 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 60 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 60 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0552</span>
                         <h3 class="card-name" title="Dividerة Drawer 60 cm Egyptian">Dividerة Drawer 60 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>185</span> <span>EGP</span></div>
+                        <div class="card-price-badge">185 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="dividerة drawer 70 cm egyptian">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Dividerة Drawer 70 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Dividerة Drawer 70 cm Egyptian" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0553</span>
                         <h3 class="card-name" title="Dividerة Drawer 70 cm Egyptian">Dividerة Drawer 70 cm Egyptian</h3>
-                        <div class="card-price-badge"><span>210</span> <span>EGP</span></div>
+                        <div class="card-price-badge">210 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="دولاب محوري 6shelf اكلريك 45cm">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="دولاب محوري 6Shelf اكلريك 45cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_general_hardware.jpg" alt="دولاب محوري 6Shelf اكلريك 45cm" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0580</span>
                         <h3 class="card-name" title="دولاب محوري 6Shelf اكلريك 45cm">دولاب محوري 6Shelf اكلريك 45cm</h3>
-                        <div class="card-price-badge"><span>8800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">8800 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="خزنة دريسنج رقمية 60 cm بدون divider">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="خزنة دريسنج رقمية 60 cm بدون Divider" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_safe_dressing.jpg" alt="خزنة دريسنج رقمية 60 cm بدون Divider" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0584</span>
                         <h3 class="card-name" title="خزنة دريسنج رقمية 60 cm بدون Divider">خزنة دريسنج رقمية 60 cm بدون Divider</h3>
-                        <div class="card-price-badge"><span>6600</span> <span>EGP</span></div>
+                        <div class="card-price-badge">6600 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer divider accessories 70 cm palma orange">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Drawer Divider Accessories 70 cm Palma Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer Divider Accessories 70 cm Palma Orange" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0587</span>
                         <h3 class="card-name" title="Drawer Divider Accessories 70 cm Palma Orange">Drawer Divider Accessories 70 cm Palma Orange</h3>
-                        <div class="card-price-badge"><span>3800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3800 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer divider accessories 70 cm palma grey">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80" alt="Drawer Divider Accessories 70 cm Palma Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer Divider Accessories 70 cm Palma Grey" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0588</span>
                         <h3 class="card-name" title="Drawer Divider Accessories 70 cm Palma Grey">Drawer Divider Accessories 70 cm Palma Grey</h3>
-                        <div class="card-price-badge"><span>3800</span> <span>EGP</span></div>
+                        <div class="card-price-badge">3800 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="drawer divider accessories 80 cm palma grey مع غطاء">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&auto=format&fit=crop&q=80" alt="Drawer Divider Accessories 80 cm Palma Grey مع غطاء" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Drawer Divider Accessories 80 cm Palma Grey مع غطاء" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0589</span>
                         <h3 class="card-name" title="Drawer Divider Accessories 80 cm Palma Grey مع غطاء">Drawer Divider Accessories 80 cm Palma Grey مع غطاء</h3>
-                        <div class="card-price-badge"><span>4200</span> <span>EGP</span></div>
+                        <div class="card-price-badge">4200 EGP</div>
                     </div>
                 </div>
             </div>

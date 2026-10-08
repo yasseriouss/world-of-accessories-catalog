@@ -272,17 +272,33 @@
         }
 
         .card-image-wrap {
-            width: 72px;
-            height: 72px;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            width: 104px;
+            height: 104px;
+            min-width: 104px;
+            min-height: 104px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .bidi-isolate {
+            display: inline-block;
+            direction: ltr;
+            unicode-bidi: isolate;
+            font-family: var(--font-en);
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.06);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
 
         .card-image-wrap img {
@@ -483,9 +499,9 @@
             .products-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                grid-template-rows: repeat(5, 41mm) !important;
-                gap: 8px 14px !important;
-                max-height: 220mm !important;
+                grid-template-rows: repeat(5, 45.5mm) !important;
+                gap: 5mm 12mm !important;
+                max-height: 248mm !important;
                 overflow: hidden !important;
                 flex: none !important;
             }
@@ -494,15 +510,20 @@
                 page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
-                height: 41mm !important;
-                max-height: 41mm !important;
+                height: 45.5mm !important;
+                max-height: 45.5mm !important;
                 overflow: hidden !important;
-                padding: 6px 10px !important;
+                padding: 2.5mm 8px !important;
                 box-sizing: border-box !important;
             }
             .card-image-wrap {
-                width: 33mm !important;
-                height: 33mm !important;
+                width: 40.5mm !important;
+                height: 40.5mm !important;
+                min-width: 40.5mm !important;
+                min-height: 40.5mm !important;
+                max-width: 40.5mm !important;
+                max-height: 40.5mm !important;
+                border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
         }
@@ -555,14 +576,17 @@
                 margin: 0 auto;
             }
             .card-product {
-                padding: 10px 12px;
-                gap: 12px;
+                padding: 12px 14px;
+                gap: 16px;
             }
             .card-image-wrap {
-                width: 68px;
-                height: 68px;
-                min-width: 68px;
-                min-height: 68px;
+                width: 110px !important;
+                height: 110px !important;
+                min-width: 110px !important;
+                min-height: 110px !important;
+                max-width: 110px !important;
+                max-height: 110px !important;
+                border-radius: 12px;
             }
             .sheet-footer {
                 flex-direction: column;
@@ -601,6 +625,7 @@
         <nav class="nav-links">
             <a href="categories_index_en.html" class="btn-nav">← Categories</a>
             <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog</a>
             <a href="category_08_ar.html" class="btn-nav accent">🌐 العربية</a>
             <button onclick="window.print()" class="btn-nav">🖨️ Print Catalog</button>
         </nav>
@@ -627,102 +652,102 @@
             <div class="products-grid">
                 <div class="card-product" data-name="runner/slide 30cm سفلي 2 مرحلة + كلبس أمان summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 30cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 30cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0262</span>
                         <h3 class="card-name" title="Runner/Slide 30cm سفلي 2 مرحلة + كلبس أمان Summit Turkish">Runner/Slide 30cm سفلي 2 مرحلة + كلبس أمان Summit Turkish</h3>
-                        <div class="card-price-badge"><span>610</span> <span>EGP</span></div>
+                        <div class="card-price-badge">610 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 35cm سفلي 2 مرحلة + كلبس أمان summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 35cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 35cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0263</span>
                         <h3 class="card-name" title="Runner/Slide 35cm سفلي 2 مرحلة + كلبس أمان Summit Turkish">Runner/Slide 35cm سفلي 2 مرحلة + كلبس أمان Summit Turkish</h3>
-                        <div class="card-price-badge"><span>635</span> <span>EGP</span></div>
+                        <div class="card-price-badge">635 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 40cm سفلي 2 مرحلة + كلبس أمان summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 40cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 40cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0264</span>
                         <h3 class="card-name" title="Runner/Slide 40cm سفلي 2 مرحلة + كلبس أمان Summit Turkish">Runner/Slide 40cm سفلي 2 مرحلة + كلبس أمان Summit Turkish</h3>
-                        <div class="card-price-badge"><span>660</span> <span>EGP</span></div>
+                        <div class="card-price-badge">660 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 50cm سفلي 2 مرحلة + كلبس أمان summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 50cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 50cm سفلي 2 مرحلة + كلبس أمان Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0265</span>
                         <h3 class="card-name" title="Runner/Slide 50cm سفلي 2 مرحلة + كلبس أمان Summit Turkish">Runner/Slide 50cm سفلي 2 مرحلة + كلبس أمان Summit Turkish</h3>
-                        <div class="card-price-badge"><span>710</span> <span>EGP</span></div>
+                        <div class="card-price-badge">710 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 30cm سفلي 2 مرحلة + أمان ذاتي summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 30cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 30cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0266</span>
                         <h3 class="card-name" title="Runner/Slide 30cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish">Runner/Slide 30cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish</h3>
-                        <div class="card-price-badge"><span>610</span> <span>EGP</span></div>
+                        <div class="card-price-badge">610 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 35cm سفلي 2 مرحلة + أمان ذاتي summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 35cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 35cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0267</span>
                         <h3 class="card-name" title="Runner/Slide 35cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish">Runner/Slide 35cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish</h3>
-                        <div class="card-price-badge"><span>635</span> <span>EGP</span></div>
+                        <div class="card-price-badge">635 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 40cm سفلي 2 مرحلة + أمان ذاتي summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 40cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 40cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0268</span>
                         <h3 class="card-name" title="Runner/Slide 40cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish">Runner/Slide 40cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish</h3>
-                        <div class="card-price-badge"><span>660</span> <span>EGP</span></div>
+                        <div class="card-price-badge">660 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 45cm سفلي 2 مرحلة + أمان ذاتي summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 45cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 45cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0269</span>
                         <h3 class="card-name" title="Runner/Slide 45cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish">Runner/Slide 45cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish</h3>
-                        <div class="card-price-badge"><span>685</span> <span>EGP</span></div>
+                        <div class="card-price-badge">685 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="runner/slide 50cm سفلي 2 مرحلة + أمان ذاتي summit turkish">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80" alt="Runner/Slide 50cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_undermount.jpg" alt="Runner/Slide 50cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0432</span>
                         <h3 class="card-name" title="Runner/Slide 50cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish">Runner/Slide 50cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish</h3>
-                        <div class="card-price-badge"><span>710</span> <span>EGP</span></div>
+                        <div class="card-price-badge">710 EGP</div>
                     </div>
                 </div>
                 <div class="card-product" data-name="lock drawer مكتب زور طويل">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&auto=format&fit=crop&q=80" alt="Lock Drawer مكتب زور طويل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Lock Drawer مكتب زور طويل" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0545</span>
                         <h3 class="card-name" title="Lock Drawer مكتب زور طويل">Lock Drawer مكتب زور طويل</h3>
-                        <div class="card-price-badge"><span>85</span> <span>EGP</span></div>
+                        <div class="card-price-badge">85 EGP</div>
                     </div>
                 </div>
             </div>
@@ -748,12 +773,12 @@
             <div class="products-grid">
                 <div class="card-product" data-name="lock drawer مكتب زور قصير">
                     <div class="card-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80" alt="Lock Drawer مكتب زور قصير" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
+                        <img src="../assets/products/preset_drawer_ball_bearing.jpg" alt="Lock Drawer مكتب زور قصير" loading="lazy" onerror="this.src='../Branding/logo-100.png'; this.style.padding='10px';">
                     </div>
                     <div class="card-info">
                         <span class="card-code">#0546</span>
                         <h3 class="card-name" title="Lock Drawer مكتب زور قصير">Lock Drawer مكتب زور قصير</h3>
-                        <div class="card-price-badge"><span>80</span> <span>EGP</span></div>
+                        <div class="card-price-badge">80 EGP</div>
                     </div>
                 </div>
             </div>

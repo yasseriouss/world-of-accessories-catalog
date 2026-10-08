@@ -10,13 +10,75 @@ import math
 import os
 import sys
 import html as html_lib
+import re
 
-# Ensure UTF-8 output on Windows console
 if sys.platform == 'win32':
     try:
         sys.stdout.reconfigure(encoding='utf-8')
     except Exception:
         pass
+
+INDIC_DIGITS = {
+    '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤',
+    '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩'
+}
+
+def to_indic(s):
+    """Convert Latin digits to Eastern Arabic (Indic) numerals"""
+    if s is None:
+        return ""
+    return "".join(INDIC_DIGITS.get(c, c) for c in str(s))
+
+
+def clean_arabic_hardware_text(text):
+    """Normalize Arabic hardware terms, convert units (cm, mm) to Arabic, and isolate Latin model codes"""
+    if not text:
+        return ""
+    t = str(text).strip()
+
+    # 1. Clean OCR / translation artifacts
+    t = t.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
+
+    # 2. Normalize and translate common English terms to Arabic
+    t = re.sub(r'(?i)\bsoft\s*close\b', 'سوفت كلوز', t)
+    t = re.sub(r'(?i)\bhydraulic\b', 'هيدروليك', t)
+    t = re.sub(r'(?i)\bhinge\b', 'مفصلة', t)
+    t = re.sub(r'(?i)\bhandle\b', 'مقبض', t)
+    t = re.sub(r'(?i)\b(?:slide|runner)\b', 'سكة مجرى', t)
+    t = re.sub(r'(?i)\bturkish\b', 'تركي', t)
+    t = re.sub(r'(?i)\bitalian\b', 'إيطالي', t)
+    t = re.sub(r'(?i)\begyptian\b', 'مصري', t)
+    t = re.sub(r'(?i)\bblack\b', 'أسود', t)
+    t = re.sub(r'(?i)\bsilver\b', 'فضي', t)
+    t = re.sub(r'(?i)\bgold\b', 'ذهبي', t)
+    t = re.sub(r'(?i)\bwhite\b', 'أبيض', t)
+    t = re.sub(r'(?i)\bgra?y\b', 'رمادي', t)
+
+    # 3. Units: cm, mm, dimensions to Arabic
+    t = re.sub(r'(\d+)\s*[*xX×]\s*(\d+)', r'\1 × \2 سم', t)
+    t = re.sub(r'(?i)\b(?:cm|c\.m)\b', 'سم', t)
+    t = re.sub(r'(?i)\b(?:mm|m\.m)\b', 'مم', t)
+    t = re.sub(r'(?i)\b(?:meter|meters|mtr)\b', 'متر', t)
+
+    # Fix spacing between numbers and Arabic letters
+    t = re.sub(r'(\d+)\s*مسمار', r'\1 مسامير', t)
+    t = re.sub(r'(\d+)\s*متر', r'\1 أمتار', t)
+    t = re.sub(r'(\d+)(سم|مم)', r'\1 \2', t)
+    t = re.sub(r'(\d+)([ء-ي])', r'\1 \2', t)
+    t = re.sub(r'([ء-ي])(\d+)', r'\1 \2', t)
+
+    t = re.sub(r'\s+', ' ', t).strip()
+
+    # 4. Convert standalone numeric dimensions and quantities to Eastern Arabic numerals
+    t = re.sub(r'(?<![A-Za-z0-9\-])\d+(?![A-Za-z0-9\-])', lambda m: to_indic(m.group(0)), t)
+
+    # 5. BiDi Isolation: Wrap any technical terms, models, or English brand words in <bdi dir="ltr"> to isolate bidi context
+    def wrap_bdi(m):
+        tok = m.group(0).strip()
+        return f'<bdi class="bidi-isolate" dir="ltr">{tok}</bdi>'
+
+    t = re.sub(r'\b[A-Za-z0-9\+\-\.]*[A-Za-z][A-Za-z0-9\+\-\.]*\b', wrap_bdi, t)
+    return t
 
 
 class ProfessionalA4CatalogGenerator:
@@ -69,19 +131,15 @@ class ProfessionalA4CatalogGenerator:
             return []
 
     def clean_translations(self):
-        """Clean translation artifacts for professional typography"""
+        """Clean translation artifacts and apply Eastern Arabic numerals, units, and bidi isolation"""
         for p in self.products:
             ar = p.get('ar', '').strip()
             en = p.get('en', '').strip()
 
-            ar = ar.replace('Drawerة', 'درجة').replace('حShelf', 'حرف').replace('D3', '3D')
-            ar = ar.replace('Soft Close', 'سوفت كلوز').replace('Hydraulic', 'هيدروليك')
-            ar = ar.replace('Hinge', 'مفصلة').replace('Handle', 'مقبض').replace('Slide', 'سكة مجرى')
+            p['ar_clean'] = clean_arabic_hardware_text(ar)
             
             en = en.replace('Drawerة', 'Degree').replace('حShelf', 'Profile ').replace('D3', '3D')
             en = en.replace('مصري', 'Egyptian').replace('تركي', 'Turkish').replace('إيطالي', 'Italian')
-
-            p['ar_clean'] = ar
             p['en_clean'] = en
 
     def categorize_products(self):
@@ -535,14 +593,14 @@ class ProfessionalA4CatalogGenerator:
         width: auto;
     }
 
-    /* Product Grid: 10 items (2 cols x 5 rows) - Exactly fitted */
+    /* Product Grid: 10 items (2 cols x 5 rows) - Exactly fitted with Maximum Picture Size */
     .products-grid-a4 {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(5, 41mm);
-        gap: 8px 14px;
-        height: 220mm;
-        max-height: 220mm;
+        grid-template-rows: repeat(5, 45.5mm);
+        gap: 5mm 14mm;
+        height: 248mm;
+        max-height: 248mm;
         overflow: hidden;
     }
 
@@ -550,29 +608,32 @@ class ProfessionalA4CatalogGenerator:
         background: #FFFFFF;
         border: 1px solid #E2E8F0;
         border-radius: 8px;
-        padding: 8px 10px;
+        padding: 2.5mm 8px;
         display: flex;
         align-items: center;
         gap: 10px;
-        height: 41mm;
-        max-height: 41mm;
+        height: 45.5mm;
+        max-height: 45.5mm;
         overflow: hidden;
         box-sizing: border-box;
     }
 
     .card-thumb {
-        width: 33mm;
-        height: 33mm;
-        max-width: 33mm;
-        max-height: 33mm;
-        border-radius: 6px;
-        border: 1px solid #E2E8F0;
+        width: 40.5mm;
+        height: 40.5mm;
+        min-width: 40.5mm;
+        min-height: 40.5mm;
+        max-width: 40.5mm;
+        max-height: 40.5mm;
+        border-radius: 8px;
+        border: 1.5px solid #CBD5E1;
         overflow: hidden;
         flex-shrink: 0;
-        background: #F8FAFC;
+        background: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
     .card-thumb img {
@@ -588,7 +649,7 @@ class ProfessionalA4CatalogGenerator:
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        padding: 2px 0;
+        padding: 3px 0;
     }
 
     .card-code-pill {
@@ -596,6 +657,19 @@ class ProfessionalA4CatalogGenerator:
         font-weight: 800;
         color: var(--navy);
         letter-spacing: 0.5px;
+    }
+
+    .bidi-isolate {
+        display: inline-block;
+        direction: ltr;
+        unicode-bidi: isolate;
+        font-family: var(--font-en);
+        font-weight: 700;
+        color: var(--navy);
+        background: rgba(26, 63, 127, 0.06);
+        padding: 0 4px;
+        border-radius: 4px;
+        font-size: 0.95em;
     }
 
     .card-prod-title {
@@ -893,13 +967,13 @@ class ProfessionalA4CatalogGenerator:
         }
 
         .card-thumb {
-            width: 68px !important;
-            height: 68px !important;
-            min-width: 68px !important;
-            min-height: 68px !important;
-            max-width: 68px !important;
-            max-height: 68px !important;
-            border-radius: 8px;
+            width: 110px !important;
+            height: 110px !important;
+            min-width: 110px !important;
+            min-height: 110px !important;
+            max-width: 110px !important;
+            max-height: 110px !important;
+            border-radius: 12px;
         }
 
         .card-prod-title {
@@ -953,16 +1027,16 @@ class ProfessionalA4CatalogGenerator:
         is_ar = (lang == "ar")
         title_main = "عالم الإكسسوارات" if is_ar else "WORLD OF ACCESSORIES"
         title_sub = "WORLD OF ACCESSORIES" if is_ar else "عالم الإكسسوارات"
-        edition_label = "إصدار الطباعة الفاخر A4 &bull; 2026" if is_ar else "A4 Print Edition &bull; Official 2026"
-        desc_text = "الكتالوج الرسمي الشامل والمصور لإكسسوارات الأثاث، المطابخ، الأبواب وأنظمة الحركة والرفع، يضم 591 منتجاً متميزاً بالأسعار المعتمدة." if is_ar else "Official Illustrated Product Catalog for Furniture, Kitchen, Cabinet and Architectural Hardware. Featuring 591 certified quality items with official pricing."
+        edition_label = f"إصدار الطباعة الفاخر A4 &bull; {to_indic(2026)}" if is_ar else "A4 Print Edition &bull; Official 2026"
+        desc_text = f"الكتالوج الرسمي الشامل والمصور لإكسسوارات الأثاث، المطابخ، الأبواب وأنظمة الحركة والرفع، يضم {to_indic(591)} منتجاً متميزاً بالأسعار المعتمدة." if is_ar else "Official Illustrated Product Catalog for Furniture, Kitchen, Cabinet and Architectural Hardware. Featuring 591 certified quality items with official pricing."
 
-        b1 = "📊 591 منتجاً مصوراً" if is_ar else "📊 591 Illustrated Items"
-        b2 = "📂 10 فئات متخصصة" if is_ar else "📂 10 Categorized Sections"
+        b1 = f"📊 {to_indic(591)} منتجاً مصوراً" if is_ar else "📊 591 Illustrated Items"
+        b2 = f"📂 {to_indic(10)} فئات متخصصة" if is_ar else "📂 10 Categorized Sections"
         b3 = "💎 أسعار رسمية بالجنيه" if is_ar else "💎 Official EGP Prices"
         b4 = "🖨️ معتمد لمقاس A4" if is_ar else "🖨️ A4 Portrait Optimized"
 
         contact_left = "القاهرة، جمهورية مصر العربية | info@worldofaccessories.com" if is_ar else "Cairo, Egypt | info@worldofaccessories.com"
-        contact_right = "هاتف: 01000000000 | الموقع: world-of-accessories-catalog.vercel.app" if is_ar else "Phone: +20 1000000000 | Web: world-of-accessories-catalog.vercel.app"
+        contact_right = f"هاتف: {to_indic('01000000000')} | الموقع: world-of-accessories-catalog.vercel.app" if is_ar else "Phone: +20 1000000000 | Web: world-of-accessories-catalog.vercel.app"
 
         return f"""
     <!-- COVER PAGE (PAGE 1) -->
@@ -998,8 +1072,8 @@ class ProfessionalA4CatalogGenerator:
         is_ar = (lang == "ar")
         toc_title = "فهرس المحتويات الشامل" if is_ar else "Table of Contents"
         toc_sub = "دليل تصفح فئات المنتجات وأرقام الصفحات" if is_ar else "Directory of Product Categories and Page Numbers"
-        summary_left = f"إجمالي المنتجات: 591 منتجاً موزعة على 10 فئات" if is_ar else "Total Products: 591 items across 10 specialized categories"
-        summary_right = f"إجمالي الصفحات: {self.total_pages} صفحة A4" if is_ar else f"Total Pages: {self.total_pages} A4 Sheets"
+        summary_left = f"إجمالي المنتجات: {to_indic(591)} منتجاً موزعة على {to_indic(10)} فئات" if is_ar else "Total Products: 591 items across 10 specialized categories"
+        summary_right = f"إجمالي الصفحات: {to_indic(self.total_pages)} صفحة A4" if is_ar else f"Total Pages: {self.total_pages} A4 Sheets"
 
         html = f"""
     <!-- TABLE OF CONTENTS (PAGE 2) -->
@@ -1020,11 +1094,12 @@ class ProfessionalA4CatalogGenerator:
         for item in self.toc_data:
             cat = item['category']
             cat_name = f"{cat['ar']} — {cat['en']}" if is_ar else f"{cat['en']} — {cat['ar']}"
-            count_str = f"{item['products_count']} منتج" if is_ar else f"{item['products_count']} Items"
-            page_str = f"صفحة {item['start_page']}" if is_ar else f"Page {item['start_page']}"
+            count_str = f"{to_indic(item['products_count'])} منتج" if is_ar else f"{item['products_count']} Items"
+            page_str = f"صفحة {to_indic(item['start_page'])}" if is_ar else f"Page {item['start_page']}"
+            cat_num_display = to_indic(f"{cat['id']:02d}") if is_ar else f"{cat['id']:02d}"
 
             html += f"""            <a href="#page-{item['start_page']}" class="toc-row">
-                <span class="toc-col-num">{cat['id']:02d}</span>
+                <span class="toc-col-num">{cat_num_display}</span>
                 <span class="toc-col-icon">{cat['icon']}</span>
                 <span class="toc-col-name">{cat_name}</span>
                 <span class="toc-dots"></span>
@@ -1043,7 +1118,7 @@ class ProfessionalA4CatalogGenerator:
         <footer class="page-footer">
             <img src="Branding/logo-80.png" alt="Logo" class="page-footer-logo">
             <span>&copy; 2026 {'عالم الإكسسوارات' if is_ar else 'World of Accessories'} &bull; {'فهرس المحتويات' if is_ar else 'Table of Contents'}</span>
-            <span>{'صفحة 2 من' if is_ar else 'Page 2 of'} {self.total_pages}</span>
+            <span>{'صفحة ٢ من ' if is_ar else 'Page 2 of '}{to_indic(self.total_pages) if is_ar else self.total_pages}</span>
         </footer>
     </div>
 """
@@ -1063,7 +1138,9 @@ class ProfessionalA4CatalogGenerator:
                 page_prods = prods[page_idx:page_idx + self.items_per_page]
 
                 cat_title_display = cat['ar'] if is_ar else cat['en']
-                sub_badge = f"{len(prods)} منتج &bull; فئة {cat['id']:02d}" if is_ar else f"{len(prods)} Items &bull; Cat {cat['id']:02d}"
+                cat_id_val = cat.get('id', 0)
+                cat_id_str = f"{cat_id_val:02d}"
+                sub_badge = f"{to_indic(len(prods))} منتج &bull; فئة {to_indic(cat_id_str)}" if is_ar else f"{len(prods)} Items &bull; Cat {cat_id_str}"
 
                 html += f"""
     <!-- PAGE {current_page_num}: {cat_title_display} -->
@@ -1080,33 +1157,41 @@ class ProfessionalA4CatalogGenerator:
         <div class="products-grid-a4">
 """
                 for p in page_prods:
-                    title = p.get('ar_clean') if is_ar else p.get('en_clean')
-                    if not title:
-                        title = p.get('ar') or p.get('en') or 'منتج'
-                    
-                    price = p.get('price', 'N/A')
-                    curr = 'ج.م' if is_ar else 'EGP'
-                    code = f"#{p.get('n', 0):04d}"
+                    p_n = p.get('n', 0)
+                    p_n_str = f"{p_n:04d}"
+                    if is_ar:
+                        title_html = p.get('ar_clean') or p.get('ar') or 'منتج'
+                        plain_title = re.sub(r'<[^>]+>', '', title_html)
+                        code = f"#{to_indic(p_n_str)}"
+                        price_num = to_indic(p.get('price', 'N/A'))
+                        price_display = f"{price_num} ج.م"
+                    else:
+                        title_html = html_lib.escape(p.get('en_clean') or p.get('en') or 'Product')
+                        plain_title = title_html
+                        code = f"#{p_n_str}"
+                        price_display = f"{p.get('price', 'N/A')} EGP"
+
                     img_url = self.resolve_image(p)
 
                     html += f"""            <div class="card-item-a4">
                 <div class="card-thumb">
-                    <img src="{img_url}" alt="{html_lib.escape(title)}" loading="lazy" onerror="this.src='Branding/logo-100.png'; this.style.padding='6px';">
+                    <img src="{img_url}" alt="{html_lib.escape(plain_title)}" loading="lazy" onerror="this.src='Branding/logo-100.png'; this.style.padding='6px';">
                 </div>
                 <div class="card-content">
                     <span class="card-code-pill">{code}</span>
-                    <h3 class="card-prod-title" title="{html_lib.escape(title)}">{html_lib.escape(title)}</h3>
-                    <div class="card-prod-price">{price} {curr}</div>
+                    <h3 class="card-prod-title" title="{html_lib.escape(plain_title)}">{title_html}</h3>
+                    <div class="card-prod-price">{price_display}</div>
                 </div>
             </div>
 """
 
+                footer_page_text = f"صفحة {to_indic(current_page_num)} من {to_indic(self.total_pages)}" if is_ar else f"Page {current_page_num} of {self.total_pages}"
                 html += f"""        </div>
 
         <footer class="page-footer">
             <img src="Branding/logo-80.png" alt="Logo" class="page-footer-logo">
             <span>&copy; 2026 {'عالم الإكسسوارات' if is_ar else 'World of Accessories'} &bull; {cat_title_display}</span>
-            <span>{'صفحة' if is_ar else 'Page'} {current_page_num} {'من' if is_ar else 'of'} {self.total_pages}</span>
+            <span>{footer_page_text}</span>
         </footer>
     </div>
 """
