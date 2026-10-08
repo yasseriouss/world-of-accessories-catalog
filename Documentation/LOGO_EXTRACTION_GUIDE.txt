@@ -1,0 +1,96 @@
+
+===============================================
+HOW TO EXTRACT LOGO FROM PDF
+===============================================
+
+Since automatic extraction may not work, follow these manual steps:
+
+OPTION 1: Using Adobe Acrobat Reader
+---------------------------------------
+1. Open 'Branding/logo full color.pdf' in Adobe Acrobat Reader
+2. Right-click on the logo image
+3. Select "Export Image"
+4. Choose PNG format
+5. Save as 'Branding/logo.png'
+
+OPTION 2: Using Photoshop
+--------------------------
+1. File > Open > Select 'Branding/logo full color.pdf'
+2. Right-click on the logo
+3. Export As...
+4. Format: PNG
+5. Settings:
+   - Size: 300 x 300 pixels
+   - Background: Transparent
+6. Save as 'Branding/logo.png'
+
+OPTION 3: Using Online Tool
+----------------------------
+1. Visit: https://www.pdftoimage.com/
+2. Upload: 'Branding/logo full color.pdf'
+3. Select PNG format
+4. Download the extracted image
+5. Rename to 'Branding/logo.png'
+
+OPTION 4: Using Command Line (Linux/Mac)
+-----------------------------------------
+Install ImageMagick:
+  brew install imagemagick  (Mac)
+  apt-get install imagemagick  (Linux)
+
+Extract logo:
+  convert -density 300 Branding/logo\ full\ color.pdf -quality 95 Branding/logo.png
+
+REQUIRED LOGO SIZES
+===================
+After extracting, create these sizes:
+
+1. logo.png          300 x 300 px  (Hero section)
+2. logo-150.png      150 x 150 px  (Category headers)
+3. logo-100.png      100 x 100 px  (Index cards)
+4. logo-80.png       80 x 80 px    (Footers)
+5. favicon.ico       64 x 64 px    (Browser tab)
+6. favicon-32.png    32 x 32 px    (Modern browsers)
+7. favicon-16.png    16 x 16 px    (Legacy browsers)
+
+EASY RESIZE USING ONLINE TOOLS
+==============================
+1. Visit: https://www.iloveimg.com/resize-image
+2. Upload logo.png
+3. Resize to each size listed above
+4. Save with appropriate name
+
+OR use Python PIL:
+------------------
+from PIL import Image
+
+img = Image.open('Branding/logo.png')
+img.thumbnail((150, 150), Image.Resampling.LANCZOS)
+img.save('Branding/logo-150.png')
+
+IMPORTANT REQUIREMENTS
+======================
+✓ Background: Transparent (PNG format)
+✓ Quality: High resolution (300+ DPI)
+✓ Aspect Ratio: Square (1:1) preferred
+✓ Format: PNG with alpha channel
+
+AFTER EXTRACTION
+================
+1. Place files in Branding/ folder:
+   Branding/logo.png
+   Branding/logo-150.png
+   Branding/logo-100.png
+   Branding/logo-80.png
+
+2. Place favicon files in root:
+   favicon.ico
+   favicon-32.png
+   favicon-16.png
+   apple-touch-icon.png
+
+3. Test in browser:
+   Open index.html
+   Verify logo displays on all sections
+
+===============================================

@@ -1,0 +1,141 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "en": "Hinges",
+      "ar": "المفاصل",
+      "description_en": "Cabinet and furniture hinges with various mounting styles and mechanisms",
+      "description_ar": "مفاصل الخزائن والأثاث بأنماط تركيب وآليات مختلفة",
+      "icon": "🔧",
+      "keywords_ar": ["مفصلة", "ساميت", "بالما", "عدلة", "ركبة", "سوفت كلوز", "3D", "تركي"],
+      "keywords_en": ["Hinge", "Summit", "Palma", "Straight", "Overlay", "Soft Close", "3D", "Turkish"],
+      "product_count": 85,
+      "price_range": "32-245 EGP",
+      "color": "#1A3F7F"
+    },
+    {
+      "id": 2,
+      "en": "Handles & Knobs",
+      "ar": "المقابض والمقابض",
+      "description_en": "Door and drawer handles, knobs, and decorative hardware",
+      "description_ar": "مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية",
+      "icon": "🚪",
+      "keywords_ar": ["مقبض", "ديكور", "معاصر", "كلاسيك", "نيكل", "جراي", "اورانج", "أسود"],
+      "keywords_en": ["Handle", "Knob", "Decorative", "Modern", "Classic", "Nickel", "Gray", "Orange"],
+      "product_count": 72,
+      "price_range": "22-165 EGP",
+      "color": "#FF8C3D"
+    },
+    {
+      "id": 3,
+      "en": "Drawer Systems",
+      "ar": "أنظمة الأدراج",
+      "description_en": "Sliding mechanisms, drawer runners, and motion systems",
+      "description_ar": "آليات الانزلاق وأجهزة تشغيل الأدراج وأنظمة الحركة",
+      "icon": "📦",
+      "keywords_ar": ["مجرى", "درج", "متحرك", "سلايد", "باكم", "سوفت", "كرات"],
+      "keywords_en": ["Drawer", "Runner", "Slide", "Motion", "Hydraulic", "Soft-close", "Ball-bearing"],
+      "product_count": 95,
+      "price_range": "68-525 EGP",
+      "color": "#FF8C3D"
+    },
+    {
+      "id": 4,
+      "en": "Support Arms",
+      "ar": "الأذرع الداعمة",
+      "description_en": "Support arms, gas struts, and mechanical lifting systems",
+      "description_ar": "الأذرع الداعمة والدعامات الغازية وأنظمة الرفع الميكانيكية",
+      "icon": "💪",
+      "keywords_ar": ["دراع", "داعم", "رفع", "غاز", "باكم", "ضاغط", "ضبط"],
+      "keywords_en": ["Arm", "Support", "Lift", "Gas", "Hydraulic", "Pressure", "Adjustable"],
+      "product_count": 64,
+      "price_range": "45-485 EGP",
+      "color": "#1A3F7F"
+    },
+    {
+      "id": 5,
+      "en": "Fasteners & Installation",
+      "ar": "المثبتات والتركيب",
+      "description_en": "Screws, bolts, anchors, and fastening elements",
+      "description_ar": "براغي وصواميل مراسي وعناصر التثبيت",
+      "icon": "🔩",
+      "keywords_ar": ["مسامير", "براغي", "تثبيت", "حشرات", "معدن", "خشب", "صلب"],
+      "keywords_en": ["Screw", "Bolt", "Fastener", "Anchor", "Metal", "Wood", "Steel"],
+      "product_count": 78,
+      "price_range": "5-85 EGP",
+      "color": "#F5E6D3"
+    },
+    {
+      "id": 6,
+      "en": "Edge Finishing",
+      "ar": "التشطيب الحافة",
+      "description_en": "Edge banding, trim, and surface finishing materials",
+      "description_ar": "شريط الحافة والتقليم ومواد الانتهاء السطحية",
+      "icon": "✨",
+      "keywords_ar": ["شريط", "تغليف", "ورنيش", "تشطيب", "عرض", "ملي", "لون"],
+      "keywords_en": ["Edge Banding", "Trim", "Veneer", "Finish", "Width", "Laminate", "Color"],
+      "product_count": 68,
+      "price_range": "15-180 EGP",
+      "color": "#FF8C3D"
+    },
+    {
+      "id": 7,
+      "en": "Storage & Organization",
+      "ar": "التخزين والتنظيم",
+      "description_en": "Shelves, dividers, organizers, and storage solutions",
+      "description_ar": "الرفوف والفواصل والمنظمات وحلول التخزين",
+      "icon": "📚",
+      "keywords_ar": ["رف", "تقسيم", "تنظيم", "خزانة", "معدن", "قابل", "متعدد"],
+      "keywords_en": ["Shelf", "Divider", "Organizer", "Cabinet", "Metal", "Adjustable", "Multi-purpose"],
+      "product_count": 54,
+      "price_range": "18-285 EGP",
+      "color": "#1A3F7F"
+    },
+    {
+      "id": 8,
+      "en": "Cabinet Locks",
+      "ar": "أقفال الخزائن",
+      "description_en": "Locking mechanisms, magnetic latches, and security hardware",
+      "description_ar": "آليات القفل والمزالج المغناطيسية والأجهزة الأمنية",
+      "icon": "🔐",
+      "keywords_ar": ["كالون", "قفل", "مغناطيسي", "أمان", "ذكي", "مفتاح", "حساس"],
+      "keywords_en": ["Lock", "Latch", "Magnetic", "Security", "Smart", "Key", "Catch"],
+      "product_count": 41,
+      "price_range": "25-340 EGP",
+      "color": "#FF8C3D"
+    },
+    {
+      "id": 9,
+      "en": "Tools & Brackets",
+      "ar": "الأدوات والأقواس",
+      "description_en": "Mounting hardware, brackets, angles, and installation aids",
+      "description_ar": "أجهزة التركيب والأقواس والزوايا ومساعدات التركيب",
+      "icon": "🛠️",
+      "keywords_ar": ["كابولي", "زاوية", "تركيب", "دعامة", "معدن", "قوي", "ثابت"],
+      "keywords_en": ["Bracket", "Angle", "Installation", "Support", "Metal", "Heavy-duty", "Fixed"],
+      "product_count": 48,
+      "price_range": "35-425 EGP",
+      "color": "#1A3F7F"
+    },
+    {
+      "id": 10,
+      "en": "Premium & Specialty",
+      "ar": "متخصص وفاخر",
+      "description_en": "High-end, designer, and specialized hardware products",
+      "description_ar": "منتجات أجهزة عالية الجودة ومصمم ومتخصصة",
+      "icon": "👑",
+      "keywords_ar": ["متخصص", "فاخر", "تصميم", "محدود", "عالي الجودة", "ماركة", "احترافي", "ذهبي", "كروم", "ستانلس", "ايطالي", "اسباني"],
+      "keywords_en": ["Specialty", "Premium", "Designer", "Limited", "High Quality", "Brand", "Professional", "Gold", "Chrome", "Stainless", "Italian", "Spanish"],
+      "product_count": 36,
+      "price_range": "185-950 EGP",
+      "color": "#FF8C3D"
+    }
+  ],
+  "metadata": {
+    "total_categories": 10,
+    "total_products": 591,
+    "categorization_date": "2026-10-08",
+    "version": "1.0",
+    "status": "Production Ready"
+  }
+}

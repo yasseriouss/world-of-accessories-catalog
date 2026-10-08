@@ -1,0 +1,55 @@
+{
+  "logo_files": {
+    "Branding/logo.png": {
+      "size": "300x300",
+      "purpose": "Hero section logo",
+      "usage": "index.html hero section"
+    },
+    "Branding/logo-150.png": {
+      "size": "150x150",
+      "purpose": "Category headers",
+      "usage": "Category pages, index cards"
+    },
+    "Branding/logo-100.png": {
+      "size": "100x100",
+      "purpose": "Index cards, thumbnails",
+      "usage": "Category selection pages"
+    },
+    "Branding/logo-80.png": {
+      "size": "80x80",
+      "purpose": "Footer logo",
+      "usage": "Page footers, headers"
+    }
+  },
+  "favicon_files": {
+    "favicon.ico": {
+      "size": "64x64",
+      "format": "ICO",
+      "purpose": "Multi-size browser favicon",
+      "usage": "All HTML pages <head>"
+    },
+    "favicon-32.png": {
+      "size": "32x32",
+      "format": "PNG",
+      "purpose": "Modern browser favicon",
+      "usage": "All HTML pages <head>"
+    },
+    "favicon-16.png": {
+      "size": "16x16",
+      "format": "PNG",
+      "purpose": "Legacy browser favicon",
+      "usage": "All HTML pages <head>"
+    },
+    "apple-touch-icon.png": {
+      "size": "180x180",
+      "format": "PNG",
+      "purpose": "iOS home screen icon",
+      "usage": "All HTML pages <head>"
+    }
+  },
+  "source": {
+    "image": "Branding/logo full color/logo full color-1.jpg",
+    "pdf": "Branding/logo full color.pdf",
+    "extracted": "2026-10-08"
+  }
+}

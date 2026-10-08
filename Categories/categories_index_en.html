@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories | World of Accessories</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <style>
+        body { font-family: var(--font-en); direction: ltr; text-align: left; }
+
+        :root {
+            --navy: #1A3F7F;
+            --navy-dark: #0F2752;
+            --navy-light: #2A56A2;
+            --orange: #FF8C3D;
+            --orange-hover: #E87528;
+            --cream: #F5E6D3;
+            --cream-light: #FBF6EF;
+            --dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-body: #EEF2F6;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 14px rgba(26,63,127,0.08);
+            --shadow-lg: 0 12px 30px rgba(26,63,127,0.14);
+            --font-en: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-ar: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--dark);
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Sticky Toolbar */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 63, 127, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--orange);
+            color: #FFFFFF;
+            padding: 10px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-logo-img {
+            height: 38px;
+            width: auto;
+            background: #FFFFFF;
+            border-radius: 6px;
+            padding: 2px 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .btn-nav:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255,140,61,0.3);
+        }
+
+        .btn-nav.accent {
+            background: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .btn-nav.accent:hover {
+            background: var(--orange-hover);
+        }
+
+        /* Search Filter Banner */
+        .filter-banner {
+            max-width: 210mm;
+            margin: 20px auto 0;
+            padding: 12px 20px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        [dir="rtl"] .search-input {
+            padding: 10px 38px 10px 16px;
+        }
+
+        .search-input:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(26,63,127,0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        [dir="rtl"] .search-icon {
+            left: auto;
+            right: 12px;
+        }
+
+        /* Container & A4 Print Simulation */
+        .catalog-container {
+            padding: 20px 0 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-sheet {
+            background: var(--surface);
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 30px;
+            box-shadow: var(--shadow-lg);
+            padding: 18mm 16mm;
+            box-sizing: border-box;
+            page-break-after: always;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .sheet-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 3px solid var(--navy);
+        }
+
+        .sheet-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .category-badge-icon {
+            font-size: 36px;
+            background: var(--cream-light);
+            border: 1px solid var(--cream);
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-name-heading {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .category-meta-count {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .sheet-logo {
+            height: 48px;
+            width: auto;
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            flex: 1;
+            align-content: start;
+        }
+
+        .card-product {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-product:hover {
+            border-color: var(--orange);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 140, 61, 0.12);
+        }
+
+        .card-image-wrap {
+            width: 72px;
+            height: 72px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .card-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card-product:hover .card-image-wrap img {
+            transform: scale(1.08);
+        }
+
+        .card-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .card-code {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-price-badge {
+            margin-top: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--orange);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sheet Footer */
+        .sheet-footer {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .sheet-footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sheet-footer-logo {
+            height: 28px;
+            width: auto;
+        }
+
+        /* Category Index Cards */
+        .categories-index-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 10px;
+            flex: 1;
+        }
+
+        .category-portal-card {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 20px 18px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .category-portal-card:hover {
+            border-color: var(--orange);
+            background: #FFFDF9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(255, 140, 61, 0.15);
+        }
+
+        .portal-icon-box {
+            font-size: 38px;
+            width: 64px;
+            height: 64px;
+            background: var(--cream-light);
+            border: 1px solid var(--cream);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+
+        .category-portal-card:hover .portal-icon-box {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .portal-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .portal-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .portal-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .portal-badge {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--orange);
+            background: rgba(255, 140, 61, 0.12);
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: #FFFFFF !important;
+                padding: 0 !important;
+            }
+            .top-nav, .filter-banner {
+                display: none !important;
+            }
+            .catalog-container {
+                padding: 0 !important;
+            }
+            .page-sheet {
+                box-shadow: none !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                border: none !important;
+                width: 100% !important;
+                height: 297mm !important;
+                padding: 14mm !important;
+            }
+            .card-product {
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #CBD5E1 !important;
+            }
+        }
+
+        /* Responsive Mobile Styles */
+        @media screen and (max-width: 820px) {
+            .page-sheet, .filter-banner {
+                width: 95%;
+                min-height: auto;
+                padding: 16px;
+            }
+            .products-grid, .categories-index-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px;
+            }
+            .sheet-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+            </style>
+</head>
+<body>
+    <header class="top-nav">
+        <a href="../index.html" class="brand-link">
+            <img src="../Branding/logo-80.png" alt="Logo" class="brand-logo-img">
+            <span>World of Accessories</span>
+        </a>
+        <nav class="nav-links">
+            <a href="../index.html" class="btn-nav">🏠 Home</a>
+            <a href="../catalog_en.html" class="btn-nav">📖 Full Catalog (60 Pages)</a>
+            <a href="categories_index_ar.html" class="btn-nav accent">🌐 العربية</a>
+            <button onclick="window.print()" class="btn-nav">🖨️ Print</button>
+        </nav>
+    </header>
+    <div class="filter-banner">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="categorySearch" class="search-input" placeholder="Search categories or hardware type..." onkeyup="filterPortals()">
+        </div>
+        <span style="font-weight:700; color:var(--navy);">10 Specialized Categories</span>
+    </div>
+    <main class="catalog-container">
+        <div class="page-sheet">
+            <div class="sheet-header">
+                <div class="sheet-title">
+                    <div class="category-badge-icon">🗂️</div>
+                    <div>
+                        <h1 class="category-name-heading">Product Categories</h1>
+                        <p class="category-meta-count">591 Premium Furniture, Kitchen & Door Hardware Items</p>
+                    </div>
+                </div>
+                <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
+            </div>
+            <div class="categories-index-grid" id="portalGrid">
+                <a href="category_01_en.html" class="category-portal-card" data-title="Hinges Cabinet and furniture hinges with various mounting styles and mechanisms">
+                    <div class="portal-icon-box">🔧</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Hinges</h2>
+                        <p class="portal-desc">Cabinet and furniture hinges with various mounting styles and mechanisms</p>
+                        <span class="portal-badge">200 Products &bull; 32-245 EGP</span>
+                    </div>
+                </a>
+                <a href="category_02_en.html" class="category-portal-card" data-title="Handles & Knobs Door and drawer handles, knobs, and decorative hardware">
+                    <div class="portal-icon-box">🚪</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Handles & Knobs</h2>
+                        <p class="portal-desc">Door and drawer handles, knobs, and decorative hardware</p>
+                        <span class="portal-badge">78 Products &bull; 22-165 EGP</span>
+                    </div>
+                </a>
+                <a href="category_03_en.html" class="category-portal-card" data-title="Drawer Systems Sliding mechanisms, drawer runners, and motion systems">
+                    <div class="portal-icon-box">📦</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Drawer Systems</h2>
+                        <p class="portal-desc">Sliding mechanisms, drawer runners, and motion systems</p>
+                        <span class="portal-badge">142 Products &bull; 68-525 EGP</span>
+                    </div>
+                </a>
+                <a href="category_04_en.html" class="category-portal-card" data-title="Support Arms Support arms, gas struts, and mechanical lifting systems">
+                    <div class="portal-icon-box">💪</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Support Arms</h2>
+                        <p class="portal-desc">Support arms, gas struts, and mechanical lifting systems</p>
+                        <span class="portal-badge">27 Products &bull; 45-485 EGP</span>
+                    </div>
+                </a>
+                <a href="category_05_en.html" class="category-portal-card" data-title="Fasteners & Installation Screws, bolts, anchors, and fastening elements">
+                    <div class="portal-icon-box">🔩</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Fasteners & Installation</h2>
+                        <p class="portal-desc">Screws, bolts, anchors, and fastening elements</p>
+                        <span class="portal-badge">10 Products &bull; 5-85 EGP</span>
+                    </div>
+                </a>
+                <a href="category_06_en.html" class="category-portal-card" data-title="Edge Finishing Edge banding, trim, and surface finishing materials">
+                    <div class="portal-icon-box">✨</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Edge Finishing</h2>
+                        <p class="portal-desc">Edge banding, trim, and surface finishing materials</p>
+                        <span class="portal-badge">18 Products &bull; 15-180 EGP</span>
+                    </div>
+                </a>
+                <a href="category_07_en.html" class="category-portal-card" data-title="Storage & Organization Shelves, dividers, organizers, and storage solutions">
+                    <div class="portal-icon-box">📚</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Storage & Organization</h2>
+                        <p class="portal-desc">Shelves, dividers, organizers, and storage solutions</p>
+                        <span class="portal-badge">59 Products &bull; 18-285 EGP</span>
+                    </div>
+                </a>
+                <a href="category_08_en.html" class="category-portal-card" data-title="Cabinet Locks Locking mechanisms, magnetic latches, and security hardware">
+                    <div class="portal-icon-box">🔐</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Cabinet Locks</h2>
+                        <p class="portal-desc">Locking mechanisms, magnetic latches, and security hardware</p>
+                        <span class="portal-badge">11 Products &bull; 25-340 EGP</span>
+                    </div>
+                </a>
+                <a href="category_09_en.html" class="category-portal-card" data-title="Tools & Brackets Mounting hardware, brackets, angles, and installation aids">
+                    <div class="portal-icon-box">🛠️</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Tools & Brackets</h2>
+                        <p class="portal-desc">Mounting hardware, brackets, angles, and installation aids</p>
+                        <span class="portal-badge">31 Products &bull; 35-425 EGP</span>
+                    </div>
+                </a>
+                <a href="category_10_en.html" class="category-portal-card" data-title="Premium & Specialty High-end, designer, and specialized hardware products">
+                    <div class="portal-icon-box">👑</div>
+                    <div class="portal-info">
+                        <h2 class="portal-title">Premium & Specialty</h2>
+                        <p class="portal-desc">High-end, designer, and specialized hardware products</p>
+                        <span class="portal-badge">15 Products &bull; 185-950 EGP</span>
+                    </div>
+                </a>
+            </div>
+            <footer class="sheet-footer">
+                <div class="sheet-footer-brand">
+                    <img src="../Branding/logo-80.png" alt="Logo" class="sheet-footer-logo">
+                    <span>&copy; 2026 World of Accessories. All rights reserved.</span>
+                </div>
+                <span>Category Directory</span>
+            </footer>
+        </div>
+    </main>
+
+        <script>
+        function filterPortals() {
+            var q = document.getElementById('categorySearch').value.toLowerCase();
+            var cards = document.querySelectorAll('.category-portal-card');
+            cards.forEach(function(card) {
+                var text = card.getAttribute('data-title').toLowerCase();
+                if(text.indexOf(q) > -1) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        </script>
+        </body></html>
+        

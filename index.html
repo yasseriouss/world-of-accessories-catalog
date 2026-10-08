@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="كتالوج عالم الإكسسوارات الفاخر - 591 منتجاً من إكسسوارات الأثاث والمطابخ والأبواب بالأسعار الرسمية">
+    <title>عالم الإكسسوارات | World of Accessories - Professional Catalog</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#1A3F7F">
+
+    <!-- Brand Local & Google Fonts -->
+    <link rel="stylesheet" href="styles/fonts.css">
+
+    <style>
+        :root {
+            --navy: #1A3F7F;
+            --navy-dark: #0F2752;
+            --navy-light: #2A56A2;
+            --orange: #FF8C3D;
+            --orange-hover: #E87528;
+            --cream: #F5E6D3;
+            --cream-light: #FBF6EF;
+            --dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-body: #F8FAFC;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --font-ar: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-en: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--dark);
+            font-family: var(--font-ar);
+            direction: rtl;
+            text-align: right;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Sticky Header */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 63, 127, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--orange);
+            color: #FFFFFF;
+            padding: 12px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .nav-brand img {
+            height: 42px;
+            width: auto;
+            background: #FFFFFF;
+            border-radius: 6px;
+            padding: 2px 6px;
+        }
+
+        .nav-brand-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .nav-brand-text p {
+            font-size: 11px;
+            color: var(--cream);
+            margin: 0;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-header {
+            background: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-header:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,140,61,0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(15, 39, 82, 0.94) 0%, rgba(26, 63, 127, 0.90) 100%), url('Branding/pattern-02.jpg.jpeg') center/cover;
+            color: #FFFFFF;
+            padding: 80px 24px 90px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo-badge {
+            width: 130px;
+            height: 130px;
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 12px;
+            margin: 0 auto 28px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid rgba(255, 140, 61, 0.4);
+            animation: pulse-border 3s infinite ease-in-out;
+        }
+
+        .hero-logo-badge img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(255, 140, 61, 0.4); transform: scale(1); }
+            50% { border-color: rgba(255, 140, 61, 0.9); transform: scale(1.02); }
+        }
+
+        .hero-badge-pill {
+            display: inline-block;
+            background: rgba(255, 140, 61, 0.2);
+            border: 1px solid var(--orange);
+            color: var(--orange);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 36px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Hero Search Bar */
+        .hero-search-wrapper {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .hero-search-input {
+            width: 100%;
+            padding: 18px 24px 18px 56px;
+            font-size: 16px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--dark);
+            outline: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+
+        .hero-search-input:focus {
+            background: #FFFFFF;
+            border-color: var(--orange);
+            box-shadow: 0 12px 35px rgba(255, 140, 61, 0.35);
+        }
+
+        .hero-search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: var(--navy);
+            pointer-events: none;
+        }
+
+        /* Action Buttons Grid */
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta.primary {
+            background: linear-gradient(135deg, var(--orange) 0%, #e0742a 100%);
+            color: #FFFFFF;
+        }
+
+        .btn-cta.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 140, 61, 0.45);
+        }
+
+        .btn-cta.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-cta.secondary:hover {
+            background: #FFFFFF;
+            color: var(--navy);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .stats-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 16px 35px rgba(26, 63, 127, 0.1);
+            border: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 24px 20px;
+            gap: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-left: 1px solid var(--border);
+        }
+
+        .stat-item:last-child {
+            border-left: none;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Section Container */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 70px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .cat-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 2px solid #E2E8F0;
+            padding: 24px 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .cat-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(255, 140, 61, 0.18);
+        }
+
+        .cat-icon-wrap {
+            width: 72px;
+            height: 72px;
+            background: var(--cream-light);
+            border: 1px solid var(--cream);
+            border-radius: 18px;
+            font-size: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            transition: transform 0.3s;
+        }
+
+        .cat-card:hover .cat-icon-wrap {
+            transform: scale(1.12) rotate(4deg);
+        }
+
+        .cat-title-ar {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .cat-title-en {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: var(--font-en);
+            margin-bottom: 14px;
+        }
+
+        .cat-count-badge {
+            margin-top: auto;
+            background: rgba(255, 140, 61, 0.12);
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* Fast Launch Full Catalogs Section */
+        .catalogs-banner {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            color: #FFFFFF;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-top: 20px;
+            box-shadow: 0 20px 40px rgba(26,63,127,0.25);
+        }
+
+        .catalogs-banner-info h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .catalogs-banner-info p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .catalog-options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .catalog-option-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .catalog-option-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--orange);
+            transform: translateX(-4px);
+        }
+
+        .catalog-option-title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .catalog-option-subtitle {
+            font-size: 12px;
+            color: var(--cream);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0B172E;
+            color: #94A3B8;
+            padding: 50px 24px 30px;
+            border-top: 3px solid var(--orange);
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            background: #FFFFFF;
+            padding: 4px 10px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            .catalogs-banner {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .stats-card {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .stat-item:nth-child(2) {
+                border-left: none;
+            }
+            .hero-title {
+                font-size: 30px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .stats-card {
+                grid-template-columns: 1fr;
+            }
+            .stat-item {
+                border-left: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 12px;
+            }
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+            .top-navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .btn-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sticky Header -->
+    <header class="top-navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="Branding/logo-80.png" alt="شعار عالم الإكسسوارات">
+            <div class="nav-brand-text">
+                <h1>عالم الإكسسوارات</h1>
+                <p>World of Accessories &bull; Premium Catalog</p>
+            </div>
+        </a>
+        <nav class="nav-actions">
+            <a href="Categories/categories_index_ar.html" class="btn-header">🏷️ تصفح الفئات</a>
+            <a href="catalog_ar.html" class="btn-header">📖 الكتالوج الكامل (عربي)</a>
+            <a href="catalog_en.html" class="btn-header">📖 English Catalog</a>
+            <a href="catalog_en_branded.html" class="btn-header" style="border-color:var(--orange); color:var(--orange);">✨ نسخة الهوية</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-logo-badge">
+                <img src="Branding/logo.png" alt="Company Logo">
+            </div>
+            <span class="hero-badge-pill">✨ الكتالوج الرقمي الرسمي 2026</span>
+            <h1 class="hero-title">عالم من الإكسسوارات الفاخرة<br>بين يديك</h1>
+            <p class="hero-subtitle">
+                تصفح تشكيلة متكاملة تضم <strong>591 منتجاً</strong> عالي الجودة من مفاصل المطابخ، الأذرع الهيدروليكية، المقابض العصرية، أنظمة الأدراج وسكك الحركة، مع الأسعار الرسمية وجاهزية تامة للطباعة والتصدير.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="hero-search-wrapper">
+                <input type="text" id="mainSearch" class="hero-search-input" placeholder="ابحث باسم المنتج أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي، مجرى درج)..." onkeyup="handleMainSearch(event)">
+                <span class="hero-search-icon">🔍</span>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-buttons">
+                <a href="Categories/categories_index_ar.html" class="btn-cta primary">
+                    <span>🏷️ استعراض حسب الفئات العشر</span>
+                    <span>←</span>
+                </a>
+                <a href="catalog_ar.html" class="btn-cta secondary">
+                    <span>📖 فتح الكتالوج الكامل (A4 Print)</span>
+                </a>
+                <a href="Categories/categories_index_en.html" class="btn-cta secondary">
+                    <span>🌐 English Version</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-card">
+            <div class="stat-item">
+                <div class="stat-number">591</div>
+                <div class="stat-label">منتج عالي الجودة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">فئات متخصصة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">أسعار رسمية بالجنيه (EGP)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">A4</div>
+                <div class="stat-label">جاهز للطباعة وتصدير PDF</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10 Categories Showcase -->
+    <main class="section-container" id="categoriesSection">
+        <div class="section-header">
+            <span class="section-tag">التصنيفات الشاملة</span>
+            <h2 class="section-title">فئات إكسسوارات الأثاث والمطابخ</h2>
+            <p class="section-subtitle">اختر الفئة المطلوبة للاطلاع على كافة المنتجات، المواصفات والأسعار المحدثة</p>
+        </div>
+
+        <div class="categories-grid">
+            <!-- 1. Hinges -->
+            <a href="Categories/category_01_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">🔧</div>
+                <div class="cat-title-ar">المفاصل</div>
+                <div class="cat-title-en">Hinges</div>
+                <span class="cat-count-badge">200 منتج مسجل</span>
+            </a>
+
+            <!-- 2. Handles & Knobs -->
+            <a href="Categories/category_02_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">🚪</div>
+                <div class="cat-title-ar">المقابض والأُكَر</div>
+                <div class="cat-title-en">Handles & Knobs</div>
+                <span class="cat-count-badge">78 منتج مسجل</span>
+            </a>
+
+            <!-- 3. Drawer Systems -->
+            <a href="Categories/category_03_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">📦</div>
+                <div class="cat-title-ar">أنظمة الأدراج وسكك الحركة</div>
+                <div class="cat-title-en">Drawer Systems</div>
+                <span class="cat-count-badge">142 منتج مسجل</span>
+            </a>
+
+            <!-- 4. Support Arms -->
+            <a href="Categories/category_04_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">💪</div>
+                <div class="cat-title-ar">الأذرع الداعمة والباكم</div>
+                <div class="cat-title-en">Support Arms</div>
+                <span class="cat-count-badge">27 منتج مسجل</span>
+            </a>
+
+            <!-- 5. Fasteners & Installation -->
+            <a href="Categories/category_05_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">🔩</div>
+                <div class="cat-title-ar">المثبتات والبراغي</div>
+                <div class="cat-title-en">Fasteners & Installation</div>
+                <span class="cat-count-badge">10 منتجات مسجلة</span>
+            </a>
+
+            <!-- 6. Edge Finishing -->
+            <a href="Categories/category_06_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">✨</div>
+                <div class="cat-title-ar">شرائط الحواف والتغليف</div>
+                <div class="cat-title-en">Edge Finishing</div>
+                <span class="cat-count-badge">18 منتج مسجل</span>
+            </a>
+
+            <!-- 7. Storage & Organization -->
+            <a href="Categories/category_07_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">📚</div>
+                <div class="cat-title-ar">أنظمة التخزين والرفوف</div>
+                <div class="cat-title-en">Storage & Organization</div>
+                <span class="cat-count-badge">59 منتج مسجل</span>
+            </a>
+
+            <!-- 8. Cabinet Locks -->
+            <a href="Categories/category_08_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">🔐</div>
+                <div class="cat-title-ar">أقفال الخزائن والأمان</div>
+                <div class="cat-title-en">Cabinet Locks</div>
+                <span class="cat-count-badge">11 منتج مسجل</span>
+            </a>
+
+            <!-- 9. Tools & Brackets -->
+            <a href="Categories/category_09_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">🛠️</div>
+                <div class="cat-title-ar">أدوات التركيب والكوابيل</div>
+                <div class="cat-title-en">Tools & Brackets</div>
+                <span class="cat-count-badge">31 منتج مسجل</span>
+            </a>
+
+            <!-- 10. Premium & Specialty -->
+            <a href="Categories/category_10_ar.html" class="cat-card">
+                <div class="cat-icon-wrap">👑</div>
+                <div class="cat-title-ar">المنتجات التخصصية والفاخرة</div>
+                <div class="cat-title-en">Premium & Specialty</div>
+                <span class="cat-count-badge">15 منتج مسجل</span>
+            </a>
+        </div>
+
+        <!-- Full Catalog Launcher Banner -->
+        <div class="catalogs-banner">
+            <div class="catalogs-banner-info">
+                <h3>📖 الكتالوجات المطبوعة الكاملة</h3>
+                <p>
+                    تتوفر الكتالوجات بصيغة A4 منسقة هندسياً تتضمن كافة الـ 591 منتجاً بصفحات متتالية مع الفهرس والغلاف، مجهزة للتنزيل أو الطباعة الفورية إلى PDF.
+                </p>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="catalog_ar.html" class="btn-cta primary" style="padding:12px 24px; font-size:14px;">النسخة العربية الكاملة (60 صفحة)</a>
+                    <a href="catalog_en.html" class="btn-cta secondary" style="padding:12px 24px; font-size:14px;">Full English Catalog</a>
+                </div>
+            </div>
+            <div class="catalog-options-grid">
+                <a href="catalog_ar.html" class="catalog-option-card">
+                    <div>
+                        <div class="catalog-option-title">🇪🇬 الكتالوج العربي الشامل</div>
+                        <div class="catalog-option-subtitle">591 منتجاً &bull; اتجاه RTL &bull; صفحة غلاف وفهرس</div>
+                    </div>
+                    <span>←</span>
+                </a>
+                <a href="catalog_en.html" class="catalog-option-card">
+                    <div>
+                        <div class="catalog-option-title">🇬🇧 Complete English Catalog</div>
+                        <div class="catalog-option-subtitle">All 591 items &bull; LTR Layout &bull; Print Ready</div>
+                    </div>
+                    <span>←</span>
+                </a>
+                <a href="catalog_en_branded.html" class="catalog-option-card">
+                    <div>
+                        <div class="catalog-option-title">✨ Branded Identity Edition</div>
+                        <div class="catalog-option-subtitle">Enhanced Edition with Brand Color System</div>
+                    </div>
+                    <span>←</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <img src="Branding/logo-150.png" alt="Logo" class="footer-logo">
+        <h4 style="color:#FFFFFF; font-size:18px; margin-bottom:4px;">عالم الإكسسوارات | World of Accessories</h4>
+        <p style="font-size:13px; color:#94A3B8;">الرائد في إكسسوارات الأثاث والمطابخ والأبواب الراقية في مصر والشرق الأوسط</p>
+
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="Categories/categories_index_ar.html">فئات المنتجات</a>
+            <a href="catalog_ar.html">الكتالوج العربي</a>
+            <a href="catalog_en.html">English Catalog</a>
+            <a href="catalog_en_branded.html">كتالوج الهوية</a>
+        </div>
+
+        <div class="footer-copy">
+            &copy; 2026 عالم الإكسسوارات. جميع الحقوق محفوظة &bull; All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+    function handleMainSearch(e) {
+        var q = document.getElementById('mainSearch').value.trim();
+        if (e.key === 'Enter' && q) {
+            window.location.href = 'Categories/categories_index_ar.html';
+        }
+    }
+    </script>
+</body>
+</html>

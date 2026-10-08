@@ -1,0 +1,9 @@
+.claude/
+.vercel/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.local
+data/payload_base64.txt
+data/all_products_payload.txt
