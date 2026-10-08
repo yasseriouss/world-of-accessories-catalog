@@ -1,0 +1,13 @@
+.git
+.github
+Documentation/
+scripts/
+data/
+Branding/*.pdf
+Branding/1 color logo/
+Branding/card-print/
+Branding/logo full color/
+node_modules
+*.py
+*.pyc
+*.md
