@@ -675,6 +675,278 @@ class ProfessionalA4CatalogGenerator:
             border: 1px solid #CBD5E1 !important;
         }
     }
+
+    /* ================= MOBILE & TABLET RESPONSIVE STYLES (SCREEN ONLY) ================= */
+    @media screen and (max-width: 820px) {
+        body {
+            background: #F1F5F9;
+            padding: 0 0 40px;
+        }
+
+        .top-toolbar {
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px 14px;
+            text-align: center;
+            border-radius: 0;
+            margin-bottom: 14px;
+        }
+
+        .top-toolbar-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .top-toolbar a, .top-toolbar button {
+            flex: 1 1 auto;
+            min-height: 42px;
+            justify-content: center;
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+
+        .page {
+            width: 95% !important;
+            max-width: 600px !important;
+            height: auto !important;
+            min-height: auto !important;
+            max-height: none !important;
+            margin: 0 auto 16px !important;
+            padding: 20px 16px !important;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+            border-radius: 12px !important;
+            overflow: visible !important;
+            border: 1px solid #E2E8F0;
+        }
+
+        /* Cover Page Responsive */
+        .page.cover {
+            padding: 32px 16px !important;
+            border-radius: 12px !important;
+            min-height: 520px !important;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cover-top-bar {
+            padding: 0 !important;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .cover-main-content {
+            padding: 14px 0 !important;
+        }
+
+        .cover-logo-frame {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 16px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .cover-title-ar {
+            font-size: 28px;
+            line-height: 1.3;
+        }
+
+        .cover-title-en {
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .cover-desc {
+            font-size: 13px;
+            line-height: 1.55;
+            margin-bottom: 20px;
+            padding: 0 8px;
+        }
+
+        .cover-badges {
+            gap: 8px;
+        }
+
+        .cover-badge-pill {
+            font-size: 11px;
+            padding: 5px 12px;
+        }
+
+        .cover-bottom-bar {
+            padding: 16px 0 0 !important;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* Table of Contents Responsive */
+        .page.toc {
+            padding: 20px 14px !important;
+        }
+
+        .toc-header {
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .toc-title-wrap {
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-title-icon {
+            width: 44px;
+            height: 44px;
+            font-size: 26px;
+        }
+
+        .toc-title-text h2 {
+            font-size: 20px;
+        }
+
+        .toc-list {
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .toc-row {
+            padding: 10px 12px;
+            font-size: 12px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .toc-col-name {
+            max-width: 60%;
+            font-size: 12px;
+        }
+
+        .toc-dots {
+            display: none;
+        }
+
+        .toc-col-count {
+            margin: 0;
+            font-size: 11px;
+            padding: 2px 8px;
+        }
+
+        .toc-col-page {
+            font-size: 12px;
+            width: auto;
+            margin-inline-start: auto;
+        }
+
+        .toc-footer-summary {
+            flex-direction: column;
+            gap: 6px;
+            text-align: center;
+            font-size: 11px;
+            padding: 10px;
+        }
+
+        /* Product Listing Responsive */
+        .page-header {
+            height: auto;
+            padding-bottom: 10px;
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .header-cat-info {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .header-cat-title {
+            font-size: 16px;
+        }
+
+        .products-grid-a4 {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            height: auto !important;
+            max-height: none !important;
+            overflow: visible !important;
+            gap: 10px;
+        }
+
+        .card-item-a4 {
+            height: auto !important;
+            max-height: none !important;
+            padding: 10px 12px;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .card-thumb {
+            width: 68px !important;
+            height: 68px !important;
+            min-width: 68px !important;
+            min-height: 68px !important;
+            max-width: 68px !important;
+            max-height: 68px !important;
+            border-radius: 8px;
+        }
+
+        .card-prod-title {
+            font-size: 13px;
+            -webkit-line-clamp: 2;
+        }
+
+        .card-prod-price {
+            font-size: 14px;
+        }
+
+        .page-footer {
+            height: auto;
+            padding-top: 10px;
+            flex-direction: column;
+            gap: 6px;
+            text-align: center;
+            font-size: 11px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .page {
+            width: 100% !important;
+            margin: 0 0 12px !important;
+            border-radius: 0 !important;
+            padding: 16px 12px !important;
+            border-left: none;
+            border-right: none;
+        }
+
+        .cover-title-ar {
+            font-size: 24px;
+        }
+
+        .cover-title-en {
+            font-size: 14px;
+        }
+
+        .toc-col-name {
+            max-width: 52%;
+        }
+
+        .top-toolbar a, .top-toolbar button {
+            width: 100%;
+        }
+    }
     """
 
     def generate_cover_page(self, lang="ar"):
@@ -872,7 +1144,7 @@ class ProfessionalA4CatalogGenerator:
             <img src="Branding/logo-80.png" alt="Logo" style="height:32px; background:white; border-radius:4px; padding:2px;">
             <span style="font-weight:700;">{'عالم الإكسسوارات - الكتالوج الكامل المعتمد A4 (591 منتج)' if is_ar else 'World of Accessories - Official A4 Complete Catalog (591 Items)'}</span>
         </div>
-        <div style="display:flex; gap:10px;">
+        <div class="top-toolbar-actions" style="display:flex; gap:10px;">
             <a href="index.html">🏠 {'الرئيسية' if is_ar else 'Home'}</a>
             <a href="Categories/categories_index_{lang}.html">🏷️ {'الفئات' if is_ar else 'Categories'}</a>
             <a href="{other_file}" style="background:var(--orange); border-color:var(--orange);">{other_label}</a>

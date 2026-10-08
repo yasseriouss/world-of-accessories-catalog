@@ -512,20 +512,82 @@
             .page-sheet, .filter-banner {
                 width: 95%;
                 min-height: auto;
-                padding: 16px;
+                padding: 16px 14px;
+                border-radius: 12px;
             }
             .products-grid, .categories-index-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
             .top-nav {
                 flex-direction: column;
-                gap: 10px;
-                padding: 12px;
+                gap: 12px;
+                padding: 12px 14px;
+                text-align: center;
+            }
+            .nav-actions {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+            }
+            .nav-btn {
+                flex: 1 1 auto;
+                min-height: 40px;
+                justify-content: center;
+                font-size: 12px;
+                padding: 8px 12px;
             }
             .sheet-header {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+            }
+            .sheet-title {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .category-badge-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 26px;
+                margin: 0 auto;
+            }
+            .card-product {
+                padding: 10px 12px;
+                gap: 12px;
+            }
+            .card-image-wrap {
+                width: 68px;
+                height: 68px;
+                min-width: 68px;
+                min-height: 68px;
+            }
+            .sheet-footer {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .page-sheet, .filter-banner {
+                width: 100%;
+                border-radius: 0;
+                padding: 14px 10px;
+                border-left: none;
+                border-right: none;
+            }
+            .category-name-heading {
+                font-size: 18px;
+            }
+            .card-name {
+                font-size: 12px;
+            }
+            .nav-btn {
+                width: 100%;
             }
         }
             </style>
@@ -571,11 +633,11 @@
                         <span class="portal-badge">200 منتج &bull; 32-245 EGP</span>
                     </div>
                 </a>
-                <a href="category_02_ar.html" class="category-portal-card" data-title="المقابض والمقابض Handles & Knobs مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية">
+                <a href="category_02_ar.html" class="category-portal-card" data-title="المقابض والمسكات Handles & Knobs مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية">
                     <div class="portal-icon-box">🚪</div>
                     <div class="portal-info">
-                        <h2 class="portal-title">المقابض والمقابض</h2>
-                        <p class="portal-desc">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية</p>
+                        <h2 class="portal-title">المقابض والمسكات</h2>
+                        <p class="portal-desc">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية</p>
                         <span class="portal-badge">78 منتج &bull; 22-165 EGP</span>
                     </div>
                 </a>

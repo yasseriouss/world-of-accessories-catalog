@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المقابض والمقابض | عالم الإكسسوارات</title>
+    <title>المقابض والمسكات | عالم الإكسسوارات</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/fonts.css">
     <style>
@@ -512,20 +512,82 @@
             .page-sheet, .filter-banner {
                 width: 95%;
                 min-height: auto;
-                padding: 16px;
+                padding: 16px 14px;
+                border-radius: 12px;
             }
             .products-grid, .categories-index-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
             .top-nav {
                 flex-direction: column;
-                gap: 10px;
-                padding: 12px;
+                gap: 12px;
+                padding: 12px 14px;
+                text-align: center;
+            }
+            .nav-actions {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+            }
+            .nav-btn {
+                flex: 1 1 auto;
+                min-height: 40px;
+                justify-content: center;
+                font-size: 12px;
+                padding: 8px 12px;
             }
             .sheet-header {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+            }
+            .sheet-title {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .category-badge-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 26px;
+                margin: 0 auto;
+            }
+            .card-product {
+                padding: 10px 12px;
+                gap: 12px;
+            }
+            .card-image-wrap {
+                width: 68px;
+                height: 68px;
+                min-width: 68px;
+                min-height: 68px;
+            }
+            .sheet-footer {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .page-sheet, .filter-banner {
+                width: 100%;
+                border-radius: 0;
+                padding: 14px 10px;
+                border-left: none;
+                border-right: none;
+            }
+            .category-name-heading {
+                font-size: 18px;
+            }
+            .card-name {
+                font-size: 12px;
+            }
+            .nav-btn {
+                width: 100%;
             }
         }
             </style>
@@ -534,7 +596,7 @@
     <header class="top-nav">
         <a href="categories_index_ar.html" class="brand-link">
             <img src="../Branding/logo-80.png" alt="Logo" class="brand-logo-img">
-            <span>🚪 المقابض والمقابض</span>
+            <span>🚪 المقابض والمسكات</span>
         </a>
         <nav class="nav-links">
             <a href="categories_index_ar.html" class="btn-nav">← الفئات</a>
@@ -556,8 +618,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -677,8 +739,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -798,8 +860,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -919,8 +981,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1040,8 +1102,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1161,8 +1223,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1282,8 +1344,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">
@@ -1403,8 +1465,8 @@
                 <div class="sheet-title">
                     <div class="category-badge-icon">🚪</div>
                     <div>
-                        <h2 class="category-name-heading">المقابض والمقابض</h2>
-                        <p class="category-meta-count">مقابض الأبواب والأدراج والمقابض والأجهزة الزخرفية &bull; 78 منتج</p>
+                        <h2 class="category-name-heading">المقابض والمسكات</h2>
+                        <p class="category-meta-count">مقابض الأبواب والأدراج ومسكات الأثاث والأجهزة الزخرفية &bull; 78 منتج</p>
                     </div>
                 </div>
                 <img src="../Branding/logo-100.png" alt="Logo" class="sheet-logo">

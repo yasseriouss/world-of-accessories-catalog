@@ -540,7 +540,7 @@
             margin-top: 20px;
         }
 
-        /* Responsive */
+        /* Responsive Mobile Styles */
         @media screen and (max-width: 900px) {
             .catalogs-banner {
                 grid-template-columns: 1fr;
@@ -559,28 +559,109 @@
         }
 
         @media screen and (max-width: 600px) {
+            .top-navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 14px;
+                text-align: center;
+            }
+            .nav-actions {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+            }
+            .btn-header {
+                flex: 1 1 auto;
+                min-height: 42px;
+                justify-content: center;
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            .hero-section {
+                padding: 40px 16px 50px;
+            }
+            .hero-title {
+                font-size: 24px;
+                line-height: 1.35;
+            }
+            .hero-subtitle {
+                font-size: 13px;
+                line-height: 1.6;
+                padding: 0 8px;
+            }
+            .hero-search-box {
+                padding: 4px;
+                width: 100%;
+            }
+            .search-input {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            .btn-cta {
+                width: 100%;
+                justify-content: center;
+                min-height: 46px;
+            }
+            .stats-card {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                padding: 16px;
+                margin: 0 12px;
+            }
+            .stat-num {
+                font-size: 24px;
+            }
+            .stat-label {
+                font-size: 11px;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .cat-card {
+                padding: 18px 16px;
+            }
+            .catalogs-banner {
+                padding: 24px 16px;
+                border-radius: 14px;
+                gap: 18px;
+            }
+            .catalogs-banner-info h3 {
+                font-size: 22px;
+            }
+            .catalogs-banner-info p {
+                font-size: 13px;
+            }
+            .catalog-option-card {
+                padding: 14px 16px;
+                min-height: 48px;
+            }
+            .site-footer {
+                padding: 36px 16px 24px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
             .stats-card {
                 grid-template-columns: 1fr;
             }
             .stat-item {
                 border-left: none;
                 border-bottom: 1px solid var(--border);
-                padding-bottom: 12px;
+                padding-bottom: 10px;
             }
             .stat-item:last-child {
                 border-bottom: none;
             }
-            .top-navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px;
-            }
-            .hero-buttons {
-                flex-direction: column;
-            }
-            .btn-cta {
-                width: 100%;
-                justify-content: center;
+            .hero-title {
+                font-size: 22px;
             }
         }
     </style>
