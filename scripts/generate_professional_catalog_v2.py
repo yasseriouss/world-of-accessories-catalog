@@ -540,31 +540,72 @@ class ImpeccableCatalogGenerator:
             display: inline-block;
         }
 
-        /* Print Media Styles */
+        /* Strict A4 Portrait Print Styles */
+        @page {
+            size: 210mm 297mm;
+            margin: 0;
+        }
+
         @media print {
-            body {
-                background: #FFFFFF !important;
+            html, body {
+                width: 210mm !important;
+                margin: 0 !important;
                 padding: 0 !important;
+                background: #FFFFFF !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             .top-nav, .filter-banner {
                 display: none !important;
             }
             .catalog-container {
                 padding: 0 !important;
+                margin: 0 !important;
             }
             .page-sheet {
                 box-shadow: none !important;
                 margin: 0 !important;
                 border-radius: 0 !important;
                 border: none !important;
-                width: 100% !important;
+                width: 210mm !important;
                 height: 297mm !important;
-                padding: 14mm !important;
+                min-height: 297mm !important;
+                max-height: 297mm !important;
+                padding: 14mm 15mm 12mm !important;
+                box-sizing: border-box !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+            }
+            .products-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                grid-template-rows: repeat(5, 41mm) !important;
+                gap: 8px 14px !important;
+                max-height: 220mm !important;
+                overflow: hidden !important;
+                flex: none !important;
             }
             .card-product {
-                break-inside: avoid;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
                 box-shadow: none !important;
                 border: 1px solid #CBD5E1 !important;
+                height: 41mm !important;
+                max-height: 41mm !important;
+                overflow: hidden !important;
+                padding: 6px 10px !important;
+                box-sizing: border-box !important;
+            }
+            .card-image-wrap {
+                width: 33mm !important;
+                height: 33mm !important;
+                flex-shrink: 0 !important;
             }
         }
 
