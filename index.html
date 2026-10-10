@@ -119,6 +119,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            outline: none;
         }
 
         .btn-header:hover {
@@ -170,18 +173,20 @@
             0%, 100% { border-color: rgba(255, 140, 61, 0.4); transform: scale(1); }
             50% { border-color: rgba(255, 140, 61, 0.9); transform: scale(1.02); }
         }
-
         .hero-badge-pill {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: rgba(255, 140, 61, 0.2);
             border: 1px solid var(--orange);
             color: var(--orange);
-            padding: 6px 20px;
+            padding: 7px 22px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 140, 61, 0.15);
         }
 
         .hero-title {
@@ -286,8 +291,8 @@
 
         /* Stats Bar */
         .stats-bar {
-            max-width: 1100px;
-            margin: -40px auto 60px;
+            max-width: 620px;
+            margin: -36px auto 55px;
             position: relative;
             z-index: 10;
             padding: 0 20px;
@@ -295,33 +300,52 @@
 
         .stats-card {
             background: #FFFFFF;
-            border-radius: 16px;
-            box-shadow: 0 16px 35px rgba(26, 63, 127, 0.1);
+            border-radius: 18px;
+            box-shadow: 0 16px 36px rgba(26, 63, 127, 0.09), 0 2px 6px rgba(0,0,0,0.03);
             border: 1px solid var(--border);
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            padding: 24px 20px;
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 18px 28px;
+            gap: 20px;
+            align-items: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .stats-card:hover {
+            box-shadow: 0 20px 42px rgba(26, 63, 127, 0.13);
+            transform: translateY(-2px);
         }
 
         .stat-item {
             text-align: center;
-            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 12px;
         }
 
-        .stat-item:last-child {
-            border-left: none;
+        .stat-item:first-child {
+            border-left: 1.5px solid var(--border);
         }
 
         .stat-number {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
             color: var(--navy);
-            margin-bottom: 2px;
+            line-height: 1.15;
+            margin-bottom: 4px;
         }
 
         .stat-label {
-            font-size: 13px;
+            font-size: 13.5px;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .stat-sublabel {
+            font-size: 11px;
             color: var(--text-muted);
             font-weight: 600;
         }
@@ -434,68 +458,6 @@
             border-radius: 20px;
         }
 
-        /* Fast Launch Full Catalogs Section */
-        .catalogs-banner {
-            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
-            border-radius: 20px;
-            padding: 50px 40px;
-            color: #FFFFFF;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-            margin-top: 20px;
-            box-shadow: 0 20px 40px rgba(26,63,127,0.25);
-        }
-
-        .catalogs-banner-info h3 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .catalogs-banner-info p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .catalog-options-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .catalog-option-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 16px 20px;
-            text-decoration: none;
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.25s ease;
-        }
-
-        .catalog-option-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--orange);
-            transform: translateX(-4px);
-        }
-
-        .catalog-option-title {
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .catalog-option-subtitle {
-            font-size: 12px;
-            color: var(--cream);
-        }
-
         /* Footer */
         .site-footer {
             background: #0B172E;
@@ -540,19 +502,58 @@
             margin-top: 20px;
         }
 
+        /* Direction-specific LTR styles */
+        [dir="ltr"] body {
+            font-family: var(--font-en);
+            text-align: left;
+        }
+
+        [dir="ltr"] .hero-search-input {
+            text-align: left;
+            padding: 18px 24px 18px 56px;
+        }
+
+        [dir="ltr"] .hero-search-icon {
+            left: 20px;
+            right: auto;
+        }
+
+        [dir="ltr"] .stat-item:first-child {
+            border-left: none;
+            border-right: 1.5px solid var(--border);
+        }
+
+        [dir="ltr"] .cat-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        [dir="ltr"] .cat-icon-wrap {
+            order: 0;
+        }
+
+        [dir="ltr"] .cat-title-en {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+            order: 1;
+        }
+
+        [dir="ltr"] .cat-title-ar {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: var(--font-ar);
+            margin-bottom: 14px;
+            order: 2;
+        }
+
+        [dir="ltr"] .cat-count-badge {
+            order: 3;
+        }
+
         /* Responsive Mobile Styles */
         @media screen and (max-width: 900px) {
-            .catalogs-banner {
-                grid-template-columns: 1fr;
-                padding: 30px 20px;
-            }
-            .stats-card {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            .stat-item:nth-child(2) {
-                border-left: none;
-            }
             .hero-title {
                 font-size: 30px;
             }
@@ -612,14 +613,18 @@
             .stats-card {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
-                padding: 16px;
-                margin: 0 12px;
+                padding: 16px 14px;
+                margin: 0 auto;
+                max-width: 440px;
             }
-            .stat-num {
-                font-size: 24px;
+            .stat-number {
+                font-size: 26px;
             }
             .stat-label {
-                font-size: 11px;
+                font-size: 12px;
+            }
+            .stat-sublabel {
+                font-size: 10px;
             }
             .categories-grid {
                 grid-template-columns: 1fr;
@@ -627,21 +632,6 @@
             }
             .cat-card {
                 padding: 18px 16px;
-            }
-            .catalogs-banner {
-                padding: 24px 16px;
-                border-radius: 14px;
-                gap: 18px;
-            }
-            .catalogs-banner-info h3 {
-                font-size: 22px;
-            }
-            .catalogs-banner-info p {
-                font-size: 13px;
-            }
-            .catalog-option-card {
-                padding: 14px 16px;
-                min-height: 48px;
             }
             .site-footer {
                 padding: 36px 16px 24px;
@@ -651,14 +641,16 @@
         @media screen and (max-width: 380px) {
             .stats-card {
                 grid-template-columns: 1fr;
+                gap: 14px;
             }
-            .stat-item {
+            .stat-item:first-child {
                 border-left: none;
-                border-bottom: 1px solid var(--border);
-                padding-bottom: 10px;
+                border-bottom: 1.5px solid var(--border);
+                padding-bottom: 12px;
             }
-            .stat-item:last-child {
-                border-bottom: none;
+            [dir="ltr"] .stat-item:first-child {
+                border-right: none;
+                border-bottom: 1.5px solid var(--border);
             }
             .hero-title {
                 font-size: 22px;
@@ -673,14 +665,14 @@
         <a href="index.html" class="nav-brand">
             <img src="Branding/logo-80.png" alt="شعار عالم الإكسسوارات">
             <div class="nav-brand-text">
-                <h1>عالم الإكسسوارات</h1>
-                <p>World of Accessories &bull; Premium Catalog</p>
+                <h1 id="navBrandTitle">عالم الإكسسوارات</h1>
+                <p id="navBrandSub">World of Accessories &bull; Premium Catalog</p>
             </div>
         </a>
         <nav class="nav-actions">
-            <a href="Categories/categories_index_ar.html" class="btn-header">🏷️ الفئات</a>
-            <a href="printed_catalogs.html" class="btn-header">📖 الكتالوجات المطبوعة</a>
-            <a href="catalog_en.html" class="btn-header">🌐 English</a>
+            <a href="Categories/categories_index_ar.html" id="navCategories" class="btn-header">🏷️ الفئات</a>
+            <a href="printed_catalogs.html" id="navCatalogs" class="btn-header">📖 الكتالوجات المطبوعة</a>
+            <button type="button" id="langToggleBtn" onclick="toggleLanguage()" class="btn-header" title="Switch Language / تبديل اللغة">🌐 English</button>
         </nav>
     </header>
 
@@ -690,9 +682,9 @@
             <div class="hero-logo-badge">
                 <img src="Branding/logo.png" alt="Company Logo">
             </div>
-            <span class="hero-badge-pill">✨ الكتالوج الرقمي الرسمي 2026</span>
-            <h1 class="hero-title">عالم من الإكسسوارات الفاخرة<br>بين يديك</h1>
-            <p class="hero-subtitle">
+            <span class="hero-badge-pill" id="heroBadge">✨ كتالوج 2026 &bull; Catalog 2026</span>
+            <h1 class="hero-title" id="heroTitle">عالم من الإكسسوارات الفاخرة<br>بين يديك</h1>
+            <p class="hero-subtitle" id="heroSubtitle">
                 تصفح تشكيلة متكاملة تضم <strong>591 منتجاً</strong> عالي الجودة من مفصلات المطابخ، الأذرع الهيدروليكية، المقابض العصرية، أنظمة الأدراج وسكك الحركة، مع الأسعار الرسمية وجاهزية تامة للطباعة والتصدير.
             </p>
 
@@ -709,19 +701,13 @@
         <div class="stats-card">
             <div class="stat-item">
                 <div class="stat-number">591</div>
-                <div class="stat-label">منتج عالي الجودة</div>
+                <div class="stat-label" id="stat1Label">منتج عالي الجودة</div>
+                <div class="stat-sublabel" id="stat1Sub">591 Certified Products</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">10</div>
-                <div class="stat-label">فئات متخصصة</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">أسعار رسمية بالجنيه (EGP)</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">A4</div>
-                <div class="stat-label">جاهز للطباعة وتصدير PDF</div>
+                <div class="stat-label" id="stat2Label">فئات متخصصة</div>
+                <div class="stat-sublabel" id="stat2Sub">10 Specialized Categories</div>
             </div>
         </div>
     </div>
@@ -729,14 +715,14 @@
     <!-- 10 Categories Showcase -->
     <main class="section-container" id="categoriesSection">
         <div class="section-header">
-            <span class="section-tag">التصنيفات الشاملة</span>
-            <h2 class="section-title">فئات إكسسوارات الأثاث والمطابخ</h2>
-            <p class="section-subtitle">اختر الفئة المطلوبة للاطلاع على كافة المنتجات، المواصفات والأسعار المحدثة</p>
+            <span class="section-tag" id="secTag">التصنيفات الشاملة</span>
+            <h2 class="section-title" id="secTitle">فئات إكسسوارات الأثاث والمطابخ</h2>
+            <p class="section-subtitle" id="secSub">اختر الفئة المطلوبة للاطلاع على كافة المنتجات، المواصفات والأسعار المحدثة</p>
         </div>
 
         <div class="categories-grid">
             <!-- 1. Hinges -->
-            <a href="Categories/category_01_ar.html" class="cat-card">
+            <a href="Categories/category_01_ar.html" class="cat-card" data-cat="1" data-count="200">
                 <div class="cat-icon-wrap">🔧</div>
                 <div class="cat-title-ar">المفصلات</div>
                 <div class="cat-title-en">Hinges</div>
@@ -744,7 +730,7 @@
             </a>
 
             <!-- 2. Handles & Knobs -->
-            <a href="Categories/category_02_ar.html" class="cat-card">
+            <a href="Categories/category_02_ar.html" class="cat-card" data-cat="2" data-count="78">
                 <div class="cat-icon-wrap">🚪</div>
                 <div class="cat-title-ar">المقابض والأُكَر</div>
                 <div class="cat-title-en">Handles & Knobs</div>
@@ -752,7 +738,7 @@
             </a>
 
             <!-- 3. Drawer Systems -->
-            <a href="Categories/category_03_ar.html" class="cat-card">
+            <a href="Categories/category_03_ar.html" class="cat-card" data-cat="3" data-count="142">
                 <div class="cat-icon-wrap">📦</div>
                 <div class="cat-title-ar">أنظمة الأدراج وسكك الحركة</div>
                 <div class="cat-title-en">Drawer Systems</div>
@@ -760,7 +746,7 @@
             </a>
 
             <!-- 4. Support Arms -->
-            <a href="Categories/category_04_ar.html" class="cat-card">
+            <a href="Categories/category_04_ar.html" class="cat-card" data-cat="4" data-count="27">
                 <div class="cat-icon-wrap">💪</div>
                 <div class="cat-title-ar">الأذرع الداعمة والباكم</div>
                 <div class="cat-title-en">Support Arms</div>
@@ -768,7 +754,7 @@
             </a>
 
             <!-- 5. Fasteners & Installation -->
-            <a href="Categories/category_05_ar.html" class="cat-card">
+            <a href="Categories/category_05_ar.html" class="cat-card" data-cat="5" data-count="10">
                 <div class="cat-icon-wrap">🔩</div>
                 <div class="cat-title-ar">المثبتات والبراغي</div>
                 <div class="cat-title-en">Fasteners & Installation</div>
@@ -776,7 +762,7 @@
             </a>
 
             <!-- 6. Edge Finishing -->
-            <a href="Categories/category_06_ar.html" class="cat-card">
+            <a href="Categories/category_06_ar.html" class="cat-card" data-cat="6" data-count="18">
                 <div class="cat-icon-wrap">✨</div>
                 <div class="cat-title-ar">شرائط الحواف والتغليف</div>
                 <div class="cat-title-en">Edge Finishing</div>
@@ -784,7 +770,7 @@
             </a>
 
             <!-- 7. Storage & Organization -->
-            <a href="Categories/category_07_ar.html" class="cat-card">
+            <a href="Categories/category_07_ar.html" class="cat-card" data-cat="7" data-count="59">
                 <div class="cat-icon-wrap">📚</div>
                 <div class="cat-title-ar">أنظمة التخزين والرفوف</div>
                 <div class="cat-title-en">Storage & Organization</div>
@@ -792,7 +778,7 @@
             </a>
 
             <!-- 8. Cabinet Locks -->
-            <a href="Categories/category_08_ar.html" class="cat-card">
+            <a href="Categories/category_08_ar.html" class="cat-card" data-cat="8" data-count="11">
                 <div class="cat-icon-wrap">🔐</div>
                 <div class="cat-title-ar">أقفال الخزائن والأمان</div>
                 <div class="cat-title-en">Cabinet Locks</div>
@@ -800,7 +786,7 @@
             </a>
 
             <!-- 9. Tools & Brackets -->
-            <a href="Categories/category_09_ar.html" class="cat-card">
+            <a href="Categories/category_09_ar.html" class="cat-card" data-cat="9" data-count="31">
                 <div class="cat-icon-wrap">🛠️</div>
                 <div class="cat-title-ar">أدوات التركيب والكوابيل</div>
                 <div class="cat-title-en">Tools & Brackets</div>
@@ -808,78 +794,223 @@
             </a>
 
             <!-- 10. Premium & Specialty -->
-            <a href="Categories/category_10_ar.html" class="cat-card">
+            <a href="Categories/category_10_ar.html" class="cat-card" data-cat="10" data-count="15">
                 <div class="cat-icon-wrap">👑</div>
                 <div class="cat-title-ar">المنتجات التخصصية والفاخرة</div>
                 <div class="cat-title-en">Premium & Specialty</div>
                 <span class="cat-count-badge">15 منتج مسجل</span>
             </a>
         </div>
-
-        <!-- Full Catalog Launcher Banner -->
-        <div class="catalogs-banner">
-            <div class="catalogs-banner-info">
-                <h3>📖 الكتالوجات المطبوعة الكاملة</h3>
-                <p>
-                    تتوفر الكتالوجات بصيغة A4 منسقة هندسياً تتضمن كافة الـ 591 منتجاً بصفحات متتالية مع الفهرس والغلاف، مجهزة للتنزيل أو الطباعة الفورية إلى PDF.
-                </p>
-                <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                    <a href="catalog_ar.html" class="btn-cta primary" style="padding:12px 24px; font-size:14px;">النسخة العربية الكاملة (60 صفحة)</a>
-                    <a href="catalog_en.html" class="btn-cta secondary" style="padding:12px 24px; font-size:14px;">Full English Catalog</a>
-                </div>
-            </div>
-            <div class="catalog-options-grid">
-                <a href="catalog_ar.html" class="catalog-option-card">
-                    <div>
-                        <div class="catalog-option-title">🇪🇬 الكتالوج العربي الشامل</div>
-                        <div class="catalog-option-subtitle">591 منتجاً &bull; اتجاه RTL &bull; صفحة غلاف وفهرس</div>
-                    </div>
-                    <span>←</span>
-                </a>
-                <a href="catalog_en.html" class="catalog-option-card">
-                    <div>
-                        <div class="catalog-option-title">🇬🇧 Complete English Catalog</div>
-                        <div class="catalog-option-subtitle">All 591 items &bull; LTR Layout &bull; Print Ready</div>
-                    </div>
-                    <span>←</span>
-                </a>
-                <a href="catalog_en_branded.html" class="catalog-option-card">
-                    <div>
-                        <div class="catalog-option-title">✨ Branded Identity Edition</div>
-                        <div class="catalog-option-subtitle">Enhanced Edition with Brand Color System</div>
-                    </div>
-                    <span>←</span>
-                </a>
-            </div>
-        </div>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <img src="Branding/logo-150.png" alt="Logo" class="footer-logo">
-        <h4 style="color:#FFFFFF; font-size:18px; margin-bottom:4px;">عالم الإكسسوارات | World of Accessories</h4>
-        <p style="font-size:13px; color:#94A3B8;">الرائد في إكسسوارات الأثاث والمطابخ والأبواب الراقية في مصر والشرق الأوسط</p>
+        <h4 id="footerBrandTitle" style="color:#FFFFFF; font-size:18px; margin-bottom:4px;">عالم الإكسسوارات | World of Accessories</h4>
+        <p id="footerBrandDesc" style="font-size:13px; color:#94A3B8;">الرائد في إكسسوارات الأثاث والمطابخ والأبواب الراقية في مصر والشرق الأوسط</p>
 
         <div class="footer-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="Categories/categories_index_ar.html">فئات المنتجات</a>
-            <a href="catalog_ar.html">الكتالوج العربي</a>
-            <a href="catalog_en.html">English Catalog</a>
-            <a href="catalog_en_branded.html">كتالوج الهوية</a>
+            <a href="index.html" id="footerHome">الرئيسية</a>
+            <a href="Categories/categories_index_ar.html" id="footerCategories">فئات المنتجات</a>
+            <a href="catalog_ar.html" id="footerArabicCatalog">الكتالوج العربي</a>
+            <a href="catalog_en.html" id="footerEnglishCatalog">English Catalog</a>
+            <a href="catalog_en_branded.html" id="footerBrandCatalog">كتالوج الهوية</a>
         </div>
 
-        <div class="footer-copy">
+        <div class="footer-copy" id="footerCopy">
             &copy; 2026 عالم الإكسسوارات. جميع الحقوق محفوظة &bull; All Rights Reserved.
         </div>
     </footer>
 
     <script>
+    const i18n = {
+        ar: {
+            pageTitle: "عالم الإكسسوارات | World of Accessories - Professional Catalog",
+            brandTitle: "عالم الإكسسوارات",
+            brandSub: "World of Accessories &bull; Premium Catalog",
+            navCategories: "🏷️ الفئات",
+            navCategoriesHref: "Categories/categories_index_ar.html",
+            navCatalogs: "📖 الكتالوجات المطبوعة",
+            langBtn: "🌐 English",
+            heroBadge: "✨ كتالوج 2026 &bull; Catalog 2026",
+            heroTitle: "عالم من الإكسسوارات الفاخرة<br>بين يديك",
+            heroSubtitle: "تصفح تشكيلة متكاملة تضم <strong>591 منتجاً</strong> عالي الجودة من مفصلات المطابخ، الأذرع الهيدروليكية، المقابض العصرية، أنظمة الأدراج وسكك الحركة، مع الأسعار الرسمية وجاهزية تامة للطباعة والتصدير.",
+            searchPlaceholder: "ابحث باسم المنتج أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي، مجرى درج)...",
+            stat1Label: "منتج عالي الجودة",
+            stat1Sub: "591 Certified Products",
+            stat2Label: "فئات متخصصة",
+            stat2Sub: "10 Specialized Categories",
+            sectionTag: "التصنيفات الشاملة",
+            sectionTitle: "فئات إكسسوارات الأثاث والمطابخ",
+            sectionSubtitle: "اختر الفئة المطلوبة للاطلاع على كافة المنتجات، المواصفات والأسعار المحدثة",
+            catalogsBannerTitle: "📖 الكتالوجات المطبوعة الكاملة",
+            catalogsBannerDesc: "تتوفر الكتالوجات بصيغة A4 منسقة هندسياً تتضمن كافة الـ 591 منتجاً بصفحات متتالية مع الفهرس والغلاف، مجهزة للتنزيل أو الطباعة الفورية إلى PDF.",
+            ctaArabic: "النسخة العربية الكاملة (60 صفحة)",
+            ctaEnglish: "Full English Catalog",
+            opt1Title: "🇪🇬 الكتالوج العربي الشامل",
+            opt1Sub: "591 منتجاً &bull; اتجاه RTL &bull; صفحة غلاف وفهرس",
+            opt2Title: "🇬🇧 Complete English Catalog",
+            opt2Sub: "All 591 items &bull; LTR Layout &bull; Print Ready",
+            opt3Title: "✨ Branded Identity Edition",
+            opt3Sub: "Enhanced Edition with Brand Color System",
+            footerBrandTitle: "عالم الإكسسوارات | World of Accessories",
+            footerBrandDesc: "الرائد في إكسسوارات الأثاث والمطابخ والأبواب الراقية في مصر والشرق الأوسط",
+            footerHome: "الرئيسية",
+            footerCategories: "فئات المنتجات",
+            footerCategoriesHref: "Categories/categories_index_ar.html",
+            footerArabicCatalog: "الكتالوج العربي",
+            footerEnglishCatalog: "English Catalog",
+            footerBrandCatalog: "كتالوج الهوية",
+            footerCopy: "&copy; 2026 عالم الإكسسوارات. جميع الحقوق محفوظة &bull; All Rights Reserved."
+        },
+        en: {
+            pageTitle: "World of Accessories | Professional Hardware Catalog",
+            brandTitle: "World of Accessories",
+            brandSub: "Hardware & Fittings &bull; Premium Catalog",
+            navCategories: "🏷️ Categories",
+            navCategoriesHref: "Categories/categories_index_en.html",
+            navCatalogs: "📖 Printed Catalogs",
+            langBtn: "🌐 العربية",
+            heroBadge: "✨ Catalog 2026 &bull; كتالوج 2026",
+            heroTitle: "A World of Luxury Hardware<br>At Your Fingertips",
+            heroSubtitle: "Explore a comprehensive collection of <strong>591 certified items</strong>: kitchen hinges, hydraulic support arms, modern handles, and drawer slide systems with official pricing.",
+            searchPlaceholder: "Search by product name or category (e.g. soft close hinge, gold handle, drawer slide)...",
+            stat1Label: "Certified Products",
+            stat1Sub: "591 منتج عالي الجودة",
+            stat2Label: "Specialized Categories",
+            stat2Sub: "10 فئات متخصصة",
+            sectionTag: "Full Classifications",
+            sectionTitle: "Furniture & Kitchen Hardware Categories",
+            sectionSubtitle: "Select a category to view all registered products, technical specifications and official prices",
+            catalogsBannerTitle: "📖 Complete Printed Catalogs",
+            catalogsBannerDesc: "Engineered A4 catalogs containing all 591 items with sequential pagination, full index and cover, ready for instant PDF export or print.",
+            ctaArabic: "Complete Arabic Edition (60 Pages)",
+            ctaEnglish: "Full English Catalog (65 Pages)",
+            opt1Title: "🇪🇬 Official Arabic Catalog",
+            opt1Sub: "591 items &bull; RTL Layout &bull; Full Cover & Index",
+            opt2Title: "🇬🇧 Complete English Catalog",
+            opt2Sub: "All 591 items &bull; LTR Layout &bull; Print Ready",
+            opt3Title: "✨ Branded Identity Edition",
+            opt3Sub: "Enhanced Edition with Brand Color System",
+            footerBrandTitle: "World of Accessories | عالم الإكسسوارات",
+            footerBrandDesc: "Leader in premium furniture, kitchen and architectural hardware across Egypt & the Middle East",
+            footerHome: "Home",
+            footerCategories: "Product Categories",
+            footerCategoriesHref: "Categories/categories_index_en.html",
+            footerArabicCatalog: "Arabic Catalog",
+            footerEnglishCatalog: "English Catalog",
+            footerBrandCatalog: "Branded Edition",
+            footerCopy: "&copy; 2026 World of Accessories. All Rights Reserved &bull; جميع الحقوق محفوظة."
+        }
+    };
+
+    function applyLanguage(lang) {
+        if (!i18n[lang]) lang = 'ar';
+        localStorage.setItem('catalog_lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        const t = i18n[lang];
+        document.title = t.pageTitle;
+
+        // Header
+        const brandTitleEl = document.getElementById('navBrandTitle');
+        if (brandTitleEl) brandTitleEl.textContent = t.brandTitle;
+        const brandSubEl = document.getElementById('navBrandSub');
+        if (brandSubEl) brandSubEl.innerHTML = t.brandSub;
+        const navCatEl = document.getElementById('navCategories');
+        if (navCatEl) { navCatEl.textContent = t.navCategories; navCatEl.href = t.navCategoriesHref; }
+        const navPrintEl = document.getElementById('navCatalogs');
+        if (navPrintEl) navPrintEl.textContent = t.navCatalogs;
+        const langBtn = document.getElementById('langToggleBtn');
+        if (langBtn) langBtn.textContent = t.langBtn;
+
+        // Hero
+        const heroBadgeEl = document.getElementById('heroBadge');
+        if (heroBadgeEl) heroBadgeEl.innerHTML = t.heroBadge;
+        const heroTitleEl = document.getElementById('heroTitle');
+        if (heroTitleEl) heroTitleEl.innerHTML = t.heroTitle;
+        const heroSubEl = document.getElementById('heroSubtitle');
+        if (heroSubEl) heroSubEl.innerHTML = t.heroSubtitle;
+        const searchInput = document.getElementById('mainSearch');
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+
+        // Stats
+        const stat1Label = document.getElementById('stat1Label');
+        if (stat1Label) stat1Label.textContent = t.stat1Label;
+        const stat1Sub = document.getElementById('stat1Sub');
+        if (stat1Sub) stat1Sub.textContent = t.stat1Sub;
+
+        const stat2Label = document.getElementById('stat2Label');
+        if (stat2Label) stat2Label.textContent = t.stat2Label;
+        const stat2Sub = document.getElementById('stat2Sub');
+        if (stat2Sub) stat2Sub.textContent = t.stat2Sub;
+
+        // Categories Section Header
+        const secTag = document.getElementById('secTag');
+        if (secTag) secTag.textContent = t.sectionTag;
+        const secTitle = document.getElementById('secTitle');
+        if (secTitle) secTitle.textContent = t.sectionTitle;
+        const secSub = document.getElementById('secSub');
+        if (secSub) secSub.textContent = t.sectionSubtitle;
+
+        // Category Cards Links & Badges
+        document.querySelectorAll('.cat-card').forEach(card => {
+            const catNum = card.getAttribute('data-cat');
+            if (catNum) {
+                const padded = catNum.padStart(2, '0');
+                card.href = `Categories/category_${padded}_${lang}.html`;
+                const badge = card.querySelector('.cat-count-badge');
+                const count = card.getAttribute('data-count');
+                if (badge && count) {
+                    const countAr = (catNum === '5') ? `${count} منتجات مسجلة` : `${count} منتج مسجل`;
+                    badge.textContent = lang === 'ar' ? countAr : `${count} Registered Items`;
+                }
+            }
+        });
+
+        // Footer
+        const fTitle = document.getElementById('footerBrandTitle');
+        if (fTitle) fTitle.textContent = t.footerBrandTitle;
+        const fDesc = document.getElementById('footerBrandDesc');
+        if (fDesc) fDesc.textContent = t.footerBrandDesc;
+        const fHome = document.getElementById('footerHome');
+        if (fHome) fHome.textContent = t.footerHome;
+        const fCat = document.getElementById('footerCategories');
+        if (fCat) { fCat.textContent = t.footerCategories; fCat.href = t.footerCategoriesHref; }
+        const fAr = document.getElementById('footerArabicCatalog');
+        if (fAr) fAr.textContent = t.footerArabicCatalog;
+        const fEn = document.getElementById('footerEnglishCatalog');
+        if (fEn) fEn.textContent = t.footerEnglishCatalog;
+        const fBrand = document.getElementById('footerBrandCatalog');
+        if (fBrand) fBrand.textContent = t.footerBrandCatalog;
+        const fCopy = document.getElementById('footerCopy');
+        if (fCopy) fCopy.innerHTML = t.footerCopy;
+    }
+
+    function toggleLanguage() {
+        const current = document.documentElement.getAttribute('lang') || 'ar';
+        const next = current === 'ar' ? 'en' : 'ar';
+        applyLanguage(next);
+    }
+
     function handleMainSearch(e) {
         var q = document.getElementById('mainSearch').value.trim();
         if (e.key === 'Enter' && q) {
-            window.location.href = 'Categories/categories_index_ar.html';
+            var lang = document.documentElement.getAttribute('lang') || 'ar';
+            var target = lang === 'en' ? 'Categories/categories_index_en.html' : 'Categories/categories_index_ar.html';
+            window.location.href = target;
         }
     }
+
+    // Auto-init on load
+    (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramLang = urlParams.get('lang');
+        const savedLang = localStorage.getItem('catalog_lang');
+        const initialLang = paramLang || savedLang || 'ar';
+        applyLanguage(initialLang);
+    })();
     </script>
 </body>
 </html>

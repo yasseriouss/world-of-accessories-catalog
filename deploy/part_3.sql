@@ -1,0 +1,3 @@
+INSERT INTO public.woa_products (id, ar, en, price, category_id, usage_type, usage_ar, usage_en, image) VALUES
+(591, 'حامل طسات روما', 'حامل طسات روما', '1300', 9, 'other', 'أخرى', 'Other', 'assets/products/preset_general_hardware.jpg')
+ON CONFLICT (id) DO UPDATE SET ar=EXCLUDED.ar, en=EXCLUDED.en, price=EXCLUDED.price, category_id=EXCLUDED.category_id, usage_type=EXCLUDED.usage_type, usage_ar=EXCLUDED.usage_ar, usage_en=EXCLUDED.usage_en, image=EXCLUDED.image;

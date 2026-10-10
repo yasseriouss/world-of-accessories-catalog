@@ -467,7 +467,8 @@ class ImpeccableCatalogGenerator:
         .card-image-wrap img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 8px;
             transition: transform 0.3s;
         }
 
@@ -689,6 +690,10 @@ class ImpeccableCatalogGenerator:
                 border-radius: 8px !important;
                 flex-shrink: 0 !important;
             }
+            .card-image-wrap img {
+                padding: 4mm !important;
+                object-fit: contain !important;
+            }
         }
 
         /* Responsive Mobile Styles */
@@ -780,12 +785,7 @@ class ImpeccableCatalogGenerator:
         """
 
     def resolve_image_path(self, prod, depth="../"):
-        """Get relative image path for HTML rendering, defaulting to logo if missing"""
-        img = prod.get('image', '')
-        if not img or img.startswith('http'):
-            return depth + "Branding/logo-100.png"
-        if os.path.exists(img):
-            return depth + img
+        """Always return brand logo for all products"""
         return depth + "Branding/logo-100.png"
 
     def generate_category_index_ar(self):

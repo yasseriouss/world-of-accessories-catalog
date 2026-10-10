@@ -186,10 +186,7 @@ class ProfessionalA4CatalogGenerator:
         return toc
 
     def resolve_image(self, prod):
-        img = prod.get('image', '')
-        if not img or img.startswith('http') or not os.path.exists(img):
-            return "Branding/logo-100.png"
-        return img
+        return "Branding/logo-100.png"
 
     def get_print_css(self):
         return """
@@ -640,7 +637,8 @@ class ProfessionalA4CatalogGenerator:
     .card-thumb img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        padding: 4px;
     }
 
     .card-content {

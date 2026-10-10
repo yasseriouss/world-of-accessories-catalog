@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عالم الإكسسوارات | الكتالوج الرقمي الرسمي 2026</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/static/css/catalog.css">
+</head>
+<body>
+
+    <!-- 1. Top Navbar -->
+    <header class="navbar">
+        <a href="/" class="nav-brand">
+            <img src="/Branding/logo-80.png" class="nav-logo" alt="Logo">
+            <div>
+                <h1 class="nav-title" id="navBrandTitle">عالم الإكسسوارات</h1>
+                <p class="nav-subtitle" id="navBrandSub">World of Accessories • Official Catalog</p>
+            </div>
+        </a>
+        <nav class="nav-actions">
+            <button type="button" id="langToggleBtn" class="btn-nav" onclick="toggleLanguage()">🌐 English</button>
+        </nav>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-pill" id="heroPill">✨ تشكيلة ٢٠٢٦ الفاخرة • Official 2026 Collection</div>
+        <h2 class="hero-title" id="heroTitle">عالم من إكسسوارات الأثاث والمطابخ الفاخرة</h2>
+        <p class="hero-subtitle" id="heroSub">
+            تصفح تشكيلة متكاملة تضم أكثر من ٥٩٠ منتجاً عالي الجودة من مفصلات، مقابض، وسكك حركة، مع الأسعار الرسمية المعتمدة بالجنيه المصري.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+            <input type="text" id="mainSearch" class="search-input-box" placeholder="ابحث باسم المنتج، الكود أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي)...">
+            <span class="search-icon-btn">🔍</span>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-strip">
+            <div class="metric-item">
+                <span class="metric-num">591+</span>
+                <span id="metricLabel1">منتج معتمد</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-num">10</span>
+                <span id="metricLabel2">فئات متخصصة</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-num">100%</span>
+                <span id="metricLabel3">أسعار رسمية معتمدة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Main Catalog View -->
+    <main class="main-container">
+
+        <!-- Space / Usage Tabs (مطابخ، دريسنج، أخرى) -->
+        <div class="space-filter-bar" id="spaceFilterBar">
+            <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Category Pills Filter -->
+        <div class="category-filter-card">
+            <div class="category-scroll" id="categoryScroll">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Catalog Toolbar -->
+        <div class="catalog-toolbar">
+            <div class="results-info" id="resultsInfo">
+                جاري تحميل المنتجات...
+            </div>
+            <div class="sort-group">
+                <label for="sortSelect" style="font-size:13px; font-weight:700; color:var(--text-muted);">الترتيب:</label>
+                <select id="sortSelect" class="sort-select" onchange="handleSortChange(this)">
+                    <option value="id_asc">الافتراضي (حسب الكود)</option>
+                    <option value="price_asc">الأقل سعراً أولاً</option>
+                    <option value="price_desc">الأعلى سعراً أولاً</option>
+                    <option value="id_desc">الأحدث أولاً</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Injected via JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- 4. Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal" onclick="if(event.target === this) closeQuickView()">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeQuickView()">✕</button>
+            <div class="modal-img-area">
+                <img id="modalImg" src="/Branding/logo-100.png" alt="Product">
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px;">
+                    <span class="modal-badge" id="modalCatBadge">الفئة</span>
+                    <span class="modal-badge" id="modalUsageBadge" style="background:rgba(255,140,61,0.15); color:#D96010;">نطاق الاستخدام</span>
+                </div>
+                <h3 class="modal-title-ar" id="modalTitleAr">اسم المنتج بالعربي</h3>
+                <p class="modal-title-en" id="modalTitleEn">Product Name in English</p>
+                <div class="modal-price-box">
+                    <div>
+                        <div style="font-size:12px; color:var(--text-muted);">السعر الرسمي المعتمد:</div>
+                        <div class="modal-price-val" id="modalPrice">0 ج.م</div>
+                    </div>
+                    <div style="text-align:left;">
+                        <div style="font-size:11px; color:var(--text-muted);">كود المنتج:</div>
+                        <div style="font-weight:800; color:var(--navy); font-family:var(--font-en);" id="modalCodeVal">WOA-0001</div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <a id="modalWhatsAppBtn" class="btn-modal-primary" href="#">💬 استفسار وطلب عبر واتساب</a>
+                    <button id="modalCopyBtn" class="btn-modal-secondary">📋 نسخ كود المنتج</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div style="font-size:18px; font-weight:800; margin-bottom:6px;">عالم الإكسسوارات • World of Accessories</div>
+            <p style="font-size:13px; color:var(--cream); opacity:0.9;">
+                الرائدون في إكسسوارات الأثاث والمطابخ الفاخرة • أسعار رسمية معتمدة ومواصفات تقنية دقيقة
+            </p>
+            <div class="footer-links">
+                <a href="/">الرئيسية</a>
+                <a href="#catalog">تصفح المنتجات</a>
+                <a href="https://wa.me/201000000000" target="_blank">خدمة العملاء والطلبات</a>
+            </div>
+            <div style="font-size:11px; color:#94A3B8; margin-top:14px;">
+                جميع الحقوق محفوظة &copy; 2026 عالم الإكسسوارات.
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/supabase_sync.js"></script>
+    <script src="/static/js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "status": "ready",
+  "last_generated_at": "2026-10-10T19:50:46.504150",
+  "products_count": 591,
+  "categories_count": 10,
+  "elapsed_seconds": 0.23,
+  "files": [
+    "catalog_ar.html",
+    "catalog_en.html",
+    "catalog_en_branded.html",
+    "printed_catalogs.html",
+    "Categories/category_01_ar.html to 10_ar.html",
+    "Categories/category_01_en.html to 10_en.html"
+  ]
+}
