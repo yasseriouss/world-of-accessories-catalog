@@ -830,9 +830,6 @@
             pageTitle: "عالم الإكسسوارات | World of Accessories - Professional Catalog",
             brandTitle: "عالم الإكسسوارات",
             brandSub: "World of Accessories &bull; Premium Catalog",
-            navCategories: "🏷️ الفئات",
-            navCategoriesHref: "Categories/categories_index_ar.html",
-            navCatalogs: "📖 الكتالوجات المطبوعة",
             langBtn: "🌐 English",
             heroBadge: "✨ كتالوج 2026 &bull; Catalog 2026",
             heroTitle: "عالم من الإكسسوارات الفاخرة<br>بين يديك",
@@ -863,9 +860,6 @@
             pageTitle: "World of Accessories | Professional Hardware Catalog",
             brandTitle: "World of Accessories",
             brandSub: "Hardware & Fittings &bull; Premium Catalog",
-            navCategories: "🏷️ Categories",
-            navCategoriesHref: "Categories/categories_index_en.html",
-            navCatalogs: "📖 Printed Catalogs",
             langBtn: "🌐 العربية",
             heroBadge: "✨ Catalog 2026 &bull; كتالوج 2026",
             heroTitle: "A World of Luxury Hardware<br>At Your Fingertips",
@@ -908,10 +902,6 @@
         if (brandTitleEl) brandTitleEl.textContent = t.brandTitle;
         const brandSubEl = document.getElementById('navBrandSub');
         if (brandSubEl) brandSubEl.innerHTML = t.brandSub;
-        const navCatEl = document.getElementById('navCategories');
-        if (navCatEl) { navCatEl.textContent = t.navCategories; navCatEl.href = t.navCategoriesHref; }
-        const navPrintEl = document.getElementById('navCatalogs');
-        if (navPrintEl) navPrintEl.textContent = t.navCatalogs;
         const langBtn = document.getElementById('langToggleBtn');
         if (langBtn) langBtn.textContent = t.langBtn;
 
@@ -977,9 +967,7 @@
     function handleMainSearch(e) {
         var q = document.getElementById('mainSearch').value.trim();
         if (e.key === 'Enter' && q) {
-            var lang = document.documentElement.getAttribute('lang') || 'ar';
-            var target = lang === 'en' ? 'Categories/categories_index_en.html' : 'Categories/categories_index_ar.html';
-            window.location.href = target;
+            window.location.href = '#categoriesSection';
         }
     }
 
