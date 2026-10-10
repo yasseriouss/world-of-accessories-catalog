@@ -412,6 +412,22 @@ function renderProducts() {
                     <div class="card-code">${code}</div>
                     <h3 class="card-title-ar">${titlePrimary}</h3>
                     <p class="card-title-en">${titleSecondary}</p>
+                    ${(() => {
+                        const isAr = (currentLang === "ar");
+                        const colorVal = isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || '');
+                        const lengthVal = isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || '');
+                        const widthVal = isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || '');
+                        const specsVal = isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || '');
+                        if (!colorVal && !lengthVal && !widthVal && !specsVal) return '';
+                        return `
+                            <div class="product-specs-box">
+                                ${colorVal ? `<div class="spec-item"><span class="spec-label">🎨 ${isAr ? 'اللون:' : 'Color:'}</span> <span class="spec-val">${colorVal}</span></div>` : ''}
+                                ${lengthVal ? `<div class="spec-item"><span class="spec-label">📏 ${isAr ? 'الطول/المقاس:' : 'Length:'}</span> <span class="spec-val">${lengthVal}</span></div>` : ''}
+                                ${widthVal ? `<div class="spec-item"><span class="spec-label">📐 ${isAr ? 'العرض/السمك:' : 'Width:'}</span> <span class="spec-val">${widthVal}</span></div>` : ''}
+                                ${specsVal ? `<div class="spec-item spec-general"><span class="spec-label">⚙️ ${isAr ? 'المواصفات:' : 'Specs:'}</span> <span class="spec-val highlight">${specsVal}</span></div>` : ''}
+                            </div>
+                        `;
+                    })()}
                     <div class="card-footer">
                         <div class="card-price-tag">
                             <span>${price}</span>
@@ -472,6 +488,27 @@ function openQuickView(prodId) {
     document.getElementById("modalTitleEn").textContent = (currentLang === "ar") ? p.en : p.ar;
     document.getElementById("modalPrice").textContent = `${p.price} ${t.currency}`;
     document.getElementById("modalCodeVal").textContent = code;
+
+    const modalSpecsEl = document.getElementById("modalSpecsBox");
+    if (modalSpecsEl) {
+        const isAr = (currentLang === "ar");
+        const colorVal = isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || '');
+        const lengthVal = isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || '');
+        const widthVal = isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || '');
+        const specsVal = isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || '');
+
+        if (colorVal || lengthVal || widthVal || specsVal) {
+            modalSpecsEl.innerHTML = `
+                ${colorVal ? `<div class="spec-item"><span class="spec-label">🎨 ${isAr ? 'اللون المعتمد:' : 'Color:'}</span> <span class="spec-val">${colorVal}</span></div>` : ''}
+                ${lengthVal ? `<div class="spec-item"><span class="spec-label">📏 ${isAr ? 'الطول / المقاس:' : 'Length / Size:'}</span> <span class="spec-val">${lengthVal}</span></div>` : ''}
+                ${widthVal ? `<div class="spec-item"><span class="spec-label">📐 ${isAr ? 'العرض / السُمك:' : 'Width / Thickness:'}</span> <span class="spec-val">${widthVal}</span></div>` : ''}
+                ${specsVal ? `<div class="spec-item spec-general"><span class="spec-label">⚙️ ${isAr ? 'المواصفات العامة والمميزات:' : 'Specs & Features:'}</span> <span class="spec-val highlight">${specsVal}</span></div>` : ''}
+            `;
+            modalSpecsEl.style.display = 'flex';
+        } else {
+            modalSpecsEl.style.display = 'none';
+        }
+    }
 
     document.getElementById("modalWhatsAppBtn").onclick = () => orderOnWhatsApp(prodId);
     document.getElementById("modalCopyBtn").onclick = () => copySkuCode(code);

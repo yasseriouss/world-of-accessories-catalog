@@ -133,7 +133,13 @@
                     qty: numQty,
                     image: product.image || product.img || 'Branding/logo-100.png',
                     category: product.category_id || 0,
-                    usage: product.usage_type || 'other'
+                    usage: product.usage_type || 'other',
+                    color_ar: product.color_ar || '',
+                    color_en: product.color_en || '',
+                    length_ar: product.length_ar || '',
+                    length_en: product.length_en || '',
+                    specs_ar: product.specs_ar || '',
+                    specs_en: product.specs_en || ''
                 });
             }
 
@@ -277,6 +283,7 @@
                         <div class="woa-cart-item-info">
                             <span class="woa-cart-item-sku">${escapeHTML(item.code)}</span>
                             <div class="woa-cart-item-title" title="${escapeHTML(name)}">${escapeHTML(name)}</div>
+                            ${(item.color_ar || item.length_ar) ? `<div style="font-size:11px; color:#64748B; margin-bottom:2px;">🎨 ${escapeHTML(isAr ? (item.color_ar || '') : (item.color_en || item.color_ar || ''))} ${item.length_ar ? `• 📏 ${escapeHTML(isAr ? item.length_ar : (item.length_en || item.length_ar))}` : ''}</div>` : ''}
                             <div class="woa-cart-item-price-row">
                                 <span class="woa-cart-item-unit-price">${unitPrice} ${t.currency}</span>
                                 <span style="color:#CBD5E1;">&bull;</span>
@@ -320,8 +327,12 @@
             this.items.forEach((item, index) => {
                 const name = isAr ? item.ar : (item.en || item.ar);
                 const itemTotal = (item.price * item.qty).toLocaleString();
+                const color = isAr ? item.color_ar : (item.color_en || item.color_ar);
+                const specs = isAr ? item.specs_ar : (item.specs_en || item.specs_ar);
                 msg += `${index + 1}. *${name}*\n`;
                 msg += `   • الكود: ${item.code}\n`;
+                if (color) msg += `   • اللون: ${color}\n`;
+                if (specs) msg += `   • المواصفات: ${specs}\n`;
                 msg += `   • الكمية: ${item.qty} | السعر: ${item.price} ج.م | الإجمالي: ${itemTotal} ج.م\n`;
             });
 

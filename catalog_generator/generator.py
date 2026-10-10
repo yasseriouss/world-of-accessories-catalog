@@ -13,6 +13,12 @@ import re
 import html as html_lib
 from datetime import datetime
 
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 # Arabic Indic Digits conversion
 INDIC_DIGITS = {
     '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤',
@@ -385,6 +391,17 @@ class CatalogGenerator:
                     price_display = f"{to_indic(p_price)} ج.م" if is_ar else f"EGP {p_price}"
                     img_src = self.resolve_image(p.get('image'))
 
+                    color_val = p.get('color_ar' if is_ar else 'color_en')
+                    length_val = p.get('length_ar' if is_ar else 'length_en')
+                    specs_val = p.get('specs_ar' if is_ar else 'specs_en')
+                    specs_line = ""
+                    if color_val or length_val or specs_val:
+                        parts = []
+                        if color_val: parts.append(f"🎨 {color_val}")
+                        if length_val: parts.append(f"📏 {length_val}")
+                        if specs_val: parts.append(f"⚙️ {specs_val}")
+                        specs_line = f"<div style='font-size:9.5px; color:#64748B; margin:3px 0 4px; line-height:1.3;'>{' • '.join(parts)}</div>"
+
                     html += f"""
                         <div class="card">
                             <div class="card-thumb">
@@ -393,6 +410,7 @@ class CatalogGenerator:
                             <div class="card-info">
                                 <div class="card-code">{p_code}</div>
                                 <div class="card-title">{p_name}</div>
+                                {specs_line}
                                 <div class="card-price">{price_display}</div>
                             </div>
                         </div>
@@ -510,6 +528,26 @@ class CatalogGenerator:
             price_display = f"{to_indic(p_price)} ج.م" if is_ar else f"EGP {p_price}"
             img_src = self.resolve_image(p.get('image'), depth="../")
 
+            color_val = p.get('color_ar' if is_ar else 'color_en')
+            length_val = p.get('length_ar' if is_ar else 'length_en')
+            width_val = p.get('width_ar' if is_ar else 'width_en')
+            specs_val = p.get('specs_ar' if is_ar else 'specs_en')
+
+            specs_box_html = ""
+            if color_val or length_val or width_val or specs_val:
+                lbl_color = "اللون:" if is_ar else "Color:"
+                lbl_len = "الطول/المقاس:" if is_ar else "Length:"
+                lbl_wid = "العرض/السمك:" if is_ar else "Width:"
+                lbl_spec = "المواصفات:" if is_ar else "Specs:"
+                specs_box_html = f"""
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    {f'<div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">🎨 {lbl_color}</span> <strong>{color_val}</strong></div>' if color_val else ''}
+                    {f'<div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">📏 {lbl_len}</span> <strong>{length_val}</strong></div>' if length_val else ''}
+                    {f'<div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">📐 {lbl_wid}</span> <strong>{width_val}</strong></div>' if width_val else ''}
+                    {f'<div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ {lbl_spec} {specs_val}</div>' if specs_val else ''}
+                </div>
+                """
+
             html += f"""
             <div class="card">
                 <div class="card-img">
@@ -517,6 +555,7 @@ class CatalogGenerator:
                 </div>
                 <div style="font-size:11px; color:#64748B; font-weight:700;">{p_code}</div>
                 <div class="card-title">{p_name}</div>
+                {specs_box_html}
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
                     <div class="card-price">{price_display}</div>
                 </div>
