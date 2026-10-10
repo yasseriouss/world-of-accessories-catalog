@@ -632,6 +632,13 @@ body {
     border-color: #25D366;
 }
 
+.btn-icon-cart:hover {
+    background: #FF8C3D;
+    color: #FFFFFF;
+    border-color: #FF8C3D;
+    box-shadow: 0 4px 12px rgba(255, 140, 61, 0.35);
+}
+
 /* ---------------- Quick View Modal ---------------- */
 .modal-overlay {
     position: fixed;

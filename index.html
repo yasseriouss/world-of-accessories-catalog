@@ -15,6 +15,7 @@
 
     <!-- Brand Local & Google Fonts -->
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/cart.css">
 
     <style>
         :root {
@@ -670,6 +671,7 @@
             </div>
         </a>
         <nav class="nav-actions">
+            <button type="button" class="btn-header" onclick="if(window.WOACart) WOACart.open();" title="سلة مشترياتي / Cart" style="background:rgba(255,140,61,0.2); border-color:#FF8C3D;">🛒 <span id="navCartLabel">السلة</span></button>
             <button type="button" id="langToggleBtn" onclick="toggleLanguage()" class="btn-header" title="Switch Language / تبديل اللغة">🌐 English</button>
         </nav>
     </header>
@@ -831,6 +833,7 @@
             pageTitle: "عالم الإكسسوارات | World of Accessories - Professional Catalog",
             brandTitle: "عالم الإكسسوارات",
             brandSub: "World of Accessories &bull; Premium Catalog",
+            navCartLabel: "السلة",
             langBtn: "🌐 English",
             heroBadge: "✨ كتالوج 2026 &bull; Catalog 2026",
             heroTitle: "عالم من الإكسسوارات الفاخرة<br>بين يديك",
@@ -861,6 +864,7 @@
             pageTitle: "World of Accessories | Professional Hardware Catalog",
             brandTitle: "World of Accessories",
             brandSub: "Hardware & Fittings &bull; Premium Catalog",
+            navCartLabel: "Cart",
             langBtn: "🌐 العربية",
             heroBadge: "✨ Catalog 2026 &bull; كتالوج 2026",
             heroTitle: "A World of Luxury Hardware<br>At Your Fingertips",
@@ -903,6 +907,8 @@
         if (brandTitleEl) brandTitleEl.textContent = t.brandTitle;
         const brandSubEl = document.getElementById('navBrandSub');
         if (brandSubEl) brandSubEl.innerHTML = t.brandSub;
+        const navCartLabelEl = document.getElementById('navCartLabel');
+        if (navCartLabelEl) navCartLabelEl.textContent = t.navCartLabel;
         const langBtn = document.getElementById('langToggleBtn');
         if (langBtn) langBtn.textContent = t.langBtn;
 
@@ -981,5 +987,6 @@
         applyLanguage(initialLang);
     })();
     </script>
+    <script src="scripts/cart.js"></script>
 </body>
 </html>

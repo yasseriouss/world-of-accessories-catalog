@@ -30,6 +30,7 @@ const i18n = {
         ofProducts: "منتجاً",
         inCategory: "في",
         quickView: "معاينة سريعة",
+        addToCart: "إضافة للسلة 🛒",
         whatsappOrder: "استفسار واتساب",
         currency: "ج.م",
         emptyTitle: "لم يتم العثور على منتجات مطابقة",
@@ -67,6 +68,7 @@ const i18n = {
         ofProducts: "products",
         inCategory: "in",
         quickView: "Quick View",
+        addToCart: "Add to Cart 🛒",
         whatsappOrder: "WhatsApp Inquiry",
         currency: "EGP",
         emptyTitle: "No products matched your search",
@@ -416,6 +418,7 @@ function renderProducts() {
                             <small>${t.currency}</small>
                         </div>
                         <div class="card-actions-row">
+                            <button class="btn-icon-action btn-icon-cart" title="${t.addToCart}" onclick="handleAddToCart(${p.id})">🛒</button>
                             <button class="btn-icon-action" title="${t.quickView}" onclick="openQuickView(${p.id})">👁️</button>
                             <button class="btn-icon-action btn-icon-whatsapp" title="${t.whatsappOrder}" onclick="orderOnWhatsApp(${p.id})">💬</button>
                         </div>
@@ -472,6 +475,13 @@ function openQuickView(prodId) {
 
     document.getElementById("modalWhatsAppBtn").onclick = () => orderOnWhatsApp(prodId);
     document.getElementById("modalCopyBtn").onclick = () => copySkuCode(code);
+    const addCartModalBtn = document.getElementById("modalAddToCartBtn");
+    if (addCartModalBtn) {
+        addCartModalBtn.onclick = () => {
+            handleAddToCart(prodId);
+            closeQuickView();
+        };
+    }
 
     const modal = document.getElementById("quickViewModal");
     modal.classList.add("open");
@@ -480,6 +490,14 @@ function openQuickView(prodId) {
 function closeQuickView() {
     const modal = document.getElementById("quickViewModal");
     if (modal) modal.classList.remove("open");
+}
+
+function handleAddToCart(prodId) {
+    const p = allProducts.find(item => item.id === prodId || item.n === prodId);
+    if (!p) return;
+    if (window.WOACart) {
+        window.WOACart.addItem(p, 1);
+    }
 }
 
 function copySkuCode(code) {

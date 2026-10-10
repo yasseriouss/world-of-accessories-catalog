@@ -11,6 +11,16 @@ let searchFilter = "";
 let currentEditId = null;
 let currentUploadedImg = "Branding/logo-100.png";
 
+function escapeHTML(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     checkAdminAuth();
     loadAdminStats();
@@ -222,17 +232,17 @@ function renderAdminTable() {
 
         html += `
             <tr>
-                <td><span class="sku-badge">${code}</span></td>
-                <td><img src="/${img}" class="table-thumb" alt="Product"></td>
-                <td><strong>${p.ar || '-'}</strong></td>
-                <td><span style="color:var(--text-muted); font-size:12px;">${p.en || '-'}</span></td>
-                <td><span class="cat-badge-sm">${cat.icon} ${cat.ar}</span></td>
-                <td><span class="cat-badge-sm" style="background:#FFF7ED; color:#D96010; font-weight:700;">${uIcon} ${uName}</span></td>
-                <td><span class="price-bold">${p.price}</span> <small style="color:var(--text-muted);">ج.م</small></td>
+                <td><span class="sku-badge">${escapeHTML(code)}</span></td>
+                <td><img src="/${escapeHTML(img)}" class="table-thumb" alt="Product" loading="lazy"></td>
+                <td><strong>${escapeHTML(p.ar || '-')}</strong></td>
+                <td><span style="color:var(--text-muted); font-size:12px;">${escapeHTML(p.en || '-')}</span></td>
+                <td><span class="cat-badge-sm">${escapeHTML(cat.icon)} ${escapeHTML(cat.ar)}</span></td>
+                <td><span class="cat-badge-sm" style="background:#FFF7ED; color:#D96010; font-weight:700;">${escapeHTML(uIcon)} ${escapeHTML(uName)}</span></td>
+                <td><span class="price-bold">${escapeHTML(p.price)}</span> <small style="color:var(--text-muted);">ج.م</small></td>
                 <td>
                     <div class="actions-cell">
-                        <button class="btn-table-icon" title="تعديل المنتج" onclick="openEditModal(${p.id})">✏️</button>
-                        <button class="btn-table-icon btn-delete" title="حذف المنتج" onclick="confirmDeleteProduct(${p.id})">🗑️</button>
+                        <button class="btn-table-icon" title="تعديل المنتج" onclick="openEditModal(${parseInt(p.id, 10)})">✏️</button>
+                        <button class="btn-table-icon btn-delete" title="حذف المنتج" onclick="confirmDeleteProduct(${parseInt(p.id, 10)})">🗑️</button>
                     </div>
                 </td>
             </tr>

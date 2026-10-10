@@ -22,6 +22,7 @@ with open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8") as f:
 # Static assets
 shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(web_dir, "static"))
 shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(web_dir, "styles"))
+shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(web_dir, "scripts"))
 shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(web_dir, "Branding"))
 
 # Data
@@ -32,16 +33,33 @@ shutil.copy(os.path.join(base_dir, "data", "categories_data.json"), os.path.join
 if os.path.exists(os.path.join(base_dir, "favicon.ico")):
     shutil.copy(os.path.join(base_dir, "favicon.ico"), os.path.join(web_dir, "favicon.ico"))
 
+# Enterprise Security & Performance Headers
+security_headers = [
+    {"key": "X-Content-Type-Options", "value": "nosniff"},
+    {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
+    {"key": "X-XSS-Protection", "value": "1; mode=block"},
+    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+    {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}
+]
+
 # Web vercel.json (Zero rewrites or links to admin or print portals)
 web_vercel = {
     "version": 2,
     "cleanUrls": True,
     "headers": [
         {
+            "source": "/(.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|woff|ttf|css|js))",
+            "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"},
+                {"key": "Access-Control-Allow-Origin", "value": "*"}
+            ]
+        },
+        {
             "source": "/(.*)",
             "headers": [
                 {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"},
-                {"key": "Access-Control-Allow-Origin", "value": "*"}
+                {"key": "Access-Control-Allow-Origin", "value": "*"},
+                *security_headers
             ]
         }
     ]
@@ -77,6 +95,7 @@ shutil.copy(os.path.join(base_dir, "catalog_en_branded.html"), os.path.join(prin
 # Categories booklets
 shutil.copytree(os.path.join(base_dir, "Categories"), os.path.join(print_dir, "Categories"))
 shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(print_dir, "styles"))
+shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(print_dir, "scripts"))
 shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(print_dir, "Branding"))
 shutil.copytree(os.path.join(base_dir, "data"), os.path.join(print_dir, "data"))
 shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(print_dir, "static"))
@@ -94,9 +113,17 @@ print_vercel = {
     ],
     "headers": [
         {
+            "source": "/(.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|woff|ttf|css|js))",
+            "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"},
+                {"key": "Access-Control-Allow-Origin", "value": "*"}
+            ]
+        },
+        {
             "source": "/(.*)",
             "headers": [
-                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}
+                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"},
+                *security_headers
             ]
         }
     ]
