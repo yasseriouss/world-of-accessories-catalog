@@ -42,7 +42,14 @@ const i18n = {
         officialPrices: "أسعار رسمية معتمدة",
         specializedCategories: "فئات متخصصة",
         certifiedItems: "منتج معتمد",
-        spaceLabel: "نطاق الاستخدام:"
+        spaceLabel: "نطاق الاستخدام:",
+        contactTitle: "تواصل معنا وشرفنا بالزيارة",
+        contactSub: "يسعدنا استقبالكم في معرضنا للتعرف على تشكيلة إكسسوارات الأثاث والمطابخ الفاخرة، أو التواصل الفوري عبر الهاتف والواتساب للطلبات والاستفسارات.",
+        locTitle: "فرع ومعرض مدينة 6 أكتوبر",
+        locDesc: "المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول",
+        phoneTitle: "رقم التواصل والاتصال المباشر",
+        waTitle: "محادثة واتساب الفورية",
+        socialTitle: "منصات التواصل الاجتماعي الرسمية"
     },
     en: {
         brandTitle: "World of Accessories",
@@ -72,7 +79,14 @@ const i18n = {
         officialPrices: "Official Certified Prices",
         specializedCategories: "Specialized Categories",
         certifiedItems: "Certified Products",
-        spaceLabel: "Application Domain:"
+        spaceLabel: "Application Domain:",
+        contactTitle: "Contact Us & Visit Our Showroom",
+        contactSub: "We are pleased to welcome you to our showroom or assist you directly via phone and WhatsApp for orders and inquiries.",
+        locTitle: "6th of October City Branch & Showroom",
+        locDesc: "Central Axis – next to Al-Nagda Sq. – inside Silla Mall",
+        phoneTitle: "Direct Phone & Customer Support",
+        waTitle: "Instant WhatsApp Chat",
+        socialTitle: "Official Social Media Channels"
     }
 };
 
@@ -116,6 +130,21 @@ function applyLanguage(lang) {
     document.getElementById("metricLabel1").textContent = t.certifiedItems;
     document.getElementById("metricLabel2").textContent = t.specializedCategories;
     document.getElementById("metricLabel3").textContent = t.officialPrices;
+
+    const cTitle = document.getElementById("contactTitle");
+    if (cTitle) cTitle.textContent = t.contactTitle;
+    const cSub = document.getElementById("contactSub");
+    if (cSub) cSub.textContent = t.contactSub;
+    const lTitle = document.getElementById("locTitle");
+    if (lTitle) lTitle.textContent = t.locTitle;
+    const lDesc = document.getElementById("locDesc");
+    if (lDesc) lDesc.textContent = t.locDesc;
+    const pTitle = document.getElementById("phoneTitle");
+    if (pTitle) pTitle.textContent = t.phoneTitle;
+    const wTitle = document.getElementById("waTitle");
+    if (wTitle) wTitle.textContent = t.waTitle;
+    const sTitle = document.getElementById("socialTitle");
+    if (sTitle) sTitle.textContent = t.socialTitle;
 }
 
 // ----------------- API Data Fetching -----------------
@@ -466,6 +495,6 @@ function orderOnWhatsApp(prodId) {
     const code = `WOA-${String(p.id || p.n || 0).padStart(4, '0')}`;
     const title = (currentLang === "ar") ? p.ar : p.en;
     const msg = `مرحباً عالم الإكسسوارات، أود الاستفسار عن المنتج:\n\n🏷️ الاسم: ${title}\n🔖 الكود: ${code}\n💰 السعر: ${p.price} جنيه مصري\n\nيرجى تأكيد التوافر والتفاصيل.`;
-    const waUrl = `https://wa.me/201000000000?text=${encodeURIComponent(msg)}`;
+    const waUrl = `https://wa.me/201140030036?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, "_blank");
 }
