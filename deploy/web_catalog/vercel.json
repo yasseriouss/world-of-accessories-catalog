@@ -1,12 +1,6 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/admin",
-      "destination": "https://world-of-accessories-print.vercel.app/admin"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

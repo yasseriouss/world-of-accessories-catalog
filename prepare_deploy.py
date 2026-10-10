@@ -13,18 +13,11 @@ os.makedirs(web_dir, exist_ok=True)
 os.makedirs(print_dir, exist_ok=True)
 
 # ----------------- 1. Setup Web Catalog -----------------
-# Read web_catalog/templates/index.html and update the "📖 الكتالوجات المطبوعة" link to point to print catalog link or internal
 with open(os.path.join(base_dir, "web_catalog", "templates", "index.html"), "r", encoding="utf-8") as f:
     web_index_html = f.read()
 
-# Make the printed catalogs button open the print portal (which will be world-of-accessories-print.vercel.app)
-web_index_html = web_index_html.replace('href="/printed_catalogs.html"', 'href="https://world-of-accessories-print.vercel.app"')
-
 with open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(web_index_html)
-
-# Admin page
-shutil.copy(os.path.join(base_dir, "web_catalog", "templates", "admin.html"), os.path.join(web_dir, "admin.html"))
 
 # Static assets
 shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(web_dir, "static"))
@@ -39,13 +32,10 @@ shutil.copy(os.path.join(base_dir, "data", "categories_data.json"), os.path.join
 if os.path.exists(os.path.join(base_dir, "favicon.ico")):
     shutil.copy(os.path.join(base_dir, "favicon.ico"), os.path.join(web_dir, "favicon.ico"))
 
-# Web vercel.json
+# Web vercel.json (Zero rewrites or links to admin or print portals)
 web_vercel = {
     "version": 2,
     "cleanUrls": True,
-    "rewrites": [
-        {"source": "/admin", "destination": "https://world-of-accessories-print.vercel.app/admin"}
-    ],
     "headers": [
         {
             "source": "/(.*)",

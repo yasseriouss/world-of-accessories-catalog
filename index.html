@@ -808,12 +808,16 @@
         <p id="footerBrandDesc" style="font-size:13px; color:#94A3B8;">الرائد في إكسسوارات الأثاث والمطابخ والأبواب الراقية في مصر والشرق الأوسط</p>
 
         <div class="footer-links">
-            <a href="index.html" id="footerHome">الرئيسية</a>
-            <a href="Categories/categories_index_ar.html" id="footerCategories">فئات المنتجات</a>
-            <a href="catalog_ar.html" id="footerArabicCatalog">الكتالوج العربي</a>
-            <a href="catalog_en.html" id="footerEnglishCatalog">English Catalog</a>
-            <a href="catalog_en_branded.html" id="footerBrandCatalog">كتالوج الهوية</a>
+            <a href="tel:01140030036">📞 01140030036</a>
+            <a href="https://wa.me/201140030036" target="_blank" rel="noopener">💬 واتساب</a>
+            <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener">🗺️ خرائط Google</a>
+            <a href="https://www.instagram.com/world_of_accessories.eg" target="_blank" rel="noopener">📸 Instagram</a>
+            <a href="https://www.tiktok.com/@world_of_accessories_eg" target="_blank" rel="noopener">🎵 TikTok</a>
+            <a href="https://www.facebook.com/people/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA/61583899890449/" target="_blank" rel="noopener">📘 Facebook</a>
         </div>
+        <p style="font-size:12px; color:#94A3B8; margin-top:8px;">
+            مدينة 6 أكتوبر – المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول
+        </p>
 
         <div class="footer-copy" id="footerCopy">
             &copy; 2026 عالم الإكسسوارات. جميع الحقوق محفوظة &bull; All Rights Reserved.
@@ -972,16 +976,6 @@
         if (fTitle) fTitle.textContent = t.footerBrandTitle;
         const fDesc = document.getElementById('footerBrandDesc');
         if (fDesc) fDesc.textContent = t.footerBrandDesc;
-        const fHome = document.getElementById('footerHome');
-        if (fHome) fHome.textContent = t.footerHome;
-        const fCat = document.getElementById('footerCategories');
-        if (fCat) { fCat.textContent = t.footerCategories; fCat.href = t.footerCategoriesHref; }
-        const fAr = document.getElementById('footerArabicCatalog');
-        if (fAr) fAr.textContent = t.footerArabicCatalog;
-        const fEn = document.getElementById('footerEnglishCatalog');
-        if (fEn) fEn.textContent = t.footerEnglishCatalog;
-        const fBrand = document.getElementById('footerBrandCatalog');
-        if (fBrand) fBrand.textContent = t.footerBrandCatalog;
         const fCopy = document.getElementById('footerCopy');
         if (fCopy) fCopy.innerHTML = t.footerCopy;
     }
