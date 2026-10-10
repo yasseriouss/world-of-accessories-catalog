@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتالوجات المطبوعة الكاملة وإصدارات PDF | عالم الإكسسوارات</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <style>
+        :root {
+            --navy: #1A3F7F;
+            --navy-dark: #0F2752;
+            --navy-light: #2A56A2;
+            --orange: #FF8C3D;
+            --orange-hover: #E87528;
+            --cream: #F5E6D3;
+            --cream-light: #FBF6EF;
+            --dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-body: #F8FAFC;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(26,63,127,0.08);
+            --shadow-lg: 0 12px 32px rgba(26,63,127,0.14);
+            --font-ar: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-en: 'Comfortaa', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--dark);
+            font-family: var(--font-ar);
+            direction: rtl;
+            text-align: right;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Sticky Header */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 63, 127, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2.5px solid var(--orange);
+            color: #FFFFFF;
+            padding: 12px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(15,39,82,0.25);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .nav-brand img {
+            height: 42px;
+            width: auto;
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        .nav-brand-text h1 {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .nav-brand-text p {
+            font-size: 11px;
+            color: var(--cream);
+            font-family: var(--font-en);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-header {
+            background: rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-header:hover, .btn-header.active {
+            background: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-1px);
+        }
+
+        .btn-header.btn-admin-highlight {
+            background: linear-gradient(135deg, #FF8C3D 0%, #D96010 100%);
+            border-color: #FF8C3D;
+            color: #FFFFFF;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(255, 140, 61, 0.35);
+        }
+        .btn-header.btn-admin-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(255, 140, 61, 0.5);
+            background: #E87528;
+        }
+
+        .admin-portal-banner {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 100%);
+            border: 2px solid #FF8C3D;
+            border-radius: 16px;
+            padding: 24px 30px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 8px 24px rgba(217, 96, 16, 0.12);
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #0A1931 0%, #1A3F7F 55%, #153266 100%);
+            color: #FFFFFF;
+            padding: 50px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('Branding/pattern-02.jpg.jpeg') center/cover;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 140, 61, 0.2);
+            border: 1.5px solid var(--orange);
+            color: var(--orange);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 680px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -30px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Major Catalogs Grid */
+        .catalogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .catalog-card {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--orange);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .catalog-card-header {
+            padding: 24px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
+            border-bottom: 1.5px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .catalog-badge {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--navy);
+            background: rgba(26, 63, 127, 0.1);
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .catalog-card-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .catalog-card-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: var(--font-en);
+        }
+
+        .catalog-icon-box {
+            width: 56px;
+            height: 56px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .catalog-details-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13.5px;
+        }
+
+        .catalog-details-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #334155;
+        }
+
+        .catalog-details-list li span.bullet {
+            color: var(--orange);
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .catalog-best-for {
+            background: var(--cream-light);
+            border-right: 4px solid var(--orange);
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 12.5px;
+            color: var(--navy-dark);
+            line-height: 1.5;
+        }
+
+        .catalog-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-catalog-primary {
+            flex: 1 1 auto;
+            background: var(--navy);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 13.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-catalog-primary:hover {
+            background: var(--navy-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-catalog-secondary {
+            flex: 1 1 auto;
+            background: #FFFFFF;
+            color: var(--orange);
+            border: 1.5px solid var(--orange);
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 13.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-catalog-secondary:hover {
+            background: var(--orange);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+
+        /* Comparison Table Section */
+        .comparison-section {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-heading-wrap {
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--navy);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-heading-wrap h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: right;
+        }
+
+        .comp-table th {
+            background: #0F2752;
+            color: #FFFFFF;
+            padding: 14px 16px;
+            font-weight: 700;
+            border: 1px solid #1A3F7F;
+        }
+
+        .comp-table td {
+            padding: 14px 16px;
+            border: 1px solid #E2E8F0;
+            color: #1E293B;
+        }
+
+        .comp-table tr:nth-child(even) td {
+            background: #F8FAFC;
+        }
+
+        .comp-table tr:hover td {
+            background: #EFF6FF;
+        }
+
+        /* How to Print Guide */
+        .guide-box {
+            background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+            color: #FFFFFF;
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+            border-right: 5px solid var(--orange);
+        }
+
+        .guide-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            background: var(--orange);
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* Booklets Quick Grid */
+        .booklets-section {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .booklets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .booklet-pill {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 14px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+            color: var(--dark);
+        }
+
+        .booklet-pill:hover {
+            border-color: var(--orange);
+            transform: translateY(-2px);
+            background: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(255,140,61,0.12);
+        }
+
+        .booklet-pill-icon {
+            font-size: 24px;
+        }
+
+        .booklet-pill-info h4 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .booklet-pill-info span {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 30px 24px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 3px solid var(--orange);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .top-navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+            .nav-actions {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 26px;
+            }
+            .guide-box {
+                grid-template-columns: 1fr;
+            }
+            .catalogs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sticky Header -->
+    <header class="top-navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="Branding/logo-80.png" alt="شعار عالم الإكسسوارات">
+            <div class="nav-brand-text">
+                <h1>عالم الإكسسوارات</h1>
+                <p>World of Accessories &bull; Official Catalogs</p>
+            </div>
+        </a>
+        <nav class="nav-actions">
+            <a href="https://world-of-accessories.vercel.app" class="btn-header" target="_blank">🌐 الكتالوج الرقمي للعملاء</a>
+            <a href="Categories/categories_index_ar.html" class="btn-header">🏷️ الفئات والكتيبات</a>
+            <a href="printed_catalogs.html" class="btn-header active">📖 ملفات الطباعة A4</a>
+            <a href="/admin" class="btn-header btn-admin-highlight">⚙️ لوحة الإدارة والتحكم</a>
+            <a href="catalog_en.html" class="btn-header">🌐 English</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-tag">🖨️ مركز الكتالوجات المطبوعة المعتمدة A4 Portrait</div>
+        <h1 class="hero-title">الكتالوجات الرسمية المطبوعة وإصدارات الـ PDF</h1>
+        <p class="hero-desc">
+            دليل الإصدارات المطبوعة لعام ٢٠٢٦ — تصفح، اطبع واحفظ ملفات PDF عالية الدقة مجهزة بمقاس A4 Portrait (210mm × 297mm) مع الأرقام والأسعار الرسمية المعتمدة.
+        </p>
+        <div id="supabaseSyncBadge" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); padding:8px 20px; border-radius:30px; font-size:13px; color:#FFFFFF; border:1px solid rgba(255,255,255,0.25);">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#22C55E; box-shadow:0 0 8px #22C55E;"></span>
+            <span>قاعدة البيانات السحابية (Supabase Live Sync):</span>
+            <strong id="liveProductsCount">591 منتجاً معتمداً</strong>
+            <span style="opacity:0.8;">&bull; متزامن لحظياً مع لوحة التحكم</span>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Admin Management Hub Banner -->
+        <div class="admin-portal-banner">
+            <div style="display:flex; align-items:center; gap:18px;">
+                <div style="font-size:36px; background:#FFF; border-radius:12px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.06); border:1px solid #FED7AA;">⚙️</div>
+                <div>
+                    <span style="font-size:11px; font-weight:800; color:#D96010; text-transform:uppercase; letter-spacing:1px;">بوابة الإدارة الخاصة &bull; PRIVATE ADMIN</span>
+                    <h3 style="font-size:18px; color:var(--navy); font-weight:800; margin:2px 0 4px;">لوحة إدارة المنتجات وتعديل الأسعار الفورية</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin:0;">
+                        إضافة منتجات جديدة، تعديل الأسعار، وتحديث التصنيفات لحظياً في قاعدة بيانات Supabase لتنعكس فوراً على موقع العملاء وجميع ملفات الطباعة.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <a href="/admin" class="btn-header btn-admin-highlight" style="padding:12px 24px; font-size:14px; white-space:nowrap;">
+                    <span>⚙️ فتح لوحة الإدارة (PIN: 2026)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3 Main Catalogs Grid -->
+        <div class="catalogs-grid">
+
+            <!-- Card 1: Arabic Full Catalog -->
+            <div class="catalog-card">
+                <div class="catalog-card-header">
+                    <div>
+                        <span class="catalog-badge">الإصدار المعتمد الأكبر &bull; ٦٥ صفحة</span>
+                        <h2 class="catalog-card-title">الكتالوج الشامل الفاخر (عربي)</h2>
+                        <div class="catalog-card-subtitle">Official Complete Catalog (Arabic A4 Edition)</div>
+                    </div>
+                    <div class="catalog-icon-box">📘</div>
+                </div>
+                <div class="catalog-body">
+                    <ul class="catalog-details-list">
+                        <li><span class="bullet">✔</span> <strong>٥٩١ منتجاً كاملاً</strong> مصوراً مع صور واضحة ومكبرة.</li>
+                        <li><span class="bullet">✔</span> <strong>غلاف ملكي رسمي</strong> مع شارات الاعتماد ومعلومات الاتصال.</li>
+                        <li><span class="bullet">✔</span> <strong>فهرس محتويات مفصل (TOC)</strong> بارقام الصفحات لكل فئة.</li>
+                        <li><span class="bullet">✔</span> <strong>أرقام مشرقية (هندية)</strong> ومقاسات معربة بالكامل (سم / مم).</li>
+                        <li><span class="bullet">✔</span> <strong>عزل تام للرموز والموديلات</strong> (BiDi Protected) لمنع التداخل.</li>
+                    </ul>
+                    <div class="catalog-best-for">
+                        🎯 <strong>الاستخدام الأنسب:</strong> التوزيع ككتالوج سنوي كامل للمعارض، والشركات، والمكاتب الهندسية، وحفظه كمرجع رئيسي شامل.
+                    </div>
+                    <div class="catalog-actions">
+                        <a href="catalog_ar.html" class="btn-catalog-primary" target="_blank">
+                            <span>📖 فتح وتصفح الكتالوج</span>
+                        </a>
+                        <button onclick="openPrintModal('catalog_ar.html')" class="btn-catalog-secondary">
+                            <span>🖨️ طباعة / حفظ PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: English Full Catalog -->
+            <div class="catalog-card">
+                <div class="catalog-card-header">
+                    <div>
+                        <span class="catalog-badge">International Edition &bull; 65 Pages</span>
+                        <h2 class="catalog-card-title">Official Complete Catalog (English)</h2>
+                        <div class="catalog-card-subtitle">Official Complete Catalog (English A4 Edition)</div>
+                    </div>
+                    <div class="catalog-icon-box">🌐</div>
+                </div>
+                <div class="catalog-body">
+                    <ul class="catalog-details-list">
+                        <li><span class="bullet">✔</span> <strong>591 Illustrated Hardware Products</strong> with high-res photos.</li>
+                        <li><span class="bullet">✔</span> <strong>Branded Executive Cover</strong> & Detailed Table of Contents.</li>
+                        <li><span class="bullet">✔</span> <strong>International Technical Terminology</strong> in English.</li>
+                        <li><span class="bullet">✔</span> <strong>Official EGP Certified Pricing</strong> for contracts & procurement.</li>
+                        <li><span class="bullet">✔</span> <strong>Strict A4 Portrait Layout</strong> (210mm &times; 297mm) zero-overflow fit.</li>
+                    </ul>
+                    <div class="catalog-best-for">
+                        🎯 <strong>Best For:</strong> Export clients, international contractors, multinational developer firms, and foreign procurement teams.
+                    </div>
+                    <div class="catalog-actions">
+                        <a href="catalog_en.html" class="btn-catalog-primary" target="_blank">
+                            <span>📖 Open English Catalog</span>
+                        </a>
+                        <button onclick="openPrintModal('catalog_en.html')" class="btn-catalog-secondary">
+                            <span>🖨️ Print / Save as PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Specialized Category Booklets -->
+            <div class="catalog-card">
+                <div class="catalog-card-header">
+                    <div>
+                        <span class="catalog-badge">كتيبات سريعة &bull; ١٠ أقسام منفصلة</span>
+                        <h2 class="catalog-card-title">كتيبات الفئات المستقلة</h2>
+                        <div class="catalog-card-subtitle">Specialized Category Print Booklets</div>
+                    </div>
+                    <div class="catalog-icon-box">🗂️</div>
+                </div>
+                <div class="catalog-body">
+                    <ul class="catalog-details-list">
+                        <li><span class="bullet">✔</span> <strong>كتيب مخصص لكل فئة على حدة</strong> (من صفحة إلى ٢٠ صفحة).</li>
+                        <li><span class="bullet">✔</span> <strong>توفير كبير في أوراق الطباعة</strong> وطباعة الفئة المطلوبة فقط.</li>
+                        <li><span class="bullet">✔</span> <strong>بحث وتصفية تفاعلية لحظية</strong> بالاسم أو السعر.</li>
+                        <li><span class="bullet">✔</span> <strong>صور بحجم كبير جداً (104px-110px)</strong> واضحة للتنفيذ.</li>
+                        <li><span class="bullet">✔</span> <strong>متوفرة باللغتين</strong> (عربي وإنجليزي) لكل فئة من الفئات العشر.</li>
+                    </ul>
+                    <div class="catalog-best-for">
+                        🎯 <strong>الاستخدام الأنسب:</strong> ورش النجارة ومصممي المطابخ والفنيين الذين يحتاجون قسماً محدداً فقط (مثل كتيب المفصلات أو كتيب الأدراج).
+                    </div>
+                    <div class="catalog-actions">
+                        <a href="Categories/categories_index_ar.html" class="btn-catalog-primary">
+                            <span>🗂️ استعراض الفئات وطباعتها</span>
+                        </a>
+                        <a href="Categories/category_01_ar.html" class="btn-catalog-secondary">
+                            <span>🔧 فتح كتيب المفصلات</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Branded Identity Edition -->
+            <div class="catalog-card">
+                <div class="catalog-card-header">
+                    <div>
+                        <span class="catalog-badge">إصدار الهوية المعتمد &bull; Branded Edition</span>
+                        <h2 class="catalog-card-title">كتالوج الهوية البصرية الفاخرة</h2>
+                        <div class="catalog-card-subtitle">Branded Identity Edition (Color Theme & Layout)</div>
+                    </div>
+                    <div class="catalog-icon-box">✨</div>
+                </div>
+                <div class="catalog-body">
+                    <ul class="catalog-details-list">
+                        <li><span class="bullet">✔</span> <strong>هوية بصرية معتمدة ومميزة</strong> بألوان العلامة التجارية الرسمية الفاخرة.</li>
+                        <li><span class="bullet">✔</span> <strong>تنسيق دولي باللغة الإنجليزية</strong> مع المواصفات والأسعار المعتمدة.</li>
+                        <li><span class="bullet">✔</span> <strong>غلاف براندينج فاخر ومؤثر</strong> للشركات الكبرى والمطورين.</li>
+                        <li><span class="bullet">✔</span> <strong>مُهيأ لمقاس A4 Portrait</strong> وللطباعة والتصدير بجودة رسومية فائقة.</li>
+                        <li><span class="bullet">✔</span> <strong>تصميم أنيق لعروض الأعمال</strong> والمناقصات والمشاريع الكبرى.</li>
+                    </ul>
+                    <div class="catalog-best-for">
+                        🎯 <strong>الاستخدام الأنسب:</strong> اجتماعات الشراكة، العروض التقديمية مع المطورين العقاريين، ومكاتب التصميم الداخلي.
+                    </div>
+                    <div class="catalog-actions">
+                        <a href="catalog_en_branded.html" class="btn-catalog-primary" target="_blank">
+                            <span>✨ فتح كتالوج الهوية</span>
+                        </a>
+                        <button onclick="openPrintModal('catalog_en_branded.html')" class="btn-catalog-secondary">
+                            <span>🖨️ طباعة / حفظ PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Comparison Table Section -->
+        <div class="comparison-section">
+            <div class="section-heading-wrap">
+                <h2>📊 مقارنة تفصيلية وتوضيح الفرق بين كل كتالوج</h2>
+                <span style="font-size:12px; color:var(--text-muted);">دليل الاختيار السريع للعملاء والمهندسين</span>
+            </div>
+            <div class="table-responsive">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>وجه المقارنة</th>
+                            <th>الكتالوج العربي الشامل (A4)</th>
+                            <th>الكتالوج الإنجليزي الشامل (A4)</th>
+                            <th>كتيبات الفئات المستقلة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>عدد المنتجات</strong></td>
+                            <td>٥٩١ منتجاً (كافة الفئات)</td>
+                            <td>591 منتجاً (كافة الفئات)</td>
+                            <td>مجزأة (من ١٠ إلى ٢٠٠ منتج حسب الفئة)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>عدد الصفحات</strong></td>
+                            <td>٦٥ صفحة A4 متصلة</td>
+                            <td>65 صفحة A4 متصلة</td>
+                            <td>من صفحة إلى ٢٠ صفحة لكل فئة</td>
+                        </tr>
+                        <tr>
+                            <td><strong>لغة المحتوى</strong></td>
+                            <td>العربية مع ترقيم شرقي (٠-٩) وتعريب المقاسات</td>
+                            <td>الإنجليزية بالكامل مع مصطلحات عالمية</td>
+                            <td>متوفرة بنسختين كاملتين (عربي وإنجليزي)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>الغلاف والفهرس</strong></td>
+                            <td>غلاف رسمي فاخر + فهرس محتويات تفصيلي</td>
+                            <td>Executive Cover + Table of Contents</td>
+                            <td>ترويسة رسمية مخصصة لاسم الفئة وأيقونتها</td>
+                        </tr>
+                        <tr>
+                            <td><strong>أبعاد الطباعة والتصدير</strong></td>
+                            <td>A4 Portrait معيارية (210mm &times; 297mm)</td>
+                            <td>A4 Portrait معيارية (210mm &times; 297mm)</td>
+                            <td>A4 Portrait معيارية لكل فئة</td>
+                        </tr>
+                        <tr>
+                            <td><strong>البحث والتصفية</strong></td>
+                            <td>فهرس مدمج بالصفحات وأرقام الفصول</td>
+                            <td>Page-based Table of Contents directory</td>
+                            <td>شريط بحث وتصفية لحظية بالاسم والسعر</td>
+                        </tr>
+                        <tr>
+                            <td><strong>الهدف والاستخدام</strong></td>
+                            <td>كتالوج مرجعي شامل للمعارض والشركات والمكاتب</td>
+                            <td>عروض التصدير والشركات الأجنبية ومهندسي العقود</td>
+                            <td>طباعة سريعة ومركزة لورش التصنيع والمطابخ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- How to Print & Save PDF Guide -->
+        <div class="guide-box">
+            <div>
+                <h3 style="font-size:20px; font-weight:800; margin-bottom:12px; color:#FFFFFF;">💡 كيفية حفظ وطباعة الكتالوج كملف PDF بجودة فائقة:</h3>
+                <div class="guide-step">
+                    <div class="step-num">١</div>
+                    <div>اضغط على زر <strong>"طباعة / حفظ PDF"</strong> بجوار أي كتالوج أو اضغط <code>Ctrl + P</code> على لوحة المفاتيح.</div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">٢</div>
+                    <div>اختر من خانة الطابعة (Destination): <strong>حفظ بتنسيق PDF (Save as PDF)</strong>.</div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">٣</div>
+                    <div>تأكد من اختيار المقاس <strong>A4</strong>، والاتجاه <strong>عمودي (Portrait)</strong>، وتفعيل خيار <strong>رسومات الخلفية (Background graphics)</strong> للحصول على ألوان الهوية الأصلية.</div>
+                </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.08); border-radius:12px; padding:20px; text-align:center;">
+                <div style="font-size:36px; margin-bottom:10px;">🖨️</div>
+                <h4 style="font-size:16px; margin-bottom:8px; color:var(--cream);">طباعة دقيقة بنسبة 100%</h4>
+                <p style="font-size:12.5px; color:rgba(255,255,255,0.85); line-height:1.6;">
+                    كافة الصفحات مصممة وفق أبعاد A4 بدقة (210mm × 297mm) لضمان عدم حدوث أي انقسام للكروت أو ترحيل للصفحات.
+                </p>
+            </div>
+        </div>
+
+        <!-- Quick Links to Category Booklets -->
+        <div class="booklets-section">
+            <div class="section-heading-wrap" style="margin-bottom:14px;">
+                <h2>📂 الكتيبات المطبوعة المخصصة للفئات (١٠ كتيبات):</h2>
+            </div>
+            <p style="font-size:13px; color:var(--text-muted);">اضغط على أي فئة لفتح الكتيب الخاص بها وطباعته أو حفظه مستقلاً:</p>
+            <div class="booklets-grid">
+                <a href="Categories/category_01_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🔧</div>
+                    <div class="booklet-pill-info">
+                        <h4>المفصلات</h4>
+                        <span>٢٠٠ منتج مسجل</span>
+                    </div>
+                </a>
+                <a href="Categories/category_02_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🚪</div>
+                    <div class="booklet-pill-info">
+                        <h4>المقابض والمسكات</h4>
+                        <span>٧٨ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_03_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">📦</div>
+                    <div class="booklet-pill-info">
+                        <h4>أنظمة الأدراج</h4>
+                        <span>١٤٢ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_04_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🪟</div>
+                    <div class="booklet-pill-info">
+                        <h4>أذرع الرفع الهيدروليكية</h4>
+                        <span>٢٧ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_05_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🔩</div>
+                    <div class="booklet-pill-info">
+                        <h4>أدوات ومستلزمات التثبيت</h4>
+                        <span>١٠ منتجات مسجلة</span>
+                    </div>
+                </a>
+                <a href="Categories/category_06_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">📐</div>
+                    <div class="booklet-pill-info">
+                        <h4>أشرطة الحواف والتشطيب</h4>
+                        <span>١٨ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_07_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🧺</div>
+                    <div class="booklet-pill-info">
+                        <h4>إكسسوارات التخزين والدواليب</h4>
+                        <span>٥٩ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_08_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🔒</div>
+                    <div class="booklet-pill-info">
+                        <h4>أقفال الكوالين والخزائن</h4>
+                        <span>١١ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_09_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">🛠️</div>
+                    <div class="booklet-pill-info">
+                        <h4>الدعامات وحوامل الرفوف</h4>
+                        <span>٣١ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+                <a href="Categories/category_10_ar.html" class="booklet-pill">
+                    <div class="booklet-pill-icon">✨</div>
+                    <div class="booklet-pill-info">
+                        <h4>الأنظمة والإكسسوارات الخاصة</h4>
+                        <span>١٥ منتجاً مسجلاً</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 شركة عالم الإكسسوارات &bull; جميع الحقوق محفوظة &bull; الكتالوجات الرسمية المعتمدة A4</p>
+    </footer>
+
+    <script>
+    function openPrintModal(url) {
+        var w = window.open(url, '_blank');
+        if (w) {
+            w.focus();
+            // Trigger print once opened
+            setTimeout(function() {
+                try {
+                    w.print();
+                } catch(e) {}
+            }, 1000);
+        }
+    }
+
+    // Connect to Supabase Live Database
+    async function syncPrintedCatalogWithSupabase() {
+        try {
+            const url = "https://jzllhisbgjfdnurfuzfb.supabase.co/rest/v1/woa_products?select=id,category_id";
+            const res = await fetch(url, {
+                headers: {
+                    "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6bGxoaXNiZ2pmZG51cmZ1emZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5NTI5MDksImV4cCI6MjA5OTUyODkwOX0.0iIEyyD9pI8eblIixI8nbHJMm05kngTIMEWAi7yg_Eg"
+                }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                const badge = document.getElementById("liveProductsCount");
+                if (badge && data && data.length) {
+                    badge.textContent = `${data.length} منتجاً معتمداً`;
+                }
+            }
+        } catch (e) {
+            console.warn("Supabase live badge error:", e);
+        }
+    }
+    syncPrintedCatalogWithSupabase();
+    </script>
+
+</body>
+</html>
