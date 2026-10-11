@@ -43,6 +43,24 @@ if os.path.exists(os.path.join(base_dir, "data", "banners.json")):
 if os.path.exists(os.path.join(base_dir, "favicon.ico")):
     shutil.copy(os.path.join(base_dir, "favicon.ico"), os.path.join(web_dir, "favicon.ico"))
 
+# Sync PWA Manifest & Service Worker
+if os.path.exists(os.path.join(base_dir, "manifest.json")):
+    shutil.copy(os.path.join(base_dir, "manifest.json"), os.path.join(web_dir, "manifest.json"))
+if os.path.exists(os.path.join(base_dir, "sw.js")):
+    shutil.copy(os.path.join(base_dir, "sw.js"), os.path.join(web_dir, "sw.js"))
+
+# Sync About Us Page (about.html)
+about_src = os.path.join(base_dir, "web_catalog", "templates", "about.html")
+if os.path.exists(about_src):
+    with open(about_src, "r", encoding="utf-8") as f:
+        about_content = f.read()
+    with open(os.path.join(base_dir, "about.html"), "w", encoding="utf-8") as f:
+        f.write(about_content)
+    with open(os.path.join(web_dir, "about.html"), "w", encoding="utf-8") as f:
+        f.write(about_content)
+    with open(os.path.join(print_dir, "about.html"), "w", encoding="utf-8") as f:
+        f.write(about_content)
+
 # Enterprise Security & Performance Headers
 security_headers = [
     {"key": "X-Content-Type-Options", "value": "nosniff"},

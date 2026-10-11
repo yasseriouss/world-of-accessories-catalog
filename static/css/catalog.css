@@ -402,51 +402,90 @@ body {
 
 .btn-nav {
     background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: #FFFFFF;
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 8px 16px;
-    border-radius: var(--radius-sm);
+    border-radius: 10px;
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: inherit;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-nav:hover {
-    background: var(--orange);
-    border-color: var(--orange);
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.45);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+}
+
+.btn-nav:active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav-about {
+    background: linear-gradient(135deg, rgba(197, 168, 128, 0.22) 0%, rgba(230, 194, 128, 0.1) 100%);
+    border-color: rgba(197, 168, 128, 0.45);
+    color: #FFE6B3;
+}
+
+.btn-nav-about:hover {
+    background: linear-gradient(135deg, #C5A880 0%, #A38458 100%);
+    border-color: #E6C280;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(197, 168, 128, 0.4);
+}
+
+.btn-nav-install {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.22) 0%, rgba(14, 165, 233, 0.12) 100%);
+    border-color: rgba(56, 189, 248, 0.45);
+    color: #BAE6FD;
+}
+
+.btn-nav-install:hover {
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+    border-color: #38BDF8;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
 }
 
 .btn-nav-wa {
-    background: rgba(37, 211, 102, 0.18);
-    border-color: rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.22) 0%, rgba(18, 140, 126, 0.15) 100%);
+    border-color: rgba(37, 211, 102, 0.45);
     color: #FFFFFF;
 }
 
 .btn-nav-wa:hover {
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     border-color: #25D366;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    color: #FFFFFF;
 }
 
 .btn-nav-cart {
-    background: rgba(255, 140, 61, 0.2);
-    border-color: rgba(255, 140, 61, 0.45);
+    background: linear-gradient(135deg, rgba(255, 140, 61, 0.25) 0%, rgba(232, 106, 21, 0.18) 100%);
+    border-color: rgba(255, 140, 61, 0.5);
     color: #FFFFFF;
     position: relative;
 }
 
 .btn-nav-cart:hover {
-    background: var(--orange);
-    border-color: var(--orange);
-    box-shadow: var(--shadow-glow);
+    background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
+    border-color: #FF8C3D;
+    box-shadow: 0 6px 18px rgba(255, 140, 61, 0.45);
+    color: #FFFFFF;
 }
 
 .nav-cart-badge {
@@ -1113,38 +1152,62 @@ body {
 }
 
 .btn-icon-action {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border);
-    background: var(--bg-body);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
     color: var(--dark);
     cursor: pointer;
     font-size: 15px;
-    transition: var(--transition);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-icon-action:hover {
-    background: var(--navy);
+    background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
     color: #FFFFFF;
-    border-color: var(--navy);
+    border-color: #1A3F7F;
     transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(26, 63, 127, 0.3);
+}
+
+.btn-icon-action:active {
+    transform: translateY(0) scale(0.93);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon-whatsapp {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(18, 140, 126, 0.04) 100%);
+    border-color: rgba(37, 211, 102, 0.3);
+    color: #128C7E;
 }
 
 .btn-icon-whatsapp:hover {
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: #FFFFFF;
     border-color: #25D366;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.38);
+    transform: translateY(-2px);
+}
+
+.btn-icon-cart {
+    background: linear-gradient(135deg, rgba(255, 140, 61, 0.1) 0%, rgba(232, 106, 21, 0.04) 100%);
+    border-color: rgba(255, 140, 61, 0.35);
+    color: #E86A15;
 }
 
 .btn-icon-cart:hover {
-    background: #FF8C3D;
+    background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
     color: #FFFFFF;
     border-color: #FF8C3D;
-    box-shadow: 0 4px 12px rgba(255, 140, 61, 0.35);
+    box-shadow: 0 6px 16px rgba(255, 140, 61, 0.42);
+    transform: translateY(-2px) scale(1.05);
 }
 
 /* ---------------- Quick View Modal ---------------- */
@@ -1293,10 +1356,10 @@ body {
 
 .btn-modal-primary {
     flex: 1 1 auto;
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: #FFFFFF;
-    padding: 12px 20px;
-    border-radius: var(--radius-sm);
+    padding: 13px 22px;
+    border-radius: 12px;
     font-weight: 800;
     font-size: 14px;
     text-decoration: none;
@@ -1304,34 +1367,56 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-modal-primary:hover {
-    background: #1EBE5D;
+    background: linear-gradient(135deg, #2EE871 0%, #159C8D 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+}
+
+.btn-modal-primary:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
 }
 
 .btn-modal-secondary {
     flex: 1 1 auto;
-    background: var(--navy);
+    background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
     color: #FFFFFF;
-    padding: 12px 20px;
-    border-radius: var(--radius-sm);
+    padding: 13px 22px;
+    border-radius: 12px;
     font-weight: 800;
     font-size: 14px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(26, 63, 127, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-modal-secondary:hover {
-    background: var(--navy-light);
+    background: linear-gradient(135deg, #2558B0 0%, #163B7A 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 63, 127, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+}
+
+.btn-modal-secondary:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 6px rgba(26, 63, 127, 0.25);
 }
 
 /* ---------------- Empty State ---------------- */

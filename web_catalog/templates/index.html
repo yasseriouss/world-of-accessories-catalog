@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عالم الإكسسوارات | الكتالوج الرقمي الرسمي 2026</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1A3F7F">
+    <link rel="apple-touch-icon" href="/Branding/icon-192.png">
+    <meta name="description" content="عالم الإكسسوارات - الكتالوج الرقمي الرسمي 2026 لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/fonts.css">
@@ -75,6 +79,10 @@
             </div>
         </a>
         <nav class="nav-actions">
+            <a href="/about.html" class="btn-nav btn-nav-about" id="navAboutBtn" title="عن الشركة والمعرض الرسمي">
+                <span>✨</span>
+                <span id="navAboutText">من نحن</span>
+            </a>
             <a href="https://wa.me/201140030036" target="_blank" rel="noopener" class="btn-nav btn-nav-wa" title="WhatsApp 01140030036">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:middle; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.25));"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
                 <span id="navWaText">واتساب</span>
@@ -83,6 +91,10 @@
                 <span>🛒</span>
                 <span id="navCartText">السلة</span>
                 <span id="woaHeaderCartBadge" class="nav-cart-badge" style="display:none;">0</span>
+            </button>
+            <button type="button" id="pwaInstallNavBtn" class="btn-nav btn-nav-install" style="display:none;" onclick="triggerPwaInstall()" title="تثبيت التطبيق على جهازك">
+                <span>📲</span>
+                <span id="navInstallText">تثبيت التطبيق</span>
             </button>
             <button type="button" id="langToggleBtn" class="btn-nav" onclick="toggleLanguage()">🌐 English</button>
         </nav>
@@ -334,6 +346,7 @@
                     <h4 id="footerQuickLinksTitle">روابط سريعة</h4>
                     <ul class="footer-nav-list">
                         <li><a href="#productsGrid">📦 <span id="fnLinkCatalog">تصفح المنتجات والأقسام</span></a></li>
+                        <li><a href="/about.html">✨ <span id="fnLinkAbout">عن عالم الإكسسوارات والمعرض</span></a></li>
                         <li><a href="javascript:void(0)" onclick="if(window.WOACart) WOACart.open()">🛒 <span id="fnLinkCart">سلة المشتريات ومتابعة الطلب</span></a></li>
                         <li><a href="javascript:void(0)" onclick="if(window.WOACart) WOACart.printQuotation()">📄 <span id="fnLinkQuote">طباعة عرض أسعار رسمي</span></a></li>
                         <li><a href="#contact">📍 <span id="fnLinkContact">المعرض والتواصل المباشر</span></a></li>

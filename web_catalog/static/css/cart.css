@@ -426,12 +426,12 @@ html:not([dir="rtl"]) .woa-cart-drawer {
 
 .woa-btn-whatsapp-order {
     width: 100%;
-    padding: 13px 18px;
-    background: #25D366;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 14.5px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -439,38 +439,57 @@ html:not([dir="rtl"]) .woa-cart-drawer {
     gap: 8px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: inherit;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .woa-btn-whatsapp-order:hover {
-    background: #20BA5A;
+    background: linear-gradient(135deg, #2EE871 0%, #159C8D 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+}
+
+.woa-btn-whatsapp-order:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
 }
 
 .woa-btn-quotation {
     width: 100%;
-    padding: 11px 18px;
-    background: #F1F5F9;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 100%);
     color: #1A3F7F;
     border: 1px solid #CBD5E1;
-    border-radius: 10px;
-    font-size: 13px;
+    border-radius: 12px;
+    font-size: 13.5px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: inherit;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .woa-btn-quotation:hover {
-    background: #E2E8F0;
+    background: #FFFFFF;
     color: #0F2752;
+    border-color: #1A3F7F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 63, 127, 0.15);
+}
+
+.woa-btn-quotation:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .woa-cart-clear-link {
@@ -757,11 +776,11 @@ html:not([dir="rtl"]) .woa-cart-drawer {
 
 .woa-btn-proceed-checkout {
     width: 100%;
-    padding: 14px 18px;
-    background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
     color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     font-size: 15px;
     font-weight: 800;
     display: flex;
@@ -769,15 +788,22 @@ html:not([dir="rtl"]) .woa-cart-drawer {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(26, 63, 127, 0.35);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(255, 140, 61, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: inherit;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .woa-btn-proceed-checkout:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 63, 127, 0.45);
-    background: linear-gradient(135deg, #FF8C3D 0%, #E87528 100%);
+    box-shadow: 0 8px 24px rgba(255, 140, 61, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    background: linear-gradient(135deg, #FFA05C 0%, #F57520 100%);
+}
+
+.woa-btn-proceed-checkout:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 6px rgba(255, 140, 61, 0.3);
 }
 
 

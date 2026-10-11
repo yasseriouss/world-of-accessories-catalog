@@ -50,7 +50,9 @@ const i18n = {
         locDesc: "المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول",
         phoneTitle: "رقم التواصل والاتصال المباشر",
         waTitle: "محادثة واتساب الفورية",
-        socialTitle: "منصات التواصل الاجتماعي الرسمية"
+        socialTitle: "منصات التواصل الاجتماعي الرسمية",
+        navAbout: "من نحن",
+        navInstall: "تثبيت التطبيق"
     },
     en: {
         brandTitle: "World of Accessories",
@@ -88,7 +90,9 @@ const i18n = {
         locDesc: "Central Axis – next to Al-Nagda Sq. – inside Silla Mall",
         phoneTitle: "Direct Phone & Customer Support",
         waTitle: "Instant WhatsApp Chat",
-        socialTitle: "Official Social Media Channels"
+        socialTitle: "Official Social Media Channels",
+        navAbout: "About Us",
+        navInstall: "Install App"
     }
 };
 
@@ -290,6 +294,12 @@ function applyLanguage(lang) {
     if (adminBtn) adminBtn.textContent = t.adminBtn;
     const printedBtn = document.getElementById("navPrintedBtn");
     if (printedBtn) printedBtn.textContent = t.printedBtn;
+    const aboutNavText = document.getElementById("navAboutText");
+    if (aboutNavText) aboutNavText.textContent = t.navAbout;
+    const installNavText = document.getElementById("navInstallText");
+    if (installNavText) installNavText.textContent = t.navInstall;
+    const fnAbout = document.getElementById("fnLinkAbout");
+    if (fnAbout) fnAbout.textContent = (lang === "ar") ? "عن عالم الإكسسوارات والمعرض" : "About Us & Showroom";
 
     document.getElementById("heroPill").textContent = t.heroPill;
     document.getElementById("heroTitle").textContent = t.heroTitle;
@@ -764,3 +774,44 @@ function orderOnWhatsApp(prodId) {
     const waUrl = `https://wa.me/201140030036?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, "_blank");
 }
+
+// ----------------- PWA Service Worker & Install Flow -----------------
+let pwaDeferredPrompt = null;
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+            console.log('[PWA] Service Worker registered with scope:', reg.scope);
+        }).catch((err) => {
+            console.warn('[PWA] Service Worker registration failed:', err);
+        });
+    });
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    pwaDeferredPrompt = e;
+    const btn = document.getElementById('pwaInstallNavBtn');
+    if (btn) btn.style.display = 'inline-flex';
+});
+
+window.addEventListener('appinstalled', () => {
+    console.log('[PWA] App successfully installed');
+    pwaDeferredPrompt = null;
+    const btn = document.getElementById('pwaInstallNavBtn');
+    if (btn) btn.style.display = 'none';
+});
+
+function triggerPwaInstall() {
+    if (!pwaDeferredPrompt) return;
+    pwaDeferredPrompt.prompt();
+    pwaDeferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('[PWA] User accepted installation prompt');
+        }
+        pwaDeferredPrompt = null;
+        const btn = document.getElementById('pwaInstallNavBtn');
+        if (btn) btn.style.display = 'none';
+    });
+}
+
