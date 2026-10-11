@@ -96,32 +96,42 @@ const i18n = {
 let preloaderDismissed = false;
 function dismissPreloader() {
     if (preloaderDismissed) return;
+    preloaderDismissed = true;
+    if (typeof window.__woaDismissPreloader === "function") {
+        window.__woaDismissPreloader();
+        return;
+    }
     const preloader = document.getElementById("woaPreloader");
     if (!preloader) return;
-    preloaderDismissed = true;
     preloader.classList.add("fade-out");
     setTimeout(() => {
-        preloader.style.display = "none";
+        try { preloader.style.display = "none"; } catch (e) {}
     }, 650);
 }
 
-// Initialize on DOM load
-document.addEventListener("DOMContentLoaded", () => {
+// Resilient Initialization (Handles Cached / Instant Ready States)
+function initCatalogApp() {
     applyLanguage(currentLang);
     fetchUsageTypes();
     fetchCategories();
     fetchProducts().then(() => {
-        setTimeout(dismissPreloader, 300);
+        setTimeout(dismissPreloader, 250);
     }).catch(() => {
         dismissPreloader();
     });
     setupSearchInput();
-    // Safety fallback timeout
-    setTimeout(dismissPreloader, 2000);
-});
+    // Safety fallback
+    setTimeout(dismissPreloader, 1800);
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCatalogApp);
+} else {
+    initCatalogApp();
+}
 
 window.addEventListener("load", () => {
-    setTimeout(dismissPreloader, 250);
+    setTimeout(dismissPreloader, 200);
 });
 
 // ----------------- Language Management -----------------
@@ -495,7 +505,13 @@ function renderProducts() {
         `;
     });
 
-    grid.innerHTML = html;
+    if (window.requestAnimationFrame) {
+        requestAnimationFrame(() => {
+            grid.innerHTML = html;
+        });
+    } else {
+        grid.innerHTML = html;
+    }
 }
 
 // ----------------- Search & Sort -----------------

@@ -28,6 +28,31 @@
             <div class="woa-preloader-bar"></div>
         </div>
     </div>
+    <script>
+        (function() {
+            var dismissed = false;
+            window.__woaDismissPreloader = function() {
+                if (dismissed) return;
+                dismissed = true;
+                var el = document.getElementById("woaPreloader");
+                if (!el) return;
+                el.classList.add("fade-out");
+                setTimeout(function() {
+                    try { el.style.display = "none"; } catch (e) {}
+                }, 650);
+            };
+            // 1. Instant check if cached / already ready
+            if (document.readyState === "complete") {
+                setTimeout(window.__woaDismissPreloader, 350);
+            } else {
+                window.addEventListener("load", function() {
+                    setTimeout(window.__woaDismissPreloader, 250);
+                });
+            }
+            // 2. Absolute safety net: forces splash screen closure after 1.8s max under any condition
+            setTimeout(window.__woaDismissPreloader, 1800);
+        })();
+    </script>
 
     <!-- 1. Top Navbar -->
     <header class="navbar">
