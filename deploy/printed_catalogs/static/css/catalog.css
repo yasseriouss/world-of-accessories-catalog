@@ -104,24 +104,25 @@ body {
 }
 
 .woa-preloader-circle {
-    width: 136px;
-    height: 136px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 14px;
+    padding: 10px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(255, 140, 61, 0.35);
     animation: woaPreloaderFloat 2.6s ease-in-out infinite;
     z-index: 2;
+    overflow: hidden;
 }
 
 .woa-preloader-img {
     width: 100%;
     height: 100%;
-    max-width: 108px;
-    max-height: 108px;
+    max-width: 120px;
+    max-height: 120px;
     object-fit: contain;
     border-radius: 0;
     background: transparent;
@@ -214,17 +215,18 @@ body {
 }
 
 .nav-logo {
-    height: 42px;
-    width: auto;
+    height: 44px;
+    width: 44px;
+    object-fit: contain;
     background: #FFFFFF;
-    border-radius: var(--radius-sm);
-    padding: 3px 6px;
+    border-radius: 50%;
+    padding: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
 }
 
 .nav-brand:hover .nav-logo {
-    transform: scale(1.04);
+    transform: scale(1.06);
 }
 
 .nav-title {
@@ -1201,12 +1203,12 @@ body {
 }
 
 .footer-brand-logo {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     background: #FFFFFF;
-    border-radius: 8px;
-    padding: 4px;
+    border-radius: 50%;
+    padding: 3px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -1384,12 +1386,33 @@ body {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 8px;
     }
     .hero-title {
-        font-size: 26px;
+        font-size: 24px;
     }
     .hero-section {
-        padding: 40px 16px 50px;
+        padding: 36px 16px 46px;
+    }
+    .hero-trust-badges {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 22px;
+    }
+    .trust-badge-item {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+    .trust-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    .trust-text strong {
+        font-size: 12.5px;
+    }
+    .trust-text span {
+        font-size: 11px;
     }
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1691,5 +1714,199 @@ body {
         width: 52px;
         height: 52px;
         font-size: 26px;
+    }
+}
+
+
+/* Extra Phone Screens Audit & Polish (iPhone SE, Pro, Max, Samsung, Android <= 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+    .nav-brand {
+        gap: 8px;
+    }
+    .nav-logo {
+        height: 38px;
+        width: 38px;
+    }
+    .nav-title {
+        font-size: 16px;
+    }
+    .nav-subtitle {
+        font-size: 10px;
+    }
+    .btn-nav {
+        padding: 7px 11px;
+        font-size: 12px;
+        gap: 5px;
+    }
+    .hero-section {
+        padding: 28px 12px 38px;
+    }
+    .hero-pill {
+        font-size: 10.5px;
+        padding: 4px 12px;
+        margin-bottom: 12px;
+    }
+    .hero-title {
+        font-size: 20px;
+        line-height: 1.35;
+    }
+    .hero-subtitle {
+        font-size: 12px;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+    .search-wrapper {
+        margin: 0 auto;
+    }
+    .search-input-box {
+        font-size: 13px;
+        padding: 10px 14px 10px 38px;
+    }
+    [dir="rtl"] .search-input-box {
+        padding: 10px 38px 10px 14px;
+    }
+    .hero-trust-badges {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-top: 16px;
+    }
+    .trust-badge-item {
+        padding: 8px 8px;
+        gap: 6px;
+    }
+    .trust-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+    .trust-text strong {
+        font-size: 11px;
+        line-height: 1.25;
+    }
+    .trust-text span {
+        font-size: 9.5px;
+        line-height: 1.2;
+    }
+    .metrics-strip {
+        gap: 8px;
+        margin-top: 16px;
+    }
+    .metric-item {
+        padding: 5px 12px;
+        font-size: 11.5px;
+        gap: 6px;
+    }
+    .metric-num {
+        font-size: 14px;
+    }
+    .main-container {
+        padding: 0 10px;
+        margin-top: -15px;
+        margin-bottom: 50px;
+    }
+    .space-filter-bar {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    .space-filter-btn {
+        padding: 6px 12px;
+        font-size: 11.5px;
+    }
+    .filters-bar {
+        gap: 8px;
+        padding: 10px;
+    }
+    .filter-pill {
+        padding: 5px 10px;
+        font-size: 11.5px;
+    }
+    .sort-control select {
+        padding: 6px 10px;
+        font-size: 11.5px;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .product-card {
+        border-radius: 12px;
+    }
+    .card-img-wrap {
+        height: 160px;
+        padding: 12px;
+    }
+    .card-body {
+        padding: 14px;
+    }
+    .card-title-ar {
+        font-size: 14.5px;
+    }
+    .card-title-en {
+        font-size: 11.5px;
+    }
+    .product-specs-box {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+    .card-footer {
+        padding-top: 10px;
+    }
+    .card-price-tag {
+        font-size: 16px;
+    }
+    .btn-icon-action {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+    .modal-overlay {
+        padding: 10px;
+    }
+    .modal-content {
+        max-height: 94vh;
+        border-radius: 14px;
+    }
+    .modal-img-area {
+        height: 170px;
+        padding: 12px;
+    }
+    .modal-body {
+        padding: 16px 12px;
+    }
+    .modal-title-ar {
+        font-size: 17px;
+    }
+    .modal-title-en {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .modal-price-box {
+        padding: 10px 12px;
+        margin-bottom: 14px;
+    }
+    .modal-price-val {
+        font-size: 20px;
+    }
+    .modal-actions {
+        gap: 8px;
+        flex-direction: column;
+    }
+    .btn-modal-primary,
+    .btn-modal-secondary {
+        width: 100%;
+        padding: 11px 14px;
+        font-size: 13px;
+    }
+    .floating-whatsapp {
+        bottom: 16px;
+        left: 16px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
     }
 }

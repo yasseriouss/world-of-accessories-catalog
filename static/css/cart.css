@@ -7,7 +7,8 @@
 .woa-floating-cart-btn {
     position: fixed;
     bottom: 24px;
-    inset-inline-start: 24px; /* Adapts to RTL (left) & LTR (right) */
+    right: 24px;
+    left: auto;
     z-index: 1050;
     width: 60px;
     height: 60px;
