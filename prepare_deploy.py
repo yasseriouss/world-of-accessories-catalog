@@ -46,6 +46,8 @@ if os.path.exists(os.path.join(base_dir, "favicon.ico")):
 # Sync PWA Manifest & Service Worker
 if os.path.exists(os.path.join(base_dir, "manifest.json")):
     shutil.copy(os.path.join(base_dir, "manifest.json"), os.path.join(web_dir, "manifest.json"))
+if os.path.exists(os.path.join(base_dir, "manifest_en.json")):
+    shutil.copy(os.path.join(base_dir, "manifest_en.json"), os.path.join(web_dir, "manifest_en.json"))
 if os.path.exists(os.path.join(base_dir, "sw.js")):
     shutil.copy(os.path.join(base_dir, "sw.js"), os.path.join(web_dir, "sw.js"))
 
