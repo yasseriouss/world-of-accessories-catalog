@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عالم الإكسسوارات | الكتالوج الرقمي الرسمي 2026</title>
+    <title>عالم الاكسسوار | البوابة الرسمية لتوريد إكسسوارات الأثاث والمطابخ 2026</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link id="pwaManifestLink" rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1A3F7F">
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta id="appleAppTitle" name="apple-mobile-web-app-title" content="عالم الاكسسوار">
-    <meta name="description" content="عالم الاكسسوار - الكتالوج الرقمي الرسمي 2026 لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ">
+    <meta name="description" content="عالم الاكسسوار - البوابة الرسمية والمتجر الإلكتروني لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ 2026">
     <script>
         (function() {
             try {
@@ -31,62 +31,297 @@
     <link rel="stylesheet" href="/styles/fonts.css">
     <link rel="stylesheet" href="/static/css/catalog.css">
     <link rel="stylesheet" href="/static/css/cart.css">
+    <style>
+        /* Landing Page Luxury Styling */
+        .landing-hero {
+            background: linear-gradient(135deg, rgba(13, 31, 66, 0.96) 0%, rgba(20, 50, 102, 0.94) 100%), url('/Branding/pattern-02.jpg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            padding: 70px 24px 80px;
+            text-align: center;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, #1A3F7F, #FF8C3D 35%, #C5A880 70%, #1A3F7F) 1;
+        }
+
+        .landing-hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 140, 61, 0.18);
+            border: 1px solid rgba(255, 140, 61, 0.45);
+            color: #FFC091;
+            padding: 7px 20px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 14px rgba(255, 140, 61, 0.2);
+        }
+
+        .landing-hero-title {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.25;
+            max-width: 950px;
+            margin: 0 auto 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .landing-hero-desc {
+            font-size: 17.5px;
+            line-height: 1.8;
+            max-width: 820px;
+            margin: 0 auto 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Forward Search Bar */
+        .landing-search-box {
+            max-width: 680px;
+            margin: 0 auto 36px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 50px;
+            padding: 6px 8px 6px 20px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            border: 2px solid rgba(197, 168, 128, 0.4);
+        }
+
+        .landing-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 15px;
+            color: #0F172A;
+            background: transparent;
+            padding: 10px 8px;
+        }
+
+        .landing-search-btn {
+            background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .landing-search-btn:hover {
+            background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
+            transform: scale(1.02);
+        }
+
+        /* Hero Action Gateway Buttons */
+        .landing-hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gateway-primary {
+            background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(255, 140, 61, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-gateway-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 140, 61, 0.55);
+            background: linear-gradient(135deg, #FFA05C 0%, #F57520 100%);
+        }
+
+        .btn-gateway-secondary {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            color: #FFFFFF;
+            backdrop-filter: blur(8px);
+            padding: 16px 28px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-gateway-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Market Portals Grid */
+        .portals-section {
+            max-width: 1240px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .portals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .portal-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            padding: 26px 22px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 38px rgba(26, 63, 127, 0.16);
+            border-color: #C5A880;
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A3F7F, #FF8C3D);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .portal-icon {
+            font-size: 34px;
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: #F1F5F9;
+        }
+
+        .portal-card.kitchen .portal-icon { background: rgba(255, 140, 61, 0.12); color: #E86A15; }
+        .portal-card.dressing .portal-icon { background: rgba(26, 63, 127, 0.1); color: #1A3F7F; }
+        .portal-card.handles .portal-icon { background: rgba(197, 168, 128, 0.18); color: #A38458; }
+        .portal-card.systems .portal-icon { background: rgba(37, 211, 102, 0.12); color: #128C7E; }
+
+        .portal-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .portal-desc {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #475569;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .portal-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            background: #F8FAFC;
+            color: #1A3F7F;
+            border: 1.5px solid #E2E8F0;
+            transition: all 0.2s ease;
+        }
+
+        .portal-btn:hover {
+            background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+            color: #FFFFFF;
+            border-color: #1A3F7F;
+            box-shadow: 0 4px 14px rgba(26, 63, 127, 0.25);
+        }
+
+        /* B2B Contract Section */
+        .b2b-section {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 100%);
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 60px 20px;
+        }
+
+        .b2b-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 860px) {
+            .landing-hero-title { font-size: 28px; }
+            .landing-hero-desc { font-size: 15px; }
+            .b2b-container { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- 0. Brand Preloader Animation -->
-    <div id="woaPreloader" class="woa-preloader">
-        <div class="woa-preloader-logo-wrap">
-            <div class="woa-preloader-ring-pulse"></div>
-            <div class="woa-preloader-ring"></div>
-            <div class="woa-preloader-circle">
-                <img src="/Branding/logo-150.png" alt="World of Accessories" class="woa-preloader-img">
-            </div>
-        </div>
-        <h2 class="woa-preloader-title">عالم الإكسسوارات</h2>
-        <div class="woa-preloader-sub">World of Accessories</div>
-        <div class="woa-preloader-bar-wrap">
-            <div class="woa-preloader-bar"></div>
-        </div>
-    </div>
-    <script>
-        (function() {
-            var dismissed = false;
-            window.__woaDismissPreloader = function() {
-                if (dismissed) return;
-                dismissed = true;
-                var el = document.getElementById("woaPreloader");
-                if (!el) return;
-                el.classList.add("fade-out");
-                setTimeout(function() {
-                    try { el.style.display = "none"; } catch (e) {}
-                }, 650);
-            };
-            // 1. Instant check if cached / already ready
-            if (document.readyState === "complete") {
-                setTimeout(window.__woaDismissPreloader, 350);
-            } else {
-                window.addEventListener("load", function() {
-                    setTimeout(window.__woaDismissPreloader, 250);
-                });
-            }
-            // 2. Absolute safety net: forces splash screen closure after 1.8s max under any condition
-            setTimeout(window.__woaDismissPreloader, 1800);
-        })();
-    </script>
 
     <!-- Top Animated Announcement Banner -->
     <div id="woaTopBar" class="woa-top-bar" role="region" aria-label="شريط الإعلانات والعروض">
         <div class="woa-top-bar-inner">
             <button type="button" class="woa-tb-arrow woa-tb-prev" onclick="prevBanner()" aria-label="الإعلان السابق" title="السابق">‹</button>
             <div class="woa-tb-content" id="woaTopBarContent">
-                <!-- Injected via catalog.js -->
+                <!-- Dynamic banners injected via catalog.js -->
             </div>
             <button type="button" class="woa-tb-arrow woa-tb-next" onclick="nextBanner()" aria-label="الإعلان التالي" title="التالي">›</button>
         </div>
     </div>
 
-    <!-- 1. Top Navbar -->
+    <!-- 1. Executive Top Navbar -->
     <header class="navbar">
         <a href="/" class="nav-brand">
             <img src="/Branding/logo-80.png" class="nav-logo" alt="Logo">
@@ -96,19 +331,26 @@
             </div>
         </a>
         <nav class="nav-actions">
-            <a href="/about.html" class="btn-nav btn-nav-about" id="navAboutBtn" title="عن الشركة والمعرض الرسمي">
+            <a href="/market.html" class="btn-nav btn-nav-cart" style="background:linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%); border-color:#FF8C3D;" title="الدخول إلى المتجر والكتالوج الرقمي">
+                <span>🛒</span>
+                <span>المتجر الرقمي</span>
+            </a>
+            <a href="/printed_catalogs.html" class="btn-nav" title="الكتالوجات المطبوعة والطباعة">
+                <span>📖</span>
+                <span>الكتالوجات المطبوعة</span>
+            </a>
+            <a href="/about.html" class="btn-nav btn-nav-about" title="عن الشركة والمعرض الرسمي">
                 <span>✨</span>
-                <span id="navAboutText">من نحن</span>
+                <span id="navAboutText">من نحن والمعرض</span>
             </a>
             <a href="https://wa.me/201140030036" target="_blank" rel="noopener" class="btn-nav btn-nav-wa" title="WhatsApp 01140030036">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:middle; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.25));"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-                <span id="navWaText">واتساب</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:middle;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>واتساب</span>
             </a>
-            <button type="button" class="btn-nav btn-nav-cart" onclick="if(window.WOACart) WOACart.open()" title="سلة المشتريات">
-                <span>🛒</span>
-                <span id="navCartText">السلة</span>
-                <span id="woaHeaderCartBadge" class="nav-cart-badge" style="display:none;">0</span>
-            </button>
+            <a href="/admin.html" class="btn-nav" title="لوحة التحكم الإدارية" style="opacity:0.9;">
+                <span>⚙️</span>
+                <span>الإدارة</span>
+            </a>
             <button type="button" id="pwaInstallNavBtn" class="btn-nav btn-nav-install" style="display:none;" onclick="triggerPwaInstall()" title="تثبيت التطبيق على جهازك">
                 <span>📲</span>
                 <span id="navInstallText">تثبيت التطبيق</span>
@@ -117,247 +359,176 @@
         </nav>
     </header>
 
-    <!-- 2. Hero Section -->
-    <section class="hero-section">
-        <div class="hero-pill" id="heroPill">✨ تشكيلة ٢٠٢٦ الفاخرة • Official 2026 Collection</div>
-        <h2 class="hero-title" id="heroTitle">عالم من إكسسوارات الأثاث والمطابخ الفاخرة</h2>
-        <p class="hero-subtitle" id="heroSub">
-            تصفح تشكيلة متكاملة تضم أكثر من ٥٩٠ منتجاً عالي الجودة من مفصلات، مقابض، وسكك حركة.
+    <!-- 2. Hero Presentation -->
+    <section class="landing-hero">
+        <div class="landing-hero-pill">✨ الكتالوج الرقمي والبوابة الرسمية 2026 • Official Portal</div>
+        <h2 class="landing-hero-title">عالم من الفخامة والاعتمادية الهندسية لإكسسوارات الأثاث والمطابخ</h2>
+        <p class="landing-hero-desc">
+            المرجع الأول والشريك المعتمد في مصر لأكبر تشكيلة إكسسوارات، مفصلات هيدروليك ثلاثية الأبعاد، سكك أدراج تاندم، ومقابض راقية تلبي احتياجات المصانع، الورش، ومهندسي الديكور بتوريد مباشر وفوري.
         </p>
 
-        <!-- Search Bar -->
-        <div class="search-wrapper">
-            <input type="text" id="mainSearch" class="search-input-box" placeholder="ابحث باسم المنتج، الكود أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي)...">
-            <span class="search-icon-btn">🔍</span>
-        </div>
+        <!-- Forwarding Search Bar -->
+        <form class="landing-search-box" onsubmit="event.preventDefault(); forwardSearchToMarket();">
+            <span style="font-size:20px; color:#94A3B8; margin-inline-end:6px;">🔍</span>
+            <input type="text" id="landingSearchInput" placeholder="ابحث باسم المنتج، الكود أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي شامبين)...">
+            <button type="submit" class="landing-search-btn">
+                <span>البحث بالمتجر</span>
+                <span>←</span>
+            </button>
+        </form>
 
-        <!-- Trust Badges (Inspired by Banxstore) -->
-        <div class="hero-trust-badges">
-            <div class="trust-badge-item">
-                <span class="trust-icon">🚚</span>
-                <div class="trust-text">
-                    <strong id="badge1Title">شحن سريع</strong>
-                    <span id="badge1Sub">لكافة محافظات مصر</span>
-                </div>
+        <!-- 3 Primary Gateway Actions -->
+        <div class="landing-hero-actions">
+            <a href="/market.html" class="btn-gateway-primary">
+                <span>🛒 تصفح المتجر والكتالوج الرقمي (591+ منتج)</span>
+                <span>←</span>
+            </a>
+            <a href="/printed_catalogs.html" class="btn-gateway-secondary">
+                <span>📖 الكتالوجات المطبوعة والطباعة PDF</span>
+            </a>
+            <a href="/about.html" class="btn-gateway-secondary">
+                <span>📍 تفاصيل المعرض في 6 أكتوبر</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Market Gateways (Forwarding Portals) -->
+    <main class="portals-section">
+        <div class="portals-grid">
+            <!-- Portal 1: Kitchens -->
+            <div class="portal-card kitchen">
+                <div class="portal-icon">🍳</div>
+                <h3 class="portal-title">عالم المطابخ الحديثة</h3>
+                <p class="portal-desc">
+                    مفصلات هيدروليك سوفت كلوز 3D، سكك أدراج تاندم مخفية، ترولي زيت، سلات تخزين ستانلس، وأنظمة فتح وإغلاق سلسة تضمن عمراً افتراضياً طويلاً.
+                </p>
+                <a href="/market.html?space=kitchen" class="portal-btn">
+                    <span>دخول قسم المطابخ</span>
+                    <span>←</span>
+                </a>
             </div>
-            <div class="trust-badge-item">
-                <span class="trust-icon">🛡️</span>
-                <div class="trust-text">
-                    <strong id="badge2Title">خامات معتمدة 100%</strong>
-                    <span id="badge2Sub">ستانلس وهيدروليك أصلي</span>
-                </div>
+
+            <!-- Portal 2: Dressing -->
+            <div class="portal-card dressing">
+                <div class="portal-icon">👔</div>
+                <h3 class="portal-title">عالم الدريسينج والخزائن</h3>
+                <p class="portal-desc">
+                    مواسير تعليق ألومنيوم بيضاوية ودائرية، مفصلات ألومنيوم وزجاج، منظمات إكسسوارات وأوشحة، وسكك حركة ناعمة تناسب أحدث صيحات غرف الملابس.
+                </p>
+                <a href="/market.html?space=dressing" class="portal-btn">
+                    <span>دخول قسم الدريسينج</span>
+                    <span>←</span>
+                </a>
             </div>
-            <div class="trust-badge-item">
-                <span class="trust-icon">🏷️</span>
-                <div class="trust-text">
-                    <strong id="badge3Title">أسعار رسمية معتمدة</strong>
-                    <span id="badge3Sub">تحديث مباشر وتوريد موثوق</span>
-                </div>
+
+            <!-- Portal 3: Handles -->
+            <div class="portal-card handles">
+                <div class="portal-icon">🚪</div>
+                <h3 class="portal-title">المقابض والتشطيبات الفاخرة</h3>
+                <p class="portal-desc">
+                    تشكيلة متكاملة من المقابض المودرن والكلاسيكية بمقاسات متعددة، ألوان ذهبي مطفي، أسود غير لامع، وستانلس مقاوم للبصمات والتآكل.
+                </p>
+                <a href="/market.html?cat=1" class="portal-btn">
+                    <span>تصفح تشكيلة المقابض</span>
+                    <span>←</span>
+                </a>
             </div>
-            <div class="trust-badge-item">
-                <span class="trust-icon">🤝</span>
-                <div class="trust-text">
-                    <strong id="badge4Title">معاينة ودعم متخصص</strong>
-                    <span id="badge4Sub">بالمعرض وعبر الواتساب</span>
-                </div>
+
+            <!-- Portal 4: Mechanical Systems -->
+            <div class="portal-card systems">
+                <div class="portal-icon">⚙️</div>
+                <h3 class="portal-title">الأنظمة الميكانيكية والهيدروليكية</h3>
+                <p class="portal-desc">
+                    بساتم غاز هيدروليكية لرفع الدرف، أنظمة ضغط للفتح (Push to Open)، وسكك حمولة ثقيلة حتى 45 كجم مصممة للخدمة الشاقة.
+                </p>
+                <a href="/market.html?cat=3" class="portal-btn">
+                    <span>تصفح الأنظمة الهندسية</span>
+                    <span>←</span>
+                </a>
             </div>
         </div>
+    </main>
 
-        <!-- Metrics Strip -->
-        <div class="metrics-strip">
-            <div class="metric-item">
-                <span class="metric-num">591+</span>
-                <span id="metricLabel1">منتج معتمد</span>
+    <!-- 4. B2B & Factory Direct Supply -->
+    <section class="b2b-section">
+        <div class="b2b-container">
+            <div>
+                <span style="font-size:13px; font-weight:800; color:#1A3F7F; text-transform:uppercase; letter-spacing:1px;">B2B Supply & Projects</span>
+                <h2 style="font-size:30px; font-weight:900; color:#0F172A; margin:10px 0 16px; line-height:1.3;">
+                    التوريد المباشر للمصانع، الورش، والمشاريع الهندسية
+                </h2>
+                <p style="font-size:15px; color:#475569; line-height:1.75; margin-bottom:24px;">
+                    نوفر لأصحاب المصانع ومهندسي الديكور توريداً مستمراً ومباشراً بأسعار رسمية معتمدة، مع إمكانية إصدار عروض أسعار تفصيلية رسمية وخصومات للكميات الكبيرة والتوريد المنتظم.
+                </p>
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                    <a href="https://wa.me/201140030036?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D9%88%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%83%D9%85%D9%8A%D8%A7%D8%AA%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A3%D9%88%20%D9%85%D8%B5%D9%86%D8%B9" target="_blank" rel="noopener" class="btn-gateway-primary" style="padding:14px 26px;">
+                        <span>💬 استفسار توريد مشاريع عبر واتساب</span>
+                    </a>
+                    <a href="/market.html" class="btn-gateway-secondary" style="background:#FFFFFF; color:#1A3F7F; border-color:#CBD5E1; padding:14px 24px;">
+                        <span>🛒 معاينة الأسعار بالمتجر</span>
+                    </a>
+                </div>
             </div>
-            <div class="metric-item">
-                <span class="metric-num">10</span>
-                <span id="metricLabel2">فئات متخصصة</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-num">100%</span>
-                <span id="metricLabel3">أسعار رسمية معتمدة</span>
+            <div style="background:#FFFFFF; padding:32px; border-radius:18px; border:1px solid #E2E8F0; box-shadow:0 8px 25px rgba(0,0,0,0.05);">
+                <h3 style="font-size:20px; font-weight:800; color:#0F172A; margin-bottom:18px;">لماذا يختارنا المحترفون؟</h3>
+                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">ضمان الاعتمادية والأصالة</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">خامات استانلس ستيل مقاومة للرطوبة وبساتم هيدروليك مختبرة لأكثر من 80,000 دورة.</p>
+                        </div>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">جاهزية المخزون الفوري</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">أكثر من 590 منتجاً جاهزاً للتسليم الفوري من مستودعات ومعرض مدينة 6 أكتوبر.</p>
+                        </div>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">شحن آمن وتغطية شاملة</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">شحن سريع لجميع محافظات جمهورية مصر العربية مع إمكانية المعاينة قبل الاستلام.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- 3. Main Catalog View -->
-    <main class="main-container">
-
-        <!-- Space / Usage Tabs (مطابخ، دريسنج، أخرى) -->
-        <div class="space-filter-bar" id="spaceFilterBar">
-            <!-- Injected via JavaScript -->
-        </div>
-
-        <!-- Category Pills Filter -->
-        <div class="category-filter-card">
-            <div class="category-scroll" id="categoryScroll">
-                <!-- Injected via JavaScript -->
+    <!-- 5. Showroom Spotlight -->
+    <section style="max-width:1200px; margin:60px auto; padding:0 20px;">
+        <div style="background:linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%); border-radius:20px; padding:45px 36px; color:#FFFFFF; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:26px; box-shadow:0 15px 35px rgba(15,39,82,0.35);">
+            <div>
+                <span style="background:rgba(255,255,255,0.15); padding:5px 14px; border-radius:20px; font-size:12px; font-weight:800;">📍 المعرض والمقر الرئيسي</span>
+                <h3 style="font-size:26px; font-weight:900; margin:12px 0 8px;">يسعدنا تشريفكم في معرض مدينة 6 أكتوبر</h3>
+                <p style="font-size:14.5px; opacity:0.9; margin:0 0 4px;">المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول (Silla Mall)</p>
+                <p style="font-size:13px; opacity:0.8; margin:0;">مواعيد العمل: يومياً طوال أيام الأسبوع من الساعة 10:00 صباحاً حتى 10:00 مساءً</p>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener" class="btn-gateway-primary" style="background:#EA4335; border-color:#EA4335;">
+                    <span>🗺️ الاتجاهات على Google Maps</span>
+                </a>
+                <a href="tel:01140030036" class="btn-gateway-secondary">
+                    <span>📞 اتصال 01140030036</span>
+                </a>
             </div>
         </div>
+    </section>
 
-        <!-- Catalog Toolbar -->
-        <div class="catalog-toolbar">
-            <div class="results-info" id="resultsInfo">
-                جاري تحميل المنتجات...
-            </div>
-            <div class="sort-group">
-                <label for="sortSelect" style="font-size:13px; font-weight:700; color:var(--text-muted);">الترتيب:</label>
-                <select id="sortSelect" class="sort-select" onchange="handleSortChange(this)">
-                    <option value="id_asc">الافتراضي (حسب الكود)</option>
-                    <option value="price_asc">الأقل سعراً أولاً</option>
-                    <option value="price_desc">الأعلى سعراً أولاً</option>
-                    <option value="id_desc">الأحدث أولاً</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Products Grid -->
-        <div class="products-grid" id="productsGrid">
-            <!-- Injected via JavaScript -->
-        </div>
-
-        <!-- Contact & Location Hub -->
-        <section class="contact-section" id="contact">
-            <div class="contact-header">
-                <span class="contact-tag">📍 المقر الرئيسي والمعرض • Showroom & Contact</span>
-                <h2 id="contactTitle">تواصل معنا وشرفنا بالزيارة</h2>
-                <p id="contactSub">
-                    يسعدنا استقبالكم في معرضنا للتعرف على تشكيلة إكسسوارات الأثاث والمطابخ الفاخرة، أو التواصل الفوري عبر الهاتف والواتساب للطلبات والاستفسارات.
-                </p>
-            </div>
-
-            <div class="contact-cards-grid">
-                <!-- Location Card -->
-                <div class="contact-card location">
-                    <div class="contact-card-top">
-                        <div class="contact-icon-box">📍</div>
-                        <div class="contact-info">
-                            <h3 id="locTitle">فرع ومعرض مدينة 6 أكتوبر</h3>
-                            <p id="locDesc">المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول</p>
-                        </div>
-                    </div>
-                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" class="contact-card-btn btn-card-maps" rel="noopener">
-                        <span>🗺️ الموقع على خرائط Google</span>
-                    </a>
-                </div>
-
-                <!-- Phone Card -->
-                <div class="contact-card phone">
-                    <div class="contact-card-top">
-                        <div class="contact-icon-box">📞</div>
-                        <div class="contact-info">
-                            <h3 id="phoneTitle">رقم التواصل والاتصال المباشر</h3>
-                            <p style="font-size:18px; font-weight:800; color:var(--navy); font-family:var(--font-en); letter-spacing:0.5px; margin-top:4px;">01140030036</p>
-                            <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">متاح يومياً لخدمة العملاء والرد على الاستفسارات</p>
-                        </div>
-                    </div>
-                    <a href="tel:01140030036" class="contact-card-btn btn-card-phone">
-                        <span>📞 اتصال هاتفي الآن</span>
-                    </a>
-                </div>
-
-                <!-- WhatsApp Card -->
-                <div class="contact-card whatsapp">
-                    <div class="contact-card-top">
-                        <div class="contact-icon-box">💬</div>
-                        <div class="contact-info">
-                            <h3 id="waTitle">محادثة واتساب الفورية</h3>
-                            <p style="font-size:18px; font-weight:800; color:#047857; font-family:var(--font-en); letter-spacing:0.5px; margin-top:4px;">01140030036</p>
-                            <p style="font-size:12px; color:var(--text-muted); margin-top:2px;">إرسال الاستفسارات وتأكيد كود المنتج والطلبات</p>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/201140030036?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%A5%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" class="contact-card-btn btn-card-wa" rel="noopener">
-                        <span>💬 تواصل سريع عبر WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Social Media Channels Bar -->
-            <div class="social-channels-wrap">
-                <div class="social-title" id="socialTitle">منصات التواصل الاجتماعي الرسمية</div>
-                <div class="social-pills-row">
-                    <a href="https://www.instagram.com/world_of_accessories.eg" target="_blank" class="social-pill instagram" rel="noopener">
-                        <span>📸</span>
-                        <span>Instagram • @world_of_accessories.eg</span>
-                    </a>
-                    <a href="https://www.tiktok.com/@world_of_accessories_eg" target="_blank" class="social-pill tiktok" rel="noopener">
-                        <span>🎵</span>
-                        <span>TikTok • @world_of_accessories_eg</span>
-                    </a>
-                    <a href="https://www.facebook.com/people/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA/61583899890449/" target="_blank" class="social-pill facebook" rel="noopener">
-                        <span>📘</span>
-                        <span>Facebook • عالم الإكسسوارات</span>
-                    </a>
-                    <a href="https://wa.me/201140030036" target="_blank" class="social-pill whatsapp" rel="noopener">
-                        <span>💬</span>
-                        <span>WhatsApp • 01140030036</span>
-                    </a>
-                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" class="social-pill maps" rel="noopener">
-                        <span>📍</span>
-                        <span>Google Maps • سيلا مول</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 4. Quick View Modal -->
-    <div class="modal-overlay" id="quickViewModal" onclick="if(event.target === this) closeQuickView()">
-        <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeQuickView()">✕</button>
-            <div class="modal-img-area img-shimmer-wrap" id="modalImgWrap">
-                <img id="modalImg" src="/Branding/logo-100.png" alt="Product" loading="lazy" decoding="async" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');" onerror="this.onerror=null; this.src='/Branding/logo-100.png'; this.parentElement.classList.add('loaded', 'img-error'); this.classList.add('loaded');">
-            </div>
-            <div class="modal-body">
-                <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px;">
-                    <span class="modal-badge" id="modalCatBadge">الفئة</span>
-                    <span class="modal-badge" id="modalUsageBadge" style="background:rgba(255,140,61,0.15); color:#D96010;">نطاق الاستخدام</span>
-                </div>
-                <h3 class="modal-title-ar" id="modalTitleAr">اسم المنتج بالعربي</h3>
-                <p class="modal-title-en" id="modalTitleEn">Product Name in English</p>
-                <div class="modal-price-box">
-                    <div>
-                        <div style="font-size:12px; color:var(--text-muted);">السعر الرسمي المعتمد:</div>
-                        <div class="modal-price-val" id="modalPrice">0 ج.م</div>
-                    </div>
-                    <div style="text-align:left;">
-                        <div style="font-size:11px; color:var(--text-muted);">كود المنتج:</div>
-                        <div style="font-weight:800; color:var(--navy); font-family:var(--font-en);" id="modalCodeVal">WOA-0001</div>
-                    </div>
-                </div>
-                <div class="product-specs-box modal-specs-box" id="modalSpecsBox"></div>
-                
-                <!-- B2B & Client Quantity Stepper -->
-                <div class="modal-qty-row">
-                    <span class="modal-qty-label" id="modalQtyLabel">الكمية المطلوبة:</span>
-                    <div class="modal-qty-stepper">
-                        <button type="button" class="btn-qty-step" onclick="adjustModalQty(-1)" aria-label="تقليل الكمية">−</button>
-                        <input type="number" id="modalQtyInput" value="1" min="1" max="999" class="input-qty-val">
-                        <button type="button" class="btn-qty-step" onclick="adjustModalQty(1)" aria-label="زيادة الكمية">+</button>
-                    </div>
-                </div>
-
-                <div class="modal-actions">
-                    <button id="modalAddToCartBtn" class="btn-modal-primary" style="background:#FF8C3D; border-color:#FF8C3D;">🛒 إضافة إلى السلة</button>
-                    <a id="modalWhatsAppBtn" class="btn-modal-primary" href="#">💬 استفسار وطلب عبر واتساب</a>
-                    <button id="modalCopyBtn" class="btn-modal-secondary">📋 نسخ كود المنتج</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. Site Footer (Modern 3-Column Ecommerce Layout) -->
+    <!-- 6. Universal Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
-                <!-- Col 1: Brand & Social -->
+                <!-- Col 1 -->
                 <div class="footer-col">
                     <div class="footer-brand-title">
                         <img src="/Branding/logo-80.png" alt="Logo" class="footer-brand-logo">
-                        <span id="footerBrandName">عالم الإكسسوارات</span>
+                        <span>عالم الاكسسوار</span>
                     </div>
-                    <p class="footer-desc" id="footerBrandDesc">
+                    <p class="footer-desc">
                         الرائدون في إكسسوارات ومفصلات ومقابض الأثاث والمطابخ الفاخرة في مصر. توريد مباشر، أسعار رسمية معتمدة، ودعم فني متخصص لتلبية احتياجات المصانع والورش والعملاء.
                     </p>
                     <div class="footer-social-links">
@@ -369,54 +540,36 @@
                     </div>
                 </div>
 
-                <!-- Col 2: Quick Links -->
+                <!-- Col 2: Site Ecosystem -->
                 <div class="footer-col">
-                    <h4 id="footerQuickLinksTitle">روابط سريعة</h4>
+                    <h4>بوابات الموقع والكتالوجات</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="#productsGrid">📦 <span id="fnLinkCatalog">تصفح المنتجات والأقسام</span></a></li>
-                        <li><a href="/about.html">✨ <span id="fnLinkAbout">عن عالم الإكسسوارات والمعرض</span></a></li>
-                        <li><a href="javascript:void(0)" onclick="if(window.WOACart) WOACart.open()">🛒 <span id="fnLinkCart">سلة المشتريات ومتابعة الطلب</span></a></li>
-                        <li><a href="javascript:void(0)" onclick="if(window.WOACart) WOACart.printQuotation()">📄 <span id="fnLinkQuote">طباعة عرض أسعار رسمي</span></a></li>
-                        <li><a href="#contact">📍 <span id="fnLinkContact">المعرض والتواصل المباشر</span></a></li>
-                        <li><a href="tel:01140030036">📞 <span>01140030036</span></a></li>
+                        <li><a href="/market.html">🛒 <span>المتجر والكتالوج الرقمي الشامل (591+ صنف)</span></a></li>
+                        <li><a href="/market.html?space=kitchen">🍳 <span>قسم مفصلات وإكسسوارات المطابخ</span></a></li>
+                        <li><a href="/market.html?space=dressing">👔 <span>قسم مستلزمات الدريسينج والخزائن</span></a></li>
+                        <li><a href="/printed_catalogs.html">📖 <span>مركز الكتالوجات المطبوعة والطباعة PDF</span></a></li>
+                        <li><a href="/about.html">✨ <span>عن الشركة وتفاصيل المعرض في 6 أكتوبر</span></a></li>
+                        <li><a href="/admin.html">⚙️ <span>لوحة التحكم الإدارية</span></a></li>
                     </ul>
                 </div>
 
-                <!-- Col 3: Showroom & Address -->
+                <!-- Col 3: Contact & Support -->
                 <div class="footer-col">
-                    <h4 id="footerShowroomTitle">المعرض والمقر الرئيسي</h4>
-                    <div class="footer-contact-items">
-                        <div class="footer-contact-item">
-                            <span class="ci-icon">📍</span>
-                            <div>
-                                <strong id="fnLocCity">مدينة 6 أكتوبر</strong><br>
-                                <span id="fnLocDetails">المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول</span>
-                            </div>
-                        </div>
-                        <div class="footer-contact-item">
-                            <span class="ci-icon">⏰</span>
-                            <div>
-                                <strong id="fnHoursTitle">مواعيد العمل:</strong> <span id="fnHoursVal">يومياً من 10 صباحاً حتى 10 مساءً</span>
-                            </div>
-                        </div>
-                        <div class="footer-contact-item">
-                            <span class="ci-icon">🚚</span>
-                            <div>
-                                <strong id="fnShippingTitle">الشحن والتوصيل:</strong> <span id="fnShippingVal">متاح لجميع محافظات جمهورية مصر العربية</span>
-                            </div>
-                        </div>
-                        <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener" class="footer-map-mini-btn">
-                            🗺️ <span id="fnMapBtnText">فتح الموقع على Google Maps</span>
-                        </a>
-                    </div>
+                    <h4>المعرض والمقر الرئيسي</h4>
+                    <p style="font-size:13px; color:#94A3B8; line-height:1.7;">
+                        مدينة 6 أكتوبر – المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول (Silla Mall)<br>
+                        مواعيد العمل: يومياً من 10 ص حتى 10 م<br>
+                        هاتف وخدمة عملاء: 01140030036
+                    </p>
+                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener" class="footer-map-mini-btn" style="margin-top:10px;">
+                        🗺️ فتح الموقع على Google Maps
+                    </a>
                 </div>
             </div>
 
             <div class="footer-bottom-bar">
-                <div id="footerCopyright">جميع الحقوق محفوظة &copy; 2026 عالم الإكسسوارات • World of Accessories</div>
-                <div class="footer-attribution">
-                    Created by <a href="https://yasserious.com" target="_blank" rel="noopener">yasserious.com</a>
-                </div>
+                <div>جميع الحقوق محفوظة &copy; 2026 عالم الاكسسوار • accessories World</div>
+                <div class="footer-attribution">Created by <a href="https://yasserious.com" target="_blank" rel="noopener">yasserious.com</a></div>
             </div>
         </div>
     </footer>
@@ -426,8 +579,16 @@
         <svg width="34" height="34" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
     </a>
 
-    <script src="/static/js/supabase_sync.js"></script>
-    <script src="/static/js/cart.js"></script>
     <script src="/static/js/catalog.js"></script>
+    <script>
+        function forwardSearchToMarket() {
+            var q = document.getElementById("landingSearchInput").value.trim();
+            if (q) {
+                window.location.href = "/market.html?q=" + encodeURIComponent(q);
+            } else {
+                window.location.href = "/market.html";
+            }
+        }
+    </script>
 </body>
 </html>

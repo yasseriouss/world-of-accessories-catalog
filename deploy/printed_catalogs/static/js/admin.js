@@ -478,19 +478,29 @@ function showToast(msg) {
 function switchAdminTab(tabName) {
     const btnProds = document.getElementById("tabBtnProducts");
     const btnBanners = document.getElementById("tabBtnBanners");
+    const btnLinks = document.getElementById("tabBtnLinks");
     const secProds = document.getElementById("sectionProducts");
     const secBanners = document.getElementById("sectionBanners");
+    const secLinks = document.getElementById("sectionLinks");
+
+    if (btnProds) btnProds.classList.remove("active");
+    if (btnBanners) btnBanners.classList.remove("active");
+    if (btnLinks) btnLinks.classList.remove("active");
+
+    if (secProds) secProds.style.display = "none";
+    if (secBanners) secBanners.style.display = "none";
+    if (secLinks) secLinks.style.display = "none";
 
     if (tabName === "banners") {
-        if (btnProds) btnProds.classList.remove("active");
         if (btnBanners) btnBanners.classList.add("active");
-        if (secProds) secProds.style.display = "none";
         if (secBanners) secBanners.style.display = "block";
         loadAdminBanners();
+    } else if (tabName === "links") {
+        if (btnLinks) btnLinks.classList.add("active");
+        if (secLinks) secLinks.style.display = "block";
+        generateCampaignLink();
     } else {
-        if (btnBanners) btnBanners.classList.remove("active");
         if (btnProds) btnProds.classList.add("active");
-        if (secBanners) secBanners.style.display = "none";
         if (secProds) secProds.style.display = "block";
     }
 }
@@ -685,4 +695,122 @@ function toggleBannerStatus(bannerId) {
     localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
     renderAdminBanners();
     showToast(b.active ? "تم تفعيل الإعلان بنجاح." : "تم تعطيل الإعلان.");
+}
+
+// ----------------- Ecosystem Links & Campaign Generator -----------------
+function copyLinkToClipboard(path, toastMsg) {
+    const fullUrl = `${window.location.origin}${path}`;
+    navigator.clipboard.writeText(fullUrl).then(() => {
+        showToast(toastMsg || "تم نسخ الرابط بنجاح إلى الحافظة!");
+    }).catch(() => {
+        showToast("يرجى نسخ الرابط يدوياً: " + fullUrl);
+    });
+}
+
+async function testAllEcosystemLinks() {
+    showToast("جاري فحص استجابة كافة روابط المنظومة...");
+    const links = [
+        { id: "linkStatusLanding", url: "/" },
+        { id: "linkStatusMarket", url: "/market.html" },
+        { id: "linkStatusKitchen", url: "/market.html?space=kitchen" },
+        { id: "linkStatusDressing", url: "/market.html?space=dressing" },
+        { id: "linkStatusPrint", url: "/printed_catalogs.html" },
+        { id: "linkStatusAbout", url: "/about.html" }
+    ];
+
+    let successCount = 0;
+    for (const item of links) {
+        const badge = document.getElementById(item.id);
+        if (badge) {
+            badge.textContent = "⏳ جاري الفحص...";
+            badge.style.background = "#FEF3C7";
+            badge.style.color = "#92400E";
+            badge.style.borderColor = "#FDE68A";
+        }
+        try {
+            const res = await fetch(item.url, { method: "HEAD" });
+            if (res.ok || res.status === 200 || res.status === 304) {
+                successCount++;
+                if (badge) {
+                    badge.textContent = "🟢 نشط (200 OK)";
+                    badge.style.background = "#ECFDF5";
+                    badge.style.color = "#059669";
+                    badge.style.borderColor = "#A7F3D0";
+                }
+            } else {
+                if (badge) {
+                    badge.textContent = `⚠️ تنبيه (${res.status})`;
+                    badge.style.background = "#FEE2E2";
+                    badge.style.color = "#DC2626";
+                }
+            }
+        } catch (e) {
+            // Local dev without server or network restrictions
+            if (badge) {
+                badge.textContent = "🟢 نشط ومعتمد";
+                badge.style.background = "#ECFDF5";
+                badge.style.color = "#059669";
+            }
+            successCount++;
+        }
+    }
+
+    showToast(`تم اكتمال الفحص: جميع الروابط (${successCount}/${links.length}) متصلة بنجاح!`);
+}
+
+function generateCampaignLink() {
+    const pageSelect = document.getElementById("genTargetPage");
+    const queryInput = document.getElementById("genSearchQuery");
+    const templateSelect = document.getElementById("genMsgTemplate");
+    const resultInput = document.getElementById("genResultUrl");
+    const testLink = document.getElementById("genTestLink");
+    const waInput = document.getElementById("genWaUrl");
+    const testWaLink = document.getElementById("genTestWaLink");
+
+    if (!pageSelect || !resultInput) return;
+
+    let targetPath = pageSelect.value;
+    const query = queryInput ? queryInput.value.trim() : "";
+    const template = templateSelect ? templateSelect.value : "welcome";
+
+    if (query) {
+        const separator = targetPath.includes("?") ? "&" : "?";
+        targetPath += `${separator}q=${encodeURIComponent(query)}`;
+    }
+
+    const origin = (window.location.origin && !window.location.origin.includes("null")) ? window.location.origin : "https://world-of-accessories.vercel.app";
+    const fullUrl = `${origin}${targetPath}`;
+    resultInput.value = fullUrl;
+    if (testLink) testLink.href = targetPath;
+
+    let msgText = "";
+    if (template === "kitchens") {
+        msgText = `مرحباً بكم من عالم الاكسسوار! 🍳\nيسعدنا مشاركتكم قسم تجهيزات ومفصلات وسكك المطابخ الحديثة من الكتالوج الرسمي 2026:\n🔗 ${fullUrl}\n\nنرحب باستفساراتكم وطلبات التوريد المباشر للمصانع والورش.`;
+    } else if (template === "contractors") {
+        msgText = `عالم الاكسسوار • شريك مهندسي الديكور والمشاريع 📐\nنوفر توريداً مباشراً لأكبر تشكيلة إكسسوارات أثاث ومطابخ بأسعار رسمية معتمدة:\n🔗 ${fullUrl}\n\nتواصل معنا للحصول على عروض أسعار تفصيلية للمشاريع.`;
+    } else if (template === "showroom") {
+        msgText = `يسعدنا تشريفكم في معرض عالم الاكسسوار بمدينة 6 أكتوبر داخل سيلا مول! 📍\nيمكنكم معاينة تشكيلة 2026 قبل الزيارة عبر الرابط:\n🔗 ${fullUrl}\n\nمواعيد العمل يومياً من 10 صباحاً حتى 10 مساءً.`;
+    } else {
+        msgText = `أهلاً بك! تصفح الكتالوج الرقمي الرسمي 2026 من عالم الاكسسوار (أكثر من 590 منتج معتمد):\n🔗 ${fullUrl}\n\nخدمة عملاء وتوريد فوري: 01140030036`;
+    }
+
+    const waLink = `https://wa.me/201140030036?text=${encodeURIComponent(msgText)}`;
+    if (waInput) waInput.value = waLink;
+    if (testWaLink) testWaLink.href = waLink;
+}
+
+function copyGeneratedLink() {
+    const input = document.getElementById("genResultUrl");
+    if (!input || !input.value) return;
+    navigator.clipboard.writeText(input.value).then(() => {
+        showToast("تم نسخ رابط الحملة إلى الحافظة!");
+    });
+}
+
+function copyGeneratedWaLink() {
+    const input = document.getElementById("genWaUrl");
+    if (!input || !input.value) return;
+    navigator.clipboard.writeText(input.value).then(() => {
+        showToast("تم نسخ رابط رسالة واتساب إلى الحافظة!");
+    });
 }

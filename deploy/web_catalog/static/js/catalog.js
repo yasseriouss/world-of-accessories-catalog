@@ -113,8 +113,76 @@ function dismissPreloader() {
     }, 650);
 }
 
+// ----------------- URL Deep-Linking & Parameter Routing -----------------
+function parseUrlParameters() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+
+        // 1. Space / Usage type filter (?space=kitchen, ?space=dressing, ?space=other)
+        const spaceParam = params.get("space") || params.get("usage");
+        if (spaceParam && ["kitchen", "dressing", "other", "all"].includes(spaceParam.toLowerCase())) {
+            activeUsageType = spaceParam.toLowerCase();
+        }
+
+        // 2. Category ID filter (?cat=1, ?category=1)
+        const catParam = params.get("cat") || params.get("category");
+        if (catParam) {
+            const parsedCat = parseInt(catParam, 10);
+            if (!isNaN(parsedCat) && parsedCat >= 0) {
+                activeCategoryId = parsedCat;
+            }
+        }
+
+        // 3. Search query (?q=مفصلة, ?search=...)
+        const queryParam = params.get("q") || params.get("search");
+        if (queryParam) {
+            searchQuery = queryParam.trim();
+            const searchInput = document.getElementById("mainSearch");
+            if (searchInput) searchInput.value = searchQuery;
+        }
+
+        // 4. Cart auto-open modal (?open=cart)
+        const openParam = params.get("open");
+        if (openParam === "cart") {
+            setTimeout(() => {
+                if (window.WOACart && typeof window.WOACart.open === "function") {
+                    window.WOACart.open();
+                }
+            }, 600);
+        }
+    } catch (e) {
+        console.warn("Could not parse URL search parameters:", e);
+    }
+}
+
+function updateUrlParams() {
+    try {
+        if (!window.location.pathname.includes("market") && !document.getElementById("productsGrid")) {
+            return; // Only sync query params on market page
+        }
+        const url = new URL(window.location.href);
+        if (activeUsageType && activeUsageType !== "all") {
+            url.searchParams.set("space", activeUsageType);
+        } else {
+            url.searchParams.delete("space");
+        }
+        if (activeCategoryId && activeCategoryId > 0) {
+            url.searchParams.set("cat", activeCategoryId);
+        } else {
+            url.searchParams.delete("cat");
+        }
+        if (searchQuery) {
+            url.searchParams.set("q", searchQuery);
+        } else {
+            url.searchParams.delete("q");
+        }
+        window.history.replaceState({}, "", url.toString());
+    } catch (e) {}
+}
+
 // Resilient Initialization (Handles Cached / Instant Ready States)
 function initCatalogApp() {
+    parseUrlParameters();
     applyLanguage(currentLang);
     fetchBanners();
     fetchUsageTypes();
@@ -287,58 +355,52 @@ function applyLanguage(lang) {
     document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
     const t = i18n[lang];
 
-    document.getElementById("navBrandTitle").textContent = t.brandTitle;
-    document.getElementById("navBrandSub").textContent = t.brandSub;
-    document.getElementById("langToggleBtn").textContent = t.langBtn;
-    const adminBtn = document.getElementById("navAdminBtn");
-    if (adminBtn) adminBtn.textContent = t.adminBtn;
-    const printedBtn = document.getElementById("navPrintedBtn");
-    if (printedBtn) printedBtn.textContent = t.printedBtn;
-    const aboutNavText = document.getElementById("navAboutText");
-    if (aboutNavText) aboutNavText.textContent = t.navAbout;
-    const installNavText = document.getElementById("navInstallText");
-    if (installNavText) installNavText.textContent = t.navInstall;
-    const fnAbout = document.getElementById("fnLinkAbout");
-    if (fnAbout) fnAbout.textContent = (lang === "ar") ? "عن عالم الاكسسوار والمعرض" : "About Us & Showroom";
-    const qtyLbl = document.getElementById("modalQtyLabel");
-    if (qtyLbl) qtyLbl.textContent = (lang === "ar") ? "الكمية المطلوبة:" : "Quantity:";
+    const setTxt = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+    };
+    const setAttr = (id, attr, val) => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute(attr, val);
+    };
+
+    setTxt("navBrandTitle", t.brandTitle);
+    setTxt("navBrandSub", t.brandSub);
+    setTxt("langToggleBtn", t.langBtn);
+    setTxt("navAdminBtn", t.adminBtn);
+    setTxt("navPrintedBtn", t.printedBtn);
+    setTxt("navAboutText", t.navAbout);
+    setTxt("navInstallText", t.navInstall);
+    setTxt("fnLinkAbout", (lang === "ar") ? "عن عالم الاكسسوار والمعرض" : "About Us & Showroom");
+    setTxt("modalQtyLabel", (lang === "ar") ? "الكمية المطلوبة:" : "Quantity:");
 
     // Dynamic PWA Manifest and Apple App Title localization for phone home screen
-    const pwaLink = document.getElementById("pwaManifestLink");
-    const appleMeta = document.getElementById("appleAppTitle");
     if (lang === "en") {
-        if (pwaLink) pwaLink.setAttribute("href", "/manifest_en.json");
-        if (appleMeta) appleMeta.setAttribute("content", "accessories World");
+        setAttr("pwaManifestLink", "href", "/manifest_en.json");
+        setAttr("appleAppTitle", "content", "accessories World");
         document.title = "accessories World | Official Digital Catalog 2026";
     } else {
-        if (pwaLink) pwaLink.setAttribute("href", "/manifest.json");
-        if (appleMeta) appleMeta.setAttribute("content", "عالم الاكسسوار");
+        setAttr("pwaManifestLink", "href", "/manifest.json");
+        setAttr("appleAppTitle", "content", "عالم الاكسسوار");
         document.title = "عالم الاكسسوار | الكتالوج الرقمي الرسمي 2026";
     }
 
-    document.getElementById("heroPill").textContent = t.heroPill;
-    document.getElementById("heroTitle").textContent = t.heroTitle;
-    document.getElementById("heroSub").textContent = t.heroSub;
-    document.getElementById("mainSearch").placeholder = t.searchPlaceholder;
+    setTxt("heroPill", t.heroPill);
+    setTxt("heroTitle", t.heroTitle);
+    setTxt("heroSub", t.heroSub);
+    setAttr("mainSearch", "placeholder", t.searchPlaceholder);
 
-    document.getElementById("metricLabel1").textContent = t.certifiedItems;
-    document.getElementById("metricLabel2").textContent = t.specializedCategories;
-    document.getElementById("metricLabel3").textContent = t.officialPrices;
+    setTxt("metricLabel1", t.certifiedItems);
+    setTxt("metricLabel2", t.specializedCategories);
+    setTxt("metricLabel3", t.officialPrices);
 
-    const cTitle = document.getElementById("contactTitle");
-    if (cTitle) cTitle.textContent = t.contactTitle;
-    const cSub = document.getElementById("contactSub");
-    if (cSub) cSub.textContent = t.contactSub;
-    const lTitle = document.getElementById("locTitle");
-    if (lTitle) lTitle.textContent = t.locTitle;
-    const lDesc = document.getElementById("locDesc");
-    if (lDesc) lDesc.textContent = t.locDesc;
-    const pTitle = document.getElementById("phoneTitle");
-    if (pTitle) pTitle.textContent = t.phoneTitle;
-    const wTitle = document.getElementById("waTitle");
-    if (wTitle) wTitle.textContent = t.waTitle;
-    const sTitle = document.getElementById("socialTitle");
-    if (sTitle) sTitle.textContent = t.socialTitle;
+    setTxt("contactTitle", t.contactTitle);
+    setTxt("contactSub", t.contactSub);
+    setTxt("locTitle", t.locTitle);
+    setTxt("locDesc", t.locDesc);
+    setTxt("phoneTitle", t.phoneTitle);
+    setTxt("waTitle", t.waTitle);
+    setTxt("socialTitle", t.socialTitle);
 }
 
 // ----------------- API Data Fetching -----------------
@@ -534,6 +596,7 @@ function renderUsageFilterBar() {
 function selectUsageType(typeKey) {
     activeUsageType = typeKey;
     renderUsageFilterBar();
+    updateUrlParams();
     fetchProducts();
 }
 
@@ -568,6 +631,7 @@ function renderCategories() {
 function selectCategory(catId) {
     activeCategoryId = catId;
     renderCategories();
+    updateUrlParams();
     fetchProducts();
 }
 
@@ -683,6 +747,7 @@ function setupSearchInput() {
         clearTimeout(searchDebounceTimer);
         searchDebounceTimer = setTimeout(() => {
             searchQuery = e.target.value.trim();
+            updateUrlParams();
             fetchProducts();
         }, 250);
     });

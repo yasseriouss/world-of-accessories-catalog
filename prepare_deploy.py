@@ -12,17 +12,44 @@ shutil.rmtree(print_dir, ignore_errors=True)
 os.makedirs(web_dir, exist_ok=True)
 os.makedirs(print_dir, exist_ok=True)
 
-# ----------------- 1. Setup Web Catalog -----------------
-with open(os.path.join(base_dir, "web_catalog", "templates", "index.html"), "r", encoding="utf-8") as f:
-    web_index_html = f.read()
+# ----------------- 1. Setup Web Catalog & Landing Page -----------------
+# Landing Page is the primary entry point (index.html & landing.html)
+with open(os.path.join(base_dir, "web_catalog", "templates", "landing.html"), "r", encoding="utf-8") as f:
+    landing_html = f.read()
 
-# Write to root index.html (for Vercel repositories deployed from root)
+# Update web_catalog/templates/index.html to be canonical landing
+with open(os.path.join(base_dir, "web_catalog", "templates", "index.html"), "w", encoding="utf-8") as f:
+    f.write(landing_html)
+
+# Write landing page to root index.html and landing.html
 with open(os.path.join(base_dir, "index.html"), "w", encoding="utf-8") as f:
-    f.write(web_index_html)
+    f.write(landing_html)
+with open(os.path.join(base_dir, "landing.html"), "w", encoding="utf-8") as f:
+    f.write(landing_html)
 
-# Write to deploy/web_catalog/index.html
+# Write landing page to deploy/web_catalog/index.html and landing.html
 with open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8") as f:
-    f.write(web_index_html)
+    f.write(landing_html)
+with open(os.path.join(web_dir, "landing.html"), "w", encoding="utf-8") as f:
+    f.write(landing_html)
+
+# Sync Market / Catalog Page (market.html)
+with open(os.path.join(base_dir, "web_catalog", "templates", "market.html"), "r", encoding="utf-8") as f:
+    market_html = f.read()
+
+with open(os.path.join(base_dir, "market.html"), "w", encoding="utf-8") as f:
+    f.write(market_html)
+with open(os.path.join(web_dir, "market.html"), "w", encoding="utf-8") as f:
+    f.write(market_html)
+
+# Sync Admin Control Center (admin.html)
+with open(os.path.join(base_dir, "web_catalog", "templates", "admin.html"), "r", encoding="utf-8") as f:
+    admin_html = f.read()
+
+with open(os.path.join(base_dir, "admin.html"), "w", encoding="utf-8") as f:
+    f.write(admin_html)
+with open(os.path.join(web_dir, "admin.html"), "w", encoding="utf-8") as f:
+    f.write(admin_html)
 
 # Sync static assets to root and deploy/web_catalog
 root_static = os.path.join(base_dir, "static")
@@ -63,6 +90,10 @@ if os.path.exists(about_src):
     with open(os.path.join(print_dir, "about.html"), "w", encoding="utf-8") as f:
         f.write(about_content)
 
+# Sync Printed Catalogs Hub into web_catalog deploy
+if os.path.exists(os.path.join(base_dir, "printed_catalogs.html")):
+    shutil.copy(os.path.join(base_dir, "printed_catalogs.html"), os.path.join(web_dir, "printed_catalogs.html"))
+
 # Enterprise Security & Performance Headers
 security_headers = [
     {"key": "X-Content-Type-Options", "value": "nosniff"},
@@ -72,10 +103,18 @@ security_headers = [
     {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}
 ]
 
-# Web vercel.json (Zero rewrites or links to admin or print portals)
+# Web vercel.json with clean rewrites
 web_vercel = {
     "version": 2,
     "cleanUrls": True,
+    "rewrites": [
+        {"source": "/market", "destination": "/market.html"},
+        {"source": "/catalog", "destination": "/market.html"},
+        {"source": "/landing", "destination": "/landing.html"},
+        {"source": "/about", "destination": "/about.html"},
+        {"source": "/admin", "destination": "/admin.html"},
+        {"source": "/print", "destination": "/printed_catalogs.html"}
+    ],
     "headers": [
         {
             "source": "/(.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|woff|ttf|css|js))",

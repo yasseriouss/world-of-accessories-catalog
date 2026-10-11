@@ -1,6 +1,32 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/market",
+      "destination": "/market.html"
+    },
+    {
+      "source": "/catalog",
+      "destination": "/market.html"
+    },
+    {
+      "source": "/landing",
+      "destination": "/landing.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/print",
+      "destination": "/printed_catalogs.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|woff|ttf|css|js))",
