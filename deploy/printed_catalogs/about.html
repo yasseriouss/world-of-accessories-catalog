@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | عالم الإكسسوارات World of Accessories</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
+    <link id="pwaManifestLink" rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1A3F7F">
     <link rel="apple-touch-icon" href="/Branding/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta id="appleAppTitle" name="apple-mobile-web-app-title" content="عالم الاكسسوار">
+    <meta name="description" content="عن عالم الاكسسوار - قصة الجودة ومعرض 6 أكتوبر">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem("woa_lang");
+                var isEn = saved === "en" || (!saved && navigator.language && !navigator.language.toLowerCase().startsWith("ar"));
+                var m = document.getElementById("pwaManifestLink");
+                var a = document.getElementById("appleAppTitle");
+                if (isEn) {
+                    if (m) m.setAttribute("href", "/manifest_en.json");
+                    if (a) a.setAttribute("content", "accessories World");
+                }
+            } catch(e) {}
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/fonts.css">

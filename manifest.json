@@ -1,8 +1,8 @@
 {
-  "name": "عالم الإكسسوارات | الكتالوج الرقمي الرسمي 2026",
-  "short_name": "عالم الإكسسوارات",
-  "description": "الكتالوج الرقمي الرسمي لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ 2026 - World of Accessories",
-  "start_url": "/?source=pwa",
+  "name": "عالم الاكسسوار | الكتالوج الرقمي الرسمي 2026",
+  "short_name": "عالم الاكسسوار",
+  "description": "الكتالوج الرقمي الرسمي لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ 2026",
+  "start_url": "/?source=pwa&lang=ar",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",

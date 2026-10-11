@@ -15,8 +15,8 @@ let currentLang = localStorage.getItem("woa_lang") || "ar";
 
 const i18n = {
     ar: {
-        brandTitle: "عالم الإكسسوارات",
-        brandSub: "World of Accessories • Official Catalog",
+        brandTitle: "عالم الاكسسوار",
+        brandSub: "World of Accessories • الكتالوج الرسمي 2026",
         heroPill: "✨ تشكيلة ٢٠٢٦ الفاخرة • Official 2026 Collection",
         heroTitle: "عالم من إكسسوارات الأثاث والمطابخ الفاخرة",
         heroSub: "تصفح تشكيلة متكاملة تضم أكثر من ٥٩٠ منتجاً عالي الجودة من مفصلات، مقابض، وسكك حركة.",
@@ -55,8 +55,8 @@ const i18n = {
         navInstall: "تثبيت التطبيق"
     },
     en: {
-        brandTitle: "World of Accessories",
-        brandSub: "Premium Hardware & Architectural Fittings",
+        brandTitle: "accessories World",
+        brandSub: "Official 2026 Digital Catalog",
         heroPill: "✨ Official 2026 Collection • High Quality Hardware",
         heroTitle: "Premium Furniture & Kitchen Hardware Fittings",
         heroSub: "Explore an executive collection of over 590 certified hardware fittings: soft-close hinges, modern handles, and precision drawer systems.",
@@ -299,7 +299,22 @@ function applyLanguage(lang) {
     const installNavText = document.getElementById("navInstallText");
     if (installNavText) installNavText.textContent = t.navInstall;
     const fnAbout = document.getElementById("fnLinkAbout");
-    if (fnAbout) fnAbout.textContent = (lang === "ar") ? "عن عالم الإكسسوارات والمعرض" : "About Us & Showroom";
+    if (fnAbout) fnAbout.textContent = (lang === "ar") ? "عن عالم الاكسسوار والمعرض" : "About Us & Showroom";
+    const qtyLbl = document.getElementById("modalQtyLabel");
+    if (qtyLbl) qtyLbl.textContent = (lang === "ar") ? "الكمية المطلوبة:" : "Quantity:";
+
+    // Dynamic PWA Manifest and Apple App Title localization for phone home screen
+    const pwaLink = document.getElementById("pwaManifestLink");
+    const appleMeta = document.getElementById("appleAppTitle");
+    if (lang === "en") {
+        if (pwaLink) pwaLink.setAttribute("href", "/manifest_en.json");
+        if (appleMeta) appleMeta.setAttribute("content", "accessories World");
+        document.title = "accessories World | Official Digital Catalog 2026";
+    } else {
+        if (pwaLink) pwaLink.setAttribute("href", "/manifest.json");
+        if (appleMeta) appleMeta.setAttribute("content", "عالم الاكسسوار");
+        document.title = "عالم الاكسسوار | الكتالوج الرقمي الرسمي 2026";
+    }
 
     document.getElementById("heroPill").textContent = t.heroPill;
     document.getElementById("heroTitle").textContent = t.heroTitle;
@@ -731,12 +746,19 @@ function openQuickView(prodId) {
         }
     }
 
-    document.getElementById("modalWhatsAppBtn").onclick = () => orderOnWhatsApp(prodId);
+    const qtyInp = document.getElementById("modalQtyInput");
+    if (qtyInp) qtyInp.value = 1;
+
+    document.getElementById("modalWhatsAppBtn").onclick = () => {
+        const q = qtyInp ? parseInt(qtyInp.value) || 1 : 1;
+        orderOnWhatsApp(prodId, q);
+    };
     document.getElementById("modalCopyBtn").onclick = () => copySkuCode(code);
     const addCartModalBtn = document.getElementById("modalAddToCartBtn");
     if (addCartModalBtn) {
         addCartModalBtn.onclick = () => {
-            handleAddToCart(prodId);
+            const q = qtyInp ? parseInt(qtyInp.value) || 1 : 1;
+            handleAddToCart(prodId, q);
             closeQuickView();
         };
     }
@@ -745,16 +767,25 @@ function openQuickView(prodId) {
     modal.classList.add("open");
 }
 
+function adjustModalQty(delta) {
+    const input = document.getElementById("modalQtyInput");
+    if (!input) return;
+    let val = (parseInt(input.value) || 1) + delta;
+    if (val < 1) val = 1;
+    if (val > 999) val = 999;
+    input.value = val;
+}
+
 function closeQuickView() {
     const modal = document.getElementById("quickViewModal");
     if (modal) modal.classList.remove("open");
 }
 
-function handleAddToCart(prodId) {
+function handleAddToCart(prodId, qty = 1) {
     const p = allProducts.find(item => item.id === prodId || item.n === prodId);
     if (!p) return;
     if (window.WOACart) {
-        window.WOACart.addItem(p, 1);
+        window.WOACart.addItem(p, qty);
     }
 }
 
@@ -764,13 +795,16 @@ function copySkuCode(code) {
     });
 }
 
-function orderOnWhatsApp(prodId) {
+function orderOnWhatsApp(prodId, qty = 1) {
     const p = allProducts.find(item => item.id === prodId || item.n === prodId);
     if (!p) return;
 
     const code = `WOA-${String(p.id || p.n || 0).padStart(4, '0')}`;
     const title = (currentLang === "ar") ? p.ar : p.en;
-    const msg = `مرحباً عالم الإكسسوارات، أود الاستفسار عن المنتج:\n\n🏷️ الاسم: ${title}\n🔖 الكود: ${code}\n💰 السعر: ${p.price} جنيه مصري\n\nيرجى تأكيد التوافر والتفاصيل.`;
+    const qtyTxt = (qty > 1) ? `\n🔢 الكمية المطلوبة: ${qty} قطعة` : '';
+    const isAr = (currentLang === "ar");
+    const greeting = isAr ? 'مرحباً عالم الاكسسوار، أود الاستفسار وطلب المنتج:' : 'Hello Accessories World, I would like to order:';
+    const msg = `${greeting}\n\n🏷️ الاسم: ${title}\n🔖 الكود: ${code}\n💰 السعر: ${p.price} EGP${qtyTxt}\n\nيرجى تأكيد التوافر والتفاصيل.`;
     const waUrl = `https://wa.me/201140030036?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, "_blank");
 }
