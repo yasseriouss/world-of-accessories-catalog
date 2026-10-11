@@ -16,10 +16,19 @@ os.makedirs(print_dir, exist_ok=True)
 with open(os.path.join(base_dir, "web_catalog", "templates", "index.html"), "r", encoding="utf-8") as f:
     web_index_html = f.read()
 
+# Write to root index.html (for Vercel repositories deployed from root)
+with open(os.path.join(base_dir, "index.html"), "w", encoding="utf-8") as f:
+    f.write(web_index_html)
+
+# Write to deploy/web_catalog/index.html
 with open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(web_index_html)
 
-# Static assets
+# Sync static assets to root and deploy/web_catalog
+root_static = os.path.join(base_dir, "static")
+shutil.rmtree(root_static, ignore_errors=True)
+shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), root_static)
+
 shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(web_dir, "static"))
 shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(web_dir, "styles"))
 shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(web_dir, "scripts"))
