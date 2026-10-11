@@ -378,6 +378,27 @@ async def get_generator_status():
             pass
     return {"status": "ready", "last_generated_at": None, "products_count": len(load_products())}
 
+BANNERS_FILE = os.path.join(root_dir, "data", "banners.json")
+
+@app.get("/api/banners")
+async def get_banners():
+    if os.path.exists(BANNERS_FILE):
+        try:
+            with open(BANNERS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return []
+
+@app.post("/api/banners")
+async def save_banners(banners: list = Body(...)):
+    try:
+        with open(BANNERS_FILE, "w", encoding="utf-8") as f:
+            json.dump(banners, f, ensure_ascii=False, indent=2)
+        return {"success": True, "count": len(banners)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 # ----------------- Static Mounts -----------------
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")

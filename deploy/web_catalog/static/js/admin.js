@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAdminStats();
     loadCategories();
     loadProducts();
+    loadAdminBanners();
     setupImageUploader();
 });
 
@@ -42,25 +43,28 @@ function checkAdminAuth() {
 
 async function submitAdminPin() {
     const pin = document.getElementById("pinInput").value;
-    try {
-        const res = await fetch("/api/admin/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pin: pin })
-        });
-        if (res.ok) {
-            const data = await res.json();
-            if (data.success) {
-                sessionStorage.setItem("woa_admin_token", data.token || "admin_session_ok");
-                document.getElementById("authModal").classList.remove("open");
-                showToast("مرحباً بك! تم تسجيل الدخول بنجاح.");
-                loadAdminStats();
-                loadProducts();
-                return;
+    const isLocalApiServer = (window.location.port === "8080");
+    if (isLocalApiServer) {
+        try {
+            const res = await fetch("/api/admin/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ pin: pin })
+            });
+            if (res.ok) {
+                const data = await res.json();
+                if (data.success) {
+                    sessionStorage.setItem("woa_admin_token", data.token || "admin_session_ok");
+                    document.getElementById("authModal").classList.remove("open");
+                    showToast("مرحباً بك! تم تسجيل الدخول بنجاح.");
+                    loadAdminStats();
+                    loadProducts();
+                    return;
+                }
             }
+        } catch (err) {
+            // Fallback for static deployment
         }
-    } catch (err) {
-        // Fallback for static deployment
     }
 
     if (pin === "2026") {
@@ -81,17 +85,25 @@ function adminLogout() {
 
 // ----------------- Stats & Generator Status -----------------
 async function loadAdminStats() {
+    const isLocalApiServer = (window.location.port === "8080");
+    if (!isLocalApiServer) {
+        const el = document.getElementById("statLastBuild");
+        if (el) el.textContent = "جاهز ومعتمد";
+        return;
+    }
     try {
         const statRes = await fetch("/api/generator-status");
-        const statData = await statRes.json();
-        if (statData.last_generated_at) {
-            const d = new Date(statData.last_generated_at);
-            document.getElementById("statLastBuild").textContent = d.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-        } else {
-            document.getElementById("statLastBuild").textContent = "جاهز";
+        if (statRes.ok) {
+            const statData = await statRes.json();
+            if (statData.last_generated_at) {
+                const d = new Date(statData.last_generated_at);
+                document.getElementById("statLastBuild").textContent = d.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+            } else {
+                document.getElementById("statLastBuild").textContent = "جاهز";
+            }
         }
     } catch (err) {
-        console.error("Failed to load status:", err);
+        // Fallback
     }
 }
 
@@ -460,4 +472,217 @@ function showToast(msg) {
     setTimeout(() => {
         toast.classList.remove("show");
     }, 3500);
+}
+
+// ----------------- Tab Navigation Switcher -----------------
+function switchAdminTab(tabName) {
+    const btnProds = document.getElementById("tabBtnProducts");
+    const btnBanners = document.getElementById("tabBtnBanners");
+    const secProds = document.getElementById("sectionProducts");
+    const secBanners = document.getElementById("sectionBanners");
+
+    if (tabName === "banners") {
+        if (btnProds) btnProds.classList.remove("active");
+        if (btnBanners) btnBanners.classList.add("active");
+        if (secProds) secProds.style.display = "none";
+        if (secBanners) secBanners.style.display = "block";
+        loadAdminBanners();
+    } else {
+        if (btnBanners) btnBanners.classList.remove("active");
+        if (btnProds) btnProds.classList.add("active");
+        if (secBanners) secBanners.style.display = "none";
+        if (secProds) secProds.style.display = "block";
+    }
+}
+
+// ----------------- Banner & Ads Management -----------------
+let adminBanners = [];
+let currentEditingBannerId = null;
+
+async function loadAdminBanners() {
+    try {
+        const stored = localStorage.getItem("woa_banners_v1");
+        if (stored) {
+            adminBanners = JSON.parse(stored);
+            renderAdminBanners();
+            return;
+        }
+    } catch (e) {}
+
+    try {
+        const res = await fetch("/data/banners.json");
+        if (res.ok) {
+            adminBanners = await res.json();
+            localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
+            renderAdminBanners();
+            return;
+        }
+    } catch (e) {}
+
+    adminBanners = [];
+    renderAdminBanners();
+}
+
+function renderAdminBanners() {
+    const tbody = document.getElementById("adminBannersTableBody");
+    const badge = document.getElementById("tabBadgeBanners");
+    if (badge) badge.textContent = adminBanners.length;
+
+    // Update Live Preview Strip with the first active banner
+    const activeBanners = adminBanners.filter(b => b.active !== false);
+    const prevBadge = document.getElementById("bannerPrevBadge");
+    const prevText = document.getElementById("bannerPrevText");
+    if (activeBanners.length > 0) {
+        if (prevBadge) prevBadge.textContent = activeBanners[0].badge_ar || activeBanners[0].badge_en || 'إعلان';
+        if (prevText) prevText.textContent = activeBanners[0].text_ar || activeBanners[0].text_en;
+    } else {
+        if (prevBadge) prevBadge.textContent = "لا توجد إعلانات نشطة";
+        if (prevText) prevText.textContent = "شريط الإعلانات معطل حالياً لعدم وجود إعلانات مفعلة.";
+    }
+
+    if (!tbody) return;
+
+    if (adminBanners.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="7" style="text-align:center; padding:36px; color:var(--text-muted);">
+                    لا توجد إعلانات مسجلة حالياً. اضغط على <strong>➕ إضافة إعلان / بانر جديد</strong> لإنشاء أول إعلان.
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    let html = "";
+    adminBanners.forEach((b, idx) => {
+        const isActive = (b.active !== false);
+        const statusPill = isActive
+            ? `<span class="badge-tag-pill active">🟢 مفعّل</span>`
+            : `<span class="badge-tag-pill inactive">⚪ معطّل</span>`;
+        const toggleBtnTitle = isActive ? "تعطيل الإعلان" : "تفعيل الإعلان";
+        const linkDisplay = b.link ? `<a href="${b.link}" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline; font-size:12px;">🔗 رابط</a>` : `<span style="color:#94A3B8;">—</span>`;
+
+        html += `
+            <tr>
+                <td><strong>#${idx + 1}</strong></td>
+                <td>
+                    <span class="badge-tag-pill active" style="background:rgba(255,140,61,0.2); border:1px solid #FF8C3D; color:#E87528;">
+                        ${escapeHTML(b.badge_ar || b.badge_en || 'إعلان')}
+                    </span>
+                </td>
+                <td style="font-weight:600; max-width:320px;">${escapeHTML(b.text_ar || '')}</td>
+                <td style="color:var(--text-muted); font-size:12px; max-width:260px;">${escapeHTML(b.text_en || '—')}</td>
+                <td>${linkDisplay}</td>
+                <td>
+                    <button type="button" class="btn-table-action" onclick="toggleBannerStatus(${b.id})" title="${toggleBtnTitle}" style="border:none; background:transparent; cursor:pointer;">
+                        ${statusPill}
+                    </button>
+                </td>
+                <td>
+                    <div class="action-btns-row">
+                        <button type="button" class="btn-table-action btn-edit" title="تعديل الإعلان" onclick="openEditBannerModal(${b.id})">✏️</button>
+                        <button type="button" class="btn-table-action btn-delete" title="حذف الإعلان" onclick="deleteBanner(${b.id})">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    });
+
+    tbody.innerHTML = html;
+}
+
+function openAddBannerModal() {
+    currentEditingBannerId = null;
+    document.getElementById("modalBannerTitle").textContent = "📢 إضافة إعلان / بانر جديد";
+    document.getElementById("bannerTextAr").value = "";
+    document.getElementById("bannerTextEn").value = "";
+    document.getElementById("bannerBadgeAr").value = "🚚 شحن فوري";
+    document.getElementById("bannerBadgeEn").value = "Fast Delivery";
+    document.getElementById("bannerLink").value = "";
+    document.getElementById("bannerActive").checked = true;
+
+    document.getElementById("bannerModal").classList.add("open");
+}
+
+function openEditBannerModal(bannerId) {
+    const b = adminBanners.find(item => item.id === bannerId);
+    if (!b) return;
+
+    currentEditingBannerId = bannerId;
+    document.getElementById("modalBannerTitle").textContent = "✏️ تعديل الإعلان / البانر";
+    document.getElementById("bannerTextAr").value = b.text_ar || "";
+    document.getElementById("bannerTextEn").value = b.text_en || "";
+    document.getElementById("bannerBadgeAr").value = b.badge_ar || "";
+    document.getElementById("bannerBadgeEn").value = b.badge_en || "";
+    document.getElementById("bannerLink").value = b.link || "";
+    document.getElementById("bannerActive").checked = (b.active !== false);
+
+    document.getElementById("bannerModal").classList.add("open");
+}
+
+function closeBannerModal() {
+    const modal = document.getElementById("bannerModal");
+    if (modal) modal.classList.remove("open");
+}
+
+function saveBannerForm(e) {
+    e.preventDefault();
+    const textAr = document.getElementById("bannerTextAr").value.trim();
+    const textEn = document.getElementById("bannerTextEn").value.trim();
+    const badgeAr = document.getElementById("bannerBadgeAr").value.trim();
+    const badgeEn = document.getElementById("bannerBadgeEn").value.trim();
+    const link = document.getElementById("bannerLink").value.trim();
+    const active = document.getElementById("bannerActive").checked;
+
+    if (!textAr) {
+        alert("يرجى كتابة نص الإعلان بالعربية");
+        return;
+    }
+
+    if (currentEditingBannerId) {
+        const b = adminBanners.find(item => item.id === currentEditingBannerId);
+        if (b) {
+            b.text_ar = textAr;
+            b.text_en = textEn;
+            b.badge_ar = badgeAr;
+            b.badge_en = badgeEn;
+            b.link = link;
+            b.active = active;
+        }
+        showToast("تم تحديث الإعلان بنجاح!");
+    } else {
+        const newId = Date.now();
+        const newBanner = {
+            id: newId,
+            text_ar: textAr,
+            text_en: textEn,
+            badge_ar: badgeAr || "📢 إعلان",
+            badge_en: badgeEn || "News",
+            link: link,
+            active: active
+        };
+        adminBanners.unshift(newBanner);
+        showToast("تمت إضافة الإعلان الجديد بنجاح!");
+    }
+
+    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
+    renderAdminBanners();
+    closeBannerModal();
+}
+
+function deleteBanner(bannerId) {
+    if (!confirm("هل أنت متأكد من حذف هذا الإعلان نهائياً من شريط الإعلانات؟")) return;
+    adminBanners = adminBanners.filter(b => b.id !== bannerId);
+    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
+    renderAdminBanners();
+    showToast("تم حذف الإعلان بنجاح.");
+}
+
+function toggleBannerStatus(bannerId) {
+    const b = adminBanners.find(item => item.id === bannerId);
+    if (!b) return;
+    b.active = !b.active;
+    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
+    renderAdminBanners();
+    showToast(b.active ? "تم تفعيل الإعلان بنجاح." : "تم تعطيل الإعلان.");
 }

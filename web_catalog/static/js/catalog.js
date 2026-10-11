@@ -112,6 +112,7 @@ function dismissPreloader() {
 // Resilient Initialization (Handles Cached / Instant Ready States)
 function initCatalogApp() {
     applyLanguage(currentLang);
+    fetchBanners();
     fetchUsageTypes();
     fetchCategories();
     fetchProducts().then(() => {
@@ -134,11 +135,144 @@ window.addEventListener("load", () => {
     setTimeout(dismissPreloader, 200);
 });
 
+// ----------------- Top Announcement Banner System -----------------
+let bannersList = [];
+let activeBannerIdx = 0;
+let bannerCycleTimer = null;
+
+async function fetchBanners() {
+    // 1. Try local custom banners from Admin Dashboard
+    try {
+        const stored = localStorage.getItem("woa_banners_v1");
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                bannersList = parsed.filter(b => b.active !== false);
+                renderBanners();
+                return;
+            }
+        }
+    } catch (e) {}
+
+    // 2. Fetch default banners from data/banners.json
+    try {
+        const res = await fetch("/data/banners.json");
+        if (res.ok) {
+            const data = await res.json();
+            bannersList = (data || []).filter(b => b.active !== false);
+            renderBanners();
+            return;
+        }
+    } catch (e) {}
+
+    // 3. Fallback standard banners
+    bannersList = [
+        {
+            badge_ar: "🚚 شحن فوري",
+            badge_en: "Fast Delivery",
+            text_ar: "توصيل وشحن متاح لكافة محافظات مصر • الدفع عند الاستلام بعد المعاينة",
+            text_en: "Nationwide shipping across all Egypt • Cash on Delivery with inspection",
+            link: "#contact"
+        },
+        {
+            badge_ar: "🛡️ ضمان معتمد",
+            badge_en: "Official Warranty",
+            text_ar: "ضمان استبدال معتمد على كافة مفصلات الساميت الهيدروليك وسكك الأدراج",
+            text_en: "Replacement warranty on all Summit hydraulic hinges & heavy duty drawer slides",
+            link: "https://wa.me/201140030036"
+        }
+    ];
+    renderBanners();
+}
+
+function renderBanners() {
+    const container = document.getElementById("woaTopBarContent");
+    const topBar = document.getElementById("woaTopBar");
+    if (!container || !topBar) return;
+
+    if (!bannersList || bannersList.length === 0) {
+        topBar.style.display = "none";
+        return;
+    }
+    topBar.style.display = "flex";
+
+    const isAr = (currentLang === "ar");
+    let html = "";
+    bannersList.forEach((b, idx) => {
+        const badge = isAr ? (b.badge_ar || b.badge_en || 'إعلان') : (b.badge_en || b.badge_ar || 'News');
+        const text = isAr ? (b.text_ar || b.text_en) : (b.text_en || b.text_ar);
+        const link = b.link || "javascript:void(0)";
+        const target = (link && (link.startsWith("http") || link.startsWith("https"))) ? 'target="_blank" rel="noopener"' : '';
+        const activeClass = (idx === activeBannerIdx) ? "active" : "";
+
+        html += `
+            <a href="${link}" ${target} class="woa-tb-item ${activeClass}" data-banner-idx="${idx}">
+                <span class="woa-tb-badge">${escapeHtmlBanner(badge)}</span>
+                <span class="woa-tb-text">${escapeHtmlBanner(text)}</span>
+            </a>
+        `;
+    });
+
+    container.innerHTML = html;
+    startBannerCycle();
+
+    topBar.onmouseenter = () => clearInterval(bannerCycleTimer);
+    topBar.onmouseleave = () => startBannerCycle();
+}
+
+function escapeHtmlBanner(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function showBanner(index) {
+    if (!bannersList || bannersList.length === 0) return;
+    const items = document.querySelectorAll(".woa-tb-item");
+    if (!items || items.length === 0) return;
+
+    activeBannerIdx = (index + items.length) % items.length;
+    items.forEach((item, idx) => {
+        if (idx === activeBannerIdx) {
+            item.classList.add("active");
+        } else {
+            item.classList.remove("active");
+        }
+    });
+}
+
+function nextBanner() {
+    showBanner(activeBannerIdx + 1);
+    restartBannerCycle();
+}
+
+function prevBanner() {
+    showBanner(activeBannerIdx - 1);
+    restartBannerCycle();
+}
+
+function startBannerCycle() {
+    clearInterval(bannerCycleTimer);
+    if (!bannersList || bannersList.length <= 1) return;
+    bannerCycleTimer = setInterval(() => {
+        showBanner(activeBannerIdx + 1);
+    }, 4500);
+}
+
+function restartBannerCycle() {
+    clearInterval(bannerCycleTimer);
+    startBannerCycle();
+}
+
 // ----------------- Language Management -----------------
 function toggleLanguage() {
     currentLang = (currentLang === "ar") ? "en" : "ar";
     localStorage.setItem("woa_lang", currentLang);
     applyLanguage(currentLang);
+    renderBanners();
     renderUsageFilterBar();
     renderCategories();
     renderProducts();

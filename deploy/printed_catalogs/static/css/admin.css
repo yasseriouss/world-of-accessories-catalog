@@ -435,3 +435,106 @@ body {
     display: block;
     animation: fadeInUp 0.3s ease;
 }
+
+/* ---------------- Admin Tabs ---------------- */
+.admin-tab-nav {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 12px;
+}
+
+.admin-tab-btn {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.admin-tab-btn:hover {
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.admin-tab-btn.active {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+    box-shadow: 0 4px 14px rgba(26, 63, 127, 0.25);
+}
+
+.admin-tab-count {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+.admin-tab-btn.active .admin-tab-count {
+    background: var(--orange);
+    color: #fff;
+}
+
+/* Banner Live Preview Box */
+.banner-preview-card {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.banner-preview-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.banner-mockup-strip {
+    background: linear-gradient(90deg, #0A1C3A 0%, #16366F 50%, #0A1C3A 100%);
+    border: 1px solid rgba(255, 140, 61, 0.4);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 13px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.badge-tag-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.badge-tag-pill.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-tag-pill.inactive {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--red);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}

@@ -37,6 +37,8 @@ shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(web_dir, "Brand
 os.makedirs(os.path.join(web_dir, "data"), exist_ok=True)
 shutil.copy(os.path.join(base_dir, "data", "products.json"), os.path.join(web_dir, "data", "products.json"))
 shutil.copy(os.path.join(base_dir, "data", "categories_data.json"), os.path.join(web_dir, "data", "categories_data.json"))
+if os.path.exists(os.path.join(base_dir, "data", "banners.json")):
+    shutil.copy(os.path.join(base_dir, "data", "banners.json"), os.path.join(web_dir, "data", "banners.json"))
 
 if os.path.exists(os.path.join(base_dir, "favicon.ico")):
     shutil.copy(os.path.join(base_dir, "favicon.ico"), os.path.join(web_dir, "favicon.ico"))
