@@ -591,8 +591,8 @@
 
                 itemsHTML += `
                     <div class="woa-cart-item">
-                        <div class="woa-cart-item-img">
-                            <img src="${escapeHTML(img)}" alt="${escapeHTML(name)}" loading="lazy">
+                        <div class="woa-cart-item-img img-shimmer-wrap">
+                            <img src="${escapeHTML(img)}" alt="${escapeHTML(name)}" loading="lazy" decoding="async" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');" onerror="this.onerror=null; this.src='/Branding/logo-80.png'; this.parentElement.classList.add('loaded', 'img-error'); this.classList.add('loaded');">
                         </div>
                         <div class="woa-cart-item-info">
                             <span class="woa-cart-item-sku">${escapeHTML(item.code)}</span>

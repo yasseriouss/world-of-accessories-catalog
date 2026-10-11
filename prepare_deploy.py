@@ -26,13 +26,12 @@ with open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8") as f:
 
 # Sync static assets to root and deploy/web_catalog
 root_static = os.path.join(base_dir, "static")
-shutil.rmtree(root_static, ignore_errors=True)
-shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), root_static)
+shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), root_static, dirs_exist_ok=True)
 
-shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(web_dir, "static"))
-shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(web_dir, "styles"))
-shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(web_dir, "scripts"))
-shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(web_dir, "Branding"))
+shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(web_dir, "static"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(web_dir, "styles"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(web_dir, "scripts"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(web_dir, "Branding"), dirs_exist_ok=True)
 
 # Data
 os.makedirs(os.path.join(web_dir, "data"), exist_ok=True)
@@ -76,6 +75,9 @@ web_vercel = {
 with open(os.path.join(web_dir, "vercel.json"), "w", encoding="utf-8") as f:
     json.dump(web_vercel, f, indent=2)
 
+with open(os.path.join(base_dir, "vercel.json"), "w", encoding="utf-8") as f:
+    json.dump(web_vercel, f, indent=2)
+
 # Web README
 with open(os.path.join(web_dir, "README.md"), "w", encoding="utf-8") as f:
     f.write("""# World of Accessories - Web Catalog
@@ -102,12 +104,12 @@ shutil.copy(os.path.join(base_dir, "catalog_en.html"), os.path.join(print_dir, "
 shutil.copy(os.path.join(base_dir, "catalog_en_branded.html"), os.path.join(print_dir, "catalog_en_branded.html"))
 
 # Categories booklets
-shutil.copytree(os.path.join(base_dir, "Categories"), os.path.join(print_dir, "Categories"))
-shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(print_dir, "styles"))
-shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(print_dir, "scripts"))
-shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(print_dir, "Branding"))
-shutil.copytree(os.path.join(base_dir, "data"), os.path.join(print_dir, "data"))
-shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(print_dir, "static"))
+shutil.copytree(os.path.join(base_dir, "Categories"), os.path.join(print_dir, "Categories"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "styles"), os.path.join(print_dir, "styles"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "scripts"), os.path.join(print_dir, "scripts"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "Branding"), os.path.join(print_dir, "Branding"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "data"), os.path.join(print_dir, "data"), dirs_exist_ok=True)
+shutil.copytree(os.path.join(base_dir, "web_catalog", "static"), os.path.join(print_dir, "static"), dirs_exist_ok=True)
 shutil.copy(os.path.join(base_dir, "web_catalog", "templates", "admin.html"), os.path.join(print_dir, "admin.html"))
 
 if os.path.exists(os.path.join(base_dir, "favicon.ico")):

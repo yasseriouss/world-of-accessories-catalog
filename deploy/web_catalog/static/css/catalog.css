@@ -719,6 +719,58 @@ body {
     border-color: var(--orange);
 }
 
+
+/* --- High-Performance Shimmer Skeleton Loader & LazyLoad Transitions --- */
+@keyframes woaShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.img-shimmer-wrap {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        #F1F5F9 0%,
+        #E2E8F0 25%,
+        #F8FAFC 50%,
+        #E2E8F0 75%,
+        #F1F5F9 100%
+    );
+    background-size: 200% 100%;
+    animation: woaShimmer 1.8s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.img-shimmer-wrap.loaded {
+    animation: none;
+    background: #FAFAFA;
+}
+
+.img-shimmer-wrap img {
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
+    will-change: opacity, transform;
+}
+
+.img-shimmer-wrap img.loaded {
+    opacity: 1;
+}
+
+/* Fallback state when image has error */
+.img-shimmer-wrap.img-error {
+    animation: none;
+    background: #F8FAFC;
+}
+
+.img-shimmer-wrap.img-error img {
+    opacity: 0.7;
+    filter: grayscale(40%);
+}
+
 /* ---------------- Products Grid ---------------- */
 .products-grid {
     display: grid;

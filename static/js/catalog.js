@@ -92,13 +92,36 @@ const i18n = {
     }
 };
 
+// ----------------- Brand Preloader Dismissal -----------------
+let preloaderDismissed = false;
+function dismissPreloader() {
+    if (preloaderDismissed) return;
+    const preloader = document.getElementById("woaPreloader");
+    if (!preloader) return;
+    preloaderDismissed = true;
+    preloader.classList.add("fade-out");
+    setTimeout(() => {
+        preloader.style.display = "none";
+    }, 650);
+}
+
 // Initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(currentLang);
     fetchUsageTypes();
     fetchCategories();
-    fetchProducts();
+    fetchProducts().then(() => {
+        setTimeout(dismissPreloader, 300);
+    }).catch(() => {
+        dismissPreloader();
+    });
     setupSearchInput();
+    // Safety fallback timeout
+    setTimeout(dismissPreloader, 2000);
+});
+
+window.addEventListener("load", () => {
+    setTimeout(dismissPreloader, 250);
 });
 
 // ----------------- Language Management -----------------
@@ -155,13 +178,27 @@ let cachedRawProducts = null;
 
 async function getRawProductsData(forceRefresh = false) {
     if (cachedRawProducts && !forceRefresh) return cachedRawProducts;
+
+    // Check SessionStorage for instant 0ms reload
+    if (!forceRefresh) {
+        try {
+            const stored = sessionStorage.getItem("woa_products_cache");
+            if (stored) {
+                cachedRawProducts = JSON.parse(stored);
+                if (cachedRawProducts && cachedRawProducts.length > 0) {
+                    return cachedRawProducts;
+                }
+            }
+        } catch (e) {}
+    }
     
-    // 1. Try Supabase Live Database
+    // 1. Try Supabase Live Database (if online)
     if (window.SupabaseSync) {
         try {
             const data = await window.SupabaseSync.fetchProducts();
             if (data && data.length > 0) {
                 cachedRawProducts = data;
+                try { sessionStorage.setItem("woa_products_cache", JSON.stringify(data)); } catch (e) {}
                 return cachedRawProducts;
             }
         } catch (e) {
@@ -169,11 +206,12 @@ async function getRawProductsData(forceRefresh = false) {
         }
     }
 
-    // 2. Fallback to static JSON
+    // 2. Fallback to static JSON with CDN caching
     try {
         const res = await fetch("/data/products.json");
         if (res.ok) {
             cachedRawProducts = await res.json();
+            try { sessionStorage.setItem("woa_products_cache", JSON.stringify(cachedRawProducts)); } catch (e) {}
             return cachedRawProducts;
         }
     } catch (e) {
@@ -227,8 +265,17 @@ async function fetchCategories() {
 }
 
 async function fetchProducts() {
-    try {
-        let url = `/api/products?limit=600&sort=${currentSort}`;
+    // If we already have products in-memory, perform instant 0ms client-side filtering (eliminates unnecessary 404 API calls on static CDN)
+    if (cachedRawProducts && cachedRawProducts.length > 0) {
+        filterAndRenderLocal(cachedRawProducts);
+        return;
+    }
+
+    // Only query backend API if running on local dev server (port 8080)
+    const isLocalApiServer = (window.location.port === "8080");
+    if (isLocalApiServer) {
+        try {
+            let url = `/api/products?limit=600&sort=${currentSort}`;
         if (activeCategoryId > 0) url += `&category_id=${activeCategoryId}`;
         if (activeUsageType && activeUsageType !== "all") url += `&usage_type=${activeUsageType}`;
         if (searchQuery) url += `&search=${encodeURIComponent(searchQuery)}`;
@@ -240,12 +287,16 @@ async function fetchProducts() {
             renderProducts();
             return;
         }
-    } catch (err) {
-        // Fallback to client-side filtering
+        } catch (err) {
+            // Fallback to client-side filtering
+        }
     }
 
-    // Client-side filtering fallback
     const raw = await getRawProductsData();
+    filterAndRenderLocal(raw);
+}
+
+function filterAndRenderLocal(raw) {
     let filtered = [...raw];
 
     if (activeCategoryId > 0) {
@@ -401,8 +452,8 @@ function renderProducts() {
 
         html += `
             <div class="product-card" style="animation-delay: ${Math.min(idx * 0.03, 0.4)}s;">
-                <div class="card-img-wrap" onclick="openQuickView(${p.id})">
-                    <img src="${img}" alt="${titlePrimary}" loading="lazy">
+                <div class="card-img-wrap img-shimmer-wrap" onclick="openQuickView(${p.id})">
+                    <img src="${img}" alt="${titlePrimary}" loading="lazy" decoding="async" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');" onerror="this.onerror=null; this.src='/Branding/logo-100.png'; this.parentElement.classList.add('loaded', 'img-error'); this.classList.add('loaded');">
                 </div>
                 <div class="card-body">
                     <div class="card-badges-row">
@@ -481,7 +532,17 @@ function openQuickView(prodId) {
     const uIcon = (uKey === "kitchen") ? "🍳" : (uKey === "dressing") ? "👔" : "🛋️";
     const uName = (currentLang === "ar") ? (p.usage_ar || "أخرى") : (p.usage_en || "Other");
 
-    document.getElementById("modalImg").src = img;
+    const mImg = document.getElementById("modalImg");
+    const mWrap = document.getElementById("modalImgWrap") || (mImg ? mImg.parentElement : null);
+    if (mImg) {
+        mImg.classList.remove("loaded");
+        if (mWrap) mWrap.classList.remove("loaded", "img-error");
+        mImg.src = img;
+        if (mImg.complete && mImg.naturalWidth > 0) {
+            mImg.classList.add("loaded");
+            if (mWrap) mWrap.classList.add("loaded");
+        }
+    }
     document.getElementById("modalCatBadge").textContent = `${cat.icon} ${(currentLang === "ar") ? cat.ar : cat.en}`;
     document.getElementById("modalUsageBadge").innerHTML = `${uIcon} ${uName}`;
     document.getElementById("modalTitleAr").textContent = (currentLang === "ar") ? p.ar : p.en;

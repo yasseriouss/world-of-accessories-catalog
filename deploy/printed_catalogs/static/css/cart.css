@@ -779,3 +779,31 @@ html:not([dir="rtl"]) .woa-cart-drawer {
     box-shadow: 0 6px 20px rgba(26, 63, 127, 0.45);
     background: linear-gradient(135deg, #FF8C3D 0%, #E87528 100%);
 }
+
+
+.woa-cart-item-img.img-shimmer-wrap {
+    background: linear-gradient(
+        90deg,
+        #F1F5F9 0%,
+        #E2E8F0 25%,
+        #F8FAFC 50%,
+        #E2E8F0 75%,
+        #F1F5F9 100%
+    );
+    background-size: 200% 100%;
+    animation: woaShimmer 1.8s ease-in-out infinite;
+}
+
+.woa-cart-item-img.loaded {
+    animation: none;
+    background: #FAFAFA;
+}
+
+.woa-cart-item-img img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.woa-cart-item-img img.loaded {
+    opacity: 1;
+}
