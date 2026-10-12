@@ -38,8 +38,6 @@ const i18n = {
         copyCode: "نسخ الكود",
         copiedToast: "تم نسخ كود المنتج إلى الحافظة!",
         langBtn: "🌐 English",
-        adminBtn: "⚙️ الإدارة",
-        printedBtn: "📖 الكتالوجات المطبوعة",
         officialPrices: "أسعار رسمية معتمدة",
         specializedCategories: "فئات متخصصة",
         certifiedItems: "منتج معتمد",
@@ -81,8 +79,6 @@ const i18n = {
         copyCode: "Copy SKU Code",
         copiedToast: "Product SKU copied to clipboard!",
         langBtn: "🌐 العربية",
-        adminBtn: "⚙️ Admin",
-        printedBtn: "📖 Printed Catalogs",
         officialPrices: "Official Certified Prices",
         specializedCategories: "Specialized Categories",
         certifiedItems: "Certified Products",
@@ -219,20 +215,7 @@ let activeBannerIdx = 0;
 let bannerCycleTimer = null;
 
 async function fetchBanners() {
-    // 1. Try local custom banners from Admin Dashboard
-    try {
-        const stored = localStorage.getItem("woa_banners_v1");
-        if (stored) {
-            const parsed = JSON.parse(stored);
-            if (Array.isArray(parsed) && parsed.length > 0) {
-                bannersList = parsed.filter(b => b.active !== false);
-                renderBanners();
-                return;
-            }
-        }
-    } catch (e) {}
-
-    // 2. Fetch default banners from data/banners.json
+    // Banners come from the published data file
     try {
         const res = await fetch("/data/banners.json");
         if (res.ok) {
@@ -373,8 +356,6 @@ function applyLanguage(lang) {
     setTxt("navBrandTitle", t.brandTitle);
     setTxt("navBrandSub", t.brandSub);
     setTxt("langToggleBtn", t.langBtn);
-    setTxt("navAdminBtn", t.adminBtn);
-    setTxt("navPrintedBtn", t.printedBtn);
     setTxt("navAboutText", t.navAbout);
     setTxt("navInstallText", t.navInstall);
     setTxt("navHomeText", t.navHome);
