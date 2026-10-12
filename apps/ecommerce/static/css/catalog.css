@@ -604,7 +604,7 @@ body {
 /* Trust Badges - Inspired by Modern Ecommerce */
 .hero-trust-badges {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 14px;
     max-width: 980px;
     margin: 28px auto 0;
@@ -967,7 +967,7 @@ body {
 /* ---------------- Products Grid ---------------- */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr));
     gap: 22px;
 }
 
@@ -1780,7 +1780,7 @@ body {
         font-size: 11px;
     }
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
         gap: 14px;
     }
 }
@@ -1841,7 +1841,7 @@ body {
 
 .contact-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 20px;
     margin-bottom: 36px;
 }
@@ -2284,7 +2284,7 @@ body {
 
 /* ---------------- Product grid layout refinements ---------------- */
 .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
     align-items: stretch;
 }
 
@@ -2320,7 +2320,7 @@ body {
 
 @media (max-width: 900px) {
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(190px, 100%), 1fr));
         gap: 14px;
     }
 }
@@ -2381,5 +2381,98 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+    }
+}
+
+/* ---------------- Small-screen safety: no overflow, no overlap ---------------- */
+html {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img, video, canvas, iframe {
+    max-width: 100%;
+}
+
+.product-card,
+.contact-card,
+.footer-col {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+    /* Header scrolls with the page instead of covering a third of the screen */
+    .navbar {
+        position: static;
+        padding: 8px 10px;
+        gap: 6px;
+    }
+    .nav-actions {
+        gap: 6px;
+    }
+    .nav-actions .btn-nav {
+        min-width: 42px;
+        min-height: 42px;
+        padding: 8px 10px;
+        justify-content: center;
+    }
+    .nav-actions .btn-nav > span:nth-child(2) {
+        display: none;
+    }
+    .nav-actions #langToggleBtn {
+        font-size: 12px;
+    }
+
+    /* Larger touch targets */
+    .woa-tb-arrow {
+        width: 34px;
+        height: 34px;
+    }
+    .footer-nav-list a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+    }
+    .card-actions-row .btn-icon-action {
+        height: 38px;
+    }
+
+    /* Floating buttons never cover the footer or the last cards */
+    /* Cart sits at the inline-start edge, WhatsApp at the inline-end edge: never the same side */
+    .floating-whatsapp {
+        width: 48px;
+        height: 48px;
+        left: auto;
+        right: auto;
+        inset-inline-start: auto;
+        inset-inline-end: 12px;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    }
+    .woa-floating-cart-btn {
+        left: auto;
+        right: auto;
+        inset-inline-start: 12px;
+        inset-inline-end: auto;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    }
+    body {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    }
+    .modal-content {
+        max-height: 92vh;
+        max-height: 92dvh;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .woa-tb-item {
+        min-height: 34px;
+        align-items: center;
+    }
+    .footer-attribution a {
+        display: inline-block;
+        padding: 10px 6px;
     }
 }
