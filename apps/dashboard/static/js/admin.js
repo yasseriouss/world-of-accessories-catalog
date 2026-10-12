@@ -9,9 +9,11 @@ let activeCatFilter = 0;
 let activeUsageFilter = "all";
 let searchFilter = "";
 let currentEditId = null;
-let currentUploadedImg = "Branding/logo-100.png";
-const STORE_ORIGIN = "https://woa-store-yasserious.vercel.app";
-const storeUrl = (path) => STORE_ORIGIN + path;
+const LANDING_ORIGIN = "https://woa-store-yasserious.vercel.app";
+const MARKET_ORIGIN = "https://woa-market-yasserious.vercel.app";
+const storeUrl = (path) => (/^\/market/.test(path)
+    ? MARKET_ORIGIN + path.replace(/^\/market\.html/, "/market")
+    : LANDING_ORIGIN + path);
 
 function escapeHTML(str) {
     if (str === null || str === undefined) return '';
@@ -28,8 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAdminStats();
     loadCategories();
     loadProducts();
-    loadAdminBanners();
-    setupImageUploader();
 });
 
 // ----------------- Auth (Supabase Auth) -----------------
@@ -79,14 +79,7 @@ function requireAdmin() {
 }
 
 // ----------------- Stats & Generator Status -----------------
-function loadAdminStats() {
-    const el = document.getElementById("statLastBuild");
-    if (el) el.textContent = "جاهز ومعتمد";
-}
-
-function triggerManualGeneration() {
-    alert("توليد الكتالوجات المطبوعة يتم عبر سكربتات المشروع (scripts/) ولا يتوفر من لوحة التحكم المنشورة.");
-}
+function loadAdminStats() {}
 
 // ----------------- Categories & Products Loading -----------------
 async function loadCategories() {
@@ -146,6 +139,7 @@ async function loadProducts() {
             if (res.ok) prods = await res.json();
         }
 
+        window.__allProducts = prods;
         let filtered = [...prods];
         if (activeCatFilter > 0) {
             filtered = filtered.filter(p => p.category_id === activeCatFilter);
@@ -166,7 +160,10 @@ async function loadProducts() {
         filtered.sort((a, b) => (b.id || 0) - (a.id || 0));
         adminProducts = filtered;
         const statProds = document.getElementById("statProdsCount");
-        if (statProds) statProds.textContent = adminProducts.length;
+        if (statProds) statProds.textContent = prods.length;
+        const badgeProds = document.getElementById("tabBadgeProds");
+        if (badgeProds) badgeProds.textContent = prods.length;
+        if (typeof renderAdminCategories === "function") renderAdminCategories();
         renderAdminTable();
     } catch (err) {
         console.error("Failed to load products:", err);
@@ -243,7 +240,6 @@ function handleAdminSearch(input) {
 // ----------------- Add & Edit Modal -----------------
 function openAddModal() {
     currentEditId = null;
-    currentUploadedImg = "Branding/logo-100.png";
 
     document.getElementById("modalFormTitle").textContent = "➕ إضافة منتج جديد إلى الكتالوج";
     document.getElementById("prodAr").value = "";
@@ -251,7 +247,7 @@ function openAddModal() {
     document.getElementById("prodPrice").value = "";
     document.getElementById("prodCategory").value = adminCategories[0]?.id || 1;
     document.getElementById("prodUsageType").value = "other";
-    document.getElementById("previewImg").src = imgUrl(currentUploadedImg);
+    ImagePicker.set("prodImagePicker", "");
 
     document.getElementById("productModal").classList.add("open");
 }
@@ -261,7 +257,6 @@ function openEditModal(prodId) {
     if (!p) return;
 
     currentEditId = p.id || p.n;
-    currentUploadedImg = p.image || "Branding/logo-100.png";
 
     document.getElementById("modalFormTitle").textContent = `✏️ تعديل المنتج: WOA-${String(currentEditId).padStart(4, '0')}`;
     document.getElementById("prodAr").value = p.ar || "";
@@ -269,7 +264,7 @@ function openEditModal(prodId) {
     document.getElementById("prodPrice").value = p.price || "";
     document.getElementById("prodCategory").value = p.category_id || 1;
     document.getElementById("prodUsageType").value = p.usage_type || "other";
-    document.getElementById("previewImg").src = imgUrl(currentUploadedImg);
+    ImagePicker.set("prodImagePicker", p.image && !/^Branding\//.test(p.image) ? p.image : "");
 
     document.getElementById("productModal").classList.add("open");
 }
@@ -298,7 +293,7 @@ async function saveProductForm(e) {
         price: price,
         category_id: catId,
         usage_type: usageType,
-        image: currentUploadedImg
+        image: ImagePicker.get("prodImagePicker") || "Branding/logo-100.png"
     };
 
     if (!requireAdmin()) return;
@@ -338,33 +333,6 @@ async function confirmDeleteProduct(prodId) {
     }
 }
 
-// ----------------- Image Uploader -----------------
-function setupImageUploader() {
-    const fileInput = document.getElementById("fileUploadInput");
-    if (!fileInput) return;
-
-    fileInput.addEventListener("change", async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        if (!requireAdmin()) {
-            fileInput.value = "";
-            return;
-        }
-
-        try {
-            showToast("⏳ جاري رفع الصورة...");
-            currentUploadedImg = await window.SupabaseSync.uploadImage(file);
-            document.getElementById("previewImg").src = currentUploadedImg;
-            showToast("تم رفع الصورة بنجاح!");
-        } catch (err) {
-            alert("فشل رفع الصورة: " + err.message);
-        } finally {
-            fileInput.value = "";
-        }
-    });
-}
-
 // ----------------- Toast Notification -----------------
 function showToast(msg) {
     let toast = document.getElementById("adminToast");
@@ -377,226 +345,28 @@ function showToast(msg) {
 }
 
 // ----------------- Tab Navigation Switcher -----------------
+const ADMIN_TABS = ["products", "categories", "banners", "content", "media", "links"];
+const TAB_HOOKS = {
+    categories: () => loadAdminCategories(),
+    banners: () => loadAdminBanners(),
+    content: () => loadContentSettings(),
+    media: () => loadMedia(),
+    links: () => generateCampaignLink()
+};
+
 function switchAdminTab(tabName) {
-    const btnProds = document.getElementById("tabBtnProducts");
-    const btnBanners = document.getElementById("tabBtnBanners");
-    const btnLinks = document.getElementById("tabBtnLinks");
-    const secProds = document.getElementById("sectionProducts");
-    const secBanners = document.getElementById("sectionBanners");
-    const secLinks = document.getElementById("sectionLinks");
-
-    if (btnProds) btnProds.classList.remove("active");
-    if (btnBanners) btnBanners.classList.remove("active");
-    if (btnLinks) btnLinks.classList.remove("active");
-
-    if (secProds) secProds.style.display = "none";
-    if (secBanners) secBanners.style.display = "none";
-    if (secLinks) secLinks.style.display = "none";
-
-    if (tabName === "banners") {
-        if (btnBanners) btnBanners.classList.add("active");
-        if (secBanners) secBanners.style.display = "block";
-        loadAdminBanners();
-    } else if (tabName === "links") {
-        if (btnLinks) btnLinks.classList.add("active");
-        if (secLinks) secLinks.style.display = "block";
-        generateCampaignLink();
-    } else {
-        if (btnProds) btnProds.classList.add("active");
-        if (secProds) secProds.style.display = "block";
-    }
-}
-
-// ----------------- Banner & Ads Management -----------------
-let adminBanners = [];
-let currentEditingBannerId = null;
-
-async function loadAdminBanners() {
-    try {
-        const stored = localStorage.getItem("woa_banners_v1");
-        if (stored) {
-            adminBanners = JSON.parse(stored);
-            renderAdminBanners();
-            return;
+    const name = ADMIN_TABS.includes(tabName) ? tabName : "products";
+    ADMIN_TABS.forEach(t => {
+        const cap = t.charAt(0).toUpperCase() + t.slice(1);
+        const btn = document.getElementById("tabBtn" + cap);
+        const sec = document.getElementById("section" + cap);
+        if (btn) {
+            btn.classList.toggle("active", t === name);
+            btn.setAttribute("aria-selected", t === name ? "true" : "false");
         }
-    } catch (e) {}
-
-    try {
-        const res = await fetch("/data/banners.json");
-        if (res.ok) {
-            adminBanners = await res.json();
-            localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
-            renderAdminBanners();
-            return;
-        }
-    } catch (e) {}
-
-    adminBanners = [];
-    renderAdminBanners();
-}
-
-function renderAdminBanners() {
-    const tbody = document.getElementById("adminBannersTableBody");
-    const badge = document.getElementById("tabBadgeBanners");
-    if (badge) badge.textContent = adminBanners.length;
-
-    // Update Live Preview Strip with the first active banner
-    const activeBanners = adminBanners.filter(b => b.active !== false);
-    const prevBadge = document.getElementById("bannerPrevBadge");
-    const prevText = document.getElementById("bannerPrevText");
-    if (activeBanners.length > 0) {
-        if (prevBadge) prevBadge.textContent = activeBanners[0].badge_ar || activeBanners[0].badge_en || 'إعلان';
-        if (prevText) prevText.textContent = activeBanners[0].text_ar || activeBanners[0].text_en;
-    } else {
-        if (prevBadge) prevBadge.textContent = "لا توجد إعلانات نشطة";
-        if (prevText) prevText.textContent = "شريط الإعلانات معطل حالياً لعدم وجود إعلانات مفعلة.";
-    }
-
-    if (!tbody) return;
-
-    if (adminBanners.length === 0) {
-        tbody.innerHTML = `
-            <tr>
-                <td colspan="7" style="text-align:center; padding:36px; color:var(--text-muted);">
-                    لا توجد إعلانات مسجلة حالياً. اضغط على <strong>➕ إضافة إعلان / بانر جديد</strong> لإنشاء أول إعلان.
-                </td>
-            </tr>
-        `;
-        return;
-    }
-
-    let html = "";
-    adminBanners.forEach((b, idx) => {
-        const isActive = (b.active !== false);
-        const statusPill = isActive
-            ? `<span class="badge-tag-pill active">🟢 مفعّل</span>`
-            : `<span class="badge-tag-pill inactive">⚪ معطّل</span>`;
-        const toggleBtnTitle = isActive ? "تعطيل الإعلان" : "تفعيل الإعلان";
-        const linkDisplay = b.link ? `<a href="${b.link}" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline; font-size:12px;">🔗 رابط</a>` : `<span style="color:#94A3B8;">—</span>`;
-
-        html += `
-            <tr>
-                <td><strong>#${idx + 1}</strong></td>
-                <td>
-                    <span class="badge-tag-pill active" style="background:rgba(255,140,61,0.2); border:1px solid #FF8C3D; color:#E87528;">
-                        ${escapeHTML(b.badge_ar || b.badge_en || 'إعلان')}
-                    </span>
-                </td>
-                <td style="font-weight:600; max-width:320px;">${escapeHTML(b.text_ar || '')}</td>
-                <td style="color:var(--text-muted); font-size:12px; max-width:260px;">${escapeHTML(b.text_en || '—')}</td>
-                <td>${linkDisplay}</td>
-                <td>
-                    <button type="button" class="btn-table-action" onclick="toggleBannerStatus(${b.id})" title="${toggleBtnTitle}" style="border:none; background:transparent; cursor:pointer;">
-                        ${statusPill}
-                    </button>
-                </td>
-                <td>
-                    <div class="action-btns-row">
-                        <button type="button" class="btn-table-action btn-edit" title="تعديل الإعلان" onclick="openEditBannerModal(${b.id})">✏️</button>
-                        <button type="button" class="btn-table-action btn-delete" title="حذف الإعلان" onclick="deleteBanner(${b.id})">🗑️</button>
-                    </div>
-                </td>
-            </tr>
-        `;
+        if (sec) sec.style.display = t === name ? "block" : "none";
     });
-
-    tbody.innerHTML = html;
-}
-
-function openAddBannerModal() {
-    currentEditingBannerId = null;
-    document.getElementById("modalBannerTitle").textContent = "📢 إضافة إعلان / بانر جديد";
-    document.getElementById("bannerTextAr").value = "";
-    document.getElementById("bannerTextEn").value = "";
-    document.getElementById("bannerBadgeAr").value = "🚚 شحن فوري";
-    document.getElementById("bannerBadgeEn").value = "Fast Delivery";
-    document.getElementById("bannerLink").value = "";
-    document.getElementById("bannerActive").checked = true;
-
-    document.getElementById("bannerModal").classList.add("open");
-}
-
-function openEditBannerModal(bannerId) {
-    const b = adminBanners.find(item => item.id === bannerId);
-    if (!b) return;
-
-    currentEditingBannerId = bannerId;
-    document.getElementById("modalBannerTitle").textContent = "✏️ تعديل الإعلان / البانر";
-    document.getElementById("bannerTextAr").value = b.text_ar || "";
-    document.getElementById("bannerTextEn").value = b.text_en || "";
-    document.getElementById("bannerBadgeAr").value = b.badge_ar || "";
-    document.getElementById("bannerBadgeEn").value = b.badge_en || "";
-    document.getElementById("bannerLink").value = b.link || "";
-    document.getElementById("bannerActive").checked = (b.active !== false);
-
-    document.getElementById("bannerModal").classList.add("open");
-}
-
-function closeBannerModal() {
-    const modal = document.getElementById("bannerModal");
-    if (modal) modal.classList.remove("open");
-}
-
-function saveBannerForm(e) {
-    e.preventDefault();
-    const textAr = document.getElementById("bannerTextAr").value.trim();
-    const textEn = document.getElementById("bannerTextEn").value.trim();
-    const badgeAr = document.getElementById("bannerBadgeAr").value.trim();
-    const badgeEn = document.getElementById("bannerBadgeEn").value.trim();
-    const link = document.getElementById("bannerLink").value.trim();
-    const active = document.getElementById("bannerActive").checked;
-
-    if (!textAr) {
-        alert("يرجى كتابة نص الإعلان بالعربية");
-        return;
-    }
-
-    if (currentEditingBannerId) {
-        const b = adminBanners.find(item => item.id === currentEditingBannerId);
-        if (b) {
-            b.text_ar = textAr;
-            b.text_en = textEn;
-            b.badge_ar = badgeAr;
-            b.badge_en = badgeEn;
-            b.link = link;
-            b.active = active;
-        }
-        showToast("تم تحديث الإعلان بنجاح!");
-    } else {
-        const newId = Date.now();
-        const newBanner = {
-            id: newId,
-            text_ar: textAr,
-            text_en: textEn,
-            badge_ar: badgeAr || "📢 إعلان",
-            badge_en: badgeEn || "News",
-            link: link,
-            active: active
-        };
-        adminBanners.unshift(newBanner);
-        showToast("تمت إضافة الإعلان الجديد بنجاح!");
-    }
-
-    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
-    renderAdminBanners();
-    closeBannerModal();
-}
-
-function deleteBanner(bannerId) {
-    if (!confirm("هل أنت متأكد من حذف هذا الإعلان نهائياً من شريط الإعلانات؟")) return;
-    adminBanners = adminBanners.filter(b => b.id !== bannerId);
-    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
-    renderAdminBanners();
-    showToast("تم حذف الإعلان بنجاح.");
-}
-
-function toggleBannerStatus(bannerId) {
-    const b = adminBanners.find(item => item.id === bannerId);
-    if (!b) return;
-    b.active = !b.active;
-    localStorage.setItem("woa_banners_v1", JSON.stringify(adminBanners));
-    renderAdminBanners();
-    showToast(b.active ? "تم تفعيل الإعلان بنجاح." : "تم تعطيل الإعلان.");
+    if (TAB_HOOKS[name]) TAB_HOOKS[name]();
 }
 
 // ----------------- Ecosystem Links & Campaign Generator -----------------

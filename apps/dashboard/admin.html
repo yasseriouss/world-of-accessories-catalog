@@ -23,10 +23,9 @@
         </a>
         <div class="admin-nav-actions">
             <a href="https://woa-store-yasserious.vercel.app/" class="btn-admin-action" target="_blank" title="صفحة الهبوط الرئيسية">🏠 صفحة الهبوط</a>
-            <a href="https://woa-store-yasserious.vercel.app/market.html" class="btn-admin-action" target="_blank" title="المتجر والكتالوج الرقمي">🛒 المتجر الرقمي</a>
+            <a href="https://woa-market-yasserious.vercel.app/market" class="btn-admin-action" target="_blank" title="المتجر والكتالوج الرقمي">🛒 المتجر الرقمي</a>
             <a href="https://woa-store-yasserious.vercel.app/printed_catalogs.html" class="btn-admin-action" target="_blank" title="مركز الكتالوجات والطباعة">📖 الكتالوجات المطبوعة</a>
             <a href="https://woa-store-yasserious.vercel.app/about.html" class="btn-admin-action" target="_blank" title="عن المعرض والشركة">✨ المعرض والتواصل</a>
-            <button type="button" id="btnGenNow" class="btn-admin-action btn-generate" onclick="triggerManualGeneration()">⚡ توليد الكتالوجات</button>
             <button type="button" class="btn-admin-action" onclick="adminLogout()" title="تسجيل الخروج">🔒 خروج</button>
         </div>
     </header>
@@ -51,10 +50,10 @@
             </div>
             <div class="stat-box">
                 <div class="stat-info">
-                    <h3>آخر تحديث للكتالوج المطبوع</h3>
-                    <div class="num" id="statLastBuild" style="font-size:22px;">جاهز</div>
+                    <h3>الإعلانات النشطة</h3>
+                    <div class="num" id="statBannersCount">--</div>
                 </div>
-                <div class="stat-icon">🖨️</div>
+                <div class="stat-icon">📢</div>
             </div>
             <div class="stat-box">
                 <div class="stat-info">
@@ -66,18 +65,24 @@
         </div>
 
         <!-- Tab Navigation Switcher -->
-        <div class="admin-tab-nav">
-            <button type="button" class="admin-tab-btn active" id="tabBtnProducts" onclick="switchAdminTab('products')">
-                <span>📦 إدارة المنتجات</span>
-                <span class="admin-tab-count" id="tabBadgeProds">--</span>
+        <div class="admin-tab-nav" role="tablist">
+            <button type="button" class="admin-tab-btn active" id="tabBtnProducts" role="tab" onclick="switchAdminTab('products')">
+                <span>📦 المنتجات</span><span class="admin-tab-count" id="tabBadgeProds">--</span>
             </button>
-            <button type="button" class="admin-tab-btn" id="tabBtnBanners" onclick="switchAdminTab('banners')">
-                <span>📢 إدارة البانرات وشريط الإعلانات</span>
-                <span class="admin-tab-count" id="tabBadgeBanners">4</span>
+            <button type="button" class="admin-tab-btn" id="tabBtnCategories" role="tab" onclick="switchAdminTab('categories')">
+                <span>🏷️ الفئات</span><span class="admin-tab-count" id="tabBadgeCategories">--</span>
             </button>
-            <button type="button" class="admin-tab-btn" id="tabBtnLinks" onclick="switchAdminTab('links')">
-                <span>🌐 شبكة روابط المنظومة والتسويق</span>
-                <span class="admin-tab-count" id="tabBadgeLinks">6</span>
+            <button type="button" class="admin-tab-btn" id="tabBtnBanners" role="tab" onclick="switchAdminTab('banners')">
+                <span>📢 الإعلانات</span><span class="admin-tab-count" id="tabBadgeBanners">--</span>
+            </button>
+            <button type="button" class="admin-tab-btn" id="tabBtnContent" role="tab" onclick="switchAdminTab('content')">
+                <span>🌐 محتوى الموقع</span>
+            </button>
+            <button type="button" class="admin-tab-btn" id="tabBtnMedia" role="tab" onclick="switchAdminTab('media')">
+                <span>🖼️ مكتبة الصور</span><span class="admin-tab-count" id="tabBadgeMedia">--</span>
+            </button>
+            <button type="button" class="admin-tab-btn" id="tabBtnLinks" role="tab" onclick="switchAdminTab('links')">
+                <span>🔗 الروابط</span>
             </button>
         </div>
 
@@ -128,6 +133,103 @@
             </div>
         </div>
 
+        <!-- ================= SECTION: CATEGORIES ================= -->
+        <div id="sectionCategories" style="display:none;">
+            <div class="control-bar">
+                <div style="font-weight:800; font-size:16px; color:var(--navy);">🏷️ إدارة فئات المتجر</div>
+                <div><button type="button" class="btn-primary" onclick="openAddCategoryModal()">➕ إضافة فئة</button></div>
+            </div>
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="width:80px;">المعرّف</th>
+                                <th style="width:70px;">الأيقونة</th>
+                                <th>الاسم بالعربية</th>
+                                <th>الاسم بالإنجليزية</th>
+                                <th style="width:120px;">المنتجات</th>
+                                <th style="width:110px;">إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminCategoriesTableBody">
+                            <tr><td colspan="6" style="text-align:center; padding:30px;">جاري التحميل...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTION: LANDING & SITE CONTENT ================= -->
+        <div id="sectionContent" style="display:none;">
+            <form onsubmit="saveContentForm(event)" class="content-form">
+                <div class="table-card content-card">
+                    <h3 class="content-h">🏠 القسم الرئيسي لصفحة الهبوط</h3>
+                    <div class="content-grid">
+                        <div class="form-group"><label class="form-label">العنوان الرئيسي (عربي)</label><input type="text" id="set_hero_title_ar" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">Main title (English)</label><input type="text" id="set_hero_title_en" class="form-input" dir="ltr"></div>
+                        <div class="form-group"><label class="form-label">النص التعريفي (عربي)</label><textarea id="set_hero_subtitle_ar" class="form-input" rows="2"></textarea></div>
+                        <div class="form-group"><label class="form-label">Subtitle (English)</label><textarea id="set_hero_subtitle_en" class="form-input" rows="2" dir="ltr"></textarea></div>
+                        <div class="form-group"><label class="form-label">نص زر المتجر (عربي)</label><input type="text" id="set_cta_text_ar" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">Shop button text (English)</label><input type="text" id="set_cta_text_en" class="form-input" dir="ltr"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">صورة الواجهة (Hero)</label>
+                        <div id="heroImagePicker"></div>
+                    </div>
+                </div>
+
+                <div class="table-card content-card">
+                    <h3 class="content-h">📞 بيانات التواصل</h3>
+                    <div class="content-grid">
+                        <div class="form-group"><label class="form-label">رقم الهاتف</label><input type="text" id="set_phone" class="form-input" dir="ltr" inputmode="tel"></div>
+                        <div class="form-group"><label class="form-label">واتساب (بصيغة دولية بدون +)</label><input type="text" id="set_whatsapp" class="form-input" dir="ltr" inputmode="numeric" placeholder="201140030036"></div>
+                        <div class="form-group"><label class="form-label">العنوان (عربي)</label><input type="text" id="set_address_ar" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">Address (English)</label><input type="text" id="set_address_en" class="form-input" dir="ltr"></div>
+                        <div class="form-group"><label class="form-label">مواعيد العمل (عربي)</label><input type="text" id="set_hours_ar" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">Working hours (English)</label><input type="text" id="set_hours_en" class="form-input" dir="ltr"></div>
+                    </div>
+                </div>
+
+                <div class="table-card content-card">
+                    <h3 class="content-h">🔗 روابط التواصل الاجتماعي</h3>
+                    <div class="content-grid">
+                        <div class="form-group"><label class="form-label">Instagram</label><input type="url" id="set_instagram" class="form-input" dir="ltr" placeholder="https://"></div>
+                        <div class="form-group"><label class="form-label">Facebook</label><input type="url" id="set_facebook" class="form-input" dir="ltr" placeholder="https://"></div>
+                        <div class="form-group"><label class="form-label">TikTok</label><input type="url" id="set_tiktok" class="form-input" dir="ltr" placeholder="https://"></div>
+                        <div class="form-group"><label class="form-label">Google Maps</label><input type="url" id="set_maps" class="form-input" dir="ltr" placeholder="https://"></div>
+                    </div>
+                </div>
+
+                <div class="table-card content-card">
+                    <h3 class="content-h">➕ حقول إضافية لصفحة الهبوط</h3>
+                    <p class="content-note">أضف أي حقل نصي جديد (مثال: <code dir="ltr">promo_title_ar</code>) ليُستخدم في التصميم الجديد عبر <code dir="ltr">data-cms</code>.</p>
+                    <div id="extraFields"></div>
+                    <button type="button" class="btn-admin-action" style="color:var(--navy); background:#E2E8F0;" onclick="addExtraField()">➕ إضافة حقل</button>
+                </div>
+
+                <div class="content-save-bar">
+                    <button type="submit" id="saveContentBtn" class="btn-primary">💾 حفظ ونشر المحتوى</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ================= SECTION: MEDIA LIBRARY ================= -->
+        <div id="sectionMedia" style="display:none;">
+            <div class="media-upload-zone" id="mediaDropzone" tabindex="0" role="button">
+                <span style="font-size:30px;">📤</span>
+                <strong>اسحب الصور هنا أو اضغط لرفع عدة صور دفعة واحدة</strong>
+                <small>تُصغَّر وتُحوَّل تلقائياً إلى WEBP قبل الرفع</small>
+                <span id="mediaUploadStatus" class="ip-status" role="status"></span>
+            </div>
+            <input type="file" id="mediaFileInput" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
+            <div class="control-bar" style="margin-top:16px;">
+                <div style="font-weight:800; color:var(--navy);">🖼️ كل الصور المرفوعة</div>
+                <div><button type="button" class="btn-admin-action" style="color:var(--navy); background:#E2E8F0;" onclick="loadMedia(true)">🔄 تحديث</button></div>
+            </div>
+            <div class="media-grid" id="mediaGrid"></div>
+        </div>
+
         <!-- ================= SECTION 2: BANNERS & ANNOUNCEMENTS ================= -->
         <div id="sectionBanners" style="display:none;">
             <!-- Live Preview Card -->
@@ -156,7 +258,7 @@
                     <table class="admin-table">
                         <thead>
                             <tr>
-                                <th style="width:60px;">#</th>
+                                <th style="width:90px;">الترتيب</th>
                                 <th style="width:130px;">الشارة / التاج</th>
                                 <th>نص الإعلان (عربي)</th>
                                 <th>النص بالإنجليزية</th>
@@ -224,7 +326,7 @@
                         <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;" id="urlMarketText">/market.html</div>
                     </div>
                     <div style="display:flex; gap:8px;">
-                        <a href="https://woa-store-yasserious.vercel.app/market.html" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:var(--orange); color:#fff; border-color:var(--orange);">فتح المتجر ↗️</a>
+                        <a href="https://woa-market-yasserious.vercel.app/market" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:var(--orange); color:#fff; border-color:var(--orange);">فتح المتجر ↗️</a>
                         <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html', 'تم نسخ رابط المتجر الرقمي!')">نسخ 📋</button>
                     </div>
                 </div>
@@ -243,7 +345,7 @@
                         <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/market.html?space=kitchen</div>
                     </div>
                     <div style="display:flex; gap:8px;">
-                        <a href="https://woa-store-yasserious.vercel.app/market.html?space=kitchen" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم المطابخ ↗️</a>
+                        <a href="https://woa-market-yasserious.vercel.app/market?space=kitchen" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم المطابخ ↗️</a>
                         <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html?space=kitchen', 'تم نسخ رابط قسم المطابخ!')">نسخ 📋</button>
                     </div>
                 </div>
@@ -262,7 +364,7 @@
                         <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/market.html?space=dressing</div>
                     </div>
                     <div style="display:flex; gap:8px;">
-                        <a href="https://woa-store-yasserious.vercel.app/market.html?space=dressing" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم الدريسينج ↗️</a>
+                        <a href="https://woa-market-yasserious.vercel.app/market?space=dressing" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم الدريسينج ↗️</a>
                         <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html?space=dressing', 'تم نسخ رابط قسم الدريسينج!')">نسخ 📋</button>
                     </div>
                 </div>
@@ -415,15 +517,7 @@
 
                 <div class="form-group">
                     <label class="form-label">صورة المنتج</label>
-                    <div class="upload-area" onclick="document.getElementById('fileUploadInput').click()">
-                        <div style="font-size:24px; margin-bottom:4px;">📷</div>
-                        <div style="font-size:13px; font-weight:700;">اضغط هنا لاختيار أو رفع صورة جديدة</div>
-                        <div style="font-size:11px; color:var(--text-muted);">يدعم PNG, JPG, WEBP</div>
-                    </div>
-                    <input type="file" id="fileUploadInput" accept="image/*" style="display:none;">
-                    <div style="text-align:center; margin-top:8px;">
-                        <img id="previewImg" src="/Branding/logo-100.png" class="preview-img" alt="Preview">
-                    </div>
+                    <div id="prodImagePicker"></div>
                 </div>
 
                 <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
@@ -500,10 +594,39 @@
         </div>
     </div>
 
+    <!-- Category Modal -->
+    <div class="admin-modal-overlay" id="categoryModal" onclick="if(event.target === this) closeCategoryModal()">
+        <div class="admin-modal-box">
+            <h2 id="modalCategoryTitle" style="font-size:20px; margin-bottom:18px; color:var(--navy);">➕ إضافة فئة</h2>
+            <form onsubmit="saveCategoryForm(event)">
+                <div class="form-group"><label class="form-label">اسم الفئة بالعربية *</label><input type="text" id="catAr" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Category name (English) *</label><input type="text" id="catEn" class="form-input" dir="ltr" required></div>
+                <div class="form-group"><label class="form-label">الأيقونة</label><select id="catIcon" class="form-select"></select></div>
+                <div class="form-group"><label class="form-label">المعرّف في الرابط (اختياري)</label><input type="text" id="catSlug" class="form-input" dir="ltr" placeholder="hinges"></div>
+                <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
+                    <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeCategoryModal()">إلغاء</button>
+                    <button type="submit" class="btn-primary">💾 حفظ الفئة</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Media picker -->
+    <div class="admin-modal-overlay" id="mediaPickerModal" onclick="if(event.target === this) MediaPicker.close()">
+        <div class="admin-modal-box" style="max-width:760px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                <h2 style="font-size:20px; color:var(--navy);">🖼️ اختر صورة من المكتبة</h2>
+                <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="MediaPicker.close()">إغلاق</button>
+            </div>
+            <div class="media-grid" id="mediaPickerGrid"></div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="adminToast" class="toast-msg"></div>
 
     <script src="/static/js/supabase_sync.js"></script>
     <script src="/static/js/admin.js"></script>
+    <script src="/static/js/cms.js"></script>
 </body>
 </html>

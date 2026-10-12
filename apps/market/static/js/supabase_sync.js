@@ -61,6 +61,20 @@ const SupabaseSync = {
         return [];
     },
 
+    async fetchBanners() {
+        try {
+            const data = await this.fetchRest("woa_banners?select=id,badge_ar,badge_en,text_ar,text_en,link,active&active=eq.true&order=sort_order.asc,id.asc", "woa_cache_banners");
+            if (Array.isArray(data) && data.length > 0) return data;
+        } catch (e) {
+            console.warn("[Supabase] banners fetch failed, using local fallback:", e);
+        }
+        try {
+            const res = await fetch("/data/banners.json");
+            if (res.ok) return await res.json();
+        } catch (e) {}
+        return [];
+    },
+
     async fetchProducts(filters = {}) {
         try {
             let data = await this.fetchRest(`woa_products?select=${PRODUCT_COLUMNS}&order=id.asc`, "woa_cache_products");

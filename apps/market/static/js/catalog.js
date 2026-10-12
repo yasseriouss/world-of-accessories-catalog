@@ -215,12 +215,11 @@ let activeBannerIdx = 0;
 let bannerCycleTimer = null;
 
 async function fetchBanners() {
-    // Banners come from the published data file
+    // Banners are managed from the dashboard (Supabase), with the bundled file as fallback
     try {
-        const res = await fetch("/data/banners.json");
-        if (res.ok) {
-            const data = await res.json();
-            bannersList = (data || []).filter(b => b.active !== false);
+        const list = window.SupabaseSync ? await window.SupabaseSync.fetchBanners() : [];
+        if (list && list.length > 0) {
+            bannersList = list.filter(b => b.active !== false);
             renderBanners();
             return;
         }
@@ -262,7 +261,8 @@ function renderBanners() {
     bannersList.forEach((b, idx) => {
         const badge = isAr ? (b.badge_ar || b.badge_en || 'إعلان') : (b.badge_en || b.badge_ar || 'News');
         const text = isAr ? (b.text_ar || b.text_en) : (b.text_en || b.text_ar);
-        const link = b.link || "javascript:void(0)";
+        const rawLink = String(b.link || "");
+        const link = escapeHtmlBanner(/^(https?:\/\/|tel:|#|\/)/i.test(rawLink) ? rawLink : "#");
         const target = (link && (link.startsWith("http") || link.startsWith("https"))) ? 'target="_blank" rel="noopener"' : '';
         const activeClass = (idx === activeBannerIdx) ? "active" : "";
 
