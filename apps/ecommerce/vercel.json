@@ -1,15 +1,37 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "buildCommand": "echo 'Static site - no build needed'",
   "outputDirectory": ".",
-  "env": {},
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/market", "destination": "/market.html" },
+    { "source": "/market/(.*)", "destination": "/market.html" },
     { "source": "/catalog", "destination": "/market.html" },
+    { "source": "/catalog/(.*)", "destination": "/market.html" },
     { "source": "/landing", "destination": "/landing.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/print", "destination": "/printed_catalogs.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*).html", "destination": "/$1.html" },
+    { "source": "/", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/Branding/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
   ]
 }
