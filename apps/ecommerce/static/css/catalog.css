@@ -2113,7 +2113,6 @@ body {
         border-radius: 8px;
         gap: 4px;
     }
-}
     .hero-section {
         padding: 28px 12px 38px;
     }
@@ -2280,5 +2279,107 @@ body {
         width: 48px;
         height: 48px;
         font-size: 24px;
+    }
+}
+
+/* ---------------- Product grid layout refinements ---------------- */
+.products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    align-items: stretch;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.card-title-ar,
+.card-title-en {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+.card-title-ar {
+    min-height: 2.8em;
+}
+
+.card-badges-row {
+    flex-wrap: wrap;
+}
+
+.card-top-badge,
+.card-usage-badge {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .card-img-wrap {
+        height: 130px;
+        padding: 8px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+    .card-badges-row {
+        gap: 4px;
+        margin-bottom: 6px;
+    }
+    .card-top-badge,
+    .card-usage-badge {
+        font-size: 9.5px;
+        padding: 2px 6px;
+    }
+    .card-title-ar {
+        font-size: 13px;
+        min-height: 2.8em;
+    }
+    .card-title-en {
+        font-size: 11px;
+    }
+    .card-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .card-price-tag {
+        font-size: 15px;
+    }
+    .card-actions-row {
+        gap: 4px;
+    }
+    .card-actions-row .btn-icon-action {
+        flex: 1;
+        width: auto;
+        height: 34px;
+    }
+}
+
+/* Prevent horizontal page scroll from the header on small screens */
+@media (max-width: 640px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 }

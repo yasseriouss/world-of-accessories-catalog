@@ -406,8 +406,17 @@ function applyLanguage(lang) {
 // ----------------- API Data Fetching -----------------
 // ----------------- Supabase Live Data Fetching with Resilient Fallback -----------------
 let cachedRawProducts = null;
+let rawProductsPromise = null;
 
-async function getRawProductsData(forceRefresh = false) {
+function getRawProductsData(forceRefresh = false) {
+    if (cachedRawProducts && !forceRefresh) return Promise.resolve(cachedRawProducts);
+    if (!rawProductsPromise || forceRefresh) {
+        rawProductsPromise = loadRawProducts(forceRefresh).finally(() => { rawProductsPromise = null; });
+    }
+    return rawProductsPromise;
+}
+
+async function loadRawProducts(forceRefresh = false) {
     if (cachedRawProducts && !forceRefresh) return cachedRawProducts;
 
     // Check SessionStorage for instant 0ms reload
@@ -451,22 +460,40 @@ async function getRawProductsData(forceRefresh = false) {
     return [];
 }
 
-async function fetchUsageTypes() {
-    // Calculate from live products
-    const prods = await getRawProductsData();
-    let kitchenCount = 0, dressingCount = 0, otherCount = 0;
-    prods.forEach(p => {
-        const u = p.usage_type || "other";
-        if (u === "kitchen") kitchenCount++;
-        else if (u === "dressing") dressingCount++;
-        else otherCount++;
+usageTypesList = [
+    { key: "kitchen", ar: "مطابخ", en: "Kitchens", icon: "🍳" },
+    { key: "dressing", ar: "دريسينج", en: "Dressing", icon: "👔" },
+    { key: "other", ar: "أخرى وعام", en: "General / Other", icon: "🛋️" }
+];
+
+function normalizeUsage(value) {
+    return value === "kitchen" || value === "dressing" ? value : "other";
+}
+
+// Faceted counts: category counts respect the active usage filter and vice versa.
+function computeFacetCounts() {
+    const catCounts = {};
+    const usageCounts = { kitchen: 0, dressing: 0, other: 0 };
+    (cachedRawProducts || []).forEach(p => {
+        const u = normalizeUsage(p.usage_type);
+        if (activeUsageType === "all" || activeUsageType === u) {
+            catCounts[p.category_id] = (catCounts[p.category_id] || 0) + 1;
+        }
+        if (activeCategoryId === 0 || activeCategoryId === p.category_id) {
+            usageCounts[u]++;
+        }
     });
-    usageTypesList = [
-        { key: "kitchen", ar: "مطابخ", en: "Kitchens", count: kitchenCount },
-        { key: "dressing", ar: "دريسينج", en: "Dressing", count: dressingCount },
-        { key: "other", ar: "أخرى وعام", en: "General / Other", count: otherCount }
-    ];
+    return { catCounts, usageCounts };
+}
+
+function refreshFacets() {
     renderUsageFilterBar();
+    renderCategories();
+}
+
+async function fetchUsageTypes() {
+    await getRawProductsData();
+    refreshFacets();
 }
 
 async function fetchCategories() {
@@ -476,7 +503,8 @@ async function fetchCategories() {
             const data = await window.SupabaseSync.fetchCategories();
             if (data && data.length > 0) {
                 categoriesList = data;
-                renderCategories();
+                await getRawProductsData();
+                refreshFacets();
                 return;
             }
         } catch (e) {}
@@ -488,7 +516,8 @@ async function fetchCategories() {
         if (res.ok) {
             const data = await res.json();
             categoriesList = data.categories || [];
-            renderCategories();
+            await getRawProductsData();
+            refreshFacets();
         }
     } catch (err) {
         console.error("Failed to load categories:", err);
@@ -566,26 +595,26 @@ function renderUsageFilterBar() {
     if (!container) return;
 
     const t = i18n[currentLang];
-    const totalCount = usageTypesList.reduce((sum, u) => sum + (u.count || 0), 0);
+    const { usageCounts } = computeFacetCounts();
+    const totalCount = usageCounts.kitchen + usageCounts.dressing + usageCounts.other;
 
     let html = `
         <button class="space-pill ${activeUsageType === 'all' ? 'active' : ''}" onclick="selectUsageType('all')">
             <span>${t.allSpaces}</span>
-            <span class="space-count-badge">${totalCount || 591}</span>
+            <span class="space-count-badge">${totalCount}</span>
         </button>
     `;
 
     usageTypesList.forEach(u => {
         const isActive = (activeUsageType === u.key);
-        let name = (currentLang === "ar") ? u.ar : u.en;
-        if (u.key === "kitchen") name = t.kitchenSpace;
-        else if (u.key === "dressing") name = t.dressingSpace;
-        else if (u.key === "other") name = t.otherSpace;
+        const name = (u.key === "kitchen") ? t.kitchenSpace
+            : (u.key === "dressing") ? t.dressingSpace
+            : t.otherSpace;
 
         html += `
             <button class="space-pill ${isActive ? 'active' : ''}" onclick="selectUsageType('${u.key}')">
-                <span>${u.icon} ${name}</span>
-                <span class="space-count-badge">${u.count || 0}</span>
+                <span>${name}</span>
+                <span class="space-count-badge">${usageCounts[u.key] || 0}</span>
             </button>
         `;
     });
@@ -595,7 +624,7 @@ function renderUsageFilterBar() {
 
 function selectUsageType(typeKey) {
     activeUsageType = typeKey;
-    renderUsageFilterBar();
+    refreshFacets();
     updateUrlParams();
     fetchProducts();
 }
@@ -605,7 +634,8 @@ function renderCategories() {
     if (!container) return;
 
     const t = i18n[currentLang];
-    let totalCount = categoriesList.reduce((sum, c) => sum + (c.live_count || 0), 0);
+    const { catCounts } = computeFacetCounts();
+    const totalCount = Object.values(catCounts).reduce((sum, n) => sum + n, 0);
 
     let html = `
         <button class="cat-pill ${activeCategoryId === 0 ? 'active' : ''}" onclick="selectCategory(0)">
@@ -620,7 +650,7 @@ function renderCategories() {
         html += `
             <button class="cat-pill ${isActive ? 'active' : ''}" onclick="selectCategory(${Number(c.id)})">
                 <span>${esc(c.icon || '📦')} ${esc(name)}</span>
-                <span class="cat-pill-count">${c.live_count || 0}</span>
+                <span class="cat-pill-count">${catCounts[c.id] || 0}</span>
             </button>
         `;
     });
@@ -630,7 +660,7 @@ function renderCategories() {
 
 function selectCategory(catId) {
     activeCategoryId = catId;
-    renderCategories();
+    refreshFacets();
     updateUrlParams();
     fetchProducts();
 }

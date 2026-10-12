@@ -10,6 +10,8 @@ let activeUsageFilter = "all";
 let searchFilter = "";
 let currentEditId = null;
 let currentUploadedImg = "Branding/logo-100.png";
+const STORE_ORIGIN = "https://woa-store-yasserious.vercel.app";
+const storeUrl = (path) => STORE_ORIGIN + path;
 
 function escapeHTML(str) {
     if (str === null || str === undefined) return '';
@@ -599,7 +601,7 @@ function toggleBannerStatus(bannerId) {
 
 // ----------------- Ecosystem Links & Campaign Generator -----------------
 function copyLinkToClipboard(path, toastMsg) {
-    const fullUrl = `${window.location.origin}${path}`;
+    const fullUrl = storeUrl(path);
     navigator.clipboard.writeText(fullUrl).then(() => {
         showToast(toastMsg || "تم نسخ الرابط بنجاح إلى الحافظة!");
     }).catch(() => {
@@ -628,8 +630,8 @@ async function testAllEcosystemLinks() {
             badge.style.borderColor = "#FDE68A";
         }
         try {
-            const res = await fetch(item.url, { method: "HEAD" });
-            if (res.ok || res.status === 200 || res.status === 304) {
+            const res = await fetch(storeUrl(item.url), { method: "HEAD", mode: "no-cors", cache: "no-store" });
+            if (res.type === "opaque" || res.ok) {
                 successCount++;
                 if (badge) {
                     badge.textContent = "🟢 نشط (200 OK)";
@@ -645,13 +647,11 @@ async function testAllEcosystemLinks() {
                 }
             }
         } catch (e) {
-            // Local dev without server or network restrictions
             if (badge) {
-                badge.textContent = "🟢 نشط ومعتمد";
-                badge.style.background = "#ECFDF5";
-                badge.style.color = "#059669";
+                badge.textContent = "⚠️ لا يستجيب";
+                badge.style.background = "#FEE2E2";
+                badge.style.color = "#DC2626";
             }
-            successCount++;
         }
     }
 
@@ -678,8 +678,7 @@ function generateCampaignLink() {
         targetPath += `${separator}q=${encodeURIComponent(query)}`;
     }
 
-    const origin = (window.location.origin && !window.location.origin.includes("null")) ? window.location.origin : "https://world-of-accessories.vercel.app";
-    const fullUrl = `${origin}${targetPath}`;
+    const fullUrl = storeUrl(targetPath);
     resultInput.value = fullUrl;
     if (testLink) testLink.href = targetPath;
 
