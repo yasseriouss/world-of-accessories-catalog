@@ -1,135 +1,48 @@
-# 🛠️ عالم الإكسسوارات | World of Accessories Ecosystem
+# World of Accessories
 
-إعادة هيكلة كاملة للمشروع إلى **نموذج Monorepo** مع **موقعين منفصلين على Vercel**:
+Three independent static apps in one repository, all backed by one Supabase project.
 
-## 📊 Architecture: Separate Vercel Deployments
+| App | Folder | Vercel project | Purpose |
+|---|---|---|---|
+| Landing | `apps/landing` | `woa-store` | Public entry page that leads to the market (design to be replaced) |
+| Market | `apps/market` | `woa-market` | Product catalog, cart, WhatsApp ordering |
+| Dashboard | `apps/dashboard` | `admin-accessories` | Full control: products, categories, banners, landing content, media |
 
-```text
-Catalogue/
-├── apps/
-│   ├── 🛒 ecommerce/              # الموقع الرئيسي العام (E-Commerce)
-│   │   ├── index.html             # صفحة الهبوط
-│   │   ├── landing.html           # صفحة الترحيب
-│   │   ├── market.html            # سوق المنتجات
-│   │   ├── about.html             # عن الشركة
-│   │   ├── printed_catalogs.html  # مركز الكتالوجات
-│   │   ├── vercel.json            # إعدادات النشر المستقلة
-│   │   ├── Branding/              # الهوية البصرية
-│   │   ├── styles/                # الأنماط المشتركة
-│   │   ├── static/                # ملفات JavaScript
-│   │   └── README.md
-│   │
-│   └── 📊 dashboard/              # لوحة التحكم الإدارية (Admin Panel)
-│       ├── index.html             # الصفحة الرئيسية
-│       ├── admin.html             # لوحة التحكم (Supabase Auth)
-│       ├── vercel.json            # إعدادات النشر المستقلة
-│       ├── Branding/              # الهوية البصرية
-│       ├── styles/                # الأنماط المشتركة
-│       ├── static/                # ملفات JavaScript
-│       └── README.md
-│
-├── shared/                       # الموارد المشتركة
-│   ├── Branding/                 # الشعارات والخطوط والصور
-│   ├── styles/                   # أنماط عام (fonts.css)
-│   └── data/                     # البيانات المشتركة
-│
-├── docs/                         # التوثيق
-├── vercel.json                   # إعدادات Monorepo (Vercel)
-├── DEPLOYMENT.md                 # دليل النشر الكامل
-└── README.md                     # هذا الملف
+## Data (Supabase)
+
+| Table / bucket | Used by | Managed from |
+|---|---|---|
+| `woa_products`, `woa_categories` | market | dashboard: Products / Categories |
+| `woa_banners` | market announcement bar | dashboard: Banners |
+| `woa_settings` (`landing`, `site`) | landing, market | dashboard: Site content |
+| bucket `product-images` | all | dashboard: any image field / Media library |
+
+Reads are public. Writes require the admin Auth user and are enforced by RLS
+(`public.is_woa_admin()`; change the admin email there).
+
+## Images
+
+Uploads are resized to max 1600px and re-encoded to WebP in the browser, then stored in the
+`product-images` bucket (max 5 MB, JPG/PNG/WEBP/GIF).
+
+## Landing content binding
+
+Any element on the landing page can be bound to dashboard content:
+
+```html
+<h1 data-cms="hero_title">fallback text</h1>            <!-- hero_title_ar / hero_title_en by language -->
+<a data-cms-href="tel:{phone}">call</a>
+<img data-cms-src="hero_image" alt="">
+<section data-cms-bg="hero_image"></section>
 ```
 
----
+Add new keys from the dashboard under *Site content -> additional fields*.
 
-## 🛒 1. موقع الإلكترونيات العام - E-Commerce (`apps/ecommerce/`)
+## Deploy
 
-### الميزات الرئيسية:
-- **🌍 ثنائي اللغة:** دعم كامل للعربية (RTL) والإنجليزية (LTR)
-- **📱 متجاوب بنسبة 100%:** مثالي للهاتف والتابلت وأجهزة الحاسوب
-- **🛍️ سوق كامل:** عرض المنتجات مع بحث وفلترة متقدمة
-- **🛒 سلة تسوق:** نظام تسوق متكامل
-- **📖 الكتالوجات:** كتالوجات رقمية ومطبوعة
-- **♿ وصول سهل:** معايير الويب والوصولية
-- **🎨 تصميم فاخر:** هوية بصرية احترافية
+Push to `main`. Each Vercel project builds its own root directory with no build step.
+Heartbeat for the free Supabase tier: `scripts/supabase-heartbeat.mjs` (GitHub Actions workflow, needs the
+`SUPABASE_URL` and `SUPABASE_ANON_KEY` repository secrets).
 
-### الصفحات الرئيسية:
-- `/` - صفحة الهبوط الرئيسية
-- `/market` - سوق المنتجات
-- `/about` - عن الشركة
-- `/print` - مركز الكتالوجات المطبوعة
-
-### بيانات النشر:
-- **Vercel Project**: `accessories-world`
-- **URL**: `https://accessories-world.vercel.app`
-- **Root Directory**: `apps/ecommerce`
-- **Configuration**: `apps/ecommerce/vercel.json`
-
----
-
-## 📊 2. لوحة التحكم الإدارية - Admin Dashboard (`apps/dashboard/`)
-
-### الميزات الرئيسية:
-- **🔐 أمان عالي:** تسجيل دخول عبر Supabase Auth، والكتابة على قاعدة البيانات مقيّدة بسياسات RLS لحساب المسؤول فقط
-- **📦 إدارة المنتجات:** إضافة وتعديل وحذف المنتجات (CRUD)
-- **🖼️ إدارة الصور:** رفع الصور والتعديل عليها
-- **📊 إحصائيات:** لوحة تحليلات ومراقبة الأداء
-- **⚡ توليد الكتالوجات:** إنشاء الكتالوجات المطبوعة في ثانية واحدة
-- **🔄 المزامنة:** تحديث تلقائي مع الموقع الرئيسي
-- **🛠️ أدوات الإدارة:** إدارة الفئات والعروضات والمبيعات
-
-### الصفحات الرئيسية:
-- `/` - الصفحة الرئيسية للإدارة
-- `/admin` - لوحة التحكم الكاملة
-
-### بيانات النشر:
-- **Vercel Project**: `admin-accessories`
-- **URL**: `https://admin-accessories.vercel.app`
-- **Root Directory**: `apps/dashboard`
-- **Configuration**: `apps/dashboard/vercel.json`
-- **Authentication**: Supabase Auth (email + password), writes enforced by RLS
-
----
-
-## 🚀 البدء والنشر
-
-### النشر على Vercel (الطريقة الموصى بها):
-
-1. **ربط المستودع:**
-   ```bash
-   git remote -v  # تحقق من الربط مع GitHub
-   ```
-
-2. **إنشاء مشروعين على Vercel:**
-   - اذهب إلى https://vercel.com
-   - استورد من GitHub
-   - أنشئ مشروعين:
-     - **المشروع 1**: E-Commerce (Root: `apps/ecommerce`)
-     - **المشروع 2**: Admin Dashboard (Root: `apps/dashboard`)
-
-3. **التكوين:**
-   - عيّن "Root Directory" للمسار المناسب
-   - استخدم `vercel.json` من كل تطبيق
-   - بدون أوامر بناء (ملفات ثابتة)
-
-4. **النشر التلقائي:**
-   - يتم النشر تلقائياً عند الدفع إلى `main`
-   - تم إنشاء preview deployments لـ PRs
-
-### الدفع والنشر:
-
-```bash
-# أضف التعديلات
-git add .
-
-# قم بالالتزام
-git commit -m "feat: update website structure"
-
-# ادفع إلى GitHub
-git push origin main
-
-# سيتم النشر تلقائياً على Vercel
-```
-
----
-
-## 📁 هيكل المشروع المفصل
+Cross-app URLs live in `apps/market/market.html`, `apps/landing/*.html` and `apps/dashboard/static/js/admin.js`
+(`LANDING_ORIGIN`, `MARKET_ORIGIN`).
