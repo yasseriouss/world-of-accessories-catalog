@@ -293,6 +293,8 @@ async function saveProductForm(e) {
         price: price,
         category_id: catId,
         usage_type: usageType,
+        usage_ar: ({ kitchen: "مطابخ", dressing: "دريسينج" })[usageType] || "أخرى",
+        usage_en: ({ kitchen: "Kitchen", dressing: "Dressing" })[usageType] || "Other",
         image: ImagePicker.get("prodImagePicker") || "Branding/logo-100.png"
     };
 
