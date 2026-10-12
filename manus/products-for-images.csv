@@ -1,0 +1,592 @@
+﻿id,file_name_base,name_ar,name_en,category_ar,category_en,brand_hint,has_image
+1,WOA-0001,مفصله ساميت عدلة سوفت كلوز 3d,Hinge Summit Straight Soft Close 3d,المفصلات,Hinges,Summit,no
+2,WOA-0002,مفصله ساميت نص ركبة سوفت كلوز3D,Hinge Summit Half Overlay Soft Close3D,المفصلات,Hinges,Summit,no
+3,WOA-0003,مفصله ساميت تركي ركبة كاملة 4مسمار,Hinge Summit Turkish Full Overlay 4مcmار,المفصلات,Hinges,"Summit, Turkish",no
+4,WOA-0004,مفصله بالما عدلة سوفت كلوز 3D,Hinge Palma Straight Soft Close 3D,المفصلات,Hinges,Palma,no
+5,WOA-0005,مفصله بالما نص ركبة سوفت كلوز 3D,Hinge Palma Half Overlay Soft Close 3D,المفصلات,Hinges,Palma,no
+6,WOA-0006,مفصله بالما عدلة 2قوة 3D نيكل,Hinge Palma Straight 2قوة 3D Nickel,المفصلات,Hinges,Palma,no
+7,WOA-0007,مفصله بالما نص ركبة2قوة 3D نيكل,Hinge Palma Half Overlay2قوة 3D Nickel,المفصلات,Hinges,Palma,no
+8,WOA-0008,مفصله عقربه 165سوفت كلوز  3D بالما,Hinge Scorpion 165Soft Close  3D Palma,المفصلات,Hinges,Palma,no
+9,WOA-0009,مفصله بالما ركبة سوفت كلوز 3D,Hinge Palma ركبة Soft Close 3D,المفصلات,Hinges,Palma,no
+10,WOA-0010,مفصله 90 درجة بلند كورنر سوفت كلوز3D,Hinge 90 Drawerة بلند كورنر Soft Close3D,المفصلات,Hinges,,no
+11,WOA-0011,مفصله مكمل عقرب 135 درجة D3,Hinge مكمل عقرب 135 Drawerة D3,المفصلات,Hinges,,no
+12,WOA-0012,دراع باكم سوفت بجراب ضغط 80 ابيض بالما,Arm Hydraulic سوفت بجراب ضغط 80 White Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+13,WOA-0013,دراع باكم سوفت بجراب ضغط 120 اسود بالما,Arm Hydraulic سوفت بجراب ضغط 120 Black Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+14,WOA-0014,دراع باكم سوفت بجراب ضغط 100 اسود بالما,Arm Hydraulic سوفت بجراب ضغط 100 Black Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+15,WOA-0015,دراع باكم سوفت بجراب ضغط 100 ابيض بالما,Arm Hydraulic سوفت بجراب ضغط 100 White Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+16,WOA-0016,دراع باكم سوفت بجراب ضغط 120 ابيض بالما,Arm Hydraulic سوفت بجراب ضغط 120 White Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+17,WOA-0017,دراع باكم سوفت بجراب ضغط 150 ابيض بالما,Arm Hydraulic سوفت بجراب ضغط 150 White Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+18,WOA-0018,دراع باكم سوفت بجراب ضغط 150 اسود بالما,Arm Hydraulic سوفت بجراب ضغط 150 Black Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+19,WOA-0019,دراع باكم سوفت کلوز رمادی ضغط 100 نيسكو,Arm Hydraulic سوفت کلوز رمادی ضغط 100 نيسكو,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+20,WOA-0020,هوايه مطبخ 8*20 فضي,هوايه مطبخ 8*20 فضي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+21,WOA-0021,هوايه مطبخ 6*30 فضي,هوايه مطبخ 6*30 فضي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+22,WOA-0022,هوايه مطبخ 6*30 اسود,هوايه مطبخ 6*30 Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+23,WOA-0023,هوايه مطبخ 8*30 اسود,هوايه مطبخ 8*30 Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+24,WOA-0024,هوايه مطبخ 8*20 اسود,هوايه مطبخ 8*20 Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+25,WOA-0025,ترولي مودرن سوفت كلوز 15 سم,ترولي مودرن Soft Close 15 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+26,WOA-0026,ترولي مودرن سوفت كلوز 40 سم,ترولي مودرن Soft Close 40 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+27,WOA-0027,مقبض حرف G لطش اسود مصري انوده,Handle حShelf G لطش Black مصري انوده,المقابض والمسكات,Handles & Knobs,Egyptian,no
+28,WOA-0028,قطاع زجاج بدون مقبض اسود 3 م الكترو,قطاع زجاج بدون Handle Black 3 م الكترو,المقابض والمسكات,Handles & Knobs,,no
+29,WOA-0029,قطاع زجاج مع مقبض اسود 2.7م الكترو,قطاع زجاج مع Handle Black 2.7م الكترو,المقابض والمسكات,Handles & Knobs,,no
+30,WOA-0030,زاويه تجميع دريسنج مصري 2 مم,Angle تجميع دريسنج مصري 2 مم,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Egyptian,no
+31,WOA-0031,زاويه ربط مقبض دفن LوU,Angle ربط Handle دفن LوU,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+32,WOA-0032,مقبض دفن حرف L اسود مصري الكترو,Handle دفن حShelf L Black مصري الكترو,المقابض والمسكات,Handles & Knobs,Egyptian,no
+33,WOA-0033,عود وزر 10 سم تركي 4متر سيلفر,عود وزر 10 cm Turkish 4meter سيلفر,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",Turkish,no
+34,WOA-0034,عود وزر 10 سم اسود تركي عالي الجوده,عود وزر 10 cm Black Turkish عالي الجوده,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",Turkish,no
+35,WOA-0035,علاقة مطبخ رجلاش مع صاج,علاقة مطبخ Adjustable مع صاج,المقابض والمسكات,Handles & Knobs,,no
+36,WOA-0036,خزنة دريسنج رقمية 60 سم ( مقسمة ),خزنة دريسنج رقمية 60 cm ( مقcmة ),الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+37,WOA-0037,صابع تاتش بجناح ( معدن ) بالما,صابع تاتش بجناح ( معدن ) Palma,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",Palma,no
+38,WOA-0038,صابع تاتش كبس ( معدن )  بالما,صابع تاتش كبس ( معدن )  Palma,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",Palma,no
+39,WOA-0039,صابع تاتش دفن (أبيض ) بالما,صابع تاتش دفن (أبيض ) Palma,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",Palma,no
+40,WOA-0040,صابع تاتش بلاستيك ( أبيض ) بالما خارجي,صابع تاتش بلاستيك ( أبيض ) Palma خارجي,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",Palma,no
+41,WOA-0041,رجل بلاستيك 10 سم أوشن مطبخ,رجل بلاستيك 10 cm أوشن مطبخ,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Ocean,no
+42,WOA-0042,خلع درج حوض ابيض 6 مم,خلع Drawer Sink White 6 مم,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+43,WOA-0043,خلع درج حوض رصاصي,خلع Drawer Sink رصاصي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+44,WOA-0044,خلع درج حوض سيلفر 6 مم,خلع Drawer Sink سيلفر 6 مم,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+45,WOA-0045,مجرى جانبي تاتش 30 سم مودرن,Runner/Slide جانبي تاتش 30 cm مودرن,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+46,WOA-0046,مجرى جانبي تاتش 35سم مودرن,Runner/Slide جانبي تاتش 35cm مودرن,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+47,WOA-0047,مجرى جانبي تاتش 40سم مودرن,Runner/Slide جانبي تاتش 40cm مودرن,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+48,WOA-0048,مجرى سفلي سوفت كلوز 2 مرحلة 30 سم             بالما,Runner/Slide سفلي Soft Close 2 مرحلة 30 cm             Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+49,WOA-0049,مجرى سفلي سوفت كلوز 2 مرحلة 35 سم             بالما,Runner/Slide سفلي Soft Close 2 مرحلة 35 cm             Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+50,WOA-0050,مجرى سفلي سوفت كلوز 2 مرحلة 40 سم           بالما,Runner/Slide سفلي Soft Close 2 مرحلة 40 cm           Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+51,WOA-0051,مجرى سفلي سوفت كلوز 2 مرحلة 45 سم            بالما,Runner/Slide سفلي Soft Close 2 مرحلة 45 cm            Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+52,WOA-0052,مجرى سفلي سوفت كلوز 2 مرحلة 50 سم             بالما,Runner/Slide سفلي Soft Close 2 مرحلة 50 cm             Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+53,WOA-0053,مجرى جانبي سوفت كلوز مودرن 30 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 30 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+54,WOA-0054,مجرى جانبي سوفت كلوز مودرن 35 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 35 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+55,WOA-0055,مجرى جانبي سوفت كلوز مودرن 40 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 40 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+56,WOA-0056,مجرى جانبي سوفت كلوز مودرن 45 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 45 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+57,WOA-0057,مجرى جانبي سوفت كلوز مودرن 50 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 50 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+58,WOA-0058,مجرى جانبي سوفت كلوز 35 سم نيسكو,Runner/Slide جانبي Soft Close 35 cm نيسكو,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+59,WOA-0059,مجرى جانبي سوفت كلوز 45 سم نيسكو,Runner/Slide جانبي Soft Close 45 cm نيسكو,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+60,WOA-0060,مجرى جانبي سوفت كلوز 50 سم نيسكو,Runner/Slide جانبي Soft Close 50 cm نيسكو,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+61,WOA-0061,مجرى سفليه سوفت كلوز 50 سم نيسكو,Runner/Slide سفليه Soft Close 50 cm نيسكو,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+62,WOA-0062,عجل دولاب سوسته تركي كانز,عجل دولاب سوسته Turkish كانز,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Turkish,no
+63,WOA-0063,مجرى درج 45 سم تاندم بوكس ارتفاع 167 مم palma,Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع 167 مم palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+64,WOA-0064,مجرى درج 45 سم تاندم بوكس ارتفاع  84 مم palma,Runner/Slide Drawer 45 cm تاندم بوكس ارتفاع  84 مم palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+65,WOA-0065,ماكينة بصمة أكريلك,ماكينة بصمة أكريلك,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+66,WOA-0066,وحدة تخريم صابع تاتش,وحدة تخريم صابع تاتش,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",,no
+67,WOA-0067,ميكانيزم حامل طاسات COPRA سوفت كلوز 5 فرع أبيض,ميكانيزم حامل طاسات COPRA Soft Close 5 فرع أبيض,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",COPRA,no
+68,WOA-0068,حامل طاسات COPRA سوفت كلوز 5 فرع,حامل طاسات COPRA Soft Close 5 فرع,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",COPRA,no
+69,WOA-0069,حامل مقشات 5 فرع,حامل مقشات 5 فرع,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+70,WOA-0070,مطبقيه هيدروليك مودرن 60 سم أسود,مطبقيه هيدروليك مودرن 60 cm أسود,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+71,WOA-0071,مطبقيه هيدروليك مودرن 70 سم فضي,مطبقيه هيدروليك مودرن 70 cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+72,WOA-0072,مطبقيه هيدروليك مودرن 80 سم أسود,مطبقيه هيدروليك مودرن 80 cm أسود,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+73,WOA-0073,مطبقيه هيدروليك مودرن 80 سم فضي,مطبقيه هيدروليك مودرن 80 cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+74,WOA-0074,مطبقيه هيدروليك مودرن 90 سم أسود,مطبقيه هيدروليك مودرن 90 cm أسود,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+75,WOA-0075,مطبقيه هيدروليك مودرن 90 سم فضي,مطبقيه هيدروليك مودرن 90 cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+76,WOA-0076,باسكت قمامة 2عين 50 لتر سوفت كلوز وحده 40  palma,باسكت قمامة 2عين 50 لتر Soft Close وحده 40  palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+77,WOA-0077,دراع منطبق افنتوس رجلاش بالما  Heavy,Arm منطبق افنتوس Adjustable Palma  Heavy,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+78,WOA-0078,دراع منطبق افنتوس رجلاش بالما medium,Arm منطبق افنتوس Adjustable Palma medium,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+79,WOA-0079,ميكانيزم مرايا دريسنج رمادي,ميكانيزم مرايا دريسنج رمادي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+80,WOA-0080,شماعة بناطيل علويه 3/4 دائرة palma,شماعة بناطيل علويه 3/4 دائرة palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+81,WOA-0081,شماعة قميص علويه 3/4 دائرة palma,شماعة قميص علويه 3/4 دائرة palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+82,WOA-0082,شماعة قميص علوية سوفت كلوز Palm,شماعة قميص علوية Soft Close Palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+83,WOA-0083,ترابيزة مكواة سوفت كلوز Palma كود,ترابيزة مكواة Soft Close Palma كود,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+84,WOA-0084,مطبقيه ثابتة مودرن سوستة 60 سم,مطبقيه ثابتة مودرن سوستة 60 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+85,WOA-0085,مطبقيه ثابتة مودرن سوستة 70 سم,مطبقيه ثابتة مودرن سوستة 70 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+86,WOA-0086,مطبقيه ثابتة مودرن سوستة 80 سم,مطبقيه ثابتة مودرن سوستة 80 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+87,WOA-0087,مطبقيه ثابتة مودرن سوستة 90 سم,مطبقيه ثابتة مودرن سوستة 90 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+88,WOA-0088,ترولي جانبي زجاج اسود 15 سم palma,ترولي جانبي زجاج Black 15 cm palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+89,WOA-0089,ترولي جانبي زجاج اسود 20 سمpalma,ترولي جانبي زجاج Black 20 cmpalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+90,WOA-0090,ترولي جانبي زجاج اسود 25 سمpalma,ترولي جانبي زجاج Black 25 cmpalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+91,WOA-0091,ترولي جانبي زجاج اسود 30 سمpalma,ترولي جانبي زجاج Black 30 cmpalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+92,WOA-0092,ترولي جانبي زجاج اسود 35 سمpalma,ترولي جانبي زجاج Black 35 cmpalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+93,WOA-0093,شماعة بناطيل علوية مجوز ORANGE سوفت كلوز palma,شماعة بناطيل علوية مجوز ORANGE Soft Close palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+94,WOA-0094,شماعة بناطيل علوية مجوز GRAY سوفت كلوز palma,شماعة بناطيل علوية مجوز GRAY Soft Close palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+95,WOA-0095,شماعة بناطيل علوية GRAY سوفت كلوزpalma,شماعة بناطيل علوية GRAY Soft Closepalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+96,WOA-0096,شماعة بناطيل علوية ORANGE سوفت كلوز palma,شماعة بناطيل علوية ORANGE Soft Close palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+97,WOA-0097,مطبقيه ثابتة 60 سم بكلبس Palma (اسود),مطبقيه ثابتة 60 cm بكلبس Palma (Black),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+98,WOA-0098,مطبقيه ثابتة 70سم بكلبس Palma (اسود),مطبقيه ثابتة 70cm بكلبس Palma (Black),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+99,WOA-0099,مطبقيه ثابتة 80سم بكلبس Palma (اسود),مطبقيه ثابتة 80cm بكلبس Palma (Black),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+100,WOA-0100,مطبقيه ثابتة 90سم بكلبس Palma (اسود),مطبقيه ثابتة 90cm بكلبس Palma (Black),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+101,WOA-0101,مطبقيه ثابتة 70 سم بكلبس palma (استلس 304 ),مطبقيه ثابتة 70 cm بكلبس palma (استلس 304 ),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+102,WOA-0102,مطبقيه ثابتة 80 سم بكلبس palma (استلس 304 ),مطبقيه ثابتة 80 cm بكلبس palma (استلس 304 ),إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+103,WOA-0103,دراع منطبق افنتوس نيسكو معدل,Arm منطبق افنتوس نيسكو معدل,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+104,WOA-0104,دراع باكم استلس بولي لاك,Arm Hydraulic استلس بولي لاك,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+105,WOA-0105,لاصق خشب تركي 400 MDF ملم هاي تك,لاصق خشب Turkish 400 MDF ملم هاي تك,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives","Hi-Tech, Turkish",no
+106,WOA-0106,حامل رف زجاج شفاط,حامل Shelf زجاج Extractor,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+107,WOA-0107,فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C,فراشة تجميع معدن زنك صيني ثقيلة SIS كود 01Z-C,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives","SIS, Chinese",no
+108,WOA-0108,ماده تركي سريع sma,ماده Turkish سريع sma,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Turkish,no
+109,WOA-0109,سيلكون280 DB شفاف,سيلكون280 DB شفاف,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+110,WOA-0110,استرتش تغليف,استرتش تغليف,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+111,WOA-0111,ك مسمار سن صاج مجلفن 5.1 سم مودرن,ك مcmار سن صاج مجلفن 5.1 cm مودرن,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+112,WOA-0112,ك مسمار سن صاج مجلفن 1.6 سم مودرن,ك مcmار سن صاج مجلفن 1.6 cm مودرن,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+113,WOA-0113,ترولي جانبي 20 سم اسود بقاعدة خشبية palm,ترولي جانبي 20 cm Black بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+114,WOA-0114,تقسيمة درج 30 سم رمادي تركي   STAR -X,Dividerة Drawer 30 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+115,WOA-0115,تقسيمة درج 35 سم رمادي تركي   STAR -X,Dividerة Drawer 35 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+116,WOA-0116,تقسيمة درج 40 سم رمادي تركي   STAR -X,Dividerة Drawer 40 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+117,WOA-0117,تقسيمة درج 45 سم رمادي تركي   STAR -X,Dividerة Drawer 45 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+118,WOA-0118,تقسيمة درج 50 سم رمادي تركي   STAR -X,Dividerة Drawer 50 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+119,WOA-0119,تقسيمة درج 55 سم رمادي تركي   STAR -X,Dividerة Drawer 55 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+120,WOA-0120,تقسيمة درج 60 سم رمادي تركي   STAR -X,Dividerة Drawer 60 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+121,WOA-0121,تقسيمة درج 70 سم رمادي تركي   STAR -X,Dividerة Drawer 70 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+122,WOA-0122,تقسيمة درج 80 سم رمادي تركي   STAR -X,Dividerة Drawer 80 cm رمادي Turkish   STAR -X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+123,WOA-0123,ترولي زجاجي ع مجرى سفلي 20 سم Palm,ترولي زجاجي ع Runner/Slide سفلي 20 cm Palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+124,WOA-0124,مسمار كعب معدن مقاس 20 ملي,مcmار كعب معدن مقاس 20 mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+125,WOA-0125,كعب كرسي 18 بني,كعب كرسي 18 بني,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+126,WOA-0126,كعب كرسي 18 أبيض,كعب كرسي 18 أبيض,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+127,WOA-0127,تكاية حامل رف معدن بجراب (اسود) (شفاف) (ابيض),تكاية حامل Shelf معدن بجراب (Black) (شفاف) (White),الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+128,WOA-0128,فوم DB,فوم DB,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+129,WOA-0129,سيلكون عضم رصاصي DB,سيلكون عضم رصاصي DB,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+130,WOA-0130,ميكانيزم سرير 120   umx,ميكانيزم سرير 120   umx,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+131,WOA-0131,ميكانيزم سرير 150  umx,ميكانيزم سرير 150  umx,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+132,WOA-0132,مجرى سوفت 35سم mk,Runner/Slide سوفت 35cm mk,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+133,WOA-0133,مجرى سوفت 40سم mk,Runner/Slide سوفت 40cm mk,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+134,WOA-0134,مجرى سوفت 45سم mk,Runner/Slide سوفت 45cm mk,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+135,WOA-0135,مجرى سوفت 50سم mk,Runner/Slide سوفت 50cm mk,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+136,WOA-0136,مجرى دنكو سفلیه سوفت 35سم,Runner/Slide دنكو سفلیه سوفت 35cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+137,WOA-0137,مجرى دنكو سفلیه سوفت 45سم,Runner/Slide دنكو سفلیه سوفت 45cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+138,WOA-0138,مجرى دنكو سفلیه سوفت50سم,Runner/Slide دنكو سفلیه سوفت50cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+139,WOA-0139,مفصله 3D سوفت كلوز عدلة  (MK),Hinge 3D Soft Close Straight  (MK),المفصلات,Hinges,,no
+140,WOA-0140,مفصله 3D سوفت كلوز نص ركبة (MK),Hinge 3D Soft Close Half Overlay (MK),المفصلات,Hinges,,no
+141,WOA-0141,مفصله 3D ( 90) درجهmk,Hinge 3D ( 90) Drawerهmk,المفصلات,Hinges,,no
+142,WOA-0142,مفصله عقربه 3D  (MK),Hinge Scorpion 3D  (MK),المفصلات,Hinges,,no
+143,WOA-0143,مفصله سوفت كلوز عدلة 2D  MK,Hinge Soft Close Straight 2D  MK,المفصلات,Hinges,,no
+144,WOA-0144,صابع تاتش دفن MK,صابع تاتش دفن MK,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",,no
+145,WOA-0145,مسمار سن صاج ابيض خطوه واسعه 1.8 MK,مcmار سن صاج White خطوه واسعه 1.8 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+146,WOA-0146,مسمار سن صاج ابيض خطوه واسعه 2 MK,مcmار سن صاج White خطوه واسعه 2 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+147,WOA-0147,مسمار سن صاج ابيض خطوه واسعه 3 MK,مcmار سن صاج White خطوه واسعه 3 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+148,WOA-0148,مسمار سن صاج ابيض خطوه واسعه 3.5 MK,مcmار سن صاج White خطوه واسعه 3.5 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+149,WOA-0149,مسمار سن صاج ابيض خطوه واسعه 4 MK,مcmار سن صاج White خطوه واسعه 4 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+150,WOA-0150,مسمار سن صاج ابيض خطوه واسعه 5 MK,مcmار سن صاج White خطوه واسعه 5 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+151,WOA-0151,ترولي مسحوق  نيسكو,ترولي مسحوق  نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+152,WOA-0152,درج تخليعه تحت الحوض 90 سم,Drawer تخليعه تحت الSink 90 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+153,WOA-0153,ترولي زجاجي مضى الماني 30سم,ترولي زجاجي مضى الماني 30cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+154,WOA-0154,ترولي زجاجي مضئ الماني 35 سم,ترولي زجاجي مضئ الماني 35 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+155,WOA-0155,رشاقه خزان الماني 80 سم,رشاقه خزان الماني 80 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+156,WOA-0156,رشاقه باكم استانيس 70سم,رشاقه Hydraulic استانيس 70cm,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+157,WOA-0157,مطبقيه 60 سم سوسته الحاة,مطبقيه 60 cm سوسته الحاة,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+158,WOA-0158,مطبقیه 80سم سوسته الحياة,مطبقیه 80cm سوسته الحياة,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",,no
+159,WOA-0159,مطبقیه 90سم سوسته الحياة,مطبقیه 90cm سوسته الحياة,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",,no
+160,WOA-0160,ترابيزه مكوه سوفت کلوز نيسكو,ترابيزه مكوه سوفت کلوز نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+161,WOA-0161,ترابيزه مكوه محوريه نيسكو,ترابيزه مكوه محوريه نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+162,WOA-0162,شماعه بناطيل علويه فردي نيسكو,Hanger بناطيل علويه فردي نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+163,WOA-0163,عجل دولاب سوسته اس اي اس,عجل دولاب سوسته اس اي اس,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+164,WOA-0164,عجل دولاب سوسته 2مسمار رجلاشmmb,عجل دولاب سوسته 2مcmار Adjustablemmb,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+165,WOA-0165,ميكانيزم سرير 120 شربو  مكس,ميكانيزم سرير 120 شربو  مكس,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+166,WOA-0166,دبوس هوا 10/10,دبوس هوا 10/10,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+167,WOA-0167,دبوس هوا 10/13,دبوس هوا 10/13,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+168,WOA-0168,جالون غراء اصفر سوبر بوند 9 كيلو,جالون غراء اصفر سوبر بوند 9 كيلو,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+169,WOA-0169,تكايه رف مسمار ابيض,تكايه Shelf مcmار White,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+170,WOA-0170,مقبض اسود 10 مستورد,Handle Black 10 مستورد,المقابض والمسكات,Handles & Knobs,,no
+171,WOA-0171,زاويه 3*3 عمق 3 فضي,Angle 3*3 عمق 3 فضي,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+172,WOA-0172,طقم تعليق برواز كبير,طقم تعليق برواز كبير,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+173,WOA-0173,طقم تعليق برواز وسط,طقم تعليق برواز وسط,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+174,WOA-0174,طقم تعليق برواز صغير,طقم تعليق برواز صغير,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+175,WOA-0175,سيلكو عضم PU-FIX,سيلكو عضم PU-FIX,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+176,WOA-0176,مفصله بلوم سوفت عدلة,Hinge بلوم سوفت Straight,المفصلات,Hinges,,no
+177,WOA-0177,مفصله بلوم سوفت نص ركبة,Hinge بلوم سوفت Half Overlay,المفصلات,Hinges,,no
+178,WOA-0178,مفصله بلوم سوفت ركبة كاملة,Hinge بلوم سوفت Full Overlay,المفصلات,Hinges,,no
+179,WOA-0179,طقم تجميع سرير كبير,طقم تجميع سرير كبير,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+180,WOA-0180,سبت عياشه,سبت عياشه,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+181,WOA-0181,طقم مجر دولاب جرار 280,طقم مجر دولاب جرار 280,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+182,WOA-0182,زاويه كرسي صغيره,Angle كرسي صغيره,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+183,WOA-0183,زاويه كرسي صغيره,Angle كرسي صغيره,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+184,WOA-0184,زاويه كرسي  كبيره 5*5,Angle كرسي  كبيره 5*5,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+185,WOA-0185,زاويه ثلاثيه كبيره,Angle ثلاثيه كبيره,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+186,WOA-0186,زاوي ثلاثيه صغيره,زاوي ثلاثيه صغيره,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+187,WOA-0187,مقبض ماسورة 16 فضي,Handle ماسورة 16 فضي,المقابض والمسكات,Handles & Knobs,,no
+188,WOA-0188,مقبض ماسورة 19 فضي,Handle ماسورة 19 فضي,المقابض والمسكات,Handles & Knobs,,no
+189,WOA-0189,مسمار هواء 3سم,مcmار هواء 3cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+190,WOA-0190,مسمار هواء 2 سم,مcmار هواء 2 cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+191,WOA-0191,مقبض مسطره 16 سم اسود,Handle مسطره 16 cm Black,المقابض والمسكات,Handles & Knobs,,no
+192,WOA-0192,مقبض مسطره اسود 22 سم,Handle مسطره Black 22 cm,المقابض والمسكات,Handles & Knobs,,no
+193,WOA-0193,مقبض مسطره 80سم اسود,Handle مسطره 80cm Black,المقابض والمسكات,Handles & Knobs,,no
+194,WOA-0194,مقبض بلت ان 15 سم G اسود,Handle بلت ان 15 cm G Black,المقابض والمسكات,Handles & Knobs,,no
+195,WOA-0195,مقبض بلت ان 35 سم G اسود,Handle بلت ان 35 cm G Black,المقابض والمسكات,Handles & Knobs,,no
+196,WOA-0196,مقبض بلت ان هوك 15سم مستورد دهبي,Handle بلت ان هوك 15cm مستورد دهبي,المقابض والمسكات,Handles & Knobs,,no
+197,WOA-0197,مقبض دهبي مسطره 40 سم G,Handle دهبي مسطره 40 cm G,المقابض والمسكات,Handles & Knobs,,no
+198,WOA-0198,مقبض بلت ان هوك 80 سم,Handle بلت ان هوك 80 cm,المقابض والمسكات,Handles & Knobs,,no
+199,WOA-0199,مقبض بلت ان هوك 100 سم,Handle بلت ان هوك 100 cm,المقابض والمسكات,Handles & Knobs,,no
+200,WOA-0200,زرار مدور بيج,زرار مدور بيج,المقابض والمسكات,Handles & Knobs,,no
+201,WOA-0201,زرار خشابي بني فاتح,زرار خشابي بني فاتح,المقابض والمسكات,Handles & Knobs,,no
+202,WOA-0202,زرار مدور ابيض,زرار مدور White,المقابض والمسكات,Handles & Knobs,,no
+203,WOA-0203,زاويه تجميع فراشه تقيله 4 بوصه,Angle تجميع فراشه تقيله 4 بوصه,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+204,WOA-0204,سلوتيب 100يارده,سلوتيب 100يارده,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+205,WOA-0205,سلوتيب 200يارده,سلوتيب 200يارده,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+206,WOA-0206,عجل دولاب دليل,عجل دولاب دليل,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+207,WOA-0207,تيب 5سم,تيب 5cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+208,WOA-0208,مفصله باب فراشه,Hinge باب فراشه,المفصلات,Hinges,,no
+209,WOA-0209,رجل بلاستيك 15 سم  مطبخ,رجل بلاستيك 15 cm  مطبخ,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+210,WOA-0210,طقم حامل شماعه,طقم حامل Hanger,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+211,WOA-0211,فيشر 6 ملي,فيشر 6 mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+212,WOA-0212,فيشر 8 ملي,فيشر 8 mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+213,WOA-0213,فيشر 10,فيشر 10,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+214,WOA-0214,مسمار اصفر مسطورد 6سم,مcmار اصفر مسطورد 6cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+215,WOA-0215,مسمار اصفر مصري 6سم,مcmار اصفر مصري 6cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Egyptian,no
+216,WOA-0216,مسمار L 10ملي,مcmار L 10mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+217,WOA-0217,مسمار L 6ملي,مcmار L 6mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+218,WOA-0218,اليتا تركي طقم,اليتا Turkish طقم,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Turkish,no
+219,WOA-0219,تكايه رف ابيض معدن,تكايه Shelf White معدن,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+220,WOA-0220,تكايه رف معدن,تكايه Shelf معدن,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+221,WOA-0221,زاويه تعليق جلو بال تركي,Angle تعليق جلو بال Turkish,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Turkish,no
+222,WOA-0222,كيلو غراء بنتا ابيض,كيلو غراء بنتا White,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+223,WOA-0223,جالون غراء بنتا ابيض,جالون غراء بنتا White,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+224,WOA-0224,ك مسمار سناره 2,ك مcmار سناره 2,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+225,WOA-0225,باكو مسمار سناره 3,باكو مcmار سناره 3,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+226,WOA-0226,باكو مسمار سناره 4,باكو مcmار سناره 4,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+227,WOA-0227,باكو مسمار سناره 5,باكو مcmار سناره 5,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+228,WOA-0228,ك مسمار شيشه 2,ك مcmار شيشه 2,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+229,WOA-0229,باكو مسمار شيشه 3,باكو مcmار شيشه 3,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+230,WOA-0230,قطاع دريسنج خفيف بدون مقبض اسود,قطاع دريسنج خفيف بدون Handle Black,المقابض والمسكات,Handles & Knobs,,no
+231,WOA-0231,قطاع دريسنج ب مقبض خفيف اسود,قطاع دريسنج ب Handle خفيف Black,المقابض والمسكات,Handles & Knobs,,no
+232,WOA-0232,مقبض بلت ان اسود 3 متر,Handle بلت ان Black 3 meter,المقابض والمسكات,Handles & Knobs,,no
+233,WOA-0233,مقبض بلت ان فضي 3 متر,Handle بلت ان فضي 3 meter,المقابض والمسكات,Handles & Knobs,,no
+234,WOA-0234,مقبض بلت ان اسود 3 متر G دوران,Handle بلت ان Black 3 meter G دوران,المقابض والمسكات,Handles & Knobs,,no
+235,WOA-0235,مسمار هواء 4سم,مcmار هواء 4cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+236,WOA-0236,مسمار هواء 5سم,مcmار هواء 5cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+237,WOA-0237,طقم مجر دولاب جرار 200,طقم مجر دولاب جرار 200,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+238,WOA-0238,دبوس هوا 10/14,دبوس هوا 10/14,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+239,WOA-0239,مجرى 30جانبيه عاديه mmb,Runner/Slide 30جانبيه عاديه mmb,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+240,WOA-0240,مجرى 40جانبيه عاديه mmb,Runner/Slide 40جانبيه عاديه mmb,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+241,WOA-0241,مجرى 45جانبيه عاديه mmb,Runner/Slide 45جانبيه عاديه mmb,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+242,WOA-0242,مجرى 50جانبيه عاديه mmb,Runner/Slide 50جانبيه عاديه mmb,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+243,WOA-0243,مجرى 35جانبيه عاديه مودرن هاوس,Runner/Slide 35جانبيه عاديه مودرن هاوس,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+244,WOA-0244,فراشه تجميع 111بليكار دهبي FSG,فراشه تجميع 111بليكار دهبي FSG,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+245,WOA-0245,مقبض دفن حرف C اسود مصري الكترو,Handle دفن حShelf C Black مصري الكترو,المقابض والمسكات,Handles & Knobs,Egyptian,no
+246,WOA-0246,مجرى جانبي تاتش 50سم مودرن,Runner/Slide جانبي تاتش 50cm مودرن,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+247,WOA-0247,باسكت قمامة 15 لتر Metali تركي,باسكت قمامة 15 لتر Metali Turkish,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+248,WOA-0248,وحده تخزين رز,وحده تخزين رز,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+249,WOA-0249,مجرى سفلي سوفت كلوز 2 مرحلة 55 سم             بالما,Runner/Slide سفلي Soft Close 2 مرحلة 55 cm             Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+250,WOA-0250,ترولي 2 رف استانلس ( اسود ) 20 سم palma,ترولي 2 Shelf استانلس ( Black ) 20 cm palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+251,WOA-0251,ترولي 2 رف استانلس (فضي ) 20 سم palma,ترولي 2 Shelf استانلس (فضي ) 20 cm palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+252,WOA-0252,مطبقيه  80سم تركي STARA- X,مطبقيه  80cm Turkish STARA- X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+253,WOA-0253,ترولي زجاجات ارتفاع 52 سم 2 رف كروم 15 سم STARA-X,ترولي زجاجات ارتفاع 52 cm 2 Shelf كروم 15 cm STARA-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+254,WOA-0254,دراع ساعة مودرن,Arm ساعة مودرن,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+255,WOA-0255,فراشة تركي تجميع شفاف Metali,فراشة Turkish تجميع شفاف Metali,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Turkish,no
+256,WOA-0256,فراشة تجميع شفاف مصري,فراشة تجميع شفاف مصري,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Egyptian,no
+257,WOA-0257,تكاية هرمية متحرك  GMB,تكاية هرمية Movable  GMB,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+258,WOA-0258,ترولي تركي 20 سم سوفت STARA- X,ترولي Turkish 20 cm سوفت STARA- X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+259,WOA-0259,ترولي تركي 25 سم سوفت STARA-X,ترولي Turkish 25 cm سوفت STARA-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+260,WOA-0260,مطبقيه درج 80 سم ع مجرى سفلي ( اسود) palma,مطبقيه Drawer 80 cm ع Runner/Slide سفلي ( Black) palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+261,WOA-0261,مطبقيه درج 60 سم ع مجرى سفلي ( اسود) palma,مطبقيه Drawer 60 cm ع Runner/Slide سفلي ( Black) palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+262,WOA-0262,مجرى 30سم سفلي 2 مرحلة + كلبس أمان ساميت تركي,Runner/Slide 30cm سفلي 2 مرحلة + كلبس أمان Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+263,WOA-0263,مجرى 35سم سفلي 2 مرحلة + كلبس أمان ساميت تركي,Runner/Slide 35cm سفلي 2 مرحلة + كلبس أمان Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+264,WOA-0264,مجرى 40سم سفلي 2 مرحلة + كلبس أمان ساميت تركي,Runner/Slide 40cm سفلي 2 مرحلة + كلبس أمان Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+265,WOA-0265,مجرى 50سم سفلي 2 مرحلة + كلبس أمان ساميت تركي,Runner/Slide 50cm سفلي 2 مرحلة + كلبس أمان Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+266,WOA-0266,مجرى 30سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي,Runner/Slide 30cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+267,WOA-0267,مجرى 35سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي,Runner/Slide 35cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+268,WOA-0268,مجرى 40سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي,Runner/Slide 40cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+269,WOA-0269,مجرى 45سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي,Runner/Slide 45cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+270,WOA-0270,مفصله ساميت تركي عقرب 165باكم عدلة,Hinge Summit Turkish عقرب 165Hydraulic Straight,المفصلات,Hinges,"Summit, Turkish",no
+271,WOA-0271,مفصله 90 درجة بمشقبية عدلة عاديه ساميت تركي,Hinge 90 Drawerة بمشقبية Straight عاديه Summit Turkish,المفصلات,Hinges,"Summit, Turkish",no
+272,WOA-0272,شماعة مطبخ ثابتة ويل ماكس,شماعة مطبخ ثابتة ويل ماكس,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+273,WOA-0273,حامل مجات واكواب مزدوج ويل ماكس,حامل مجات واكواب مزدوج ويل ماكس,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+274,WOA-0274,ستاند اطباق 31 × 21 كروم,ستاند اطباق 31 × 21 كروم,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+275,WOA-0275,وراقة استاند كروم,وراقة استاند كروم,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+276,WOA-0276,علاقة حرف s مفرد,علاقة حShelf s مفرد,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+277,WOA-0277,علاقة حرف s مجوز,علاقة حShelf s مجوز,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+278,WOA-0278,حامل توابل 2 رف معلق ويل ماكس,حامل توابل 2 Shelf معلق ويل ماكس,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+279,WOA-0279,كابولي 14ملي رف طاير rbf,Bracket 14mm Shelf طاير rbf,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+280,WOA-0280,كابولي 12ملي رف طاير rbf,Bracket 12mm Shelf طاير rbf,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+281,WOA-0281,كابولي 10ملي رف طاير rbf,Bracket 10mm Shelf طاير rbf,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+282,WOA-0282,كرتون قديم,كرتون قديم,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+283,WOA-0283,مفصله باب فراشه اسود,Hinge باب فراشه Black,المفصلات,Hinges,,no
+284,WOA-0284,مفصله اندوكس اسباني عدلة سوفت 3d,Hinge اندوكس اسباني Straight سوفت 3d,المفصلات,Hinges,,no
+285,WOA-0285,مفصله اندوكس اسباني نص ركبة سوفت 3d,Hinge اندوكس اسباني Half Overlay سوفت 3d,المفصلات,Hinges,,no
+286,WOA-0286,مفصله اندوكس اسباني ركبة كاملة سوفت 3d,Hinge اندوكس اسباني Full Overlay سوفت 3d,المفصلات,Hinges,,no
+287,WOA-0287,طقم تجميع سرير خفيف 15سم,طقم تجميع سرير خفيف 15cm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+288,WOA-0288,كعب كرسي20ملي ابيض,كعب كرسي20mm White,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+289,WOA-0289,زاويه وزره متحركه 10سم فضي,Angle وزره Movableه 10cm فضي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+290,WOA-0290,زاويه وزره ثابته 10سم فضي,Angle وزره ثابته 10cm فضي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+291,WOA-0291,زاويه وزره ثابته 10سم اسود,Angle وزره ثابته 10cm Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+292,WOA-0292,مجرى عاديه 25سم كوبرا,Runner/Slide عاديه 25cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+293,WOA-0293,مجرى عاديه 30سم كوبرا,Runner/Slide عاديه 30cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+294,WOA-0294,مجرى عاديه 35سم كوبرا,Runner/Slide عاديه 35cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+295,WOA-0295,مجرى عاديه 40سم كوبرا,Runner/Slide عاديه 40cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+296,WOA-0296,مجرى عاديه 45سم كوبرا,Runner/Slide عاديه 45cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+297,WOA-0297,مجرى عاديه 50سم كوبرا,Runner/Slide عاديه 50cm كوبرا,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+298,WOA-0298,مطبقيه استانلس لاكوست70سم,مطبقيه استانلس لاكوست70cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+299,WOA-0299,مطبقيه استانلس لاكوست80سم,مطبقيه استانلس لاكوست80cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+300,WOA-0300,مطبقيه استانليس بلاك هورس70,مطبقيه استانليس بلاك هورس70,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+301,WOA-0301,مطبقيه استانليس بلاك هورس80,مطبقيه استانليس بلاك هورس80,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+302,WOA-0302,ماسوره شماعه تقيله بيضاوي,ماسوره Hanger تقيله بيضاوي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+303,WOA-0303,عود ليد محمل 16,عود LED محمل 16,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+304,WOA-0304,بروفيل 240 ورم شعبي,بروفيل 240 ورم شعبي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+305,WOA-0305,بروفايل 240 ليد علي الطيار ورم,Profile 240 LED علي الطيار ورم,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+306,WOA-0306,بروفايل 120ليد علي الطيار ورم,Profile 120LED علي الطيار ورم,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+307,WOA-0307,مقبض ابيض 10 مستورد,Handle White 10 مستورد,المقابض والمسكات,Handles & Knobs,,no
+308,WOA-0308,بلوم عقربه عاديه,بلوم Scorpion عاديه,المفصلات,Hinges,,no
+309,WOA-0309,سوفت مفصله عقربه بلوم,سوفت Hinge Scorpion بلوم,المفصلات,Hinges,,no
+310,WOA-0310,مجرى 30بلوم مرحلتين سفلي,Runner/Slide 30بلوم مرحلتين سفلي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+311,WOA-0311,مجرى 35بلوم مرحلتين سفلي,Runner/Slide 35بلوم مرحلتين سفلي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+312,WOA-0312,مجرى 40بلوم مرحلتين سفلي,Runner/Slide 40بلوم مرحلتين سفلي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+313,WOA-0313,مجرى 45بلوم مرحلتين سفلي,Runner/Slide 45بلوم مرحلتين سفلي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+314,WOA-0314,مجرى 50بلوم مرحلتين سفلي,Runner/Slide 50بلوم مرحلتين سفلي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+315,WOA-0315,مقبض بلت ان هوك 20 سم اسود,Handle بلت ان هوك 20 cm Black,المقابض والمسكات,Handles & Knobs,,no
+316,WOA-0316,مقبض بلت ان هوك 40سم مستورد جديد اسود,Handle بلت ان هوك 40cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+317,WOA-0317,مقبض ماسورة 16 اسود,Handle ماسورة 16 Black,المقابض والمسكات,Handles & Knobs,,no
+318,WOA-0318,مقبض بلت ان 20 سم G خشابي,Handle بلت ان 20 cm G خشابي,المقابض والمسكات,Handles & Knobs,,no
+319,WOA-0319,مقبض بلت ان 30 سم G خشابي,Handle بلت ان 30 cm G خشابي,المقابض والمسكات,Handles & Knobs,,no
+320,WOA-0320,مقبض 12مشطوف اسود,Handle 12مشطوف Black,المقابض والمسكات,Handles & Knobs,,no
+321,WOA-0321,مقبض 19مشطوف اسود,Handle 19مشطوف Black,المقابض والمسكات,Handles & Knobs,,no
+322,WOA-0322,مقبض عدل 12 سم اسود جديد,Handle عدل 12 cm Black جديد,المقابض والمسكات,Handles & Knobs,,no
+323,WOA-0323,مقبض عدل 19 سم اسود جديد,Handle عدل 19 cm Black جديد,المقابض والمسكات,Handles & Knobs,,no
+324,WOA-0324,كرتون تغليف جديد بل كيلو,كرتون تغليف جديد بل كيلو,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+325,WOA-0325,كويله خشب 8 ملي,كويله خشب 8 mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+326,WOA-0326,درج تقسيم اكسسوارات 80 سم بالما اورنج,Drawer Divider Accessories 80 cm Palma Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+327,WOA-0327,ترابيزه مكوه محوريه بالما,ترابيزه مكوه محوريه Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+328,WOA-0328,دراع باكم سوفت بجراب ضغط 80 اسود بالما,Arm Hydraulic سوفت بجراب ضغط 80 Black Palma,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,Palma,no
+329,WOA-0329,درج تقسيم اكسسوارات 80 سم بالما جراي,Drawer Divider Accessories 80 cm Palma Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+330,WOA-0330,فراشه تجميع 111بليكار بالما فضي,فراشه تجميع 111بليكار Palma فضي,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+331,WOA-0331,مجرى جانبي سوفت كلوز مودرن 25 سم 4 بليه,Runner/Slide جانبي Soft Close مودرن 25 cm 4 بليه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+332,WOA-0332,ترولي مودرن سوفت كلوز 20 سم,ترولي مودرن Soft Close 20 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+333,WOA-0333,ترولي مودرن سوفت كلوز 25 سم,ترولي مودرن Soft Close 25 cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+334,WOA-0334,شماعة بناطيل جانبية GRAY يمين سوفت كلوزpalma,شماعة بناطيل جانبية GRAY يمين Soft Closepalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+335,WOA-0335,شماعة بناطيل جانبية GRAY شمال سوفت كلوزpalma,شماعة بناطيل جانبية GRAY شمال Soft Closepalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+336,WOA-0336,شماعة بناطيل جانبية ORANGEيمين سوفت كلوزpalma,شماعة بناطيل جانبية ORANGEيمين Soft Closepalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+337,WOA-0337,شماعة بناطيل جانبية ORANGE شمال سوفت كلوزpalma,شماعة بناطيل جانبية ORANGE شمال Soft Closepalma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+338,WOA-0338,فراشة تجميع معدن بالما تقيله,فراشة تجميع معدن Palma تقيله,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+339,WOA-0339,حامل 4*1 سوفت كلوز بالما ORANGE,حامل 4*1 Soft Close Palma ORANGE,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Palma,no
+340,WOA-0340,حامل 4*1 سوفت كلوز بالما GRAY,حامل 4*1 Soft Close Palma GRAY,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Palma,no
+341,WOA-0341,ماجيك حصان ستار اكس,ماجيك حصان ستار اكس,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+342,WOA-0342,دولاب امامي 5 رف 40سم نيسكو,دولاب امامي 5 Shelf 40cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+343,WOA-0343,سلوتيب 300يارده,سلوتيب 300يارده,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+344,WOA-0344,مزيل صدا تركي 400 ملي,مزيل صدا Turkish 400 mm,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Turkish,no
+345,WOA-0345,جالون غراء بنتا احمر,جالون غراء بنتا احمر,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+346,WOA-0346,كيلو غراء بنتا احمر,كيلو غراء بنتا احمر,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+347,WOA-0347,زاويه 3*3 عمق 3 اسود,Angle 3*3 عمق 3 Black,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+348,WOA-0348,ترولي 16فضي عادي GM مصري,ترولي 16فضي عادي GM مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+349,WOA-0349,ترولي 20 فضي عادي GM مصري,ترولي 20 فضي عادي GM مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+350,WOA-0350,ترولي 25فضي عادي GM مصري,ترولي 25فضي عادي GM مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+351,WOA-0351,ترولي 16 اسود عادي 3R,ترولي 16 Black عادي 3R,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+352,WOA-0352,ترولي 20 اسود عادي 3R,ترولي 20 Black عادي 3R,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+353,WOA-0353,ترولي 25 اسود عادي 3R,ترولي 25 Black عادي 3R,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+354,WOA-0354,دراع باكم تاج ضغط 80,Arm Hydraulic تاج ضغط 80,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+355,WOA-0355,مجرى 30جانبي سوفت FGV ايطالي,Runner/Slide 30جانبي سوفت FGV ايطالي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+356,WOA-0356,مجرى 35جانبي سوفت FGV ايطالي,Runner/Slide 35جانبي سوفت FGV ايطالي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+357,WOA-0357,مجرى 40جانبي سوفت FGV ايطالي,Runner/Slide 40جانبي سوفت FGV ايطالي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+358,WOA-0358,مجرى 45جانبي سوفت FGV ايطالي,Runner/Slide 45جانبي سوفت FGV ايطالي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+359,WOA-0359,مجرى 50جانبي سوفت FGV ايطالي,Runner/Slide 50جانبي سوفت FGV ايطالي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+360,WOA-0360,كرت بصمة,كرت بصمة,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+361,WOA-0361,مفصله اندوكس اسباني عدلة سوفت فرش 4 مسمار,Hinge اندوكس اسباني Straight سوفت فرش 4 مcmار,المفصلات,Hinges,,no
+362,WOA-0362,مفصله 3Dدانكو عدلة سوفت كلوز,Hinge 3Dدانكو Straight Soft Close,المفصلات,Hinges,,no
+363,WOA-0363,مفصله 3Dدانكو نص ركبة سوفت كلوز,Hinge 3Dدانكو Half Overlay Soft Close,المفصلات,Hinges,,no
+364,WOA-0364,مفصله 3Dدانكو ركبة كاملة سوفت كلوز,Hinge 3Dدانكو Full Overlay Soft Close,المفصلات,Hinges,,no
+365,WOA-0365,مجرى دنكو 25سم جانبيه سوفت كلوز,Runner/Slide دنكو 25cm جانبيه Soft Close,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+366,WOA-0366,مجرى دنكو 30سم جانبيه سوفت كلوز,Runner/Slide دنكو 30cm جانبيه Soft Close,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+367,WOA-0367,مجرى دنكو 35سم جانبيه سوفت كلوز,Runner/Slide دنكو 35cm جانبيه Soft Close,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+368,WOA-0368,مجرى دنكو 40سم جانبيه سوفت كلوز,Runner/Slide دنكو 40cm جانبيه Soft Close,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+369,WOA-0369,مجرى دنكو 45سم جانبيه سوفت كلوز,Runner/Slide دنكو 45cm جانبيه Soft Close,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+370,WOA-0370,عود وزر 15 سم اسود,عود وزر 15 cm Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+371,WOA-0371,زاويه وزره متحركه 10سم اسود,Angle وزره Movableه 10cm Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+372,WOA-0372,قطاع زجاج بدون مقبض دهبي3 م,قطاع زجاج بدون Handle دهبي3 م,المقابض والمسكات,Handles & Knobs,,no
+373,WOA-0373,قطاع زجاج بمقبض دهبي3 م,قطاع زجاج بHandle دهبي3 م,المقابض والمسكات,Handles & Knobs,,no
+374,WOA-0374,ماده تركي سريع Usta 400,ماده Turkish سريع Usta 400,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Turkish,no
+375,WOA-0375,ميكانيزم جزامة أبيض,ميكانيزم جزامة أبيض,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+376,WOA-0376,درج ملابس 80سم زجاج بمجرى سفلي سوفت كلوز بالما,Drawer ملابس 80cm زجاج بRunner/Slide سفلي Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+377,WOA-0377,درج ملابس 90سم زجاج بمجرى سفلي سوفت كلوز بالما,Drawer ملابس 90cm زجاج بRunner/Slide سفلي Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+378,WOA-0378,ماجيك فاصوليا المونيوم عالى 45 سم شمال بالما,ماجيك فاصوليا المونيوم عالى 45 cm شمال Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+379,WOA-0379,ماجيك فاصوليا المونيوم عالى 45 سم يمين بالما,ماجيك فاصوليا المونيوم عالى 45 cm يمين Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+380,WOA-0380,تكايه رف زجاج ببنز بلاستك,تكايه Shelf زجاج ببنز بلاستك,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+381,WOA-0381,ليد بروفايل وسط بدون شفه,LED Profile وسط بدون شفه,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+382,WOA-0382,ليد بروفايل وسط بشفه,LED Profile وسط بشفه,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+383,WOA-0383,بروفيل 240 ورم سويدي,بروفيل 240 ورم سويدي,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+384,WOA-0384,وصلة بروفايل بالسلك,وصلة Profile بالWire,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+385,WOA-0385,وصلة بروفايل بدون سلك,وصلة Profile بدون Wire,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+386,WOA-0386,حامل مكواه STARA-X,حامل مكواه STARA-X,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+387,WOA-0387,ترولي جانبي 30 سم فضي بقاعدة خشبية palm,ترولي جانبي 30 cm فضي بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+388,WOA-0388,ترولي جانبي 30 سم اسود بقاعدة خشبية palm,ترولي جانبي 30 cm Black بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+389,WOA-0389,ترولي جانبي 35سم فضي بقاعدة خشبية palm,ترولي جانبي 35cm فضي بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+390,WOA-0390,ترولي جانبي 35 سم اسود بقاعدة خشبية palm,ترولي جانبي 35 cm Black بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+391,WOA-0391,خزنة دريسنج رقمية 50سم ( مقسمة ),خزنة دريسنج رقمية 50cm ( مقcmة ),الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+392,WOA-0392,ترولي المونيوم ع مجرى سفلي 30سم,ترولي المونيوم ع Runner/Slide سفلي 30cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+393,WOA-0393,ترولي المونيوم ع مجرى سفلي 35سم,ترولي المونيوم ع Runner/Slide سفلي 35cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+394,WOA-0394,ترولي المونيوم ع مجرى سفلي 40سم,ترولي المونيوم ع Runner/Slide سفلي 40cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+395,WOA-0395,شماعة بدل هيدروليك 10 كيلو تركي STAR-X,شماعة بدل هيدروليك 10 كيلو Turkish STAR-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+396,WOA-0396,شماعة بدل هيدروليك 15 كيلو تركي STAR-X,شماعة بدل هيدروليك 15 كيلو Turkish STAR-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Turkish,no
+397,WOA-0397,درج حامل بناطيل 70سم اورنج,Drawer حامل بناطيل 70cm Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+398,WOA-0398,درج حامل بناطيل 80سم جراي,Drawer حامل بناطيل 80cm Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+399,WOA-0399,درج حامل بناطيل 80سم اورنج,Drawer حامل بناطيل 80cm Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+400,WOA-0400,درج حامل بناطيل 90سم اورنج,Drawer حامل بناطيل 90cm Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+401,WOA-0401,درج حامل بناطيل 90سم جراي,Drawer حامل بناطيل 90cm Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+402,WOA-0402,درج احذية 70سم سوفت كلوز بالما,Drawer احذية 70cm Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+403,WOA-0403,درج احذية 80سم سوفت كلوز بالما,Drawer احذية 80cm Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+404,WOA-0404,درج حامل بناطيل 70سم جراي,Drawer حامل بناطيل 70cm Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+405,WOA-0405,جزامة محورية 6 رف بالما,جزامة محورية 6 Shelf Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+406,WOA-0406,جزامة محورية 8رف بالما,جزامة محورية 8Shelf Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+407,WOA-0407,طقم درج زجاج 80سم (2 درج مطبخ ) بالما,طقم Drawer زجاج 80cm (2 Drawer مطبخ ) Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+408,WOA-0408,ماجيك كورنر حصان 45سم فضي مودرن,ماجيك كورنر حصان 45cm فضي مودرن,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+409,WOA-0409,ترولي جانبي 20سم فضي بقاعدة خشبية palm,ترولي جانبي 20cm فضي بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+410,WOA-0410,ترولي جانبي 25سم فضي بقاعدة خشبية palm,ترولي جانبي 25cm فضي بقاعدة خشبية palm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+411,WOA-0411,دولاب محوري 2 رف زجاج 60سم بالما سوفت كلوز,دولاب محوري 2 Shelf زجاج 60cm Palma Soft Close,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+412,WOA-0412,دولاب دريسنج كورنر 4 دور بالما (3كرتونه ),دولاب دريسنج كورنر 4 دور Palma (3كرتونه ),المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+413,WOA-0413,دولاب دريسنج كورنر 3دور ارفف بالما (3كرتونه ),دولاب دريسنج كورنر 3دور اShelfف Palma (3كرتونه ),المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+414,WOA-0414,دولاب دريسنج كورنر 3 دور بالما (كرتونه ),دولاب دريسنج كورنر 3 دور Palma (كرتونه ),المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+415,WOA-0415,دولاب دريسنج كورنر 2دور بالما (كرتونه ),دولاب دريسنج كورنر 2دور Palma (كرتونه ),المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Palma,no
+416,WOA-0416,دولاب محوري 6رف استانلس 45سم اسود بالما سوفت كلوز,دولاب محوري 6Shelf استانلس 45cm Black Palma Soft Close,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+417,WOA-0417,شماعة بدل هيدروليك بالما,شماعة بدل هيدروليك Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+418,WOA-0418,ماجيك كورنر حصان 45سم زجاج معدل بالما,ماجيك كورنر حصان 45cm زجاج معدل Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+419,WOA-0419,كارجو 6 رف 45سم زجاج سوفت كلوز بالما,كارجو 6 Shelf 45cm زجاج Soft Close Palma,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+420,WOA-0420,مطبقيه درج رمادي مقسم الماني 70سم,مطبقيه Drawer رمادي مقcm الماني 70cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+421,WOA-0421,مطبقيه درج رمادي مقسم الماني 80سم,مطبقيه Drawer رمادي مقcm الماني 80cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+422,WOA-0422,مجرى سفليه سوفت كلوز 35سم نيسكو,Runner/Slide سفليه Soft Close 35cm نيسكو,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+423,WOA-0423,رشاقه خزان الماني 70سم,رشاقه خزان الماني 70cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+424,WOA-0424,مجرى ساميت 50سم جانبي,Runner/Slide Summit 50cm جانبي,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Summit,no
+425,WOA-0425,حامل طاسات نيسكو,حامل طاسات نيسكو,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+426,WOA-0426,ماجيك فاصوليا المونيوم  الماني يمين نيسكو,ماجيك فاصوليا المونيوم  الماني يمين نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+427,WOA-0427,ماجيك فاصوليا المونيوم  الماني شمال نيسكو,ماجيك فاصوليا المونيوم  الماني شمال نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+428,WOA-0428,ماجيك كورنر حصان ارضيه خشبيه ابيض نيسكو,ماجيك كورنر حصان ارضيه خشبيه White نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+429,WOA-0429,شماعه هيدروليك 80سم نيسكو,Hanger هيدروليك 80cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+430,WOA-0430,شماعه بناطيل زوجي مضئ 70سم نيسكو,Hanger بناطيل زوجي مضئ 70cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+431,WOA-0431,ماجك سله 4/3 ارضيه خشبيه 70سم نيسكو,ماجك سله 4/3 ارضيه خشبيه 70cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+432,WOA-0432,مجرى 50سم سفلي 2 مرحلة + أمان ذاتي ساميت تركي,Runner/Slide 50cm سفلي 2 مرحلة + أمان ذاتي Summit Turkish,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,"Summit, Turkish",no
+433,WOA-0433,مفصله 3Dدانكو  2wayعدلة سوفت كلوز,Hinge 3Dدانكو  2wayStraight Soft Close,المفصلات,Hinges,,no
+434,WOA-0434,مطبقيه استانلس لاكوست60سم,مطبقيه استانلس لاكوست60cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+435,WOA-0435,رجل جامبو اسود,رجل جامبو Black,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+436,WOA-0436,دراع باكم mk 80 سوفت ابيض,Arm Hydraulic mk 80 سوفت White,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+437,WOA-0437,دراع باكم mk 80 سوفت اسود,Arm Hydraulic mk 80 سوفت Black,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+438,WOA-0438,مطبقيه استانلس لاكوست90سم,مطبقيه استانلس لاكوست90cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+439,WOA-0439,سبت عياشه تقيل,سبت عياشه تقيل,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+440,WOA-0440,مفصله مطبخ عاديه عدلة,Hinge مطبخ عاديه Straight,المفصلات,Hinges,,no
+441,WOA-0441,مفصله عقربه 2D  (MK),Hinge Scorpion 2D  (MK),المفصلات,Hinges,,no
+442,WOA-0442,عجل دولاب سوسته 2مسمار رجلاش MK,عجل دولاب سوسته 2مcmار Adjustable MK,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+443,WOA-0443,باسكت2عین 40 لتر سوفتmk وحده 35,باسكت2عین 40 لتر سوفتmk وحده 35,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+444,WOA-0444,ترولى 20سم MK عادي,ترولى 20cm MK عادي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+445,WOA-0445,ترولى 25سم MK عادي,ترولى 25cm MK عادي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+446,WOA-0446,ترولى 30سم MK عادي,ترولى 30cm MK عادي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+447,WOA-0447,ترولى 35سم MK عادي,ترولى 35cm MK عادي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+448,WOA-0448,میكانیزتربیزه مقاس65 سم,میكانیزتربیزه مقاس65 cm,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+449,WOA-0449,مطبقيه 80سم ھیدرولیكmk,مطبقيه 80cm ھیدرولیكmk,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+450,WOA-0450,طقم عجل درسنج 2ضلفه سوفت كلوز,طقم عجل درسنج 2ضلفه Soft Close,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+451,WOA-0451,عود مجرى درسنج 3متر  لطقم 2 ضلفه,عود Runner/Slide درسنج 3meter  لطقم 2 ضلفه,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+452,WOA-0452,مسمار سن صاج ابيض خطوه واسعه 1.5 MK,مcmار سن صاج White خطوه واسعه 1.5 MK,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+453,WOA-0453,مجرى دنكو سفلیه سوفت 40سم,Runner/Slide دنكو سفلیه سوفت 40cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+454,WOA-0454,مجرى دنكو سفلیه سوفت 30سم,Runner/Slide دنكو سفلیه سوفت 30cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+455,WOA-0455,دولاب 5 رف 45سم سلك فضي مودرن,دولاب 5 Shelf 45cm Wire فضي مودرن,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+456,WOA-0456,رجل جامبو ابيض,رجل جامبو White,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+457,WOA-0457,شماعه 80 سم ملابس ثابته جلد اورنج,Hanger 80 cm ملابس ثابته جلد Orange,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+458,WOA-0458,تكايه رف مسمار بني,تكايه Shelf مcmار بني,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+459,WOA-0459,تكايه رف مسمار اسود,تكايه Shelf مcmار Black,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+460,WOA-0460,تكايه رف مسمار بيج,تكايه Shelf مcmار بيج,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+461,WOA-0461,شماعه 80سم ملابس ثابته جلد جراي,Hanger 80cm ملابس ثابته جلد Grey,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+462,WOA-0462,شماعه 100سم ملابس ثابته جلد اورنج,Hanger 100cm ملابس ثابته جلد Orange,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+463,WOA-0463,شماعه 100سم ملابس ثابته جلد جراي,Hanger 100cm ملابس ثابته جلد Grey,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+464,WOA-0464,ماجيك فاصوليا 45 سم شمال مودرن,ماجيك فاصوليا 45 cm شمال مودرن,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+465,WOA-0465,ماجيك فاصوليا 45 سم يمين مودرن,ماجيك فاصوليا 45 cm يمين مودرن,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+466,WOA-0466,درج ملابس مميز 80 سم بمجرى سفلي سوفت كلوز بالما,Drawer ملابس مميز 80 cm بRunner/Slide سفلي Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+467,WOA-0467,درج ملابس مميز 90 سم بمجرى سفلي سوفت كلوز بالما,Drawer ملابس مميز 90 cm بRunner/Slide سفلي Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+468,WOA-0468,درج ملابس مميز 70سم بمجرى سفلي سوفت كلوز بالما,Drawer ملابس مميز 70cm بRunner/Slide سفلي Soft Close Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+469,WOA-0469,مسمار اليتا مشترك,مcmار اليتا مشترك,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+470,WOA-0470,رشاقه باكم نانو 80سم,رشاقه Hydraulic نانو 80cm,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+471,WOA-0471,مقبض بلت ان هوك 100 سم مستورد جديد اسود,Handle بلت ان هوك 100 cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+472,WOA-0472,مقبض G بلت ان 100 سم مستورد جديد اسود,Handle G بلت ان 100 cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+473,WOA-0473,مقبض G بلت ان 100 سم مستورد جديد دهبي,Handle G بلت ان 100 cm مستورد جديد دهبي,المقابض والمسكات,Handles & Knobs,,no
+474,WOA-0474,مقبض مسطره 100سم اسود,Handle مسطره 100cm Black,المقابض والمسكات,Handles & Knobs,,no
+475,WOA-0475,رجل نجمه اسود 10سم,رجل نجمه Black 10cm,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+476,WOA-0476,مقبض ماسورة 160اسود جديد,Handle ماسورة 160Black جديد,المقابض والمسكات,Handles & Knobs,,no
+477,WOA-0477,مقبض ماسورة 128اسود جديد,Handle ماسورة 128Black جديد,المقابض والمسكات,Handles & Knobs,,no
+478,WOA-0478,مقبض ماسورة 96اسود جديد,Handle ماسورة 96Black جديد,المقابض والمسكات,Handles & Knobs,,no
+479,WOA-0479,مقبض دهبي مسطره 30سم G,Handle دهبي مسطره 30cm G,المقابض والمسكات,Handles & Knobs,,no
+480,WOA-0480,زرار مدور دهبي,زرار مدور دهبي,المقابض والمسكات,Handles & Knobs,,no
+481,WOA-0481,زرار مربع اسود,زرار مربع Black,المقابض والمسكات,Handles & Knobs,,no
+482,WOA-0482,زرار مربع دهبي,زرار مربع دهبي,المقابض والمسكات,Handles & Knobs,,no
+483,WOA-0483,مقبض G بلت ان 40سم مستورد جديد دهبي,Handle G بلت ان 40cm مستورد جديد دهبي,المقابض والمسكات,Handles & Knobs,,no
+484,WOA-0484,مقبض G بلت ان 25 سم مستورد جديد دهبي,Handle G بلت ان 25 cm مستورد جديد دهبي,المقابض والمسكات,Handles & Knobs,,no
+485,WOA-0485,مقبض G بلت ان 40 سم مستورد جديد اسود,Handle G بلت ان 40 cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+486,WOA-0486,مقبض G بلت ان 20 سم مستورد جديد اسود,Handle G بلت ان 20 cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+487,WOA-0487,مقبض فيونكه اسود *دهبي 96,Handle فيونكه Black *دهبي 96,المقابض والمسكات,Handles & Knobs,,no
+488,WOA-0488,مقبض فيونكه اسود *دهبي 128,Handle فيونكه Black *دهبي 128,المقابض والمسكات,Handles & Knobs,,no
+489,WOA-0489,مقبض فيونكه دهبي *دهبي 128,Handle فيونكه دهبي *دهبي 128,المقابض والمسكات,Handles & Knobs,,no
+490,WOA-0490,مفصله عقربه 155سوفت كلوز  3D بالما,Hinge Scorpion 155Soft Close  3D Palma,المفصلات,Hinges,Palma,no
+491,WOA-0491,مجرى درج 50سم تاندم بوكس ارتفاع  84 مم palma,Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  84 مم palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+492,WOA-0492,مجرى درج 50سم تاندم بوكس ارتفاع 167 مم palma,Runner/Slide Drawer 50cm تاندم بوكس ارتفاع 167 مم palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+493,WOA-0493,مجرى درج 50سم تاندم بوكس ارتفاع  116 مم palma,Runner/Slide Drawer 50cm تاندم بوكس ارتفاع  116 مم palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+494,WOA-0494,دولاب محوري 6رف استانلس 45سم فضي بالما سوفت كلوز,دولاب محوري 6Shelf استانلس 45cm فضي Palma Soft Close,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+495,WOA-0495,ترولي مودرن سوفت كلوز 35سم,ترولي مودرن Soft Close 35cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+496,WOA-0496,مفصله عقربه 3D  دانكو,Hinge Scorpion 3D  دانكو,المفصلات,Hinges,,no
+497,WOA-0497,مفصله كاف عدلة سوفت كلوز 3D,Hinge كاف Straight Soft Close 3D,المفصلات,Hinges,,no
+498,WOA-0498,مفصله كاف نص ركبة سوفت كلوز 3D,Hinge كاف Half Overlay Soft Close 3D,المفصلات,Hinges,,no
+499,WOA-0499,مفصله كاف ركبة  سوفت كلوز 3D,Hinge كاف ركبة  Soft Close 3D,المفصلات,Hinges,,no
+500,WOA-0500,مفصله كاف عدلة سوفت كلوز 4D,Hinge كاف Straight Soft Close 4D,المفصلات,Hinges,,no
+501,WOA-0501,مفصله كاف عدلة سوفت كلوز 2D,Hinge كاف Straight Soft Close 2D,المفصلات,Hinges,,no
+502,WOA-0502,مفصله كاف نص ركبة سوفت كلوز 2D,Hinge كاف Half Overlay Soft Close 2D,المفصلات,Hinges,,no
+503,WOA-0503,مفصله كاف ركبة سوفت كلوز 2D,Hinge كاف ركبة Soft Close 2D,المفصلات,Hinges,,no
+504,WOA-0504,رشاقه باكم نانو 70سم,رشاقه Hydraulic نانو 70cm,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+505,WOA-0505,رشاقه باكم نانو 90سم,رشاقه Hydraulic نانو 90cm,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+506,WOA-0506,جزامة محورية 8رف نيسكو,جزامة محورية 8Shelf نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+507,WOA-0507,شماعه بناطيل جانبيه مضئه نيسكو,Hanger بناطيل جانبيه مضئه نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+508,WOA-0508,مرايا مضيئه نيسكو,مرايا مضيئه نيسكو,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+509,WOA-0509,ترولي زجاجي الماني 30سم نيسكو,ترولي زجاجي الماني 30cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+510,WOA-0510,ترولي زجاجي الماني 35سم نيسكو,ترولي زجاجي الماني 35cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+511,WOA-0511,ترولي زجاجي الماني 40سم نيسكو,ترولي زجاجي الماني 40cm نيسكو,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+512,WOA-0512,مفصلة اوميجا عدلة فضي 3D سوفت كلوز,Hinge اوميجا Straight فضي 3D Soft Close,المفصلات,Hinges,,no
+513,WOA-0513,مفصلة اوميجا نص ركبه فضي 3D سوفت كلوز,Hinge اوميجا نص ركبه فضي 3D Soft Close,المفصلات,Hinges,,no
+514,WOA-0514,مفصلة اوميجا عدلة اسود 3D سوفت كلوز,Hinge اوميجا Straight Black 3D Soft Close,المفصلات,Hinges,,no
+515,WOA-0515,مفصلة اوميجا نص ركبه اسود 3D سوفت كلوز,Hinge اوميجا نص ركبه Black 3D Soft Close,المفصلات,Hinges,,no
+516,WOA-0516,مقبض بلت ان هوك 30سم مستورد جديد اسود,Handle بلت ان هوك 30cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+517,WOA-0517,مطبقيه هيدروليك بالما 60 سم فضي,مطبقيه هيدروليك Palma 60 cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+518,WOA-0518,مطبقيه هيدروليك بالما 70سم فضي,مطبقيه هيدروليك Palma 70cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+519,WOA-0519,مطبقيه هيدروليك بالما 80سم فضي,مطبقيه هيدروليك Palma 80cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+520,WOA-0520,رشاقه خزان باور بالما 80 سم فضي,رشاقه خزان باور Palma 80 cm فضي,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Palma,no
+521,WOA-0521,مطبقيه درج 70سم ع مجرى سفلي ( اسود) palma,مطبقيه Drawer 70cm ع Runner/Slide سفلي ( Black) palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+522,WOA-0522,مطبقيه درج 90سم ع مجرى سفلي ( اسود) palma,مطبقيه Drawer 90cm ع Runner/Slide سفلي ( Black) palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+523,WOA-0523,كعب زاويه 90 ابيض,كعب Angle 90 White,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+524,WOA-0524,كعب زاويه 90 بني,كعب Angle 90 بني,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no
+525,WOA-0525,كعب عدل بني,كعب عدل بني,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+526,WOA-0526,ترولي مودرن سوفت كلوز 30سم,ترولي مودرن Soft Close 30cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+527,WOA-0527,مجرى جانبي سوفت كلوز بالما 30 سم,Runner/Slide جانبي Soft Close Palma 30 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+528,WOA-0528,مجرى جانبي سوفت كلوز بالما 35 سم,Runner/Slide جانبي Soft Close Palma 35 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+529,WOA-0529,مجرى جانبي سوفت كلوز بالما 40 سم,Runner/Slide جانبي Soft Close Palma 40 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+530,WOA-0530,مجرى جانبي سوفت كلوز بالما 45 سم,Runner/Slide جانبي Soft Close Palma 45 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+531,WOA-0531,مجرى جانبي سوفت كلوز بالما 50 سم,Runner/Slide جانبي Soft Close Palma 50 cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+532,WOA-0532,درج مطبخ زجاج سوفت كلوز 60سم بالما,Drawer مطبخ زجاج Soft Close 60cm Palma,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+533,WOA-0533,حامل طاسات اسود سوفت بالما,حامل طاسات Black سوفت Palma,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",Palma,no
+534,WOA-0534,خزنة تربو 20سم,خزنة تربو 20cm,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+535,WOA-0535,دراع منطبق افنتوس دانكو 2 ضلفه,Arm منطبق افنتوس دانكو 2 ضلفه,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+536,WOA-0536,مسمار ديكور مخفى,مcmار ديكور مخفى,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+537,WOA-0537,مفصله باب بيانو 177 ملي دانكو 3D,Hinge باب بيانو 177 mm دانكو 3D,المفصلات,Hinges,,no
+538,WOA-0538,ميكانيزم باب مخفي 150 سم mk,ميكانيزم باب مخفي 150 cm mk,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+539,WOA-0539,بصمه معدن دهبي,بصمه معدن دهبي,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+540,WOA-0540,مسمار تجميع معدن,مcmار تجميع معدن,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+541,WOA-0541,مطبقیه 70سم سوسته الحياة,مطبقیه 70cm سوسته الحياة,الأقفال والكوالين وأصابع التاتش,"Locks, Latches & Push Units",,no
+542,WOA-0542,هوايه بلاستيك مطبخ 8*25 اسود,هوايه بلاستيك مطبخ 8*25 Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+543,WOA-0543,هوايه بلاستيك مطبخ 8*25 رماد,هوايه بلاستيك مطبخ 8*25 رماد,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+544,WOA-0544,هوايه بلاستيك مطبخ 8*25 ابيض,هوايه بلاستيك مطبخ 8*25 White,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+545,WOA-0545,كالون درج مكتب زور طويل,Lock Drawer مكتب زور طويل,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+546,WOA-0546,كالون درج مكتب زور قصير,Lock Drawer مكتب زور قصير,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+547,WOA-0547,تقسيمة درج 35 سم مصري,Dividerة Drawer 35 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+548,WOA-0548,تقسيمة درج 40 سم مصري,Dividerة Drawer 40 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+549,WOA-0549,تقسيمة درج 45 سم مصري,Dividerة Drawer 45 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+550,WOA-0550,تقسيمة درج 50 سم مصري,Dividerة Drawer 50 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+551,WOA-0551,تقسيمة درج 55 سم مصري,Dividerة Drawer 55 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+552,WOA-0552,تقسيمة درج 60 سم مصري,Dividerة Drawer 60 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+553,WOA-0553,تقسيمة درج 70 سم مصري,Dividerة Drawer 70 cm مصري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,Egyptian,no
+554,WOA-0554,قطاع دريسنج زجاج بمقبض صغير عدل اسود الكترو بلوم,قطاع دريسنج زجاج بHandle صغير عدل Black الكترو بلوم,المقابض والمسكات,Handles & Knobs,,no
+555,WOA-0555,باسكت 16 لتر STARA-X,باسكت 16 لتر STARA-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+556,WOA-0556,باسكت 24 لتر STARA-X,باسكت 24 لتر STARA-X,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+557,WOA-0557,باسكت 10 لتر STARA-X محوري,باسكت 10 لتر STARA-X محوري,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+558,WOA-0558,مجرى جانبي تاتش 45 سم مودرن,Runner/Slide جانبي تاتش 45 cm مودرن,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+559,WOA-0559,مقبض بلت ان هوك 30سم مستورد جديد فضي,Handle بلت ان هوك 30cm مستورد جديد فضي,المقابض والمسكات,Handles & Knobs,,no
+560,WOA-0560,مقبض بلت ان هوك 20سم مستورد جديد فضي,Handle بلت ان هوك 20cm مستورد جديد فضي,المقابض والمسكات,Handles & Knobs,,no
+561,WOA-0561,مقبض بصمه بلاستيك 10سم اسود,Handle بصمه بلاستيك 10cm Black,المقابض والمسكات,Handles & Knobs,,no
+562,WOA-0562,مقبض عدل 13سم اسود بلاستيك,Handle عدل 13cm Black بلاستيك,المقابض والمسكات,Handles & Knobs,,no
+563,WOA-0563,هوايه مطبخ 20*6 اسود,هوايه مطبخ 20*6 Black,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+564,WOA-0564,فوم اسطا تركي,فوم اسطا Turkish,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",Turkish,no
+565,WOA-0565,ترابيزه مكوه سوفت کلوز  كاف,ترابيزه مكوه سوفت کلوز  كاف,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+566,WOA-0566,شماعة بناطيل علوية مجوز  نبيتي سوفت كلوز كاف,شماعة بناطيل علوية مجوز  نبيتي Soft Close كاف,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+567,WOA-0567,مجرى درج 50سم تاندم بوكس  samet,Runner/Slide Drawer 50cm تاندم بوكس  samet,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+568,WOA-0568,ميكانيزم سرير 120   برنس,ميكانيزم سرير 120   برنس,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+569,WOA-0569,ميكانيزم سرير 150برنس,ميكانيزم سرير 150برنس,الأذرع والميكانيزمات الهيدروليكية,Support Arms & Lift Mechanisms,,no
+570,WOA-0570,خزنة تربو 30سم,خزنة تربو 30cm,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+571,WOA-0571,مفصله عقربه مودرن 2D,Hinge Scorpion مودرن 2D,المفصلات,Hinges,,no
+572,WOA-0572,مسمار تربو 5سم ابيض,مcmار تربو 5cm White,المسامير والمثبتات ومواد اللصق,"Fasteners, Screws & Adhesives",,no
+573,WOA-0573,مقبض بلت ان هوك 128مم اسود جديد,Handle بلت ان هوك 128مم Black جديد,المقابض والمسكات,Handles & Knobs,,no
+574,WOA-0574,خزنة تربو 30سم ارقام وشاشة,خزنة تربو 30cm ارقام وشاشة,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+575,WOA-0575,مقبض بلت ان هوك 16سم مستورد جديد اسود,Handle بلت ان هوك 16cm مستورد جديد Black,المقابض والمسكات,Handles & Knobs,,no
+576,WOA-0576,مكينة عد النقود,مكينة عد النقود,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+577,WOA-0577,كعب كرسي 20 ملي بني,كعب كرسي 20 mm بني,الوزرات والبروفيلات والتهوية,"Profiles, Plinths & Trim",,no
+578,WOA-0578,ترولي بارما تركى 35سم,ترولي بارما تركى 35cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+579,WOA-0579,j;hdi,j;hdi,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+580,WOA-0580,دولاب محوري 6رف اكلريك 45سم,دولاب محوري 6Shelf اكلريك 45cm,إكسسوارات المطبخ والدريسنج,Kitchen & Dressing Storage,,no
+581,WOA-0581,مفصله روما عدله3d,Hinge روما عدله3d,المفصلات,Hinges,,no
+582,WOA-0582,مفصله روما عقربه3d,Hinge روما Scorpion3d,المفصلات,Hinges,,no
+583,WOA-0583,علاقه مطبخ رجلاش ابيض,علاقه مطبخ Adjustable White,المقابض والمسكات,Handles & Knobs,,no
+584,WOA-0584,خزنة دريسنج رقمية 60 سم بدون تقسيم,خزنة دريسنج رقمية 60 cm بدون Divider,الإضاءة الذكية والأنظمة الخاصة,"Smart Tech, Lighting & Specialty",,no
+585,WOA-0585,درج اكسسوارات متحرك جراي,Drawer Accessories Movable Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+586,WOA-0586,درج اكسسوارات متحرك اورانج,Drawer Accessories Movable Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,no
+587,WOA-0587,درج تقسيم اكسسوارات 70 سم بالما اورنج,Drawer Divider Accessories 70 cm Palma Orange,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+588,WOA-0588,درج تقسيم اكسسوارات 70 سم بالما جراي,Drawer Divider Accessories 70 cm Palma Grey,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+589,WOA-0589,درج تقسيم اكسسوارات 80 سم بالما جراي مع غطاء,Drawer Divider Accessories 80 cm Palma Grey مع غطاء,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,Palma,no
+590,WOA-0590,درج تخليه تحت الحوض 80سم,Drawer تخليه تحت الSink 80cm,أنظمة الأدراج وسكك الحركة,Drawer Systems & Slides,,yes
+591,WOA-0591,حامل طسات روما,حامل طسات روما,الأرجل والعجلات والكوابيل,"Legs, Wheels & Brackets",,no

@@ -110,6 +110,7 @@
                         <button type="button" class="btn-admin-action excel-btn" id="btnExportExcel" onclick="exportProductsExcel()" title="تصدير كل المنتجات إلى ملف Excel">📤 تصدير Excel</button>
                         <button type="button" class="btn-admin-action excel-btn" onclick="openImportPicker()" title="استيراد منتجات من ملف Excel">📥 استيراد Excel</button>
                         <button type="button" class="btn-admin-action excel-btn" onclick="downloadImportTemplate()" title="تنزيل قالب جاهز للاستيراد">📄 القالب</button>
+                        <button type="button" class="btn-admin-action excel-btn" onclick="openBulkImagesModal()" title="ربط صور كثيرة بالمنتجات حسب كود المنتج">🖼️ ربط صور تلقائياً</button>
                         <button type="button" class="btn-primary" onclick="openAddModal()">➕ إضافة منتج جديد</button>
                     </div>
                     <input type="file" id="excelFileInput" accept=".xlsx,.xls,.csv" hidden>
@@ -668,6 +669,21 @@
         </div>
     </div>
 
+    <!-- Bulk images modal -->
+    <div class="admin-modal-overlay" id="bulkModal" onclick="if(event.target === this) closeBulkModal()">
+        <div class="admin-modal-box" style="max-width:780px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px;">
+                <h2 style="font-size:20px; color:var(--navy);">🖼️ ربط صور المنتجات تلقائياً</h2>
+                <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeBulkModal()">إغلاق</button>
+            </div>
+            <div id="bulkBody"></div>
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+                <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeBulkModal()">إلغاء</button>
+                <button type="button" class="btn-primary" id="bulkApplyBtn" onclick="applyBulkImages()" disabled>ربط الصور</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Excel Import Modal -->
     <div class="admin-modal-overlay" id="importModal" onclick="if(event.target === this) closeImportModal()">
         <div class="admin-modal-box" style="max-width:760px;">
@@ -718,5 +734,6 @@
     <script src="/static/js/admin.js"></script>
     <script src="/static/js/cms.js"></script>
     <script src="/static/js/excel.js"></script>
+    <script src="/static/js/bulkimages.js"></script>
 </body>
 </html>

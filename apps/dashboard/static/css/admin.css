@@ -1043,3 +1043,84 @@ img, video, canvas {
     font-weight: 700;
     color: var(--navy);
 }
+
+
+/* ---------------- Bulk image matcher ---------------- */
+.bulk-drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 30px 16px;
+    border: 2px dashed #CBD5E1;
+    border-radius: 16px;
+    background: #F8FAFC;
+    text-align: center;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+}
+
+.bulk-drop:hover,
+.bulk-drop.drag {
+    border-color: var(--orange);
+    background: #FFF7ED;
+}
+
+.bulk-drop strong {
+    color: var(--navy);
+}
+
+.bulk-drop code {
+    background: #E2E8F0;
+    padding: 1px 6px;
+    border-radius: 6px;
+}
+
+.bulk-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.bulk-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.bulk-thumb {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    min-width: 0;
+}
+
+.bulk-thumb img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #F1F5F9;
+    border-radius: 6px;
+}
+
+.bulk-thumb span {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--navy);
+    direction: ltr;
+}
+
+.bulk-thumb small {
+    font-size: 10.5px;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
