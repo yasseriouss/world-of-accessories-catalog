@@ -2371,18 +2371,6 @@ body {
     }
 }
 
-/* Prevent horizontal page scroll from the header on small screens */
-@media (max-width: 640px) {
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .nav-actions {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-}
 
 /* ---------------- Small-screen safety: no overflow, no overlap ---------------- */
 html {
@@ -2402,26 +2390,10 @@ img, video, canvas, iframe {
 }
 
 @media (max-width: 640px) {
-    /* Header scrolls with the page instead of covering a third of the screen */
+    /* Compact header: brand + menu button only (actions live in the side menu) */
     .navbar {
-        position: static;
-        padding: 8px 10px;
-        gap: 6px;
-    }
-    .nav-actions {
-        gap: 6px;
-    }
-    .nav-actions .btn-nav {
-        min-width: 42px;
-        min-height: 42px;
-        padding: 8px 10px;
-        justify-content: center;
-    }
-    .nav-actions .btn-nav > span:nth-child(2) {
-        display: none;
-    }
-    .nav-actions #langToggleBtn {
-        font-size: 12px;
+        padding: 8px 12px;
+        gap: 8px;
     }
 
     /* Larger touch targets */
@@ -2475,4 +2447,12 @@ img, video, canvas, iframe {
         display: inline-block;
         padding: 10px 6px;
     }
+}
+
+/* Header now holds only brand + menu button: always a single compact row */
+.navbar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }

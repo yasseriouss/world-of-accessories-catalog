@@ -550,24 +550,21 @@
             }
         }
     
-        /* Small-screen safety */
         @media (max-width: 640px) {
-            .top-navbar {
-                position: static;
-                padding: 10px 12px;
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-            }
-            .top-navbar a, .top-navbar button {
-                min-height: 40px;
-            }
-            body {
-                padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-            }
+            .top-navbar { padding: 10px 12px; }
+            body { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+        }
+
+        /* Header holds only brand + menu button: single compact row */
+        .top-navbar {
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            justify-content: space-between !important;
+            align-items: center !important;
         }
 </style>
     <script src="/static/js/icons.js" defer></script>
+    <script src="/static/js/sidemenu.js" defer></script>
 </head>
 <body>
 

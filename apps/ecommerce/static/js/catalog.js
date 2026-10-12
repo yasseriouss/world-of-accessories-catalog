@@ -52,7 +52,10 @@ const i18n = {
         waTitle: "محادثة واتساب الفورية",
         socialTitle: "منصات التواصل الاجتماعي الرسمية",
         navAbout: "من نحن",
-        navInstall: "تثبيت التطبيق"
+        navInstall: "تثبيت التطبيق",
+        navHome: "الرئيسية",
+        navWa: "واتساب",
+        navCart: "السلة"
     },
     en: {
         brandTitle: "accessories World",
@@ -92,7 +95,10 @@ const i18n = {
         waTitle: "Instant WhatsApp Chat",
         socialTitle: "Official Social Media Channels",
         navAbout: "About Us",
-        navInstall: "Install App"
+        navInstall: "Install App",
+        navHome: "Home",
+        navWa: "WhatsApp",
+        navCart: "Cart"
     }
 };
 
@@ -371,6 +377,9 @@ function applyLanguage(lang) {
     setTxt("navPrintedBtn", t.printedBtn);
     setTxt("navAboutText", t.navAbout);
     setTxt("navInstallText", t.navInstall);
+    setTxt("navHomeText", t.navHome);
+    setTxt("navWaText", t.navWa);
+    setTxt("navCartText", t.navCart);
     setTxt("fnLinkAbout", (lang === "ar") ? "عن عالم الاكسسوار والمعرض" : "About Us & Showroom");
     setTxt("modalQtyLabel", (lang === "ar") ? "الكمية المطلوبة:" : "Quantity:");
 
