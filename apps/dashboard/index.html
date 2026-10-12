@@ -3,506 +3,570 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم الإدارية | عالم الإكسسوارات</title>
+    <title>عالم الاكسسوار | البوابة الرسمية لتوريد إكسسوارات الأثاث والمطابخ 2026</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link id="pwaManifestLink" rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1A3F7F">
+    <link rel="apple-touch-icon" href="/Branding/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta id="appleAppTitle" name="apple-mobile-web-app-title" content="عالم الاكسسوار">
+    <meta name="description" content="عالم الاكسسوار - البوابة الرسمية والمتجر الإلكتروني لإكسسوارات ومفصلات ومقابض الأثاث والمطابخ 2026">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem("woa_lang");
+                var isEn = saved === "en" || (!saved && navigator.language && !navigator.language.toLowerCase().startsWith("ar"));
+                var m = document.getElementById("pwaManifestLink");
+                var a = document.getElementById("appleAppTitle");
+                if (isEn) {
+                    if (m) m.setAttribute("href", "/manifest_en.json");
+                    if (a) a.setAttribute("content", "accessories World");
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/fonts.css">
-    <link rel="stylesheet" href="/static/css/admin.css">
+    <link rel="stylesheet" href="/static/css/catalog.css">
+    <link rel="stylesheet" href="/static/css/cart.css">
+    <style>
+        /* Landing Page Luxury Styling */
+        .landing-hero {
+            background: linear-gradient(135deg, rgba(13, 31, 66, 0.96) 0%, rgba(20, 50, 102, 0.94) 100%), url('/Branding/pattern-02.jpg.jpeg');
+            background-size: 400px 400px;
+            background-position: center;
+            background-blend-mode: overlay;
+            opacity: 0.95;
+            padding: 70px 24px 80px;
+            text-align: center;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, #1A3F7F, #FF8C3D 35%, #C5A880 70%, #1A3F7F) 1;
+        }
+
+        .landing-hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 140, 61, 0.18);
+            border: 1px solid rgba(255, 140, 61, 0.45);
+            color: #FFC091;
+            padding: 7px 20px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 14px rgba(255, 140, 61, 0.2);
+        }
+
+        .landing-hero-title {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.25;
+            max-width: 950px;
+            margin: 0 auto 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .landing-hero-desc {
+            font-size: 17.5px;
+            line-height: 1.8;
+            max-width: 820px;
+            margin: 0 auto 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Forward Search Bar */
+        .landing-search-box {
+            max-width: 680px;
+            margin: 0 auto 36px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 50px;
+            padding: 6px 8px 6px 20px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            border: 2px solid rgba(197, 168, 128, 0.4);
+        }
+
+        .landing-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 15px;
+            color: #0F172A;
+            background: transparent;
+            padding: 10px 8px;
+        }
+
+        .landing-search-btn {
+            background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .landing-search-btn:hover {
+            background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
+            transform: scale(1.02);
+        }
+
+        /* Hero Action Gateway Buttons */
+        .landing-hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gateway-primary {
+            background: linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%);
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(255, 140, 61, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-gateway-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 140, 61, 0.55);
+            background: linear-gradient(135deg, #FFA05C 0%, #F57520 100%);
+        }
+
+        .btn-gateway-secondary {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            color: #FFFFFF;
+            backdrop-filter: blur(8px);
+            padding: 16px 28px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-gateway-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Market Portals Grid */
+        .portals-section {
+            max-width: 1240px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .portals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .portal-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            padding: 26px 22px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 38px rgba(26, 63, 127, 0.16);
+            border-color: #C5A880;
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A3F7F, #FF8C3D);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .portal-icon {
+            font-size: 34px;
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: #F1F5F9;
+        }
+
+        .portal-card.kitchen .portal-icon { background: rgba(255, 140, 61, 0.12); color: #E86A15; }
+        .portal-card.dressing .portal-icon { background: rgba(26, 63, 127, 0.1); color: #1A3F7F; }
+        .portal-card.handles .portal-icon { background: rgba(197, 168, 128, 0.18); color: #A38458; }
+        .portal-card.systems .portal-icon { background: rgba(37, 211, 102, 0.12); color: #128C7E; }
+
+        .portal-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .portal-desc {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #475569;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .portal-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            background: #F8FAFC;
+            color: #1A3F7F;
+            border: 1.5px solid #E2E8F0;
+            transition: all 0.2s ease;
+        }
+
+        .portal-btn:hover {
+            background: linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%);
+            color: #FFFFFF;
+            border-color: #1A3F7F;
+            box-shadow: 0 4px 14px rgba(26, 63, 127, 0.25);
+        }
+
+        /* B2B Contract Section */
+        .b2b-section {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 100%);
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 60px 20px;
+        }
+
+        .b2b-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 860px) {
+            .landing-hero-title { font-size: 28px; }
+            .landing-hero-desc { font-size: 15px; }
+            .b2b-container { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Top Admin Navbar -->
-    <header class="admin-navbar">
-        <a href="/admin" class="admin-brand">
-            <img src="/Branding/logo-80.png" alt="Logo">
+    <!-- Top Animated Announcement Banner -->
+    <div id="woaTopBar" class="woa-top-bar" role="region" aria-label="شريط الإعلانات والعروض">
+        <div class="woa-top-bar-inner">
+            <button type="button" class="woa-tb-arrow woa-tb-prev" onclick="prevBanner()" aria-label="الإعلان السابق" title="السابق">‹</button>
+            <div class="woa-tb-content" id="woaTopBarContent">
+                <!-- Dynamic banners injected via catalog.js -->
+            </div>
+            <button type="button" class="woa-tb-arrow woa-tb-next" onclick="nextBanner()" aria-label="الإعلان التالي" title="التالي">›</button>
+        </div>
+    </div>
+
+    <!-- 1. Executive Top Navbar -->
+    <header class="navbar">
+        <a href="/" class="nav-brand">
+            <img src="/Branding/logo-80.png" class="nav-logo" alt="Logo">
             <div>
-                <h1 style="font-size:17px; font-weight:800;">لوحة تحكم الكتالوج</h1>
-                <p style="font-size:11px; opacity:0.85;">World of Accessories • Admin Control Center</p>
+                <h1 class="nav-title" id="navBrandTitle">عالم الاكسسوار</h1>
             </div>
         </a>
-        <div class="admin-nav-actions">
-            <a href="/" class="btn-admin-action" target="_blank" title="صفحة الهبوط الرئيسية">🏠 صفحة الهبوط</a>
-            <a href="/market.html" class="btn-admin-action" target="_blank" title="المتجر والكتالوج الرقمي">🛒 المتجر الرقمي</a>
-            <a href="/printed_catalogs.html" class="btn-admin-action" target="_blank" title="مركز الكتالوجات والطباعة">📖 الكتالوجات المطبوعة</a>
-            <a href="/about.html" class="btn-admin-action" target="_blank" title="عن المعرض والشركة">✨ المعرض والتواصل</a>
-            <button type="button" id="btnGenNow" class="btn-admin-action btn-generate" onclick="triggerManualGeneration()">⚡ توليد الكتالوجات</button>
-            <button type="button" class="btn-admin-action" onclick="adminLogout()" title="تسجيل الخروج">🔒 خروج</button>
-        </div>
+        <nav class="nav-actions">
+            <a href="/market.html" class="btn-nav btn-nav-cart" style="background:linear-gradient(135deg, #FF8C3D 0%, #E86A15 100%); border-color:#FF8C3D;" title="الدخول إلى المتجر والكتالوج الرقمي">
+                <span>🛒</span>
+                <span>المتجر الرقمي</span>
+            </a>
+            <a href="/about.html" class="btn-nav btn-nav-about" title="عن الشركة والمعرض الرسمي">
+                <span>✨</span>
+                <span id="navAboutText">من نحن والمعرض</span>
+            </a>
+            <button type="button" id="pwaInstallNavBtn" class="btn-nav btn-nav-install" style="display:none;" onclick="triggerPwaInstall()" title="تثبيت التطبيق على جهازك">
+                <span>📲</span>
+                <span id="navInstallText">تثبيت التطبيق</span>
+            </button>
+            <button type="button" id="langToggleBtn" class="btn-nav" onclick="toggleLanguage()">🌐 English</button>
+        </nav>
     </header>
 
-    <div class="admin-container">
+    <!-- 2. Hero Presentation -->
+    <section class="landing-hero">
+        <h2 class="landing-hero-title">عالم من الفخامة والاعتمادية الهندسية لإكسسوارات الأثاث والمطابخ</h2>
+        <p class="landing-hero-desc">
+            المرجع الأول والشريك المعتمد في مصر لأكبر تشكيلة إكسسوارات، مفصلات هيدروليك ثلاثية الأبعاد، سكك أدراج تاندم، ومقابض راقية تلبي احتياجات المصانع، الورش، ومهندسي الديكور بتوريد مباشر وفوري.
+        </p>
 
-        <!-- 1. Stats Overview Cards -->
-        <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-info">
-                    <h3>إجمالي المنتجات المسجلة</h3>
-                    <div class="num" id="statProdsCount">--</div>
-                </div>
-                <div class="stat-icon">📦</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-info">
-                    <h3>عدد الفئات المتخصصة</h3>
-                    <div class="num" id="statCatsCount">--</div>
-                </div>
-                <div class="stat-icon">🏷️</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-info">
-                    <h3>آخر تحديث للكتالوج المطبوع</h3>
-                    <div class="num" id="statLastBuild" style="font-size:22px;">جاهز</div>
-                </div>
-                <div class="stat-icon">🖨️</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-info">
-                    <h3>حالة المزامنة التلقائية</h3>
-                    <div class="num" style="font-size:20px; color:var(--green);">🟢 متزامن</div>
-                </div>
-                <div class="stat-icon">⚡</div>
-            </div>
-        </div>
-
-        <!-- Tab Navigation Switcher -->
-        <div class="admin-tab-nav">
-            <button type="button" class="admin-tab-btn active" id="tabBtnProducts" onclick="switchAdminTab('products')">
-                <span>📦 إدارة المنتجات</span>
-                <span class="admin-tab-count" id="tabBadgeProds">--</span>
+        <!-- Forwarding Search Bar -->
+        <form class="landing-search-box" onsubmit="event.preventDefault(); forwardSearchToMarket();">
+            <span style="font-size:20px; color:#94A3B8; margin-inline-end:6px;">🔍</span>
+            <input type="text" id="landingSearchInput" placeholder="ابحث باسم المنتج، الكود أو الفئة (مثال: مفصلة سوفت كلوز، مقبض ذهبي شامبين)...">
+            <button type="submit" class="landing-search-btn">
+                <span>البحث بالمتجر</span>
+                <span>←</span>
             </button>
-            <button type="button" class="admin-tab-btn" id="tabBtnBanners" onclick="switchAdminTab('banners')">
-                <span>📢 إدارة البانرات وشريط الإعلانات</span>
-                <span class="admin-tab-count" id="tabBadgeBanners">4</span>
-            </button>
-            <button type="button" class="admin-tab-btn" id="tabBtnLinks" onclick="switchAdminTab('links')">
-                <span>🌐 شبكة روابط المنظومة والتسويق</span>
-                <span class="admin-tab-count" id="tabBadgeLinks">6</span>
-            </button>
+        </form>
+
+        <!-- 3 Primary Gateway Actions -->
+        <div class="landing-hero-actions">
+            <a href="/market.html" class="btn-gateway-primary">
+                <span>🛒 تصفح المنتجات</span>
+                <span>←</span>
+            </a>
         </div>
+    </section>
 
-        <!-- ================= SECTION 1: PRODUCTS ================= -->
-        <div id="sectionProducts">
-            <!-- 2. Controls & Search Bar -->
-            <div class="control-bar">
-                <div class="search-filter-group">
-                    <input type="text" class="admin-search-input" placeholder="ابحث باسم المنتج، الكود أو السعر..." onkeyup="handleAdminSearch(this)">
-                    <select id="filterUsageSelect" class="admin-select" onchange="handleUsageFilter(this)">
-                        <option value="all">كافة الاستخدامات (الكل)</option>
-                        <option value="kitchen">🍳 مطابخ</option>
-                        <option value="dressing">👔 دريسينج</option>
-                        <option value="other">🛋️ أخرى وعام</option>
-                    </select>
-                    <select id="filterCategorySelect" class="admin-select" onchange="handleCategoryFilter(this)">
-                        <option value="0">كافة الفئات</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="button" class="btn-primary" onclick="openAddModal()">➕ إضافة منتج جديد</button>
-                </div>
-            </div>
-
-            <!-- 3. Products Table Card -->
-            <div class="table-card">
-                <div class="table-responsive">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th style="width:110px;">كود المنتج</th>
-                                <th style="width:65px;">الصورة</th>
-                                <th>اسم المنتج (عربي)</th>
-                                <th>الاسم الفني (English)</th>
-                                <th style="width:140px;">الفئة</th>
-                                <th style="width:110px;">نطاق الاستخدام</th>
-                                <th style="width:110px;">السعر الرسمي</th>
-                                <th style="width:90px;">إجراءات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminTableBody">
-                            <tr>
-                                <td colspan="8" style="text-align:center; padding:30px;">جاري تحميل بيانات المنتجات...</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= SECTION 2: BANNERS & ANNOUNCEMENTS ================= -->
-        <div id="sectionBanners" style="display:none;">
-            <!-- Live Preview Card -->
-            <div class="banner-preview-card">
-                <div class="banner-preview-title">
-                    <span>👁️ معاينة حية لشريط الإعلانات في أعلى الموقع (Live Top Banner Preview)</span>
-                </div>
-                <div class="banner-mockup-strip" id="bannerLivePreviewStrip">
-                    <span class="badge-tag-pill active" id="bannerPrevBadge" style="background:rgba(255,140,61,0.25); border:1px solid #FF8C3D; color:#FFA96B;">🚚 شحن فوري</span>
-                    <span id="bannerPrevText" style="font-weight:600;">توصيل وشحن متاح لكافة محافظات مصر • الدفع عند الاستلام بعد المعاينة</span>
-                </div>
-            </div>
-
-            <div class="control-bar">
-                <div style="font-weight:800; font-size:16px; color:var(--navy); display:flex; align-items:center; gap:8px;">
-                    <span>📢 قائمة الإعلانات والشريط المتحرك</span>
-                    <span style="font-size:12px; color:var(--text-muted); font-weight:normal;">(تظهر بالتناوب وبتحركات سلسة في أعلى الكتالوج)</span>
-                </div>
-                <div>
-                    <button type="button" class="btn-primary" onclick="openAddBannerModal()">➕ إضافة إعلان / بانر جديد</button>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <div class="table-responsive">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th style="width:60px;">#</th>
-                                <th style="width:130px;">الشارة / التاج</th>
-                                <th>نص الإعلان (عربي)</th>
-                                <th>النص بالإنجليزية</th>
-                                <th style="width:140px;">الرابط (Link)</th>
-                                <th style="width:110px;">الحالة</th>
-                                <th style="width:120px;">إجراءات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminBannersTableBody">
-                            <tr>
-                                <td colspan="7" style="text-align:center; padding:30px;">جاري تحميل الإعلانات...</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= SECTION 3: ECOSYSTEM & MARKETING LINKS ================= -->
-        <div id="sectionLinks" style="display:none;">
-            <!-- Control Header -->
-            <div class="control-bar" style="margin-bottom:20px;">
-                <div style="font-weight:800; font-size:16px; color:var(--navy); display:flex; align-items:center; gap:8px;">
-                    <span>🌐 شبكة روابط المنظومة والتسويق الرقمي</span>
-                    <span style="font-size:12px; color:var(--text-muted); font-weight:normal;">(روابط مباشرة لصفحات الموقع، مولد الروابط الترويجية، ومحادثات واتساب)</span>
-                </div>
-                <div>
-                    <button type="button" class="btn-primary" onclick="testAllEcosystemLinks()">🔍 فحص استجابة الروابط الآن</button>
-                </div>
-            </div>
-
-            <!-- 1. Direct Page Cards Grid -->
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:30px;">
-                
-                <!-- Card 1: Landing Page -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">🏠</span>
-                            <span class="badge-tag-pill active" id="linkStatusLanding" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 نشط ومعتمد</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">صفحة الهبوط الرئيسية (Landing Page)</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            البوابة الرسمية الفاخرة للواجهة الرئيسية، بوابات التوجيه للمتجر، تعريف توريد B2B، واستعراض مميزات المعرض.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;" id="urlLandingText">/ أو /landing.html</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:var(--navy); color:#fff; border-color:var(--navy);">فتح الرابط ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/', 'تم نسخ رابط صفحة الهبوط!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-                <!-- Card 2: Market Catalog -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">🛒</span>
-                            <span class="badge-tag-pill active" id="linkStatusMarket" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 نشط ومعتمد</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">المتجر والكتالوج الرقمي الشامل (Market)</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            الكتالوج الرقمي التفاعلي لكافة المنتجات (591+ صنف)، السلة الذكية، عرض الأسعار الرسمي، وفلاتر الأقسام.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;" id="urlMarketText">/market.html</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/market.html" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:var(--orange); color:#fff; border-color:var(--orange);">فتح المتجر ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html', 'تم نسخ رابط المتجر الرقمي!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-                <!-- Card 3: Kitchens Space Portal -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">🍳</span>
-                            <span class="badge-tag-pill active" id="linkStatusKitchen" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 رابط مفلتر</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">بوابة قسم المطابخ (Kitchens Space)</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            رابط تسويقي مخصص لعملاء ومصانع المطابخ؛ يفتح المتجر الرقمي مفلتراً مباشرة على منتجات وتجهيزات المطابخ.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/market.html?space=kitchen</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/market.html?space=kitchen" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم المطابخ ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html?space=kitchen', 'تم نسخ رابط قسم المطابخ!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-                <!-- Card 4: Dressing Space Portal -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">👔</span>
-                            <span class="badge-tag-pill active" id="linkStatusDressing" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 رابط مفلتر</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">بوابة قسم الدريسينج (Dressing Space)</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            رابط تسويقي مخصص لمهندسي الديكور وخزائن الملابس؛ يفتح المتجر مفلتراً تلقائياً على مستلزمات الدريسينج روم.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/market.html?space=dressing</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/market.html?space=dressing" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#0F2752; color:#fff; border-color:#0F2752;">فتح قسم الدريسينج ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/market.html?space=dressing', 'تم نسخ رابط قسم الدريسينج!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-                <!-- Card 5: Printed Catalogs Hub -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">📖</span>
-                            <span class="badge-tag-pill active" id="linkStatusPrint" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 نشط ومعتمد</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">مركز الكتالوجات المطبوعة والـ PDF</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            بوابة تنزيل وطباعة الكتالوج الشامل A4 (عربي وإنجليزي)، كتيبات الفئات المتخصصة، والطباعة الفورية.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/printed_catalogs.html</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/printed_catalogs.html" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#1E293B; color:#fff; border-color:#1E293B;">فتح الكتالوجات ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/printed_catalogs.html', 'تم نسخ رابط الكتالوجات المطبوعة!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-                <!-- Card 6: About Us & Showroom -->
-                <div class="table-card" style="padding:22px; border-radius:14px; border:1px solid #E2E8F0; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
-                            <span style="font-size:28px;">📍</span>
-                            <span class="badge-tag-pill active" id="linkStatusAbout" style="background:#ECFDF5; color:#059669; border:1px solid #A7F3D0;">🟢 نشط ومعتمد</span>
-                        </div>
-                        <h3 style="font-size:17px; font-weight:800; color:var(--navy); margin-bottom:6px;">صفحة من نحن وتفاصيل المعرض (About Us)</h3>
-                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">
-                            معلومات الشركة، موقع المعرض في سيلا مول بمدينة 6 أكتوبر، أرقام التواصل، والأسئلة الشائعة.
-                        </p>
-                        <div style="background:#F8FAFC; padding:8px 12px; border-radius:8px; font-size:12.5px; font-family:monospace; color:#1E293B; word-break:break-all; border:1px solid #E2E8F0; margin-bottom:16px;">/about.html</div>
-                    </div>
-                    <div style="display:flex; gap:8px;">
-                        <a href="/about.html" target="_blank" class="btn-admin-action" style="flex:1; justify-content:center; background:#10B981; color:#fff; border-color:#10B981;">فتح صفحة من نحن ↗️</a>
-                        <button type="button" class="btn-admin-action" style="background:#F1F5F9; color:#0F172A; border-color:#CBD5E1;" onclick="copyLinkToClipboard('/about.html', 'تم نسخ رابط صفحة من نحن!')">نسخ 📋</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- 2. Campaign Deep-Link Generator Box -->
-            <div class="table-card" style="padding:26px; border-radius:16px; border:1px solid #E2E8F0; margin-bottom:30px;">
-                <h3 style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
-                    <span>⚡ مولد الروابط الترويجية وحملات واتساب المخصصة (Deep-Link Campaign Generator)</span>
-                </h3>
-                <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:20px;">
-                    قم بإنشاء روابط مخصصة وموجهة مع رسالة تسويقية جاهزة لمشاركتها مباشرة على واتساب أو منصات التواصل الاجتماعي مع العملاء والشركات.
+    <!-- 3. Market Gateways (Forwarding Portals) -->
+    <main class="portals-section">
+        <div class="portals-grid">
+            <!-- Portal 1: Kitchens -->
+            <div class="portal-card kitchen">
+                <div class="portal-icon">🍳</div>
+                <h3 class="portal-title">عالم المطابخ الحديثة</h3>
+                <p class="portal-desc">
+                    مفصلات هيدروليك سوفت كلوز 3D، سكك أدراج تاندم مخفية، ترولي زيت، سلات تخزين ستانلس، وأنظمة فتح وإغلاق سلسة تضمن عمراً افتراضياً طويلاً.
                 </p>
+                <a href="/market.html?space=kitchen" class="portal-btn">
+                    <span>دخول قسم المطابخ</span>
+                    <span>←</span>
+                </a>
+            </div>
 
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin-bottom:18px;">
-                    <div>
-                        <label class="form-label" style="margin-bottom:6px;">الصفحة / الوجهة المستهدفة:</label>
-                        <select id="genTargetPage" class="admin-select" style="width:100%;" onchange="generateCampaignLink()">
-                            <option value="/market.html">🛒 المتجر والكتالوج الرقمي الشامل</option>
-                            <option value="/market.html?space=kitchen">🍳 قسم إكسسوارات ومفصلات المطابخ</option>
-                            <option value="/market.html?space=dressing">👔 قسم مستلزمات الدريسينج والخزائن</option>
-                            <option value="/market.html?cat=1">🚪 قسم المقابض الفاخرة</option>
-                            <option value="/market.html?cat=3">⚙️ قسم الأنظمة الميكانيكية والهيدروليك</option>
-                            <option value="/">🏠 صفحة الهبوط الرئيسية</option>
-                            <option value="/printed_catalogs.html">📖 الكتالوجات المطبوعة PDF</option>
-                            <option value="/about.html">📍 تفاصيل المعرض وموقع 6 أكتوبر</option>
-                        </select>
-                    </div>
+            <!-- Portal 2: Dressing -->
+            <div class="portal-card dressing">
+                <div class="portal-icon">👔</div>
+                <h3 class="portal-title">عالم الدريسينج والخزائن</h3>
+                <p class="portal-desc">
+                    مواسير تعليق ألومنيوم بيضاوية ودائرية، مفصلات ألومنيوم وزجاج، منظمات إكسسوارات وأوشحة، وسكك حركة ناعمة تناسب أحدث صيحات غرف الملابس.
+                </p>
+                <a href="/market.html?space=dressing" class="portal-btn">
+                    <span>دخول قسم الدريسينج</span>
+                    <span>←</span>
+                </a>
+            </div>
 
-                    <div>
-                        <label class="form-label" style="margin-bottom:6px;">كلمة بحث محددة (اختياري):</label>
-                        <input type="text" id="genSearchQuery" class="form-input" style="width:100%;" placeholder="مثال: سوفت كلوز، ذهبي، مقبض..." oninput="generateCampaignLink()">
-                    </div>
+            <!-- Portal 3: Handles -->
+            <div class="portal-card handles">
+                <div class="portal-icon">🚪</div>
+                <h3 class="portal-title">المقابض والتشطيبات الفاخرة</h3>
+                <p class="portal-desc">
+                    تشكيلة متكاملة من المقابض المودرن والكلاسيكية بمقاسات متعددة، ألوان ذهبي مطفي، أسود غير لامع، وستانلس مقاوم للبصمات والتآكل.
+                </p>
+                <a href="/market.html?cat=1" class="portal-btn">
+                    <span>تصفح تشكيلة المقابض</span>
+                    <span>←</span>
+                </a>
+            </div>
 
-                    <div>
-                        <label class="form-label" style="margin-bottom:6px;">نوع الحملة / صيغة الرسالة:</label>
-                        <select id="genMsgTemplate" class="admin-select" style="width:100%;" onchange="generateCampaignLink()">
-                            <option value="welcome">رسالة ترحيب واستعراض الكتالوج 2026</option>
-                            <option value="kitchens">دعوة مخصصة لشركات ومصانع المطابخ</option>
-                            <option value="contractors">عرض توريد B2B لمهندسي الديكور والمقاولات</option>
-                            <option value="showroom">دعوة زيارة المعرض في سيلا مول 6 أكتوبر</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div style="background:#F8FAFC; padding:16px; border-radius:12px; border:1px solid #E2E8F0; margin-bottom:18px;">
-                    <label style="display:block; font-size:12.5px; font-weight:800; color:var(--navy); margin-bottom:6px;">الرابط النهائي الناتج للحملة:</label>
-                    <div style="display:flex; gap:10px; align-items:center;">
-                        <input type="text" id="genResultUrl" readonly style="flex:1; padding:10px 14px; font-size:13px; font-family:monospace; background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:8px; color:#0F172A;">
-                        <button type="button" class="btn-primary" onclick="copyGeneratedLink()">نسخ الرابط 📋</button>
-                        <a id="genTestLink" href="#" target="_blank" class="btn-admin-action" style="background:var(--navy); color:#fff; border-color:var(--navy);">تجربة الرابط ↗️</a>
-                    </div>
-                </div>
-
-                <div>
-                    <label style="display:block; font-size:12.5px; font-weight:800; color:var(--navy); margin-bottom:6px;">رابط رسالة واتساب المباشرة (WhatsApp Direct Share Link):</label>
-                    <div style="display:flex; gap:10px; align-items:center;">
-                        <input type="text" id="genWaUrl" readonly style="flex:1; padding:10px 14px; font-size:13px; font-family:monospace; background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:8px; color:#0F172A;">
-                        <button type="button" class="btn-primary" style="background:#25D366; border-color:#25D366;" onclick="copyGeneratedWaLink()">نسخ رابط واتساب 💬</button>
-                        <a id="genTestWaLink" href="#" target="_blank" class="btn-admin-action" style="background:#25D366; color:#fff; border-color:#25D366;">إرسال عبر واتساب ↗️</a>
-                    </div>
-                </div>
+            <!-- Portal 4: Mechanical Systems -->
+            <div class="portal-card systems">
+                <div class="portal-icon">⚙️</div>
+                <h3 class="portal-title">الأنظمة الميكانيكية والهيدروليكية</h3>
+                <p class="portal-desc">
+                    بساتم غاز هيدروليكية لرفع الدرف، أنظمة ضغط للفتح (Push to Open)، وسكك حمولة ثقيلة حتى 45 كجم مصممة للخدمة الشاقة.
+                </p>
+                <a href="/market.html?cat=3" class="portal-btn">
+                    <span>تصفح الأنظمة الهندسية</span>
+                    <span>←</span>
+                </a>
             </div>
         </div>
+    </main>
 
-    </div>
+    <!-- 4. B2B & Factory Direct Supply -->
+    <section class="b2b-section">
+        <div class="b2b-container">
+            <div>
+                <span style="font-size:13px; font-weight:800; color:#1A3F7F; text-transform:uppercase; letter-spacing:1px;">B2B Supply & Projects</span>
+                <h2 style="font-size:30px; font-weight:900; color:#0F172A; margin:10px 0 16px; line-height:1.3;">
+                    التوريد المباشر للمصانع، الورش، والمشاريع الهندسية
+                </h2>
+                <p style="font-size:15px; color:#475569; line-height:1.75; margin-bottom:24px;">
+                    نوفر لأصحاب المصانع ومهندسي الديكور توريداً مستمراً ومباشراً بأسعار رسمية معتمدة، مع إمكانية إصدار عروض أسعار تفصيلية رسمية وخصومات للكميات الكبيرة والتوريد المنتظم.
+                </p>
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                    <a href="https://wa.me/201140030036?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D9%88%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%20%D9%83%D9%85%D9%8A%D8%A7%D8%AA%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A3%D9%88%20%D9%85%D8%B5%D9%86%D8%B9" target="_blank" rel="noopener" class="btn-gateway-primary" style="padding:14px 26px;">
+                        <span>💬 استفسار توريد مشاريع عبر واتساب</span>
+                    </a>
+                    <a href="/market.html" class="btn-gateway-secondary" style="background:#FFFFFF; color:#1A3F7F; border-color:#CBD5E1; padding:14px 24px;">
+                        <span>🛒 معاينة الأسعار بالمتجر</span>
+                    </a>
+                </div>
+            </div>
+            <div style="background:#FFFFFF; padding:32px; border-radius:18px; border:1px solid #E2E8F0; box-shadow:0 8px 25px rgba(0,0,0,0.05);">
+                <h3 style="font-size:20px; font-weight:800; color:#0F172A; margin-bottom:18px;">لماذا يختارنا المحترفون؟</h3>
+                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">ضمان الاعتمادية والأصالة</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">خامات استانلس ستيل مقاومة للرطوبة وبساتم هيدروليك مختبرة لأكثر من 80,000 دورة.</p>
+                        </div>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">جاهزية المخزون الفوري</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">أكثر من 590 منتجاً جاهزاً للتسليم الفوري من مستودعات ومعرض مدينة 6 أكتوبر.</p>
+                        </div>
+                    </li>
+                    <li style="display:flex; align-items:flex-start; gap:12px;">
+                        <span style="font-size:20px; color:#10B981;">✓</span>
+                        <div>
+                            <strong style="color:#0F172A; font-size:14.5px;">شحن آمن وتغطية شاملة</strong>
+                            <p style="margin:2px 0 0; font-size:13px; color:#64748B;">شحن سريع لجميع محافظات جمهورية مصر العربية مع إمكانية المعاينة قبل الاستلام.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <!-- Admin Footer -->
-    <footer style="text-align:center; padding:24px 10px; color:#94A3B8; font-size:12px; border-top:1px solid #E2E8F0; margin-top:40px;">
-        &copy; 2026 عالم الإكسسوارات &bull; لوحة التحكم الإدارية &bull; Created by <a href="https://yasserious.com" target="_blank" rel="noopener" style="color:var(--gold); font-weight:700; text-decoration:none;">yasserious.com</a>
+    <!-- 5. Showroom Spotlight -->
+    <section style="max-width:1200px; margin:60px auto; padding:0 20px;">
+        <div style="background:linear-gradient(135deg, #1A3F7F 0%, #0F2752 100%); border-radius:20px; padding:45px 36px; color:#FFFFFF; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:26px; box-shadow:0 15px 35px rgba(15,39,82,0.35);">
+            <div>
+                <span style="background:rgba(255,255,255,0.15); padding:5px 14px; border-radius:20px; font-size:12px; font-weight:800;">📍 المعرض والمقر الرئيسي</span>
+                <h3 style="font-size:26px; font-weight:900; margin:12px 0 8px;">يسعدنا تشريفكم في معرض مدينة 6 أكتوبر</h3>
+                <p style="font-size:14.5px; opacity:0.9; margin:0 0 4px;">المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول (Silla Mall)</p>
+                <p style="font-size:13px; opacity:0.8; margin:0;">مواعيد العمل: يومياً طوال أيام الأسبوع من الساعة 10:00 صباحاً حتى 10:00 مساءً</p>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener" class="btn-gateway-primary" style="background:#EA4335; border-color:#EA4335;">
+                    <span>🗺️ الاتجاهات على Google Maps</span>
+                </a>
+                <a href="tel:01140030036" class="btn-gateway-secondary">
+                    <span>📞 اتصال 01140030036</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Universal Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <div class="footer-brand-title">
+                        <img src="/Branding/logo-80.png" alt="Logo" class="footer-brand-logo">
+                        <span>عالم الاكسسوار</span>
+                    </div>
+                    <p class="footer-desc">
+                        الرائدون في إكسسوارات ومفصلات ومقابض الأثاث والمطابخ الفاخرة في مصر. توريد مباشر، أسعار رسمية معتمدة، ودعم فني متخصص لتلبية احتياجات المصانع والورش والعملاء.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/world_of_accessories.eg" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram">📷</a>
+                        <a href="https://www.facebook.com/people/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA/61583899890449/" target="_blank" rel="noopener" class="footer-social-btn" title="Facebook">f</a>
+                        <a href="https://www.tiktok.com/@world_of_accessories_eg" target="_blank" rel="noopener" class="footer-social-btn" title="TikTok">♪</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Site Ecosystem -->
+                <div class="footer-col">
+                    <h4>بوابات الموقع والكتالوجات</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="/market.html">🛒 <span>المتجر والكتالوج الرقمي الشامل (591+ صنف)</span></a></li>
+                        <li><a href="/market.html?space=kitchen">🍳 <span>قسم مفصلات وإكسسوارات المطابخ</span></a></li>
+                        <li><a href="/market.html?space=dressing">👔 <span>قسم مستلزمات الدريسينج والخزائن</span></a></li>
+                        <li><a href="/printed_catalogs.html">📖 <span>مركز الكتالوجات المطبوعة والطباعة PDF</span></a></li>
+                        <li><a href="/about.html">✨ <span>عن الشركة وتفاصيل المعرض في 6 أكتوبر</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact & Support -->
+                <div class="footer-col">
+                    <h4>المعرض والمقر الرئيسي</h4>
+                    <p style="font-size:13px; color:#94A3B8; line-height:1.7;">
+                        مدينة 6 أكتوبر – المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول (Silla Mall)<br>
+                        مواعيد العمل: يومياً من 10 ص حتى 10 م<br>
+                        هاتف وخدمة عملاء: 01140030036
+                    </p>
+                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" rel="noopener" class="footer-map-mini-btn" style="margin-top:10px;">
+                        🗺️ افتح الموقع على الخريطه
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>جميع الحقوق محفوظة &copy; 2026 عالم الاكسسوار • accessories World</div>
+                <div class="footer-attribution">Created by <a href="https://yasserious.com" target="_blank" rel="noopener">yasserious.com</a></div>
+            </div>
+        </div>
     </footer>
 
-    <!-- 4. Add/Edit Product Modal -->
-    <div class="admin-modal-overlay" id="productModal" onclick="if(event.target === this) closeProductModal()">
-        <div class="admin-modal-box">
-            <h2 id="modalFormTitle" style="font-size:20px; margin-bottom:18px; color:var(--navy);">➕ إضافة منتج جديد</h2>
-            <form onsubmit="saveProductForm(event)">
-                
-                <div class="form-group">
-                    <label class="form-label">اسم المنتج بالعربية *</label>
-                    <input type="text" id="prodAr" class="form-input" placeholder="مثال: مفصلة ساميت عدلة سوفت كلوز 3D" required>
-                </div>
+    <!-- Floating WhatsApp Quick Button -->
+    <a href="https://wa.me/201140030036" class="floating-whatsapp" target="_blank" rel="noopener" title="تواصل معنا عبر واتساب">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+    </a>
 
-                <div class="form-group">
-                    <label class="form-label">الاسم الفني بالإنجليزية</label>
-                    <input type="text" id="prodEn" class="form-input" placeholder="Example: Hinge Summit Straight Soft Close 3D">
-                </div>
-
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-                    <div class="form-group">
-                        <label class="form-label">السعر الرسمي (بالجنيه EGP) *</label>
-                        <input type="number" id="prodPrice" class="form-input" placeholder="مثال: 65" min="0" step="0.5" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">الفئة التابع لها *</label>
-                        <select id="prodCategory" class="form-select">
-                            <!-- Injected -->
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">نطاق الاستخدام (مطابخ / دريسنج / أخرى) *</label>
-                    <select id="prodUsageType" class="form-select">
-                        <option value="kitchen">🍳 مطابخ (Kitchen)</option>
-                        <option value="dressing">👔 دريسينج (Dressing)</option>
-                        <option value="other" selected>🛋️ أخرى وعام (Other / General)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">صورة المنتج</label>
-                    <div class="upload-area" onclick="document.getElementById('fileUploadInput').click()">
-                        <div style="font-size:24px; margin-bottom:4px;">📷</div>
-                        <div style="font-size:13px; font-weight:700;">اضغط هنا لاختيار أو رفع صورة جديدة</div>
-                        <div style="font-size:11px; color:var(--text-muted);">يدعم PNG, JPG, WEBP</div>
-                    </div>
-                    <input type="file" id="fileUploadInput" accept="image/*" style="display:none;">
-                    <div style="text-align:center; margin-top:8px;">
-                        <img id="previewImg" src="/Branding/logo-100.png" class="preview-img" alt="Preview">
-                    </div>
-                </div>
-
-                <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
-                    <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeProductModal()">إلغاء</button>
-                    <button type="submit" class="btn-primary">💾 حفظ المنتج والمزامنة</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
-    <!-- 4b. Add/Edit Banner Modal -->
-    <div class="admin-modal-overlay" id="bannerModal" onclick="if(event.target === this) closeBannerModal()">
-        <div class="admin-modal-box">
-            <h2 id="modalBannerTitle" style="font-size:20px; margin-bottom:18px; color:var(--navy);">📢 إضافة إعلان / بانر جديد</h2>
-            <form onsubmit="saveBannerForm(event)">
-                
-                <div class="form-group">
-                    <label class="form-label">نص الإعلان بالعربية *</label>
-                    <textarea id="bannerTextAr" class="form-input" rows="2" placeholder="مثال: خصم خاص 10% على مفصلات الساميت لورش الديكور والمطابخ..." required style="resize:vertical;"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">نص الإعلان بالإنجليزية (اختياري)</label>
-                    <textarea id="bannerTextEn" class="form-input" rows="2" placeholder="Example: Special 10% discount on Summit hinges for workshops..." style="resize:vertical;"></textarea>
-                </div>
-
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-                    <div class="form-group">
-                        <label class="form-label">التاج / الشارة بالعربية</label>
-                        <input type="text" id="bannerBadgeAr" class="form-input" placeholder="مثال: 🚚 شحن فوري، 🔥 عرض خاص">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">التاج بالإنجليزية</label>
-                        <input type="text" id="bannerBadgeEn" class="form-input" placeholder="Example: Hot Deal, Fast Shipping">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">رابط التوجيه عند الضغط (اختياري)</label>
-                    <input type="text" id="bannerLink" class="form-input" placeholder="مثال: https://wa.me/201140030036 أو #contact">
-                    <small style="color:var(--text-muted); font-size:11px;">يمكن وضع رابط واتساب، رابط خرائط، أو قسم داخل الصفحة مثل #contact</small>
-                </div>
-
-                <div class="form-group" style="margin-top:10px;">
-                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-weight:700;">
-                        <input type="checkbox" id="bannerActive" checked style="width:18px; height:18px; accent-color:var(--navy);">
-                        <span>تفعيل الإعلان فوراً في شريط الإعلانات أعلى الكتالوج</span>
-                    </label>
-                </div>
-
-                <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:24px;">
-                    <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeBannerModal()">إلغاء</button>
-                    <button type="submit" class="btn-primary">💾 حفظ الإعلان ونشره</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
-    <!-- 5. Admin Auth PIN Modal -->
-    <div class="admin-modal-overlay" id="authModal">
-        <div class="admin-modal-box" style="max-width:400px; text-align:center;">
-            <div style="font-size:40px; margin-bottom:10px;">🔒</div>
-            <h2 style="font-size:20px; margin-bottom:8px; color:var(--navy);">منطقة الإدارة الخاصة</h2>
-            <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">
-                يرجى إدخال رمز الدخول (PIN) للوصول إلى لوحة التحكم
-            </p>
-            <input type="password" id="pinInput" class="form-input" placeholder="أدخل رمز المرور..." style="text-align:center; font-size:18px; letter-spacing:4px; margin-bottom:16px;" onkeydown="if(event.key === 'Enter') submitAdminPin()">
-            <button type="button" class="btn-primary" style="width:100%; justify-content:center;" onclick="submitAdminPin()">تسجيل الدخول</button>
-            <div style="font-size:11px; color:#94A3B8; margin-top:14px;">
-                رمز الدخول الافتراضي: <code>2026</code>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="adminToast" class="toast-msg"></div>
-
-    <script src="/static/js/supabase_sync.js"></script>
-    <script src="/static/js/admin.js"></script>
+    <script src="/static/js/catalog.js"></script>
+    <script>
+        function forwardSearchToMarket() {
+            var q = document.getElementById("landingSearchInput").value.trim();
+            if (q) {
+                window.location.href = "/market.html?q=" + encodeURIComponent(q);
+            } else {
+                window.location.href = "/market.html";
+            }
+        }
+    </script>
 </body>
 </html>
