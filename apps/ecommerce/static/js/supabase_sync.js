@@ -1,9 +1,6 @@
 /**
- * World of Accessories - Supabase Unified Live Sync
- * Realtime cloud database layer connecting:
- * 1. Admin Portal (Immediate CRUD on woa_products)
- * 2. Client Website (Live reactive catalog with instant price/product updates)
- * 3. Catalogue Center (Live synchronized statistics and print data)
+ * World of Accessories - Storefront Supabase layer (read-only)
+ * The storefront never writes: RLS only permits admin writes via the dashboard.
  */
 
 const SUPABASE_CONFIG = {
@@ -11,26 +8,49 @@ const SUPABASE_CONFIG = {
     anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6bGxoaXNiZ2pmZG51cmZ1emZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5NTI5MDksImV4cCI6MjA5OTUyODkwOX0.0iIEyyD9pI8eblIixI8nbHJMm05kngTIMEWAi7yg_Eg"
 };
 
+const PRODUCT_COLUMNS = "id,ar,en,price,category_id,usage_type,usage_ar,usage_en,image";
+const CACHE_TTL_MS = 5 * 60 * 1000;
+
 const SupabaseSync = {
     headers: {
-        "apikey": SUPABASE_CONFIG.anonKey,
-        "Authorization": `Bearer ${SUPABASE_CONFIG.anonKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
+        apikey: SUPABASE_CONFIG.anonKey,
+        Authorization: `Bearer ${SUPABASE_CONFIG.anonKey}`
+    },
+
+    cacheGet(key) {
+        try {
+            const raw = sessionStorage.getItem(key);
+            if (!raw) return null;
+            const { t, d } = JSON.parse(raw);
+            return Date.now() - t < CACHE_TTL_MS ? d : null;
+        } catch (e) {
+            return null;
+        }
+    },
+
+    cacheSet(key, data) {
+        try {
+            sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d: data }));
+        } catch (e) {}
+    },
+
+    async fetchRest(path, cacheKey) {
+        const cached = this.cacheGet(cacheKey);
+        if (cached) return cached;
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/${path}`, { headers: this.headers });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) this.cacheSet(cacheKey, data);
+        return data;
     },
 
     async fetchCategories() {
         try {
-            const url = `${SUPABASE_CONFIG.url}/rest/v1/woa_categories?select=*&order=id.asc`;
-            const res = await fetch(url, { headers: this.headers });
-            if (res.ok) {
-                const data = await res.json();
-                if (data && data.length > 0) return data;
-            }
+            const data = await this.fetchRest("woa_categories?select=*&order=id.asc", "woa_cache_categories");
+            if (data && data.length > 0) return data;
         } catch (e) {
-            console.warn("[Supabase] Failed to fetch categories, falling back:", e);
+            console.warn("[Supabase] categories fetch failed, using local fallback:", e);
         }
-        // Fallback to local
         try {
             const res = await fetch("/data/categories_data.json");
             if (res.ok) {
@@ -43,70 +63,22 @@ const SupabaseSync = {
 
     async fetchProducts(filters = {}) {
         try {
-            let url = `${SUPABASE_CONFIG.url}/rest/v1/woa_products?select=*&order=id.asc`;
+            let data = await this.fetchRest(`woa_products?select=${PRODUCT_COLUMNS}&order=id.asc`, "woa_cache_products");
             if (filters.category_id && filters.category_id > 0) {
-                url += `&category_id=eq.${filters.category_id}`;
+                data = data.filter(p => p.category_id === Number(filters.category_id));
             }
             if (filters.usage_type && filters.usage_type !== "all") {
-                url += `&usage_type=eq.${encodeURIComponent(filters.usage_type)}`;
+                data = data.filter(p => p.usage_type === filters.usage_type);
             }
-            const res = await fetch(url, { headers: this.headers });
-            if (res.ok) {
-                const data = await res.json();
-                if (data && data.length > 0) return data;
-            }
+            if (data && data.length > 0) return data;
         } catch (e) {
-            console.warn("[Supabase] Failed to fetch products, falling back:", e);
+            console.warn("[Supabase] products fetch failed, using local fallback:", e);
         }
-        // Fallback to local
         try {
             const res = await fetch("/data/products.json");
-            if (res.ok) {
-                return await res.json();
-            }
+            if (res.ok) return await res.json();
         } catch (e) {}
         return [];
-    },
-
-    async insertProduct(product) {
-        const url = `${SUPABASE_CONFIG.url}/rest/v1/woa_products`;
-        const res = await fetch(url, {
-            method: "POST",
-            headers: this.headers,
-            body: JSON.stringify(product)
-        });
-        if (!res.ok) {
-            const err = await res.text();
-            throw new Error(err || "Failed to insert product into Supabase");
-        }
-        return await res.json();
-    },
-
-    async updateProduct(id, updates) {
-        const url = `${SUPABASE_CONFIG.url}/rest/v1/woa_products?id=eq.${id}`;
-        const res = await fetch(url, {
-            method: "PATCH",
-            headers: this.headers,
-            body: JSON.stringify(updates)
-        });
-        if (!res.ok) {
-            const err = await res.text();
-            throw new Error(err || "Failed to update product in Supabase");
-        }
-        return await res.json();
-    },
-
-    async deleteProduct(id) {
-        const url = `${SUPABASE_CONFIG.url}/rest/v1/woa_products?id=eq.${id}`;
-        const res = await fetch(url, {
-            method: "DELETE",
-            headers: this.headers
-        });
-        if (!res.ok) {
-            const err = await res.text();
-            throw new Error(err || "Failed to delete product in Supabase");
-        }
-        return true;
     }
 };
 

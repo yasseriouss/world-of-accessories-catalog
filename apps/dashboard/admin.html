@@ -7,9 +7,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/styles/fonts.css">
     <link rel="stylesheet" href="/static/css/admin.css">
-    <!-- Security & Authentication -->
-    <script src="/static/js/auth.js" defer></script>
-    <script src="/static/js/sync.js" defer></script>
 </head>
 <body>
 
@@ -492,13 +489,12 @@
             <div style="font-size:40px; margin-bottom:10px;">🔒</div>
             <h2 style="font-size:20px; margin-bottom:8px; color:var(--navy);">منطقة الإدارة الخاصة</h2>
             <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">
-                يرجى إدخال رمز الدخول (PIN) للوصول إلى لوحة التحكم
+                سجّل الدخول بحساب المسؤول للوصول إلى لوحة التحكم
             </p>
-            <input type="password" id="pinInput" class="form-input" placeholder="أدخل رمز المرور..." style="text-align:center; font-size:18px; letter-spacing:4px; margin-bottom:16px;" onkeydown="if(event.key === 'Enter') submitAdminPin()">
-            <button type="button" class="btn-primary" style="width:100%; justify-content:center;" onclick="submitAdminPin()">تسجيل الدخول</button>
-            <div style="font-size:11px; color:#94A3B8; margin-top:14px;">
-                رمز الدخول الافتراضي: <code>2026</code>
-            </div>
+            <input type="email" id="adminEmail" class="form-input" autocomplete="username" placeholder="البريد الإلكتروني" style="margin-bottom:12px;" dir="ltr">
+            <input type="password" id="adminPassword" class="form-input" autocomplete="current-password" placeholder="كلمة المرور" style="margin-bottom:12px;" dir="ltr" onkeydown="if(event.key === 'Enter') submitAdminLogin()">
+            <div id="adminLoginError" role="alert" style="color:#DC2626; font-size:12px; min-height:18px; margin-bottom:8px;"></div>
+            <button type="button" id="adminLoginBtn" class="btn-primary" style="width:100%; justify-content:center;" onclick="submitAdminLogin()">تسجيل الدخول</button>
         </div>
     </div>
 

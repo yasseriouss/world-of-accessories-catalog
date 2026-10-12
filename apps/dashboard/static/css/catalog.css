@@ -514,7 +514,7 @@ body {
 /* ---------------- Hero Section ---------------- */
 .hero-section {
     background: linear-gradient(135deg, rgba(15, 39, 82, 0.96) 0%, rgba(26, 63, 127, 0.92) 100%),
-                url('../../Branding/pattern-02.jpg.jpeg') center/cover;
+                url('../../Branding/pattern-02.webp') center/cover;
     color: #FFFFFF;
     padding: 60px 24px 70px;
     text-align: center;

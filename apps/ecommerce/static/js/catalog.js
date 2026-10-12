@@ -618,8 +618,8 @@ function renderCategories() {
         const name = (currentLang === "ar") ? c.ar : c.en;
         const isActive = (activeCategoryId === c.id);
         html += `
-            <button class="cat-pill ${isActive ? 'active' : ''}" onclick="selectCategory(${c.id})">
-                <span>${c.icon || '📦'} ${name}</span>
+            <button class="cat-pill ${isActive ? 'active' : ''}" onclick="selectCategory(${Number(c.id)})">
+                <span>${esc(c.icon || '📦')} ${esc(name)}</span>
                 <span class="cat-pill-count">${c.live_count || 0}</span>
             </button>
         `;
@@ -633,6 +633,21 @@ function selectCategory(catId) {
     renderCategories();
     updateUrlParams();
     fetchProducts();
+}
+
+function esc(value) {
+    if (value === null || value === undefined) return "";
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+function safeImg(src) {
+    const p = String(src || "Branding/logo-100.png");
+    return /^https:\/\//i.test(p) ? p : "/" + p.replace(/^\/+/, "");
 }
 
 function renderProducts() {
@@ -654,7 +669,7 @@ function renderProducts() {
     else if (activeUsageType === "dressing") spaceSuffix = ` • ${t.dressingSpace}`;
     else if (activeUsageType === "other") spaceSuffix = ` • ${t.otherSpace}`;
 
-    countBox.innerHTML = `${t.itemsShowing} <span class="results-count-bold">${allProducts.length}</span> ${t.ofProducts} ${t.inCategory} (${activeCatName}${spaceSuffix})`;
+    countBox.innerHTML = `${t.itemsShowing} <span class="results-count-bold">${allProducts.length}</span> ${t.ofProducts} ${t.inCategory} (${esc(activeCatName)}${spaceSuffix})`;
 
     if (allProducts.length === 0) {
         grid.innerHTML = `
@@ -670,27 +685,29 @@ function renderProducts() {
     let html = "";
     allProducts.forEach((p, idx) => {
         const code = `WOA-${String(p.id || p.n || 0).padStart(4, '0')}`;
-        const titlePrimary = (currentLang === "ar") ? (p.ar || p.en) : (p.en || p.ar);
-        const titleSecondary = (currentLang === "ar") ? p.en : p.ar;
-        const price = p.price || "0";
+        const titlePrimary = esc((currentLang === "ar") ? (p.ar || p.en) : (p.en || p.ar));
+        const titleSecondary = esc((currentLang === "ar") ? p.en : p.ar);
+        const price = esc(p.price || "0");
         const cat = categoriesList.find(c => c.id === p.category_id) || { ar: "إكسسوارات", en: "Hardware", icon: "📦" };
-        const catName = (currentLang === "ar") ? cat.ar : cat.en;
-        const img = p.image || "Branding/logo-100.png";
+        const catName = esc((currentLang === "ar") ? cat.ar : cat.en);
+        const catIcon = esc(cat.icon);
+        const img = esc(safeImg(p.image));
+        const pid = Number(p.id);
 
         // Usage Tag
-        const uKey = p.usage_type || "other";
+        const uKey = ["kitchen", "dressing"].includes(p.usage_type) ? p.usage_type : "other";
         const uIcon = (uKey === "kitchen") ? "🍳" : (uKey === "dressing") ? "👔" : "🛋️";
-        const uName = (currentLang === "ar") ? (p.usage_ar || "أخرى") : (p.usage_en || "Other");
+        const uName = esc((currentLang === "ar") ? (p.usage_ar || "أخرى") : (p.usage_en || "Other"));
         const uBadgeClass = `badge-${uKey}`;
 
         html += `
             <div class="product-card" style="animation-delay: ${Math.min(idx * 0.03, 0.4)}s;">
-                <div class="card-img-wrap img-shimmer-wrap" onclick="openQuickView(${p.id})">
+                <div class="card-img-wrap img-shimmer-wrap" onclick="openQuickView(${pid})">
                     <img src="${img}" alt="${titlePrimary}" loading="lazy" decoding="async" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');" onerror="this.onerror=null; this.src='/Branding/logo-100.png'; this.parentElement.classList.add('loaded', 'img-error'); this.classList.add('loaded');">
                 </div>
                 <div class="card-body">
                     <div class="card-badges-row">
-                        <span class="card-top-badge" style="position:static;">${cat.icon} ${catName}</span>
+                        <span class="card-top-badge" style="position:static;">${catIcon} ${catName}</span>
                         <span class="card-usage-badge ${uBadgeClass}">${uIcon} ${uName}</span>
                     </div>
                     <div class="card-code">${code}</div>
@@ -698,10 +715,10 @@ function renderProducts() {
                     <p class="card-title-en">${titleSecondary}</p>
                     ${(() => {
                         const isAr = (currentLang === "ar");
-                        const colorVal = isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || '');
-                        const lengthVal = isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || '');
-                        const widthVal = isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || '');
-                        const specsVal = isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || '');
+                        const colorVal = esc(isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || ''));
+                        const lengthVal = esc(isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || ''));
+                        const widthVal = esc(isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || ''));
+                        const specsVal = esc(isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || ''));
                         if (!colorVal && !lengthVal && !widthVal && !specsVal) return '';
                         return `
                             <div class="product-specs-box">
@@ -718,9 +735,9 @@ function renderProducts() {
                             <small>${t.currency}</small>
                         </div>
                         <div class="card-actions-row">
-                            <button class="btn-icon-action btn-icon-cart" title="${t.addToCart}" onclick="handleAddToCart(${p.id})">🛒</button>
-                            <button class="btn-icon-action" title="${t.quickView}" onclick="openQuickView(${p.id})">👁️</button>
-                            <button class="btn-icon-action btn-icon-whatsapp" title="${t.whatsappOrder}" onclick="orderOnWhatsApp(${p.id})">💬</button>
+                            <button class="btn-icon-action btn-icon-cart" title="${t.addToCart}" onclick="handleAddToCart(${pid})">🛒</button>
+                            <button class="btn-icon-action" title="${t.quickView}" onclick="openQuickView(${pid})">👁️</button>
+                            <button class="btn-icon-action btn-icon-whatsapp" title="${t.whatsappOrder}" onclick="orderOnWhatsApp(${pid})">💬</button>
                         </div>
                     </div>
                 </div>
@@ -766,7 +783,7 @@ function openQuickView(prodId) {
     const t = i18n[currentLang];
     const cat = categoriesList.find(c => c.id === p.category_id) || { ar: "إكسسوارات", en: "Hardware", icon: "📦" };
     const code = `WOA-${String(p.id || p.n || 0).padStart(4, '0')}`;
-    const img = p.image || "Branding/logo-100.png";
+    const img = safeImg(p.image);
 
     const uKey = p.usage_type || "other";
     const uIcon = (uKey === "kitchen") ? "🍳" : (uKey === "dressing") ? "👔" : "🛋️";
@@ -784,7 +801,7 @@ function openQuickView(prodId) {
         }
     }
     document.getElementById("modalCatBadge").textContent = `${cat.icon} ${(currentLang === "ar") ? cat.ar : cat.en}`;
-    document.getElementById("modalUsageBadge").innerHTML = `${uIcon} ${uName}`;
+    document.getElementById("modalUsageBadge").textContent = `${uIcon} ${uName}`;
     document.getElementById("modalTitleAr").textContent = (currentLang === "ar") ? p.ar : p.en;
     document.getElementById("modalTitleEn").textContent = (currentLang === "ar") ? p.en : p.ar;
     document.getElementById("modalPrice").textContent = `${p.price} ${t.currency}`;
@@ -793,10 +810,10 @@ function openQuickView(prodId) {
     const modalSpecsEl = document.getElementById("modalSpecsBox");
     if (modalSpecsEl) {
         const isAr = (currentLang === "ar");
-        const colorVal = isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || '');
-        const lengthVal = isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || '');
-        const widthVal = isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || '');
-        const specsVal = isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || '');
+        const colorVal = esc(isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || ''));
+        const lengthVal = esc(isAr ? (p.length_ar || '') : (p.length_en || p.length_ar || ''));
+        const widthVal = esc(isAr ? (p.width_ar || '') : (p.width_en || p.width_ar || ''));
+        const specsVal = esc(isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || ''));
 
         if (colorVal || lengthVal || widthVal || specsVal) {
             modalSpecsEl.innerHTML = `

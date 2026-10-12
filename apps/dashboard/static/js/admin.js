@@ -30,107 +30,60 @@ document.addEventListener("DOMContentLoaded", () => {
     setupImageUploader();
 });
 
-// ----------------- Auth & PIN Check -----------------
-function checkAdminAuth() {
-    const token = sessionStorage.getItem("woa_admin_token");
-    const authModal = document.getElementById("authModal");
-    if (!token) {
-        if (authModal) authModal.classList.add("open");
-    } else {
-        if (authModal) authModal.classList.remove("open");
-    }
+// ----------------- Auth (Supabase Auth) -----------------
+function imgUrl(path) {
+    const p = path || "Branding/logo-100.png";
+    return /^https:\/\//i.test(p) ? p : `/${p.replace(/^\/+/, "")}`;
 }
 
-async function submitAdminPin() {
-    const pin = document.getElementById("pinInput").value;
-    const isLocalApiServer = (window.location.port === "8080");
-    if (isLocalApiServer) {
-        try {
-            const res = await fetch("/api/admin/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ pin: pin })
-            });
-            if (res.ok) {
-                const data = await res.json();
-                if (data.success) {
-                    sessionStorage.setItem("woa_admin_token", data.token || "admin_session_ok");
-                    document.getElementById("authModal").classList.remove("open");
-                    showToast("مرحباً بك! تم تسجيل الدخول بنجاح.");
-                    loadAdminStats();
-                    loadProducts();
-                    return;
-                }
-            }
-        } catch (err) {
-            // Fallback for static deployment
-        }
-    }
+function checkAdminAuth() {
+    const authModal = document.getElementById("authModal");
+    if (!authModal) return;
+    authModal.classList.toggle("open", !window.SupabaseAuth.isLoggedIn());
+}
 
-    if (pin === "2026") {
-        sessionStorage.setItem("woa_admin_token", "admin_static_session_2026");
+async function submitAdminLogin() {
+    const email = document.getElementById("adminEmail").value.trim();
+    const password = document.getElementById("adminPassword").value;
+    const btn = document.getElementById("adminLoginBtn");
+    const errEl = document.getElementById("adminLoginError");
+    if (errEl) errEl.textContent = "";
+    if (!email || !password) {
+        if (errEl) errEl.textContent = "يرجى إدخال البريد الإلكتروني وكلمة المرور";
+        return;
+    }
+    if (btn) btn.disabled = true;
+    try {
+        await window.SupabaseAuth.login(email, password);
+        document.getElementById("adminPassword").value = "";
         document.getElementById("authModal").classList.remove("open");
-        showToast("مرحباً بك! تم تسجيل الدخول بنجاح (الوضع الإداري المعتمد).");
-        loadAdminStats();
-        loadProducts();
-    } else {
-        alert("رمز الدخول غير صحيح (PIN خاطئ)");
+        showToast("مرحباً بك! تم تسجيل الدخول بنجاح.");
+    } catch (err) {
+        if (errEl) errEl.textContent = err.message;
+    } finally {
+        if (btn) btn.disabled = false;
     }
 }
 
 function adminLogout() {
-    sessionStorage.removeItem("woa_admin_token");
+    window.SupabaseAuth.logout();
     window.location.reload();
 }
 
-// ----------------- Stats & Generator Status -----------------
-async function loadAdminStats() {
-    const isLocalApiServer = (window.location.port === "8080");
-    if (!isLocalApiServer) {
-        const el = document.getElementById("statLastBuild");
-        if (el) el.textContent = "جاهز ومعتمد";
-        return;
-    }
-    try {
-        const statRes = await fetch("/api/generator-status");
-        if (statRes.ok) {
-            const statData = await statRes.json();
-            if (statData.last_generated_at) {
-                const d = new Date(statData.last_generated_at);
-                document.getElementById("statLastBuild").textContent = d.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-            } else {
-                document.getElementById("statLastBuild").textContent = "جاهز";
-            }
-        }
-    } catch (err) {
-        // Fallback
-    }
+function requireAdmin() {
+    if (window.SupabaseAuth.isLoggedIn()) return true;
+    checkAdminAuth();
+    return false;
 }
 
-async function triggerManualGeneration() {
-    const btn = document.getElementById("btnGenNow");
-    if (btn) {
-        btn.disabled = true;
-        btn.innerHTML = "⏳ جاري التوليد...";
-    }
+// ----------------- Stats & Generator Status -----------------
+function loadAdminStats() {
+    const el = document.getElementById("statLastBuild");
+    if (el) el.textContent = "جاهز ومعتمد";
+}
 
-    try {
-        const res = await fetch("/api/generate-catalogs", { method: "POST" });
-        const data = await res.json();
-        if (res.ok && data.success) {
-            showToast("✨ تم توليد كافة الكتالوجات المطبوعة بنجاح!");
-            loadAdminStats();
-        } else {
-            alert("حدث خطأ أثناء التوليد: " + (data.detail || ""));
-        }
-    } catch (err) {
-        alert("فشل الاتصال بسيرفر التوليد");
-    } finally {
-        if (btn) {
-            btn.disabled = false;
-            btn.innerHTML = "⚡ توليد الكتالوجات الآن";
-        }
-    }
+function triggerManualGeneration() {
+    alert("توليد الكتالوجات المطبوعة يتم عبر سكربتات المشروع (scripts/) ولا يتوفر من لوحة التحكم المنشورة.");
 }
 
 // ----------------- Categories & Products Loading -----------------
@@ -168,8 +121,9 @@ function populateCategoriesDropdowns() {
     let modalOptions = "";
 
     adminCategories.forEach(c => {
-        filterOptions += `<option value="${c.id}">${c.icon || '📦'} ${c.ar} (${c.live_count || ''})</option>`;
-        modalOptions += `<option value="${c.id}">${c.icon || '📦'} ${c.ar}</option>`;
+        const label = `${escapeHTML(c.icon || '📦')} ${escapeHTML(c.ar)}`;
+        filterOptions += `<option value="${parseInt(c.id, 10)}">${label}</option>`;
+        modalOptions += `<option value="${parseInt(c.id, 10)}">${label}</option>`;
     });
 
     if (filterSelect) filterSelect.innerHTML = filterOptions;
@@ -245,7 +199,7 @@ function renderAdminTable() {
         html += `
             <tr>
                 <td><span class="sku-badge">${escapeHTML(code)}</span></td>
-                <td><img src="/${escapeHTML(img)}" class="table-thumb" alt="Product" loading="lazy"></td>
+                <td><img src="${escapeHTML(imgUrl(img))}" class="table-thumb" alt="Product" loading="lazy"></td>
                 <td><strong>${escapeHTML(p.ar || '-')}</strong></td>
                 <td><span style="color:var(--text-muted); font-size:12px;">${escapeHTML(p.en || '-')}</span></td>
                 <td><span class="cat-badge-sm">${escapeHTML(cat.icon)} ${escapeHTML(cat.ar)}</span></td>
@@ -295,7 +249,7 @@ function openAddModal() {
     document.getElementById("prodPrice").value = "";
     document.getElementById("prodCategory").value = adminCategories[0]?.id || 1;
     document.getElementById("prodUsageType").value = "other";
-    document.getElementById("previewImg").src = `/${currentUploadedImg}`;
+    document.getElementById("previewImg").src = imgUrl(currentUploadedImg);
 
     document.getElementById("productModal").classList.add("open");
 }
@@ -313,7 +267,7 @@ function openEditModal(prodId) {
     document.getElementById("prodPrice").value = p.price || "";
     document.getElementById("prodCategory").value = p.category_id || 1;
     document.getElementById("prodUsageType").value = p.usage_type || "other";
-    document.getElementById("previewImg").src = `/${currentUploadedImg}`;
+    document.getElementById("previewImg").src = imgUrl(currentUploadedImg);
 
     document.getElementById("productModal").classList.add("open");
 }
@@ -345,52 +299,21 @@ async function saveProductForm(e) {
         image: currentUploadedImg
     };
 
+    if (!requireAdmin()) return;
+
     try {
-        let savedSuccessfully = false;
-
-        // 1. Persist directly to Supabase Cloud Database (affects web, print, admin everywhere)
-        if (window.SupabaseSync) {
-            try {
-                if (currentEditId) {
-                    await window.SupabaseSync.updateProduct(currentEditId, payload);
-                } else {
-                    await window.SupabaseSync.insertProduct(payload);
-                }
-                savedSuccessfully = true;
-            } catch (supErr) {
-                console.warn("Supabase direct write failed, attempting backend fallback:", supErr);
-            }
-        }
-
-        // 2. Also notify local backend if online
-        try {
-            if (currentEditId) {
-                await fetch(`/api/products/${currentEditId}`, {
-                    method: "PUT",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                });
-            } else {
-                await fetch("/api/products", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                });
-            }
-            savedSuccessfully = true;
-        } catch (backendErr) {}
-
-        if (savedSuccessfully) {
-            closeProductModal();
-            showToast("✨ تم حفظ المنتج بنجاح وتحديث قاعدة البيانات السحابية (Supabase) لكافة المشاريع!");
-            loadProducts();
-            loadCategories();
-            loadAdminStats();
+        if (currentEditId) {
+            await window.SupabaseSync.updateProduct(currentEditId, payload);
         } else {
-            alert("حدث خطأ أثناء حفظ المنتج، يرجى التحقق من الاتصال.");
+            await window.SupabaseSync.insertProduct(payload);
         }
+        closeProductModal();
+        showToast("✨ تم حفظ المنتج وتحديث الموقع مباشرة!");
+        loadProducts();
+        loadCategories();
     } catch (err) {
         alert("فشل حفظ المنتج: " + err.message);
+        checkAdminAuth();
     }
 }
 
@@ -400,35 +323,16 @@ async function confirmDeleteProduct(prodId) {
         return;
     }
 
+    if (!requireAdmin()) return;
+
     try {
-        let deletedSuccessfully = false;
-
-        // 1. Delete from Supabase Cloud Database
-        if (window.SupabaseSync) {
-            try {
-                await window.SupabaseSync.deleteProduct(prodId);
-                deletedSuccessfully = true;
-            } catch (supErr) {
-                console.warn("Supabase delete failed:", supErr);
-            }
-        }
-
-        // 2. Notify local backend
-        try {
-            const res = await fetch(`/api/products/${prodId}`, { method: "DELETE" });
-            if (res.ok) deletedSuccessfully = true;
-        } catch (backendErr) {}
-
-        if (deletedSuccessfully) {
-            showToast("🗑️ تم حذف المنتج بنجاح وتحديث كافة المشاريع!");
-            loadProducts();
-            loadCategories();
-            loadAdminStats();
-        } else {
-            alert("تعذر حذف المنتج، يرجى المحاولة لاحقاً.");
-        }
+        await window.SupabaseSync.deleteProduct(prodId);
+        showToast("🗑️ تم حذف المنتج وتحديث الموقع مباشرة!");
+        loadProducts();
+        loadCategories();
     } catch (err) {
         alert("فشل حذف المنتج: " + err.message);
+        checkAdminAuth();
     }
 }
 
@@ -441,24 +345,20 @@ function setupImageUploader() {
         const file = e.target.files[0];
         if (!file) return;
 
-        const formData = new FormData();
-        formData.append("file", file);
+        if (!requireAdmin()) {
+            fileInput.value = "";
+            return;
+        }
 
         try {
-            const res = await fetch("/api/upload", {
-                method: "POST",
-                body: formData
-            });
-            const data = await res.json();
-            if (res.ok && data.success) {
-                currentUploadedImg = data.url;
-                document.getElementById("previewImg").src = `/${data.url}`;
-                showToast("تم رفع الصورة بنجاح!");
-            } else {
-                alert(data.detail || "فشل رفع الصورة");
-            }
+            showToast("⏳ جاري رفع الصورة...");
+            currentUploadedImg = await window.SupabaseSync.uploadImage(file);
+            document.getElementById("previewImg").src = currentUploadedImg;
+            showToast("تم رفع الصورة بنجاح!");
         } catch (err) {
-            alert("حدث خطأ أثناء رفع الصورة");
+            alert("فشل رفع الصورة: " + err.message);
+        } finally {
+            fileInput.value = "";
         }
     });
 }

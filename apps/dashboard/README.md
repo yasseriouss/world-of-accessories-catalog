@@ -4,7 +4,7 @@ Private admin control panel for managing products, catalogs, and system administ
 
 ## Features
 
-- 🔐 PIN-protected access (Default: 2026)
+- 🔐 Supabase Auth login (admin email only; writes enforced by RLS)
 - 📦 Product management (CRUD operations)
 - 🖼️ Image upload and management
 - 📝 Catalog generation and management
@@ -17,12 +17,11 @@ Private admin control panel for managing products, catalogs, and system administ
 ## Access
 
 - **URL**: `/admin`
-- **Default PIN**: `2026`
 - **Protected**: Yes (requires authentication)
 
 ## Security
 
-- PIN-based authentication
+- Supabase Auth email + password; RLS restricts writes to the admin account
 - Session management
 - Secure headers configured
 - Same-origin policy enforced

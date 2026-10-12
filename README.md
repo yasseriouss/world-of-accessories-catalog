@@ -21,7 +21,7 @@ Catalogue/
 │   │
 │   └── 📊 dashboard/              # لوحة التحكم الإدارية (Admin Panel)
 │       ├── index.html             # الصفحة الرئيسية
-│       ├── admin.html             # لوحة التحكم (محمية برقم PIN)
+│       ├── admin.html             # لوحة التحكم (Supabase Auth)
 │       ├── vercel.json            # إعدادات النشر المستقلة
 │       ├── Branding/              # الهوية البصرية
 │       ├── styles/                # الأنماط المشتركة
@@ -69,7 +69,7 @@ Catalogue/
 ## 📊 2. لوحة التحكم الإدارية - Admin Dashboard (`apps/dashboard/`)
 
 ### الميزات الرئيسية:
-- **🔐 أمان عالي:** محمية برمز PIN سري (الافتراضي: `2026`)
+- **🔐 أمان عالي:** تسجيل دخول عبر Supabase Auth، والكتابة على قاعدة البيانات مقيّدة بسياسات RLS لحساب المسؤول فقط
 - **📦 إدارة المنتجات:** إضافة وتعديل وحذف المنتجات (CRUD)
 - **🖼️ إدارة الصور:** رفع الصور والتعديل عليها
 - **📊 إحصائيات:** لوحة تحليلات ومراقبة الأداء
@@ -86,7 +86,7 @@ Catalogue/
 - **URL**: `https://admin-accessories.vercel.app`
 - **Root Directory**: `apps/dashboard`
 - **Configuration**: `apps/dashboard/vercel.json`
-- **Authentication**: PIN-based (client-side)
+- **Authentication**: Supabase Auth (email + password), writes enforced by RLS
 
 ---
 
