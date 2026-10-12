@@ -93,7 +93,7 @@
         "💾": "save", "⏳": "hourglass", "🤝": "users", "🏢": "building",
         "📊": "chart", "📂": "folder", "🪟": "folder", "🧺": "bag",
         "🔥": "flame", "⚪": "circle", "⚠": "alert", "💪": "chevrons",
-        "🍽": "utensils", "🔐": "lock"
+        "🍽": "utensils", "🔐": "lock", "⭐": "star"
     };
 
     var keys = Object.keys(MAP).sort(function (a, b) { return b.length - a.length; });
