@@ -5,6 +5,7 @@
  */
 
 let allProducts = [];
+let ratingSummary = {};
 const PAGE_SIZE = 20;
 let visibleCount = PAGE_SIZE;
 let categoriesList = [];
@@ -189,6 +190,8 @@ function initCatalogApp() {
     parseUrlParameters();
     applyLanguage(currentLang);
     fetchBanners();
+    loadRatings();
+    applySiteLinks();
     fetchUsageTypes();
     fetchCategories();
     fetchProducts().then(() => {
@@ -658,6 +661,108 @@ function selectCategory(catId) {
     fetchProducts();
 }
 
+
+// ----------------- Ratings -----------------
+function ratedMap() {
+    try { return JSON.parse(localStorage.getItem("woa_rated") || "{}"); } catch (e) { return {}; }
+}
+
+function starsHTML(avg) {
+    const pct = Math.max(0, Math.min(100, (avg / 5) * 100));
+    return `<span class="stars" role="img" aria-label="${avg.toFixed(1)} / 5"><i style="width:${pct}%"></i></span>`;
+}
+
+function cardRatingHTML(productId) {
+    const r = ratingSummary[productId];
+    const isAr = currentLang === "ar";
+    if (!r || !r.count) {
+        return `<div class="card-rating empty">${starsHTML(0)}<span class="rating-text">${isAr ? "كن أول من يقيّم" : "Be the first to rate"}</span></div>`;
+    }
+    return `<div class="card-rating">${starsHTML(r.avg)}<span class="rating-num">${r.avg.toFixed(1)}</span><span class="rating-text">(${r.count})</span></div>`;
+}
+
+async function loadRatings() {
+    if (!window.SupabaseSync) return;
+    ratingSummary = await window.SupabaseSync.fetchRatingSummary();
+    if (typeof allProducts !== "undefined" && allProducts.length) renderProducts();
+}
+
+function renderModalRating(productId) {
+    const box = document.getElementById("modalRating");
+    if (!box) return;
+    const isAr = currentLang === "ar";
+    const r = ratingSummary[productId];
+    const mine = ratedMap()[productId];
+    const summary = r && r.count
+        ? `${starsHTML(r.avg)}<span class="rating-num">${r.avg.toFixed(1)}</span><span class="rating-text">(${r.count} ${isAr ? "تقييم" : "ratings"})</span>`
+        : `${starsHTML(0)}<span class="rating-text">${isAr ? "لا توجد تقييمات بعد" : "No ratings yet"}</span>`;
+
+    let action;
+    if (mine) {
+        action = `<div class="rate-done">${isAr ? "شكراً لك! تقييمك:" : "Thank you! Your rating:"} ${starsHTML(mine)}</div>`;
+    } else {
+        action = `
+            <div class="rate-prompt">${isAr ? "قيّم هذا المنتج" : "Rate this product"}</div>
+            <div class="rate-input" id="rateInput" data-value="0" role="radiogroup" aria-label="${isAr ? "التقييم" : "Rating"}">
+                ${[1, 2, 3, 4, 5].map(v => `<button type="button" class="rate-star" data-v="${v}" role="radio" aria-checked="false" aria-label="${v}"></button>`).join("")}
+            </div>
+            <button type="button" class="btn-rate-submit" id="rateSubmit" disabled>${isAr ? "إرسال التقييم" : "Submit rating"}</button>
+            <div class="rate-msg" id="rateMsg" role="status" aria-live="polite"></div>`;
+    }
+    box.innerHTML = `<div class="rating-summary">${summary}</div>${action}`;
+
+    const input = document.getElementById("rateInput");
+    if (!input) return;
+    const paint = v => input.querySelectorAll(".rate-star").forEach(b => {
+        const on = Number(b.dataset.v) <= v;
+        b.classList.toggle("on", on);
+        b.setAttribute("aria-checked", Number(b.dataset.v) === Number(input.dataset.value) ? "true" : "false");
+    });
+    input.querySelectorAll(".rate-star").forEach(b => {
+        b.addEventListener("mouseenter", () => paint(Number(b.dataset.v)));
+        b.addEventListener("focus", () => paint(Number(b.dataset.v)));
+        b.addEventListener("click", () => {
+            input.dataset.value = b.dataset.v;
+            paint(Number(b.dataset.v));
+            document.getElementById("rateSubmit").disabled = false;
+        });
+    });
+    input.addEventListener("mouseleave", () => paint(Number(input.dataset.value)));
+    document.getElementById("rateSubmit").addEventListener("click", async () => {
+        const v = Number(input.dataset.value);
+        const msg = document.getElementById("rateMsg");
+        const btn = document.getElementById("rateSubmit");
+        if (!v) return;
+        btn.disabled = true;
+        try {
+            const res = await window.SupabaseSync.submitRating(productId, v);
+            const map = ratedMap();
+            map[productId] = v;
+            try { localStorage.setItem("woa_rated", JSON.stringify(map)); } catch (e) {}
+            if (res.ok) {
+                const cur = ratingSummary[productId] || { avg: 0, count: 0 };
+                const count = cur.count + 1;
+                ratingSummary[productId] = { avg: (cur.avg * cur.count + v) / count, count };
+            }
+            renderModalRating(productId);
+            renderProducts();
+        } catch (e) {
+            btn.disabled = false;
+            msg.textContent = isAr ? "تعذر إرسال التقييم، حاول لاحقاً" : "Could not submit the rating, please try again";
+            msg.className = "rate-msg err";
+        }
+    });
+}
+
+async function applySiteLinks() {
+    if (!window.SupabaseSync) return;
+    const site = await window.SupabaseSync.fetchSite();
+    document.querySelectorAll("[data-site-link]").forEach(a => {
+        const v = site[a.getAttribute("data-site-link")];
+        if (typeof v === "string" && /^https:\/\//i.test(v)) a.setAttribute("href", v);
+    });
+}
+
 function esc(value) {
     if (value === null || value === undefined) return "";
     return String(value)
@@ -737,6 +842,7 @@ function renderProducts() {
                     <div class="card-code">${code}</div>
                     <h3 class="card-title-ar">${titlePrimary}</h3>
                     <p class="card-title-en">${titleSecondary}</p>
+                    ${cardRatingHTML(pid)}
                     ${(() => {
                         const isAr = (currentLang === "ar");
                         const colorVal = esc(isAr ? (p.color_ar || '') : (p.color_en || p.color_ar || ''));
@@ -869,6 +975,8 @@ function openQuickView(prodId) {
             modalSpecsEl.style.display = 'none';
         }
     }
+
+    renderModalRating(Number(p.id));
 
     const qtyInp = document.getElementById("modalQtyInput");
     if (qtyInp) qtyInp.value = 1;

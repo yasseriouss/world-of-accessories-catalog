@@ -14,7 +14,8 @@ const PRODUCT_COLUMNS = "id,ar,en,price,category_id,usage_type,usage_ar,usage_en
 const WRITABLE = {
     woa_products: ["ar", "en", "price", "category_id", "usage_type", "usage_ar", "usage_en", "image"],
     woa_categories: ["ar", "en", "icon", "slug"],
-    woa_banners: ["badge_ar", "badge_en", "text_ar", "text_en", "link", "active", "sort_order"]
+    woa_banners: ["badge_ar", "badge_en", "text_ar", "text_en", "link", "active", "sort_order"],
+    woa_ratings: ["product_id", "rating", "client_id", "approved"]
 };
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 const MAX_SOURCE_BYTES = 15 * 1024 * 1024;
@@ -211,6 +212,27 @@ const SupabaseSync = {
     insertBanner(b) { return this.insertRow("woa_banners", b); },
     updateBanner(id, b) { return this.updateRow("woa_banners", id, b); },
     deleteBanner(id) { return this.deleteRow("woa_banners", id); },
+
+    // ---------- ratings ----------
+    async fetchRatings() {
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/woa_ratings?select=*&order=created_at.desc&limit=2000`, {
+            headers: await this.writeHeaders()
+        });
+        await this.check(res, "تعذر تحميل التقييمات");
+        return res.json();
+    },
+    insertRating(r) { return this.insertRow("woa_ratings", r); },
+    updateRating(id, r) { return this.updateRow("woa_ratings", id, r); },
+    deleteRating(id) { return this.deleteRow("woa_ratings", id); },
+
+    async deleteRatingsForProduct(productId) {
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/woa_ratings?product_id=eq.${Number(productId)}`, {
+            method: "DELETE",
+            headers: await this.writeHeaders()
+        });
+        await this.check(res, "فشل حذف التقييمات");
+        return true;
+    },
 
     // ---------- settings (key -> json) ----------
     async fetchSettings() {

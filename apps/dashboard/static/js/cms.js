@@ -600,6 +600,165 @@ async function saveContentForm(e) {
     }
 }
 
+// ===================== Ratings =====================
+let adminRatings = [];
+let ratingsProductId = null;
+
+function starsMarkup(avg) {
+    const pct = Math.max(0, Math.min(100, (avg / 5) * 100));
+    return `<span class="stars" role="img" aria-label="${Number(avg).toFixed(1)} / 5"><i style="width:${pct}%"></i></span>`;
+}
+
+async function loadAdminRatings() {
+    if (!window.SupabaseAuth.isLoggedIn()) {
+        document.getElementById("adminRatingsTableBody").innerHTML =
+            `<tr><td colspan="6" style="text-align:center; padding:30px; color:var(--text-muted);">سجّل الدخول لإدارة التقييمات.</td></tr>`;
+        return;
+    }
+    try {
+        adminRatings = await window.SupabaseSync.fetchRatings();
+    } catch (err) {
+        adminRatings = [];
+        document.getElementById("adminRatingsTableBody").innerHTML =
+            `<tr><td colspan="6" style="text-align:center; padding:30px; color:#DC2626;">${escapeHTML(err.message)}</td></tr>`;
+        return;
+    }
+    renderRatingsTable();
+}
+
+function ratingStatsFor(productId) {
+    const list = adminRatings.filter(r => r.product_id === productId);
+    const visible = list.filter(r => r.approved);
+    const avg = visible.length ? visible.reduce((s, r) => s + r.rating, 0) / visible.length : 0;
+    return { total: list.length, visible: visible.length, hidden: list.length - visible.length, avg };
+}
+
+function renderRatingsTable() {
+    const tbody = document.getElementById("adminRatingsTableBody");
+    if (!tbody) return;
+    const badge = document.getElementById("tabBadgeRatings");
+    if (badge) badge.textContent = adminRatings.length;
+
+    const q = (document.getElementById("ratingsSearch").value || "").trim().toLowerCase();
+    const mode = document.getElementById("ratingsFilter").value;
+    const products = window.__allProducts || [];
+
+    let rows = products.map(p => ({ p, st: ratingStatsFor(p.id) }));
+    if (mode === "rated") rows = rows.filter(r => r.st.total > 0);
+    if (mode === "hidden") rows = rows.filter(r => r.st.hidden > 0);
+    if (q) {
+        rows = rows.filter(r => (r.p.ar || "").toLowerCase().includes(q) || (r.p.en || "").toLowerCase().includes(q) ||
+            `woa-${String(r.p.id).padStart(4, "0")}`.includes(q) || String(r.p.id) === q);
+    }
+    rows.sort((a, b) => b.st.total - a.st.total || a.p.id - b.p.id);
+
+    if (!rows.length) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:30px; color:var(--text-muted);">لا توجد نتائج. التقييمات تظهر هنا عندما يقيّم العملاء المنتجات من المتجر.</td></tr>`;
+        return;
+    }
+    tbody.innerHTML = rows.slice(0, 300).map(({ p, st }) => `
+        <tr>
+            <td><span class="sku-badge">WOA-${String(p.id).padStart(4, "0")}</span></td>
+            <td><strong>${escapeHTML(p.ar || "-")}</strong><div style="font-size:12px; color:var(--text-muted);">${escapeHTML(p.en || "")}</div></td>
+            <td><div style="display:flex; align-items:center; gap:8px;">${starsMarkup(st.avg)}<strong>${st.visible ? st.avg.toFixed(1) : "—"}</strong></div></td>
+            <td>${st.visible}</td>
+            <td>${st.hidden ? `<span class="badge-tag-pill inactive">${st.hidden}</span>` : "—"}</td>
+            <td><button type="button" class="btn-admin-action" style="color:var(--navy); background:#E2E8F0;" onclick="openRatingsModal(${Number(p.id)})">إدارة</button></td>
+        </tr>`).join("");
+}
+
+function openRatingsModal(productId) {
+    ratingsProductId = productId;
+    const p = (window.__allProducts || []).find(x => x.id === productId) || {};
+    document.getElementById("ratingsModalTitle").textContent = `تقييمات: ${p.ar || "WOA-" + productId}`;
+    renderRatingsModal();
+    document.getElementById("ratingsModal").classList.add("open");
+}
+
+function closeRatingsModal() {
+    document.getElementById("ratingsModal").classList.remove("open");
+    ratingsProductId = null;
+}
+
+function renderRatingsModal() {
+    const id = ratingsProductId;
+    if (id === null) return;
+    const st = ratingStatsFor(id);
+    document.getElementById("ratingsModalSummary").innerHTML = st.visible
+        ? `<div style="display:flex; align-items:center; gap:8px;">${starsMarkup(st.avg)}<strong>${st.avg.toFixed(1)}</strong><span style="color:var(--text-muted); font-size:12px;">(${st.visible} ظاهر${st.hidden ? " · " + st.hidden + " مخفي" : ""})</span></div>`
+        : `<span style="color:var(--text-muted); font-size:12px;">لا توجد تقييمات ظاهرة</span>`;
+    const list = adminRatings.filter(r => r.product_id === id);
+    const fmt = d => new Date(d).toLocaleString("ar-EG", { dateStyle: "medium", timeStyle: "short" });
+    document.getElementById("ratingsModalBody").innerHTML = list.length ? list.map(r => `
+        <tr>
+            <td>${starsMarkup(r.rating)} <strong>${r.rating}</strong>${String(r.client_id).startsWith("admin-") ? ' <small style="color:var(--text-muted);">(يدوي)</small>' : ""}</td>
+            <td style="font-size:12px;">${escapeHTML(fmt(r.created_at))}</td>
+            <td><button type="button" style="border:none; background:transparent; cursor:pointer;" onclick="toggleRatingVisibility(${Number(r.id)})" title="${r.approved ? "إخفاء" : "إظهار"}">
+                <span class="badge-tag-pill ${r.approved ? "active" : "inactive"}">${r.approved ? "ظاهر" : "مخفي"}</span></button></td>
+            <td><button type="button" class="btn-table-icon btn-delete" title="حذف" onclick="deleteRatingItem(${Number(r.id)})">🗑️</button></td>
+        </tr>`).join("") : `<tr><td colspan="4" style="text-align:center; padding:20px; color:var(--text-muted);">لا توجد تقييمات</td></tr>`;
+}
+
+async function toggleRatingVisibility(id) {
+    if (!requireAdmin()) return;
+    const r = adminRatings.find(x => x.id === id);
+    if (!r) return;
+    try {
+        await window.SupabaseSync.updateRating(id, { approved: !r.approved });
+        r.approved = !r.approved;
+        renderRatingsModal();
+        renderRatingsTable();
+        showToast(r.approved ? "تم إظهار التقييم" : "تم إخفاء التقييم");
+    } catch (err) {
+        alert("فشل التحديث: " + err.message);
+    }
+}
+
+async function deleteRatingItem(id) {
+    if (!requireAdmin()) return;
+    if (!confirm("حذف هذا التقييم نهائياً؟")) return;
+    try {
+        await window.SupabaseSync.deleteRating(id);
+        adminRatings = adminRatings.filter(r => r.id !== id);
+        renderRatingsModal();
+        renderRatingsTable();
+        showToast("تم حذف التقييم");
+    } catch (err) {
+        alert("فشل الحذف: " + err.message);
+    }
+}
+
+async function addManualRating() {
+    if (!requireAdmin() || ratingsProductId === null) return;
+    const value = Number(document.getElementById("manualRatingValue").value);
+    const clientId = "admin-" + (crypto.randomUUID ? crypto.randomUUID() : Date.now() + "-" + Math.random().toString(36).slice(2, 10));
+    try {
+        const row = await window.SupabaseSync.insertRating({ product_id: ratingsProductId, rating: value, client_id: clientId, approved: true });
+        adminRatings.unshift(row);
+        renderRatingsModal();
+        renderRatingsTable();
+        showToast("تمت إضافة التقييم");
+    } catch (err) {
+        alert("فشل الإضافة: " + err.message);
+    }
+}
+
+async function clearProductRatings() {
+    if (!requireAdmin() || ratingsProductId === null) return;
+    const n = adminRatings.filter(r => r.product_id === ratingsProductId).length;
+    if (!n) return;
+    if (!confirm(`حذف كل تقييمات هذا المنتج (${n}) نهائياً؟`)) return;
+    try {
+        await window.SupabaseSync.deleteRatingsForProduct(ratingsProductId);
+        adminRatings = adminRatings.filter(r => r.product_id !== ratingsProductId);
+        renderRatingsModal();
+        renderRatingsTable();
+        showToast("تم حذف كل التقييمات");
+    } catch (err) {
+        alert("فشل الحذف: " + err.message);
+    }
+}
+
 // ===================== bootstrap =====================
 document.addEventListener("DOMContentLoaded", () => {
     ImagePicker.mount("prodImagePicker", "products");

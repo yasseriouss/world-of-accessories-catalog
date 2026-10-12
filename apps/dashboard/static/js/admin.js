@@ -345,10 +345,11 @@ function showToast(msg) {
 }
 
 // ----------------- Tab Navigation Switcher -----------------
-const ADMIN_TABS = ["products", "categories", "banners", "content", "media", "links"];
+const ADMIN_TABS = ["products", "categories", "banners", "ratings", "content", "media", "links"];
 const TAB_HOOKS = {
     categories: () => loadAdminCategories(),
     banners: () => loadAdminBanners(),
+    ratings: () => loadAdminRatings(),
     content: () => loadContentSettings(),
     media: () => loadMedia(),
     links: () => generateCampaignLink()

@@ -75,6 +75,9 @@
             <button type="button" class="admin-tab-btn" id="tabBtnBanners" role="tab" onclick="switchAdminTab('banners')">
                 <span>📢 الإعلانات</span><span class="admin-tab-count" id="tabBadgeBanners">--</span>
             </button>
+            <button type="button" class="admin-tab-btn" id="tabBtnRatings" role="tab" onclick="switchAdminTab('ratings')">
+                <span>⭐ التقييمات</span><span class="admin-tab-count" id="tabBadgeRatings">--</span>
+            </button>
             <button type="button" class="admin-tab-btn" id="tabBtnContent" role="tab" onclick="switchAdminTab('content')">
                 <span>🌐 محتوى الموقع</span>
             </button>
@@ -153,6 +156,40 @@
                             </tr>
                         </thead>
                         <tbody id="adminCategoriesTableBody">
+                            <tr><td colspan="6" style="text-align:center; padding:30px;">جاري التحميل...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTION: RATINGS ================= -->
+        <div id="sectionRatings" style="display:none;">
+            <div class="control-bar">
+                <div class="search-filter-group">
+                    <input type="text" id="ratingsSearch" class="admin-search-input" placeholder="ابحث عن منتج بالاسم أو الكود..." oninput="renderRatingsTable()">
+                    <select id="ratingsFilter" class="admin-select" onchange="renderRatingsTable()">
+                        <option value="rated">المنتجات التي لها تقييمات</option>
+                        <option value="all">كل المنتجات</option>
+                        <option value="hidden">يوجد بها تقييمات مخفية</option>
+                    </select>
+                </div>
+                <div class="content-note" style="margin:0;">التقييمات تظهر للعملاء كمتوسط نجوم، ويمكنك إخفاء أي تقييم أو حذفه أو إضافة تقييم يدوي.</div>
+            </div>
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="width:110px;">كود المنتج</th>
+                                <th>المنتج</th>
+                                <th style="width:190px;">المتوسط</th>
+                                <th style="width:90px;">العدد</th>
+                                <th style="width:90px;">المخفي</th>
+                                <th style="width:110px;">إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminRatingsTableBody">
                             <tr><td colspan="6" style="text-align:center; padding:30px;">جاري التحميل...</td></tr>
                         </tbody>
                     </table>
@@ -591,6 +628,37 @@
             <input type="password" id="adminPassword" class="form-input" autocomplete="current-password" placeholder="كلمة المرور" style="margin-bottom:12px;" dir="ltr" onkeydown="if(event.key === 'Enter') submitAdminLogin()">
             <div id="adminLoginError" role="alert" style="color:#DC2626; font-size:12px; min-height:18px; margin-bottom:8px;"></div>
             <button type="button" id="adminLoginBtn" class="btn-primary" style="width:100%; justify-content:center;" onclick="submitAdminLogin()">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <!-- Ratings Modal -->
+    <div class="admin-modal-overlay" id="ratingsModal" onclick="if(event.target === this) closeRatingsModal()">
+        <div class="admin-modal-box" style="max-width:680px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:12px;">
+                <div>
+                    <h2 id="ratingsModalTitle" style="font-size:19px; color:var(--navy);">تقييمات المنتج</h2>
+                    <div id="ratingsModalSummary" style="margin-top:6px;"></div>
+                </div>
+                <button type="button" class="btn-admin-action" style="color:var(--text-dark); background:#E2E8F0;" onclick="closeRatingsModal()">إغلاق</button>
+            </div>
+            <div class="rating-admin-add">
+                <label class="form-label" style="margin:0;">إضافة تقييم يدوي:</label>
+                <select id="manualRatingValue" class="admin-select">
+                    <option value="5">5 نجوم</option>
+                    <option value="4">4 نجوم</option>
+                    <option value="3">3 نجوم</option>
+                    <option value="2">2 نجمتان</option>
+                    <option value="1">1 نجمة</option>
+                </select>
+                <button type="button" class="btn-primary" onclick="addManualRating()">➕ إضافة</button>
+                <button type="button" class="btn-admin-action" style="color:#B91C1C; background:#FEE2E2;" onclick="clearProductRatings()">🗑️ حذف كل التقييمات</button>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table" style="min-width:420px;">
+                    <thead><tr><th>التقييم</th><th>التاريخ</th><th>الحالة</th><th style="width:90px;">إجراءات</th></tr></thead>
+                    <tbody id="ratingsModalBody"></tbody>
+                </table>
+            </div>
         </div>
     </div>
 

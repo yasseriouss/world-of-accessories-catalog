@@ -134,8 +134,10 @@
         </div>
 
         <!-- Space / Usage Tabs (مطابخ، دريسنج، أخرى) -->
-        <div class="space-filter-bar" id="spaceFilterBar">
-            <!-- Injected via JavaScript -->
+        <div class="category-filter-card usage-filter-card">
+            <div class="category-scroll space-filter-bar" id="spaceFilterBar">
+                <!-- Injected via JavaScript -->
+            </div>
         </div>
 
         <!-- Category Pills Filter -->
@@ -230,25 +232,25 @@
             <div class="social-channels-wrap">
                 <div class="social-title" id="socialTitle">منصات التواصل الاجتماعي الرسمية</div>
                 <div class="social-pills-row">
-                    <a href="https://www.instagram.com/world_of_accessories.eg" target="_blank" class="social-pill instagram" rel="noopener">
+                    <a href="https://www.instagram.com/world_of_accessories.eg" target="_blank" class="social-pill instagram" data-site-link="instagram" rel="noopener">
                         <span>📸</span>
-                        <span>Instagram • @world_of_accessories.eg</span>
+                        <span>Instagram</span>
                     </a>
-                    <a href="https://www.tiktok.com/@world_of_accessories_eg" target="_blank" class="social-pill tiktok" rel="noopener">
+                    <a href="https://www.tiktok.com/@world_of_accessories_eg" target="_blank" class="social-pill tiktok" data-site-link="tiktok" rel="noopener">
                         <span>🎵</span>
-                        <span>TikTok • @world_of_accessories_eg</span>
+                        <span>TikTok</span>
                     </a>
-                    <a href="https://www.facebook.com/people/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA/61583899890449/" target="_blank" class="social-pill facebook" rel="noopener">
+                    <a href="https://www.facebook.com/people/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA/61583899890449/" target="_blank" class="social-pill facebook" data-site-link="facebook" rel="noopener">
                         <span>📘</span>
-                        <span>Facebook • عالم الإكسسوارات</span>
+                        <span>Facebook</span>
                     </a>
                     <a href="https://wa.me/201140030036" target="_blank" class="social-pill whatsapp" rel="noopener">
                         <span>💬</span>
-                        <span>WhatsApp • 01140030036</span>
+                        <span>WhatsApp</span>
                     </a>
-                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" class="social-pill maps" rel="noopener">
+                    <a href="https://maps.app.goo.gl/1WgEWWMWrgfCq1MM7?g_st=iwb" target="_blank" class="social-pill maps" data-site-link="maps" rel="noopener">
                         <span>📍</span>
-                        <span>Google Maps • سيلا مول</span>
+                        <span>Google Maps</span>
                     </a>
                 </div>
             </div>
@@ -280,6 +282,7 @@
                         <div style="font-weight:800; color:var(--navy); font-family:var(--font-en);" id="modalCodeVal">WOA-0001</div>
                     </div>
                 </div>
+                <div class="modal-rating" id="modalRating"></div>
                 <div class="product-specs-box modal-specs-box" id="modalSpecsBox"></div>
                 
                 <!-- B2B & Client Quantity Stepper -->

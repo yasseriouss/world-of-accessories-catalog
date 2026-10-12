@@ -61,6 +61,44 @@ const SupabaseSync = {
         return [];
     },
 
+    async fetchRatingSummary() {
+        try {
+            const rows = await this.fetchRest("woa_rating_summary?select=product_id,avg_rating,ratings_count", "woa_cache_ratings");
+            const map = {};
+            (rows || []).forEach(r => { map[r.product_id] = { avg: Number(r.avg_rating), count: Number(r.ratings_count) }; });
+            return map;
+        } catch (e) {
+            return {};
+        }
+    },
+
+    async submitRating(productId, rating) {
+        let clientId = null;
+        try { clientId = localStorage.getItem("woa_client_id"); } catch (e) {}
+        if (!clientId) {
+            clientId = "c-" + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now() + "-" + Math.random().toString(36).slice(2, 12));
+            try { localStorage.setItem("woa_client_id", clientId); } catch (e) {}
+        }
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/woa_ratings`, {
+            method: "POST",
+            headers: { ...this.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+            body: JSON.stringify({ product_id: Number(productId), rating: Number(rating), client_id: clientId })
+        });
+        if (res.status === 409) return { duplicate: true };
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        try { sessionStorage.removeItem("woa_cache_ratings"); } catch (e) {}
+        return { ok: true };
+    },
+
+    async fetchSite() {
+        try {
+            const rows = await this.fetchRest("woa_settings?select=value&key=eq.site", "woa_cache_site");
+            return (rows && rows[0] && rows[0].value) || {};
+        } catch (e) {
+            return {};
+        }
+    },
+
     async fetchBanners() {
         try {
             const data = await this.fetchRest("woa_banners?select=id,badge_ar,badge_en,text_ar,text_en,link,active&active=eq.true&order=sort_order.asc,id.asc", "woa_cache_banners");

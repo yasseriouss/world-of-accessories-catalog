@@ -922,3 +922,37 @@ img, video, canvas {
     justify-self: center;
     justify-content: center;
 }
+
+
+/* ---------------- Ratings ---------------- */
+.stars {
+    --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z'/%3E%3C/svg%3E");
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 16px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    direction: ltr;
+    background: #E2E8F0;
+    -webkit-mask: var(--star) 0 0 / 16px 16px repeat-x;
+    mask: var(--star) 0 0 / 16px 16px repeat-x;
+}
+
+.stars > i {
+    display: block;
+    height: 100%;
+    background: #F59E0B;
+}
+
+.rating-admin-add {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #F8FAFC;
+}
