@@ -3,7 +3,7 @@ Documentation/
 deploy/
 scripts/
 catalog_generator/
-data/
+/data/
 *.md
 DEPLOYMENT.md
 MIGRATION_SUMMARY.md
