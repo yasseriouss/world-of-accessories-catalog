@@ -9,8 +9,8 @@ let activeCatFilter = 0;
 let activeUsageFilter = "all";
 let searchFilter = "";
 let currentEditId = null;
-const LANDING_ORIGIN = "https://woa-store-yasserious.vercel.app";
-const MARKET_ORIGIN = "https://woa-market-yasserious.vercel.app";
+const LANDING_ORIGIN = "https://ha-woa.vercel.app";
+const MARKET_ORIGIN = "https://woa-market.vercel.app";
 const storeUrl = (path) => (/^\/market/.test(path)
     ? MARKET_ORIGIN + path.replace(/^\/market\.html/, "/market")
     : LANDING_ORIGIN + path);

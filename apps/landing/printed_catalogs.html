@@ -562,6 +562,21 @@
             justify-content: space-between !important;
             align-items: center !important;
         }
+
+        /* Shared hero pattern + header layout */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(15, 39, 82, 0.96) 0%, rgba(26, 63, 127, 0.92) 100%),
+                        url('/Branding/pattern-02.webp') center/cover !important;
+        }
+        .hero-banner::before { display: none; }
+        .top-navbar {
+            display: grid !important;
+            grid-template-columns: 44px minmax(0, 1fr) 44px;
+            align-items: center;
+            column-gap: 8px;
+        }
+        .top-navbar .sm-toggle { grid-column: 1; }
+        .top-navbar .nav-brand { grid-column: 2; justify-self: center; justify-content: center; }
 </style>
     <script src="/static/js/icons.js" defer></script>
     <script src="/static/js/sidemenu.js" defer></script>
@@ -579,7 +594,7 @@
         </a>
         <nav class="nav-actions">
             <a href="/" class="btn-header">🏠 الرئيسية</a>
-            <a href="https://woa-market-yasserious.vercel.app/market" class="btn-header">🛒 المتجر الرقمي</a>
+            <a href="https://woa-market.vercel.app/market" class="btn-header">🛒 المتجر الرقمي</a>
             <a href="/printed_catalogs.html" class="btn-header active">📖 الكتالوجات A4</a>
             <a href="/about.html" class="btn-header">✨ المعرض والتواصل</a>
         </nav>

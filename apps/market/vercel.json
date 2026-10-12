@@ -5,10 +5,6 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/market.html"
-    },
-    {
       "source": "/market/(.*)",
       "destination": "/market.html"
     }
@@ -74,6 +70,13 @@
           "value": "public, max-age=0, must-revalidate"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/market",
+      "permanent": false
     }
   ]
 }

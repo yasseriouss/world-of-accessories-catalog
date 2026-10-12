@@ -5,6 +5,8 @@
  */
 
 let allProducts = [];
+const PAGE_SIZE = 20;
+let visibleCount = PAGE_SIZE;
 let categoriesList = [];
 let usageTypesList = [];
 let activeCategoryId = 0; // 0 = all
@@ -576,6 +578,7 @@ function filterAndRenderLocal(raw) {
     }
 
     allProducts = filtered;
+    visibleCount = PAGE_SIZE;
     renderProducts();
 }
 
@@ -689,7 +692,8 @@ function renderProducts() {
     else if (activeUsageType === "dressing") spaceSuffix = ` • ${t.dressingSpace}`;
     else if (activeUsageType === "other") spaceSuffix = ` • ${t.otherSpace}`;
 
-    countBox.innerHTML = `${t.itemsShowing} <span class="results-count-bold">${allProducts.length}</span> ${t.ofProducts} ${t.inCategory} (${esc(activeCatName)}${spaceSuffix})`;
+    const shownCount = Math.min(visibleCount, allProducts.length);
+    countBox.innerHTML = `${t.itemsShowing} <span class="results-count-bold">${shownCount}</span> / <span class="results-count-bold">${allProducts.length}</span> ${t.ofProducts} ${t.inCategory} (${esc(activeCatName)}${spaceSuffix})`;
 
     if (allProducts.length === 0) {
         grid.innerHTML = `
@@ -703,7 +707,7 @@ function renderProducts() {
     }
 
     let html = "";
-    allProducts.forEach((p, idx) => {
+    allProducts.slice(0, visibleCount).forEach((p, idx) => {
         const code = `WOA-${String(p.id || p.n || 0).padStart(4, '0')}`;
         const titlePrimary = esc((currentLang === "ar") ? (p.ar || p.en) : (p.en || p.ar));
         const titleSecondary = esc((currentLang === "ar") ? p.en : p.ar);
@@ -741,12 +745,15 @@ function renderProducts() {
                         const specsVal = esc(isAr ? (p.specs_ar || '') : (p.specs_en || p.specs_ar || ''));
                         if (!colorVal && !lengthVal && !widthVal && !specsVal) return '';
                         return `
-                            <div class="product-specs-box">
+                            <details class="product-specs-box">
+                                <summary>${isAr ? 'المواصفات' : 'Specifications'}</summary>
+                                <div class="specs-body">
                                 ${colorVal ? `<div class="spec-item"><span class="spec-label">🎨 ${isAr ? 'اللون:' : 'Color:'}</span> <span class="spec-val">${colorVal}</span></div>` : ''}
                                 ${lengthVal ? `<div class="spec-item"><span class="spec-label">📏 ${isAr ? 'الطول/المقاس:' : 'Length:'}</span> <span class="spec-val">${lengthVal}</span></div>` : ''}
                                 ${widthVal ? `<div class="spec-item"><span class="spec-label">📐 ${isAr ? 'العرض/السمك:' : 'Width:'}</span> <span class="spec-val">${widthVal}</span></div>` : ''}
                                 ${specsVal ? `<div class="spec-item spec-general"><span class="spec-label">⚙️ ${isAr ? 'المواصفات:' : 'Specs:'}</span> <span class="spec-val highlight">${specsVal}</span></div>` : ''}
-                            </div>
+                                </div>
+                            </details>
                         `;
                     })()}
                     <div class="card-footer">
@@ -772,6 +779,21 @@ function renderProducts() {
     } else {
         grid.innerHTML = html;
     }
+    updateLoadMore();
+}
+
+function updateLoadMore() {
+    const wrap = document.getElementById("loadMoreWrap");
+    const btn = document.getElementById("loadMoreBtn");
+    if (!wrap || !btn) return;
+    const remaining = allProducts.length - visibleCount;
+    wrap.hidden = remaining <= 0;
+    btn.textContent = (currentLang === "ar" ? "عرض المزيد" : "Show more") + " (" + Math.max(remaining, 0) + ")";
+}
+
+function showMoreProducts() {
+    visibleCount += PAGE_SIZE;
+    renderProducts();
 }
 
 // ----------------- Search & Sort -----------------

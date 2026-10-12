@@ -13,7 +13,7 @@
     };
 
     var css = [
-        ".sm-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;margin-inline-start:auto;padding:0;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.14);color:#fff;cursor:pointer;transition:background .2s,transform .2s}",
+        ".sm-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;margin:0;padding:0;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.14);color:#fff;cursor:pointer;transition:background .2s,transform .2s}",
         ".sm-toggle:hover{background:rgba(255,255,255,.24)}",
         ".sm-toggle:focus-visible,.sm-close:focus-visible{outline:3px solid #FF8C3D;outline-offset:2px}",
         ".sm-toggle svg,.sm-close svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}",
@@ -70,7 +70,7 @@
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-controls", "siteSideMenu");
         toggle.innerHTML = menuIcon("menu") + '<span class="sm-badge" hidden></span>';
-        header.appendChild(toggle);
+        header.insertBefore(toggle, header.firstChild);
 
         var overlay = document.createElement("div");
         overlay.className = "sm-overlay";

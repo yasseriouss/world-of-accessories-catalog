@@ -2456,3 +2456,126 @@ img, video, canvas, iframe {
     align-items: center;
     justify-content: space-between;
 }
+
+
+/* ---------------- Round 3: header, hero pattern, wide layout, specs, load more ---------------- */
+:root {
+    --woa-hero-bg: linear-gradient(135deg, rgba(15, 39, 82, 0.96) 0%, rgba(26, 63, 127, 0.92) 100%),
+                   url('/Branding/pattern-02.webp') center/cover;
+}
+
+/* One pattern for every hero/banner */
+.hero-section,
+.landing-hero,
+.about-hero-card {
+    background: var(--woa-hero-bg) !important;
+    background-blend-mode: normal !important;
+    filter: none !important;
+}
+
+/* Header: menu button at the start edge (right in Arabic, left in English), brand centred on one line */
+.navbar {
+    display: grid !important;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    column-gap: 8px;
+}
+.navbar .sm-toggle {
+    grid-column: 1;
+}
+.navbar .nav-brand {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+.navbar .nav-brand > div {
+    display: flex;
+    align-items: center;
+}
+.navbar .nav-title {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Wide screens: use the screen with a safe gutter instead of a narrow centred column */
+@media (min-width: 900px) {
+    .main-container,
+    .footer-container {
+        max-width: none;
+        padding-inline: clamp(24px, 5vw, 80px);
+    }
+}
+
+/* Collapsible specs (collapsed by default) */
+details.product-specs-box {
+    padding: 0;
+}
+details.product-specs-box > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--navy);
+    list-style: none;
+    user-select: none;
+}
+details.product-specs-box > summary::-webkit-details-marker {
+    display: none;
+}
+details.product-specs-box > summary::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-inline-end: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .2s;
+    margin-top: -3px;
+}
+details.product-specs-box[open] > summary::after {
+    transform: rotate(-135deg);
+    margin-top: 3px;
+}
+details.product-specs-box > .specs-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 10px 8px;
+}
+
+/* Load more */
+.load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 8px;
+}
+.load-more-wrap[hidden] {
+    display: none;
+}
+.btn-load-more {
+    min-height: 48px;
+    padding: 12px 36px;
+    border-radius: 14px;
+    border: 2px solid var(--navy);
+    background: #FFFFFF;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .2s;
+}
+.btn-load-more:hover {
+    background: var(--navy);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}

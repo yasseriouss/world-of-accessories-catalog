@@ -4,9 +4,9 @@ Three independent static apps in one repository, all backed by one Supabase proj
 
 | App | Folder | Vercel project | Purpose |
 |---|---|---|---|
-| Landing | `apps/landing` | `woa-store` | Public entry page that leads to the market (design to be replaced) |
-| Market | `apps/market` | `woa-market` | Product catalog, cart, WhatsApp ordering |
-| Dashboard | `apps/dashboard` | `admin-accessories` | Full control: products, categories, banners, landing content, media |
+| Landing | `apps/landing` | `woa-store` (ha-woa.vercel.app) | Public entry page that leads to the market (design to be replaced) |
+| Market | `apps/market` | `woa-market` (woa-market.vercel.app) | Product catalog, cart, WhatsApp ordering |
+| Dashboard | `apps/dashboard` | `admin-accessories` (woa-admin.vercel.app) | Full control: products, categories, banners, landing content, media |
 
 ## Data (Supabase)
 
