@@ -1,0 +1,37 @@
+/* Brand Fonts - Google Fonts fallback & local font loading */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap');
+
+/* Brand Fonts - Load local fonts first */
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../Branding/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tajawal';
+    src: url('../Branding/Tajawal-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fallback to system fonts if local fonts fail */
+:root {
+    --font-en: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-ar: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html[lang="en"],
+html[dir="ltr"] {
+    font-family: var(--font-en);
+}
+
+html[lang="ar"],
+html[dir="rtl"] {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+}

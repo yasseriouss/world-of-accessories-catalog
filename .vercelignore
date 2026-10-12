@@ -1,13 +1,23 @@
-.git
-.github
+# Ignore all files by default
+**
+
+# Allow app directories
+!apps/
+apps/**
+!apps/ecommerce/
+!apps/dashboard/
+
+# Allow specific root files
+!vercel.json
+!package.json
+!.vercelignore
+
+# Ignore documentation and scripts that shouldn't be deployed
 Documentation/
+deploy/
 scripts/
+catalog_generator/
 data/
-Branding/*.pdf
-Branding/1 color logo/
-Branding/card-print/
-Branding/logo full color/
-node_modules
-*.py
-*.pyc
 *.md
+*.py
+!README.md

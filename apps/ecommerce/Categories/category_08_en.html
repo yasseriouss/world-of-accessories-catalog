@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locks, Latches & Push Units Booklet - World of Accessories</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <style>
+        body {
+            font-family: var(--font-en);
+            direction: ltr;
+            text-align: left;
+        }
+        
+        :root {
+            --navy: #1A3F7F;
+            --orange: #FF8C3D;
+            --border: #CBD5E1;
+            --font-ar: 'Tajawal', sans-serif;
+            --font-en: 'Comfortaa', sans-serif;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-size:13px; line-height:1.5; color:#0F172A; background:#F8FAFC; }
+        .bidi-isolate { unicode-bidi: isolate; direction: ltr; display: inline-block; }
+        
+        .nav-bar {
+            background:#1A3F7F; color:#fff; padding:12px 24px; display:flex; justify-content:space-between; align-items:center;
+            position:sticky; top:0; z-index:100;
+        }
+        .nav-bar a, .nav-bar button {
+            color:#fff; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3);
+            padding:6px 14px; border-radius:6px; text-decoration:none; font-size:12px; cursor:pointer;
+        }
+        .container { max-width:1200px; margin:24px auto; padding:0 20px; }
+        .hero { background:linear-gradient(135deg, #0F2752, #1A3F7F); color:#fff; padding:32px; border-radius:12px; margin-bottom:24px; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:18px; }
+        .card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; display:flex; flex-direction:column; gap:10px; transition:all 0.2s; }
+        .card:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.08); border-color:#FF8C3D; }
+        .card-img { height:140px; display:flex; align-items:center; justify-content:center; background:#FAFAFA; border-radius:8px; }
+        .card-img img { max-width:85%; max-height:85%; object-fit:contain; }
+        .card-title { font-weight:700; font-size:13px; min-height:36px; }
+        .card-price { font-size:16px; font-weight:800; color:#FF8C3D; }
+        
+        @media print {
+            .nav-bar, .hero-search { display:none !important; }
+            .grid { grid-template-columns:repeat(3, 1fr); gap:12px; }
+            .card { break-inside:avoid; border:1px solid #CBD5E1; }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <div style="display:flex; align-items:center; gap:12px;">
+            <a href="../index.html">🏠 Home</a>
+            <a href="categories_index_en.html">🏷️ All Categories</a>
+            <span style="font-weight:700;">🔐 Locks, Latches & Push Units (9)</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+            <a href="category_08_ar.html" style="background:#FF8C3D; border-color:#FF8C3D;">🌐 العربية</a>
+            <button onclick="window.print()">🖨️ Print Booklet</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <span style="background:rgba(255,140,61,0.2); color:#FF8C3D; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:800;">
+                🔐 Category 8
+            </span>
+            <h1 style="font-size:26px; margin:10px 0 6px;">Locks, Latches & Push Units</h1>
+            <p style="color:#F5E6D3; font-size:13px;">Cabinet locks, touch latches, push-to-open units, magnetic catches, and security fittings</p>
+        </div>
+
+        <div class="grid">
+        
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0037</div>
+                <div class="card-title">صابع تاتش بجناح ( معدن ) Palma</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 24</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0038</div>
+                <div class="card-title">صابع تاتش كبس ( معدن )  Palma</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 18</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0039</div>
+                <div class="card-title">صابع تاتش دفن (أبيض ) Palma</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    <div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">🎨 Color:</span> <strong>Pure White</strong></div>
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 21</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0040</div>
+                <div class="card-title">صابع تاتش بلاستيك ( أبيض ) Palma خارجي</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    <div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">🎨 Color:</span> <strong>Pure White</strong></div>
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 19</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0066</div>
+                <div class="card-title">وحدة تخريم صابع تاتش</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 850</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0144</div>
+                <div class="card-title">صابع تاتش دفن MK</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Push to Open (Touch)</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 20</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0158</div>
+                <div class="card-title">مطبقیه 80cm سوسته الحياة</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    <div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">📏 Length:</span> <strong>80 cm</strong></div>
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Industrial Grade Certified</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 875</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0159</div>
+                <div class="card-title">مطبقیه 90cm سوسته الحياة</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    <div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">📏 Length:</span> <strong>90 cm</strong></div>
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Industrial Grade Certified</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 895</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="../Branding/logo-100.png" alt="Product">
+                </div>
+                <div style="font-size:11px; color:#64748B; font-weight:700;">WOA-0541</div>
+                <div class="card-title">مطبقیه 70cm سوسته الحياة</div>
+                
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:6px 8px; margin:6px 0; font-size:11px; line-height:1.4; text-align:inherit;">
+                    
+                    <div style="margin-bottom:2px;"><span style="color:#64748B; font-weight:700;">📏 Length:</span> <strong>70 cm</strong></div>
+                    
+                    <div style="color:#1A3F7F; font-weight:700; margin-top:3px; padding-top:3px; border-top:1px dashed #E2E8F0;">⚙️ Specs: Industrial Grade Certified</div>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                    <div class="card-price">EGP 850</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+        
