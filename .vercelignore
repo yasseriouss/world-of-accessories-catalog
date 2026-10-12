@@ -1,23 +1,13 @@
-# Ignore all files by default
-**
-
-# Allow app directories
-!apps/
-apps/**
-!apps/ecommerce/
-!apps/dashboard/
-
-# Allow specific root files
-!vercel.json
-!package.json
-!.vercelignore
-
-# Ignore documentation and scripts that shouldn't be deployed
+# Ignore documentation and scripts
 Documentation/
 deploy/
 scripts/
 catalog_generator/
 data/
 *.md
-*.py
-!README.md
+DEPLOYMENT.md
+MIGRATION_SUMMARY.md
+ARCHITECTURE.md
+.git
+.gitignore
+node_modules/

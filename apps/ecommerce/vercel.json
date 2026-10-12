@@ -1,6 +1,9 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": ".",
+  "env": {},
   "rewrites": [
     { "source": "/market", "destination": "/market.html" },
     { "source": "/catalog", "destination": "/market.html" },
