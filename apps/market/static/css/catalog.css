@@ -2579,3 +2579,24 @@ details.product-specs-box > .specs-body {
     color: #FFFFFF;
     transform: translateY(-2px);
 }
+
+
+/* ---------------- Market without hero banner: search leads straight into the catalog ---------------- */
+.main-container {
+    margin-top: 20px !important;
+}
+
+.market-search {
+    margin: 4px 0 18px;
+}
+
+.market-search .search-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.market-search .search-input-box {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
