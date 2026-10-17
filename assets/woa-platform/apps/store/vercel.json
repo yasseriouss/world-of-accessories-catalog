@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/market/:path*",
+      "destination": "/:path*"
+    },
+    {
+      "source": "/market",
+      "destination": "/"
+    }
+  ]
+}
