@@ -1,0 +1,41 @@
+WOA product-image harvest - progress summary
+Batch 1 (ids 1-25): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Most common sources: Amazon marketplaces (.eg/.co.uk/.sa), fiteo.co.uk, emuca.com, diy.com, shabanastores.com, aspincollins.com
+Systematic problems: catalog brands (Summit, Palma, Nisco) rarely publish clean >=600px photos; used equivalent generic items at medium confidence.
+Sizes of gas struts / drawer slides not visually distinguishable; same photo shared across sizes per rules.
+
+Batch 2 (ids 26-50): processed 25 / found 24 (0 high, 24 medium) / not found 1 (WOA-0031 connector angle)
+Batch 3 (ids 51-75): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 4 (ids 76-100): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 5 (ids 101-125): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 6 (ids 126-150): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 7 (ids 151-175): processed 25 / found 25 (1 high, 24 medium) / not found 0
+Batch 8 (ids 176-200): processed 25 / found 25 (3 high, 22 medium) / not found 0
+Batch 9 (ids 201-225): processed 25 / found 25 (2 high, 23 medium) / not found 0
+Batch 10 (ids 226-250): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 10 (ids 226-250): processed 25 / found 25 (1 high, 24 medium) / not found 0
+Batch 11 (ids 251-275): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 12 (ids 276-300): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 13 (ids 301-325): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 14 (ids 326-350): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 15 (ids 351-375): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 16 (ids 376-400): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 17 (ids 401-425): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 18 (ids 426-450): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 19 (ids 451-475): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 19 completion note: leather-rail rows 457/461/462/463 added from leather-covered wardrobe rail source.
+Batch 20 (ids 476-500): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 21 (ids 501-525): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 22 (ids 526-550): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 22 correction: covered ids 526-553 (28 rows) because the Egyptian divider series 547-553 spans 7 items; images 551-553 done early. Totals after batch 22: 553 rows processed, 552 found, 1 not found.
+Batch 23 (ids 554-578): processed 25 / found 25 (0 high, 25 medium) / not found 0
+Batch 24 FINAL (ids 579-591): processed 13 (579 invalid name -> not_found; 590 excluded has_image=yes) / found 11 medium / not found 1
+ALL BATCHES COMPLETE: 590 rows processed / 588 images found (24 high, 564 medium) / 2 not found (WOA-0031, WOA-0579) / 1 skipped (WOA-0590 has_image=yes)
+Most common sources: Amazon (.eg/.sa/.ae/.co.uk), metallistt.com, mitalshop.com, elkhalil-wood.com, shabanastores.com, diy.com/B&Q, emuca.com, made-in-china, alibaba.
+Systematic problems: (1) catalog brands (Palma/Summit/Nisco/MK/STAR-X etc.) rarely publish clean >=600px photos - generic equivalents used at medium confidence; (2) sizes not visually distinguishable for slides/hinges/struts - photos shared per rules; (3) a few watermarked images kept per user instruction with removal hints in notes (WOA-0123, WOA-0145..0150, WOA-0191..0193, WOA-0341+, WOA-0411/0416, WOA-0494).
+
+Enrichment pass: bilingual descriptions + datasheets added to report.csv (columns description_en/ar, datasheet_en/ar, spec_source).
+spec_source=official source page for 25 products with manufacturer specs; spec_source=catalog attributes (compiled) for the rest - structured specs derived from the Arabic catalog name, NOT fabricated manufacturer datasheets.
+Standalone bilingual workbook: woa-product-data.xlsx (English + Arabic sheets); flat CSV: product-descriptions-datasheet.csv.
+
+SEO pass: seo_title_ar/en (<=60 chars), meta_desc_ar/en, URL slug, focus keywords, alt_text_ar/en, expanded unique seo_desc_ar/en (588/588 unique via SKU + benefit rotation) added to report.csv. Sources: merchant phrasing from Egyptian listings (metallistt/mitalshop/elkhalil/daralnijara etc.) + catalog attributes; no fabricated specs.

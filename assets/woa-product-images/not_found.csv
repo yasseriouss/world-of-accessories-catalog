@@ -1,0 +1,3 @@
+﻿id,file_name_base,name_ar,reason,what_you_tried
+31,WOA-0031,زاويه ربط مقبض دفن LوU,Ambiguous item: small joining angle for recessed handles; no standalone product photo >=600px found,"Searched Arabic (زاوية ربط مقبض دفن) and English (recessed handle connector angle, aluminum profile corner joiner); only multi-item pack photos where the angle is too small to crop"
+579,WOA-0579,j;hdi,"Invalid/garbled product name (keyboard input, no meaningful Arabic or English) - cannot identify the item to match",Searched the raw string and transliterations; no identifiable product type in name_ar or name_en
