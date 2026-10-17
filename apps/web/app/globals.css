@@ -44,7 +44,7 @@ img { max-width: 100%; }
 .prose h3 { font-size: var(--fs-h3); margin: 28px 0 12px; }
 .prose img { border-radius: var(--r-lg); margin: 24px 0; }
 .prose ul { padding-inline-start: 24px; margin: 12px 0; }
-.prose blockquote { border-inline-start: 3px solid var(--color-accent); padding-inline-start: 16px;
+.prose blockquote { border-inline-start: 1.5px solid var(--color-accent); padding-inline-start: 16px;
   color: var(--color-text-2); margin: 20px 0; }
 
 @media (max-width: 640px) { .hero h1 { font-size: 2rem; } }
