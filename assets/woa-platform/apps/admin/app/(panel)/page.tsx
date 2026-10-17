@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { supabaseServer } from '../../lib/supabase-server';
 import { egp } from '../../lib/format';
 
@@ -37,7 +38,10 @@ export default async function Dashboard() {
         <div className="stat-card"><div className="n">{ordersMonth}</div><div className="l">طلبات آخر 30 يوم</div></div>
         <div className="stat-card"><div className="n">{productsCount}</div><div className="l">منتج نشط</div></div>
         <div className="stat-card"><div className="n" style={{ color:'var(--color-danger)' }}>{outOfStock}</div><div className="l">نفد من المخزون</div></div>
-        <div className="stat-card"><div className="n" style={{ color:'var(--color-accent)' }}>{b2bNew}</div><div className="l">طلبات B2B جديدة</div></div>
+        <Link href="/b2b" className="stat-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="n" style={{ color: 'var(--color-accent)' }}>{b2bNew}</div>
+          <div className="l">طلبات B2B جديدة ←</div>
+        </Link>
         <div className="stat-card"><div className="n">{postsCount}</div><div className="l">مقال منشور</div></div>
       </div>
 
