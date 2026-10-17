@@ -13,6 +13,8 @@ Base: `/api/v1` — كل الردود: `{ ok, data, error }`
 | GET  | `/banners?placement=` | بنرات مفعّلة ضمن الفترة |
 | GET  | `/posts?category=&page=` | مقالات منشورة |
 | GET  | `/posts/[slug]` | مقال + FAQ sections + related posts |
+| POST | `/reviews` | إرسال مراجعة وتقييم للمنتج (تحديث تلقائي لمعدل النجوم) |
+| POST | `/coupons/validate` | التحقق من كود الخصم وصلاحيته والحد الأدنى للطلب |
 
 ## Orders
 | Method | Endpoint | الوصف |
@@ -28,6 +30,8 @@ Base: `/api/v1` — كل الردود: `{ ok, data, error }`
 | Method | Endpoint | الوصف |
 |---|---|---|
 | CRUD | `/admin/products` | + رفع صور متعددة لـ Storage |
+| CRUD | `/admin/reviews` | اعتماد أو حجب مراجعات العملاء وحذفها |
+| CRUD | `/admin/coupons` | إنشاء وإدارة أكواد وكوبونات الخصم والحدود |
 | CRUD | `/admin/posts` | محرر MDX |
 | PATCH | `/admin/orders/[id]/status` | تغيير حالة → خصم مخزون تلقائي (Trigger) |
 | CRUD | `/admin/banners` | جدولة + تفعيل |

@@ -82,3 +82,14 @@ export async function getPostsByCategory(catSlug: string, limit = 3) {
     .eq('status', 'published').eq('category_slug', catSlug).order('published_at', { ascending: false }).limit(limit);
   return data ?? [];
 }
+
+export async function getReviews(productId: string) {
+  const { data } = await supabase
+    .from('reviews')
+    .select('id,author_name,rating,comment,created_at')
+    .eq('product_id', productId)
+    .eq('is_approved', true)
+    .order('created_at', { ascending: false });
+  return data ?? [];
+}
+

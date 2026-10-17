@@ -2,11 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { getProduct, getRelated, getPostsByCategory } from '../../../lib/queries';
+import { getProduct, getRelated, getPostsByCategory, getReviews } from '../../../lib/queries';
 import { productJsonLd } from '../../../lib/seo';
 import { egp, discountPct, whatsappLink } from '../../../lib/format';
 import ProductCard from '../../../components/ProductCard';
 import AddToCartButton from '../../../components/AddToCartButton';
+import ProductGallery from '../../../components/ProductGallery';
+import ProductReviews from '../../../components/ProductReviews';
 
 export const revalidate = 120;
 export const dynamicParams = true;
@@ -39,23 +41,18 @@ export default async function ProductPage({ params }: any) {
   const price = p.sale_price ?? p.price_egp;
   const related = await getRelated(p.category_id, p.id);
   const posts = await getPostsByCategory(p.category_slug ?? '', 2);
+  const reviews = await getReviews(p.id);
 
   return (
     <div className="container section">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(p, locale)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(p, locale, reviews)) }} />
       <nav style={{ fontSize:'.8rem', color:'var(--color-text-3)', marginBottom:'20px' }}>
         <Link href={`/${locale}`} style={{ color:'inherit' }}>{ar ? 'المتجر' : 'Shop'}</Link> / <span>{name}</span>
       </nav>
 
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'40px' }}>
         {/* Gallery */}
-        <div style={{ display:'grid', gap:'12px' }}>
-          <div style={{ position:'relative', aspectRatio:'1/1', borderRadius:'var(--r-lg)', overflow:'hidden',
-            background:'#F1EFE9', border:'1px solid var(--color-line)' }}>
-            {p.images?.[0] && <Image src={p.images[0].url} alt={name} fill priority
-              sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit:'cover' }} />}
-          </div>
-        </div>
+        <ProductGallery images={p.images} name={name} />
 
         {/* Info */}
         <div style={{ display:'grid', gap:'16px', alignContent:'start' }}>
@@ -99,6 +96,15 @@ export default async function ProductPage({ params }: any) {
           </table>
         </div>
       </div>
+
+      {/* Customer Reviews & Ratings */}
+      <ProductReviews
+        productId={p.id}
+        productName={name}
+        initialReviews={reviews}
+        initialAvg={Number(p.rating_avg ?? 0)}
+        initialCount={Number(p.rating_count ?? 0)}
+      />
 
       {/* Related + articles */}
       <section style={{ marginTop:'64px' }}>

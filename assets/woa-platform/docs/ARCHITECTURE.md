@@ -17,7 +17,11 @@
 - **Auth:** Supabase Auth (الداشبورد) + OTP بالموبايل (عملاء المتجر)
 - **i18n:** next-intl — عربي RTL افتراضي (السوق المصري) + إنجليزي LTR، توجيه `/ar` `/en`
 - **Styling:** CSS Modules + Design Tokens من `packages/ui/tokens.css`
-- **Images:** `next/image` + Supabase Storage + تلقائي WebP/AVIF
+- **Images:** `next/image` + Supabase Storage + Multi-image Gallery مع تكبير Lightbox
+- **PWA:** Web App Manifest + Service Worker للتصفح في ظروف الإنترنت الضعيفة (Offline support)
+- **المراجعات:** جدول reviews + Trigger لحساب التقييم التلقائي + Schema.org AggregateRating
+- **العروض:** نظام كوبونات بحدود استخدام وحد أدنى للطلب ومطابقة في السيرفر
+- **المفضلة:** Wishlist محلية عبر LocalStorage مع شارات تفاعلية
 - **الإشعارات:** WhatsApp Cloud API عند تأكيد الطلب + تغيير حالته
 - **الدفع:** COD + Vodafone Cash / InstaPay (تحويل يدوي مؤكد من الداشبورد)
 

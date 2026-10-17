@@ -8,6 +8,7 @@ const LINKS = [
   { href: '/orders', label: 'الطلبات', icon: '🛒' },
   { href: '/b2b', label: 'طلبات الجملة (B2B)', icon: '🏢' },
   { href: '/coupons', label: 'الكوبونات', icon: '🏷️' },
+  { href: '/reviews', label: 'المراجعات', icon: '⭐' },
   { href: '/products', label: 'المنتجات', icon: '📦' },
   { href: '/blog', label: 'المدونة', icon: '✎' },
   { href: '/banners', label: 'البنرات', icon: '📢' },

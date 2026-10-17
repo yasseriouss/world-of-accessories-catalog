@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>غير متصل بالإنترنت | عالم الاكسسوار</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
+      background-color: #0B0D10;
+      color: #F8F9FA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .offline-box {
+      background: #14181E;
+      border: 1px solid #2A303C;
+      border-radius: 16px;
+      padding: 40px 24px;
+      max-width: 440px;
+      width: 100%;
+    }
+    .icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: #B08D2E;
+      margin: 0 0 12px;
+    }
+    p {
+      color: #9EABB8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: #B08D2E;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: #9A7B26;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-box">
+    <div class="icon">📶</div>
+    <h1>أنت غير متصل بالإنترنت حالياً</h1>
+    <p>يبدو أن شبكة الإنترنت ضعيفة أو غير متصلة. يرجى التحقق من اتصالك والمحاولة مرة أخرى لتصفح أحدث منتجات عالم الاكسسوار.</p>
+    <button class="btn" onclick="window.location.reload()">إعادة المحاولة</button>
+  </div>
+</body>
+</html>

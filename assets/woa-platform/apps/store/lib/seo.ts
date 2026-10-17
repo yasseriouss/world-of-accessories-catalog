@@ -1,4 +1,4 @@
-export const productJsonLd = (p: any, locale: string) => ({
+export const productJsonLd = (p: any, locale: string, reviews?: any[]) => ({
   '@context': 'https://schema.org', '@type': 'Product',
   name: locale === 'ar' ? p.name_ar : p.name_en ?? p.name_ar,
   image: (p.images ?? []).map((i: any) => i.url),
@@ -13,8 +13,16 @@ export const productJsonLd = (p: any, locale: string) => ({
   },
   aggregateRating: p.rating_count > 0 ? {
     '@type': 'AggregateRating',
-    ratingValue: p.rating_avg, reviewCount: p.rating_count
-  } : undefined
+    ratingValue: p.rating_avg,
+    reviewCount: p.rating_count
+  } : undefined,
+  review: (reviews && reviews.length > 0) ? reviews.slice(0, 5).map((r: any) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author_name },
+    datePublished: r.created_at,
+    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+    reviewBody: r.comment || undefined
+  })) : undefined
 });
 
 export const siteJsonLd = {
