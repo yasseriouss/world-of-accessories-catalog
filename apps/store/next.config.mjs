@@ -18,6 +18,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
+  async rewrites() {
+    return [
+      { source: '/market', destination: '/' },
+      { source: '/:locale/market', destination: '/:locale' },
+      { source: '/:locale/market/:path*', destination: '/:locale/:path*' }
+    ];
+  },
   webpack: (config) => {
     config.resolve.alias['@'] = __dirname;
     return config;
