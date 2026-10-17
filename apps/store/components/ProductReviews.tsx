@@ -1,6 +1,7 @@
 'use client';
+
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export interface ReviewItem {
   id: string;
@@ -25,6 +26,7 @@ export default function ProductReviews({
 }) {
   const locale = useLocale();
   const ar = locale === 'ar';
+  const t = useTranslations('reviews');
 
   const [reviews, setReviews] = useState<ReviewItem[]>(initialReviews);
   const [ratingAvg, setRatingAvg] = useState<number>(initialAvg);
@@ -44,7 +46,7 @@ export default function ProductReviews({
     setStatusMsg(null);
 
     if (!authorName.trim() || authorName.trim().length < 2) {
-      setStatusMsg({ type: 'error', text: ar ? 'يرجى إدخال اسمك (حرفين على الأقل)' : 'Please enter your name' });
+      setStatusMsg({ type: 'error', text: t('errorName') });
       return;
     }
 
@@ -64,9 +66,9 @@ export default function ProductReviews({
 
       const data = await res.json();
       if (!res.ok || data.error) {
-        setStatusMsg({ type: 'error', text: data.error || (ar ? 'تعذر إرسال التقييم' : 'Failed to submit review') });
+        setStatusMsg({ type: 'error', text: data.error || t('errorGeneric') });
       } else {
-        setStatusMsg({ type: 'success', text: ar ? 'شكراً لك! تم إضافة تقييمك بنجاح.' : 'Thank you! Your review has been added.' });
+        setStatusMsg({ type: 'success', text: t('success') });
         if (data.review) {
           const newRev = data.review;
           const updated = [newRev, ...reviews];
@@ -84,7 +86,7 @@ export default function ProductReviews({
         setTimeout(() => setFormOpen(false), 2000);
       }
     } catch {
-      setStatusMsg({ type: 'error', text: ar ? 'حدث خطأ في الاتصال' : 'Network error' });
+      setStatusMsg({ type: 'error', text: t('errorGeneric') });
     } finally {
       setSubmitting(false);
     }
@@ -95,12 +97,12 @@ export default function ProductReviews({
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '24px' }}>
         <div>
           <h2 className="sec-title" style={{ margin: 0 }}>
-            {ar ? 'تقييمات وآراء العملاء' : 'Customer Reviews'}
+            {t('title')}
           </h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '6px' }}>
             <span style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--brand-gold)' }}>★ {ratingAvg > 0 ? ratingAvg : '5.0'}</span>
             <span style={{ color: 'var(--color-text-2)', fontSize: '0.9rem' }}>
-              ({ratingCount} {ar ? (ratingCount === 1 ? 'تقييم' : 'تقييمات') : 'reviews'})
+              {t('ratingCount', { count: ratingCount })}
             </span>
           </div>
         </div>
@@ -109,9 +111,9 @@ export default function ProductReviews({
           type="button"
           className="btn btn-outline"
           onClick={() => setFormOpen(!formOpen)}
-          style={{ borderColor: 'var(--brand-gold)', color: 'var(--brand-gold)' }}
+          style={{ borderColor: 'var(--brand-gold)', color: 'var(--brand-gold)', minHeight: '44px' }}
         >
-          {formOpen ? (ar ? 'إلغاء' : 'Cancel') : (ar ? '✍️ اكتب تقييماً' : '✍️ Write a Review')}
+          {formOpen ? t('cancel') : t('writeReview')}
         </button>
       </div>
 
@@ -125,7 +127,7 @@ export default function ProductReviews({
             marginBottom: '32px',
             background: 'var(--color-bg)',
             border: '1px solid var(--brand-gold)',
-            borderRadius: 'var(--r-lg)',
+            borderRadius: 'var(--r-md)',
             display: 'grid',
             gap: '16px',
             maxWidth: '650px',
@@ -138,7 +140,7 @@ export default function ProductReviews({
           {/* Star selector */}
           <div>
             <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--color-text-2)' }}>
-              {ar ? 'درجة التقييم:' : 'Your Rating:'}
+              {t('yourRating')}
             </label>
             <div style={{ display: 'flex', gap: '6px' }}>
               {[1, 2, 3, 4, 5].map((star) => (
@@ -167,20 +169,20 @@ export default function ProductReviews({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', color: 'var(--color-text-2)' }}>
-                {ar ? 'الاسم بالكامل *' : 'Your Name *'}
+                {t('namePlaceholder')} *
               </label>
               <input
                 type="text"
                 required
                 className="input"
-                placeholder={ar ? 'مثال: م. محمد سالم' : 'e.g. John Doe'}
+                placeholder={t('namePlaceholder')}
                 value={authorName}
                 onChange={(e) => setAuthorName(e.target.value)}
               />
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', color: 'var(--color-text-2)' }}>
-                {ar ? 'رقم الموبايل (اختياري)' : 'Mobile Phone (Optional)'}
+                {t('phonePlaceholder')}
               </label>
               <input
                 type="tel"
@@ -195,13 +197,13 @@ export default function ProductReviews({
           {/* Comment */}
           <div>
             <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', color: 'var(--color-text-2)' }}>
-              {ar ? 'تجربتك مع المنتج' : 'Your Review'}
+              {t('yourReview')}
             </label>
             <textarea
               rows={3}
               className="input"
               style={{ width: '100%', resize: 'vertical' }}
-              placeholder={ar ? 'صف تجربتك مع الخامة، دقة المقاسات، والتشطيب...' : 'Describe your experience with quality and finish...'}
+              placeholder={t('placeholder')}
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
@@ -213,9 +215,10 @@ export default function ProductReviews({
                 padding: '10px 14px',
                 borderRadius: 'var(--r-md)',
                 fontSize: '0.88rem',
-                background: statusMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2',
-                color: statusMsg.type === 'success' ? '#047857' : '#B91C1C',
-                border: `1px solid ${statusMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}`,
+                fontWeight: 600,
+                background: statusMsg.type === 'success' ? 'rgba(46, 125, 91, 0.12)' : 'rgba(192, 57, 43, 0.1)',
+                color: statusMsg.type === 'success' ? 'var(--color-success)' : 'var(--color-danger)',
+                border: `1px solid ${statusMsg.type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'}`,
               }}
             >
               {statusMsg.text}
@@ -227,15 +230,17 @@ export default function ProductReviews({
               type="button"
               className="btn btn-outline btn-sm"
               onClick={() => setFormOpen(false)}
+              style={{ minHeight: '44px' }}
             >
-              {ar ? 'إلغاء' : 'Cancel'}
+              {t('cancel')}
             </button>
             <button
               type="submit"
               className="btn btn-primary btn-sm"
               disabled={submitting}
+              style={{ minHeight: '44px', minWidth: '120px' }}
             >
-              {submitting ? (ar ? 'جاري الإرسال...' : 'Submitting...') : (ar ? 'نشر التقييم' : 'Post Review')}
+              {submitting ? t('submitting') : t('submit')}
             </button>
           </div>
         </form>
@@ -247,9 +252,9 @@ export default function ProductReviews({
           style={{
             padding: '32px',
             textAlign: 'center',
-            background: 'var(--color-card)',
+            background: 'var(--color-bg-elev)',
             border: '1px dashed var(--color-line)',
-            borderRadius: 'var(--r-lg)',
+            borderRadius: 'var(--r-md)',
             color: 'var(--color-text-2)',
           }}
         >
@@ -257,7 +262,7 @@ export default function ProductReviews({
           <div style={{ fontWeight: 600 }}>
             {ar ? 'لا توجد تقييمات بعد على هذا المنتج.' : 'No reviews yet for this product.'}
           </div>
-          <div style={{ fontSize: '0.85rem', marginTop: '4px' }}>
+          <div style={{ fontSize: '0.85rem', marginTop: '4px', color: 'var(--color-text-3)' }}>
             {ar ? 'كن أول من يشارك تجربته مع عملاء عالم الاكسسوار!' : 'Be the first to share your experience!'}
           </div>
         </div>
@@ -269,7 +274,7 @@ export default function ProductReviews({
               className="card"
               style={{
                 padding: '18px 20px',
-                borderRadius: 'var(--r-lg)',
+                borderRadius: 'var(--r-md)',
                 border: '1px solid var(--color-line)',
               }}
             >
@@ -281,7 +286,7 @@ export default function ProductReviews({
                       height: '36px',
                       borderRadius: '50%',
                       background: 'var(--brand-gold)',
-                      color: '#fff',
+                      color: 'var(--color-on-primary, #111111)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',

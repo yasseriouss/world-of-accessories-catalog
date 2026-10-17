@@ -29,6 +29,8 @@ export default async function ProductPage({ params }: any) {
   const p = await getProduct(params.slug);
   if (!p) notFound();
   const t = await getTranslations({ locale: params.locale, namespace: 'product' });
+  const tSpecs = await getTranslations({ locale: params.locale, namespace: 'specs' });
+  const tNav = await getTranslations({ locale: params.locale, namespace: 'nav' });
   const tb = await getTranslations({ locale: params.locale, namespace: 'blog' });
   const locale = params.locale;
   const ar = locale === 'ar';
@@ -42,7 +44,7 @@ export default async function ProductPage({ params }: any) {
     <div className="container section">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(p, locale, reviews)) }} />
       <nav style={{ fontSize:'.8rem', color:'var(--color-text-3)', marginBottom:'20px' }}>
-        <Link href={`/${locale}`} style={{ color:'inherit' }}>{ar ? 'المتجر' : 'Shop'}</Link> / <span>{name}</span>
+        <Link href={`/${locale}`} style={{ color:'inherit' }}>{tNav('market')}</Link> / <span>{name}</span>
       </nav>
 
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'40px' }}>
@@ -70,8 +72,8 @@ export default async function ProductPage({ params }: any) {
 
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap' }}>
             <AddToCartButton p={p} />
-            <a className="btn btn-outline" target="_blank" rel="noopener"
-              href={whatsappLink('01140030036', `أريد طلب: ${p.code} - ${p.name_ar} | ${price} ج.م`)}>
+            <a className="btn btn-outline" target="_blank" rel="noopener noreferrer"
+              href={whatsappLink('01140030036', `طلب: ${p.code} - ${p.name_ar} | ${price} ${locale === 'ar' ? 'ج.م' : 'EGP'}`)}>
               {t('orderWhats')}
             </a>
           </div>
@@ -79,8 +81,8 @@ export default async function ProductPage({ params }: any) {
           {/* Specs */}
           <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'.9rem' }}>
             <tbody>
-              {[['الماركة', p.brand], ['الخامة', p.material], ['الحمولة', p.load_kg && `${p.load_kg} كجم`],
-                ['الوزن', p.weight_kg && `${p.weight_kg} كجم`], ['الألوان', p.colors?.join('، ')]]
+              {[[tSpecs('brand'), p.brand], [tSpecs('material'), p.material], [tSpecs('load'), p.load_kg && `${p.load_kg} ${tSpecs('kg')}`],
+                [tSpecs('weight'), p.weight_kg && `${p.weight_kg} ${tSpecs('kg')}`], [tSpecs('colors'), p.colors?.join('، ')]]
                 .filter(([,v]) => v).map(([k,v]: any) => (
                 <tr key={k} style={{ borderBottom:'1px solid var(--color-line)' }}>
                   <td style={{ padding:'10px 0', color:'var(--color-text-3)', width:'120px' }}>{k}</td>

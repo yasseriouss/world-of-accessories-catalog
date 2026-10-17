@@ -24,7 +24,7 @@ export default function LoginPage() {
 
   return (
     <main style={{ minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center',
-      background:'linear-gradient(135deg,#141311,#26220f)', padding: '20px' }}>
+      background:'linear-gradient(135deg, var(--brand-ink), #26220f)', padding: '20px' }}>
       <form onSubmit={submit} className="card" style={{ padding:'36px 32px', width:'min(420px,100%)', display:'grid', gap:'16px', borderRadius:'var(--r-md)' }}>
         <h1 style={{ fontSize:'1.4rem', textAlign:'center', margin:0 }}>عالم <span style={{ color:'var(--color-accent)' }}>الاكسسوار</span></h1>
         <p style={{ textAlign:'center', fontSize:'.85rem', color:'var(--color-text-3)', margin:0 }}>لوحة التحكم الإدارية</p>

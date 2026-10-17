@@ -44,32 +44,53 @@ function getCategoryIcon(slug: string) {
 
 export default async function MarketHome({ params: { locale } }: any) {
   unstable_setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: 'nav' });
+  const t = await getTranslations({ locale, namespace: 'hero' });
   const [featured, best, cats, heroes] = await Promise.all([
-    getFeatured(8), getBestSellers(8), getCategories(), getBanners('store_hero')]);
+    getFeatured(8),
+    getBestSellers(8),
+    getCategories(),
+    getBanners('store_hero'),
+  ]);
 
   return (
     <main id="main-content">
       {/* Hero section with semantic H1 */}
-      <section className="container" style={{ paddingTop:'32px', paddingBottom:'16px' }}>
-        <h1 className="sec-title" style={{ fontSize:'var(--fs-h1)', margin:'0 0 8px' }}>
-          {locale === 'ar' ? 'عالم الاكسسوار | متجر إكسسوارات الأثاث والمطابخ' : 'WOA | Architectural Furniture & Kitchen Hardware'}
+      <section className="container" style={{ paddingTop: '32px', paddingBottom: '16px' }}>
+        <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)', margin: '0 0 8px' }}>
+          {t('title')}
         </h1>
-        <p style={{ color:'var(--color-text-2)', fontSize:'1.05rem', margin:'0 0 24px', maxWidth:'720px' }}>
-          {locale === 'ar'
-            ? 'أنظمة الحركة الهيدروليكية، مفصلات 3D، سكك الأدراج المخفية، وإكسسوارات الدريسينج المعتمدة للمصانع والمنازل الراقية.'
-            : 'Precision hydraulic motion systems, 3D concealed hinges, tandem slides, and certified dressing accessories.'}
+        <p style={{ color: 'var(--color-text-2)', fontSize: '1.05rem', margin: '0 0 24px', maxWidth: '720px' }}>
+          {t('subtitle')}
         </p>
 
         {heroes.length > 0 && (
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))', gap:'16px' }}>
-            {heroes.slice(0,2).map((b: any) => (
-              <Link key={b.id} href={b.link_url ?? '#'} style={{ position:'relative', borderRadius:'var(--r-md)',
-                overflow:'hidden', minHeight:'200px', display:'flex', alignItems:'flex-end', padding:'24px',
-                background:'linear-gradient(120deg, #1d1b17, #3a3220)', color:'#fff', textDecoration:'none' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '16px' }}>
+            {heroes.slice(0, 2).map((b: any) => (
+              <Link
+                key={b.id}
+                href={b.link_url ?? '#'}
+                style={{
+                  position: 'relative',
+                  borderRadius: 'var(--r-md)',
+                  overflow: 'hidden',
+                  minHeight: '200px',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  padding: '24px',
+                  background: 'linear-gradient(120deg, var(--brand-ink), #2b2513)',
+                  color: 'var(--color-bg-elev)',
+                  textDecoration: 'none',
+                }}
+              >
                 <div>
-                  {b.tag_ar && <span className="chip" style={{ marginBottom:'8px', color: 'var(--brand-gold)' }}>{locale === 'ar' ? b.tag_ar : (b.tag_en || b.tag_ar)}</span>}
-                  <h2 style={{ margin:'8px 0 0', fontSize:'1.4rem' }}>{locale === 'ar' ? b.text_ar : (b.text_en || b.text_ar)}</h2>
+                  {b.tag_ar && (
+                    <span className="chip" style={{ marginBottom: '8px', color: 'var(--brand-gold)' }}>
+                      {locale === 'ar' ? b.tag_ar : b.tag_en || b.tag_ar}
+                    </span>
+                  )}
+                  <h2 style={{ margin: '8px 0 0', fontSize: '1.4rem' }}>
+                    {locale === 'ar' ? b.text_ar : b.text_en || b.text_ar}
+                  </h2>
                 </div>
               </Link>
             ))}
@@ -80,67 +101,93 @@ export default async function MarketHome({ params: { locale } }: any) {
       {/* Worlds / categories */}
       <section className="section">
         <div className="container">
-          <h2 className="sec-title">
-            {locale === 'ar' ? 'أقسام الإكسسوارات المعمارية' : 'Hardware Categories'}
-          </h2>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px' }}>
-            {cats.filter((c: any) => !c.parent_id).map((c: any) => (
-              <Link
-                key={c.id}
-                href={`/${locale}/catalog?category=${c.slug}`}
-                className="card"
-                style={{
-                  padding:'24px 16px',
-                  textAlign:'center',
-                  fontWeight:600,
-                  color:'var(--color-text)',
-                  textDecoration:'none',
-                  display:'grid',
-                  gap:'12px',
-                  justifyItems:'center',
-                  borderRadius:'var(--r-md)'
-                }}
-              >
-                <div style={{ color:'var(--color-accent)' }}>
-                  {getCategoryIcon(c.slug)}
-                </div>
-                <span>{locale === 'ar' ? c.name_ar : (c.name_en || c.name_ar)}</span>
-              </Link>
-            ))}
+          <h2 className="sec-title">{t('categoriesTitle')}</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '16px' }}>
+            {cats
+              .filter((c: any) => !c.parent_id)
+              .map((c: any) => (
+                <Link
+                  key={c.id}
+                  href={`/${locale}/catalog?category=${c.slug}`}
+                  className="card"
+                  style={{
+                    padding: '24px 16px',
+                    textAlign: 'center',
+                    fontWeight: 600,
+                    color: 'var(--color-text)',
+                    textDecoration: 'none',
+                    display: 'grid',
+                    gap: '12px',
+                    justifyItems: 'center',
+                    borderRadius: 'var(--r-md)',
+                  }}
+                >
+                  <div style={{ color: 'var(--color-accent)' }}>{getCategoryIcon(c.slug)}</div>
+                  <span>{locale === 'ar' ? c.name_ar : c.name_en || c.name_ar}</span>
+                </Link>
+              ))}
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="section" style={{ paddingTop:0 }}>
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:'20px', flexWrap:'wrap', gap:'12px' }}>
-            <h2 className="sec-title" style={{ margin:0 }}>
-              {locale === 'ar' ? 'تشكيلة مختارة للمهندسين والمصانع' : 'Featured Architectural Hardware'}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'baseline',
+              marginBottom: '20px',
+              flexWrap: 'wrap',
+              gap: '12px',
+            }}
+          >
+            <h2 className="sec-title" style={{ margin: 0 }}>
+              {t('featuredTitle')}
             </h2>
-            <Link href={`/${locale}/catalog`} style={{ color:'var(--color-accent)', fontWeight:600, fontSize:'0.9rem', textDecoration:'none' }}>
-              {locale === 'ar' ? 'عرض الكتالوج كامل ←' : 'View Full Catalog →'}
+            <Link
+              href={`/${locale}/catalog`}
+              style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
+            >
+              {t('featuredLink')}
             </Link>
           </div>
           <div className="pgrid">
-            {featured.map((p: any) => <ProductCard key={p.id} p={p} />)}
+            {featured.map((p: any, idx: number) => (
+              <ProductCard key={p.id} p={p} priorityImage={idx < 4} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Best sellers */}
-      <section className="section" style={{ paddingTop:0 }}>
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:'20px', flexWrap:'wrap', gap:'12px' }}>
-            <h2 className="sec-title" style={{ margin:0 }}>
-              {locale === 'ar' ? 'الأكثر طلباً للمشاريع والمنازل' : 'Top Specified & Best Sellers'}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'baseline',
+              marginBottom: '20px',
+              flexWrap: 'wrap',
+              gap: '12px',
+            }}
+          >
+            <h2 className="sec-title" style={{ margin: 0 }}>
+              {t('bestTitle')}
             </h2>
-            <Link href={`/${locale}/catalog?sort=best`} style={{ color:'var(--color-accent)', fontWeight:600, fontSize:'0.9rem', textDecoration:'none' }}>
-              {locale === 'ar' ? 'الأعلى مبيعاً ←' : 'Top Sellers →'}
+            <Link
+              href={`/${locale}/catalog?sort=best`}
+              style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
+            >
+              {t('bestLink')}
             </Link>
           </div>
           <div className="pgrid">
-            {best.map((p: any) => <ProductCard key={p.id} p={p} />)}
+            {best.map((p: any) => (
+              <ProductCard key={p.id} p={p} />
+            ))}
           </div>
         </div>
       </section>

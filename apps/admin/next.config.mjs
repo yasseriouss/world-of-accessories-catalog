@@ -6,7 +6,13 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: { remotePatterns: [{ protocol: 'https', hostname: '*.supabase.co' }] },
+  poweredByHeader: false,
+  compress: true,
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: '*.supabase.co' }],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60 * 60 * 24 * 7
+  },
   typescript: {
     ignoreBuildErrors: true
   },

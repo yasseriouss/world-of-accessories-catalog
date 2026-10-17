@@ -17,91 +17,69 @@
     "title": "A World of Luxury & Engineering Reliability",
     "subtitle": "Egypt's leading source for furniture & kitchen accessories — direct supply for factories, workshops and interior engineers",
     "cta1": "Browse the Shop",
-    "cta2": "Request B2B Quote"
+    "cta2": "Request B2B Quote",
+    "worldsTitle": "Engineering Accessory Worlds",
+    "explore": "Explore →",
+    "featuredShop": "Featured from our shop",
+    "fullShop": "Full shop →",
+    "b2bTitle": "Continuous Supply & B2B Projects",
+    "b2bSubtitle": "Continuous supply for factories, workshops and interior engineers with official pricing, detailed quotations and volume discounts.",
+    "googleMaps": "Google Maps Location"
   },
   "trust": {
     "items": [
-      "Authenticity Guaranteed",
-      "Instant Stock Ready",
-      "Nationwide Shipping in Egypt",
+      "Authenticity & Reliability Guaranteed",
+      "Instant Stock Ready for Dispatch",
+      "Nationwide Shipping across Egypt",
       "Inspect Before Delivery"
     ]
   },
-  "product": {
-    "addToCart": "Add to Cart",
-    "orderWhats": "Order via WhatsApp",
-    "code": "Product Code",
-    "stockIn": "In Stock",
-    "stockOut": "Out of Stock",
-    "sale": "Sale",
-    "compare": "Compare",
-    "specs": "Specifications",
-    "related": "Related Products",
-    "reviews": "Reviews"
+  "b2b": {
+    "title": "Wholesale & Contract Supply Inquiry",
+    "subtitle": "Direct factory supply and wholesale procurement for furniture manufacturers and architectural projects.",
+    "company": "Company or Factory Name",
+    "companyPlaceholder": "Company or Factory Name",
+    "contact": "Contact Person",
+    "contactPlaceholder": "Full Name",
+    "phone": "Phone / WhatsApp",
+    "email": "Business Email",
+    "governorate": "Governorate & Project Location",
+    "projectType": "Project / Facility Type",
+    "taxId": "Commercial Registration / Tax ID",
+    "details": "Required Specifications & Quantities",
+    "detailsPlaceholder": "Specify items needed (hinges, drawer slides, gas struts, handles) and estimated quantities or tender link...",
+    "submit": "Send Request",
+    "submitting": "Submitting...",
+    "success": "Supply request received successfully",
+    "successDetail": "Your wholesale inquiry has been received. A project sales engineer will contact you within 4 business hours to review specifications and pricing.",
+    "returnHome": "Return Home",
+    "errorMsg": "Please verify your information and try again.",
+    "networkError": "Connection error. Please try again or reach out via WhatsApp."
   },
-  "cart": {
-    "title": "Shopping Cart",
-    "empty": "Your cart is empty",
-    "subtotal": "Subtotal",
-    "shipping": "Shipping",
-    "total": "Total",
-    "checkout": "Checkout",
-    "continue": "Continue Shopping"
-  },
-  "checkout": {
-    "title": "Checkout",
-    "name": "Full Name",
-    "phone": "Mobile Number",
-    "governorate": "Governorate",
-    "city": "City",
-    "address": "Detailed Address",
-    "payment": "Payment Method",
-    "cod": "Cash on Delivery",
-    "notes": "Notes (optional)",
-    "placeOrder": "Place Order",
-    "success": "Order received successfully"
+  "contact": {
+    "showroom": "Showroom & Headquarters",
+    "address": "Central Axis – next to El Nagda Sq. – Silla Mall, 6th of October",
+    "hours": "Daily 10:00 AM – 10:00 PM",
+    "call": "Call Now",
+    "whatsapp": "WhatsApp"
   },
   "blog": {
-    "title": "Blog",
+    "title": "Architectural Blog",
     "readMore": "Read Article",
     "minRead": "min read",
     "relatedPosts": "Related Articles",
     "share": "Share"
   },
-  "b2b": {
-    "title": "Supply Request for Factories & Projects",
-    "company": "Company Name",
-    "contact": "Contact Person",
-    "phone": "Phone Number",
-    "details": "Order & quantity details",
-    "submit": "Send Request",
-    "success": "Request received — our sales team will contact you"
-  },
-  "contact": {
-    "showroom": "Showroom & HQ",
-    "address": "Central Axis – next to El Nagda Sq. – Silla Mall, 6th of October",
-    "hours": "Daily 10 AM – 10 PM",
-    "call": "Call Now",
-    "whatsapp": "WhatsApp"
-  },
   "footer": {
     "rights": "All rights reserved",
     "links": "Quick Links",
-    "contact": "Contact"
+    "contact": "Contact Us"
   },
   "common": {
     "egp": "EGP",
     "loading": "Loading...",
-    "search": "Search products...",
-    "all": "All",
-    "from": "From",
-    "to": "To",
-    "apply": "Apply",
-    "clear": "Clear",
-    "sort": "Sort",
-    "newest": "Newest",
-    "priceAsc": "Price: Low to High",
-    "priceDesc": "Price: High to Low",
-    "bestSeller": "Best Sellers"
+    "skipToContent": "Skip to main content",
+    "menu": "Main Menu",
+    "close": "Close"
   }
 }
