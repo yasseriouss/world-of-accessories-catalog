@@ -49,26 +49,32 @@ export default async function Dashboard() {
         <section className="card" style={{ padding:'20px' }}>
           <h2 style={{ fontSize:'1.1rem', marginBottom:'14px' }}>أحدث الطلبات الجديدة</h2>
           {newOrders?.length === 0 && <p style={{ color:'var(--color-text-3)', fontSize:'.9rem' }}>لا توجد طلبات جديدة</p>}
-          <table className="admin"><thead><tr><th>رقم الطلب</th><th>العميل</th><th>الإجمالي</th><th>الحالة</th></tr></thead>
-            <tbody>{newOrders?.map((o: any) => (
-              <tr key={o.order_no}>
-                <td><a href={`/orders?q=${o.order_no}`} style={{ color:'var(--color-accent)', fontWeight:600 }}>{o.order_no}</a></td>
-                <td>{o.customer_name}</td><td className="price">{egp(o.total_egp,'ar')}</td>
-                <td><span className="chip chip-stock">{STATUS[o.status]}</span></td>
-              </tr>))}
-            </tbody></table>
+          <div className="table-responsive">
+            <table className="admin"><thead><tr><th>رقم الطلب</th><th>العميل</th><th>الإجمالي</th><th>الحالة</th></tr></thead>
+              <tbody>{newOrders?.map((o: any) => (
+                <tr key={o.order_no}>
+                  <td><a href={`/orders?q=${o.order_no}`} style={{ color:'var(--color-accent)', fontWeight:600 }}>{o.order_no}</a></td>
+                  <td>{o.customer_name}</td><td className="price">{egp(o.total_egp,'ar')}</td>
+                  <td><span className="chip chip-stock">{STATUS[o.status]}</span></td>
+                </tr>))}
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <section className="card" style={{ padding:'20px' }}>
           <h2 style={{ fontSize:'1.1rem', marginBottom:'14px' }}>الأكثر مبيعاً</h2>
-          <table className="admin"><thead><tr><th>المنتج</th><th>المبيعات</th><th>المخزون</th></tr></thead>
-            <tbody>{top?.map((p: any) => (
-              <tr key={p.code}>
-                <td>{p.name_ar}<div style={{ fontSize:'.75rem', color:'var(--color-text-3)' }}>{p.code}</div></td>
-                <td className="price">{p.sold_count}</td>
-                <td>{p.stock <= 0 ? <span className="chip chip-out">نفد</span> : p.stock}</td>
-              </tr>))}
-            </tbody></table>
+          <div className="table-responsive">
+            <table className="admin"><thead><tr><th>المنتج</th><th>المبيعات</th><th>المخزون</th></tr></thead>
+              <tbody>{top?.map((p: any) => (
+                <tr key={p.code}>
+                  <td>{p.name_ar}<div style={{ fontSize:'.75rem', color:'var(--color-text-3)' }}>{p.code}</div></td>
+                  <td className="price">{p.sold_count}</td>
+                  <td>{p.stock <= 0 ? <span className="chip chip-out">نفد</span> : p.stock}</td>
+                </tr>))}
+              </tbody>
+            </table>
+          </div>
         </section>
       </div>
     </div>
