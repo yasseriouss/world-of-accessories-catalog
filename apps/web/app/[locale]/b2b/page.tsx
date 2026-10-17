@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 
+const PROJECT_TYPES = ['factory', 'contractor', 'hotel', 'workshop'] as const;
+
 export default function B2BPage() {
   const t = useTranslations('b2b');
   const locale = useLocale();
-  const ar = locale === 'ar';
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -37,7 +38,7 @@ export default function B2BPage() {
 
   if (done) {
     return (
-      <main id="main-content" className="container section" style={{ textAlign: 'center', padding: '80px 20px', maxWidth: '640px' }}>
+      <div className="container section" style={{ textAlign: 'center', padding: '80px 20px', maxWidth: '640px' }}>
         <div style={{ fontSize: '3.5rem', color: 'var(--color-success)', marginBottom: '16px' }}>✓</div>
         <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)' }}>{t('success')}</h1>
         <p style={{ color: 'var(--color-text-2)', fontSize: '1.05rem', margin: '16px 0 24px' }}>
@@ -46,12 +47,12 @@ export default function B2BPage() {
         <a href={`/${locale}`} className="btn btn-outline" style={{ minHeight: '48px' }}>
           {t('returnHome')}
         </a>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main id="main-content" className="container section" style={{ maxWidth: '680px' }}>
+    <div className="container section" style={{ maxWidth: '680px' }}>
       <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)', margin: '0 0 12px' }}>
         {t('title')}
       </h1>
@@ -63,7 +64,7 @@ export default function B2BPage() {
         <div
           style={{
             padding: '14px 18px',
-            background: 'rgba(192, 57, 43, 0.1)',
+            background: 'var(--color-danger-soft)',
             border: '1px solid var(--color-danger)',
             borderRadius: 'var(--r-md)',
             color: 'var(--color-danger)',
@@ -116,11 +117,11 @@ export default function B2BPage() {
               className="input"
               pattern="01[0-9]{9}"
               dir="ltr"
-              placeholder="01xxxxxxxxx"
+              placeholder={t('phonePlaceholder')}
               aria-describedby="phone-hint"
             />
             <span id="phone-hint" style={{ fontSize: '0.75rem', color: 'var(--color-text-3)', display: 'block', marginTop: '4px' }}>
-              {ar ? 'رقم هاتف مصري متاح عليه واتساب' : 'Egyptian mobile number with WhatsApp'}
+              {t('phoneHint')}
             </span>
           </div>
           <div>
@@ -133,7 +134,7 @@ export default function B2BPage() {
               type="email"
               className="input"
               dir="ltr"
-              placeholder="name@company.com"
+              placeholder={t('emailPlaceholder')}
             />
           </div>
         </div>
@@ -144,10 +145,9 @@ export default function B2BPage() {
               {t('projectType')}
             </label>
             <select id="b2b-type" name="project_type" className="input">
-              <option value="factory">{ar ? 'مصنع أثاث أو مطابخ' : 'Furniture or Kitchen Factory'}</option>
-              <option value="contractor">{ar ? 'مقاولات وديكور داخلي' : 'Interior Contracting & Architecture'}</option>
-              <option value="hotel">{ar ? 'مشروع فندقي أو سكني' : 'Hospitality or Residential Project'}</option>
-              <option value="workshop">{ar ? 'ورشة نجارة وتصنيع' : 'Custom Woodworking Workshop'}</option>
+              {PROJECT_TYPES.map((type) => (
+                <option key={type} value={type}>{t(`projectTypes.${type}`)}</option>
+              ))}
             </select>
           </div>
           <div>
@@ -158,7 +158,7 @@ export default function B2BPage() {
               id="b2b-tax"
               name="tax_id"
               className="input"
-              placeholder={ar ? 'رقم السجل التجاري' : 'Registration No.'}
+              placeholder={t('taxPlaceholder')}
             />
           </div>
         </div>
@@ -185,6 +185,6 @@ export default function B2BPage() {
           {loading ? t('submitting') : t('submit')}
         </button>
       </form>
-    </main>
+    </div>
   );
 }

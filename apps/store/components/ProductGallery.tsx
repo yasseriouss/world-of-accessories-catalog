@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 interface ProductImage {
   url: string;
@@ -18,8 +18,7 @@ export default function ProductGallery({
   images?: ProductImage[];
   name: string;
 }) {
-  const locale = useLocale();
-  const ar = locale === 'ar';
+  const tg = useTranslations('gallery');
   const validImages = images && images.length > 0 ? images : [];
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
@@ -80,7 +79,7 @@ export default function ProductGallery({
             <line x1="11" y1="8" x2="11" y2="14" />
             <line x1="8" y1="11" x2="14" y2="11" />
           </svg>
-          <span>{ar ? 'تكبير' : 'Zoom'}</span>
+          <span>{tg('zoom')}</span>
         </div>
       </div>
 
@@ -138,7 +137,7 @@ export default function ProductGallery({
             position: 'fixed',
             inset: 0,
             zIndex: 9999,
-            background: 'rgba(20, 19, 17, 0.92)',
+            background: 'var(--color-scrim-strong)',
             backdropFilter: 'blur(8px)',
             display: 'flex',
             alignItems: 'center',
@@ -150,7 +149,7 @@ export default function ProductGallery({
           <button
             type="button"
             onClick={() => setZoomOpen(false)}
-            aria-label={ar ? 'إغلاق' : 'Close'}
+            aria-label={tg('close')}
             style={{
               position: 'absolute',
               top: '20px',

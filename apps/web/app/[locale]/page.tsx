@@ -1,34 +1,11 @@
 import Link from 'next/link';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { getCategories, getFeatured, getBanners } from '@/lib/queries';
+import { getCategories, getFeatured } from '@/lib/queries';
+import { egp } from '@/lib/format';
+import { SITE, storeHref } from '@/lib/site';
 
 export const revalidate = 300;
 
-const WORLDS_DESC: Record<string, { ar: string; en: string }> = {
-  kitchen: {
-    ar: 'مفصلات هيدروليك سوفت كلوز 3D، سكك تاندم مخفية، ترولي زيت، وسلات تخزين ستانلس.',
-    en: 'Soft-close 3D hinges, hidden tandem rails, oil trolleys and stainless storage baskets.',
-  },
-  dressing: {
-    ar: 'مواسير تعليق ألومنيوم، مفصلات ألومنيوم وزجاج، ومنظمات لأحدث صيحات غرف الملابس.',
-    en: 'Aluminium hanging rails, aluminium & glass hinges, organizers for modern closets.',
-  },
-  handles: {
-    ar: 'مقابض مودرن وكلاسيك بمقاسات متعددة: ذهبي مطفي، أسود غير لامع، وستانلس.',
-    en: 'Modern & classic handles in matte gold, matte black and fingerprint-free stainless.',
-  },
-  mechanisms: {
-    ar: 'بساتم غاز هيدروليك، Push-to-Open، وسكك حمولة ثقيلة حتى 45 كجم.',
-    en: 'Gas struts, push-to-open systems and heavy-duty rails up to 45kg.',
-  },
-};
-
-const STATS = [
-  { n: '590+', ar: 'منتج جاهز للتسليم الفوري', en: 'products ready to ship' },
-  { n: '80,000', ar: 'دورة اختبار للبساتم الهيدروليك', en: 'hydraulic cycles tested' },
-  { n: '27', ar: 'محافظة نغطيها بالشحن', en: 'governorates covered' },
-  { n: '10', ar: 'ساعات يومياً — معرض 6 أكتوبر', en: 'hours daily — 6 October showroom' },
-];
 
 const TRUST_ICONS = [
   <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
@@ -43,6 +20,8 @@ export default async function Home({ params: { locale } }: any) {
   const tt = await getTranslations({ locale, namespace: 'trust' });
   const nav = await getTranslations({ locale, namespace: 'nav' });
   const tc = await getTranslations({ locale, namespace: 'contact' });
+  const th = await getTranslations({ locale, namespace: 'home' });
+  const stats = th.raw('stats') as { n: string; label: string }[];
   const ar = locale === 'ar';
   const [cats, featured] = await Promise.all([getCategories(), getFeatured(4)]);
 
@@ -52,18 +31,18 @@ export default async function Home({ params: { locale } }: any) {
       <section className="hero">
         <div className="container">
           <div className="eyebrow" style={{ color: 'var(--brand-gold-soft)' }}>
-            WOA • {new Date().getFullYear()}
+            {th('heroEyebrow', { year: new Date().getFullYear() })}
           </div>
           <h1>{t('title')}</h1>
           <p>{t('subtitle')}</p>
           <div style={{ display: 'flex', gap: '14px', marginTop: '32px', flexWrap: 'wrap' }}>
-            <Link href="https://woa-market.vercel.app/ar" className="btn btn-primary btn-lg">
+            <Link href={storeHref(locale)} className="btn btn-primary btn-lg">
               {t('cta1')}
             </Link>
             <Link
               href={`/${locale}/b2b`}
               className="btn btn-outline btn-lg"
-              style={{ color: 'var(--brand-paper)', borderColor: 'var(--color-accent)' }}
+              style={{ color: 'var(--color-inverse-text)', borderColor: 'var(--color-accent)' }}
             >
               {t('cta2')}
             </Link>
@@ -88,17 +67,17 @@ export default async function Home({ params: { locale } }: any) {
       {/* ===== Worlds ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="eyebrow">Worlds</div>
+          <div className="eyebrow">{th('worldsEyebrow')}</div>
           <h2 className="sec-title">{t('worldsTitle')}</h2>
           <div className="world" style={{ marginTop: '28px' }}>
             {cats
               .filter((c: any) => !c.parent_id)
               .map((c: any) => {
-                const d = WORLDS_DESC[c.slug];
+                const descKey = `worlds.${c.slug}`;
                 return (
                   <Link key={c.id} href={`/${locale}/world/${c.slug}`} className="world-card">
                     <h3>{ar ? c.name_ar : c.name_en ?? c.name_ar}</h3>
-                    <p>{d ? (ar ? d.ar : d.en) : ''}</p>
+                    <p>{th.has(descKey) ? th(descKey) : ''}</p>
                     <span className="cta">{t('explore')}</span>
                   </Link>
                 );
@@ -123,7 +102,7 @@ export default async function Home({ params: { locale } }: any) {
               <h2 className="sec-title" style={{ margin: 0 }}>
                 {t('featuredShop')}
               </h2>
-              <Link href="https://woa-market.vercel.app/ar" style={{ color: 'var(--color-accent)', fontWeight: 700 }}>
+              <Link href={storeHref(locale)} style={{ color: 'var(--color-accent-text)', fontWeight: 700 }}>
                 {t('fullShop')}
               </Link>
             </div>
@@ -131,14 +110,14 @@ export default async function Home({ params: { locale } }: any) {
               {featured.map((p: any) => (
                 <a
                   key={p.id}
-                  href={`https://woa-market.vercel.app/${locale}/product/${p.slug}`}
+                  href={storeHref(locale, `/product/${p.slug}`)}
                   className="card"
                   style={{ padding: '20px', textDecoration: 'none', display: 'grid', gap: '8px' }}
                 >
                   <div style={{ fontSize: '.75rem', color: 'var(--color-text-3)' }}>{p.code}</div>
                   <div style={{ fontWeight: 600 }}>{ar ? p.name_ar : p.name_en ?? p.name_ar}</div>
-                  <div className="price" style={{ color: 'var(--color-accent)' }}>
-                    {p.sale_price ?? p.price_egp} {ar ? 'ج.م' : 'EGP'}
+                  <div className="price" style={{ color: 'var(--color-accent-text)' }}>
+                    {egp(p.sale_price ?? p.price_egp, locale)}
                   </div>
                 </a>
               ))}
@@ -158,20 +137,20 @@ export default async function Home({ params: { locale } }: any) {
               textAlign: 'center',
             }}
           >
-            {STATS.map((s) => (
+            {stats.map((s) => (
               <div key={s.n} className="card" style={{ padding: '28px 16px' }}>
                 <div
                   style={{
                     fontSize: '2.2rem',
                     fontWeight: 800,
-                    color: 'var(--color-accent)',
+                    color: 'var(--color-accent-text)',
                     fontVariantNumeric: 'tabular-nums',
                   }}
                 >
                   {s.n}
                 </div>
                 <div style={{ fontSize: '.9rem', color: 'var(--color-text-2)', marginTop: '6px' }}>
-                  {ar ? s.ar : s.en}
+                  {s.label}
                 </div>
               </div>
             ))}
@@ -184,8 +163,8 @@ export default async function Home({ params: { locale } }: any) {
         <div className="container">
           <div
             style={{
-              background: 'var(--color-text)',
-              color: 'var(--color-bg)',
+              background: 'var(--color-inverse-bg)',
+              color: 'var(--color-inverse-text)',
               borderRadius: 'var(--r-lg)',
               padding: 'clamp(32px,6vw,64px)',
               display: 'grid',
@@ -196,7 +175,7 @@ export default async function Home({ params: { locale } }: any) {
           >
             <div>
               <h2 style={{ fontSize: 'var(--fs-h2)', marginBottom: '12px' }}>{t('b2bTitle')}</h2>
-              <p style={{ color: 'var(--color-text-3)', lineHeight: 1.9 }}>{t('b2bSubtitle')}</p>
+              <p style={{ color: 'var(--color-inverse-text-2)', lineHeight: 1.9 }}>{t('b2bSubtitle')}</p>
             </div>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <Link href={`/${locale}/b2b`} className="btn btn-primary btn-lg">
@@ -210,21 +189,21 @@ export default async function Home({ params: { locale } }: any) {
       {/* ===== Showroom ===== */}
       <section className="section" id="contact" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="eyebrow">Showroom</div>
+          <div className="eyebrow">{th('showroomEyebrow')}</div>
           <h2 className="sec-title">{tc('showroom')}</h2>
           <p style={{ color: 'var(--color-text-2)', maxWidth: '520px' }}>{tc('address')}</p>
           <p style={{ color: 'var(--color-text-3)', fontSize: '.9rem', marginTop: '8px' }}>{tc('hours')}</p>
           <div style={{ display: 'flex', gap: '12px', marginTop: '20px', flexWrap: 'wrap' }}>
             <a
-              href="https://maps.google.com/?q=Silla+Mall+6th+October"
+              href={SITE.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline"
             >
               {t('googleMaps')}
             </a>
-            <a href="tel:+201140030036" className="btn btn-dark" dir="ltr">
-              0114 003 0036
+            <a href={`tel:${SITE.phoneE164}`} className="btn btn-dark" dir="ltr">
+              {SITE.phoneDisplay}
             </a>
           </div>
         </div>

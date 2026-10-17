@@ -13,18 +13,18 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <main id="main-content" className="container section" style={{ textAlign: 'center', padding: '80px 20px' }}>
+      <div className="container section" style={{ textAlign: 'center', padding: '80px 20px' }}>
         <h1 className="sec-title" style={{ fontSize: 'var(--fs-h2)', margin: '0 0 12px' }}>{t('title')}</h1>
         <p style={{ fontSize: '1.1rem', color: 'var(--color-text-2)', margin: '0 0 24px' }}>{t('empty')}</p>
         <Link href={`/${locale}/catalog`} className="btn btn-primary" style={{ minHeight: '48px' }}>
           {t('continue')}
         </Link>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main id="main-content" className="container section">
+    <div className="container section">
       <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)', margin: '0 0 24px' }}>
         {t('title')} ({items.reduce((s, i) => s + i.qty, 0)})
       </h1>
@@ -147,6 +147,6 @@ export default function CartPage() {
           </Link>
         </aside>
       </div>
-    </main>
+    </div>
   );
 }

@@ -45,7 +45,12 @@
     "reviews": "Reviews",
     "added": "✓ Added",
     "new": "New",
-    "bestSeller": "Best Seller"
+    "bestSeller": "Best Seller",
+    "wishlistAdd": "Add to wishlist",
+    "wishlistRemove": "Remove from wishlist",
+    "whatsappInquiry": "I'd like to ask about product {code} - {name}",
+    "whatsappOrder": "Product order: {code} - {name}",
+    "whatsappOrderPriced": "Order: {code} - {name} | {price}"
   },
   "specs": {
     "brand": "Brand",
@@ -119,7 +124,8 @@
     "couponError": "Could not validate coupon at this time",
     "subtotal": "Subtotal",
     "couponDiscount": "Coupon Discount ({code})",
-    "confirmTotal": "Confirm Order — {total}"
+    "confirmTotal": "Confirm Order — {total}",
+    "phonePlaceholder": "01xxxxxxxxx"
   },
   "governorates": {
     "cairo": "Cairo",
@@ -163,7 +169,13 @@
     "submitting": "Submitting...",
     "success": "Thank you! Your review has been added.",
     "errorName": "Please enter your name (at least 2 letters)",
-    "errorGeneric": "Failed to submit review"
+    "errorGeneric": "Failed to submit review",
+    "reviewFor": "Review: {name}",
+    "stars": "{count, plural, one {# star} other {# stars}}",
+    "phoneFormat": "01xxxxxxxxx",
+    "emptyTitle": "No reviews yet for this product.",
+    "emptyText": "Be the first to share your experience!",
+    "anonymousInitial": "W"
   },
   "blog": {
     "title": "Architectural Blog",
@@ -186,7 +198,8 @@
     "address": "Central Axis – next to El Nagda Sq. – Silla Mall, 6th of October",
     "hours": "Daily 10:00 AM – 10:00 PM",
     "call": "Call Now",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "whatsappGreeting": "Hello, I have a question"
   },
   "footer": {
     "rights": "All rights reserved",
@@ -209,6 +222,99 @@
     "bestSeller": "Best Sellers",
     "skipToContent": "Skip to main content",
     "menu": "Main Menu",
+    "close": "Close",
+    "switchLanguage": "التحويل إلى العربية",
+    "switchLanguageShort": "ع",
+    "switchLanguageLong": "العربية",
+    "listSeparator": ", ",
+    "pagination": "Pagination",
+    "scrollTop": "Back to top",
+    "offers": "Offers",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode",
+    "total": "Total"
+  },
+  "meta": {
+    "title": "WOA Hardware | Furniture & Kitchen Accessories Store",
+    "titleTemplate": "%s | WOA Hardware",
+    "description": "Shop kitchen and dressing hardware: hydraulic hinges, tandem slides and premium handles. Shipping to every governorate in Egypt.",
+    "ogLocale": "en_US",
+    "siteName": "WOA Hardware"
+  },
+  "seo": {
+    "businessName": "WOA Accessories | عالم الاكسسوار",
+    "street": "Central Axis, next to El Nagda Sq., Silla Mall",
+    "locality": "6th of October",
+    "region": "Giza"
+  },
+  "brand": {
+    "first": "WOA",
+    "accent": "Hardware",
+    "name": "WOA Hardware",
+    "short": "WOA"
+  },
+  "notFound": {
+    "message": "This page or product could not be found",
+    "back": "Back to the store"
+  },
+  "compare": {
+    "empty": "No products in your comparison list yet.",
+    "browse": "Browse Catalog",
+    "clear": "Clear All",
+    "remove": "Remove from comparison",
+    "price": "Price"
+  },
+  "account": {
+    "title": "My Account — Track Order",
+    "phone": "Mobile number",
+    "orderNo": "Order number (WOA-...)",
+    "track": "Track",
+    "total": "Total",
+    "status": {
+      "new": "New",
+      "confirmed": "Confirmed",
+      "packed": "Being prepared",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    }
+  },
+  "errors": {
+    "coupon_required": "Please enter a coupon code",
+    "coupon_invalid": "Invalid or expired coupon code",
+    "coupon_not_started": "This coupon is not active yet",
+    "coupon_expired": "This coupon has expired",
+    "coupon_exhausted": "This coupon has reached its usage limit",
+    "coupon_min_order": "This coupon requires a minimum order of {min} EGP",
+    "coupon_failed": "Could not validate the coupon right now",
+    "products_unavailable": "Some products are no longer available",
+    "stock_insufficient": "The requested quantity of {name} is not available ({stock} left)",
+    "invalid_phone": "Invalid Egyptian mobile number",
+    "invalid_order": "Order details are invalid, please review the form",
+    "order_lookup_required": "Please enter your mobile number and order number",
+    "order_not_found": "No order matches these details",
+    "review_invalid_product": "Invalid product",
+    "review_invalid_name": "Please enter your name (at least 2 letters)",
+    "review_invalid_rating": "Rating must be between 1 and 5 stars",
+    "review_product_not_found": "Product not found",
+    "review_save_failed": "Could not save your review",
+    "generic": "Something went wrong, please try again"
+  },
+  "staffNotify": {
+    "newOrder": "🛒 New order {orderNo}",
+    "total": "Total: {total} EGP ({payment})",
+    "couponDiscount": "Coupon discount: {discount} EGP"
+  },
+  "wishlist": {
+    "title": "My Wishlist",
+    "subtitle": "Products you have saved for later ({count})",
+    "emptyTitle": "Your wishlist is empty",
+    "emptyText": "Explore our kitchen and furniture accessories and tap the heart icon to save items you like.",
+    "browse": "Browse Catalog",
+    "remove": "Remove from wishlist"
+  },
+  "gallery": {
+    "zoom": "Zoom",
     "close": "Close"
   }
 }

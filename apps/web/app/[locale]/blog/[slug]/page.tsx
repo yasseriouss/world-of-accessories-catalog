@@ -2,7 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { whatsappLink } from '@/lib/format';
+import { getTranslations } from 'next-intl/server';
+import { egp, intlLocale, whatsappLink } from '@/lib/format';
+import { SITE, storeHref } from '@/lib/site';
 
 export const revalidate = 300;
 export const dynamicParams = true;
@@ -25,6 +27,7 @@ export default async function BlogPost({ params }: any) {
   const locale = params.locale;
   const title = ar ? p.title_ar : p.title_en ?? p.title_ar;
   const content = ar ? p.content_ar : p.content_en ?? p.content_ar;
+  const t = await getTranslations({ locale, namespace: 'blog' });
 
   // FAQ sections → FAQPage schema (SEO rich results)
   const { data: faqs } = await supabase.from('post_sections')
@@ -44,7 +47,7 @@ export default async function BlogPost({ params }: any) {
     ? await supabase.from('products').select('slug,code,name_ar,name_en,price_egp,sale_price')
         .in('id', relatedIds).eq('is_active', true) : { data: [] };
   const { data: relatedPosts } = await supabase.from('posts')
-    .select('slug,title_ar,cover_url').eq('status', 'published')
+    .select('slug,title_ar,title_en,cover_url').eq('status', 'published')
     .eq('category_slug', p.category_slug).neq('slug', p.slug).limit(3);
 
   return (
@@ -52,7 +55,7 @@ export default async function BlogPost({ params }: any) {
       {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
 
       <nav style={{ fontSize:'.8rem', color:'var(--color-text-3)', marginBottom:'24px' }}>
-        <Link href={`/${locale}/blog`} style={{ color:'inherit' }}>{ar ? 'المدونة' : 'Blog'}</Link> / <span>{title}</span>
+        <Link href={`/${locale}/blog`} style={{ color:'inherit' }}>{t('title')}</Link> / <span>{title}</span>
       </nav>
 
       <h1 style={{ fontSize:'var(--fs-h1)', lineHeight:1.35 }}>{title}</h1>
@@ -60,7 +63,7 @@ export default async function BlogPost({ params }: any) {
         {p.authors?.avatar_url && <Image src={p.authors.avatar_url} alt="" width={36} height={36} style={{ borderRadius:'50%' }} />}
         <span>{p.authors?.name_ar}</span>
         <span>•</span>
-        <time dateTime={p.published_at}>{new Date(p.published_at).toLocaleDateString(ar ? 'ar-EG' : 'en-EG')}</time>
+        <time dateTime={p.published_at}>{new Date(p.published_at).toLocaleDateString(intlLocale(locale))}</time>
       </div>
 
       {p.cover_url && (
@@ -74,7 +77,7 @@ export default async function BlogPost({ params }: any) {
       {/* FAQ render */}
       {faqItems.length > 0 && (
         <section style={{ maxWidth:'760px', margin:'48px auto 0' }}>
-          <h2 style={{ fontSize:'var(--fs-h2)' }}>{ar ? 'أسئلة شائعة' : 'FAQ'}</h2>
+          <h2 style={{ fontSize:'var(--fs-h2)' }}>{t('faq')}</h2>
           {faqItems.map((f: any, i: number) => (
             <details key={i} style={{ borderBottom:'1px solid var(--color-line)', padding:'16px 0' }}>
               <summary style={{ fontWeight:600, cursor:'pointer' }}>{f.q}</summary>
@@ -87,10 +90,10 @@ export default async function BlogPost({ params }: any) {
       {/* Cross-sell: products inside article */}
       {relatedProducts && relatedProducts.length > 0 && (
         <section style={{ maxWidth:'760px', margin:'56px auto 0' }}>
-          <h2 style={{ fontSize:'var(--fs-h2)' }}>{ar ? 'منتجات المقال' : 'Products in this article'}</h2>
+          <h2 style={{ fontSize:'var(--fs-h2)' }}>{t('productsInArticle')}</h2>
           <div style={{ display:'grid', gap:'12px' }}>
             {relatedProducts.map((rp: any) => (
-              <a key={rp.id} href={`https://woa-market.vercel.app/${locale}/product/${rp.slug}`}
+              <a key={rp.slug} href={storeHref(locale, `/product/${rp.slug}`)}
                 style={{ display:'flex', justifyContent:'space-between', alignItems:'center', gap:'16px',
                   padding:'16px 20px', border:'1px solid var(--color-line)', borderRadius:'var(--r-lg)',
                   textDecoration:'none', background:'var(--color-bg-elev)' }}>
@@ -98,8 +101,8 @@ export default async function BlogPost({ params }: any) {
                   <div style={{ fontWeight:600 }}>{ar ? rp.name_ar : rp.name_en ?? rp.name_ar}</div>
                   <div style={{ fontSize:'.78rem', color:'var(--color-text-3)' }}>{rp.code}</div>
                 </div>
-                <span className="price" style={{ color:'var(--color-accent)', whiteSpace:'nowrap' }}>
-                  {rp.sale_price ?? rp.price_egp} {ar ? 'ج.م' : 'EGP'}</span>
+                <span className="price" style={{ color: 'var(--color-accent-text)', whiteSpace:'nowrap' }}>
+                  {egp(rp.sale_price ?? rp.price_egp, locale)}</span>
               </a>
             ))}
           </div>
@@ -109,12 +112,12 @@ export default async function BlogPost({ params }: any) {
       {/* Related posts */}
       {relatedPosts && relatedPosts.length > 0 && (
         <section style={{ marginTop:'56px' }}>
-          <h2 className="sec-title">{ar ? 'مقالات ذات صلة' : 'Related posts'}</h2>
+          <h2 className="sec-title">{t('relatedPosts')}</h2>
           <div className="posts-grid">
             {relatedPosts.map((rp: any) => (
               <Link key={rp.slug} href={`/${locale}/blog/${rp.slug}`} className="card post-card">
                 <div style={{ padding:'18px' }}>
-                  <h3 style={{ fontSize:'1rem' }}>{rp.title_ar}</h3>
+                  <h3 style={{ fontSize:'1rem' }}>{ar ? rp.title_ar : rp.title_en ?? rp.title_ar}</h3>
                 </div>
               </Link>
             ))}
@@ -124,11 +127,11 @@ export default async function BlogPost({ params }: any) {
 
       {/* WhatsApp CTA */}
       <div style={{ maxWidth:'760px', margin:'56px auto 0', textAlign:'center',
-        background:'var(--color-text)', color:'var(--color-bg)', borderRadius:'var(--r-lg)', padding:'40px 24px' }}>
-        <h2 style={{ fontSize:'1.4rem', marginBottom:'8px' }}>{ar ? 'محتاج مساعدة في الاختيار؟' : 'Need help choosing?'}</h2>
-        <p style={{ color:'#B9B2A0', marginBottom:'20px' }}>{ar ? 'فريقنا الهندسي يرد على استفساراتك يومياً' : 'Our team replies daily'}</p>
-        <a href={whatsappLink('01140030036', `استفسار بعد قراءة مقال: ${title}`)} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
-          {ar ? 'تواصل واتساب' : 'WhatsApp us'}</a>
+        background:'var(--color-inverse-bg)', color:'var(--color-inverse-text)', borderRadius:'var(--r-lg)', padding:'40px 24px' }}>
+        <h2 style={{ fontSize:'1.4rem', marginBottom:'8px' }}>{t('helpTitle')}</h2>
+        <p style={{ color:'var(--color-inverse-text-2)', marginBottom:'20px' }}>{t('helpText')}</p>
+        <a href={whatsappLink(SITE.whatsapp, t('whatsappInquiry', { title }))} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+          {t('whatsappCta')}</a>
       </div>
     </article>
   );

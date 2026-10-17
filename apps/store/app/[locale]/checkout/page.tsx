@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useCart } from '@/lib/store-context';
 import { egp } from '@/lib/format';
+import { apiErrorText } from '@/lib/api-errors';
 
 const GOVERNORATE_KEYS = [
   'cairo', 'giza', 'alexandria', 'qalyubia', 'dakahlia', 'sharqia', 'gharbia',
@@ -19,6 +20,7 @@ export default function CheckoutPage() {
   const t = useTranslations('checkout');
   const tGov = useTranslations('governorates');
   const tc = useTranslations('common');
+  const tErr = useTranslations('errors');
 
   const [done, setDone] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,7 @@ export default function CheckoutPage() {
 
   if (done) {
     return (
-      <main id="main-content" className="container section" style={{ textAlign: 'center', padding: '80px 20px', maxWidth: '600px' }}>
+      <div className="container section" style={{ textAlign: 'center', padding: '80px 20px', maxWidth: '600px' }}>
         <div style={{ fontSize: '3.5rem', color: 'var(--color-success)', marginBottom: '16px' }}>✓</div>
         <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)' }}>{t('success')}</h1>
         <div
@@ -51,7 +53,7 @@ export default function CheckoutPage() {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span style={{ color: 'var(--color-text-3)' }}>{t('orderNo')}</span>
-            <strong style={{ color: 'var(--color-accent)' }}>{done}</strong>
+            <strong style={{ color: 'var(--color-accent-text)' }}>{done}</strong>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span style={{ color: 'var(--color-text-3)' }}>{t('estimatedDelivery')}</span>
@@ -70,18 +72,18 @@ export default function CheckoutPage() {
             {t('continueShopping')}
           </Link>
         </div>
-      </main>
+      </div>
     );
   }
 
   if (items.length === 0) {
     return (
-      <main id="main-content" className="container section" style={{ textAlign: 'center', padding: '80px 20px' }}>
+      <div className="container section" style={{ textAlign: 'center', padding: '80px 20px' }}>
         <h1 className="sec-title" style={{ fontSize: 'var(--fs-h2)', margin: '0 0 16px' }}>{t('emptyCart')}</h1>
         <Link href={`/${locale}/catalog`} className="btn btn-primary" style={{ minHeight: '48px' }}>
           {t('browseCatalog')}
         </Link>
-      </main>
+      </div>
     );
   }
 
@@ -97,11 +99,11 @@ export default function CheckoutPage() {
         body: JSON.stringify({ code: couponCode, subtotal }),
       });
       const json = await res.json();
-      if (json.valid) {
-        setAppliedCoupon({ code: couponCode, discount: json.discount });
+      if (json.ok) {
+        setAppliedCoupon({ code: json.data.code, discount: json.data.discount });
         setCouponError(null);
       } else {
-        setCouponError(json.error || t('couponInvalid'));
+        setCouponError(apiErrorText(tErr, json, 'coupon_invalid'));
         setAppliedCoupon(null);
       }
     } catch {
@@ -137,27 +139,27 @@ export default function CheckoutPage() {
       });
       const data = await res.json();
       setLoading(false);
-      if (data.order_no) {
+      if (data.ok) {
         clear();
-        setDone(data.order_no);
+        setDone(data.data.order_no);
       } else {
-        setSubmitError(data.error || t('couponError'));
+        setSubmitError(apiErrorText(tErr, data));
       }
     } catch {
       setLoading(false);
-      setSubmitError(t('couponError'));
+      setSubmitError(tErr('generic'));
     }
   }
 
   return (
-    <main id="main-content" className="container section" style={{ maxWidth: '640px' }}>
+    <div className="container section" style={{ maxWidth: '640px' }}>
       <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)', margin: '0 0 12px' }}>{t('title')}</h1>
 
       {submitError && (
         <div
           role="alert"
           style={{
-            background: 'rgba(192, 57, 43, 0.1)',
+            background: 'var(--color-danger-soft)',
             border: '1.5px solid var(--color-danger)',
             color: 'var(--color-danger)',
             padding: '14px 18px',
@@ -179,7 +181,7 @@ export default function CheckoutPage() {
 
         <div>
           <label htmlFor="chk-phone" className="lbl">{t('phone')} *</label>
-          <input id="chk-phone" name="phone" required className="input" pattern="01[0-9]{9}" dir="ltr" placeholder="01xxxxxxxxx" />
+          <input id="chk-phone" name="phone" required className="input" pattern="01[0-9]{9}" dir="ltr" placeholder={t('phonePlaceholder')} />
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
@@ -297,7 +299,7 @@ export default function CheckoutPage() {
             }}
           >
             <span>{tc('total')}</span>
-            <span className="price" style={{ fontSize: '1.35rem', color: 'var(--color-accent)' }}>
+            <span className="price" style={{ fontSize: '1.35rem', color: 'var(--color-accent-text)' }}>
               {egp(finalTotal, locale)}
             </span>
           </div>
@@ -311,6 +313,6 @@ export default function CheckoutPage() {
           {loading ? t('submitting') : t('confirmTotal', { total: egp(finalTotal, locale) })}
         </button>
       </form>
-    </main>
+    </div>
   );
 }

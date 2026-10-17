@@ -214,7 +214,7 @@ export default async function Catalog({ params: { locale }, searchParams }: any)
           {pages > 1 && (
             <nav
               style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '36px', flexWrap: 'wrap' }}
-              aria-label="pagination"
+              aria-label={tc('pagination')}
             >
               {Array.from({ length: pages }, (_, i) => {
                 const p = i + 1;

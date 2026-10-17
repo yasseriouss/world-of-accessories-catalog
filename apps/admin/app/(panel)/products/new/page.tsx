@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 import ImageUploader, { UploadedImage } from '@/components/ImageUploader';
+import { t } from '@/lib/i18n';
 
 interface Category {
   id: string;
@@ -62,7 +63,7 @@ export default function NewProductPage() {
       is_featured: fd.get('featured') === 'on',
       images: formattedImages,
       is_active: true,
-      seo_title_ar: `${nameAr} | عالم الإكسسوارات`,
+      seo_title_ar: t('productNew.seoTitle', { name: nameAr }),
       seo_desc_ar: (fd.get('desc_ar') as string)?.trim()?.slice(0, 160) || null,
     });
 
@@ -70,16 +71,16 @@ export default function NewProductPage() {
     if (!error) {
       router.push('/products');
     } else {
-      alert(`خطأ أثناء الحفظ: ${error.message}`);
+      alert(t('productNew.saveError', { message: error.message }));
     }
   }
 
   return (
     <div style={{ maxWidth: '800px', display: 'grid', gap: '24px' }}>
       <div>
-        <h1 style={{ fontSize: '1.6rem', fontWeight: 700 }}>منتج جديد</h1>
+        <h1 style={{ fontSize: '1.6rem', fontWeight: 700 }}>{t('productNew.title')}</h1>
         <p style={{ color: 'var(--color-text-3)', fontSize: '.9rem', marginTop: '4px' }}>
-          إضافة منتج جديد لكتالوج متجر عالم الإكسسوارات مع رفع الصور وربط الأقسام.
+          {t('productNew.subtitle')}
         </p>
       </div>
 
@@ -87,13 +88,13 @@ export default function NewProductPage() {
         {/* Core Identifiers */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
-            <label className="lbl">كود المعرض (SKU) *</label>
-            <input name="code" required className="input" placeholder="WOA-1042" dir="ltr" />
+            <label className="lbl">{t('productNew.code')}</label>
+            <input name="code" required className="input" placeholder={t('productNew.codePlaceholder')} dir="ltr" />
           </div>
           <div>
-            <label className="lbl">القسم *</label>
+            <label className="lbl">{t('productNew.category')}</label>
             <select name="category_id" required className="input">
-              <option value="">اختر القسم...</option>
+              <option value="">{t('productNew.categoryPlaceholder')}</option>
               {categories.map((cat) => (
                 <option key={cat.id} value={cat.id}>
                   {cat.name_ar}
@@ -106,33 +107,33 @@ export default function NewProductPage() {
         {/* Names */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
-            <label className="lbl">الاسم بالعربية *</label>
-            <input name="name_ar" required className="input" placeholder="مفصلة سوفت كلوز 3D" />
+            <label className="lbl">{t('productNew.nameAr')}</label>
+            <input name="name_ar" required className="input" placeholder={t('productNew.nameArPlaceholder')} />
           </div>
           <div>
-            <label className="lbl">الاسم بالإنجليزية</label>
-            <input name="name_en" className="input" placeholder="Soft-close 3D Hinge" dir="ltr" />
+            <label className="lbl">{t('productNew.nameEn')}</label>
+            <input name="name_en" className="input" placeholder={t('productNew.nameEnPlaceholder')} dir="ltr" />
           </div>
         </div>
 
         {/* Descriptions */}
         <div>
-          <label className="lbl">الوصف بالعربية</label>
-          <textarea name="desc_ar" className="input" rows={3} placeholder="وصف تفصيلي ومواصفات المنتج..." />
+          <label className="lbl">{t('productNew.descAr')}</label>
+          <textarea name="desc_ar" className="input" rows={3} placeholder={t('productNew.descPlaceholder')} />
         </div>
 
         {/* Pricing & Inventory */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
           <div>
-            <label className="lbl">السعر (ج.م) *</label>
+            <label className="lbl">{t('productNew.price')}</label>
             <input name="price" type="number" step="0.5" min="0" required className="input" placeholder="0.00" />
           </div>
           <div>
-            <label className="lbl">سعر الخصم (ج.م)</label>
-            <input name="sale" type="number" step="0.5" min="0" className="input" placeholder="اختياري" />
+            <label className="lbl">{t('productNew.salePrice')}</label>
+            <input name="sale" type="number" step="0.5" min="0" className="input" placeholder={t('common.optional')} />
           </div>
           <div>
-            <label className="lbl">المخزون المتوفر *</label>
+            <label className="lbl">{t('productNew.stock')}</label>
             <input name="stock" type="number" min="0" required defaultValue={10} className="input" />
           </div>
         </div>
@@ -140,11 +141,11 @@ export default function NewProductPage() {
         {/* Attributes */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
-            <label className="lbl">الخامة / المادة</label>
-            <input name="material" className="input" placeholder="ستانلس ستيل 304، ألومنيوم..." />
+            <label className="lbl">{t('productNew.material')}</label>
+            <input name="material" className="input" placeholder={t('productNew.materialPlaceholder')} />
           </div>
           <div>
-            <label className="lbl">العلامة التجارية</label>
+            <label className="lbl">{t('productNew.brand')}</label>
             <input name="brand" className="input" defaultValue="World of Accessories" />
           </div>
         </div>
@@ -162,7 +163,7 @@ export default function NewProductPage() {
         <label style={{ display: 'flex', gap: '8px', alignItems: 'center', cursor: 'pointer' }}>
           <input type="checkbox" name="featured" style={{ width: '18px', height: '18px' }} />
           <span style={{ fontSize: '.95rem', fontWeight: 500 }}>
-            منتج مميز (يظهر في واجهة المتجر الرئيسية وقسم المنتجات المختارة)
+            {t('productNew.featured')}
           </span>
         </label>
 
@@ -174,10 +175,10 @@ export default function NewProductPage() {
             className="btn"
             style={{ border: '1px solid var(--color-line)' }}
           >
-            إلغاء
+            {t('common.cancel')}
           </button>
           <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>
-            {loading ? 'جاري الحفظ والرفع...' : 'حفظ المنتج'}
+            {loading ? t('productNew.saving') : t('productNew.save')}
           </button>
         </div>
       </form>

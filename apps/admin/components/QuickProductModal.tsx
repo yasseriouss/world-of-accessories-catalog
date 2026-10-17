@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabaseBrowser } from '@/lib/supabase-client';
+import { t } from '@/lib/i18n';
 
 export interface ProductItem {
   id: string;
@@ -77,23 +78,23 @@ export default function QuickProductModal({
     if (!product) return;
 
     if (!nameAr.trim()) {
-      setErrorMsg('يرجى إدخال اسم المنتج بالعربية');
+      setErrorMsg(t('quickEdit.errors.name'));
       return;
     }
     if (!code.trim()) {
-      setErrorMsg('يرجى إدخال كود المنتج (SKU)');
+      setErrorMsg(t('quickEdit.errors.code'));
       return;
     }
     if (numPrice <= 0) {
-      setErrorMsg('السعر يجب أن يكون أكبر من صفر');
+      setErrorMsg(t('quickEdit.errors.price'));
       return;
     }
     if (numSale > 0 && numSale >= numPrice) {
-      setErrorMsg('سعر الخصم يجب أن يكون أقل من السعر الأساسي');
+      setErrorMsg(t('quickEdit.errors.sale'));
       return;
     }
     if (stock < 0) {
-      setErrorMsg('المخزون لا يمكن أن يكون سالباً');
+      setErrorMsg(t('quickEdit.errors.stock'));
       return;
     }
 
@@ -128,7 +129,7 @@ export default function QuickProductModal({
       onSaved(updated);
       onClose();
     } catch (err: any) {
-      setErrorMsg(err.message || 'حدث خطأ أثناء حفظ التعديلات');
+      setErrorMsg(err.message || t('quickEdit.errors.save'));
     } finally {
       setSaving(false);
     }
@@ -149,17 +150,17 @@ export default function QuickProductModal({
         <div className="modal-header">
           <div>
             <h2 id="modal-title" style={{ fontSize: '1.15rem', fontWeight: 700, margin: 0 }}>
-              تعديل سريع: <span style={{ color: 'var(--color-accent)' }}>{product.name_ar}</span>
+              {t('quickEdit.title')} <span style={{ color: 'var(--color-accent-text)' }}>{product.name_ar}</span>
             </h2>
             <div style={{ fontSize: '.78rem', color: 'var(--color-text-3)', marginTop: 2 }}>
-              كود المنتج: {product.code}
+              {t('quickEdit.codeLabel', { code: product.code })}
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
             className="btn btn-ghost btn-sm"
-            aria-label="إغلاق النافذة"
+            aria-label={t('quickEdit.close')}
             style={{ width: '44px', height: '44px', padding: 0, fontSize: '1.2rem' }}
           >
             ✕
@@ -173,7 +174,7 @@ export default function QuickProductModal({
               <div
                 role="alert"
                 style={{
-                  background: 'rgba(192, 57, 43, 0.1)',
+                  background: 'var(--color-danger-soft)',
                   border: '1px solid var(--color-danger)',
                   color: 'var(--color-danger)',
                   padding: '10px 14px',
@@ -189,7 +190,7 @@ export default function QuickProductModal({
             {/* Product Name & SKU */}
             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '14px' }}>
               <div>
-                <label htmlFor="quick-name" className="lbl">اسم المنتج (بالعربية) *</label>
+                <label htmlFor="quick-name" className="lbl">{t('quickEdit.name')}</label>
                 <input
                   id="quick-name"
                   type="text"
@@ -200,7 +201,7 @@ export default function QuickProductModal({
                 />
               </div>
               <div>
-                <label htmlFor="quick-code" className="lbl">كود المنتج (SKU) *</label>
+                <label htmlFor="quick-code" className="lbl">{t('quickEdit.code')}</label>
                 <input
                   id="quick-code"
                   type="text"
@@ -216,7 +217,7 @@ export default function QuickProductModal({
             {/* Pricing Section */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
               <div>
-                <label htmlFor="quick-price" className="lbl">السعر الأساسي (ج.م) *</label>
+                <label htmlFor="quick-price" className="lbl">{t('quickEdit.price')}</label>
                 <input
                   id="quick-price"
                   type="number"
@@ -230,13 +231,13 @@ export default function QuickProductModal({
               </div>
 
               <div>
-                <label htmlFor="quick-sale" className="lbl">سعر الخصم (ج.م)</label>
+                <label htmlFor="quick-sale" className="lbl">{t('productNew.salePrice')}</label>
                 <input
                   id="quick-sale"
                   type="number"
                   step="0.5"
                   min="0"
-                  placeholder="اختياري"
+                  placeholder={t('common.optional')}
                   className="input"
                   value={salePrice}
                   onChange={(e) => setSalePrice(e.target.value === '' ? '' : Number(e.target.value))}
@@ -252,23 +253,23 @@ export default function QuickProductModal({
                   alignItems: 'center',
                   gap: '8px',
                   padding: '8px 12px',
-                  background: 'rgba(176, 141, 46, 0.1)',
+                  background: 'var(--color-accent-soft)',
                   borderRadius: 'var(--r-md)',
                   fontSize: '.85rem',
-                  color: 'var(--color-accent)',
+                  color: 'var(--color-accent-text)',
                   fontWeight: 600,
                 }}
               >
-                <span>🏷️ نسبة الخصم: {discountPercent}%</span>
+                <span>{t('quickEdit.discountPct', { pct: discountPercent })}</span>
                 <span>•</span>
-                <span>وفر للعميل: {savingsEgp.toFixed(1)} ج.م</span>
+                <span>{t('quickEdit.savings', { amount: savingsEgp.toFixed(1) })}</span>
               </div>
             )}
 
             {/* Stock / Inventory */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                <label htmlFor="quick-stock" className="lbl" style={{ margin: 0 }}>الكمية في المخزون *</label>
+                <label htmlFor="quick-stock" className="lbl" style={{ margin: 0 }}>{t('quickEdit.stock')}</label>
                 <div style={{ display: 'flex', gap: '6px' }}>
                   <button
                     type="button"
@@ -276,7 +277,7 @@ export default function QuickProductModal({
                     className="btn btn-ghost btn-sm"
                     style={{ padding: '2px 8px', fontSize: '.75rem', minHeight: 'auto', minWidth: 'auto' }}
                   >
-                    نفد (0)
+                    {t('quickEdit.zero')}
                   </button>
                   <button
                     type="button"
@@ -307,11 +308,11 @@ export default function QuickProductModal({
               />
               <div style={{ marginTop: '6px' }}>
                 {stock <= 0 ? (
-                  <span className="chip chip-out">⚠️ نفد من المخزون تماماً</span>
+                  <span className="chip chip-out">{t('quickEdit.stockOut')}</span>
                 ) : stock <= 5 ? (
-                  <span className="chip chip-sale">⚠️ مخزون حرج منخفض ({stock} قطع متبقية)</span>
+                  <span className="chip chip-sale">{t('quickEdit.stockLow', { count: stock })}</span>
                 ) : (
-                  <span className="chip chip-stock">✓ متوفر في المستودع ({stock} قطعة)</span>
+                  <span className="chip chip-stock">{t('quickEdit.stockOk', { count: stock })}</span>
                 )}
               </div>
             </div>
@@ -327,7 +328,7 @@ export default function QuickProductModal({
                   padding: '10px 14px',
                   border: '1px solid var(--color-line)',
                   borderRadius: 'var(--r-md)',
-                  background: isActive ? 'rgba(46, 125, 91, 0.08)' : 'transparent',
+                  background: isActive ? 'var(--color-success-soft)' : 'transparent',
                 }}
               >
                 <input
@@ -337,7 +338,7 @@ export default function QuickProductModal({
                   style={{ width: '18px', height: '18px', accentColor: 'var(--color-accent)' }}
                 />
                 <span style={{ fontSize: '.9rem', fontWeight: 600 }}>
-                  {isActive ? '✓ المنتج نشط في المتجر' : '✕ إيقاف ظهور المنتج'}
+                  {isActive ? t('quickEdit.active') : t('quickEdit.paused')}
                 </span>
               </label>
 
@@ -350,7 +351,7 @@ export default function QuickProductModal({
                   padding: '10px 14px',
                   border: '1px solid var(--color-line)',
                   borderRadius: 'var(--r-md)',
-                  background: isFeatured ? 'rgba(176, 141, 46, 0.1)' : 'transparent',
+                  background: isFeatured ? 'var(--color-accent-soft)' : 'transparent',
                 }}
               >
                 <input
@@ -360,7 +361,7 @@ export default function QuickProductModal({
                   style={{ width: '18px', height: '18px', accentColor: 'var(--color-accent)' }}
                 />
                 <span style={{ fontSize: '.9rem', fontWeight: 600 }}>
-                  ⭐ منتج مميز (الرئيسية)
+                  {t('quickEdit.featured')}
                 </span>
               </label>
             </div>
@@ -375,7 +376,7 @@ export default function QuickProductModal({
               className="btn btn-outline btn-sm"
               style={{ minHeight: '44px' }}
             >
-              إلغاء
+              {t('common.cancel')}
             </button>
             <button
               type="submit"
@@ -383,7 +384,7 @@ export default function QuickProductModal({
               className="btn btn-primary btn-sm"
               style={{ minHeight: '44px', minWidth: '120px' }}
             >
-              {saving ? 'جارٍ الحفظ...' : 'حفظ التعديلات ✓'}
+              {saving ? t('common.saving') : t('quickEdit.save')}
             </button>
           </div>
         </form>

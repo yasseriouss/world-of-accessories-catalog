@@ -6,11 +6,12 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { egp, discountPct, whatsappLink } from '../lib/format';
 import { useCart, useWishlist } from '../lib/store-context';
+import { SITE } from '../lib/site';
 
 export default function ProductCard({ p, priorityImage = false }: { p: any; priorityImage?: boolean }) {
   const locale = useLocale();
   const t = useTranslations('product');
-  const tc = useTranslations('common');
+  const tb = useTranslations('brand');
   const { add } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const [added, setAdded] = useState(false);
@@ -59,11 +60,10 @@ export default function ProductCard({ p, priorityImage = false }: { p: any; prio
           {validImgUrl ? (
             <Image
               src={validImgUrl}
-              alt={p.images?.[0]?.alt_ar ?? name}
+              alt={(locale === 'ar' ? p.images?.[0]?.alt_ar : p.images?.[0]?.alt_en) ?? name}
               fill
               sizes="(max-width: 480px) 50vw, (max-width: 1024px) 33vw, 280px"
               style={{ objectFit: 'cover' }}
-              loading={priorityImage ? 'eager' : 'lazy'}
               priority={priorityImage}
             />
           ) : (
@@ -84,7 +84,7 @@ export default function ProductCard({ p, priorityImage = false }: { p: any; prio
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M3 9h18M9 21V9" />
               </svg>
-              <span style={{ fontSize: '0.72rem', fontWeight: 600 }}>WOA Hardware</span>
+              <span style={{ fontSize: '0.72rem', fontWeight: 600 }}>{tb('name')}</span>
             </div>
           )}
         </Link>
@@ -104,27 +104,11 @@ export default function ProductCard({ p, priorityImage = false }: { p: any; prio
               stock: p.stock,
             });
           }}
-          aria-label={inWishlist ? (locale === 'ar' ? 'إزالة من المفضلة' : 'Remove from wishlist') : (locale === 'ar' ? 'إضافة إلى المفضلة' : 'Add to wishlist')}
-          style={{
-            position: 'absolute',
-            top: '8px',
-            insetInlineStart: '8px',
-            zIndex: 4,
-            background: inWishlist ? 'var(--color-accent)' : 'var(--color-bg-elev)',
-            color: inWishlist ? 'var(--color-on-primary, #111111)' : 'var(--color-text)',
-            border: 'none',
-            borderRadius: '50%',
-            width: '44px',
-            height: '44px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            boxShadow: 'var(--sh-1)',
-            transition: 'transform var(--t-fast), background var(--t-fast)',
-          }}
+          aria-label={inWishlist ? t('wishlistRemove') : t('wishlistAdd')}
+          aria-pressed={inWishlist}
+          className="card-fab"
         >
-          <svg viewBox="0 0 24 24" fill={inWishlist ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill={inWishlist ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
           </svg>
         </button>
@@ -165,9 +149,9 @@ export default function ProductCard({ p, priorityImage = false }: { p: any; prio
           </button>
           <a
             className="btn btn-outline btn-sm"
-            aria-label="WhatsApp"
+            aria-label={t('orderWhats')}
             style={{ minWidth: '44px', minHeight: '44px', padding: '0 12px' }}
-            href={whatsappLink('01140030036', `طلب منتج: ${p.code} - ${p.name_ar}`)}
+            href={whatsappLink(SITE.whatsapp, t('whatsappOrder', { code: p.code, name: p.name_ar }))}
             target="_blank"
             rel="noopener noreferrer"
           >

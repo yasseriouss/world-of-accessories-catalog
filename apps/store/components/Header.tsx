@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useCart, useWishlist } from '../lib/store-context';
@@ -9,12 +10,13 @@ import ThemeToggle from './ThemeToggle';
 export default function Header() {
   const t = useTranslations('nav');
   const tc = useTranslations('common');
+  const tb = useTranslations('brand');
   const locale = useLocale();
   const { count } = useCart();
   const { wishlistCount } = useWishlist();
   const [open, setOpen] = useState(false);
   const other = locale === 'ar' ? 'en' : 'ar';
-  const path = typeof window !== 'undefined' ? window.location.pathname.replace(/^\/(ar|en)/, '') : '/';
+  const path = (usePathname() ?? '/').replace(/^\/(ar|en)(?=\/|$)/, '');
 
   const links = [
     { href: `/${locale}`, label: t('market') },
@@ -52,15 +54,7 @@ export default function Header() {
             href={`/${locale}`}
             style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--color-text)', textDecoration: 'none' }}
           >
-            {locale === 'ar' ? (
-              <>
-                عالم <span style={{ color: 'var(--color-accent)' }}>الاكسسوار</span>
-              </>
-            ) : (
-              <>
-                WOA <span style={{ color: 'var(--color-accent)' }}>Hardware</span>
-              </>
-            )}
+            {tb('first')} <span style={{ color: 'var(--color-accent-text)' }}>{tb('accent')}</span>
           </Link>
           <nav style={{ display: 'flex', gap: '20px', marginInlineStart: '24px', flex: 1 }} className="main-nav">
             {links.slice(0, 2).map((l) => (
@@ -76,10 +70,10 @@ export default function Header() {
           <Link
             href={`/${other}${path}`}
             className="btn btn-ghost btn-sm header-lang-btn"
-            aria-label={other === 'en' ? 'Switch to English' : 'التحويل إلى العربية'}
+            aria-label={tc('switchLanguage')}
             style={{ minWidth: '44px', minHeight: '44px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            {other === 'en' ? 'EN' : 'ع'}
+            {tc('switchLanguageShort')}
           </Link>
           <Link
             href={`/${locale}/wishlist`}
@@ -107,7 +101,7 @@ export default function Header() {
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
             {wishlistCount > 0 && (
-              <span className="cart-count" style={{ background: 'var(--color-accent)', color: 'var(--color-on-primary, #111111)' }}>
+              <span className="cart-count">
                 {wishlistCount}
               </span>
             )}
@@ -132,7 +126,7 @@ export default function Header() {
       <div className={`drawer-ov ${open ? 'open' : ''}`} onClick={() => setOpen(false)} />
       <aside className={`drawer ${open ? 'open' : ''}`} aria-hidden={!open}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-          <strong>{locale === 'ar' ? 'عالم الاكسسوار' : 'WOA Hardware'}</strong>
+          <strong>{tb('name')}</strong>
           <button
             className="btn btn-ghost btn-sm"
             onClick={() => setOpen(false)}
@@ -148,7 +142,7 @@ export default function Header() {
           </Link>
         ))}
         <Link href={`/${other}${path}`} onClick={() => setOpen(false)}>
-          {other === 'en' ? 'English' : 'العربية'}
+          {tc('switchLanguageLong')}
         </Link>
       </aside>
     </>

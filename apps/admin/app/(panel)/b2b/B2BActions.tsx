@@ -2,13 +2,14 @@
 import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { t } from '@/lib/i18n';
 
 const STATUS_LABELS: Record<string, string> = {
-  new: 'جديد',
-  contacted: 'تم التواصل',
-  quoted: 'أُرسل عرض سعر',
-  won: 'تم التعاقد',
-  lost: 'ملغي / مفقود',
+  new: t('b2bStatus.new'),
+  contacted: t('b2bStatus.contacted'),
+  quoted: t('b2bStatus.quoted'),
+  won: t('b2bStatus.won'),
+  lost: t('b2bStatus.lost'),
 };
 
 export default function B2BActions({ id, status, phone }: { id: string; status: string; phone?: string }) {
@@ -34,8 +35,8 @@ export default function B2BActions({ id, status, phone }: { id: string; status: 
           rel="noopener noreferrer"
           className="btn btn-sm"
           style={{
-            background: '#25D366',
-            color: '#fff',
+            background: 'var(--color-success)',
+            color: 'var(--color-on-status)',
             textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
@@ -43,9 +44,9 @@ export default function B2BActions({ id, status, phone }: { id: string; status: 
             fontSize: '.78rem',
             padding: '4px 8px',
           }}
-          title="محادثة واتساب مباشرة"
+          title={t('b2b.whatsappChat')}
         >
-          💬 واتساب
+          {t('b2b.whatsapp')}
         </a>
       )}
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const revalidate = 60; // ISR
 
 function getCategoryIcon(slug: string) {
-  if (slug.includes('kitchen') || slug.includes('مطابخ')) {
+  if (slug.includes('kitchen') || slug.includes('مطابخ')) { // allow-hardcoded: matches Arabic category slugs (data), not copy
     return (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="28" height="28" aria-hidden="true">
         <path d="M3 3h18v18H3z" />
@@ -16,7 +16,7 @@ function getCategoryIcon(slug: string) {
       </svg>
     );
   }
-  if (slug.includes('dressing') || slug.includes('wardrobe') || slug.includes('دريسينج')) {
+  if (slug.includes('dressing') || slug.includes('wardrobe') || slug.includes('دريسينج')) { // allow-hardcoded: matches Arabic category slugs (data), not copy
     return (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="28" height="28" aria-hidden="true">
         <rect x="4" y="2" width="16" height="20" rx="2" />
@@ -26,7 +26,7 @@ function getCategoryIcon(slug: string) {
       </svg>
     );
   }
-  if (slug.includes('handle') || slug.includes('مقابض')) {
+  if (slug.includes('handle') || slug.includes('مقابض')) { // allow-hardcoded: matches Arabic category slugs (data), not copy
     return (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="28" height="28" aria-hidden="true">
         <path d="M6 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
@@ -53,7 +53,7 @@ export default async function MarketHome({ params: { locale } }: any) {
   ]);
 
   return (
-    <main id="main-content">
+    <div>
       {/* Hero section with semantic H1 */}
       <section className="container" style={{ paddingTop: '32px', paddingBottom: '16px' }}>
         <h1 className="sec-title" style={{ fontSize: 'var(--fs-h1)', margin: '0 0 8px' }}>
@@ -77,14 +77,14 @@ export default async function MarketHome({ params: { locale } }: any) {
                   display: 'flex',
                   alignItems: 'flex-end',
                   padding: '24px',
-                  background: 'linear-gradient(120deg, var(--brand-ink), #2b2513)',
-                  color: 'var(--color-bg-elev)',
+                  background: 'var(--color-inverse-bg)',
+                  color: 'var(--color-inverse-text)',
                   textDecoration: 'none',
                 }}
               >
                 <div>
                   {b.tag_ar && (
-                    <span className="chip" style={{ marginBottom: '8px', color: 'var(--brand-gold)' }}>
+                    <span className="chip chip-inverse" style={{ marginBottom: '8px' }}>
                       {locale === 'ar' ? b.tag_ar : b.tag_en || b.tag_ar}
                     </span>
                   )}
@@ -122,7 +122,7 @@ export default async function MarketHome({ params: { locale } }: any) {
                     borderRadius: 'var(--r-md)',
                   }}
                 >
-                  <div style={{ color: 'var(--color-accent)' }}>{getCategoryIcon(c.slug)}</div>
+                  <div style={{ color: 'var(--color-accent-text)' }}>{getCategoryIcon(c.slug)}</div>
                   <span>{locale === 'ar' ? c.name_ar : c.name_en || c.name_ar}</span>
                 </Link>
               ))}
@@ -148,7 +148,7 @@ export default async function MarketHome({ params: { locale } }: any) {
             </h2>
             <Link
               href={`/${locale}/catalog`}
-              style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
+              style={{ color: 'var(--color-accent-text)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
             >
               {t('featuredLink')}
             </Link>
@@ -179,7 +179,7 @@ export default async function MarketHome({ params: { locale } }: any) {
             </h2>
             <Link
               href={`/${locale}/catalog?sort=best`}
-              style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
+              style={{ color: 'var(--color-accent-text)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}
             >
               {t('bestLink')}
             </Link>
@@ -191,6 +191,6 @@ export default async function MarketHome({ params: { locale } }: any) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,0 +1,22 @@
+name: quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  no-hardcoded-text-or-colors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check for hardcoded text and colors
+        run: node scripts/check-hardcoded.mjs
+      - name: Tokens are in sync with packages/ui
+        run: |
+          for app in store web admin; do
+            diff -q packages/ui/tokens.css "apps/$app/app/tokens.css"
+          done

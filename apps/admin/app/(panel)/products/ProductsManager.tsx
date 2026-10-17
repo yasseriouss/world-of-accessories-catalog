@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { egp } from '@/lib/format';
 import { supabaseBrowser } from '@/lib/supabase-client';
 import QuickProductModal, { ProductItem } from '@/components/QuickProductModal';
+import { t } from '@/lib/i18n';
 
 interface ProductsManagerProps {
   initialProducts: ProductItem[];
@@ -74,7 +75,7 @@ export default function ProductsManager({
     setProducts((prev) =>
       prev.map((item) => (item.id === updated.id ? updated : item))
     );
-    setToastMessage(`✓ تم تحديث بيانات "${updated.name_ar}" بنجاح`);
+    setToastMessage(t('products.toastUpdated', { name: updated.name_ar }));
     setTimeout(() => setToastMessage(null), 4000);
     router.refresh();
   }
@@ -96,7 +97,7 @@ export default function ProductsManager({
             item.id === prod.id ? { ...item, is_active: newActive } : item
           )
         );
-        setToastMessage(newActive ? '✓ تم تفعيل المنتج في المتجر' : 'تم إيقاف ظهور المنتج');
+        setToastMessage(newActive ? t('products.toastActivated') : t('products.toastPaused'));
         setTimeout(() => setToastMessage(null), 3500);
         router.refresh();
       }
@@ -153,10 +154,10 @@ export default function ProductsManager({
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 800 }}>
-            إدارة المنتجات ({stats.total})
+            {t('products.title', { count: stats.total })}
           </h1>
           <p style={{ color: 'var(--color-text-3)', fontSize: '.88rem', marginTop: '2px' }}>
-            تعديل فوري للأسعار، الخصومات، المخزون، وحالة العرض في المتجر
+            {t('products.subtitle')}
           </p>
         </div>
 
@@ -165,7 +166,7 @@ export default function ProductsManager({
             <input
               type="text"
               className="input"
-              placeholder="بحث بالاسم أو الكود..."
+              placeholder={t('products.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{ width: '240px', paddingInlineStart: '34px', minHeight: '44px' }}
@@ -202,7 +203,7 @@ export default function ProductsManager({
           </div>
 
           <Link href="/products/new" className="btn btn-primary" style={{ minHeight: '44px' }}>
-            + إضافة منتج جديد
+            {t('products.add')}
           </Link>
         </div>
       </div>
@@ -222,35 +223,35 @@ export default function ProductsManager({
           className={`btn ${activeTab === 'all' ? 'btn-dark' : 'btn-ghost'} btn-sm`}
           style={{ minHeight: '40px' }}
         >
-          الكل ({stats.total})
+          {t('products.tabs.all', { count: stats.total })}
         </button>
         <button
           onClick={() => setActiveTab('active')}
           className={`btn ${activeTab === 'active' ? 'btn-dark' : 'btn-ghost'} btn-sm`}
           style={{ minHeight: '40px' }}
         >
-          متوفر ونشط ({stats.active})
+          {t('products.tabs.active', { count: stats.active })}
         </button>
         <button
           onClick={() => setActiveTab('out_of_stock')}
           className={`btn ${activeTab === 'out_of_stock' ? 'btn-dark' : 'btn-ghost'} btn-sm`}
           style={{ minHeight: '40px', color: activeTab === 'out_of_stock' ? undefined : 'var(--color-danger)' }}
         >
-          نفد المخزون ({stats.outOfStock})
+          {t('products.tabs.outOfStock', { count: stats.outOfStock })}
         </button>
         <button
           onClick={() => setActiveTab('featured')}
           className={`btn ${activeTab === 'featured' ? 'btn-dark' : 'btn-ghost'} btn-sm`}
           style={{ minHeight: '40px' }}
         >
-          مميز ⭐ ({stats.featured})
+          {t('products.tabs.featured', { count: stats.featured })}
         </button>
         <button
           onClick={() => setActiveTab('paused')}
           className={`btn ${activeTab === 'paused' ? 'btn-dark' : 'btn-ghost'} btn-sm`}
           style={{ minHeight: '40px' }}
         >
-          موقوف ({stats.paused})
+          {t('products.tabs.paused', { count: stats.paused })}
         </button>
       </div>
 
@@ -259,21 +260,21 @@ export default function ProductsManager({
         <table className="admin">
           <thead>
             <tr>
-              <th style={{ width: '120px' }}>الكود</th>
-              <th>الاسم والمواصفات</th>
-              <th>السعر الرسمي</th>
-              <th>سعر الخصم</th>
-              <th>المخزون</th>
-              <th style={{ textAlign: 'center' }}>مميز</th>
-              <th style={{ textAlign: 'center' }}>حالة العرض</th>
-              <th style={{ textAlign: 'center', width: '130px' }}>إجراءات</th>
+              <th style={{ width: '120px' }}>{t('products.code')}</th>
+              <th>{t('products.nameSpecs')}</th>
+              <th>{t('products.price')}</th>
+              <th>{t('products.salePrice')}</th>
+              <th>{t('common.stock')}</th>
+              <th style={{ textAlign: 'center' }}>{t('products.featured')}</th>
+              <th style={{ textAlign: 'center' }}>{t('products.visibility')}</th>
+              <th style={{ textAlign: 'center', width: '130px' }}>{t('common.actions')}</th>
             </tr>
           </thead>
           <tbody>
             {filteredProducts.length === 0 ? (
               <tr>
                 <td colSpan={8} style={{ textAlign: 'center', padding: '36px', color: 'var(--color-text-3)' }}>
-                  لا توجد منتجات مطابقة لخيارات البحث
+                  {t('products.empty')}
                 </td>
               </tr>
             ) : (
@@ -284,7 +285,7 @@ export default function ProductsManager({
                     <span
                       style={{
                         padding: '4px 8px',
-                        background: 'rgba(20, 19, 17, 0.05)',
+                        background: 'var(--color-hover)',
                         borderRadius: 'var(--r-sm)',
                         fontFamily: 'monospace',
                         fontSize: '.85rem',
@@ -318,18 +319,18 @@ export default function ProductsManager({
                   {/* Stock */}
                   <td>
                     {p.stock <= 0 ? (
-                      <span className="chip chip-out">نفد</span>
+                      <span className="chip chip-out">{t('common.outOfStock')}</span>
                     ) : p.stock <= 5 ? (
-                      <span className="chip chip-sale">{p.stock} (منخفض)</span>
+                      <span className="chip chip-sale">{t('products.stockLow', { count: p.stock })}</span>
                     ) : (
-                      <span className="chip chip-stock">{p.stock} قطعة</span>
+                      <span className="chip chip-stock">{t('products.stockPieces', { count: p.stock })}</span>
                     )}
                   </td>
 
                   {/* Featured */}
                   <td style={{ textAlign: 'center' }}>
                     {p.is_featured ? (
-                      <span title="منتج مميز في الرئيسية" style={{ fontSize: '1.1rem' }}>⭐</span>
+                      <span title={t('products.featuredHint')} style={{ fontSize: '1.1rem' }}>⭐</span>
                     ) : (
                       <span style={{ color: 'var(--color-text-3)' }}>—</span>
                     )}
@@ -341,17 +342,17 @@ export default function ProductsManager({
                       type="button"
                       disabled={togglingId === p.id}
                       onClick={() => handleToggleActive(p)}
-                      title={p.is_active ? 'انقر لإيقاف المنتج' : 'انقر لتفعيل المنتج'}
+                      title={p.is_active ? t('products.clickToPause') : t('products.clickToActivate')}
                       className={`chip ${p.is_active ? 'chip-stock' : ''}`}
                       style={{
                         cursor: 'pointer',
                         border: 'none',
                         outline: 'none',
-                        background: p.is_active ? 'rgba(46,125,91,.14)' : 'rgba(138,143,152,.15)',
+                        background: p.is_active ? 'var(--color-success-soft)' : 'var(--color-hover)',
                         color: p.is_active ? 'var(--color-success)' : 'var(--color-text-3)',
                       }}
                     >
-                      {togglingId === p.id ? '...' : p.is_active ? '✓ نشط' : '✕ موقوف'}
+                      {togglingId === p.id ? '...' : p.is_active ? t('products.activeBadge') : t('products.pausedBadge')}
                     </button>
                   </td>
 
@@ -369,7 +370,7 @@ export default function ProductsManager({
                         color: 'var(--color-text)',
                       }}
                     >
-                      ✏️ تعديل سريع
+                      {t('products.quickEdit')}
                     </button>
                   </td>
                 </tr>

@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getProduct, getRelated, getPostsByCategory, getReviews } from '@/lib/queries';
 import { productJsonLd } from '@/lib/seo';
 import { egp, discountPct, whatsappLink } from '@/lib/format';
+import { SITE } from '@/lib/site';
 import ProductCard from '@/components/ProductCard';
 import AddToCartButton from '@/components/AddToCartButton';
 import ProductGallery from '@/components/ProductGallery';
@@ -32,6 +33,7 @@ export default async function ProductPage({ params }: any) {
   const tSpecs = await getTranslations({ locale: params.locale, namespace: 'specs' });
   const tNav = await getTranslations({ locale: params.locale, namespace: 'nav' });
   const tb = await getTranslations({ locale: params.locale, namespace: 'blog' });
+  const tc = await getTranslations({ locale: params.locale, namespace: 'common' });
   const locale = params.locale;
   const ar = locale === 'ar';
   const name = ar ? p.name_ar : p.name_en ?? p.name_ar;
@@ -73,7 +75,7 @@ export default async function ProductPage({ params }: any) {
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap' }}>
             <AddToCartButton p={p} />
             <a className="btn btn-outline" target="_blank" rel="noopener noreferrer"
-              href={whatsappLink('01140030036', `طلب: ${p.code} - ${p.name_ar} | ${price} ${locale === 'ar' ? 'ج.م' : 'EGP'}`)}>
+              href={whatsappLink(SITE.whatsapp, t('whatsappOrderPriced', { code: p.code, name: p.name_ar, price: egp(price, locale) }))}>
               {t('orderWhats')}
             </a>
           </div>
@@ -82,7 +84,7 @@ export default async function ProductPage({ params }: any) {
           <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'.9rem' }}>
             <tbody>
               {[[tSpecs('brand'), p.brand], [tSpecs('material'), p.material], [tSpecs('load'), p.load_kg && `${p.load_kg} ${tSpecs('kg')}`],
-                [tSpecs('weight'), p.weight_kg && `${p.weight_kg} ${tSpecs('kg')}`], [tSpecs('colors'), p.colors?.join('، ')]]
+                [tSpecs('weight'), p.weight_kg && `${p.weight_kg} ${tSpecs('kg')}`], [tSpecs('colors'), p.colors?.join(tc('listSeparator'))]]
                 .filter(([,v]) => v).map(([k,v]: any) => (
                 <tr key={k} style={{ borderBottom:'1px solid var(--color-line)' }}>
                   <td style={{ padding:'10px 0', color:'var(--color-text-3)', width:'120px' }}>{k}</td>

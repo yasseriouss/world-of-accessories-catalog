@@ -1,6 +1,7 @@
 ﻿import { supabaseServer } from '@/lib/supabase-server';
 import { ReviewStatusToggle, ReviewDeleteButton } from './ReviewActions';
 import Link from 'next/link';
+import { t } from '@/lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,9 +37,9 @@ export default async function ReviewsPage({ searchParams }: any) {
     <div style={{ display: 'grid', gap: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700 }}>مراجعات وتقييمات المنتجات</h1>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 700 }}>{t('reviews.title')}</h1>
           <p style={{ color: 'var(--color-text-3)', fontSize: '.88rem', marginTop: '4px' }}>
-            إدارة آراء العملاء واعتماد التقييمات التي تظهر في المتجر ونتائج بحث جوجل ({totalCount})
+            {t('reviews.subtitle', { count: totalCount })}
           </p>
         </div>
 
@@ -46,7 +47,7 @@ export default async function ReviewsPage({ searchParams }: any) {
           <input
             name="q"
             className="input"
-            placeholder="بحث بالاسم أو التعليق..."
+            placeholder={t('reviews.searchPlaceholder')}
             defaultValue={searchParams?.q}
             style={{ width: '220px' }}
           />
@@ -56,37 +57,37 @@ export default async function ReviewsPage({ searchParams }: any) {
             defaultValue={searchParams?.status ?? ''}
             style={{ width: '150px' }}
           >
-            <option value="">كل الحالات</option>
-            <option value="approved">معتمد فقط</option>
-            <option value="hidden">محجوب فقط</option>
+            <option value="">{t('common.allStatuses')}</option>
+            <option value="approved">{t('reviews.approvedOnly')}</option>
+            <option value="hidden">{t('reviews.hiddenOnly')}</option>
           </select>
-          <button type="submit" className="btn btn-outline btn-sm">تصفية</button>
+          <button type="submit" className="btn btn-outline btn-sm">{t('common.filter')}</button>
         </form>
       </div>
 
       {/* Stats Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
         <div className="card" style={{ padding: '16px' }}>
-          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>إجمالي المراجعات</div>
+          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>{t('reviews.total')}</div>
           <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-text)', marginTop: '4px' }}>
             {totalCount}
           </div>
         </div>
         <div className="card" style={{ padding: '16px' }}>
-          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>متوسط التقييم العام</div>
-          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-accent)', marginTop: '4px' }}>
+          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>{t('reviews.avg')}</div>
+          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-accent-text)', marginTop: '4px' }}>
             ★ {avgRating}
           </div>
         </div>
         <div className="card" style={{ padding: '16px' }}>
-          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>المراجعات المعتمدة</div>
-          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#047857', marginTop: '4px' }}>
+          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>{t('reviews.approved')}</div>
+          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--color-success)', marginTop: '4px' }}>
             {approvedCount}
           </div>
         </div>
         <div className="card" style={{ padding: '16px' }}>
-          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>المحجوبة أو المعلقة</div>
-          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: hiddenCount > 0 ? '#B91C1C' : 'var(--color-text-3)', marginTop: '4px' }}>
+          <div style={{ fontSize: '.82rem', color: 'var(--color-text-3)' }}>{t('reviews.hidden')}</div>
+          <div style={{ fontSize: '1.8rem', fontWeight: 800, color: hiddenCount > 0 ? 'var(--color-danger)' : 'var(--color-text-3)', marginTop: '4px' }}>
             {hiddenCount}
           </div>
         </div>
@@ -97,21 +98,21 @@ export default async function ReviewsPage({ searchParams }: any) {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '.88rem' }}>
             <thead>
-              <tr style={{ background: 'rgba(0,0,0,.02)', borderBottom: '1px solid var(--color-line)', textAlign: 'right' }}>
-                <th style={{ padding: '12px 16px' }}>المنتج</th>
-                <th style={{ padding: '12px 16px' }}>العميل</th>
-                <th style={{ padding: '12px 16px' }}>التقييم</th>
-                <th style={{ padding: '12px 16px', maxWidth: '350px' }}>التعليق</th>
-                <th style={{ padding: '12px 16px' }}>التاريخ</th>
-                <th style={{ padding: '12px 16px' }}>الحالة</th>
-                <th style={{ padding: '12px 16px', textAlign: 'center' }}>إجراء</th>
+              <tr style={{ background: 'var(--color-hover)', borderBottom: '1px solid var(--color-line)', textAlign: 'right' }}>
+                <th style={{ padding: '12px 16px' }}>{t('common.product')}</th>
+                <th style={{ padding: '12px 16px' }}>{t('common.customer')}</th>
+                <th style={{ padding: '12px 16px' }}>{t('reviews.rating')}</th>
+                <th style={{ padding: '12px 16px', maxWidth: '350px' }}>{t('reviews.comment')}</th>
+                <th style={{ padding: '12px 16px' }}>{t('common.date')}</th>
+                <th style={{ padding: '12px 16px' }}>{t('common.status')}</th>
+                <th style={{ padding: '12px 16px', textAlign: 'center' }}>{t('common.actions')}</th>
               </tr>
             </thead>
             <tbody>
               {(!reviews || reviews.length === 0) ? (
                 <tr>
                   <td colSpan={7} style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-3)' }}>
-                    لا توجد مراجعات مسجلة
+                    {t('reviews.empty')}
                   </td>
                 </tr>
               ) : (
@@ -125,13 +126,13 @@ export default async function ReviewsPage({ searchParams }: any) {
                             href={`https://woa-market.vercel.app/ar/product/${product.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ fontWeight: 600, color: 'var(--color-accent)', textDecoration: 'none' }}
+                            style={{ fontWeight: 600, color: 'var(--color-accent-text)', textDecoration: 'none' }}
                           >
                             {product.name_ar}
                             <div style={{ fontSize: '.75rem', color: 'var(--color-text-3)' }}>{product.code}</div>
                           </a>
                         ) : (
-                          <span style={{ color: 'var(--color-text-3)' }}>منتج محذوف</span>
+                          <span style={{ color: 'var(--color-text-3)' }}>{t('reviews.deletedProduct')}</span>
                         )}
                       </td>
                       <td style={{ padding: '12px 16px' }}>
@@ -143,13 +144,13 @@ export default async function ReviewsPage({ searchParams }: any) {
                         )}
                       </td>
                       <td style={{ padding: '12px 16px' }}>
-                        <div style={{ color: 'var(--color-accent)', fontWeight: 700, letterSpacing: '2px' }}>
+                        <div style={{ color: 'var(--color-accent-text)', fontWeight: 700, letterSpacing: '2px' }}>
                           {'★'.repeat(r.rating)}
                           <span style={{ color: 'var(--color-line)' }}>{'★'.repeat(Math.max(0, 5 - r.rating))}</span>
                         </div>
                       </td>
                       <td style={{ padding: '12px 16px', maxWidth: '350px', lineHeight: 1.6, color: 'var(--color-text-2)' }}>
-                        {r.comment || <span style={{ color: 'var(--color-text-3)', fontStyle: 'italic' }}>بدون تعليق مكتوب</span>}
+                        {r.comment || <span style={{ color: 'var(--color-text-3)', fontStyle: 'italic' }}>{t('reviews.noComment')}</span>}
                       </td>
                       <td style={{ padding: '12px 16px', color: 'var(--color-text-3)', fontSize: '.8rem', whiteSpace: 'nowrap' }}>
                         {new Date(r.created_at).toLocaleDateString('ar-EG', { year: 'numeric', month: 'short', day: 'numeric' })}

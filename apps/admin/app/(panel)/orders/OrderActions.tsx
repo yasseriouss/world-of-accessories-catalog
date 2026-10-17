@@ -2,9 +2,9 @@
 import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { t, tOr } from '@/lib/i18n';
 
 const FLOW = ['new','confirmed','packed','shipped','delivered'];
-const AR: Record<string,string> = { confirmed:'تأكيد', packed:'تجهيز', shipped:'شحن', delivered:'تسليم', cancelled:'إلغاء' };
 
 export default function OrderActions({ id, status }: { id: string; status: string }) {
   const router = useRouter();
@@ -22,11 +22,11 @@ export default function OrderActions({ id, status }: { id: string; status: strin
     <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
       {status !== 'cancelled' && status !== 'delivered' && FLOW.slice(idx + 1, idx + 2).map(next => (
         <button key={next} className="btn btn-primary btn-sm" disabled={busy} onClick={() => setStatus(next)}>
-          {AR[next]} ←
+          {tOr(`orderAction.${next}`, next)} ←
         </button>
       ))}
       {(status === 'new' || status === 'confirmed') && (
-        <button className="btn btn-ghost btn-sm" disabled={busy} onClick={() => setStatus('cancelled')}>إلغاء</button>
+        <button className="btn btn-ghost btn-sm" disabled={busy} onClick={() => setStatus('cancelled')}>{t('common.cancel')}</button>
       )}
     </div>
   );

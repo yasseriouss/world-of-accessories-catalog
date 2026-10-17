@@ -1,36 +1,37 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import { storeHref } from '@/lib/site';
 
 export default function Header() {
   const t = useTranslations('nav');
+  const tc = useTranslations('common');
+  const tb = useTranslations('brand');
   const locale = useLocale();
   const other = locale === 'ar' ? 'en' : 'ar';
   const [open, setOpen] = useState(false);
+  const path = (usePathname() ?? '/').replace(/^\/(ar|en)(?=\/|$)/, '');
   return (
     <>
     <a href="#main-content" className="skip-link">
-      {locale === 'ar' ? 'الانتقال إلى المحتوى الرئيسي' : 'Skip to main content'}
+      {tc('skipToContent')}
     </a>
     <header style={{ position:'sticky', top:0, zIndex:50, background:'var(--color-bg-elev)',
-      borderBottom:'1px solid var(--color-line)', backdropFilter:'blur(8px)' }}>
+      borderBottom:'1px solid var(--color-line)' }}>
       <div className="container" style={{ display:'flex', alignItems:'center', gap:'16px', height:'var(--header-h)' }}>
         <button
           className="btn btn-ghost btn-sm drawer-btn"
           onClick={() => setOpen(true)}
-          aria-label={locale === 'ar' ? 'القائمة الرئيسية' : 'Main Menu'}
+          aria-label={tc('menu')}
           style={{ width:'44px', height:'44px', minWidth:'44px', minHeight:'44px', padding:0 }}
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
         <Link href={`/${locale}`} style={{ fontWeight:800, fontSize:'1.15rem', textDecoration:'none', color:'var(--color-text)' }}>
-          {locale === 'ar' ? (
-            <>عالم <span style={{ color:'var(--color-accent)' }}>الاكسسوار</span></>
-          ) : (
-            <>WOA <span style={{ color:'var(--color-accent)' }}>Architectural</span></>
-          )}
+          {tb('first')} <span style={{ color: 'var(--color-accent-text)' }}>{tb('accent')}</span>
         </Link>
         <nav style={{ display:'flex', gap:'20px', flex:1, fontSize:'.92rem', fontWeight:600 }} className="main-nav">
           <Link href={`/${locale}/world/kitchen`}>{t('kitchens')}</Link>
@@ -41,15 +42,15 @@ export default function Header() {
         </nav>
         <ThemeToggle />
         <Link
-          href={`/${other}`}
+          href={`/${other}${path}`}
           className="btn btn-ghost btn-sm header-lang-btn"
-          aria-label={other === 'en' ? 'Switch to English' : 'التحويل إلى العربية'}
+          aria-label={tc('switchLanguage')}
           style={{ minWidth: '44px', minHeight: '44px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          {other === 'en' ? 'EN' : 'ع'}
+          {tc('switchLanguageShort')}
         </Link>
         <Link
-          href="https://woa-market.vercel.app/market"
+          href={storeHref(locale)}
           className="btn btn-primary btn-sm"
           style={{ minHeight: '44px', padding: '0 20px', display: 'inline-flex', alignItems: 'center' }}
         >
@@ -60,11 +61,11 @@ export default function Header() {
     <div className={`drawer-ov ${open ? 'open' : ''}`} onClick={() => setOpen(false)} />
     <aside className={`drawer ${open ? 'open' : ''}`} aria-hidden={!open}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'8px' }}>
-        <strong>{locale === 'ar' ? 'عالم الاكسسوار' : 'WOA Architectural'}</strong>
+        <strong>{tb('name')}</strong>
         <button
           className="btn btn-ghost btn-sm"
           onClick={() => setOpen(false)}
-          aria-label={locale === 'ar' ? 'إغلاق القائمة' : 'Close Menu'}
+          aria-label={tc('closeMenu')}
           style={{ minWidth: '44px', minHeight: '44px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
         >
           ✕
@@ -75,8 +76,8 @@ export default function Header() {
       <Link href={`/${locale}/blog`} onClick={() => setOpen(false)}>{t('blog')}</Link>
       <Link href={`/${locale}/b2b`} onClick={() => setOpen(false)}>{t('b2b')}</Link>
       <Link href={`/${locale}/contact`} onClick={() => setOpen(false)}>{t('contact')}</Link>
-      <Link href={`/${other}`} onClick={() => setOpen(false)}>
-        {other === 'en' ? 'English' : 'العربية'}
+      <Link href={`/${other}${path}`} onClick={() => setOpen(false)}>
+        {tc('switchLanguageLong')}
       </Link>
     </aside>
     </>

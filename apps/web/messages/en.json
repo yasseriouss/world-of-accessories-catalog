@@ -54,32 +54,185 @@
     "successDetail": "Your wholesale inquiry has been received. A project sales engineer will contact you within 4 business hours to review specifications and pricing.",
     "returnHome": "Return Home",
     "errorMsg": "Please verify your information and try again.",
-    "networkError": "Connection error. Please try again or reach out via WhatsApp."
+    "networkError": "Connection error. Please try again or reach out via WhatsApp.",
+    "phonePlaceholder": "01xxxxxxxxx",
+    "phoneHint": "Egyptian mobile number with WhatsApp",
+    "emailPlaceholder": "name@company.com",
+    "projectTypes": {
+      "factory": "Furniture or kitchen factory",
+      "contractor": "Interior contracting & architecture",
+      "hotel": "Hospitality or residential project",
+      "workshop": "Custom woodworking workshop"
+    },
+    "taxPlaceholder": "Registration No."
   },
   "contact": {
     "showroom": "Showroom & Headquarters",
     "address": "Central Axis – next to El Nagda Sq. – Silla Mall, 6th of October",
     "hours": "Daily 10:00 AM – 10:00 PM",
     "call": "Call Now",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "metaTitle": "Contact Us",
+    "eyebrow": "Contact",
+    "maps": "View on Google Maps",
+    "availability": "Customer service available daily",
+    "whatsappGreeting": "Hello, I have a question"
   },
   "blog": {
     "title": "Architectural Blog",
     "readMore": "Read Article",
     "minRead": "min read",
     "relatedPosts": "Related Articles",
-    "share": "Share"
+    "share": "Share",
+    "metaTitle": "Blog",
+    "metaDescription": "Engineering articles on kitchen and dressing hardware: choosing hinges, slides and handles.",
+    "eyebrow": "Blog",
+    "faq": "FAQ",
+    "productsInArticle": "Products in this article",
+    "helpTitle": "Need help choosing?",
+    "helpText": "Our engineering team replies to your questions daily",
+    "whatsappInquiry": "Question after reading the article: {title}",
+    "whatsappCta": "WhatsApp us"
   },
   "footer": {
     "rights": "All rights reserved",
     "links": "Quick Links",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "location": "6th of October — Silla Mall",
+    "hours": "Daily 10 AM – 10 PM"
   },
   "common": {
     "egp": "EGP",
     "loading": "Loading...",
     "skipToContent": "Skip to main content",
     "menu": "Main Menu",
-    "close": "Close"
+    "close": "Close",
+    "closeMenu": "Close menu",
+    "switchLanguage": "التحويل إلى العربية",
+    "switchLanguageShort": "ع",
+    "switchLanguageLong": "العربية",
+    "scrollTop": "Back to top",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
+  },
+  "meta": {
+    "title": "WOA Architectural | Official Furniture & Kitchen Hardware Supplier",
+    "titleTemplate": "%s | WOA Architectural",
+    "description": "Egypt's reference for kitchen and dressing hardware: 3D hydraulic hinges, tandem slides and premium handles. Direct B2B supply for factories and workshops.",
+    "ogLocale": "en_US",
+    "siteName": "WOA Architectural"
+  },
+  "seo": {
+    "businessName": "WOA Accessories | عالم الاكسسوار",
+    "street": "Central Axis, next to El Nagda Sq., Silla Mall",
+    "locality": "6th of October",
+    "region": "Giza"
+  },
+  "brand": {
+    "first": "WOA",
+    "accent": "Architectural",
+    "name": "WOA Architectural",
+    "short": "WOA"
+  },
+  "about": {
+    "metaTitle": "About Us",
+    "eyebrow": "About",
+    "title": "WOA Architectural",
+    "intro": "Since our founding in 6th of October City, we have been the trusted partner for furniture and kitchen hardware in Egypt — for factories, workshops and interior designers.",
+    "whyTitle": "What sets us apart?",
+    "points": [
+      {
+        "title": "Engineering reliability",
+        "text": "Moisture-resistant stainless materials and struts tested for over 80,000 cycles."
+      },
+      {
+        "title": "Stock on hand",
+        "text": "More than 590 products ready to go from our showroom in Silla Mall."
+      },
+      {
+        "title": "Nationwide coverage",
+        "text": "Safe shipping to every governorate with inspection before payment."
+      }
+    ]
+  },
+  "legal": {
+    "fallbackTitle": "Policies",
+    "shipping": {
+      "title": "Shipping Policy",
+      "short": "Shipping",
+      "sections": [
+        {
+          "text": "We ship to every governorate in Egypt within 2–5 business days. Shipping fees depend on the governorate and are shown before you confirm your order."
+        },
+        {
+          "heading": "Cash on delivery",
+          "text": "Available in most governorates, with inspection before you pay."
+        }
+      ]
+    },
+    "returns": {
+      "title": "Returns Policy",
+      "short": "Returns",
+      "sections": [
+        {
+          "text": "You can return a product within 14 days in its original condition with the invoice. Custom-made items cannot be returned."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "short": "Privacy",
+      "sections": [
+        {
+          "text": "We respect your privacy. Your details (name, phone, address) are used only for delivery and are never shared with third parties."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "short": "Terms",
+      "sections": [
+        {
+          "text": "By browsing the site or placing an order you agree to these terms. Prices are in Egyptian pounds and include VAT unless stated otherwise."
+        }
+      ]
+    }
+  },
+  "world": {
+    "eyebrow": "WOA World",
+    "products": "Products in this world",
+    "fromBlog": "From the blog"
+  },
+  "home": {
+    "heroEyebrow": "WOA • {year}",
+    "worldsEyebrow": "Worlds",
+    "showroomEyebrow": "Showroom",
+    "worlds": {
+      "kitchen": "Soft-close 3D hinges, hidden tandem rails, oil trolleys and stainless storage baskets.",
+      "dressing": "Aluminium hanging rails, aluminium & glass hinges, organizers for modern closets.",
+      "handles": "Modern & classic handles in matte gold, matte black and fingerprint-free stainless.",
+      "mechanisms": "Gas struts, push-to-open systems and heavy-duty rails up to 45 kg."
+    },
+    "stats": [
+      {
+        "n": "590+",
+        "label": "products ready to ship"
+      },
+      {
+        "n": "80,000",
+        "label": "hydraulic cycles tested"
+      },
+      {
+        "n": "27",
+        "label": "governorates covered"
+      },
+      {
+        "n": "10",
+        "label": "hours daily — 6 October showroom"
+      }
+    ]
+  },
+  "staffNotify": {
+    "b2bQuote": "📋 B2B request: {company} — {contact} — {phone}"
   }
 }

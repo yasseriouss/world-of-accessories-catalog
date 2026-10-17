@@ -1,5 +1,8 @@
+/** Intl locale tag for an app locale (Egyptian formatting for both languages). */
+export const intlLocale = (locale: string) => (locale === 'ar' ? 'ar-EG' : 'en-EG'); // allow-hardcoded: BCP-47 tags, not copy
+
 export const egp = (n: number, locale: string) =>
-  new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG', {
+  new Intl.NumberFormat(intlLocale(locale), {
     style: 'currency', currency: 'EGP', maximumFractionDigits: 0
   }).format(n);
 

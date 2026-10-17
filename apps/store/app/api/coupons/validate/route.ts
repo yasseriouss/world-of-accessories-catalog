@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { apiError } from '@/lib/api-errors';
 
 export async function POST(req: NextRequest) {
   try {
     const { code, subtotal } = await req.json();
     if (!code || typeof code !== 'string') {
-      return NextResponse.json({ ok: false, error: 'برجاء إدخال كود الكوبون' }, { status: 400 });
+      return apiError('coupon_required', 400);
     }
 
     const cleanCode = code.trim().toUpperCase();
@@ -17,24 +18,21 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (error || !coupon) {
-      return NextResponse.json({ ok: false, error: 'كود الكوبون غير صالح أو منتهي الصلاحية' }, { status: 404 });
+      return apiError('coupon_invalid', 404);
     }
 
     const now = new Date();
     if (coupon.starts_at && new Date(coupon.starts_at) > now) {
-      return NextResponse.json({ ok: false, error: 'هذا الكوبون لم يبدأ بعد' }, { status: 400 });
+      return apiError('coupon_not_started', 400);
     }
     if (coupon.ends_at && new Date(coupon.ends_at) < now) {
-      return NextResponse.json({ ok: false, error: 'انتهت صلاحية هذا الكوبون' }, { status: 400 });
+      return apiError('coupon_expired', 400);
     }
     if (coupon.max_uses && coupon.used_count >= coupon.max_uses) {
-      return NextResponse.json({ ok: false, error: 'وصل هذا الكوبون إلى الحد الأقصى للاستخدام' }, { status: 400 });
+      return apiError('coupon_exhausted', 400);
     }
     if (coupon.min_order && subtotal < Number(coupon.min_order)) {
-      return NextResponse.json(
-        { ok: false, error: `الحد الأدنى لتطبيق هذا الكوبون هو ${coupon.min_order} ج.م` },
-        { status: 400 }
-      );
+      return apiError('coupon_min_order', 400, { min: Number(coupon.min_order) });
     }
 
     let discount = 0;
@@ -53,7 +51,8 @@ export async function POST(req: NextRequest) {
         discount: Math.round(discount * 100) / 100,
       },
     });
-  } catch (err: any) {
-    return NextResponse.json({ ok: false, error: err.message || 'خطأ في معالجة الكوبون' }, { status: 500 });
+  } catch (err) {
+    console.error('Coupon validation error:', err);
+    return apiError('coupon_failed', 500);
   }
 }

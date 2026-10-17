@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { apiError } from '@/lib/api-errors';
 
 export async function POST(req: Request) {
   try {
@@ -7,16 +8,16 @@ export async function POST(req: Request) {
     const { product_id, author_name, author_phone, rating, comment } = body;
 
     if (!product_id || typeof product_id !== 'string') {
-      return NextResponse.json({ error: 'معرّف المنتج غير صالح' }, { status: 400 });
+      return apiError('review_invalid_product', 400);
     }
 
     if (!author_name || typeof author_name !== 'string' || author_name.trim().length < 2) {
-      return NextResponse.json({ error: 'يرجى إدخال اسمك (حرفين على الأقل)' }, { status: 400 });
+      return apiError('review_invalid_name', 400);
     }
 
     const numRating = Number(rating);
     if (!Number.isInteger(numRating) || numRating < 1 || numRating > 5) {
-      return NextResponse.json({ error: 'التقييم يجب أن يكون بين 1 و 5 نجوم' }, { status: 400 });
+      return apiError('review_invalid_rating', 400);
     }
 
     // Verify product exists
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
       .single();
 
     if (prodErr || !product) {
-      return NextResponse.json({ error: 'المنتج غير موجود' }, { status: 404 });
+      return apiError('review_product_not_found', 404);
     }
 
     const cleanComment = typeof comment === 'string' ? comment.trim().slice(0, 1000) : null;
@@ -48,16 +49,16 @@ export async function POST(req: Request) {
 
     if (insertErr) {
       console.error('Review insert error:', insertErr);
-      return NextResponse.json({ error: 'تعذر حفظ التقييم' }, { status: 500 });
+      return apiError('review_save_failed', 500);
     }
 
     return NextResponse.json({
+      ok: true,
       success: true,
-      message: 'تم إضافة تقييمك بنجاح!',
       review: newReview,
     });
   } catch (err: any) {
     console.error('Reviews API error:', err);
-    return NextResponse.json({ error: 'حدث خطأ في معالجة الطلب' }, { status: 500 });
+    return apiError('generic', 500);
   }
 }

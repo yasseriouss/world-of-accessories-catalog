@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabaseBrowser } from '@/lib/supabase-client';
+import { t } from '@/lib/i18n';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -18,33 +19,33 @@ export default function LoginPage() {
       password: fd.get('password') as string,
     });
     setLoading(false);
-    if (error) setErr('بيانات الدخول غير صحيحة');
+    if (error) setErr(t('login.invalid'));
     else router.push('/');
   }
 
   return (
     <main style={{ minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center',
-      background:'linear-gradient(135deg, var(--brand-ink), #26220f)', padding: '20px' }}>
+      background:'var(--color-inverse-bg)', padding: '20px' }}>
       <form onSubmit={submit} className="card" style={{ padding:'36px 32px', width:'min(420px,100%)', display:'grid', gap:'16px', borderRadius:'var(--r-md)' }}>
-        <h1 style={{ fontSize:'1.4rem', textAlign:'center', margin:0 }}>عالم <span style={{ color:'var(--color-accent)' }}>الاكسسوار</span></h1>
-        <p style={{ textAlign:'center', fontSize:'.85rem', color:'var(--color-text-3)', margin:0 }}>لوحة التحكم الإدارية</p>
+        <h1 style={{ fontSize:'1.4rem', textAlign:'center', margin:0 }}>{t('brand.first')} <span style={{ color: 'var(--color-accent-text)' }}>{t('brand.accent')}</span></h1>
+        <p style={{ textAlign:'center', fontSize:'.85rem', color:'var(--color-text-3)', margin:0 }}>{t('brand.panelFull')}</p>
         
         <div>
-          <label htmlFor="admin-email" className="lbl" style={{ marginBottom: '6px' }}>البريد الإلكتروني</label>
+          <label htmlFor="admin-email" className="lbl" style={{ marginBottom: '6px' }}>{t('login.email')}</label>
           <input
             id="admin-email"
             name="email"
             type="email"
             required
             className="input"
-            placeholder="admin@woa.eg"
+            placeholder={t('login.emailPlaceholder')}
             dir="ltr"
-            aria-label="البريد الإلكتروني"
+            aria-label={t('login.email')}
           />
         </div>
 
         <div>
-          <label htmlFor="admin-password" className="lbl" style={{ marginBottom: '6px' }}>كلمة المرور</label>
+          <label htmlFor="admin-password" className="lbl" style={{ marginBottom: '6px' }}>{t('login.password')}</label>
           <input
             id="admin-password"
             name="password"
@@ -53,7 +54,7 @@ export default function LoginPage() {
             className="input"
             placeholder="••••••••"
             dir="ltr"
-            aria-label="كلمة المرور"
+            aria-label={t('login.password')}
           />
         </div>
 
@@ -64,7 +65,7 @@ export default function LoginPage() {
           disabled={loading}
           style={{ width: '100%', minHeight: '48px', marginTop: '8px' }}
         >
-          {loading ? 'جارٍ تسجيل الدخول...' : 'تسجيل الدخول'}
+          {loading ? t('login.signingIn') : t('login.signIn')}
         </button>
       </form>
     </main>

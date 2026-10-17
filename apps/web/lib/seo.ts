@@ -1,3 +1,5 @@
+import { SITE } from './site';
+
 export const productJsonLd = (p: any, locale: string) => ({
   '@context': 'https://schema.org', '@type': 'Product',
   name: locale === 'ar' ? p.name_ar : p.name_en ?? p.name_ar,
@@ -17,15 +19,16 @@ export const productJsonLd = (p: any, locale: string) => ({
   } : undefined
 });
 
-export const siteJsonLd = {
+/** LocalBusiness JSON-LD; `t` is a translator scoped to the `seo` namespace. */
+export const siteJsonLd = (t: (key: string) => string) => ({
   '@context': 'https://schema.org', '@type': 'LocalBusiness',
-  name: 'عالم الاكسسوار | WOA Accessories',
-  telephone: '+20 1140030036',
+  name: t('businessName'),
+  telephone: SITE.phoneE164,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'المحور المركزي، بجوار ميدان النجدة، سيلا مول',
-    addressLocality: '6 أكتوبر', addressRegion: 'الجيزة', addressCountry: 'EG'
+    streetAddress: t('street'),
+    addressLocality: t('locality'), addressRegion: t('region'), addressCountry: 'EG'
   },
   openingHours: 'Mo-Su 10:00-22:00',
   priceRange: '$$'
-};
+});

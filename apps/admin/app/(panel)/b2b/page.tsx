@@ -1,14 +1,15 @@
 ﻿import { supabaseServer } from '@/lib/supabase-server';
 import B2BActions from './B2BActions';
+import { t } from '@/lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
 const STATUS_MAP: Record<string, { label: string; chipClass: string }> = {
-  new: { label: 'طلب جديد', chipClass: 'chip-sale' },
-  contacted: { label: 'تم التواصل', chipClass: '' },
-  quoted: { label: 'عرض سعر', chipClass: '' },
-  won: { label: 'تم التعاقد', chipClass: 'chip-stock' },
-  lost: { label: 'ملغي', chipClass: 'chip-out' },
+  new: { label: t('b2b.statusShort.new'), chipClass: 'chip-sale' },
+  contacted: { label: t('b2bStatus.contacted'), chipClass: '' },
+  quoted: { label: t('b2b.statusShort.quoted'), chipClass: '' },
+  won: { label: t('b2bStatus.won'), chipClass: 'chip-stock' },
+  lost: { label: t('b2b.statusShort.lost'), chipClass: 'chip-out' },
 };
 
 export default async function B2BQuotesPage({ searchParams }: any) {
@@ -37,10 +38,10 @@ export default async function B2BQuotesPage({ searchParams }: any) {
     <div style={{ display: 'grid', gap: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700 }}>طلبات الجملة والمصانع (B2B)</h1>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 700 }}>{t('b2b.title')}</h1>
           <p style={{ color: 'var(--color-text-3)', fontSize: '.88rem', marginTop: '4px' }}>
-            طلبات عروض الأسعار والكميات الكبيرة من مصنعي المطابخ ومهندسي الديكور ({quotes?.length || 0})
-            {countNew > 0 && <span className="chip chip-sale" style={{ marginInlineStart: '8px' }}>{countNew} جديد بحاجة للمتابعة</span>}
+            {t('b2b.subtitle', { count: quotes?.length || 0 })}
+            {countNew > 0 && <span className="chip chip-sale" style={{ marginInlineStart: '8px' }}>{t('b2b.newCount', { count: countNew })}</span>}
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export default async function B2BQuotesPage({ searchParams }: any) {
           <input
             name="q"
             className="input"
-            placeholder="بحث بشركة، اسم، أو هاتف"
+            placeholder={t('b2b.searchPlaceholder')}
             defaultValue={searchParams?.q}
             style={{ width: '220px' }}
           />
@@ -58,14 +59,14 @@ export default async function B2BQuotesPage({ searchParams }: any) {
             defaultValue={searchParams?.status ?? ''}
             style={{ width: '150px' }}
           >
-            <option value="">كل الحالات</option>
+            <option value="">{t('common.allStatuses')}</option>
             {Object.entries(STATUS_MAP).map(([val, { label }]) => (
               <option key={val} value={val}>
                 {label}
               </option>
             ))}
           </select>
-          <button className="btn btn-dark btn-sm">تصفية</button>
+          <button className="btn btn-dark btn-sm">{t('common.filter')}</button>
         </form>
       </div>
 
@@ -73,22 +74,22 @@ export default async function B2BQuotesPage({ searchParams }: any) {
         <table className="admin">
           <thead>
             <tr>
-              <th>التاريخ</th>
-              <th>الشركة / الورشة</th>
-              <th>المسؤول</th>
-              <th>الهاتف</th>
-              <th>المحافظة</th>
-              <th>الكمية المطلوبة</th>
-              <th>التفاصيل</th>
-              <th>الحالة</th>
-              <th>الإجراءات</th>
+              <th>{t('common.date')}</th>
+              <th>{t('b2b.company')}</th>
+              <th>{t('b2b.contact')}</th>
+              <th>{t('common.phone')}</th>
+              <th>{t('common.governorate')}</th>
+              <th>{t('b2b.quantity')}</th>
+              <th>{t('common.details')}</th>
+              <th>{t('common.status')}</th>
+              <th>{t('common.actions')}</th>
             </tr>
           </thead>
           <tbody>
             {(!quotes || quotes.length === 0) ? (
               <tr>
                 <td colSpan={9} style={{ textAlign: 'center', padding: '32px', color: 'var(--color-text-3)' }}>
-                  لا توجد طلبات عروض أسعار تطابق البحث الحالي
+                  {t('b2b.empty')}
                 </td>
               </tr>
             ) : (
@@ -119,7 +120,7 @@ export default async function B2BQuotesPage({ searchParams }: any) {
                     <td>{q.governorate || '—'}</td>
                     <td>
                       <span className="chip" style={{ fontSize: '.78rem' }}>
-                        {q.qty_estimate || 'غير محدد'}
+                        {q.qty_estimate || t('common.unspecified')}
                       </span>
                     </td>
                     <td style={{ maxWidth: '240px', fontSize: '.82rem', lineHeight: 1.4 }}>

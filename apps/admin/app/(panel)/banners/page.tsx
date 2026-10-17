@@ -1,6 +1,7 @@
 ﻿'use client';
 import { useEffect, useState } from 'react';
 import { supabaseBrowser } from '@/lib/supabase-client';
+import { t } from '@/lib/i18n';
 
 export default function BannersPage() {
   const [banners, setBanners] = useState<any[]>([]);
@@ -26,31 +27,31 @@ export default function BannersPage() {
 
   return (
     <div style={{ display:'grid', gap:'24px' }}>
-      <h1 style={{ fontSize:'1.5rem' }}>البنرات والعروض</h1>
+      <h1 style={{ fontSize:'1.5rem' }}>{t('banners.title')}</h1>
 
       <form onSubmit={add} className="card" style={{ padding:'20px', display:'grid',
         gridTemplateColumns:'2fr 1fr 1fr 1fr auto', gap:'12px', alignItems:'end' }}>
-        <div><label className="lbl">نص الإعلان *</label><input name="text_ar" required className="input" /></div>
-        <div><label className="lbl">التاج</label><input name="tag_ar" className="input" placeholder="عرض خاص" /></div>
-        <div><label className="lbl">الرابط</label><input name="link_url" className="input" dir="ltr" placeholder="https://wa.me/..." /></div>
-        <div><label className="lbl">المكان</label>
+        <div><label className="lbl">{t('banners.text')}</label><input name="text_ar" required className="input" /></div>
+        <div><label className="lbl">{t('banners.tag')}</label><input name="tag_ar" className="input" placeholder={t('banners.tagPlaceholder')} /></div>
+        <div><label className="lbl">{t('banners.link')}</label><input name="link_url" className="input" dir="ltr" placeholder={t('banners.linkPlaceholder')} /></div>
+        <div><label className="lbl">{t('banners.placement')}</label>
           <select name="placement" className="input">
-            <option value="store_top">شريط المتجر</option>
-            <option value="store_hero">Hero المتجر</option>
-            <option value="web_hero">Hero اللاندنج</option>
+            <option value="store_top">{t('banners.placements.store_top')}</option>
+            <option value="store_hero">{t('banners.placements.store_hero')}</option>
+            <option value="web_hero">{t('banners.placements.web_hero')}</option>
           </select></div>
-        <button className="btn btn-primary">إضافة</button>
+        <button className="btn btn-primary">{t('common.add')}</button>
       </form>
 
       <table className="admin">
-        <thead><tr><th>النص</th><th>المكان</th><th>النقرات</th><th>الحالة</th><th></th></tr></thead>
+        <thead><tr><th>{t('banners.textCol')}</th><th>{t('banners.placement')}</th><th>{t('banners.clicks')}</th><th>{t('common.status')}</th><th></th></tr></thead>
         <tbody>{banners.map(b => (
           <tr key={b.id}>
             <td>{b.text_ar} {b.tag_ar && <span className="chip" style={{ marginInlineStart:'8px' }}>{b.tag_ar}</span>}</td>
             <td style={{ fontSize:'.85rem' }}>{b.placement}</td>
             <td className="price">{b.clicks}</td>
-            <td>{b.is_active ? <span className="chip chip-stock">مفعّل</span> : <span className="chip">موقوف</span>}</td>
-            <td><button className="btn btn-outline btn-sm" onClick={() => toggle(b)}>{b.is_active ? 'إيقاف' : 'تفعيل'}</button></td>
+            <td>{b.is_active ? <span className="chip chip-stock">{t('banners.active')}</span> : <span className="chip">{t('common.paused')}</span>}</td>
+            <td><button className="btn btn-outline btn-sm" onClick={() => toggle(b)}>{b.is_active ? t('banners.deactivate') : t('banners.activate')}</button></td>
           </tr>))}
         </tbody>
       </table>

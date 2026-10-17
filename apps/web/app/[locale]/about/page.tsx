@@ -1,17 +1,24 @@
-export const metadata = { title: 'من نحن' };
+import { getTranslations } from 'next-intl/server';
 
-export default function AboutPage() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'about' });
+  return { title: t('metaTitle') };
+}
+
+export default async function AboutPage({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'about' });
+  const points = t.raw('points') as { title: string; text: string }[];
   return (
     <div className="container section">
-      <div className="eyebrow">About</div>
-      <h1 style={{ fontSize:'var(--fs-h1)' }}>عالم الاكسسوار</h1>
+      <div className="eyebrow">{t('eyebrow')}</div>
+      <h1 style={{ fontSize:'var(--fs-h1)' }}>{t('title')}</h1>
       <div className="prose" style={{ margin:0 }}>
-        <p>منذ تأسيسنا في مدينة 6 أكتوبر، ونحن الشريك المعتمد لتوريد إكسسوارات الأثاث والمطابخ في مصر — للمصانع والورش ومهندسي الديكور.</p>
-        <h2>ماذا يميزنا؟</h2>
+        <p>{t('intro')}</p>
+        <h2>{t('whyTitle')}</h2>
         <ul>
-          <li><strong>اعتمادية هندسية:</strong> خامات ستانلس مقاومة للرطوبة وبساتم مختبرة لأكثر من 80,000 دورة.</li>
-          <li><strong>مخزون فوري:</strong> أكثر من 590 منتجاً جاهزاً من معرضنا داخل سيلا مول.</li>
-          <li><strong>تغطية شاملة:</strong> شحن آمن لجميع المحافظات مع إمكانية المعاينة.</li>
+          {points.map((pt) => (
+            <li key={pt.title}><strong>{pt.title}:</strong> {pt.text}</li>
+          ))}
         </ul>
       </div>
     </div>

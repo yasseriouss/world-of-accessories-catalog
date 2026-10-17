@@ -94,7 +94,7 @@ table.admin tbody tr {
   transition: background-color var(--t-fast);
 }
 table.admin tbody tr:hover {
-  background-color: rgba(176, 141, 46, 0.04);
+  background-color: var(--color-accent-soft);
 }
 
 /* ===== Stat Cards ===== */
@@ -117,7 +117,7 @@ table.admin tbody tr:hover {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(17, 17, 17, 0.65);
+  background: var(--color-overlay);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -207,7 +207,7 @@ table.admin tbody tr:hover {
     z-index: 100;
     transform: translateX(100%);
     transition: transform var(--t-med);
-    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    box-shadow: var(--sh-3);
   }
   [dir="ltr"] .admin-sidebar {
     transform: translateX(-100%);
@@ -219,7 +219,7 @@ table.admin tbody tr:hover {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: var(--color-overlay);
     z-index: 90;
     backdrop-filter: blur(2px);
   }

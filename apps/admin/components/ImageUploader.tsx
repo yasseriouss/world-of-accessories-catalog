@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import { supabaseBrowser } from '../lib/supabase-client';
+import { t } from '@/lib/i18n';
 
 export type UploadedImage = {
   url: string;
@@ -32,7 +33,7 @@ export default function ImageUploader({
     if (!files || files.length === 0) return;
 
     if (value.length + files.length > maxFiles) {
-      setError(`الحد الأقصى هو ${maxFiles} صور لكل منتج`);
+      setError(t('uploader.maxFiles', { count: maxFiles }));
       return;
     }
 
@@ -76,7 +77,7 @@ export default function ImageUploader({
         });
       } catch (err: any) {
         console.error('Upload failed:', err);
-        setError(`فشل رفع ${file.name}: ${err.message || 'خطأ غير معروف'}`);
+        setError(t('uploader.failed', { file: file.name, message: err.message || t('uploader.unknownError') }));
       }
     }
 
@@ -99,7 +100,7 @@ export default function ImageUploader({
 
   return (
     <div style={{ display: 'grid', gap: '12px' }}>
-      <label className="lbl">صور المنتج (Supabase Storage)</label>
+      <label className="lbl">{t('uploader.label')}</label>
       
       {/* Upload Dropzone */}
       <div
@@ -115,7 +116,7 @@ export default function ImageUploader({
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.borderColor = 'var(--brand-gold)';
-          e.currentTarget.style.background = 'rgba(176,141,46,.04)';
+          e.currentTarget.style.background = 'var(--color-accent-soft)';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.borderColor = 'var(--color-line)';
@@ -135,10 +136,10 @@ export default function ImageUploader({
           {uploading ? '⏳' : '📸'}
         </div>
         <div style={{ fontWeight: 600, fontSize: '.95rem' }}>
-          {uploading ? 'جاري رفع الصور إلى Supabase...' : 'اضغط لاختيار صور من جهازك أو اسحبها هنا'}
+          {uploading ? t('uploader.uploading') : t('uploader.prompt')}
         </div>
         <div style={{ fontSize: '.78rem', color: 'var(--color-text-3)', marginTop: '4px' }}>
-          WebP, PNG, JPG (مرفوعة تلقائياً إلى bucket: {bucket})
+          {t('uploader.formats', { bucket })}
         </div>
       </div>
 
@@ -169,10 +170,10 @@ export default function ImageUploader({
                 position: 'relative',
               }}
             >
-              <div style={{ aspectRatio: '1', position: 'relative', background: '#F5F5F3' }}>
+              <div style={{ aspectRatio: '1', position: 'relative', background: 'var(--color-surface-2)' }}>
                 <img
                   src={img.url}
-                  alt={img.alt_ar || `صورة ${idx + 1}`}
+                  alt={img.alt_ar || t('uploader.imageAlt', { n: idx + 1 })}
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
                 <button
@@ -181,13 +182,13 @@ export default function ImageUploader({
                     e.stopPropagation();
                     removeImage(idx);
                   }}
-                  title="حذف الصورة"
+                  title={t('uploader.remove')}
                   style={{
                     position: 'absolute',
                     top: '4px',
                     left: '4px',
-                    background: 'rgba(20,19,17,0.75)',
-                    color: '#fff',
+                    background: 'var(--color-scrim)',
+                    color: 'var(--color-on-scrim)',
                     border: 'none',
                     borderRadius: '50%',
                     width: '24px',
@@ -209,21 +210,21 @@ export default function ImageUploader({
                       bottom: '4px',
                       right: '4px',
                       background: 'var(--brand-gold)',
-                      color: '#fff',
+                      color: 'var(--color-on-scrim)',
                       fontSize: '.68rem',
                       padding: '2px 6px',
                       borderRadius: 'var(--r-sm)',
                       fontWeight: 600,
                     }}
                   >
-                    رئيسية
+                    {t('uploader.primary')}
                   </span>
                 )}
               </div>
               <div style={{ padding: '6px' }}>
                 <input
                   type="text"
-                  placeholder="نص Alt وصفي..."
+                  placeholder={t('uploader.altPlaceholder')}
                   value={img.alt_ar || ''}
                   onChange={(e) => updateAltText(idx, e.target.value)}
                   style={{

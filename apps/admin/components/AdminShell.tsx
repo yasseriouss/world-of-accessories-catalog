@@ -4,16 +4,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { supabaseBrowser } from '@/lib/supabase-client';
+import { t } from '@/lib/i18n';
 
 const LINKS = [
-  { href: '/', label: 'لوحة القيادة', icon: '▦' },
-  { href: '/orders', label: 'الطلبات', icon: '🛒' },
-  { href: '/b2b', label: 'طلبات الجملة (B2B)', icon: '🏢' },
-  { href: '/coupons', label: 'الكوبونات', icon: '🏷️' },
-  { href: '/reviews', label: 'المراجعات', icon: '⭐' },
-  { href: '/products', label: 'المنتجات', icon: '📦' },
-  { href: '/blog', label: 'المدونة', icon: '✎' },
-  { href: '/banners', label: 'البنرات', icon: '📢' },
+  { href: '/', label: t('nav.dashboard'), icon: '▦' },
+  { href: '/orders', label: t('nav.orders'), icon: '🛒' },
+  { href: '/b2b', label: t('nav.b2b'), icon: '🏢' },
+  { href: '/coupons', label: t('nav.coupons'), icon: '🏷️' },
+  { href: '/reviews', label: t('nav.reviews'), icon: '⭐' },
+  { href: '/products', label: t('nav.products'), icon: '📦' },
+  { href: '/blog', label: t('nav.blog'), icon: '✎' },
+  { href: '/banners', label: t('nav.banners'), icon: '📢' },
 ];
 
 export default function AdminShell({ children }: { children: React.ReactNode }) {
@@ -51,15 +52,15 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       {/* Mobile Sticky Header Bar */}
       <header className="admin-mobile-header">
         <div style={{ fontWeight: 800, fontSize: '1.05rem' }}>
-          عالم <span style={{ color: 'var(--color-accent)' }}>الاكسسوار</span>
+          {t('brand.first')} <span style={{ color: 'var(--color-accent-text)' }}>{t('brand.accent')}</span>
           <span style={{ fontSize: '.75rem', fontWeight: 400, color: 'var(--color-text-3)', marginInlineStart: '8px' }}>
-            لوحة التحكم
+            {t('brand.panel')}
           </span>
         </div>
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة الإدارية'}
+          aria-label={mobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={mobileMenuOpen}
           className="btn btn-outline btn-sm"
           style={{ width: '44px', height: '44px', padding: 0 }}
@@ -82,17 +83,17 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         <div style={{ padding: '0 24px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
             <div style={{ fontWeight: 800, fontSize: '1.15rem' }}>
-              عالم <span style={{ color: 'var(--color-accent)' }}>الاكسسوار</span>
+              {t('brand.first')} <span style={{ color: 'var(--color-accent-text)' }}>{t('brand.accent')}</span>
             </div>
             <div style={{ fontSize: '.75rem', fontWeight: 500, color: 'var(--color-text-3)', marginTop: 2 }}>
-              لوحة التحكم الإدارية
+              {t('brand.panelFull')}
             </div>
           </div>
           {mobileMenuOpen && (
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="btn btn-ghost btn-sm"
-              aria-label="إغلاق القائمة"
+              aria-label={t('nav.closeMenu')}
               style={{ width: '44px', height: '44px', padding: 0 }}
             >
               ✕
@@ -117,7 +118,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
                   fontSize: '.92rem',
                   fontWeight: isActive ? 700 : 500,
                   minHeight: '44px',
-                  background: isActive ? 'rgba(176, 141, 46, 0.12)' : 'transparent',
+                  background: isActive ? 'var(--color-accent-soft)' : 'transparent',
                   color: isActive ? 'var(--color-accent)' : 'var(--color-text-2)',
                   borderInlineStart: isActive ? '3px solid var(--color-accent)' : '3px solid transparent',
                   transition: 'background var(--t-fast), color var(--t-fast)',
@@ -138,14 +139,14 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
             className="btn btn-outline btn-sm"
             style={{ width: '100%', marginBottom: '8px', minHeight: '44px' }}
           >
-            زيارة المتجر ↗
+            {t('nav.visitStore')}
           </a>
           <button
             onClick={handleSignOut}
             className="btn btn-ghost btn-sm"
             style={{ width: '100%', minHeight: '44px', color: 'var(--color-danger)' }}
           >
-            تسجيل الخروج
+            {t('nav.signOut')}
           </button>
         </div>
       </aside>

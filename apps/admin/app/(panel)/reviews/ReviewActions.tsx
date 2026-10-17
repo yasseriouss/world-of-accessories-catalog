@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
+import { t } from '@/lib/i18n';
 
 export function ReviewStatusToggle({ id, isApproved }: { id: string; isApproved: boolean }) {
   const router = useRouter();
@@ -21,9 +22,9 @@ export function ReviewStatusToggle({ id, isApproved }: { id: string; isApproved:
       onClick={toggle}
       className={`chip ${isApproved ? 'chip-stock' : 'chip-out'}`}
       style={{ cursor: 'pointer', border: 'none', fontSize: '0.8rem' }}
-      title={isApproved ? 'انقر لإخفاء المراجعة' : 'انقر لاعتماد المراجعة'}
+      title={isApproved ? t('reviews.clickToHide') : t('reviews.clickToApprove')}
     >
-      {isApproved ? '✓ معتمد' : '✕ محجوب'}
+      {isApproved ? t('reviews.approvedBadge') : t('reviews.hiddenBadge')}
     </button>
   );
 }
@@ -33,7 +34,7 @@ export function ReviewDeleteButton({ id }: { id: string }) {
   const [busy, setBusy] = useState(false);
 
   async function remove() {
-    if (!confirm('هل أنت متأكد من حذف هذه المراجعة نهائياً؟')) return;
+    if (!confirm(t('reviews.confirmDelete'))) return;
     setBusy(true);
     await supabaseBrowser().from('reviews').delete().eq('id', id);
     setBusy(false);
@@ -46,8 +47,8 @@ export function ReviewDeleteButton({ id }: { id: string }) {
       disabled={busy}
       onClick={remove}
       className="btn btn-ghost btn-sm"
-      style={{ color: '#B91C1C', padding: '4px 8px', fontSize: '0.8rem' }}
-      title="حذف المراجعة"
+      style={{ color: 'var(--color-danger)', padding: '4px 8px', fontSize: '0.8rem' }}
+      title={t('reviews.delete')}
     >
       🗑️
     </button>

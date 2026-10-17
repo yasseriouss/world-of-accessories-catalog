@@ -45,7 +45,12 @@
     "reviews": "التقييمات",
     "added": "✓ تمت الإضافة",
     "new": "جديد",
-    "bestSeller": "الأكثر مبيعاً"
+    "bestSeller": "الأكثر مبيعاً",
+    "wishlistAdd": "إضافة إلى المفضلة",
+    "wishlistRemove": "إزالة من المفضلة",
+    "whatsappInquiry": "أريد الاستفسار عن المنتج {code} - {name}",
+    "whatsappOrder": "طلب منتج: {code} - {name}",
+    "whatsappOrderPriced": "طلب: {code} - {name} | {price}"
   },
   "specs": {
     "brand": "الماركة",
@@ -119,7 +124,8 @@
     "couponError": "تعذر التحقق من الكوبون حالياً",
     "subtotal": "المجموع الفرعي",
     "couponDiscount": "خصم الكوبون ({code})",
-    "confirmTotal": "تأكيد الطلب — {total}"
+    "confirmTotal": "تأكيد الطلب — {total}",
+    "phonePlaceholder": "01xxxxxxxxx"
   },
   "governorates": {
     "cairo": "القاهرة",
@@ -163,7 +169,13 @@
     "submitting": "جارٍ الإرسال...",
     "success": "شكراً لك! تم إضافة تقييمك بنجاح.",
     "errorName": "يرجى إدخال اسمك (حرفين على الأقل)",
-    "errorGeneric": "تعذر إرسال التقييم"
+    "errorGeneric": "تعذر إرسال التقييم",
+    "reviewFor": "تقييمك لمنتج: {name}",
+    "stars": "{count} نجوم",
+    "phoneFormat": "01xxxxxxxxx",
+    "emptyTitle": "لا توجد تقييمات بعد على هذا المنتج.",
+    "emptyText": "كن أول من يشارك تجربته مع عملاء عالم الاكسسوار!",
+    "anonymousInitial": "ع"
   },
   "blog": {
     "title": "المدونة المعمارية",
@@ -186,7 +198,8 @@
     "address": "المحور المركزي – بجوار ميدان النجدة – داخل سيلا مول، 6 أكتوبر",
     "hours": "يومياً 10:00 صباحاً - 10:00 مساءً",
     "call": "اتصل الآن",
-    "whatsapp": "واتساب"
+    "whatsapp": "واتساب",
+    "whatsappGreeting": "مرحباً، لدي استفسار"
   },
   "footer": {
     "rights": "جميع الحقوق محفوظة",
@@ -209,6 +222,99 @@
     "bestSeller": "الأكثر مبيعاً",
     "skipToContent": "الانتقال إلى المحتوى الرئيسي",
     "menu": "القائمة الرئيسية",
+    "close": "إغلاق",
+    "switchLanguage": "Switch to English",
+    "switchLanguageShort": "EN",
+    "switchLanguageLong": "English",
+    "listSeparator": "، ",
+    "pagination": "التنقل بين الصفحات",
+    "scrollTop": "العودة للأعلى",
+    "offers": "العروض",
+    "themeLight": "التبديل إلى الوضع الفاتح",
+    "themeDark": "التبديل إلى الوضع الداكن",
+    "total": "الإجمالي"
+  },
+  "meta": {
+    "title": "عالم الاكسسوار | متجر إكسسوارات الأثاث والمطابخ",
+    "titleTemplate": "%s | عالم الاكسسوار",
+    "description": "تسوق إكسسوارات المطابخ والدريسينج: مفصلات هيدروليك، سكك تاندم، مقابض فاخرة. شحن لجميع محافظات مصر.",
+    "ogLocale": "ar_EG",
+    "siteName": "عالم الاكسسوار"
+  },
+  "seo": {
+    "businessName": "عالم الاكسسوار | WOA Accessories",
+    "street": "المحور المركزي، بجوار ميدان النجدة، سيلا مول",
+    "locality": "6 أكتوبر",
+    "region": "الجيزة"
+  },
+  "brand": {
+    "first": "عالم",
+    "accent": "الاكسسوار",
+    "name": "عالم الاكسسوار",
+    "short": "WOA"
+  },
+  "notFound": {
+    "message": "الصفحة أو المنتج غير موجود",
+    "back": "العودة للمتجر"
+  },
+  "compare": {
+    "empty": "لا توجد منتجات في قائمة المقارنة حالياً.",
+    "browse": "تصفح الكتالوج",
+    "clear": "إفراغ المقارنة",
+    "remove": "إزالة من المقارنة",
+    "price": "السعر"
+  },
+  "account": {
+    "title": "حسابي — تتبع الطلب",
+    "phone": "رقم الموبايل",
+    "orderNo": "رقم الطلب (WOA-...)",
+    "track": "تتبع",
+    "total": "الإجمالي",
+    "status": {
+      "new": "جديد",
+      "confirmed": "مؤكد",
+      "packed": "جاري التجهيز",
+      "shipped": "تم الشحن",
+      "delivered": "تم التسليم",
+      "cancelled": "ملغي"
+    }
+  },
+  "errors": {
+    "coupon_required": "برجاء إدخال كود الكوبون",
+    "coupon_invalid": "كود الكوبون غير صالح أو منتهي الصلاحية",
+    "coupon_not_started": "هذا الكوبون لم يبدأ بعد",
+    "coupon_expired": "انتهت صلاحية هذا الكوبون",
+    "coupon_exhausted": "وصل هذا الكوبون إلى الحد الأقصى للاستخدام",
+    "coupon_min_order": "الحد الأدنى لتطبيق هذا الكوبون هو {min} ج.م",
+    "coupon_failed": "تعذر التحقق من الكوبون حالياً",
+    "products_unavailable": "بعض المنتجات لم تعد متاحة",
+    "stock_insufficient": "الكمية المطلوبة من {name} غير متاحة (المتبقي {stock})",
+    "invalid_phone": "رقم موبايل مصري غير صحيح",
+    "invalid_order": "بيانات الطلب غير صحيحة، برجاء مراجعة الحقول",
+    "order_lookup_required": "برجاء إدخال رقم الموبايل ورقم الطلب",
+    "order_not_found": "لم نجد طلباً بهذه البيانات",
+    "review_invalid_product": "معرّف المنتج غير صالح",
+    "review_invalid_name": "يرجى إدخال اسمك (حرفين على الأقل)",
+    "review_invalid_rating": "التقييم يجب أن يكون بين 1 و 5 نجوم",
+    "review_product_not_found": "المنتج غير موجود",
+    "review_save_failed": "تعذر حفظ التقييم",
+    "generic": "حدث خطأ، برجاء المحاولة مرة أخرى"
+  },
+  "staffNotify": {
+    "newOrder": "🛒 طلب جديد {orderNo}",
+    "total": "الإجمالي: {total} ج.م ({payment})",
+    "couponDiscount": "خصم كوبون: {discount} ج.م"
+  },
+  "wishlist": {
+    "title": "قائمة المفضلة",
+    "subtitle": "المنتجات التي قمت بحفظها للرجوع إليها لاحقاً ({count})",
+    "emptyTitle": "قائمة المفضلة فارغة حالياً",
+    "emptyText": "تصفح تشكيلة إكسسوارات المطابخ والأثاث واضغط على علامة القلب لحفظ المنتجات التي تعجبك.",
+    "browse": "تصفح الكتالوج الآن",
+    "remove": "حذف من المفضلة"
+  },
+  "gallery": {
+    "zoom": "تكبير",
     "close": "إغلاق"
   }
 }

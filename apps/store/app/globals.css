@@ -7,7 +7,7 @@ body { font-family: var(--font-ar); background: var(--color-bg); color: var(--co
 html[lang="en"] body { font-family: var(--font-en); }
 a { color: inherit; }
 img { max-width: 100%; }
-::selection { background: var(--color-accent); color: #fff; }
+
 
 /* Mobile adaptations */
 @media (max-width: 860px) {
@@ -28,5 +28,10 @@ img { max-width: 100%; }
 @media (max-width: 600px) {
   .header-lang-btn, .header-wishlist-btn { display: none !important; }
 }
-.cart-count { background: var(--color-accent); color: #111111; font-weight: 700; border-radius: 50%; min-width: 18px;
+.cart-count { background: var(--color-accent); color: var(--color-on-primary); font-weight: 700; border-radius: var(--r-full); min-width: 18px;
   height: 18px; font-size: .68rem; display: inline-flex; align-items: center; justify-content: center; padding: 0 4px; }
+
+/* 2-column mobile grid: keep card CTAs on one line */
+@media (max-width: 480px) {
+  .pgrid .card .btn-sm { padding: 8px 10px; font-size: .8rem; white-space: nowrap; }
+}

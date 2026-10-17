@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { intlLocale } from '@/lib/format';
+import { apiErrorText } from '@/lib/api-errors';
 
 export interface ReviewItem {
   id: string;
@@ -25,8 +27,8 @@ export default function ProductReviews({
   initialCount: number;
 }) {
   const locale = useLocale();
-  const ar = locale === 'ar';
   const t = useTranslations('reviews');
+  const tErr = useTranslations('errors');
 
   const [reviews, setReviews] = useState<ReviewItem[]>(initialReviews);
   const [ratingAvg, setRatingAvg] = useState<number>(initialAvg);
@@ -66,7 +68,7 @@ export default function ProductReviews({
 
       const data = await res.json();
       if (!res.ok || data.error) {
-        setStatusMsg({ type: 'error', text: data.error || t('errorGeneric') });
+        setStatusMsg({ type: 'error', text: apiErrorText(tErr, data, 'generic') });
       } else {
         setStatusMsg({ type: 'success', text: t('success') });
         if (data.review) {
@@ -134,7 +136,7 @@ export default function ProductReviews({
           }}
         >
           <div style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--color-text)' }}>
-            {ar ? `تقييمك لمنتج: ${productName}` : `Review: ${productName}`}
+            {t('reviewFor', { name: productName })}
           </div>
 
           {/* Star selector */}
@@ -157,7 +159,7 @@ export default function ProductReviews({
                     padding: 0,
                     lineHeight: 1,
                   }}
-                  aria-label={`${star} ${ar ? 'نجوم' : 'stars'}`}
+                  aria-label={t('stars', { count: star })}
                 >
                   ★
                 </button>
@@ -187,7 +189,7 @@ export default function ProductReviews({
               <input
                 type="tel"
                 className="input"
-                placeholder="01xxxxxxxxx"
+                placeholder={t('phoneFormat')}
                 value={authorPhone}
                 onChange={(e) => setAuthorPhone(e.target.value)}
               />
@@ -216,7 +218,7 @@ export default function ProductReviews({
                 borderRadius: 'var(--r-md)',
                 fontSize: '0.88rem',
                 fontWeight: 600,
-                background: statusMsg.type === 'success' ? 'rgba(46, 125, 91, 0.12)' : 'rgba(192, 57, 43, 0.1)',
+                background: statusMsg.type === 'success' ? 'var(--color-success-soft)' : 'var(--color-danger-soft)',
                 color: statusMsg.type === 'success' ? 'var(--color-success)' : 'var(--color-danger)',
                 border: `1px solid ${statusMsg.type === 'success' ? 'var(--color-success)' : 'var(--color-danger)'}`,
               }}
@@ -260,10 +262,10 @@ export default function ProductReviews({
         >
           <div style={{ fontSize: '2rem', marginBottom: '8px' }}>💬</div>
           <div style={{ fontWeight: 600 }}>
-            {ar ? 'لا توجد تقييمات بعد على هذا المنتج.' : 'No reviews yet for this product.'}
+            {t('emptyTitle')}
           </div>
           <div style={{ fontSize: '0.85rem', marginTop: '4px', color: 'var(--color-text-3)' }}>
-            {ar ? 'كن أول من يشارك تجربته مع عملاء عالم الاكسسوار!' : 'Be the first to share your experience!'}
+            {t('emptyText')}
           </div>
         </div>
       ) : (
@@ -286,7 +288,7 @@ export default function ProductReviews({
                       height: '36px',
                       borderRadius: '50%',
                       background: 'var(--brand-gold)',
-                      color: 'var(--color-on-primary, #111111)',
+                      color: 'var(--color-on-primary)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -294,14 +296,14 @@ export default function ProductReviews({
                       fontSize: '0.9rem',
                     }}
                   >
-                    {rev.author_name ? rev.author_name.charAt(0).toUpperCase() : 'ع'}
+                    {rev.author_name ? rev.author_name.charAt(0).toUpperCase() : t('anonymousInitial')}
                   </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--color-text)' }}>
                       {rev.author_name}
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--color-text-3)' }}>
-                      {new Date(rev.created_at).toLocaleDateString(ar ? 'ar-EG' : 'en-US', {
+                      {new Date(rev.created_at).toLocaleDateString(intlLocale(locale), {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric',
