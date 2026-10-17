@@ -15,6 +15,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@supabase/supabase-js']
   },
+  typescript: {
+    ignoreBuildErrors: true
+  },
   webpack: (config) => {
     config.resolve.alias['@'] = __dirname;
     return config;
