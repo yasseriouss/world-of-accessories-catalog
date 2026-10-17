@@ -7,6 +7,7 @@ const LINKS = [
   { href: '/', label: 'لوحة القيادة', icon: '▦' },
   { href: '/orders', label: 'الطلبات', icon: '🛒' },
   { href: '/b2b', label: 'طلبات الجملة (B2B)', icon: '🏢' },
+  { href: '/coupons', label: 'الكوبونات', icon: '🏷️' },
   { href: '/products', label: 'المنتجات', icon: '📦' },
   { href: '/blog', label: 'المدونة', icon: '✎' },
   { href: '/banners', label: 'البنرات', icon: '📢' },

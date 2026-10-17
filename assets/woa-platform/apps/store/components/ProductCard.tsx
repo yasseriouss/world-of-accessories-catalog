@@ -3,30 +3,74 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { egp, discountPct, whatsappLink } from '../lib/format';
-import { useCart } from '../lib/store-context';
+import { useCart, useWishlist } from '../lib/store-context';
 
 export default function ProductCard({ p }: { p: any }) {
   const locale = useLocale();
   const t = useTranslations('product');
   const tc = useTranslations('common');
   const { add } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
+  const inWishlist = isInWishlist(p.slug);
   const price = p.sale_price ?? p.price_egp;
   const img = p.images?.[0];
   const out = p.stock <= 0;
   const name = locale === 'ar' ? p.name_ar : p.name_en ?? p.name_ar;
 
   return (
-    <article className="card">
-      <Link href={`/${locale}/product/${p.slug}`} className="card-media" aria-label={name}>
-        {img && <Image src={img.url} alt={img.alt_ar ?? name} fill sizes="(max-width:480px) 50vw, 300px"
-          style={{ objectFit:'cover' }} loading="lazy" />}
+    <article className="card" style={{ position: 'relative' }}>
+      <div className="card-media" style={{ position: 'relative' }}>
+        <Link href={`/${locale}/product/${p.slug}`} style={{ position: 'absolute', inset: 0 }} aria-label={name}>
+          {img && <Image src={img.url} alt={img.alt_ar ?? name} fill sizes="(max-width:480px) 50vw, 300px"
+            style={{ objectFit:'cover' }} loading="lazy" />}
+        </Link>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleWishlist({
+              slug: p.slug,
+              code: p.code,
+              name_ar: p.name_ar,
+              name_en: p.name_en,
+              price: p.price_egp,
+              sale: p.sale_price,
+              image: img?.url ?? '',
+              stock: p.stock,
+            });
+          }}
+          aria-label={inWishlist ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة'}
+          style={{
+            position: 'absolute',
+            top: '8px',
+            left: '8px',
+            zIndex: 4,
+            background: inWishlist ? 'var(--color-accent)' : 'rgba(255,255,255,0.88)',
+            color: inWishlist ? '#fff' : 'var(--color-text)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '32px',
+            height: '32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+            transition: 'transform var(--t-fast), background var(--t-fast)',
+          }}
+        >
+          <svg viewBox="0 0 24 24" fill={inWishlist ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" width="16" height="16">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
         <div className="bdg">
           {p.sale_price && <span className="sale">{t('sale')} {discountPct(p.price_egp, p.sale_price)}%</span>}
           {p.created_at && (Date.now() - new Date(p.created_at).getTime()) < 14*864e5 && <span className="new">جديد</span>}
           {p.sold_count >= 30 && <span className="best">الأكثر مبيعاً</span>}
           {out && <span className="out">{t('stockOut')}</span>}
         </div>
-      </Link>
+      </div>
       <div style={{ padding:'14px', display:'grid', gap:'8px' }}>
         <div style={{ fontSize:'.72rem', color:'var(--color-text-3)' }}>{t('code')}: {p.code}</div>
         <Link href={`/${locale}/product/${p.slug}`} style={{ fontWeight:600, fontSize:'.95rem', color:'var(--color-text)',
