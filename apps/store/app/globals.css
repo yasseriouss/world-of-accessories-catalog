@@ -1,6 +1,7 @@
 @import './tokens.css';
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100vw; }
 body { font-family: var(--font-ar); background: var(--color-bg); color: var(--color-text);
   line-height: 1.6; -webkit-font-smoothing: antialiased; }
 html[lang="en"] body { font-family: var(--font-en); }
@@ -23,6 +24,9 @@ img { max-width: 100%; }
   [style*="grid-template-columns:260px 1fr"], [style*="grid-template-columns:'260px 1fr'"],
   [style*="grid-template-columns:1fr 360px"], [style*="grid-template-columns:'1fr 360px'"] { grid-template-columns: 1fr !important; }
   .filters { position: static !important; }
+}
+@media (max-width: 600px) {
+  .header-lang-btn, .header-wishlist-btn { display: none !important; }
 }
 .cart-count { background: var(--color-accent); color: #111111; font-weight: 700; border-radius: 50%; min-width: 18px;
   height: 18px; font-size: .68rem; display: inline-flex; align-items: center; justify-content: center; padding: 0 4px; }

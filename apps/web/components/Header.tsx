@@ -42,7 +42,7 @@ export default function Header() {
         <ThemeToggle />
         <Link
           href={`/${other}`}
-          className="btn btn-ghost btn-sm"
+          className="btn btn-ghost btn-sm header-lang-btn"
           aria-label={other === 'en' ? 'Switch to English' : 'التحويل إلى العربية'}
           style={{ minWidth: '44px', minHeight: '44px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
         >
@@ -75,6 +75,9 @@ export default function Header() {
       <Link href={`/${locale}/blog`} onClick={() => setOpen(false)}>{t('blog')}</Link>
       <Link href={`/${locale}/b2b`} onClick={() => setOpen(false)}>{t('b2b')}</Link>
       <Link href={`/${locale}/contact`} onClick={() => setOpen(false)}>{t('contact')}</Link>
+      <Link href={`/${other}`} onClick={() => setOpen(false)}>
+        {other === 'en' ? 'English' : 'العربية'}
+      </Link>
     </aside>
     </>
   );

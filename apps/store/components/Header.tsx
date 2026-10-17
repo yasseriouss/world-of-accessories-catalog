@@ -75,7 +75,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href={`/${other}${path}`}
-            className="btn btn-ghost btn-sm"
+            className="btn btn-ghost btn-sm header-lang-btn"
             aria-label={other === 'en' ? 'Switch to English' : 'التحويل إلى العربية'}
             style={{ minWidth: '44px', minHeight: '44px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
@@ -83,7 +83,7 @@ export default function Header() {
           </Link>
           <Link
             href={`/${locale}/wishlist`}
-            className="btn btn-ghost btn-sm"
+            className="btn btn-ghost btn-sm header-wishlist-btn"
             aria-label={t('wishlist')}
             style={{
               position: 'relative',

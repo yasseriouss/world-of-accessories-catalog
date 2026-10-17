@@ -165,9 +165,10 @@ label.lbl{display:block;font-size:var(--fs-sm);font-weight:600;margin-bottom:6px
 .drawer-ov.open { opacity: 1; pointer-events: auto; }
 .drawer { position: fixed; top: 0; bottom: 0; inset-inline-end: 0; width: min(320px, 85vw);
   background: var(--color-bg-elev); z-index: 71; padding: 24px; display: flex; flex-direction: column;
-  gap: 8px; transform: translateX(100%); transition: transform var(--t-med); }
+  gap: 8px; transform: translateX(100%); transition: transform var(--t-med), visibility var(--t-med);
+  visibility: hidden; pointer-events: none; }
 [dir="rtl"] .drawer { transform: translateX(-100%); }
-.drawer.open { transform: none; }
+.drawer.open { transform: none; visibility: visible; pointer-events: auto; }
 .drawer a { padding: 12px 8px; font-weight: 600; border-bottom: 1px solid var(--color-line); }
 
 /* ===== Badges (Sale/New/Bestseller) ===== */
