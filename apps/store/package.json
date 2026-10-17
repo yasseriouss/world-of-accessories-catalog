@@ -6,9 +6,6 @@
     "build": "next build",
     "start": "next start -p 3002"
   },
-  "engines": {
-    "node": "20.x"
-  },
   "dependencies": {
     "@supabase/supabase-js": "2.44.4",
     "@vercel/analytics": "^1.4.1",
