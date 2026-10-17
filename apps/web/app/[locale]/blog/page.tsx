@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export const revalidate = 300;
 export const metadata = { title: 'المدونة', description: 'مقالات هندسية في إكسسوارات المطابخ والدريسينج: اختيار المفصلات، السكك، والمقابض.' };

@@ -1,14 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { supabase } from '../../../lib/supabase';
-import { getProducts, getPostsByCategory } from '../../../lib/queries';
+import { supabase } from '@/lib/supabase';
+import { getProducts, getPostsByCategory } from '@/lib/queries';
 
 export const revalidate = 300;
-
-export async function generateStaticParams() {
-  return [{ slug: 'kitchen' }, { slug: 'dressing' }, { slug: 'handles' }, { slug: 'mechanisms' }];
-}
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: any) {
   const { data: c } = await supabase.from('categories').select('*').eq('slug', params.slug).single();

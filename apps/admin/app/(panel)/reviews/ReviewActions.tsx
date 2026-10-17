@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 
 export function ReviewStatusToggle({ id, isApproved }: { id: string; isApproved: boolean }) {
@@ -53,3 +53,4 @@ export function ReviewDeleteButton({ id }: { id: string }) {
     </button>
   );
 }
+

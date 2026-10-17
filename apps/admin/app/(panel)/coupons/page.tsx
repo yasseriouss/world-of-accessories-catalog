@@ -1,5 +1,5 @@
-import { supabaseServer } from '../../../lib/supabase-server';
-import { egp } from '../../../lib/format';
+﻿import { supabaseServer } from '@/lib/supabase-server';
+import { egp } from '@/lib/format';
 import { NewCouponForm, CouponToggle } from './CouponForm';
 
 export const dynamic = 'force-dynamic';
@@ -72,3 +72,4 @@ export default async function CouponsPage() {
     </div>
   );
 }
+

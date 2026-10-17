@@ -1,23 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
-import { getProduct, getRelated, getPostsByCategory, getReviews } from '../../../lib/queries';
-import { productJsonLd } from '../../../lib/seo';
-import { egp, discountPct, whatsappLink } from '../../../lib/format';
-import ProductCard from '../../../components/ProductCard';
-import AddToCartButton from '../../../components/AddToCartButton';
-import ProductGallery from '../../../components/ProductGallery';
-import ProductReviews from '../../../components/ProductReviews';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getProduct, getRelated, getPostsByCategory, getReviews } from '@/lib/queries';
+import { productJsonLd } from '@/lib/seo';
+import { egp, discountPct, whatsappLink } from '@/lib/format';
+import ProductCard from '@/components/ProductCard';
+import AddToCartButton from '@/components/AddToCartButton';
+import ProductGallery from '@/components/ProductGallery';
+import ProductReviews from '@/components/ProductReviews';
 
 export const revalidate = 120;
 export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  const { getProducts } = await import('../../../lib/queries');
-  const { products } = await getProducts({ pageSize: 50 });
-  return products.map((p: any) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({ params }: any) {
   const p = await getProduct(params.slug);
@@ -31,6 +25,7 @@ export async function generateMetadata({ params }: any) {
 }
 
 export default async function ProductPage({ params }: any) {
+  unstable_setRequestLocale(params.locale);
   const p = await getProduct(params.slug);
   if (!p) notFound();
   const t = await getTranslations({ locale: params.locale, namespace: 'product' });

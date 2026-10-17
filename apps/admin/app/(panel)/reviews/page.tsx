@@ -1,4 +1,4 @@
-import { supabaseServer } from '../../../lib/supabase-server';
+﻿import { supabaseServer } from '@/lib/supabase-server';
 import { ReviewStatusToggle, ReviewDeleteButton } from './ReviewActions';
 import Link from 'next/link';
 
@@ -171,3 +171,4 @@ export default async function ReviewsPage({ searchParams }: any) {
     </div>
   );
 }
+

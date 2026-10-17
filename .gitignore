@@ -10,3 +10,5 @@ data/all_products_payload.txt
 
 .vercel
 /seo-images/
+.next/
+*.log

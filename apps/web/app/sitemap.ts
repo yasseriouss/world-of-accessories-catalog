@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { supabase } from '../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://ha-woa.vercel.app';

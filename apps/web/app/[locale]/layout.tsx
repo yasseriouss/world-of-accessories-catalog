@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import '../globals.css';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import ScrollTop from '../../components/ScrollTop';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import ScrollTop from '@/components/ScrollTop';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { siteJsonLd } from '../../lib/seo';
+import { siteJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ha-woa.vercel.app'),
@@ -16,9 +16,8 @@ export const metadata: Metadata = {
   openGraph: { locale: 'ar_EG', type: 'website', siteName: 'عالم الاكسسوار' },
   alternates: { languages: { ar: '/ar', en: '/en' } }
 };
-export function generateStaticParams() { return [{ locale: 'ar' }, { locale: 'en' }]; }
-
 export default async function LocaleLayout({ children, params: { locale } }: any) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>

@@ -1,4 +1,5 @@
-import { supabaseServer } from '../../../lib/supabase-server';
+import { supabaseServer } from '@/lib/supabase-server';
+import { egp } from '@/lib/format';
 import OrderActions from './OrderActions';
 
 export const dynamic = 'force-dynamic';
@@ -45,3 +46,4 @@ export default async function OrdersPage({ searchParams }: any) {
     </div>
   );
 }
+

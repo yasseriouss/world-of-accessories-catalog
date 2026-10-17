@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { whatsappLink } from '../lib/format';
+import { whatsappLink } from '@/lib/format';
 
 export default async function Footer() {
   const t = await getTranslations('footer');

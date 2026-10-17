@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
-import { useWishlist, useCart } from '../../../lib/store-context';
-import { egp, discountPct, whatsappLink } from '../../../lib/format';
+import { useWishlist, useCart } from '@/lib/store-context';
+import { egp, discountPct, whatsappLink } from '@/lib/format';
 
 export default function WishlistPage() {
   const locale = useLocale();

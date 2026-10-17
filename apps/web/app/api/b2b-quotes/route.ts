@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 const Schema = z.object({
   company: z.string().min(2), contact: z.string().min(2),

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { egp } from '../../lib/format';
+import { egp } from '@/lib/format';
 
 type Order = { order_no: string; status: string; total_egp: number; created_at: string;
   order_items: { qty: number; name_ar: string; unit_price: number }[] };

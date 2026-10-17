@@ -1,11 +1,12 @@
-import { getTranslations } from 'next-intl/server';
-import { getFeatured, getBestSellers, getCategories, getBanners } from '../../lib/queries';
-import ProductCard from '../../components/ProductCard';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getFeatured, getBestSellers, getCategories, getBanners } from '@/lib/queries';
+import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
 
 export const revalidate = 60; // ISR
 
 export default async function MarketHome({ params: { locale } }: any) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'nav' });
   const [featured, best, cats, heroes] = await Promise.all([
     getFeatured(8), getBestSellers(8), getCategories(), getBanners('store_hero')]);

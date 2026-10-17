@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { useCart } from '../../lib/store-context';
-import { egp } from '../../lib/format';
+import { useCart } from '@/lib/store-context';
+import { egp } from '@/lib/format';
 
 export default function CartPage() {
   const { items, setQty, remove, subtotal, savings } = useCart();

@@ -1,6 +1,6 @@
-import { getTranslations } from 'next-intl/server';
-import { getProducts, getCategories } from '../../lib/queries';
-import ProductCard from '../../components/ProductCard';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getProducts, getCategories } from '@/lib/queries';
+import ProductCard from '@/components/ProductCard';
 
 export const revalidate = 60;
 
@@ -13,6 +13,7 @@ export async function generateMetadata({ params: { locale }, searchParams }: any
 }
 
 export default async function Catalog({ params: { locale }, searchParams }: any) {
+  unstable_setRequestLocale(locale);
   const tc = await getTranslations({ locale, namespace: 'common' });
   const { products, total, pages } = await getProducts({
     category: searchParams.category, q: searchParams.q,

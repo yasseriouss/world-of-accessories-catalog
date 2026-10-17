@@ -1,5 +1,5 @@
-'use client';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+﻿'use client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -31,3 +31,4 @@ export default function OrderActions({ id, status }: { id: string; status: strin
     </div>
   );
 }
+

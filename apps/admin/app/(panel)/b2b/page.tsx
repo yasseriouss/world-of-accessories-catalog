@@ -1,4 +1,4 @@
-import { supabaseServer } from '../../../lib/supabase-server';
+﻿import { supabaseServer } from '@/lib/supabase-server';
 import B2BActions from './B2BActions';
 
 export const dynamic = 'force-dynamic';
@@ -141,3 +141,4 @@ export default async function B2BQuotesPage({ searchParams }: any) {
     </div>
   );
 }
+

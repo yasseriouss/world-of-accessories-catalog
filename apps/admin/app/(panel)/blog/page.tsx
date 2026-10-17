@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { supabaseServer } from '../../../lib/supabase-server';
+﻿import Link from 'next/link';
+import { supabaseServer } from '@/lib/supabase-server';
 
 export const dynamic = 'force-dynamic';
 const ST: Record<string,string> = { draft:'مسودة', published:'منشور', archived:'مؤرشف' };
@@ -28,3 +28,4 @@ export default async function BlogAdmin() {
     </div>
   );
 }
+

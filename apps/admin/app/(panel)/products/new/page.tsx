@@ -1,8 +1,8 @@
-'use client';
+﻿'use client';
 import { useState, useEffect } from 'react';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
-import ImageUploader, { UploadedImage } from '../../../components/ImageUploader';
+import ImageUploader, { UploadedImage } from '@/components/ImageUploader';
 
 interface Category {
   id: string;
@@ -184,4 +184,5 @@ export default function NewProductPage() {
     </div>
   );
 }
+
 

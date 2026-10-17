@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
-import { getCategories, getFeatured, getBanners } from '../../lib/queries';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getCategories, getFeatured, getBanners } from '@/lib/queries';
 
 export const revalidate = 300;
 

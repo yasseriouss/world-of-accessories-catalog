@@ -1,5 +1,5 @@
-'use client';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+﻿'use client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -71,3 +71,4 @@ export default function B2BActions({ id, status, phone }: { id: string; status: 
     </div>
   );
 }
+

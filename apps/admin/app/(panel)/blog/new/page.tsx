@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 import { useRouter } from 'next/navigation';
 
 export default function NewPostPage() {
@@ -74,3 +74,4 @@ export default function NewPostPage() {
     </div>
   );
 }
+

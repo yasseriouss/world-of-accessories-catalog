@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 const ItemSchema = z.object({
   slug: z.string(), code: z.string(), name_ar: z.string(),

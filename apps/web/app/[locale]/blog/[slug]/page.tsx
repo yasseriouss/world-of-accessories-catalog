@@ -1,16 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { supabase } from '../../../lib/supabase';
-import { whatsappLink } from '../../../lib/format';
+import { supabase } from '@/lib/supabase';
+import { whatsappLink } from '@/lib/format';
 
 export const revalidate = 300;
 export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  const { data } = await supabase.from('posts').select('slug').eq('status', 'published');
-  return (data ?? []).map((p: any) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({ params }: any) {
   const { data: p } = await supabase.from('posts').select('*').eq('slug', params.slug).eq('status', 'published').single();

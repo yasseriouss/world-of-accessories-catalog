@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 import { useEffect, useState } from 'react';
-import { supabaseBrowser } from '../../../lib/supabase-client';
+import { supabaseBrowser } from '@/lib/supabase-client';
 
 export default function BannersPage() {
   const [banners, setBanners] = useState<any[]>([]);
@@ -57,3 +57,4 @@ export default function BannersPage() {
     </div>
   );
 }
+

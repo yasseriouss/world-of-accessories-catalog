@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { supabaseServer } from '../../../lib/supabase-server';
-import { egp } from '../../../lib/format';
+﻿import Link from 'next/link';
+import { supabaseServer } from '@/lib/supabase-server';
+import { egp } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,3 +38,4 @@ export default async function ProductsPage({ searchParams }: any) {
     </div>
   );
 }
+
